@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Country</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Countries</value>
+    </caseValues>
+    <fields>
+        <label><!-- Country Code 2 --></label>
+        <name>Country_Code_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country Code 3 --></label>
+        <name>Country_Code_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country Lead Manager --></label>
+        <name>Country_Lead_Manager__c</name>
+        <relationshipLabel><!-- Countries (Country Lead Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Country RSM --></label>
+        <name>Country_RSM__c</name>
+        <relationshipLabel><!-- Countries (Country RSM) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Country --></label>
+        <name>Country__c</name>
+    </fields>
+    <fields>
+        <label><!-- Region --></label>
+        <name>Global_Region__c</name>
+    </fields>
+    <fields>
+        <label><!-- ISO Name --></label>
+        <name>ISO_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sub-Region --></label>
+        <name>Region__c</name>
+    </fields>
+    <layouts>
+        <layout>Region Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

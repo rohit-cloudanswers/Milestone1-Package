@@ -1,0 +1,133 @@
+<apex:page controller="SolutionHierarchyGenerator" showHeader="false" title="Solution hierarchy">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script> 
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+<style>
+	#Menu
+    {
+        padding:0;
+        margin:0;
+        list-style-type:none;
+        font-size:14px;
+        font-style: italic;
+        color:red;
+        width:100%;
+    }
+    #Menu li{
+    	list-style-image: url('http://www.techsupportalert.com/files/images/icons/review/icon_2rightarrow.png');
+    }
+    #Menu li
+    {
+        border-bottom:1px solid #eeeeee;
+        padding:7px 10px 7px 10px;
+        type:square;
+        /*list-style-image: url('http://www.informaticsoutsourcing.com/images/right-arrow.png');*/
+    }
+
+    #Menu li:hover
+    {
+        /*background-color:#819FF7;*/
+    }
+#Menu li:hover a
+    {
+        /*color:Blue;*/
+    }
+
+
+    #Menu a:link
+    {
+        color:#717171;
+        text-decoration:none;
+    }
+
+    #Menu a:hover
+    {
+        color:red;
+    }
+</style>
+<script>
+	function getQuoteLineItems(qId){
+		fetchQlItem(qId);
+	}
+</script>
+	<apex:form >
+		<apex:actionStatus id="LoadStatusPart">
+		     <apex:facet name="start">
+		            <apex:outputPanel styleClass="popupBackground" layout="block" /><br/>
+		          <apex:outputPanel ><img src="/img/loading.gif" /><font color="red">Please wait. Loading...</font><br /> </apex:outputPanel>
+		     </apex:facet>
+	    </apex:actionStatus>
+		<apex:outputPanel id="oPanel">
+				<apex:actionFunction name="fetchQlItem" action="{!processLineItems}" rerender="oPanel" status="LoadStatusPart">
+					<apex:param name="qId" value="" assignTo="{!targetSol}"/>
+				</apex:actionFunction>
+				<table BORDER="2" BORDERCOLOR="RED" width="100%">
+					<tr >
+						<td width="50%">
+							<ul id="Menu">
+								<div style="background-color:#F5BCA9;vertical-align: top; width:100%; height:20px;">
+									<apex:outputPanel rendered="{!IF(targetSol !=currentSolutionId,true,false)}">
+					       				<a href="#" onClick="getQuoteLineItems('{!currentSolutionId}');"><font color="green"><apex:outputText value="{!currentSolutionName}"/>&nbsp;[Current Solution]</font></a>
+					       			</apex:outputPanel>
+					       			<apex:outputPanel rendered="{!IF(targetSol ==currentSolutionId,true,false)}">
+					       				<a href="#" onClick="getQuoteLineItems('{!currentSolutionId}');"><font color="red"><apex:outputText value="{!currentSolutionName}"/>&nbsp;[Current Solution]</font></a>
+					       			</apex:outputPanel>
+					       		</div>
+								<apex:repeat value="{!solList}" var="firstChild">
+									<li>
+										<apex:outputPanel rendered="{!IF(targetSol !=firstChild.Id,true,false)}">
+											<a href="#" onClick="getQuoteLineItems('{!firstChild.Id}');"><apex:outputText value="{!firstChild.name}"/></a>
+										</apex:outputPanel>
+										<apex:outputPanel rendered="{!IF(targetSol ==firstChild.Id,true,false)}">
+											<a href="#" onClick="getQuoteLineItems('{!firstChild.Id}');"><font color="red"><apex:outputText value="{!firstChild.name}"/></font></a>
+										</apex:outputPanel>
+										<ul>
+											<apex:repeat value="{!firstChild.Quote_Solutions__r}" var="secondChild">
+												<li>
+													<apex:outputPanel rendered="{!IF(targetSol !=secondChild.Id,true,false)}">
+														<a href="#" onClick="getQuoteLineItems('{!secondChild.Id}');"><apex:outputText value="{!secondChild.name}"/></a>
+													</apex:outputPanel>
+													<apex:outputPanel rendered="{!IF(targetSol ==secondChild.Id,true,false)}">
+														<a href="#" onClick="getQuoteLineItems('{!secondChild.Id}');"><font color="red"><apex:outputText value="{!secondChild.name}"/></font></a>
+													</apex:outputPanel>
+													<ul>
+														<apex:repeat value="{!solList2}" var="thirdChild">
+																<apex:outputPanel rendered="{!IF(thirdChild.Parent_Solution__c == secondChild.Id,true,false)}">
+																	<li>
+																		<apex:outputPanel rendered="{!IF(targetSol !=thirdChild.Id,true,false)}">
+																			<a href="#" onClick="getQuoteLineItems('{!thirdChild.Id}');"><apex:outputText value="{!thirdChild.name}"/></a>
+																		</apex:outputPanel>
+																		<apex:outputPanel rendered="{!IF(targetSol ==thirdChild.Id,true,false)}">
+																			<a href="#" onClick="getQuoteLineItems('{!thirdChild.Id}');"><font color="red"><apex:outputText value="{!thirdChild.name}"/></font></a>
+																		</apex:outputPanel>
+																	</li>
+																</apex:outputPanel>
+														</apex:repeat>
+													</ul>
+												</li>
+											</apex:repeat>
+										</ul>
+									</li>
+								</apex:repeat>
+							</ul>
+						</td>
+						<td width="50%" valign="top">
+							<apex:pagemessages id="msgs"/>
+							<h1><i><apex:outputLabel value="Click on any solution to see the line items associated."/></i></h1>
+							<apex:outputPanel id="pgblk" rendered="{!showData}">
+									<apex:pageBlock >
+										<apex:pageBlockTable value="{!qLineItemList}" var="q">
+											<apex:column headerValue="Product Name">
+												<a onClick="window.open('/'+'{!q.Id}','_blank');window.close();"><apex:outputText value="{!q.product2.name}"/></a>
+											</apex:column>
+											<apex:column headerValue="Discount">
+												<apex:outputText value="{!q.discount}"/>
+											</apex:column>
+										</apex:pageBlockTable>
+									</apex:pageBlock>
+							</apex:outputPanel>
+						</td>
+					</tr>
+				</table>
+		</apex:outputPanel>
+	</apex:form>
+</apex:page>

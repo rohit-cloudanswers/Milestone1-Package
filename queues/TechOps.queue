@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>true</doesSendEmailToMembers>
+    <name>TechOps</name>
+    <queueMembers>
+        <users>
+            <user>ashok.pothuri@imaginecommunications.com</user>
+            <user>devandra.agrawal@imaginecommunications.com</user>
+            <user>erik.meredith@imaginecommunications.com</user>
+            <user>gunaseelan.thangaraju@imaginecommunications.com</user>
+            <user>kathryn.glenn@imaginecommunications.com</user>
+            <user>kirk.stutz@imaginecommunications.com</user>
+            <user>lakshman.kancherla@imaginecommunications.com</user>
+            <user>megan.elphingstone@imaginecommunications.com</user>
+            <user>michal.bednarski@imaginecommunications.com</user>
+            <user>michelle.stone@imaginecommunications.com</user>
+            <user>oladimeji.olayiwola@imaginecommunications.com</user>
+            <user>prathap.putha@imaginecommunications.com</user>
+            <user>randy.novick@imaginecommunications.com</user>
+            <user>shawn.chadwell@imaginecommunications.com</user>
+            <user>sravan.reddy@imaginecommunications.com</user>
+            <user>srinivasarao.gunturu@imaginecommunications.com</user>
+            <user>sriram.mutnuri@imaginecommunications.com</user>
+            <user>suhas.prabhakara@imaginecommunications.com</user>
+            <user>terry.wilburn@imaginecommunications.com</user>
+            <user>van.vu@imaginecommunications.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

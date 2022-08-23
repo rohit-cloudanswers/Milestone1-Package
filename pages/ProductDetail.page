@@ -1,0 +1,133 @@
+<apex:page LightningStylesheets="true" standardcontroller="Product2" extensions="ProductDetailController">
+ <style>
+  .cMessage{
+   font-weight:bold;
+   font-size:16px;
+  }
+  .cDetailedMessage{
+   font-weight:bold;
+   font-size:14px!important;;
+  }
+ </style>
+ <apex:pageMessage escape="false" summary="{!message}" detail="{!detailedMessage}" severity="error" strength="3" rendered="{!oProduct == null}"/>
+ 
+ <apex:outputPanel layout="none" rendered="{!!IsNull(oProduct)}"> 
+  <apex:sectionheader title="{!$ObjectType.Product2.label}" subtitle="{!Product2.name}" />
+  <apex:pageblock mode="maindetail" title="{!$ObjectType.Product2.label} Detail">
+   <apex:pageblockbuttons >
+   </apex:pageblockbuttons>
+   <apex:outputpanel >
+    <apex:pageblocksection title="Product Information" showheader="false" collapsible="false" columns="2">
+     <apex:outputfield value="{!oProduct.Name}" />
+     <apex:outputfield value="{!oProduct.IsActive}" />
+     <apex:outputfield value="{!oProduct.ProductCode}" />
+     <apex:outputfield value="{!oProduct.Quotable__c}" />
+     
+     <apex:pageblockSectionItem >
+      <apex:outputLabel value="{!$ObjectType.Product2.Fields.Item_Class_Desc__c.label}"/>
+      <apex:outputText value="{!oProduct.Item_Class_Desc__c}" />
+     </apex:pageblockSectionItem>
+     
+     <apex:pageblockSectionItem >
+      <apex:outputLabel value="{!$ObjectType.Product2.Fields.Business_Unit_Pillar__c.label}"/>
+      <apex:outputText value="{!oProduct.Business_Unit_Pillar__c}" />
+     </apex:pageblockSectionItem>
+          
+     <apex:pageblockSectionItem >
+      <apex:outputLabel value="{!$ObjectType.Product2.Fields.Opportunity_Line_of_Business__c.label}"/>
+      <apex:outputfield value="{!oProduct.Opportunity_Line_of_Business__c}" />
+     </apex:pageblockSectionItem>
+     
+     <apex:pageblockSectionItem >
+      <apex:outputLabel value="{!$ObjectType.Product2.Fields.Product_Family__c.label}"/>
+      <apex:outputText value="{!oProduct.Product_Family__c}" />
+     </apex:pageblockSectionItem>
+     
+     <apex:outputfield value="{!oProduct.Channel_Product_Family__c}" />
+     
+     <apex:pageblockSectionItem >
+      <apex:outputLabel value="{!$ObjectType.Product2.Fields.Opportunity_Product_Group__c.label}"/>
+      <apex:outputfield value="{!oProduct.Opportunity_Product_Group__c}" />
+     </apex:pageblockSectionItem>
+     </apex:pageblocksection>
+     
+     <apex:pageblocksection title="Pricing" collapsible="true" columns="2">
+     
+     <apex:pageblockSectionItem rendered="{!isUS_Domestic}">
+       <apex:outputLabel value="List Price ({!$ObjectType.Product2.Fields.US_Domestic__c.label})"/>
+       <apex:outputText value="{0, number, $0.00}">
+        <apex:param value="{!oProduct.US_Domestic__c}" />
+       </apex:outputText>
+     </apex:pageblockSectionItem>
+     
+     <apex:pageblockSectionItem rendered="{!isCan_Dom}">
+     <apex:outputLabel value="List Price ({!$ObjectType.Product2.Fields.Can_Dom__c.label})"/>
+     <apex:outputText value="{0, number, $0.00}">
+        <apex:param value="{!oProduct.Can_Dom__c}" />
+     </apex:outputText>
+     </apex:pageblockSectionItem>
+     
+     <apex:pageblockSectionItem rendered="{!isEuro}">
+     <apex:outputLabel value="List Price ({!$ObjectType.Product2.Fields.Euro__c.label})"/>
+     <apex:outputText value="{0, number, €0.00}">
+        <apex:param value="{!oProduct.Euro__c}" />
+     </apex:outputText>
+     </apex:pageblockSectionItem>
+     
+     <apex:pageblockSectionItem rendered="{!isUK_Dom}">
+     <apex:outputLabel value="List Price ({!$ObjectType.Product2.Fields.UK_Dom__c.label})"/>
+     <apex:outputText value="{0, number, £0.00}">
+        <apex:param value="{!oProduct.UK_Dom__c}" />
+     </apex:outputText>
+     </apex:pageblockSectionItem>
+     
+     <apex:pageblockSectionItem rendered="{!isUS_Int_l_EA}">
+     <apex:outputLabel value="List Price ({!$ObjectType.Product2.Fields.US_Int_l_EA__c.label})"/>
+     <apex:outputText value="{0, number, $0.00}" >
+        <apex:param value="{!oProduct.US_Int_l_EA__c}" />
+     </apex:outputText>
+     </apex:pageblockSectionItem>
+     
+     <apex:pageblockSectionItem rendered="{!isMESA_US}">
+     <apex:outputLabel value="List Price ({!$ObjectType.Product2.Fields.MESA_US__c.label})"/>
+     <apex:outputText value="{0, number, $0.00}" rendered="{!isMESA_US}">
+        <apex:param value="{!oProduct.MESA_US__c}" />
+     </apex:outputText>
+     </apex:pageblockSectionItem>
+     
+     <apex:pageblockSectionItem rendered="{!isAsia_US}">
+     <apex:outputLabel value="List Price ({!$ObjectType.Product2.Fields.Asia_US__c.label})"/>
+     <apex:outputText value="{0, number, $0.00}" rendered="{!isAsia_US}">
+        <apex:param value="{!oProduct.Asia_US__c}" />
+     </apex:outputText>
+     </apex:pageblockSectionItem>
+     
+     <apex:pageblockSectionItem rendered="{!isChinaDom}">
+     <apex:outputLabel value="List Price ({!$ObjectType.Product2.Fields.China_Domestic_US__c.label})"/>
+     <apex:outputText value="{0, number, $0.00}" rendered="{!isChinaDom}">
+        <apex:param value="{!oProduct.China_Domestic_US__c}" />
+     </apex:outputText>
+     </apex:pageblockSectionItem>
+     
+     <apex:pageblockSectionItem rendered="{!isAusDom}">
+     <apex:outputLabel value="List Price ({!$ObjectType.Product2.Fields.Australia_Domestic__c.label})"/>
+     <apex:outputText value="{0, number, $0.00}" rendered="{!isAusDom}">
+        <apex:param value="{!oProduct.Australia_Domestic__c}" />
+     </apex:outputText>
+     </apex:pageblockSectionItem>
+     
+     <apex:pageblockSectionItem rendered="{!isCala}">
+     <apex:outputLabel value="List Price ({!$ObjectType.Product2.Fields.CALA_List_Price__c.label})"/>
+     <apex:outputText value="{0, number, $0.00}" rendered="{!isCala}">
+        <apex:param value="{!oProduct.CALA_List_Price__c}" />
+     </apex:outputText>
+     </apex:pageblockSectionItem>
+     
+    </apex:pageblocksection>
+    <apex:pageblocksection title="Description" collapsible="true" columns="1">
+     <apex:outputfield value="{!oProduct.Description}" />
+    </apex:pageblocksection>
+   </apex:outputpanel>
+  </apex:pageblock>
+ </apex:outputPanel> 
+</apex:page>

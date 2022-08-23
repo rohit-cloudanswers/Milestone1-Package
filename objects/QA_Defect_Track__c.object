@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Actual_Result__c</fullName>
+        <description>What is the actual result from executing the test script.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>What is the actual result from executing the test script.</inlineHelpText>
+        <label>Actual Result</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Additional_Notes__c</fullName>
+        <description>This field becomes required if the Status value is Passed with Notes.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field becomes required if the Status value is Passed with Notes.</inlineHelpText>
+        <label>Additional Notes</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Assigned__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Volo developer assigned to fix the defect.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Volo developer assigned to fix the defect.</inlineHelpText>
+        <label>Assigned Developer</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>QA_Defect_Track1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Assigned_to__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Assigned To</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>QA_Defect_Track</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Expected_Results__c</fullName>
+        <description>What is the correct outcome from executing the test script.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>What is the correct outcome from executing the test script.</inlineHelpText>
+        <label>Expected Results</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Priority__c</fullName>
+        <externalId>false</externalId>
+        <label>Priority</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>High (Urgent - Cannot Go Live)</fullName>
+                    <default>false</default>
+                    <label>High (Urgent - Cannot Go Live)</label>
+                </value>
+                <value>
+                    <fullName>Med (Not Urgent - Can go Live)</fullName>
+                    <default>false</default>
+                    <label>Med (Not Urgent - Can go Live)</label>
+                </value>
+                <value>
+                    <fullName>Low (Not Urgent - Can be handled later)</fullName>
+                    <default>false</default>
+                    <label>Low (Not Urgent - Can be handled later)</label>
+                </value>
+                <value>
+                    <fullName>Minor - Can be ignored</fullName>
+                    <default>false</default>
+                    <label>Minor - Can be ignored</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>QA_Defect_Summary__c</fullName>
+        <externalId>false</externalId>
+        <label>QA Defect Summary</label>
+        <length>50</length>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sprint__c</fullName>
+        <externalId>false</externalId>
+        <formula>User_Story__r.Sprint__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Sprint</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Failed</fullName>
+                    <default>false</default>
+                    <label>Failed</label>
+                </value>
+                <value>
+                    <fullName>Passed</fullName>
+                    <default>false</default>
+                    <label>Passed</label>
+                </value>
+                <value>
+                    <fullName>Ready for Re-test</fullName>
+                    <default>false</default>
+                    <label>Ready for Re-test</label>
+                </value>
+                <value>
+                    <fullName>Change Assignment</fullName>
+                    <default>false</default>
+                    <label>Change Assignment</label>
+                </value>
+                <value>
+                    <fullName>Passed with Notes</fullName>
+                    <default>false</default>
+                    <label>Passed with Notes</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Test_Script1__c</fullName>
+        <externalId>false</externalId>
+        <label>Test Script</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>15</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Test_Script__c</fullName>
+        <description>Provide the step by step test script to validate the User Story.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Provide the step by step test script to validate the User Story.</inlineHelpText>
+        <label>Test Script Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>User_Story__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>User Story</label>
+        <referenceTo>User_Story__c</referenceTo>
+        <relationshipLabel>QA Defect Track</relationshipLabel>
+        <relationshipName>QA_Defect_Track</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>QA Defect Track</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Actual_Result__c</columns>
+        <columns>Expected_Results__c</columns>
+        <columns>Additional_Notes__c</columns>
+        <columns>Assigned_to__c</columns>
+        <columns>Priority__c</columns>
+        <columns>QA_Defect_Summary__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>All_QA_Defects_Ready_for_Retest</fullName>
+        <columns>NAME</columns>
+        <columns>QA_Defect_Summary__c</columns>
+        <columns>Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Assigned_to__c</columns>
+        <columns>Assigned__c</columns>
+        <columns>Test_Script__c</columns>
+        <columns>Test_Script1__c</columns>
+        <columns>Expected_Results__c</columns>
+        <columns>Actual_Result__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Ready for Re-test</value>
+        </filters>
+        <label>All QA Defects Ready for Retest</label>
+    </listViews>
+    <listViews>
+        <fullName>Change_Assignment_Defects</fullName>
+        <columns>NAME</columns>
+        <columns>QA_Defect_Summary__c</columns>
+        <columns>Test_Script__c</columns>
+        <columns>Status__c</columns>
+        <columns>Test_Script1__c</columns>
+        <columns>Expected_Results__c</columns>
+        <columns>Actual_Result__c</columns>
+        <columns>Assigned_to__c</columns>
+        <columns>Assigned__c</columns>
+        <columns>Additional_Notes__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Change Assignment</value>
+        </filters>
+        <label>Change Assignment Defects</label>
+    </listViews>
+    <listViews>
+        <fullName>Failed_QA_Defects</fullName>
+        <columns>NAME</columns>
+        <columns>QA_Defect_Summary__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Priority__c</columns>
+        <columns>Status__c</columns>
+        <columns>Assigned__c</columns>
+        <columns>Assigned_to__c</columns>
+        <columns>Expected_Results__c</columns>
+        <columns>Actual_Result__c</columns>
+        <columns>Test_Script1__c</columns>
+        <columns>Test_Script__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Failed</value>
+        </filters>
+        <label>Failed QA Defects</label>
+    </listViews>
+    <nameField>
+        <displayFormat>QA-{0000}</displayFormat>
+        <label>QA Defect Track Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>QA Defect Track</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>QA_Defect_Summary__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Assigned_to__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Assigned__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Additional_Notes__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>User_Story__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CREATEDBY_USER</customTabListAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Additional_Notes_Required</fullName>
+        <active>true</active>
+        <description>Additional Notes field will be required if the Status is &quot;Passed with Notes.&quot;</description>
+        <errorConditionFormula>AND(ISPICKVAL(Status__c, &quot;Passed with Notes&quot;),  Additional_Notes__c = &quot;&quot;)</errorConditionFormula>
+        <errorDisplayField>Additional_Notes__c</errorDisplayField>
+        <errorMessage>You must enter more details into the Additional Notes field.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

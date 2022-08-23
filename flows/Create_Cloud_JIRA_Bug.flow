@@ -1,0 +1,1641 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <assignments>
+        <name>Add_OSI_Component</name>
+        <label>Add OSI Component</label>
+        <locationX>871</locationX>
+        <locationY>1713</locationY>
+        <assignmentItems>
+            <assignToReference>BugRecord.Jira_Component_1__c</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>;</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>BugRecord.Jira_Component_1__c</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Component_List</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Which_Description</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>this is because of the previous debug logic.  don&apos;t want to have to go through and update all the assignments</description>
+        <name>Assign_Case_to_Case_Record</name>
+        <label>Assign to Case Record and Set Project</label>
+        <locationX>754</locationX>
+        <locationY>315</locationY>
+        <assignmentItems>
+            <assignToReference>CaseRecord</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>GetCase</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_Product_from_Product_Class_Family</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Only_Issue</name>
+        <label>Assign Only Issue</label>
+        <locationX>980</locationX>
+        <locationY>828</locationY>
+        <assignmentItems>
+            <assignToReference>varShowQuestion</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varShowEnhancement</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Request_Information</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Product_from_Product_Class_Family</name>
+        <label>Assign Product from Product Class - Family</label>
+        <locationX>875</locationX>
+        <locationY>435</locationY>
+        <assignmentItems>
+            <assignToReference>varProduct</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>CaseRecord.Product_Class__r.Service_Product_Family__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Show_Verso_Text</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Short_Description</name>
+        <label>Assign Short Description</label>
+        <locationX>872</locationX>
+        <locationY>1993</locationY>
+        <assignmentItems>
+            <assignToReference>BugRecord.Jira_Description__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Description</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Show_Project_Text</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Template_Description</name>
+        <label>Assign Template Description</label>
+        <locationX>599</locationX>
+        <locationY>1977</locationY>
+        <assignmentItems>
+            <assignToReference>BugRecord.Jira_Description__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TextBugDetails</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Show_Project_Text</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Type</name>
+        <label>Assign Type</label>
+        <locationX>871</locationX>
+        <locationY>1473</locationY>
+        <assignmentItems>
+            <assignToReference>varType</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>DetermineType</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>BugRecord.Issue_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>varType</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Put_OSI_Components_into_List</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Type_Enhancement</name>
+        <label>Assign Type Enhancement</label>
+        <locationX>785</locationX>
+        <locationY>819</locationY>
+        <assignmentItems>
+            <assignToReference>varShowEnhancement</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Request_Information</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Type_Question</name>
+        <label>Assign Type Question</label>
+        <locationX>593</locationX>
+        <locationY>821</locationY>
+        <assignmentItems>
+            <assignToReference>varShowQuestion</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Request_Information</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Values</name>
+        <label>Assign Values</label>
+        <locationX>871</locationX>
+        <locationY>1353</locationY>
+        <assignmentItems>
+            <assignToReference>BugRecord.Jira_Title__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Title_Subject</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>BugRecord.Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>New</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>BugRecord.Case__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>CaseRecord.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>BugRecord.Affects_Version__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Affects_Version</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>BugRecord.Jira_Component_1__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Salesforce</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>BugRecord.EPIC_Link__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>determineEpic</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>BugRecord.SLA_Target_Date_Updated__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>returnResolutionDateSLA</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varReproducible</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Reproducible.value</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varWorkaroundAvailable</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>WorkaroundAvailable.value</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>BugRecord.Jira_Sync__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>BugRecord.Unique_Flow_Identifier__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>UniqueId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>BugRecord.Main_Jira_Issue__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Main_Jira_Issue</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>BugRecord.SLA_Target_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>CaseRecord.Resolution_Milestone_Target_Date__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>BugRecord.Product_Class__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>CaseRecord.Product_Class__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_Type</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Versio_Text_Var</name>
+        <label>Assign Versio Text Var</label>
+        <locationX>722</locationX>
+        <locationY>616</locationY>
+        <assignmentItems>
+            <assignToReference>varShowVersioText</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Should_Type_Field_be_Limited</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Project_TRUE</name>
+        <label>Project = TRUE</label>
+        <locationX>734</locationX>
+        <locationY>2309</locationY>
+        <assignmentItems>
+            <assignToReference>ProjectTrue</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>BugRecord.Project__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>CaseRecord.Project__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_Bug_Record</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Put_OSI_Components_into_List</name>
+        <label>Put OSI Components into List</label>
+        <locationX>871</locationX>
+        <locationY>1593</locationY>
+        <assignmentItems>
+            <assignToReference>Component_List</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>convertMultiSelectToText</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Add_OSI_Component</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Update_Type_Variables</name>
+        <label>Update Type Variables</label>
+        <locationX>1142</locationX>
+        <locationY>827</locationY>
+        <assignmentItems>
+            <assignToReference>varShowQuestion</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varShowEnhancement</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Request_Information</targetReference>
+        </connector>
+    </assignments>
+    <choices>
+        <name>Always</name>
+        <choiceText>Always</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Always</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>ChangeChoice</name>
+        <choiceText>Change</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Change</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>CustomerEnhancementChoice</name>
+        <choiceText>Customer Enhancement</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Customer Enhancement</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>CustomerEscalationChoice</name>
+        <choiceText>Customer Escalation</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Customer Escalation</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>CustomerIssueChoice</name>
+        <choiceText>Customer Issue</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Customer Issue</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>CustomerQuestionChoice</name>
+        <choiceText>Customer Question</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Customer Question</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>DEVChoice</name>
+        <choiceText>DEV</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>DEV</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>DRChoice</name>
+        <choiceText>DR</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>DR</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>FeatureRequestChoice</name>
+        <choiceText>Feature Request</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Feature Request</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>IncidentChoice</name>
+        <choiceText>Incident</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Incident</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Maytakemorethan1month</name>
+        <choiceText>May take more than 1 month</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>May take more than 1 month</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>NoChoice</name>
+        <choiceText>No</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>No</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Occurswithin1day</name>
+        <choiceText>Occurs within 1 day</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Occurs within 1 day</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Occurswithin1hour</name>
+        <choiceText>Occurs within 1 hour</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Occurs within 1 hour</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Occurswithin1month</name>
+        <choiceText>Occurs within 1 month</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Occurs within 1 month</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Occurswithin1week</name>
+        <choiceText>Occurs within 1 week</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Occurs within 1 week</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>OneTimeOccurrence</name>
+        <choiceText>One Time Occurrence</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>One Time Occurence</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>OtherChoice</name>
+        <choiceText>Other</choiceText>
+        <dataType>String</dataType>
+        <userInput>
+            <isRequired>true</isRequired>
+            <promptText>What is the other Environment</promptText>
+        </userInput>
+    </choices>
+    <choices>
+        <name>Pre_ProdChoice</name>
+        <choiceText>Pre-Prod</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Pre-Prod</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>PRODChoice</name>
+        <choiceText>PROD</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>PROD</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>ProductIssueBugChoice</name>
+        <choiceText>Product Issue/Bug</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Product Issue/Bug</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>QATChoice</name>
+        <choiceText>QAT</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>QAT</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>ServiceRequestChoice</name>
+        <choiceText>Service Request</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Service Request</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>StagingChoice</name>
+        <choiceText>Staging</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Staging</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>UATChoice</name>
+        <choiceText>UAT</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>UAT</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>YesChoice</name>
+        <choiceText>Yes</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Yes</stringValue>
+        </value>
+    </choices>
+    <constants>
+        <name>conEmptyString</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue></stringValue>
+        </value>
+    </constants>
+    <decisions>
+        <name>Make_sure_we_didn_t_fail</name>
+        <label>Make sure we didn&apos;t fail</label>
+        <locationX>863</locationX>
+        <locationY>1233</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Need_Debug_Route</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CaseRecord</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>BugRecord.RecordTypeId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Need Debug Route</label>
+        </rules>
+        <rules>
+            <name>All_Good</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>BugRecord.RecordTypeId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Values</targetReference>
+            </connector>
+            <label>All Good</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Make_sure_we_got_a_case</name>
+        <label>Make sure we got a case</label>
+        <locationX>874</locationX>
+        <locationY>184</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Case_ID</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CaseId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>GetCase</targetReference>
+            </connector>
+            <label>Yes Case ID</label>
+        </rules>
+        <rules>
+            <name>Case_Record</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CaseRecord</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Product_from_Product_Class_Family</targetReference>
+            </connector>
+            <label>Case Record</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Customer Issue is always shown.  Question/Enhancement changes by product line</description>
+        <name>Should_Type_Field_be_Limited</name>
+        <label>Should Type Field be Limited?</label>
+        <locationX>873</locationX>
+        <locationY>738</locationY>
+        <defaultConnector>
+            <targetReference>Update_Type_Variables</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Limits</defaultConnectorLabel>
+        <rules>
+            <name>Show_Question</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>CaseRecord.Product_Class__r.Jira_Type_Configuration__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Issue + Question</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Type_Question</targetReference>
+            </connector>
+            <label>Show Question</label>
+        </rules>
+        <rules>
+            <name>Show_Enhancement</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>CaseRecord.Product_Class__r.Jira_Type_Configuration__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Issue + Enhancement</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Type_Enhancement</targetReference>
+            </connector>
+            <label>Show Enhancement</label>
+        </rules>
+        <rules>
+            <name>Show_Issue_Only</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CaseRecord.Product_Class__r.Jira_Type_Configuration__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Issue</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Only_Issue</targetReference>
+            </connector>
+            <label>Show Issue Only</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Show_Project_Text</name>
+        <label>Show Project Text?</label>
+        <locationX>865</locationX>
+        <locationY>2189</locationY>
+        <defaultConnector>
+            <targetReference>Confirmation</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Project</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CaseRecord.Record_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Project Case</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Project_TRUE</targetReference>
+            </connector>
+            <label>Yes Project</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Show_Verso_Text</name>
+        <label>Show Verso Text?</label>
+        <locationX>880</locationX>
+        <locationY>612</locationY>
+        <defaultConnector>
+            <targetReference>Should_Type_Field_be_Limited</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_show_verso</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CaseRecord.Product_Class__r.Service_Pillar__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>AdTech</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Versio_Text_Var</targetReference>
+            </connector>
+            <label>Yes show verso</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Which_Description</name>
+        <label>Which Description</label>
+        <locationX>864</locationX>
+        <locationY>1872</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Playout_Description</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Customer_Impact</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Template_Description</targetReference>
+            </connector>
+            <label>Playout Description</label>
+        </rules>
+        <rules>
+            <name>All_others</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Customer_Impact</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Short_Description</targetReference>
+            </connector>
+            <label>All others</label>
+        </rules>
+    </decisions>
+    <description>1. Add the Product Family/Line to the Jira Management flow and link to this subflow.
+2. Find Jira project ID (project settings in jira) and add to formula DetermineJiraProjectID.  Add Project name to Jira Project Picklist (on object) and DetermineJiraProject, DetermineJiraProjectName formulas &lt;no longer used&gt;
+3. Add to Product Family/Line Decision
+4. Determine what issues types should be shown.  Decision
+5. Determine if text template should be used.  Currently tied to Show Versio Text
+
+7/22/20 added text template for playout, added structure to autosync to Jira.  
+7/29/20 added SLA target date
+8/13/20 backed up changes</description>
+    <dynamicChoiceSets>
+        <name>BugTypeChoice</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Issue_Type__c</picklistField>
+        <picklistObject>Bug__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>ComponentPicklist</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Jira_Component__c</picklistField>
+        <picklistObject>Bug__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>EnvironmentPicklist</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Environment__c</picklistField>
+        <picklistObject>Bug__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>HostingPicklist</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Hosting__c</picklistField>
+        <picklistObject>Bug__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>JiraProjectNamePicklist</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Jira_Project_Name__c</picklistField>
+        <picklistObject>Bug__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>OSI_Component_List</name>
+        <dataType>Multipicklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>OSI_Component_List__c</picklistField>
+        <picklistObject>Bug__c</picklistObject>
+    </dynamicChoiceSets>
+    <formulas>
+        <name>convertMultiSelectToText</name>
+        <dataType>String</dataType>
+        <expression>{!OSI_Picklist}</expression>
+    </formulas>
+    <formulas>
+        <description>if formula to determine epic</description>
+        <name>determineEpic</name>
+        <dataType>String</dataType>
+        <expression>/* CASE(CaseRecord.Product_Family__c, &quot;Landmark OSI&quot;, &quot;XGPT-4914&quot;, &quot;Landmark Analytics&quot;, &quot;XGPT-4941&quot;,&quot;Eclipse Plus&quot;, &quot;XGPT-3506&quot;, &quot;Landmark OSI Sales&quot;, &quot;XGPT-5393&quot;, &quot;Landmark Rights &amp; Scheduling&quot;, &quot;XGPT-5252&quot;, &quot;xG Gameplan&quot;, &quot;XGPT-2439&quot;, &quot;Landmark Sales&quot;, &quot;XGPT-7153&quot;,  &quot;xG Linear&quot;, &quot;XGPT-3506&quot;, &quot;Landmark Sales Cloud&quot;, &quot;XGPT-7153&quot;, &quot;&quot;) */
+{!CaseRecord.Product_Class__r.Jira_Epic__c}</expression>
+    </formulas>
+    <formulas>
+        <name>determineJiraIssueTypeId</name>
+        <dataType>String</dataType>
+        <expression>CASE ( {!DetermineType},
+&quot;Customer Issue&quot;, &quot;10287&quot;,
+&quot;Customer Enhancement&quot;, &quot;10288&quot;,
+&quot;Customer Question&quot;, &quot;10289&quot;,
+&quot;&quot; )</expression>
+    </formulas>
+    <formulas>
+        <name>DetermineJiraProject</name>
+        <dataType>String</dataType>
+        <expression>CASE ( {!varProduct},  
+&quot;Broadcast Graphics&quot;, &quot;VMGMT&quot;,
+&quot;Editing &amp; News&quot;, &quot;VINE&quot;,
+&quot;Servers&quot;, &quot;VINE&quot;,
+&quot;Versio&quot;, &quot;VMGMT&quot;, 
+&quot;SelenioFlex File&quot;, &quot;VPLAY&quot;,
+&quot;Motion&quot;, &quot;VMGMT&quot;,
+&quot;Insight&quot;, &quot;VMGMT&quot;,
+&quot;Landmark OSI&quot;, &quot;OSI&quot;,
+&quot;Landmark OSI Sales&quot;, &quot;ADCON&quot;,
+&quot;Landmark Rights &amp; Scheduling&quot;, &quot;LRS&quot;,
+&quot;Eclipse Plus&quot;, &quot;XGLT&quot;,
+&quot;xG Linear&quot;, &quot;XGLT&quot;,
+&quot;Broadcast Master&quot;, &quot;BM&quot;,
+&quot;xG Gameplan&quot;, &quot;XGGP&quot;,
+&quot;Landmark Analytics&quot;, &quot;XGASC&quot;,
+&quot;Selenio VDE&quot;, &quot;TD&quot;,
+&quot;Telurio&quot;, &quot;TD&quot;,
+&quot;Packager&quot;, &quot;TD&quot;,
+&quot;Selenio ICE&quot;, &quot;TD&quot;,
+&quot;TransAct (TA)&quot;, &quot;TD&quot;,
+&quot;CloudXtreme (xG)&quot;, &quot;TD&quot;,
+&quot;ADC&quot;, &quot;ADC&quot;,
+&quot;D-Series&quot;, &quot;DSER&quot;,
+&quot;Selenio MCP&quot;, &quot;MCP&quot;,
+&quot;Landmark Sales&quot;, &quot;LMKS&quot;,
+&quot;Landmark Sales Cloud&quot;, &quot;LMKS&quot;,
+&quot;Digital Signage&quot;, &quot;DS&quot;,
+&quot;SOMETHING HAS GONE WRONG!&quot; )</expression>
+    </formulas>
+    <formulas>
+        <description>other determine jira project is from case &gt; family</description>
+        <name>DetermineJiraProjectfromProjectName</name>
+        <dataType>String</dataType>
+        <expression>CASE ( {!varJiraProjectName},  
+&quot;Versio Management&quot;, &quot;VMGMT&quot;,
+&quot;Versio Ingest/Nexio Engine&quot;, &quot;VINE&quot;,
+&quot;Versio Playout&quot;, &quot;VPLAY&quot;,
+&quot;Landmark OSI&quot;, &quot;OSI&quot;,
+&quot;AdConnections&quot;, &quot;ADCON&quot;,
+&quot;Landmark Rights and Scheduling&quot;, &quot;LRS&quot;,
+&quot;xG Linear&quot;, &quot;XGLT&quot;,
+&quot;BCM Development&quot;, &quot;BM&quot;,
+&quot;xG GamePlan&quot;, &quot;XGGP&quot;,
+&quot;xG Scorecard&quot;, &quot;XGASC&quot;,
+&quot;Targeted Delivery&quot;, &quot;TD&quot;,
+&quot;Versio ADC&quot;, &quot;VADC&quot;,
+&quot;Versio D-Series&quot;, &quot;VDSER&quot;,
+&quot;Selenio MCP&quot;, &quot;MCP&quot;,
+&quot;Landmark Sales&quot;, &quot;LMKS&quot;,
+&quot;Digital Signage&quot;, &quot;DS&quot;,
+&quot;SOMETHING HAS GONE WRONG!&quot; )</expression>
+    </formulas>
+    <formulas>
+        <description>&quot;Broadcast Graphics&quot;, Versio Management, &quot;VMGMT&quot;, 11443
+&quot;Editing &amp; News&quot;, Versio Ingest/Nexio Engine &quot;VINE&quot;, 11441
+&quot;Servers&quot;, Versio Ingest/Nexio Engine, &quot;VINE&quot;, 11441
+&quot;Versio&quot;,Versio Management, &quot;VMGMT&quot;, 11443
+&quot;SelenioFlex File&quot;, Versio Playout, &quot;VPLAY&quot;, 11440
+&quot;Motion&quot;, Versio Management, &quot;VMGMT&quot;, 11443
+&quot;Insight&quot;, Versio Management, &quot;VMGMT&quot;, 11443
+&quot;Landmark OSI&quot;, Landmark OSI, &quot;OSI&quot;, 11348
+&quot;Landmark OSI Sales&quot;, AdConnections, &quot;ADCON&quot;, 11444
+&quot;Landmark Rights and Scheduling&quot;, SAME, &quot;LRS&quot;, 11328
+&quot;Eclipse Plus&quot;, xG Linear, XGLT, 11323,
+&quot;xG Linear&quot;, xG Linear, &quot;XGLT&quot;, 11323
+&quot;Broadcast Master&quot;, Broadcast Master, &quot;BD&quot;, 10601
+&quot;xG Gameplan&quot;, &quot;XGGT&quot;, 11330</description>
+        <name>DetermineJiraProjectID</name>
+        <dataType>String</dataType>
+        <expression>CASE ( {!varJiraProject},
+&quot;VMGMT&quot;, &quot;11443&quot;,
+&quot;VINE&quot;, &quot;11441&quot;,
+&quot;VPLAY&quot;, &quot;11440&quot;,
+&quot;OSI&quot;, &quot;11348&quot;,
+&quot;ADCON&quot;, &quot;11444&quot;,
+&quot;LRS&quot;, &quot;11328&quot;,
+&quot;XGLT&quot;, &quot;11323&quot;,
+&quot;BD&quot;, &quot;10601&quot;,
+&quot;XGGT&quot;, &quot;11330&quot;,
+&quot;XGASC&quot;, &quot;11325&quot;,
+&quot;VADC&quot;, &quot;11480&quot;,
+&quot;VDSER&quot;, &quot;11481&quot;,
+&quot;LMKS&quot;, &quot;11445&quot;,
+&quot;&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <description>CASE ( {!varProduct},  
+&quot;Broadcast Graphics&quot;, &quot;VMGMT&quot;,
+&quot;Editing &amp; News&quot;, &quot;VINE&quot;,
+&quot;Servers&quot;, &quot;VINE&quot;,
+&quot;Versio&quot;, &quot;VMGMT&quot;, 
+&quot;SelenioFlex File&quot;, &quot;VPLAY&quot;,
+&quot;Motion&quot;, &quot;VMGMT&quot;,
+&quot;Insight&quot;, &quot;VMGMT&quot;,
+&quot;Landmark OSI&quot;, &quot;OSI&quot;,
+&quot;Landmark OSI Sales&quot;, &quot;ADCON&quot;,
+&quot;Landmark Rights and Scheduling&quot;, &quot;LRS&quot;,
+&quot;Eclipse Plus&quot;, &quot;XGLT&quot;,
+&quot;xG Linear&quot;, &quot;XGLT&quot;,
+&quot;Broadcast Master&quot;, &quot;BM&quot;,
+&quot;xG Gameplan&quot;, &quot;XGGP&quot;,
+
+&quot;SOMETHING HAS GONE WRONG!&quot; )</description>
+        <name>DetermineJiraProjectName</name>
+        <dataType>String</dataType>
+        <expression>CASE ( {!varProduct},  
+&quot;Broadcast Graphics&quot;, &quot;Versio Management&quot;,
+&quot;Editing &amp; News&quot;, &quot;Versio Ingest/Nexio Engine&quot;,
+&quot;Servers&quot;, &quot;Versio Ingest/Nexio Engine&quot;,
+&quot;Versio&quot;, &quot;Versio Management&quot;, 
+&quot;SelenioFlex File&quot;, &quot;Versio Playout&quot;,
+&quot;Motion&quot;, &quot;Versio Management&quot;,
+&quot;Insight&quot;, &quot;Versio Management&quot;,
+&quot;Landmark OSI&quot;, &quot;Landmark OSI&quot;,
+&quot;Landmark OSI Sales&quot;, &quot;AdConnections&quot;,
+&quot;Landmark Rights &amp; Scheduling&quot;, &quot;Landmark Rights and Scheduling&quot;,
+&quot;Eclipse Plus&quot;, &quot;xG Linear&quot;,
+&quot;xG Linear&quot;, &quot;xG Linear&quot;,
+&quot;Broadcast Master&quot;, &quot;	BCM Development&quot;,
+&quot;xG Gameplan&quot;, &quot;xG GamePlan&quot;,
+&quot;xG Analytics&quot;, &quot;xG Scorecard&quot;,
+&quot;Selenio VDE&quot;, &quot;Targeted Delivery&quot;,
+&quot;Telurio&quot;, &quot;Targeted Delivery&quot;,
+&quot;Packager&quot;, &quot;Targeted Delivery&quot;,
+&quot;Selenio ICE&quot;, &quot;Targeted Delivery&quot;,
+&quot;TransAct (TA)&quot;, &quot;Targeted Delivery&quot;,
+&quot;CloudXtreme (xG)&quot;, &quot;Targeted Delivery&quot;,
+&quot;ADC&quot;, &quot;Versio ADC&quot;,
+&quot;D-Series&quot;, &quot;Versio D-Series&quot;,
+&quot;Selenio MCP&quot;, &quot;Selenio MCP&quot;,
+&quot;Landmark Sales&quot;, &quot;Landmark Sales&quot;,
+&quot;Landmark Sales Cloud&quot;, &quot;Landmark Sales&quot;,
+&quot;This needs fixing!!  On Darcie&apos;s List&quot; )</expression>
+    </formulas>
+    <formulas>
+        <description>Ok lets get the product and store it in a variable to make my life easier than going between family and line</description>
+        <name>DetermineProduct</name>
+        <dataType>String</dataType>
+        <expression>IF  (  (CASE  ( {!CaseRecord.Product_Line__c},
+&quot;Broadcast Graphics&quot;, &quot;1&quot;,
+&quot;Editing &amp; News&quot;, &quot;1&quot;,
+&quot;Servers&quot;, &quot;1&quot;,
+&quot;Versio&quot;, &quot;1&quot;,
+&quot;0&quot; ))  = &quot;1&quot;, 
+
+TEXT({!CaseRecord.Product_Line__c}), TEXT({!GetCase.Product_Family__c}) )</expression>
+    </formulas>
+    <formulas>
+        <name>DetermineType</name>
+        <dataType>String</dataType>
+        <expression>IF ( AND( {!varShowEnhancement}=true, {!varShowQuestion} = true ), {!Issue_Type_AllChoices}, 
+IF ( AND( {!varShowEnhancement}=true, {!varShowQuestion} = false ), {!Issue_Type_Enhancement},
+IF ( AND( {!varShowEnhancement}=false, {!varShowQuestion} = true ), {!Issue_Type_Question},
+{!Issue_Type_IssueOnly} )))</expression>
+    </formulas>
+    <formulas>
+        <name>isSandbox</name>
+        <dataType>Boolean</dataType>
+        <expression>CONTAINS({!$User.Username},&apos;@imaginecommunications.com.test&apos;)</expression>
+    </formulas>
+    <formulas>
+        <name>ReproduciableText</name>
+        <dataType>String</dataType>
+        <expression>IF ({!varReproducible}, {!ReproduceText}, &quot;&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>returnResolutionDateSLA</name>
+        <dataType>Date</dataType>
+        <expression>DATEVALUE({!CaseRecord.Resolution_Milestone_Target_Date__c})</expression>
+    </formulas>
+    <formulas>
+        <description>because nobody can agree some products want the case number in the subject and some dont!</description>
+        <name>returnSubjectDefaultValue</name>
+        <dataType>String</dataType>
+        <expression>IF ( ISPICKVAL({!CaseRecord.Product_Line__c}, &quot;Media Software&quot;),  {!CaseRecord.CaseNumber} &amp; &quot; - &quot; &amp; {!CaseRecord.Subject}, {!CaseRecord.Subject} )</expression>
+    </formulas>
+    <formulas>
+        <name>WorkaroundFullText</name>
+        <dataType>String</dataType>
+        <expression>IF ({!varWorkaroundAvailable}, {!Workaround_Details}, &quot; &quot;)</expression>
+    </formulas>
+    <interviewLabel>Create Cloud JIRA {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Bug - Create Cloud JIRA Bug</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordCreates>
+        <name>Create_Bug_Record</name>
+        <label>Create Bug Record</label>
+        <locationX>739</locationX>
+        <locationY>2422</locationY>
+        <connector>
+            <targetReference>Bug_Created_for_Project</targetReference>
+        </connector>
+        <inputReference>BugRecord</inputReference>
+    </recordCreates>
+    <recordCreates>
+        <name>Create_Bug_Record_0</name>
+        <label>Create Bug Record</label>
+        <locationX>995</locationX>
+        <locationY>2422</locationY>
+        <inputReference>BugRecord</inputReference>
+    </recordCreates>
+    <recordLookups>
+        <name>GetCase</name>
+        <label>GetCase</label>
+        <locationX>751</locationX>
+        <locationY>185</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_Case_to_Case_Record</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>CaseId</elementReference>
+            </value>
+        </filters>
+        <object>Case</object>
+    </recordLookups>
+    <screens>
+        <name>Bug_Created_for_Project</name>
+        <label>Bug Created for Project</label>
+        <locationX>738</locationX>
+        <locationY>2542</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Versio_Guidence</name>
+            <fieldText>&lt;p&gt;We&apos;re now going to create the Salesforce Record for you.  You will still need to click&lt;b&gt; CREATE JIRA ISSUE&lt;/b&gt; once this is created.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;For type make sure you only choose Customer Issue/Question/Enhancement!  (unless instructed otherwise)&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Based on your Case we suggest this project:&lt;/p&gt;&lt;p&gt;{!varProduct} - {!DetermineJiraProjectName}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>CompleteScreen</name>
+            <fieldText>&lt;p&gt;&lt;b&gt;Click here to go to the bug record and create the bug. &lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://imaginecommunications.my.salesforce.com/{!BugRecord.Id}&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;https://imaginecommunications.my.salesforce.com/{!BugRecord.Id}&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Confirmation</name>
+        <label>Confirmation</label>
+        <locationX>995</locationX>
+        <locationY>2308</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Create_Bug_Record_0</targetReference>
+        </connector>
+        <fields>
+            <name>CreationText</name>
+            <fieldText>&lt;p&gt;We&apos;re now going to create the Salesforce Record for you.  You will still need to click&lt;b&gt; CREATE JIRA ISSUE&lt;/b&gt; once this is created.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;For type make sure you only choose Customer Issue/Question/Enhancement!  (unless instructed otherwise)&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Based on your Case we suggest this project:&lt;/p&gt;&lt;p&gt;{!varProduct} - {!DetermineJiraProjectName}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Request_Information</name>
+        <label>Request Information</label>
+        <locationX>870</locationX>
+        <locationY>993</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Get_Record_Type</targetReference>
+        </connector>
+        <fields>
+            <name>Issue_Type_IssueOnly</name>
+            <choiceReferences>CustomerIssueChoice</choiceReferences>
+            <dataType>String</dataType>
+            <defaultSelectedChoiceReference>CustomerIssueChoice</defaultSelectedChoiceReference>
+            <fieldText>Issue Type</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>varShowEnhancement</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>varShowQuestion</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>Issue_Type_Enhancement</name>
+            <choiceReferences>CustomerIssueChoice</choiceReferences>
+            <choiceReferences>CustomerEnhancementChoice</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Issue Type</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>varShowEnhancement</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>varShowQuestion</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>Issue_Type_Question</name>
+            <choiceReferences>CustomerIssueChoice</choiceReferences>
+            <choiceReferences>CustomerQuestionChoice</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Issue Type</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>varShowQuestion</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>varShowEnhancement</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>Issue_Type_AllChoices</name>
+            <choiceReferences>CustomerIssueChoice</choiceReferences>
+            <choiceReferences>CustomerQuestionChoice</choiceReferences>
+            <choiceReferences>CustomerEnhancementChoice</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Issue Type</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>varShowEnhancement</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>varShowQuestion</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>Affects_Version</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>CaseRecord.Reported_Version__c</elementReference>
+            </defaultValue>
+            <fieldText>Affects Version</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>CaseRecord.Product_Class__r.Service_Product_Family__c</leftValueReference>
+                    <operator>NotEqualTo</operator>
+                    <rightValue>
+                        <stringValue>OSI</stringValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>Title_Subject</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>returnSubjectDefaultValue</elementReference>
+            </defaultValue>
+            <fieldText>Title/Subject</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Description</name>
+            <fieldText>Description</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>OSI_Picklist</name>
+            <choiceReferences>OSI_Component_List</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Jira Component (OSI Only)</fieldText>
+            <fieldType>MultiSelectPicklist</fieldType>
+            <isRequired>true</isRequired>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>CaseRecord.Product_Class__r.Service_Product_Family__c</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>OSI</stringValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>Customer_Impact</name>
+            <fieldText>Customer Impact</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <helpText>&lt;p&gt;Guidelines for describing customer impact:&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;1. Current operating status: [In-operable], [With-Restriction], [Reduced-Performance]&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;2. Is Redundancy or HA components activated? [Yes/No]&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;3. If it is a transient issue –&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;    - How often the issue occurs?  &lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;    - How long does it take to recover from the issue when it occurs?  &lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;    - Does the system recover with/without manual intervention?&lt;/p&gt;&lt;p&gt;  &lt;/p&gt;&lt;p&gt;    - If manual intervention is required, describe the process and how long it takes to execute and recover.&lt;/p&gt;</helpText>
+            <isRequired>true</isRequired>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>varShowVersioText</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>Issue_Type_Enhancement</leftValueReference>
+                    <operator>NotEqualTo</operator>
+                    <rightValue>
+                        <elementReference>CustomerEnhancementChoice</elementReference>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>Request_Information_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <isRequired>false</isRequired>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>varShowVersioText</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>Request_Information_Section2</name>
+            <fieldType>RegionContainer</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <startElementReference>Make_sure_we_got_a_case</startElementReference>
+    <status>Active</status>
+    <subflows>
+        <name>Get_Record_Type</name>
+        <label>Get Record Type</label>
+        <locationX>871</locationX>
+        <locationY>1113</locationY>
+        <connector>
+            <targetReference>Make_sure_we_didn_t_fail</targetReference>
+        </connector>
+        <flowName>RecordTypeID_Lookup_Subflow</flowName>
+        <inputAssignments>
+            <name>ObjectName</name>
+            <value>
+                <stringValue>Bug__c</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>RecordTypeName</name>
+            <value>
+                <stringValue>Integrated_Jira_Cloud</stringValue>
+            </value>
+        </inputAssignments>
+        <outputAssignments>
+            <assignToReference>BugRecord.RecordTypeId</assignToReference>
+            <name>RecordTypeID15</name>
+        </outputAssignments>
+    </subflows>
+    <textTemplates>
+        <name>CommentTemplate</name>
+        <text>{!CommentsInLoop.CreatedDate} - {!CommentsInLoop.CommentBody}{!conEmptyString}
+{!conEmptyString}</text>
+    </textTemplates>
+    <textTemplates>
+        <description>not used... just keeping track of it</description>
+        <name>Product_And_JIRA_ID_Mapping</name>
+        <text>&lt;p&gt;PRODUCT AND JIRA ID MAPPING!&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&quot;Broadcast Graphics&quot;, &quot;VMGMT&quot;,&amp;nbsp;11443 &quot;Editing &amp;amp; News&quot;, &quot;VINE&quot;,&amp;nbsp;11441 &quot;Servers&quot;, &quot;VINE&quot;,&amp;nbsp;11441 &quot;Versio&quot;, &quot;VMGMT&quot;,&amp;nbsp;11443 &quot;SelenioFlex File&quot;, &quot;VPLAY&quot;,&amp;nbsp;11440 &quot;Motion&quot;, &quot;VMGMT&quot;, 11443 &quot;Insight&quot;, &quot;VMGMT&quot;, 11443 &quot;Landmark OSI&quot;, &quot;OSI&quot;,&amp;nbsp;&amp;nbsp;11348 &quot;Landmark OSI Sales&quot;, &quot;ADCON&quot;,&amp;nbsp;11444 &quot;Landmark Rights and Scheduling&quot;, &quot;LRS&quot;,&amp;nbsp;11328 &quot;Eclipse Plus&quot;, XGLT, 11232,&amp;nbsp;&amp;nbsp;&quot;xG Linear&quot;, &quot;XGLT&quot;,&amp;nbsp;&amp;nbsp;11323 &quot;Broadcast Master&quot;, &quot;BM&quot;,&amp;nbsp;10601 &quot;xG Gameplan&quot;, &quot;XGGP&quot;,&amp;nbsp;&amp;nbsp;11330,&amp;nbsp;xG Analytics, XGASC, 11325&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ReproduceText</name>
+        <text>[SYSTEM SETUP DETAILS]
+
+{!System_Setup_Details}
+
+
+[STEPS TO REPRODUCE]
+
+{!Steps_to_Reproduce}
+
+
+[EXPECTED RESULTS]
+
+{!Expected_Results}
+
+
+[ACTUAL RESULTS]
+
+{!Actual_Results}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>SendDarcieEmail</name>
+        <text>&lt;p&gt;Case:  {!CaseRecord.CaseNumber}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Jira PRoject Name:  {!varJiraProjectName}&lt;/p&gt;&lt;p&gt;Jira Project: {!varJiraProject}&lt;/p&gt;&lt;p&gt;Jira Project ID: {!varJiraProjectID}&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TextBugDetails</name>
+        <text>[ISSUE DESCRIPTION]
+{!Description}
+
+
+[CUSTOMER IMPACT]
+{!Customer_Impact}
+
+
+[FIRMWARE/SOFTWARE VERSION(S)]
+{!Affects_Version}
+
+[HOW OFTEN DOES THIS ISSUE OCCUR?]
+{!How_often_does_the_issue_occur}
+
+[IS REPRODUCIBLE?] - {!varReproducible}
+{!ReproduciableText}
+
+[IS WORKAROUND AVAILABLE?] - {!varWorkaroundAvailable}
+{!WorkaroundFullText}</text>
+    </textTemplates>
+    <variables>
+        <name>BugRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Bug__c</objectType>
+    </variables>
+    <variables>
+        <description>For Debug</description>
+        <name>CaseId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>CaseRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Case</objectType>
+    </variables>
+    <variables>
+        <name>CommentsInLoop</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>CaseComment</objectType>
+    </variables>
+    <variables>
+        <name>Component_List</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>ProjectTrue</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>UniqueId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>varAffectsVersion</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue></stringValue>
+        </value>
+    </variables>
+    <variables>
+        <name>varCommentsCombined</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varJiraProject</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue></stringValue>
+        </value>
+    </variables>
+    <variables>
+        <name>varJiraProjectID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varJiraProjectName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue></stringValue>
+        </value>
+    </variables>
+    <variables>
+        <name>varProduct</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue></stringValue>
+        </value>
+    </variables>
+    <variables>
+        <name>varReproducible</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>varResoltuionMilestoneDate</name>
+        <dataType>DateTime</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varResolutionMilestoneName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varShowEnhancement</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>varShowQuestion</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>varShowVersioText</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>varTemp</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varType</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varWorkaroundAvailable</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+</Flow>

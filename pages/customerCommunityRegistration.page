@@ -1,0 +1,196 @@
+<apex:page showHeader="False" id="customerCommunityLogin" docType="html-5.0" controller="ctlr_Registration" standardStylesheets="False">
+  <head lang="en">
+    <!-- TODO: IMPORT BOOTSTRAP AND BOOTSTRAP JQUERY TO STATIC RESOURCES -->
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Imagine Communications - {!$Site.Name}</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'/>
+    <!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.css"/> -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet"/>
+    <apex:stylesheet value="{!URLFOR($Resource.semantic,'packaged/css/semantic.css')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.semantic,'packaged/javascript/jquery-2.1.0.min.js')}"/>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <apex:includeScript value="{!URLFOR($Resource.semantic,'packaged/javascript/semantic.min.js')}"/>
+  </head>   
+  <body>
+    <style>
+      .colorBar{
+        background-repeat: repeat-x;
+        background-image: url("{!URLFOR($Resource.ImagineColorbar)}");
+        height: 10px;
+      }
+      #header{
+        margin-bottom: 5px;
+      }
+      #registrationBanner{
+        background: url("{!URLFOR($Resource.ImagineFeatureRegistration)}"); 
+        background-size: 100% auto; 
+        background-repeat: no-repeat;
+        height: 140px;
+      }
+      #registrationTitle{
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      /*#registrationDescription{
+        text-align: center;
+        margin-bottom: 20px;
+      }*/
+      .form-group {
+        margin-bottom: 80px !important;
+        padding-bottom: 5px !important;
+      }
+      #registrationLogin{
+        text-align: center;
+        margin: 20px;
+      }
+
+      #registrationLogin a {
+        color: #ddd;
+      }
+      #registrationButton{
+        text-align: center;
+      }
+      #passwordDescription{
+        text-align: center;
+      }
+      #snDescription{
+        text-align: center;
+      }
+
+      html,
+      body {
+        margin:0;
+        padding:0;
+        height:100%;
+        background-color: #4e76a1;
+      }
+      #wrapper {
+        min-height:100%;
+        position:relative;
+      }
+      #content {
+        padding-bottom:50px;   /* Height of the footer element */
+      }
+      #footer {
+        width:100%;
+        height:50px;
+        position:absolute;
+        bottom:0;
+        left:0;
+      }
+
+      .self-reg {
+        background-color: #6f9dce; 
+      }
+
+      .logo {
+        width: 200px;
+        margin: 0px auto;
+      }
+
+      .input-container {
+        margin-bottom: 10px;
+        padding: 12px;
+        background-color: #ffffff;
+        border: 1px solid #ccc;
+        border-radius: 2px;
+      }
+
+      .input-box {
+        margin-left: 10px;
+        margin-top: 3px;
+        border: 0 solid transparent;
+        width: 80%;
+        -webkit-appearance: none;
+      }
+
+      .sign-up {
+        display: inline-block;
+        text-align: center;
+        width: 100%;
+        background-color: #4e76a1;
+        color: white;
+        border: none;
+        height: 50px;
+        line-height: 50px;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .sign-up:hover {
+        background-color: white;
+        color: #4e76a1;
+      }
+
+      .spacer {
+        height: 30px;
+      }
+
+      .item a {
+        color: #bbb;
+      }
+
+    </style>
+    <div id="wrapper">
+      <div class="spacer">&nbsp;</div>
+      <div id="content">
+        <div class="container-fluid">
+          <div class="row">
+              <div class="col-sm-4 col-sm-offset-4 text-center self-reg">
+                <div class="row">
+                  <div class="col-md-12 text-center" style="margin:20px 0px">
+                    <img src="{!URLFOR($Resource.ImagineLogoTransparent)}" class="logo" />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 text-center">
+                    Welcome to our new customer community! Your previous login will still work here.<br/><br/>
+                    No login? Sign up to receive personalized information and customer support
+                  </div>
+                </div>
+                <div class="spacer">&nbsp;</div>
+                <div class="row">
+                  <apex:form >
+                    <div class="col-md-12">
+                      <apex:pageMessages />
+                      <div class="input-container">
+                        <i class="glyphicon glyphicon-user"></i>
+                        <apex:inputText value="{!firstName}" styleClass="input-box" html-placeholder="First Name"/>
+                      </div>
+                      <div class="input-container">
+                        <i class="glyphicon glyphicon-user"></i>
+                        <apex:inputText value="{!lastName}" styleClass="input-box" html-placeholder="Last Name"/>
+                      </div>
+                      <div class="input-container">
+                        <i class="glyphicon glyphicon-envelope"></i>
+                        <apex:inputText value="{!email}" styleClass="input-box" html-placeholder="Email"/>
+                      </div>
+                      <div class="input-container">
+                        <i class="glyphicon glyphicon-briefcase"></i>
+                        <apex:inputText value="{!company}" styleClass="input-box" html-placeholder="Company"/>
+                      </div>
+                      <div class="input-container">
+                        <i class="glyphicon glyphicon-user"></i>
+                        <apex:inputText value="{!nickname}" styleClass="input-box" html-placeholder="Nickname"/>
+                      </div>
+                      <div>
+                        <apex:commandButton action="{!registerUser}" styleClass="sign-up" value="Sign Up" id="submit"/>
+                      </div>
+                      <div id="registrationLogin">
+                        <a href="{!loginUrl}">Already have an account?</a>
+                      </div>
+                    </div>
+                  </apex:form>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div id="footer">
+        <c:PartnerHomeFooter ></c:PartnerHomeFooter>
+      </div>
+    </div>
+  </body>
+</apex:page>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <name>Clear_Reason_Field</name>
+        <label>Clear Reason Field</label>
+        <locationX>181</locationX>
+        <locationY>300</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Reason_For_Overrunning_Budget_Hours__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Record</targetReference>
+        </connector>
+    </assignments>
+    <description>runs nightly to clear the value of overrun reason when the exceeded hours is no longer true</description>
+    <interviewLabel>Project Task - Clear Overrun Reason {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Project Task - Clear Overrun Reason</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Record</name>
+        <label>Update Record</label>
+        <locationX>182</locationX>
+        <locationY>440</locationY>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <startElementReference>Clear_Reason_Field</startElementReference>
+    <status>Active</status>
+</Flow>

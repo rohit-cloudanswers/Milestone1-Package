@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Case Status History</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Case Status Histories</value>
+    </caseValues>
+    <fields>
+        <label><!-- Case --></label>
+        <name>Case__c</name>
+        <relationshipLabel><!-- Case Status Histories --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Closed DateTime --></label>
+        <name>Closed_DateTime__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates whether the SLA clock is stopped during this status or not. --></help>
+        <label><!-- IsStopped --></label>
+        <name>IsStopped__c</name>
+    </fields>
+    <fields>
+        <label><!-- Old Status Detail --></label>
+        <name>Old_Status_Detail__c</name>
+    </fields>
+    <fields>
+        <label><!-- Previous Status --></label>
+        <name>Previous_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- RawMinutesInStatus --></label>
+        <name>RawMinutesInStatus__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status Changed --></label>
+        <name>Status_Changed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status Detail --></label>
+        <name>Status_Detail__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

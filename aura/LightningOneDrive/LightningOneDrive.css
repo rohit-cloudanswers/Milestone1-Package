@@ -1,0 +1,26 @@
+.THIS .od_panel-heading {
+    background-color: rgba(0, 112, 210, 1.0) !important;
+    color: white;
+}
+.THIS .od_panel-body {
+    max-height: 300px;
+    border: 1px solid rgba(0, 112, 210, 1.0) !important;
+}
+.THIS .od_panel-heading .slds-button {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+    line-height: 1.5rem !important;
+}
+.THIS .od_panel-heading .slds-button_inverse:hover {
+	color: yellowgreen;
+    border-color: yellowgreen;
+}
+.THIS .od_panel-heading .slds-button_inverse:focus {
+	color: yellowgreen;
+    border-color: yellowgreen;
+}
+.THIS .slds-item .slds-button {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+    line-height: 1.125rem !important;
+}

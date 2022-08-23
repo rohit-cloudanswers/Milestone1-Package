@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>The opposite of disabling.  checks for sanctioned flag on contact record and re-enables the portal account.  EDIT THIS TO AVOID ACCOUNT LOOP.  Use MAS instead.</description>
+    <masterLabel>TEMP - Enable Sanctioned Portal Users</masterLabel>
+</FlowDefinition>

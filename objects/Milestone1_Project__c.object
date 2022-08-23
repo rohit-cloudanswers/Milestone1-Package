@@ -1,0 +1,1822 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object is a replica of the Old Project object(Miilestone1 Unmanaged package)</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>ProForce Dev 091514, 
+dp 10/10/14 renamed &quot;Project Account&quot; to &quot;Corporate Customer&quot;.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Account</inlineHelpText>
+        <label>Corporate Customer</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>Projects2_2</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Box_Share_URL__c</fullName>
+        <description>Box URL added for service user who don&apos;t have Box access.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Box attachments Share URL. Requires that Project Manager add this shared link using Box sharing rules and copies it into this field.</inlineHelpText>
+        <label>Box Share URL</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Budget_Icon__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL(Budget__c, &quot;Green&quot;), IMAGE(&quot;/img/msg_icons/confirm16.png&quot;,&quot;Green&quot;), 
+IF( ISPICKVAL(Budget__c, &quot;Red&quot;), IMAGE(&quot;/img/msg_icons/error16.png&quot;,&quot;Red&quot;), 
+IF( ISPICKVAL(Budget__c, &quot;Yellow&quot;), IMAGE(&quot;/img/msg_icons/warning16.png&quot;,&quot;Yellow&quot;), 
+IMAGE(&quot;/img/msg_icons/info16.png&quot;,&quot;Blue&quot;))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Budget Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Budget_Reason__c</fullName>
+        <description>ProForce Dev 091514</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Budget Reason</inlineHelpText>
+        <label>Budget Reason</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Budget_Status_Reporting__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL(Budget__c, &quot;Green&quot;), &quot;Green&quot;, 
+IF( ISPICKVAL(Budget__c, &quot;Red&quot;), &quot;Red&quot;, 
+IF( ISPICKVAL(Budget__c, &quot;Yellow&quot;), &quot;Yellow&quot;, 
+&quot;Blue&quot;)))</formula>
+        <label>Budget Status Reporting</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Budget__c</fullName>
+        <externalId>false</externalId>
+        <label>Budget</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Green</fullName>
+                    <default>false</default>
+                    <label>Green</label>
+                </value>
+                <value>
+                    <fullName>Yellow</fullName>
+                    <default>false</default>
+                    <label>Yellow</label>
+                </value>
+                <value>
+                    <fullName>Red</fullName>
+                    <default>false</default>
+                    <label>Red</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Closed_CARE__c</fullName>
+        <externalId>false</externalId>
+        <label>Closed CARE</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Closed_Hardware_Distribution__c</fullName>
+        <externalId>false</externalId>
+        <label>Closed Distribution Products</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Closed_Hardware_Media__c</fullName>
+        <externalId>false</externalId>
+        <label>Closed Media Products</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Closed_Hardware_Networking__c</fullName>
+        <externalId>false</externalId>
+        <label>Closed Networking Products</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Closed_Hardware_Playout__c</fullName>
+        <externalId>false</externalId>
+        <label>Closed Playout Products</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Closed_Professional_Services__c</fullName>
+        <externalId>false</externalId>
+        <label>Closed Professional Services</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Country_Id__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.Shipping_Country__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Country Id</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Country__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>ProForce Dev 091514</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Country</inlineHelpText>
+        <label>Country</label>
+        <referenceTo>Country__c</referenceTo>
+        <relationshipName>Projects2</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Deadline__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The date by which the project is scheduled to be completed by.</inlineHelpText>
+        <label>Deadline</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>A general description of the project.</inlineHelpText>
+        <label>Project Description</label>
+        <length>5000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Duration__c</fullName>
+        <externalId>false</externalId>
+        <formula>Deadline__c - Kickoff__c + 1</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Number of days between Kickoff and Deadline.</inlineHelpText>
+        <label>Duration</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>End_User_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>10/10/14 - Professional Services Project dp</description>
+        <externalId>false</externalId>
+        <inlineHelpText>End User Account</inlineHelpText>
+        <label>End User Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>Projects1_2</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Final_Rev_Rec_Date__c</fullName>
+        <description>ProForce Dev 0911514</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Final Rev Rec Date</inlineHelpText>
+        <label>Final Rev Rec Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>FolderId__c</fullName>
+        <description>ProForce dev 091514</description>
+        <externalId>false</externalId>
+        <label>FolderId</label>
+        <length>18</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GoogleGanntUrl__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Calculated.</inlineHelpText>
+        <label>GoogleGanntUrl</label>
+        <length>32000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ImportID__c</fullName>
+        <externalId>false</externalId>
+        <label>Import ID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Initial_Template__c</fullName>
+        <description>ProForce Dev 091514</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Initial Template</inlineHelpText>
+        <label>Initial Template</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Small</fullName>
+                    <default>false</default>
+                    <label>Small</label>
+                </value>
+                <value>
+                    <fullName>Medium</fullName>
+                    <default>false</default>
+                    <label>Medium</label>
+                </value>
+                <value>
+                    <fullName>Large</fullName>
+                    <default>false</default>
+                    <label>Large</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Instructions_to_the_Supply_Chain_Team__c</fullName>
+        <description>Instructions to the Supply Chain Team</description>
+        <externalId>false</externalId>
+        <label>Instructions to the Supply Chain Team</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Issues_Tracker_URL__c</fullName>
+        <description>Issues Tracker URL</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Issues Tracker URL</inlineHelpText>
+        <label>Issues Tracker URL</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Kickoff__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>What date should this project start?</inlineHelpText>
+        <label>Kickoff</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Latest_Arrival_Onsite_Date__c</fullName>
+        <description>Latest Arrival Onsite Date</description>
+        <externalId>false</externalId>
+        <label>Latest Arrival Onsite Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Media_USD__c</fullName>
+        <description>proforce Dev 091514</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Media USD Rollup</inlineHelpText>
+        <label>Media USD</label>
+        <summarizedField>Order__c.Media__c</summarizedField>
+        <summaryForeignKey>Order__c.Old_Project__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Networking_USD__c</fullName>
+        <description>ProForce Dev 091514</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Networking USD</inlineHelpText>
+        <label>Networking USD</label>
+        <summarizedField>Order__c.Networking__c</summarizedField>
+        <summaryForeignKey>Order__c.Old_Project__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Next_Project_Milestone_Due_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Calculated as the next incomplete task with a due date in this project. This includes sub-milestones.</inlineHelpText>
+        <label>Next Project Milestone Due Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Next_Project_Top_Milestone_Due_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The next incomplete milestone due date. This does not include sub-milestones.</inlineHelpText>
+        <label>Next Project Top Milestone Due Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Number_of_Incomplete_Milestones__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Calculated sum of the number of incomplete milestones assigned to this project. This includes sub-milestones in the project.</inlineHelpText>
+        <label>Number of Incomplete Milestones</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Number_of_Incomplete_Top_Milestones__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The number of incomplete milestones that are in this project. This does not count sub-milestones.</inlineHelpText>
+        <label>Number of Incomplete Top Milestones</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OneDrive_Folder_Id__c</fullName>
+        <externalId>false</externalId>
+        <label>OneDrive Folder Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Open_CARE__c</fullName>
+        <externalId>false</externalId>
+        <label>Open CARE</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Open_Hardware_Distribution__c</fullName>
+        <externalId>false</externalId>
+        <label>Open Distribution Products</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Open_Hardware_Media__c</fullName>
+        <externalId>false</externalId>
+        <label>Open Media Products</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Open_Hardware_Networking__c</fullName>
+        <externalId>false</externalId>
+        <label>Open Networking Products</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Open_Hardware_Playout__c</fullName>
+        <externalId>false</externalId>
+        <label>Open Playout Products</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Open_Professional_Services__c</fullName>
+        <externalId>false</externalId>
+        <label>Open Professional Services</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opp_Account_Name_Link__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;https://na15.salesforce.com/&quot; &amp;  Opportunity__r.AccountId , Opportunity_Account_Name__c, &apos;_self&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opportunity Account Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Account_Name__c</fullName>
+        <description>ProForce Dev 091415</description>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.Account.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Opportunity Account Name</inlineHelpText>
+        <label>Opportunity Account Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Product initiated  from an opportunity</description>
+        <externalId>false</externalId>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipName>Projects2</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Oracle_Project_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Oracle Project Code</label>
+        <length>30</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Over_All_Project_Health_Reporting__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL(Scope__c, &quot;Red&quot;),&quot;RED&quot;, 
+IF( ISPICKVAL(Schedule__c, &quot;Red&quot;),&quot;RED&quot;, 
+IF( ISPICKVAL(Budget__c, &quot;Red&quot;),&quot;RED&quot;, 
+IF( ISPICKVAL(Risk__c, &quot;Red&quot;), &quot;RED&quot;, 
+IF( ISPICKVAL(Schedule__c, &quot;Yellow&quot;),&quot;YELLOW&quot;, 
+IF( ISPICKVAL(Scope__c, &quot;Yellow&quot;),&quot;YELLOW&quot;, 
+IF( ISPICKVAL(Budget__c, &quot;Yellow&quot;),&quot;YELLOW&quot;, 
+IF( ISPICKVAL(Risk__c, &quot;Yellow&quot;),&quot;YELLOW&quot;, 
+IF( ISPICKVAL(Scope__c, &quot;Green&quot;),&quot;GREEN&quot;, 
+IF( ISPICKVAL(Schedule__c, &quot;Green&quot;), &quot;GREEN&quot;, 
+IF( ISPICKVAL(Budget__c, &quot;Green&quot;), &quot;GREEN&quot;, 
+IF( ISPICKVAL(Risk__c, &quot;Green&quot;), &quot;GREEN&quot;, 
+&quot;BLUE&quot;))))))))))))</formula>
+        <label>Over All Project Health Reporting</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PM_Orig_Rev_Rec_Date__c</fullName>
+        <description>ProForce Dev 091514</description>
+        <externalId>false</externalId>
+        <inlineHelpText>PM Original Rev Rec Date</inlineHelpText>
+        <label>PM Orig Completion Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PM_Reason_Revised_Rev_Rec_Date__c</fullName>
+        <description>Brief update on current status and description of any obstacle or risks to completion.  Changed from PM Reason Revised on 3/2/18 at the request of the proforce team.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Brief status of project needs to complete and description of any obstacle or risks to completion or ability to recognize revenue.  Detail all necessary items for getting sign off.</inlineHelpText>
+        <label>Project Status &amp; Rev Rec Impact</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>PM_Revised_Rev_Rec_Date__c</fullName>
+        <description>ProForce Dev 091514</description>
+        <externalId>false</externalId>
+        <inlineHelpText>PM Revised Rev Rec Date</inlineHelpText>
+        <label>PM Revised Completion Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PM_Type_of_Revision__c</fullName>
+        <description>Provides the reason we had to revise the completion date.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Provides the reason we had to revise the completion date.</inlineHelpText>
+        <label>PM Type of Revision</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Customer</fullName>
+                    <default>false</default>
+                    <label>Customer</label>
+                </value>
+                <value>
+                    <fullName>Product Quality/Delivery</fullName>
+                    <default>false</default>
+                    <label>Product Quality/Delivery</label>
+                </value>
+                <value>
+                    <fullName>PS Delivery</fullName>
+                    <default>false</default>
+                    <label>PS Delivery</label>
+                </value>
+                <value>
+                    <fullName>3rd Party Issue</fullName>
+                    <default>false</default>
+                    <label>3rd Party Issue</label>
+                </value>
+                <value>
+                    <fullName>Payment</fullName>
+                    <default>false</default>
+                    <label>Payment</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Parent_Project__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Parent Project</label>
+        <referenceTo>Milestone1_Project__c</referenceTo>
+        <relationshipName>Projects2</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PlayOut_USD__c</fullName>
+        <description>ProForce Dev</description>
+        <externalId>false</externalId>
+        <inlineHelpText>PlayOut USD rollup</inlineHelpText>
+        <label>PlayOut USD</label>
+        <summarizedField>Order__c.Playout__c</summarizedField>
+        <summaryForeignKey>Order__c.Old_Project__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Power_of_One__c</fullName>
+        <externalId>false</externalId>
+        <formula>1</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Project Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_Health__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL(Scope__c, &quot;Red&quot;), IMAGE(&quot;/img/msg_icons/error32.png&quot;,&quot;Red&quot;),  
+IF( ISPICKVAL(Schedule__c, &quot;Red&quot;), IMAGE(&quot;/img/msg_icons/error32.png&quot;,&quot;Red&quot;), 
+IF( ISPICKVAL(Budget__c, &quot;Red&quot;), IMAGE(&quot;/img/msg_icons/error32.png&quot;,&quot;Red&quot;),
+IF( ISPICKVAL(Risk__c, &quot;Red&quot;), IMAGE(&quot;/img/msg_icons/error32.png&quot;,&quot;Red&quot;),
+IF( ISPICKVAL(Schedule__c, &quot;Yellow&quot;), IMAGE(&quot;/img/msg_icons/warning32.png&quot;,&quot;Yellow&quot;), 
+IF( ISPICKVAL(Scope__c, &quot;Yellow&quot;), IMAGE(&quot;/img/msg_icons/warning32.png&quot;,&quot;Yellow&quot;),
+IF( ISPICKVAL(Budget__c, &quot;Yellow&quot;), IMAGE(&quot;/img/msg_icons/warning32.png&quot;,&quot;Yellow&quot;), 
+IF( ISPICKVAL(Risk__c, &quot;Yellow&quot;), IMAGE(&quot;/img/msg_icons/warning32.png&quot;,&quot;Yellow&quot;), 
+IF( ISPICKVAL(Scope__c, &quot;Green&quot;), IMAGE(&quot;/img/msg_icons/confirm32.png&quot;,&quot;Green&quot;), 
+IF( ISPICKVAL(Schedule__c, &quot;Green&quot;), IMAGE(&quot;/img/msg_icons/confirm32.png&quot;,&quot;Green&quot;), 
+IF( ISPICKVAL(Budget__c, &quot;Green&quot;), IMAGE(&quot;/img/msg_icons/confirm32.png&quot;,&quot;Green&quot;), 
+IF( ISPICKVAL(Risk__c, &quot;Green&quot;), IMAGE(&quot;/img/msg_icons/confirm32.png&quot;,&quot;Green&quot;), 
+IMAGE(&quot;/img/msg_icons/info32.png&quot;,&quot;Blue&quot;)))))))))))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Over All Project Health</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_Number__c</fullName>
+        <description>Project Number</description>
+        <displayFormat>{000000000}</displayFormat>
+        <externalId>false</externalId>
+        <inlineHelpText>Project Number</inlineHelpText>
+        <label>Project Number</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>Project_Stage__c</fullName>
+        <description>ProForce Dev 091514</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Project Stage</inlineHelpText>
+        <label>Project Stage</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Opportunity</fullName>
+                    <default>false</default>
+                    <label>Opportunity</label>
+                </value>
+                <value>
+                    <fullName>Planning</fullName>
+                    <default>false</default>
+                    <label>Planning</label>
+                </value>
+                <value>
+                    <fullName>Scheduled</fullName>
+                    <default>false</default>
+                    <label>Scheduled</label>
+                </value>
+                <value>
+                    <fullName>Execution</fullName>
+                    <default>false</default>
+                    <label>Execution</label>
+                </value>
+                <value>
+                    <fullName>Acceptance Pending</fullName>
+                    <default>false</default>
+                    <label>Acceptance Pending</label>
+                </value>
+                <value>
+                    <fullName>Invoice pending</fullName>
+                    <default>false</default>
+                    <label>Invoice pending</label>
+                </value>
+                <value>
+                    <fullName>On Hold</fullName>
+                    <default>false</default>
+                    <label>On Hold</label>
+                </value>
+                <value>
+                    <fullName>Complete</fullName>
+                    <default>false</default>
+                    <label>Complete</label>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                    <label>Cancelled</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Project_Type__c</fullName>
+        <description>ProForce Dev 091514</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Project Type</inlineHelpText>
+        <label>Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Media</fullName>
+                    <default>false</default>
+                    <label>Media</label>
+                </value>
+                <value>
+                    <fullName>Networking</fullName>
+                    <default>false</default>
+                    <label>Networking</label>
+                </value>
+                <value>
+                    <fullName>Playout</fullName>
+                    <default>false</default>
+                    <label>Playout</label>
+                </value>
+                <value>
+                    <fullName>Deferred</fullName>
+                    <default>false</default>
+                    <label>Deferred</label>
+                </value>
+                <value>
+                    <fullName>POC</fullName>
+                    <default>false</default>
+                    <label>POC</label>
+                </value>
+                <value>
+                    <fullName>Support Billable</fullName>
+                    <default>false</default>
+                    <label>Support Billable</label>
+                </value>
+                <value>
+                    <fullName>Percent Complete</fullName>
+                    <default>false</default>
+                    <label>Percent Complete</label>
+                </value>
+                <value>
+                    <fullName>Milestone Billing</fullName>
+                    <default>false</default>
+                    <label>Milestone Billing</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Quote__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Professional Service Project from Quote</inlineHelpText>
+        <label>Quote</label>
+        <referenceTo>Quote</referenceTo>
+        <relationshipName>Projects2</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Region_del__c</fullName>
+        <externalId>false</externalId>
+        <formula>Country__r.Global_Region__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Region</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Related_Service_Contract__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Related Service Contract</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Related Service Contract</inlineHelpText>
+        <label>Related Service Contract</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>ServiceContract.AccountId</field>
+                <operation>equals</operation>
+                <valueField>$Source.End_User_Account__c</valueField>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>ServiceContract</referenceTo>
+        <relationshipName>Projects2</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Revised_Arrival_Onsite_Date__c</fullName>
+        <description>Revised Arrival Onsite Date</description>
+        <externalId>false</externalId>
+        <label>Revised Arrival Onsite Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Risk_Icon__c</fullName>
+        <description>Proforce Dev 091514</description>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL(Risk__c, &quot;Green&quot;), IMAGE(&quot;/img/msg_icons/confirm16.png&quot;,&quot;Green&quot;), 
+IF( ISPICKVAL(Risk__c, &quot;Red&quot;), IMAGE(&quot;/img/msg_icons/error16.png&quot;,&quot;Red&quot;), 
+IF( ISPICKVAL(Risk__c, &quot;Yellow&quot;), IMAGE(&quot;/img/msg_icons/warning16.png&quot;,&quot;Yellow&quot;), 
+IMAGE(&quot;/img/msg_icons/info16.png&quot;,&quot;Blue&quot;))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Risk Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Risk_Reason__c</fullName>
+        <description>ProForce Dev 091514</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Risk Reason</inlineHelpText>
+        <label>Risk Reason</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Risk_Status_Reporting__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL(Risk__c, &quot;Green&quot;), &quot;Green&quot;, 
+IF( ISPICKVAL(Risk__c, &quot;Red&quot;),&quot;Red&quot;, 
+IF( ISPICKVAL(Risk__c, &quot;Yellow&quot;),&quot;Yellow&quot;, 
+&quot;Blue&quot;)))</formula>
+        <label>Risk Status Reporting</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Risk__c</fullName>
+        <description>Proforce Dev 091914</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Risk</inlineHelpText>
+        <label>Risk</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Green</fullName>
+                    <default>false</default>
+                    <label>Green</label>
+                </value>
+                <value>
+                    <fullName>Yellow</fullName>
+                    <default>false</default>
+                    <label>Yellow</label>
+                </value>
+                <value>
+                    <fullName>Red</fullName>
+                    <default>false</default>
+                    <label>Red</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SP_Folder_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>&quot;PRJ &quot; &amp; Name &amp; &quot; &quot; &amp; Project_Number__c</formula>
+        <label>SP Folder Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Salesforce_Id__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASESAFEID(Id)</formula>
+        <label>Salesforce Id</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Schedule_Icon__c</fullName>
+        <description>ProForce Dev 091514</description>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL(Schedule__c, &quot;Green&quot;), IMAGE(&quot;/img/msg_icons/confirm16.png&quot;,&quot;Green&quot;), 
+IF( ISPICKVAL(Schedule__c, &quot;Red&quot;), IMAGE(&quot;/img/msg_icons/error16.png&quot;,&quot;Red&quot;), 
+IF( ISPICKVAL(Schedule__c, &quot;Yellow&quot;), IMAGE(&quot;/img/msg_icons/warning16.png&quot;,&quot;Yellow&quot;), 
+IMAGE(&quot;/img/msg_icons/info16.png&quot;,&quot;Blue&quot;))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Schedule Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Schedule_Reason__c</fullName>
+        <description>ProForce Dev 091514</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Schedule Reason</inlineHelpText>
+        <label>Schedule Reason</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Schedule_Status_Reporting__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL(Schedule__c, &quot;Green&quot;), &quot;Green&quot;, 
+IF( ISPICKVAL(Schedule__c, &quot;Red&quot;), &quot;Red&quot;, 
+IF( ISPICKVAL(Schedule__c, &quot;Yellow&quot;), &quot;Yellow&quot;, 
+&quot;Blue&quot;)))</formula>
+        <label>Schedule Status Reporting</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Schedule__c</fullName>
+        <description>ProForce Dev 091514</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Schedule</inlineHelpText>
+        <label>Schedule</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Green</fullName>
+                    <default>false</default>
+                    <label>Green</label>
+                </value>
+                <value>
+                    <fullName>Yellow</fullName>
+                    <default>false</default>
+                    <label>Yellow</label>
+                </value>
+                <value>
+                    <fullName>Red</fullName>
+                    <default>false</default>
+                    <label>Red</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Scope_Icon__c</fullName>
+        <description>ProForce Dev 091514</description>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL(Scope__c, &quot;Green&quot;), IMAGE(&quot;/img/msg_icons/confirm16.png&quot;,&quot;Green&quot;), 
+IF( ISPICKVAL(Scope__c, &quot;Red&quot;), IMAGE(&quot;/img/msg_icons/error16.png&quot;,&quot;Red&quot;), 
+IF( ISPICKVAL(Scope__c, &quot;Yellow&quot;), IMAGE(&quot;/img/msg_icons/warning16.png&quot;,&quot;Yellow&quot;), 
+IMAGE(&quot;/img/msg_icons/info16.png&quot;,&quot;Blue&quot;))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Scope Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Scope_Reason__c</fullName>
+        <description>ProForce Dev 091514</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Scope Reason</inlineHelpText>
+        <label>Scope Reason</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Scope_Status_Reporting__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL(Scope__c, &quot;Green&quot;), &quot;Green&quot;, 
+IF( ISPICKVAL(Scope__c, &quot;Red&quot;), &quot;Red&quot;, 
+IF( ISPICKVAL(Scope__c, &quot;Yellow&quot;), &quot;Yellow&quot;, 
+&quot;Blue&quot;)))</formula>
+        <label>Scope Status Reporting</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Scope__c</fullName>
+        <description>ProForce Dev 091514</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Scope</inlineHelpText>
+        <label>Scope</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Green</fullName>
+                    <default>false</default>
+                    <label>Green</label>
+                </value>
+                <value>
+                    <fullName>Yellow</fullName>
+                    <default>false</default>
+                    <label>Yellow</label>
+                </value>
+                <value>
+                    <fullName>Red</fullName>
+                    <default>false</default>
+                    <label>Red</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Service_USD__c</fullName>
+        <description>Proforce Dev 091514</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Service USD Rollup</inlineHelpText>
+        <label>Service USD</label>
+        <summarizedField>Order__c.Service__c</summarizedField>
+        <summaryForeignKey>Order__c.Old_Project__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Status_BudgetExpenseSummary__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Total_Expense_Budget__c &gt; 0,
+IMAGE(
+&quot;http://chart.apis.google.com/chart?chtt=Task+Expense+Budget+Analysis&amp;&quot; &amp;
+&quot;chxr=0,0,&quot; &amp; Text(max( Total_Expense_Budget__c,Total_Expense_Budget_from_Milestones__c,Total_Expense_Estimate__c, Total_Expense_Incurred__c)) &amp; &quot;&amp;&quot; &amp;
+&quot;chxt=y&amp;chbh=a&amp;chs=300x225&amp;cht=bvg&amp;&quot;&amp;
+&quot;chco=2299bb,eeaa66,ee3322,666666&amp;&amp;&quot;&amp;
+&quot;chdl=&quot;&amp;
+&quot;Budget (&quot; &amp; TEXT(Total_Expense_Budget__c) &amp; &quot;)&quot;&amp;
+&quot;|Planned (&quot; &amp; TEXT(Total_Expense_Budget_from_Milestones__c) &amp; &quot;)&quot;&amp;
+&quot;|Estimated (&quot; &amp; TEXT(Total_Expense_Estimate__c) &amp; &quot;)&quot;&amp;
+&quot;|Incurred (&quot; &amp; TEXT(Total_Expense_Incurred__c) &amp; &quot;)&quot;&amp;
+&quot;&amp;chd=t:&quot;&amp;
+TEXT( Total_Expense_Budget__c / max( Total_Expense_Budget__c,Total_Expense_Budget_from_Milestones__c,Total_Expense_Estimate__c, Total_Expense_Incurred__c) * 100 )&amp;&quot;|&quot;&amp; 
+TEXT( Total_Expense_Budget_from_Milestones__c / max( Total_Expense_Budget__c,Total_Expense_Budget_from_Milestones__c,Total_Expense_Estimate__c, Total_Expense_Incurred__c) * 100)  &amp;&quot;|&quot; &amp; 
+TEXT( Total_Expense_Estimate__c / max( Total_Expense_Budget__c,Total_Expense_Budget_from_Milestones__c,Total_Expense_Estimate__c, Total_Expense_Incurred__c) * 100 ) &amp;&quot;|&quot; &amp; 
+TEXT(  Total_Expense_Incurred__c / max( Total_Expense_Budget__c,Total_Expense_Budget_from_Milestones__c,Total_Expense_Estimate__c, Total_Expense_Incurred__c) * 100) 
+, &quot;Project Expense - Budget, Planned, Estimated, Incurred&quot;), &apos;&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Expense Summary - Deprecated</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status_BudgetMiletoneEstimate__c</fullName>
+        <externalId>false</externalId>
+        <formula>&quot;http://chart.apis.google.com/chart?chtt=Task+Time+Budget+Analysis&amp;&quot;&amp;
+&quot;chxr=0,0,&quot; &amp; Text(max( Total_Hours_Budget__c,Total_Hours_Budget_from_Milestones__c,Total_Hours_Estimate__c, Total_Hours_Incurred__c)) &amp; &quot;&amp;&quot; &amp;
+&quot;chxt=y&amp;chbh=a&amp;chs=300x225&amp;cht=bvg&amp;&quot;&amp;
+&quot;chco=2299bb,eeaa66,ee3322,666666&amp;&quot;&amp;
+&quot;chdl=&quot;&amp;
+&quot;Budget (&quot; &amp; TEXT(Total_Hours_Budget__c) &amp; &quot;)&quot;&amp;
+&quot;|Planned (&quot; &amp; TEXT(Total_Hours_Budget_from_Milestones__c) &amp; &quot;)&quot;&amp;
+&quot;|Estimated (&quot; &amp; TEXT(Total_Hours_Estimate__c) &amp; &quot;)&quot;&amp;
+&quot;|Incurred (&quot; &amp; TEXT(Total_Hours_Incurred__c) &amp; &quot;)&quot;&amp;
+&quot;&amp;chd=t:&quot;&amp;
+TEXT( Total_Hours_Budget__c / max( Total_Hours_Budget__c,Total_Hours_Budget_from_Milestones__c,Total_Hours_Estimate__c, Total_Hours_Incurred__c) * 100 )&amp;&quot;|&quot;&amp; 
+TEXT( Total_Hours_Budget_from_Milestones__c / max( Total_Hours_Budget__c,Total_Hours_Budget_from_Milestones__c,Total_Hours_Estimate__c, Total_Hours_Incurred__c) * 100)  &amp;&quot;|&quot; &amp; 
+TEXT( Total_Hours_Estimate__c / max( Total_Hours_Budget__c,Total_Hours_Budget_from_Milestones__c,Total_Hours_Estimate__c, Total_Hours_Incurred__c) * 100 ) &amp;&quot;|&quot; &amp; 
+TEXT(  Total_Hours_Incurred__c / max( Total_Hours_Budget__c,Total_Hours_Budget_from_Milestones__c,Total_Hours_Estimate__c, Total_Hours_Incurred__c) * 100)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Hours Summary - Deprecated</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status_Image_HoursSummary__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Total_Hours_Budget__c &gt; 0, 
+IMAGE(Status_BudgetMiletoneEstimate__c, &quot;Hours Summary: Budgeted, Planned, Estimated and Incurred.&quot;),&apos;&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Hours Summary (chart) - Deprecated</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status_Image_OpenVComplete__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Status_TasksOpenComplete__c != &apos;&apos;,
+IMAGE( Status_TasksOpenComplete__c , &quot;Open vs. Complete Tasks&quot;) , &apos;&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Open vs. Complete Tasks (chart) - Deprec</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status_Img_OpenLateBlocked__c</fullName>
+        <externalId>false</externalId>
+        <formula>IMAGE( Status_TasksOpenBlockedLate__c , &quot;Open, Late &amp; Blocked Tasks.&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Open, Late &amp; Blocked Tasks (chart) - Dep</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status_TasksOpenBlockedLate__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(max(  Total_Open_Task_Count__c ,  Total_Late_Task_Count__c  , Total_Blocked_Task_Count__c ) &gt; 0 , 
+&quot;http://chart.apis.google.com/chart?chtt=Open+Task+Analysis&amp;chxt=y&amp;chbh=a&amp;chs=300x225&amp;cht=bvg&amp;&quot;&amp;
+&quot;chxr=0,0,&quot; &amp; Text(max(  Total_Open_Task_Count__c ,  Total_Late_Task_Count__c  , Total_Blocked_Task_Count__c ))&amp;&quot;&amp;&quot;&amp;
+&quot;chco=2299bb,eeaa66,ee3322&amp;chdl=&quot;&amp;
+&quot;Open (&quot; &amp; TEXT(Total_Open_Task_Count__c) &amp; &quot;)&quot;&amp;
+&quot;|Late (&quot; &amp; TEXT(Total_Late_Task_Count__c) &amp; &quot;)&quot;&amp;
+&quot;|Blocked (&quot; &amp; TEXT(Total_Blocked_Task_Count__c) &amp; &quot;)&quot;&amp;
+&quot;&amp;chd=t:&quot;&amp; TEXT(Total_Open_Task_Count__c / max(  Total_Open_Task_Count__c ,  Total_Late_Task_Count__c  , Total_Blocked_Task_Count__c ) *100)&amp;&quot;|&quot;&amp; TEXT(Total_Late_Task_Count__c/ max(  Total_Open_Task_Count__c ,  Total_Late_Task_Count__c  , Total_Blocked_Task_Count__c ) *100) &amp;&quot;|&quot; &amp; TEXT(Total_Blocked_Task_Count__c/ max(  Total_Open_Task_Count__c ,  Total_Late_Task_Count__c  , Total_Blocked_Task_Count__c ) *100), &apos;/s.gif&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Open, Late &amp; Blocked Tasks - Deprecated</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status_TasksOpenComplete__c</fullName>
+        <externalId>false</externalId>
+        <formula>&quot;http://chart.apis.google.com/chart?&quot;&amp;
+&quot;chtt=Task+Analysis&amp;&quot;&amp;
+&quot;chco=eeaa66,2299bb&amp;chs=300x225&amp;cht=p&amp;chd=t:&quot;&amp;Text(Total_Open_Task_Count__c)&amp;&quot;,&quot;&amp;Text(Total_Complete_Task_Count__c)&amp;&quot;&amp;chdl=&quot;&amp;
+&quot;Open%20Tasks (&quot; &amp; TEXT (Total_Open_Task_Count__c) &amp; &quot;)&quot;&amp;
+&quot;|Complete%20Tasks (&quot; &amp; TEXT (Total_Complete_Task_Count__c) &amp; &quot;)&quot;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Open vs. Complete Tasks - Deprecated</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The current status of the project.</inlineHelpText>
+        <label>Status</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Inactive</fullName>
+                    <default>false</default>
+                    <label>Inactive</label>
+                </value>
+                <value>
+                    <fullName>Active</fullName>
+                    <default>false</default>
+                    <label>Active</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Sub_Region_del__c</fullName>
+        <description>Proforce Dev 091415</description>
+        <externalId>false</externalId>
+        <formula>Country__r.Region__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Opportunity Account Ship to Sub-region</inlineHelpText>
+        <label>Sub-Region</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sub_Type__c</fullName>
+        <description>Intended for use in project reporting to allow greater organization</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is not a mandatory field and is intended for use in project reporting.</inlineHelpText>
+        <label>Sub-Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Customer Funded Development</fullName>
+                    <default>false</default>
+                    <label>Customer Funded Development</label>
+                </value>
+                <value>
+                    <fullName>PMO Implementation</fullName>
+                    <default>false</default>
+                    <label>PMO Implementation</label>
+                </value>
+                <value>
+                    <fullName>Internal Time Tracking</fullName>
+                    <default>false</default>
+                    <label>Internal Time Tracking</label>
+                </value>
+                <value>
+                    <fullName>Services/Support</fullName>
+                    <default>false</default>
+                    <label>Services/Support</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Total_Blocked_Task_Count__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>How many tasks associated with this project are blocked? (Calculated)</inlineHelpText>
+        <label>Total Blocked Task Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Complete_Task_Count__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>How many complete tasks are there in this project?  (Calculated.)</inlineHelpText>
+        <label>Total Complete Task Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Expense_Budget__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The total expense budget for this project.</inlineHelpText>
+        <label>Total Expense Budget</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Expense_Budget_from_Milestones__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Calculated from the milestone expense budgets assigned to this project.</inlineHelpText>
+        <label>Total Expense Budget from Milestones</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Expense_Estimate__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Calculated from expense estimates on all child milestones</inlineHelpText>
+        <label>Total Expense Estimate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Expense_Incurred__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Calculated from expense records related to tasks on all child milestones</inlineHelpText>
+        <label>Total Expense Incurred</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Hours_Budget__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The total hours budget for this project.</inlineHelpText>
+        <label>Total Hours Budget</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Hours_Budget_from_Milestones__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Calculated from hours budgets for milestones in this project.</inlineHelpText>
+        <label>Total Hours Budget from Milestones</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Hours_Estimate__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Calculated from hours estimates on all child milestones</inlineHelpText>
+        <label>Total Hours Estimate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Hours_Incurred__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Calculated from time records related to tasks on all child milestones</inlineHelpText>
+        <label>Total Hours Incurred</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Hours_Remain__c</fullName>
+        <description>Project beta 09_14</description>
+        <externalId>false</externalId>
+        <formula>Total_Hours_Estimate__c  -  Total_Hours_Incurred__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Total Hours Remaining</inlineHelpText>
+        <label>Total Hours Remain</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Late_Task_Count__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>How many tasks associated with this project are late?  (Calculated)</inlineHelpText>
+        <label>Total Late Task Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Open_Revenue__c</fullName>
+        <description>A helper field specifically for project reporting that groups up all the remaining open items.</description>
+        <externalId>false</externalId>
+        <formula>Open_Hardware_Networking__c + Open_Hardware_Playout__c  + Open_Hardware_Distribution__c + Open_Professional_Services__c +  Open_Hardware_Media__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Open Revenue</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Open_Task_Count__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>How many open tasks are there in this project? (Calculated. Includes Late and Blocked tasks.)</inlineHelpText>
+        <label>Total Open Task Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Revenue_USD__c</fullName>
+        <description>Proforce Dev 091514</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Total Revenue USD Rollup</inlineHelpText>
+        <label>Total Revenue USD</label>
+        <summarizedField>Order__c.USD_Net_Sum__c</summarizedField>
+        <summaryForeignKey>Order__c.Old_Project__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_Revenue__c</fullName>
+        <externalId>false</externalId>
+        <formula>Closed_CARE__c +  
+Closed_Hardware_Distribution__c +
+Closed_Hardware_Media__c  + 
+Closed_Hardware_Networking__c +  
+Closed_Hardware_Playout__c  + 
+Closed_Professional_Services__c +  
+Open_CARE__c +  
+Open_Hardware_Distribution__c +  
+Open_Hardware_Media__c +  
+Open_Hardware_Networking__c + 
+Open_Hardware_Playout__c + 
+Open_Professional_Services__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Revenue</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Old Project</label>
+    <nameField>
+        <label>Old Project Name</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Old Projects</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

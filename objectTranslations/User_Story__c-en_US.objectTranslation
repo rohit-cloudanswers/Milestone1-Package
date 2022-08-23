@@ -1,0 +1,1044 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>User Story</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>User Stories</value>
+    </caseValues>
+    <fields>
+        <label><!-- Actual Date --></label>
+        <name>Actual_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- User Story - Approved --></label>
+        <name>Approved__c</name>
+    </fields>
+    <fields>
+        <label><!-- As A --></label>
+        <name>As_A__c</name>
+    </fields>
+    <fields>
+        <label><!-- Assigned Project --></label>
+        <name>Assigned_Project__c</name>
+        <picklistValues>
+            <masterLabel>FUTURE</masterLabel>
+            <translation><!-- FUTURE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>July SOW</masterLabel>
+            <translation><!-- July SOW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>To Be Determined</masterLabel>
+            <translation><!-- To Be Determined --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Assigned Sprint --></label>
+        <name>Assigned_Sprint__c</name>
+        <picklistValues>
+            <masterLabel>Sprint 0</masterLabel>
+            <translation><!-- Sprint 0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sprint 1</masterLabel>
+            <translation><!-- Sprint 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sprint 2</masterLabel>
+            <translation><!-- Sprint 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sprint 3</masterLabel>
+            <translation><!-- Sprint 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sprint 4</masterLabel>
+            <translation><!-- Sprint 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sprint 5</masterLabel>
+            <translation><!-- Sprint 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sprint 6</masterLabel>
+            <translation><!-- Sprint 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sprint 7</masterLabel>
+            <translation><!-- Sprint 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sprint unknown</masterLabel>
+            <translation><!-- Sprint unknown --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waiting To Be Assigned</masterLabel>
+            <translation><!-- Waiting To Be Assigned --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Burned --></label>
+        <name>Burned__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field designates if the business stakeholders requesting the change have budget or not. --></help>
+        <label><!-- Business has Budget? --></label>
+        <name>Business_has_Budget__c</name>
+    </fields>
+    <fields>
+        <label><!-- Change --></label>
+        <name>Change__c</name>
+    </fields>
+    <fields>
+        <label><!-- Design/Solution Details --></label>
+        <name>Customization_Details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customization Required --></label>
+        <name>Customization_Required__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dependencies --></label>
+        <name>Dependencies__c</name>
+    </fields>
+    <fields>
+        <label><!-- Assigned Developer --></label>
+        <name>Developer__c</name>
+        <picklistValues>
+            <masterLabel>Etherios</masterLabel>
+            <translation><!-- Etherios --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jaime Cangas</masterLabel>
+            <translation><!-- Jaime Cangas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jeff Kurth</masterLabel>
+            <translation><!-- Jeff Kurth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kaavya Karanam</masterLabel>
+            <translation><!-- Kaavya Karanam --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mark Cowles</masterLabel>
+            <translation><!-- Mark Cowles --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Raj Damera</masterLabel>
+            <translation><!-- Raj Damera --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Raj Vooturi</masterLabel>
+            <translation><!-- Raj Vooturi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Suraj Aluru</masterLabel>
+            <translation><!-- Suraj Aluru --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Epic --></label>
+        <name>Epic__c</name>
+        <relationshipLabel><!-- User Stories --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- This field designates if the functionality described in the User Story already exists in the current Siebel CRM system. --></help>
+        <label><!-- Exists in Siebel --></label>
+        <name>Exists_in_Siebel__c</name>
+    </fields>
+    <fields>
+        <label><!-- Production Release Date --></label>
+        <name>Expected_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Functional Area --></label>
+        <name>Functional_Area__c</name>
+    </fields>
+    <fields>
+        <label><!-- Gates LOE --></label>
+        <name>Gates_LOE__c</name>
+    </fields>
+    <fields>
+        <label><!-- Priority --></label>
+        <name>Harris_Broadcast_Priority__c</name>
+        <picklistValues>
+            <masterLabel>0 - Must Have</masterLabel>
+            <translation><!-- 0 - Must Have --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1 - High</masterLabel>
+            <translation><!-- 1 - High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2 - Med</masterLabel>
+            <translation><!-- 2 - Med --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3 - Low</masterLabel>
+            <translation><!-- 3 - Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4 - Wishlist</masterLabel>
+            <translation><!-- 4 - Wishlist --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Test Scenario --></label>
+        <name>I_Want__c</name>
+    </fields>
+    <fields>
+        <label><!-- Imagine or GatesAir --></label>
+        <name>Imagine_or_GatesAir__c</name>
+        <picklistValues>
+            <masterLabel>GatesAirCommunications</masterLabel>
+            <translation><!-- GatesAirCommunications --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ImagineCommunications</masterLabel>
+            <translation><!-- ImagineCommunications --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Imagine LOE --></label>
+        <name>LOE__c</name>
+    </fields>
+    <fields>
+        <label><!-- Level One Group --></label>
+        <name>Level_One_Group__c</name>
+        <picklistValues>
+            <masterLabel>Account Management</masterLabel>
+            <translation><!-- Account Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Call Center</masterLabel>
+            <translation><!-- Call Center --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contact Management</masterLabel>
+            <translation><!-- Contact Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Community</masterLabel>
+            <translation><!-- Customer Community --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lead Management</masterLabel>
+            <translation><!-- Lead Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Opportunity Management</masterLabel>
+            <translation><!-- Opportunity Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Order Management</masterLabel>
+            <translation><!-- Order Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner Community</masterLabel>
+            <translation><!-- Partner Community --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional Services</masterLabel>
+            <translation><!-- Professional Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quote Management</masterLabel>
+            <translation><!-- Quote Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Process</masterLabel>
+            <translation><!-- Sales Process --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Management</masterLabel>
+            <translation><!-- Service Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User Interface</masterLabel>
+            <translation><!-- User Interface --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Level Two Grouping --></label>
+        <name>Level_Two_Grouping__c</name>
+        <picklistValues>
+            <masterLabel>Account Hierarchy</masterLabel>
+            <translation><!-- Account Hierarchy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Addresses</masterLabel>
+            <translation><!-- Addresses --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Agreement Management</masterLabel>
+            <translation><!-- Agreement Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approvals</masterLabel>
+            <translation><!-- Approvals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Asset Management</masterLabel>
+            <translation><!-- Asset Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Campaigns</masterLabel>
+            <translation><!-- Campaigns --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Case Management Process</masterLabel>
+            <translation><!-- Case Management Process --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cloning</masterLabel>
+            <translation><!-- Cloning --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Communities</masterLabel>
+            <translation><!-- Communities --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contracts</masterLabel>
+            <translation><!-- Contracts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Community</masterLabel>
+            <translation><!-- Customer Community --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data Migration</masterLabel>
+            <translation><!-- Data Migration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Eloqua Integration</masterLabel>
+            <translation><!-- Eloqua Integration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General Quoting</masterLabel>
+            <translation><!-- General Quoting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Integration</masterLabel>
+            <translation><!-- Integration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Knowledge Management</masterLabel>
+            <translation><!-- Knowledge Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Layout Configuration</masterLabel>
+            <translation><!-- Layout Configuration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Media Quoting</masterLabel>
+            <translation><!-- Media Quoting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mobile</masterLabel>
+            <translation><!-- Mobile --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Offline Capability</masterLabel>
+            <translation><!-- Offline Capability --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Opportunity Products</masterLabel>
+            <translation><!-- Opportunity Products --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner Community</masterLabel>
+            <translation><!-- Partner Community --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PriceBooks</masterLabel>
+            <translation><!-- PriceBooks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Products</masterLabel>
+            <translation><!-- Products --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Project Process</masterLabel>
+            <translation><!-- Project Process --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Proposals</masterLabel>
+            <translation><!-- Proposals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quote Discounting</masterLabel>
+            <translation><!-- Quote Discounting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quote Line Items</masterLabel>
+            <translation><!-- Quote Line Items --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quoting</masterLabel>
+            <translation><!-- Quoting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RFP (TBD)</masterLabel>
+            <translation><!-- RFP (TBD) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RMA Process</masterLabel>
+            <translation><!-- RMA Process --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Record Creation</masterLabel>
+            <translation><!-- Record Creation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reports and Dashboards</masterLabel>
+            <translation><!-- Reports and Dashboards --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Security &amp; Permissions</masterLabel>
+            <translation><!-- Security &amp; Permissions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Solution Sets</masterLabel>
+            <translation><!-- Solution Sets --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trials</masterLabel>
+            <translation><!-- Trials --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UX/UI</masterLabel>
+            <translation><!-- UX/UI --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Low Level Story Details --></label>
+        <name>Low_Level_Story_Details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Month to be fixed --></label>
+        <name>Month_to_be_fixed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Feedback --></label>
+        <name>Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Object Or Domain --></label>
+        <name>Object_Or_Domain__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent User Story --></label>
+        <name>Parent_User_Story__c</name>
+        <relationshipLabel><!-- Related User Stories --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Type of Request --></label>
+        <name>Phase__c</name>
+        <picklistValues>
+            <masterLabel>Enhancement</masterLabel>
+            <translation><!-- Enhancement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Production Defect</masterLabel>
+            <translation><!-- Production Defect --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Pilot Week --></label>
+        <name>Pilot_Week__c</name>
+        <picklistValues>
+            <masterLabel>Week 1</masterLabel>
+            <translation><!-- Week 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Week 2</masterLabel>
+            <translation><!-- Week 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Week 3</masterLabel>
+            <translation><!-- Week 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Week 4</masterLabel>
+            <translation><!-- Week 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Week 5</masterLabel>
+            <translation><!-- Week 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Week 6</masterLabel>
+            <translation><!-- Week 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Week 7</masterLabel>
+            <translation><!-- Week 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Week 8</masterLabel>
+            <translation><!-- Week 8 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Business Stakeholder 1 --></label>
+        <name>Product_Owner_1__c</name>
+        <relationshipLabel><!-- User Stories (Business Stakeholder 1) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Business Stakeholder 2 --></label>
+        <name>Product_Owner_2__c</name>
+        <relationshipLabel><!-- User Stories (Business Stakeholder 2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Product Owner 3 --></label>
+        <name>Product_Owner_3__c</name>
+        <relationshipLabel><!-- User Stories (Product Owner 3) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Please select a user responsible for QA --></help>
+        <label><!-- QA/UAT Responsible --></label>
+        <name>QA_Responsible__c</name>
+        <relationshipLabel><!-- User Stories (QA/UAT Responsible) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- QA Script Written --></label>
+        <name>QA_Script_Written__c</name>
+    </fields>
+    <fields>
+        <label><!-- QA Script --></label>
+        <name>QA_Script__c</name>
+        <picklistValues>
+            <masterLabel>Full</masterLabel>
+            <translation><!-- Full --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partial</masterLabel>
+            <translation><!-- Partial --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Pilot Status --></label>
+        <name>QA_Status__c</name>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed</masterLabel>
+            <translation><!-- Failed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Passed</masterLabel>
+            <translation><!-- Passed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retest</masterLabel>
+            <translation><!-- Retest --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Training Issue</masterLabel>
+            <translation><!-- Training Issue --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- QA/UAT Comments --></label>
+        <name>QA_UAT_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Release --></label>
+        <name>Release__c</name>
+    </fields>
+    <fields>
+        <label><!-- Business Stakeholders --></label>
+        <name>Responsible__c</name>
+        <picklistValues>
+            <masterLabel>Channel - Jaime Cangas</masterLabel>
+            <translation><!-- Channel - Jaime Cangas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Channel - Kathy Bienz</masterLabel>
+            <translation><!-- Channel - Kathy Bienz --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Channel - Mark Jordan</masterLabel>
+            <translation><!-- Channel - Mark Jordan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Channel - Oliver Abadeer</masterLabel>
+            <translation><!-- Channel - Oliver Abadeer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IT - David Poling</masterLabel>
+            <translation><!-- IT - David Poling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IT - Lisa Cline</masterLabel>
+            <translation><!-- IT - Lisa Cline --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IT - Mark Cowles</masterLabel>
+            <translation><!-- IT - Mark Cowles --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IT - Ole Calderone</masterLabel>
+            <translation><!-- IT - Ole Calderone --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marketing - Emily Etzborn</masterLabel>
+            <translation><!-- Marketing - Emily Etzborn --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marketing - Victoria Canton</masterLabel>
+            <translation><!-- Marketing - Victoria Canton --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional Services- Guillermo Velasco</masterLabel>
+            <translation><!-- Professional Services- Guillermo Velasco --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales - Bill Betts</masterLabel>
+            <translation><!-- Sales - Bill Betts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales - Chandra Dodani</masterLabel>
+            <translation><!-- Sales - Chandra Dodani --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales - Chantal Barbosa</masterLabel>
+            <translation><!-- Sales - Chantal Barbosa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales - Hamid Bahadori</masterLabel>
+            <translation><!-- Sales - Hamid Bahadori --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales - Jeff Kurth</masterLabel>
+            <translation><!-- Sales - Jeff Kurth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales - Lane Lobaugh</masterLabel>
+            <translation><!-- Sales - Lane Lobaugh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales - Lynn Heines</masterLabel>
+            <translation><!-- Sales - Lynn Heines --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales - Rich Lohmueller</masterLabel>
+            <translation><!-- Sales - Rich Lohmueller --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service - Dawn Vance</masterLabel>
+            <translation><!-- Service - Dawn Vance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service - Greg Wainman</masterLabel>
+            <translation><!-- Service - Greg Wainman --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service - Paul Nagle</masterLabel>
+            <translation><!-- Service - Paul Nagle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service - Simon Lockington</masterLabel>
+            <translation><!-- Service - Simon Lockington --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TBD</masterLabel>
+            <translation><!-- TBD --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SPRINT ACTIVITY EPICS --></label>
+        <name>SPRINT_ACTIVITY_EPICS__c</name>
+        <picklistValues>
+            <masterLabel>Configuration/ Customization / Development</masterLabel>
+            <translation><!-- Configuration/ Customization / Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data Migrations</masterLabel>
+            <translation><!-- Data Migrations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deployment</masterLabel>
+            <translation><!-- Deployment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Integrations</masterLabel>
+            <translation><!-- Integrations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QA</masterLabel>
+            <translation><!-- QA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reports</masterLabel>
+            <translation><!-- Reports --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Security</masterLabel>
+            <translation><!-- Security --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sprint Demo</masterLabel>
+            <translation><!-- Sprint Demo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sprint QA</masterLabel>
+            <translation><!-- Sprint QA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Training</masterLabel>
+            <translation><!-- Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UAT</masterLabel>
+            <translation><!-- UAT --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SPRINT ACTIVITY TOPICS --></label>
+        <name>SPRINT_ACTIVITY_TOPICS__c</name>
+        <picklistValues>
+            <masterLabel>Accounts/Contacts/ Addresses</masterLabel>
+            <translation><!-- Accounts/Contacts/ Addresses --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assets</masterLabel>
+            <translation><!-- Assets --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Attachments/ Documents/ Files</masterLabel>
+            <translation><!-- Attachments/ Documents/ Files --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Box.com</masterLabel>
+            <translation><!-- Box.com --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bug Tracking</masterLabel>
+            <translation><!-- Bug Tracking --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CTI</masterLabel>
+            <translation><!-- CTI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Campaigns</masterLabel>
+            <translation><!-- Campaigns --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cases</masterLabel>
+            <translation><!-- Cases --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Portal (Services)</masterLabel>
+            <translation><!-- Customer Portal (Services) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data Migration - Production</masterLabel>
+            <translation><!-- Data Migration - Production --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Demo</masterLabel>
+            <translation><!-- Demo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Eloqua</masterLabel>
+            <translation><!-- Eloqua --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Entitlements/ Service Contracts</masterLabel>
+            <translation><!-- Entitlements/ Service Contracts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FPX (Gates)</masterLabel>
+            <translation><!-- FPX (Gates) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Final UAT</masterLabel>
+            <translation><!-- Final UAT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Integration - Production</masterLabel>
+            <translation><!-- Integration - Production --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Knowledge</masterLabel>
+            <translation><!-- Knowledge --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Knowledge Article Migration</masterLabel>
+            <translation><!-- Knowledge Article Migration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Leads</masterLabel>
+            <translation><!-- Leads --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Micro UAT</masterLabel>
+            <translation><!-- Micro UAT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Opportunity</masterLabel>
+            <translation><!-- Opportunity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Remaining</masterLabel>
+            <translation><!-- Other Remaining --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner Community (Leads, Accounts, Contacts, Products, Pricing)</masterLabel>
+            <translation><!-- Partner Community (Leads, Accounts, Contacts, Products, Pricing) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner Community (UI Changes including Landing page)</masterLabel>
+            <translation><!-- Partner Community (UI Changes including Landing page) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner Portal (Services)</masterLabel>
+            <translation><!-- Partner Portal (Services) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Products/ Pricebooks</masterLabel>
+            <translation><!-- Products/ Pricebooks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional Services - Projects</masterLabel>
+            <translation><!-- Professional Services - Projects --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QA - End to End</masterLabel>
+            <translation><!-- QA - End to End --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quotes</masterLabel>
+            <translation><!-- Quotes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quotes FPX</masterLabel>
+            <translation><!-- Quotes FPX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RFP</masterLabel>
+            <translation><!-- RFP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RMA</masterLabel>
+            <translation><!-- RMA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reports</masterLabel>
+            <translation><!-- Reports --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SSO - Training</masterLabel>
+            <translation><!-- SSO - Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Contracts</masterLabel>
+            <translation><!-- Sales Contracts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Security</masterLabel>
+            <translation><!-- Security --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Training</masterLabel>
+            <translation><!-- Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Training Certis/ etc</masterLabel>
+            <translation><!-- Training Certis/ etc --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Seq Number --></label>
+        <name>Seq_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expected Result --></label>
+        <name>So_That__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sprint --></label>
+        <name>Sprint__c</name>
+        <relationshipLabel><!-- User Stories --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed</masterLabel>
+            <translation><!-- Closed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Complete</masterLabel>
+            <translation><!-- Complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deferred for Future Release</masterLabel>
+            <translation><!-- Deferred for Future Release --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deployed to Production</masterLabel>
+            <translation><!-- Deployed to Production --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Duplicate</masterLabel>
+            <translation><!-- Duplicate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed</masterLabel>
+            <translation><!-- Failed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In progress</masterLabel>
+            <translation><!-- In progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Planned for Next Release</masterLabel>
+            <translation><!-- Planned for Next Release --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ready for Deployment</masterLabel>
+            <translation><!-- Ready for Deployment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UAT</masterLabel>
+            <translation><!-- UAT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Validation / QA</masterLabel>
+            <translation><!-- Validation / QA --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Story Summary --></label>
+        <name>Story_Summary__c</name>
+    </fields>
+    <fields>
+        <label><!-- Topic --></label>
+        <name>Topic__c</name>
+        <relationshipLabel><!-- User Stories --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Configuration</masterLabel>
+            <translation><!-- Configuration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Custom Coding/Apex</masterLabel>
+            <translation><!-- Custom Coding/Apex --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data Migration</masterLabel>
+            <translation><!-- Data Migration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deployment</masterLabel>
+            <translation><!-- Deployment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Integration</masterLabel>
+            <translation><!-- Integration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QA</masterLabel>
+            <translation><!-- QA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reports/Dashboards</masterLabel>
+            <translation><!-- Reports/Dashboards --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Security (Profiles/ Roles and Sharing settings)</masterLabel>
+            <translation><!-- Security (Profiles/ Roles and Sharing settings) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UAT</masterLabel>
+            <translation><!-- UAT --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Pilot User Story Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Notes/ Scripts --></label>
+            <section>Notes/ Scripts</section>
+        </sections>
+        <sections>
+            <label><!-- USER STORY --></label>
+            <section>USER STORY</section>
+        </sections>
+        <sections>
+            <label><!-- User Story Details --></label>
+            <section>User Story Details</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>User Story Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Notes/ Scripts --></label>
+            <section>Notes/ Scripts</section>
+        </sections>
+        <sections>
+            <label><!-- USER STORY --></label>
+            <section>USER STORY</section>
+        </sections>
+        <sections>
+            <label><!-- User Story Details --></label>
+            <section>User Story Details</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>User Story Layout - CR Process</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Notes/ Scripts --></label>
+            <section>Notes/ Scripts</section>
+        </sections>
+        <sections>
+            <label><!-- USER STORY --></label>
+            <section>USER STORY</section>
+        </sections>
+        <sections>
+            <label><!-- User Story Details --></label>
+            <section>User Story Details</section>
+        </sections>
+    </layouts>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

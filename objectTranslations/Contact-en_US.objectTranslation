@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Work Phone</value>
+        </caseValues>
+        <name>phone_contact</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <layouts>
+        <layout>Contact Feed Layout</layout>
+        <sections>
+            <label><!-- Customer Service Information --></label>
+            <section>Customer Service Information</section>
+        </sections>
+        <sections>
+            <label><!-- Eloqua Information --></label>
+            <section>Eloqua Information</section>
+        </sections>
+        <sections>
+            <label><!-- Who Am I --></label>
+            <section>Who Am I</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Contact Feed Layout - Marketing</layout>
+        <sections>
+            <label><!-- Customer Service Information --></label>
+            <section>Customer Service Information</section>
+        </sections>
+        <sections>
+            <label><!-- Eloqua Information --></label>
+            <section>Eloqua Information</section>
+        </sections>
+        <sections>
+            <label><!-- Eloqua Profiler --></label>
+            <section>Eloqua Profiler</section>
+        </sections>
+        <sections>
+            <label><!-- Product Information --></label>
+            <section>Product Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Contact Feed Layout - Sales Console</layout>
+        <sections>
+            <label><!-- Customer Service Information --></label>
+            <section>Customer Service Information</section>
+        </sections>
+        <sections>
+            <label><!-- Eloqua Information --></label>
+            <section>Eloqua Information</section>
+        </sections>
+        <sections>
+            <label><!-- Product Information --></label>
+            <section>Product Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Customer Contact Layout - Customer Community</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Z - No Longer In Use - Contact Layout</layout>
+        <sections>
+            <label><!-- Service Alerts --></label>
+            <section>Service Alerts</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Create Case --></label>
+        <name>Create_Case</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Inactivate Contact --></label>
+        <name>Inactivate_Contact</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Request Change --></label>
+        <name>Request_Change</name>
+    </quickActions>
+</CustomObjectTranslation>

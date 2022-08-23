@@ -1,0 +1,58 @@
+<apex:page docType="html-5.0" standardStylesheets="false" showHeader="false"
+           sidebar="false" standardController="Contact" recordSetVar="contacts">
+
+<html>
+<head lang="en">
+    <title>
+        Imagine Communications - My Contacts
+    </title>
+    
+    <!-- Page meta data -->
+    <c:partnerMeta />
+
+</head>
+<body>
+
+<div class="stackable ui grid">
+
+    <div class="sixteen wide column">
+        
+        <!-- Partner Header Component -->
+        <c:partnerHeader />
+
+        <!-- Takes values Account, Contact, Lead, Opportunity, Pricebook -->
+        <c:partnerMainNav active="Contact" />
+        
+        <apex:pageBlock >
+                <apex:pageBlockTable value="{!contacts}" var="c" id="contacts" styleClass="ui table segment">
+                    <apex:column >
+                        <apex:facet name="header">
+                            Cool People
+                        </apex:facet>
+                        <apex:outputField value="{!c.Name}" />
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">
+                            Account
+                        </apex:facet>
+                        <apex:outputField value="{!c.AccountId}" />
+                    </apex:column>
+                </apex:pageBlockTable>
+        </apex:pageBlock>
+
+    </div>
+
+    <div class="row">
+        <div class="sixteen wide column">
+
+            <!-- Partner Footer Component -->
+            <c:partnerFooter />
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
+</apex:page>

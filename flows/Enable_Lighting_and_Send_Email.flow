@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Just a failsafe</description>
+        <name>Fail_Email</name>
+        <label>Fail Email</label>
+        <locationX>57</locationX>
+        <locationY>212</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <stringValue>darcie.laur@imaginecommunications.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>Assign Lightning Flow Failed</stringValue>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <description>emails are making me crazy!</description>
+        <name>Send_Email</name>
+        <label>Send Email</label>
+        <locationX>407</locationX>
+        <locationY>344</locationY>
+        <actionName>User.Welcome_to_Lighting_Email</actionName>
+        <actionType>emailAlert</actionType>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>User_Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <assignments>
+        <description>Had to manually look up the Lighting permission set ID.  Didn&apos;t seem to be a way to find it dynamically</description>
+        <name>Assign_Permission_Set</name>
+        <label>Assign Permission Set</label>
+        <locationX>554</locationX>
+        <locationY>205</locationY>
+        <assignmentItems>
+            <assignToReference>varPermissionSetAssignmentRecord.AssigneeId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>User_Record.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varPermissionSetAssignmentRecord.PermissionSetId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Permission_Set.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_Permission_Set_Assignment</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>Only because it cases an error</description>
+        <name>Make_sure_permission_set_isn_t_already_assigned</name>
+        <label>Make sure permission set isn&apos;t already assigned</label>
+        <locationX>693</locationX>
+        <locationY>206</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>No_not_assigned</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_existing_Permission_Sets</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Permission_Set</targetReference>
+            </connector>
+            <label>No not assigned</label>
+        </rules>
+        <rules>
+            <name>Exists_Only_Send_Email</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_existing_Permission_Sets</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Email</targetReference>
+            </connector>
+            <label>Exists Only Send Email</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Safety net to make sure the flow was called correctly with a user ID</description>
+        <name>Make_sure_we_have_a_User</name>
+        <label>Make sure we have a User</label>
+        <locationX>369</locationX>
+        <locationY>60</locationY>
+        <defaultConnector>
+            <targetReference>Fail_Email</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_User_Record</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>User_Record</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Permission_Set</targetReference>
+            </connector>
+            <label>Yes User Record</label>
+        </rules>
+    </decisions>
+    <interviewLabel>Enable Lighting and Send Email {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Enable Lighting and Send Email</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Permission_Set_Assignment</name>
+        <label>Create Permission Set Assignment</label>
+        <locationX>406</locationX>
+        <locationY>205</locationY>
+        <connector>
+            <targetReference>Send_Email</targetReference>
+        </connector>
+        <inputReference>varPermissionSetAssignmentRecord</inputReference>
+    </recordCreates>
+    <recordLookups>
+        <name>Get_existing_Permission_Sets</name>
+        <label>Get existing Permission Sets</label>
+        <locationX>701</locationX>
+        <locationY>62</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Make_sure_permission_set_isn_t_already_assigned</targetReference>
+        </connector>
+        <filters>
+            <field>AssigneeId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>User_Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>PermissionSetId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Permission_Set.Id</elementReference>
+            </value>
+        </filters>
+        <object>PermissionSetAssignment</object>
+    </recordLookups>
+    <recordLookups>
+        <description>Go out and find the permission set by API name, we&apos;re going to want the ID.  We do this in case of ID differences between Sandbox and Production.  In theory it doens&apos;t apply here, just good practice.</description>
+        <name>Permission_Set</name>
+        <label>Permission Set</label>
+        <locationX>557</locationX>
+        <locationY>64</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_existing_Permission_Sets</targetReference>
+        </connector>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Lightning_Access</stringValue>
+            </value>
+        </filters>
+        <object>PermissionSet</object>
+    </recordLookups>
+    <recordLookups>
+        <description>Loading the user because we&apos;ll want to grab the email address from it after.  Otherwise could have just used the UserId variable throughout.</description>
+        <name>User_Record</name>
+        <label>User Record</label>
+        <locationX>174</locationX>
+        <locationY>51</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Make_sure_we_have_a_User</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>UserId</elementReference>
+            </value>
+        </filters>
+        <object>User</object>
+    </recordLookups>
+    <startElementReference>User_Record</startElementReference>
+    <status>Active</status>
+    <variables>
+        <description>variable to store the incoming user ID</description>
+        <name>UserId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue></stringValue>
+        </value>
+    </variables>
+    <variables>
+        <name>varPermissionSetAssignmentRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>PermissionSetAssignment</objectType>
+    </variables>
+</Flow>

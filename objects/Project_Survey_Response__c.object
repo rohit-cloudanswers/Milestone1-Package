@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Captures customer responses for the survey sent for project completion.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Ability_to_present_material_clearly__c</fullName>
+        <description>Trainer ability to present material clearly/communicate clearly</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Trainer ability to present material clearly</inlineHelpText>
+        <label>Ability to communicate clearly</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Project Survey Responses</relationshipLabel>
+        <relationshipName>Project_Survey_Responses</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Additional_Comments__c</fullName>
+        <description>Do you have any other comments, questions or concerns?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Do you have any other comments, questions or concerns?</inlineHelpText>
+        <label>Additional Comments</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Balance_was_approrpiate__c</fullName>
+        <description>The balance between the lecture and the workshops was appropriate</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The balance between the lecture and the workshops was appropriate</inlineHelpText>
+        <label>Balance was approrpiate</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Comfortable_approaching__c</fullName>
+        <description>I felt comfortable approaching the consultant with questions or concerns</description>
+        <externalId>false</externalId>
+        <inlineHelpText>I felt comfortable approaching the consultant with questions or concerns</inlineHelpText>
+        <label>Comfortable approaching</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Completed_Date_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Completed Date/Time</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>$Source.Account__c</field>
+                <operation>equals</operation>
+                <valueField>Contact.Account.Id</valueField>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Project Survey Responses</relationshipLabel>
+        <relationshipName>Project_Survey_Responses</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Event_description__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Optional field</inlineHelpText>
+        <label>Event description</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Final_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Final Comments</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Identifier__c</fullName>
+        <displayFormat>S{00000}</displayFormat>
+        <externalId>false</externalId>
+        <label>Identifier</label>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>Knowledge_and_expertise__c</fullName>
+        <description>Knowledge and expertise of the trainer</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Knowledge and expertise of the trainer</inlineHelpText>
+        <label>Knowledge and expertise</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Length_of_training__c</fullName>
+        <description>Length of training for the topics presented
+Length of consulting was appropriate for the required tasks</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Length of training for the topics presented
+Length of consulting was appropriate for the required tasks</inlineHelpText>
+        <label>Length</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Likely_to_recommend__c</fullName>
+        <description>Think about your Imagine Communications training experience.  How likely would you be to recommend Imagine Communications to others?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Think about your Imagine Communications training experience.  How likely would you be to recommend Imagine Communications to others?</inlineHelpText>
+        <label>Likely to recommend</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MPM_Project_Resource__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Project Resource</label>
+        <referenceTo>MPM_Project_Resource__c</referenceTo>
+        <relationshipLabel>Project Survey Responses</relationshipLabel>
+        <relationshipName>Project_Survey_Responses</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Material_was_presented_in_a_logical_flow__c</fullName>
+        <description>The material was presented in a logical flow for my learning experience</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The material was presented in a logical flow for my learning experience</inlineHelpText>
+        <label>Material was presented in a logical flow</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Met_my_learning_objectives__c</fullName>
+        <description>The class met my learning objectives</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The class met my learning objectives</inlineHelpText>
+        <label>Met my learning objectives</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Multiple_consultants_worked_well__c</fullName>
+        <description>When multiple IC consultants were involved, they worked well together</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When multiple IC consultants were involved, they worked well together</inlineHelpText>
+        <label>Multiple consultants worked well</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Old_Project2__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Old Project</label>
+        <referenceTo>Milestone1_Project__c</referenceTo>
+        <relationshipLabel>Project Survey Responses</relationshipLabel>
+        <relationshipName>Project_Survey_Responses</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Overall_Quality__c</fullName>
+        <description>Overall quality of the training</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Overall quality of the training</inlineHelpText>
+        <label>Overall quality</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Prepared_for_the_assignment__c</fullName>
+        <externalId>false</externalId>
+        <label>Prepared for the assignment</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Presented_at_level_for_my_comprehension__c</fullName>
+        <description>Class content was presented at a level for my comprehension</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Class content was presented at a level for my comprehension</inlineHelpText>
+        <label>Presented at level for my comprehension</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Professionalism_and_courtesy__c</fullName>
+        <description>Professionalism and courtesy of the trainer</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Professionalism and courtesy of the trainer</inlineHelpText>
+        <label>Professionalism and courtesy</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Project</label>
+        <referenceTo>MPM4_BASE__Milestone1_Project__c</referenceTo>
+        <relationshipLabel>Project Survey Responses</relationshipLabel>
+        <relationshipName>Project_Survey_Responses</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Questions_or_Concerns__c</fullName>
+        <description>Do you have any questions regarding any of the topics reviewed in this session?
+Do you have any questions or concerns that are still unanswered?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Do you have any questions regarding any of the topics reviewed in this session?
+Do you have any questions or concerns that are still unanswered?</inlineHelpText>
+        <label>Questions or Concerns</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Readily_available__c</fullName>
+        <description>The consultant was readily available</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The consultant was readily available</inlineHelpText>
+        <label>Readily available</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Resource_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>MPM_Project_Resource__r.Resource__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Resource Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Responsive_and_thorough__c</fullName>
+        <externalId>false</externalId>
+        <label>Responsive and thorough</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Review_was_effective__c</fullName>
+        <description>The review questions/quizzes were an effective tool for helping me learn</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The review questions/quizzes were an effective tool for helping me learn</inlineHelpText>
+        <label>Review was effective</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Survey_link__c</fullName>
+        <description>link to the full survey result</description>
+        <externalId>false</externalId>
+        <inlineHelpText>link to the full survey result</inlineHelpText>
+        <label>Survey link</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Trainee_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Trainee Email</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Trainee_Name__c</fullName>
+        <description>Name of the trainee responding to the survey</description>
+        <externalId>false</externalId>
+        <label>Trainee Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Trainer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Optional field</inlineHelpText>
+        <label>Trainer/Consultant</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>$Profile.Name</field>
+                <operation>notContain</operation>
+                <value>Customer Community Profile, Customer Community User, Customer Manager User, Customer Manager User Parent, Customer Self-Registration User, Customers Profile, Customer User, Partner Community Profile, Partner Community User, Partners Profile, Partner</value>
+            </filterItems>
+            <filterItems>
+                <field>User.IsActive</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Project_Survey_Responses</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>User__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Project_Survey_Responses1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Project Survey Response</label>
+    <nameField>
+        <displayFormat>PRJ-{0}</displayFormat>
+        <label>Project Survey Response Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Project Survey Responses</pluralLabel>
+    <recordTypes>
+        <fullName>Consulting_Survey</fullName>
+        <active>true</active>
+        <description>ID 01231000000y2jR</description>
+        <label>Consulting</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>General_Project_Survey</fullName>
+        <active>true</active>
+        <label>General Project Survey</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Training_Survey</fullName>
+        <active>true</active>
+        <description>ID 01231000000y2T9</description>
+        <label>Training</label>
+    </recordTypes>
+    <searchLayouts>
+        <excludedStandardButtons>New</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <listViewButtons>New_Training_Survey_Request</listViewButtons>
+        <listViewButtons>New_Consulting_Survey_Request</listViewButtons>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>New_Consulting_Survey_Request</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>New Consulting Survey Request</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/a1e/e?CF00N3100000GF2qv={!Milestone1_Project__c.Name}&amp;CF00N3100000GF2qv={!Milestone1_Project__c.Id}&amp;CF00N3100000GF2qb={!Milestone1_Project__c.End_User_Account__c}&amp;CF00N3100000GF2qb={!Milestone1_Project__c.End_User_AccountId__c}&amp;RecordType=01231000000y2jR&amp;retURL={!Milestone1_Project__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Training_Survey_Request</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>New Training Survey Request</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/a1e/e?CF00N3100000GF2qv={!Milestone1_Project__c.Name}&amp;CF00N3100000GF2qv={!Milestone1_Project__c.Id}&amp;CF00N3100000GF2qb={!Milestone1_Project__c.End_User_Account__c}&amp;CF00N3100000GF2qb={!Milestone1_Project__c.End_User_AccountId__c}&amp;RecordType=01231000000y2T9&amp;retURL={!Milestone1_Project__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Send_Training_Survey</fullName>
+        <availability>online</availability>
+        <description>For Eclipse trainees</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Send Training Survey</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/_ui/core/email/author/EmailAuthor?p3_lkid={!Project_Survey_Response__c.Id}&amp;template_id=00X31000000LJF7&amp;retURL={!Project_Survey_Response__c.Old_Project2Id__c}&amp;p2_lkid={!Project_Survey_Response__c.ContactId__c}</url>
+    </webLinks>
+</CustomObject>

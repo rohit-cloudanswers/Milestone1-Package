@@ -1,0 +1,51 @@
+<apex:page standardController="MPM4_BASE__Milestone1_Project__c" showHeader="true" docType="html-4.01-strict">
+<div id="tabstrip" style="display:none;"> <ul> 
+<li class="k-state-active">Related Projects &amp; Cases</li>
+<li>Projects</li>
+<li>Project History</li>
+<li>Old Project History</li>
+</ul>
+<!-- Related Projects &amp; Cases -->
+<div style="overflow:hidden;"> 
+<CRMC_PP:Grid ObjectName="Related_Project_Case__c" FKName="MPM4_Project__c" FKValue="{!MPM4_BASE__Milestone1_Project__c.Id}"  DelayLoad="true"  ViewID="a2T0Z000002EU8jUAG" 
+ EnableNewButton="true"  EnableNewInline="true"  EnableEdit="true"  EnableActions="true"  EnableFieldChooser="true" 
+ EnableStickyViews="true"  EnableToolbar="true"  EnableViews="true"  EnableFormatting="true"  EnableReadingPane="true" />
+ <CRMC_PP:DrillUp /> 
+ </div>
+
+<!-- Projects -->
+<div style="overflow:hidden;"> 
+<CRMC_PP:Grid ObjectName="MPM4_BASE__Milestone1_Project__c" FKName="MPM4_BASE__Predecessor_Project__c" FKValue="{!MPM4_BASE__Milestone1_Project__c.Id}"  DelayLoad="true"  ViewID="a2T0Z000002EU8oUAG" 
+ EnableNewButton="true"  EnableNewInline="true"  EnableEdit="true"  EnableActions="true"  EnableFieldChooser="true" 
+ EnableStickyViews="true"  EnableToolbar="true"  EnableViews="true"  EnableFormatting="true"  EnableReadingPane="true" />
+ <CRMC_PP:DrillUp /> 
+ </div>
+
+<!-- Project History -->
+<div style="overflow:hidden;"> 
+<CRMC_PP:Grid ObjectName="MPM4_BASE__Milestone1_Project__History" FKName="ParentId" FKValue="{!MPM4_BASE__Milestone1_Project__c.Id}"  DelayLoad="true"  ViewID="a2T0Z000002EU8tUAG" 
+ EnableNewButton="true"  EnableNewInline="true"  EnableEdit="true"  EnableActions="true"  EnableFieldChooser="true" 
+ EnableStickyViews="true"  EnableToolbar="true"  EnableViews="true"  EnableFormatting="true"  EnableReadingPane="true" />
+ <CRMC_PP:DrillUp /> 
+ </div>
+
+<!-- Old Project History -->
+<div style="overflow:hidden;"> 
+<CRMC_PP:Grid ObjectName="MPM4_Custom_Old_Project_History__c" FKName="Project__c" FKValue="{!MPM4_BASE__Milestone1_Project__c.Id}"  DelayLoad="true"  ViewID="a2T0Z000002EU8yUAG" 
+ EnableNewButton="true"  EnableNewInline="true"  EnableEdit="true"  EnableActions="true"  EnableFieldChooser="true" 
+ EnableStickyViews="true"  EnableToolbar="true"  EnableViews="true"  EnableFormatting="true"  EnableReadingPane="true" />
+ <CRMC_PP:DrillUp /> 
+ </div>
+
+</div>
+<script>
+$(document).ready(function() {
+    $("#tabstrip").kendoTabStrip({
+      activate: function(e){
+        setTimeout(function(){          $(window).resize();        });
+      }
+    });
+    $("#tabstrip").css("display", "block");
+});
+ </script>
+</apex:page>

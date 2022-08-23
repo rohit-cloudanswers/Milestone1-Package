@@ -1,0 +1,49 @@
+<apex:page docType="html-5.0" showHeader="false" standardStylesheets="false"
+           sidebar="false" standardController="Opportunity" recordSetVar="Opportunities">
+
+<html>
+<head lang="en">
+    <title>
+        Imagine Communications - My Opportunities
+    </title>
+    
+    <!-- Page meta data -->
+    <c:partnerMeta />
+
+</head>
+<body>
+
+<div class="stackable ui grid">
+
+    <div class="sixteen wide column">
+        
+        <!-- Partner Header Component -->
+        <c:partnerHeader />
+
+        <!-- Takes values Account, Contact, Lead, Opportunity, Pricebook -->
+        <c:partnerMainNav active="Account" />
+        
+        <apex:pageBlock >
+                <apex:pageBlockTable value="{!Opportunities}" var="opp" id="accounts" styleClass="ui table segment">
+                    <apex:column value="{!opp.Name}" />
+                    <apex:column value="{!opp.AccountId}" />
+                    <apex:column value="{!opp.Amount}" />
+                </apex:pageBlockTable>
+        </apex:pageBlock>
+
+    </div>
+
+    <div class="row">
+        <div class="sixteen wide column">
+
+            <!-- Partner Footer Component -->
+            <c:partnerFooter />
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
+</apex:page>

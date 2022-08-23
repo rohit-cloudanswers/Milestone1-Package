@@ -1,0 +1,39 @@
+<apex:page standardController="Quote" extensions="solutionsCustomPage">
+	<style>
+		table {
+	    border-collapse: collapse;
+		}
+	
+	table, th, td {
+	    border: 1px solid black;
+	}
+	a:hover {
+	  color: red ;
+	  background-color:#FA8258;
+	}
+	</style>
+	<script>
+		function openPop(solId,solName){
+			var Url = '/apex/SolutionHierarchyGenerator_VP?solId='+solId+'&solName='+solName;
+			window.open(Url,'addContact','width=650,height=300,top=50,toolbar=no,personalbar=no,location=no,directories=no,statusbar=no,menubar=no,status=no,re sizable=yes,left=80,screenX=60,top=100,screenY=100,resizable=yes,scrollbars=yes');
+		}
+	</script>
+	<apex:form >
+		<apex:pageBlock >
+<!-- 			<apex:pageBlockTable value="{!solIds}" var="sol"> -->
+<!-- 				<apex:column headerValue="Solution Name"> -->
+<!-- 					<a onClick="openPop('{!sol}','{!solIdsVsMap[sol]}');"><apex:outputText value="{!solIdsVsMap[sol]}"/></a> -->
+<!-- 				</apex:column> -->
+<!-- 			</apex:pageBlockTable> -->
+				<table>
+						<tr>
+							<apex:repeat value="{!solIds}" var="sol">
+									<td >
+										<a style="cursor:pointer;" onClick="openPop('{!sol}','{!solIdsVsMap[sol]}');"><apex:outputText value="{!solIdsVsMap[sol]}"/></a>
+									</td>
+							</apex:repeat>
+						</tr>
+				</table>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

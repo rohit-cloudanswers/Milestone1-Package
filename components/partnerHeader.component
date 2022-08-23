@@ -1,0 +1,29 @@
+<apex:component >
+    <div class="ui secondary menu">
+            <a href="{!$Page.PartnerHome}" class="item">
+                <img src="{!URLFOR($Resource.ImagineLogo)}"/>
+            </a>
+
+            <div class="item">
+                <h2 class="ui header">
+                    <i class="cloud icon"></i>
+
+                    <div class="content">
+                        Welcome to our partner portal
+                        <div class="sub header">
+                            Click one of the major sections below to begin
+                        </div>
+                    </div>
+                </h2>
+            </div>
+
+            <div class="right menu">
+                <div class="item">
+                    <p>
+                        Welcome, {!$User.FirstName}<br/>
+                        <a href="/partners/_ui/core/userprofile/UserProfilePage?tab=sfdc.ProfilePlatformFeed">Profile</a> | <a href="{!$Page.customLogout}">Logout</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+</apex:component>

@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>allInternalUsers</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <type>creator</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>QuoteNumber</field>
+        <field>Quote_Name__c</field>
+        <field>Account_Owner__c</field>
+        <field>Account_Name__c</field>
+        <field>Partner_Name__c</field>
+        <field>Opportunity</field>
+        <field>Name</field>
+        <field>Total_Price__c</field>
+        <field>MarginPercent__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>NA_Regional_Alert</name>
+                <type>Alert</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <type>userHierarchyField</type>
+            </approver>
+        </assignedApprover>
+        <description>Quotes are Auto Approved unless this criteria is met then, quote goes to 1st Level Approver.</description>
+        <entryCriteria>
+            <booleanFilter>1 or (2 AND 3) or 4 or 5 or 6 or 7 or 8 or 9 or 10</booleanFilter>
+            <criteriaItems>
+                <field>Quote.Total_Price__c</field>
+                <operation>greaterThan</operation>
+                <value>&quot;USD 100,000&quot;</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Quote.Total_Discount__c</field>
+                <operation>greaterThan</operation>
+                <value>38</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Quote.Total_Discount_exc_Options__c</field>
+                <operation>greaterThan</operation>
+                <value>38</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Opportunity.Type</field>
+                <operation>equals</operation>
+                <value>Support Renewal</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Quote.MarginPercent__c</field>
+                <operation>lessThan</operation>
+                <value>40</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Opportunity.Type</field>
+                <operation>contains</operation>
+                <value>AdTech</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Quote.PS_Included__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Quote.Support_Included__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Quote.Managed_Services_Total__c</field>
+                <operation>greaterThan</operation>
+                <value>USD 0</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Quote.TotalPrice</field>
+                <operation>lessOrEqual</operation>
+                <value>USD 0</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>ApproveRecord</ifCriteriaNotMet>
+        <label>First Level Quote Approver of Record Owner</label>
+        <name>First_Level_Quote_Approver_of_Record_Owner</name>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>lane.lobaugh@imaginecommunications.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>if $0 quote or negative margin deal, needs to go to Lane.</description>
+        <entryCriteria>
+            <booleanFilter>1 or 2</booleanFilter>
+            <criteriaItems>
+                <field>Quote.MarginPercent__c</field>
+                <operation>lessOrEqual</operation>
+                <value>0</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Quote.TotalPrice</field>
+                <operation>lessOrEqual</operation>
+                <value>USD 0</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Zero Dollar Quote Approval</label>
+        <name>Zero_Dollar_Quote_Approval</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>david.blackett@imaginecommunications.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Regional PS Rep Approval for PS or Support</description>
+        <entryCriteria>
+            <booleanFilter>(1 or 2) AND 3</booleanFilter>
+            <criteriaItems>
+                <field>Quote.PS_Included__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Quote.Support_Included__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Opportunity.Type</field>
+                <operation>notContain</operation>
+                <value>AdTech - New License/Support,AdTech - New Professional Service,AdTech - Renewals</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>1st Professional Services</label>
+        <name>ANZA_Optys_with_PS</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>stephan.kappel@imaginecommunications.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>Unanimous</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Professional Services Management Approval for PS or Support</description>
+        <entryCriteria>
+            <booleanFilter>((1 OR 2) AND (3 OR 4 OR 5) and 6)</booleanFilter>
+            <criteriaItems>
+                <field>Quote.PS_Included__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Quote.Support_Included__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Quote.Service_Rate_Max_Margin__c</field>
+                <operation>lessThan</operation>
+                <value>45</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Quote.Service_Rate_Average_Margin__c</field>
+                <operation>lessThan</operation>
+                <value>45</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Quote.Support_Max_Margin__c</field>
+                <operation>lessThan</operation>
+                <value>53</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Opportunity.Type</field>
+                <operation>notContain</operation>
+                <value>AdTech - New License/Support,AdTech - New Professional Service,AdTech - Renewals</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Professional Services Management</label>
+        <name>Professional_Services_Management</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>mark.senecal@imaginecommunications.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>If Adtech and Mgd Svc, needs Mgd Svc Mgmt Approval</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Opportunity.Type</field>
+                <operation>contains</operation>
+                <value>Adtech</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Quote.AP_Managed_Services_Total__c</field>
+                <operation>greaterThan</operation>
+                <value>USD 0</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Managed Service Approval</label>
+        <name>Managed_Service_Approval</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>jennifer.ng@imaginecommunications.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>If Customer Commit included, Jira Mgr approval required</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Opportunity.Customer_Commit__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Customer Commit</label>
+        <name>Customer_Commit</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>michael.fitzhardinge@imaginecommunications.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Professional Services approval for AD Tech</description>
+        <entryCriteria>
+            <booleanFilter>(1 or 2) AND 3</booleanFilter>
+            <criteriaItems>
+                <field>Quote.PS_Included__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Quote.Support_Included__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Opportunity.Type</field>
+                <operation>contains</operation>
+                <value>AdTech - New License/Support,AdTech - New Professional Service,AdTech - Renewals</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>AD Tech PS</label>
+        <name>AD_Tech_PS</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>michael.laraia@imaginecommunications.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>PS Exec Approval for Large, Low Margin Services Quotes</description>
+        <entryCriteria>
+            <booleanFilter>1 and (2 or 3)</booleanFilter>
+            <criteriaItems>
+                <field>Quote.PS_Included__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Quote.Service_Rate_Average_Margin__c</field>
+                <operation>lessOrEqual</operation>
+                <value>40</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Quote.Professional_Services_Total__c</field>
+                <operation>greaterThan</operation>
+                <value>&quot;USD 30,000&quot;</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>PS Executive Approval</label>
+        <name>PS_Executive_Approval</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>michael.laraia@imaginecommunications.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Exec Approval for low margin or high value Support Quotes</description>
+        <entryCriteria>
+            <booleanFilter>1 and (2 or 3)</booleanFilter>
+            <criteriaItems>
+                <field>Quote.Support_Included__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Quote.Support_Average_Margin__c</field>
+                <operation>lessOrEqual</operation>
+                <value>50</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Quote.Support_Total__c</field>
+                <operation>greaterOrEqual</operation>
+                <value>&quot;USD 30,000&quot;</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Support Exec Approval</label>
+        <name>Support_Exec_Approval</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>mathias.eckert@imaginecommunications.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Regional VP Approval</description>
+        <label>Regional Sales SVP</label>
+        <name>Regional_Sales_SVP</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>glodina.connan@imaginecommunications.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>lane.lobaugh@imaginecommunications.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>Unanimous</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Large Deal Quote Approval</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Quote.Total_Price__c</field>
+                <operation>greaterOrEqual</operation>
+                <value>&quot;USD 500,000&quot;</value>
+            </criteriaItems>
+        </entryCriteria>
+        <label>CSO Final Approval</label>
+        <name>CSO_Final_Approval</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <description>APAC ANZA Approval Process 10.29.20 V12 adds MGD Svc Step</description>
+    <emailTemplate>Quote/Quote_Approval_Process_2018_01_22</emailTemplate>
+    <enableMobileDeviceAccess>true</enableMobileDeviceAccess>
+    <entryCriteria>
+        <booleanFilter>1 AND 2</booleanFilter>
+        <criteriaItems>
+            <field>Quote.IsSyncing</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Owner_s_Assigned_Approval_Process__c</field>
+            <operation>contains</operation>
+            <value>ASIA Sydney</value>
+        </criteriaItems>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Quote_Status_has_changed</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Quote_Status_to_Approved</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>NA_Regional_Rejection_Alert</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Quote_Rejection</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Quote_Status_to_Rejected</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Populate_Address_Fields_True</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Quote_Status_to_In_Review</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>AA APAC ANZA V12</label>
+    <nextAutomatedApprover>
+        <useApproverFieldOfRecordOwner>true</useApproverFieldOfRecordOwner>
+        <userHierarchyField>First_Level_Quote_Approver__c</userHierarchyField>
+    </nextAutomatedApprover>
+    <recallActions>
+        <action>
+            <name>Populate_Address_Fields_False</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Status_back_to_Draft_for_Recall</name>
+            <type>FieldUpdate</type>
+        </action>
+    </recallActions>
+    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

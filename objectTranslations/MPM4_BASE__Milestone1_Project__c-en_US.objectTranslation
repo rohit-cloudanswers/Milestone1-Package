@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>AdTech Project Layout</layout>
+        <sections>
+            <label><!-- Budgets --></label>
+            <section>Budgets</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label><!-- Metrics: Hours &amp; Expenses (Calculated) --></label>
+            <section>Metrics: Hours &amp; Expenses (Calculated)</section>
+        </sections>
+        <sections>
+            <label><!-- Metrics: Milestone Information (Calculated) --></label>
+            <section>Metrics: Milestone Information (Calculated)</section>
+        </sections>
+        <sections>
+            <label><!-- Project Health --></label>
+            <section>Project Health</section>
+        </sections>
+        <sections>
+            <label><!-- Project Revenue (USD) --></label>
+            <section>Project Revenue (USD)</section>
+        </sections>
+        <sections>
+            <label><!-- Reporting Milestones --></label>
+            <section>Reporting Milestones</section>
+        </sections>
+        <sections>
+            <label><!-- Shipping --></label>
+            <section>Shipping</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Admin Test Layout</layout>
+        <sections>
+            <label><!-- Budgets --></label>
+            <section>Budgets</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label><!-- External Share --></label>
+            <section>External Share</section>
+        </sections>
+        <sections>
+            <label><!-- Metrics: Hours &amp; Expenses (Calculated) --></label>
+            <section>Metrics: Hours &amp; Expenses (Calculated)</section>
+        </sections>
+        <sections>
+            <label><!-- Metrics: Milestone Information (Calculated) --></label>
+            <section>Metrics: Milestone Information (Calculated)</section>
+        </sections>
+        <sections>
+            <label><!-- Project Health --></label>
+            <section>Project Health</section>
+        </sections>
+        <sections>
+            <label><!-- Project Revenue (USD) --></label>
+            <section>Project Revenue (USD)</section>
+        </sections>
+        <sections>
+            <label><!-- Shipping --></label>
+            <section>Shipping</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Custom Project Layout</layout>
+        <sections>
+            <label><!-- Budgets --></label>
+            <section>Budgets</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Dates --></label>
+            <section>Dates</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label><!-- Metrics: Hours &amp; Expenses (Calculated) --></label>
+            <section>Metrics: Hours &amp; Expenses (Calculated)</section>
+        </sections>
+        <sections>
+            <label><!-- Metrics: Milestone Information (Calculated) --></label>
+            <section>Metrics: Milestone Information (Calculated)</section>
+        </sections>
+        <sections>
+            <label><!-- Project Health --></label>
+            <section>Project Health</section>
+        </sections>
+        <sections>
+            <label><!-- Project Revenue (USD) --></label>
+            <section>Project Revenue (USD)</section>
+        </sections>
+        <sections>
+            <label><!-- Reporting Milestones --></label>
+            <section>Reporting Milestones</section>
+        </sections>
+        <sections>
+            <label><!-- Shipping --></label>
+            <section>Shipping</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>PN Project Layout</layout>
+        <sections>
+            <label><!-- Budgets --></label>
+            <section>Budgets</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label><!-- Metrics: Hours &amp; Expenses (Calculated) --></label>
+            <section>Metrics: Hours &amp; Expenses (Calculated)</section>
+        </sections>
+        <sections>
+            <label><!-- Metrics: Milestone Information (Calculated) --></label>
+            <section>Metrics: Milestone Information (Calculated)</section>
+        </sections>
+        <sections>
+            <label><!-- Project Health --></label>
+            <section>Project Health</section>
+        </sections>
+        <sections>
+            <label><!-- Project Revenue (USD) --></label>
+            <section>Project Revenue (USD)</section>
+        </sections>
+        <sections>
+            <label><!-- Reporting Milestone --></label>
+            <section>Reporting Milestone</section>
+        </sections>
+        <sections>
+            <label><!-- Shipping --></label>
+            <section>Shipping</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Calculate Rollups --></label>
+        <name>Calculate_Rollups</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- New Weekly Status --></label>
+        <name>New_Weekly_Status</name>
+    </quickActions>
+</CustomObjectTranslation>

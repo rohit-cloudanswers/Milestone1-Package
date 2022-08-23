@@ -1,0 +1,58 @@
+<apex:page docType="html-5.0" standardStylesheets="false" showHeader="false"
+           sidebar="false" standardController="Lead" recordSetvar="leads">
+
+<html>
+<head lang="en">
+    <title>
+        Imagine Communications - {!$Site.Name}
+    </title>
+
+    <!-- Page meta data -->
+    <c:partnerMeta />
+
+</head>
+<body>
+
+<div class="stackable ui grid">
+
+    <div class="sixteen wide column">
+        
+        <!-- Partner Header Component -->
+        <c:partnerHeader />
+
+        <!-- Takes values Account, Contact, Lead, Opportunity, Pricebook -->
+        <c:partnerMainNav active="Lead" />
+
+        <apex:pageBlock >
+            <apex:form >
+            <apex:panelGrid columns="2">
+                <apex:outputLabel value="View:"/>
+                <apex:selectList value="{!filterId}" size="1">
+                    <apex:actionSupport event="onchange" rerender="leads"/>
+                    <apex:selectOptions value="{!listviewoptions}"/>
+                </apex:selectList>
+            </apex:panelGrid>
+            <apex:pageBlockTable value="{!leads}" var="l" id="leads" styleClass="ui table segment">
+                <apex:column value="{!l.name}"/>
+                <apex:column value="{!l.company}"/>
+                <apex:column value="{!l.phone}"/>
+            </apex:pageBlockTable>
+            </apex:form>
+        </apex:pageBlock>
+
+    </div>
+
+    <div class="row">
+        <div class="sixteen wide column">
+
+            <!-- Partner Footer Component -->
+            <c:partnerFooter />
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
+</apex:page>

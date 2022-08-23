@@ -1,0 +1,18 @@
+<aura:component >
+    <aura:attribute name="record" type="Object" />
+    <aura:attribute name="fieldName" type="String" default=' '/> 
+    <aura:attribute name="resultvalue" type="String" default=' '/>
+ 
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/> 
+    
+    <dd class="slds-dl_horizontal__detail slds-tile__meta" title="{!v.resultvalue}">
+        <span >
+            <aura:if isTrue="{!empty(v.resultvalue)}">
+                &nbsp;  
+                <aura:set attribute="else">
+                    {!v.resultvalue}
+                </aura:set>
+            </aura:if>
+        </span>
+    </dd> 
+</aura:component>

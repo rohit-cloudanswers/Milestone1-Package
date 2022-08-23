@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <name>Assign_Article_Count</name>
+        <label>Assign Article Count</label>
+        <locationX>142</locationX>
+        <locationY>424</locationY>
+        <assignmentItems>
+            <assignToReference>Case_Record.Num_Articles_Attached__c</assignToReference>
+            <operator>AssignCount</operator>
+            <value>
+                <elementReference>Get_Case_Articles</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Case</targetReference>
+        </connector>
+    </assignments>
+    <description>used with MAS</description>
+    <formulas>
+        <name>returnToday</name>
+        <dataType>DateTime</dataType>
+        <expression> DATETIMEVALUE(TEXT(TODAY()) + &quot; 0:00:00&quot;)</expression>
+    </formulas>
+    <interviewLabel>Case Article - Update of Article Count {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Case Article - Update of Article Count</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Case_Record</name>
+        <label>Case Record</label>
+        <locationX>138</locationX>
+        <locationY>185</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Case_Articles</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>RecordId</elementReference>
+            </value>
+        </filters>
+        <object>Case</object>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Case_Articles</name>
+        <label>Get Case Articles</label>
+        <locationX>144</locationX>
+        <locationY>307</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_Article_Count</targetReference>
+        </connector>
+        <filters>
+            <field>CaseId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Case_Record.Id</elementReference>
+            </value>
+        </filters>
+        <object>CaseArticle</object>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Case</name>
+        <label>Update Case</label>
+        <locationX>144</locationX>
+        <locationY>543</locationY>
+        <inputReference>Case_Record</inputReference>
+    </recordUpdates>
+    <startElementReference>Case_Record</startElementReference>
+    <status>Active</status>
+    <variables>
+        <name>RecordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varNothing</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+</Flow>

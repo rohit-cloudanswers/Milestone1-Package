@@ -1,0 +1,4 @@
+<design:component label="Featured Text">
+    <design:attribute name="featuredTextSection_title" label="Title" description="" />
+    <design:attribute name="featuredTextSection_text" label="Text" description="" />
+</design:component>

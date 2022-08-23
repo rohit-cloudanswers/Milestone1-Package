@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>MS Task</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>MS Tasks</value>
+    </caseValues>
+    <layouts>
+        <layout>6.2 Checklist Tasks</layout>
+        <sections>
+            <label><!-- Blocked --></label>
+            <section>Blocked</section>
+        </sections>
+        <sections>
+            <label><!-- Checklist Items --></label>
+            <section>Checklist Items</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Metrics: Hours &amp; Expenses --></label>
+            <section>Metrics: Hours &amp; Expenses</section>
+        </sections>
+        <sections>
+            <label><!-- Task Estimates/Budget --></label>
+            <section>Task Estimates/Budget</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>6.3 Checklist Task</layout>
+        <sections>
+            <label><!-- Blocked --></label>
+            <section>Blocked</section>
+        </sections>
+        <sections>
+            <label><!-- Checklist Items --></label>
+            <section>Checklist Items</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Metrics: Hours &amp; Expenses --></label>
+            <section>Metrics: Hours &amp; Expenses</section>
+        </sections>
+        <sections>
+            <label><!-- Task Estimates/Budget --></label>
+            <section>Task Estimates/Budget</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Custom Project Task Layout</layout>
+        <sections>
+            <label><!-- Blocked --></label>
+            <section>Blocked</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Metrics: Expenses --></label>
+            <section>Metrics: Expenses</section>
+        </sections>
+        <sections>
+            <label><!-- Metrics: Hours --></label>
+            <section>Metrics: Hours</section>
+        </sections>
+        <sections>
+            <label><!-- Task Estimates/Budget --></label>
+            <section>Task Estimates/Budget</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

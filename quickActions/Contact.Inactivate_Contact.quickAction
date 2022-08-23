@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Test - trying to shorten the field updates for marking a contact inactive</description>
+    <fieldOverrides>
+        <field>Active__c</field>
+        <formula>FALSE</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Comments__c</field>
+        <formula>Contact.Comments__c</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Email</field>
+        <formula>LEFT(Contact.Email,FIND(&quot;@&quot;,  Contact.Email)) + &quot;inactive.com&quot;</formula>
+    </fieldOverrides>
+    <label>Inactivate Contact</label>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <quickActionLayout>
+        <layoutSectionStyle>TwoColumnsLeftToRight</layoutSectionStyle>
+        <quickActionLayoutColumns>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Active__c</field>
+                <uiBehavior>Edit</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Email</field>
+                <uiBehavior>Edit</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Comments__c</field>
+                <uiBehavior>Edit</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>AccountId</field>
+                <uiBehavior>Edit</uiBehavior>
+            </quickActionLayoutItems>
+        </quickActionLayoutColumns>
+        <quickActionLayoutColumns/>
+    </quickActionLayout>
+    <successMessage>This contact is now inactive</successMessage>
+    <type>Update</type>
+</QuickAction>

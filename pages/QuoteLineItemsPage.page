@@ -1,0 +1,1364 @@
+<apex:page standardcontroller="Quote" extensions="QuoteLineItemsPageController" docType="xhtml-1.0-strict" cache="false" tabStyle="Quote">
+    <c:sObjectRemote ></c:sObjectRemote>
+    <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"/>
+    <apex:includeScript value="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.min.js" />
+    <apex:stylesheet value="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css"/>
+    <apex:stylesheet value="//cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css" />
+    <apex:includeScript value="//code.jquery.com/ui/1.11.2/jquery-ui.js"/>
+    <apex:includeScript value="//cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js" />
+    <apex:includeScript value="{!URLFOR($Resource.jstree, 'jstree/dist/jstree.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.jsTreeGrid)}"/>
+    <apex:includeScript value="{!URLFOR($Resource.AccountingJS)}"/>
+    <apex:includeScript value="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.12/angular.min.js"/>
+    <apex:stylesheet value="{!URLFOR($Resource.jstree, 'jstree/dist/themes/default/style.css')}"/>
+    <apex:slds rendered="{!$User.UIThemeDisplayed == 'Theme4d'}" />
+    
+    <script>
+    var replacements = {};
+    `{!Quote.PriceBook2.Product_Replacements__c}`.split("\n").map(line => line.split("\t")).map(x => replacements[x[0]] = x[1]);
+    var replacementsAlert = '';
+    <apex:repeat value="{!Quote.QuoteLineItems}" var="qli">
+    if (replacements[`{!qli.PricebookEntry.Product2.ProductCode}`]) replacementsAlert += `Replace {!qli.PricebookEntry.Product2.ProductCode} with ${replacements[`{!qli.PricebookEntry.Product2.ProductCode}`]}\n`;
+    </apex:repeat>
+    
+    </script>
+    
+    <style type="text/css">
+        .jconfirm-content > div {
+            white-space: pre-line;
+        }
+        .jstree-grid-cell-regular {
+            text-align: right;
+        }
+        .js-tree-cell {
+            padding-right: 10px;
+        }
+        .jstree-grid-cell{
+            padding-left: 0px;
+            overflow: visible;
+        }
+    </style>
+    <script type="text/javascript">
+        var QuoteApp = angular.module('QuoteApp', []);
+        QuoteApp.value('QuoteId', '{!quoteId}');
+        QuoteApp.factory('QuoteFactory', ['$q', function($q){
+            return {
+                getNonQuotableProducts: getNonQuotableProducts,
+                getProductsWithLimSupply: getProductsWithLimSupply,
+                getReplaceableProducts: getReplaceableProducts
+            };
+                
+            function getNonQuotableProducts(quoteId) {
+                var deferred = $q.defer();
+                Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.QuoteLineItemsPageController.getNonQuotableItems}',
+                    quoteId,
+                    function(result, event) {
+                        if(event.status) {
+                            deferred.resolve(result);
+                        } else {
+                            deferred.reject(event);
+                        }
+                    },
+                    {escape: false}
+                );
+                return deferred.promise;
+            }
+            
+            function getProductsWithLimSupply(quoteId) {
+                var deferred = $q.defer();
+                Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.QuoteLineItemsPageController.getProductsWithLimSupply}',
+                    quoteId,
+                    function(result, event) {
+                        if(event.status) {
+                            deferred.resolve(result);
+                        } else {
+                            deferred.reject(event);
+                        }
+                    },
+                    {escape: false}
+                );
+                return deferred.promise;
+            }
+
+            function getReplaceableProducts(quoteId){
+                var deferred = $q.defer();
+                Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.QuoteLineItemsPageController.getReplaceableProducts}',
+                    quoteId,
+                    function(result, event) {
+                        if(event.status) {
+                            deferred.resolve(result);
+                        } else {
+                            deferred.reject(event);
+                        }
+                    },
+                    {escape: false}
+                );
+                return deferred.promise;
+            }
+        }]);
+        QuoteApp.controller('QuoteController', ['$scope', '$q', 'QuoteFactory', 'QuoteId', function($scope, $q, QuoteFactory, QuoteId){
+            $scope.showProductAlerts = function() {
+                var promises = [
+                    QuoteFactory.getNonQuotableProducts(QuoteId),
+                    QuoteFactory.getProductsWithLimSupply(QuoteId),
+                    QuoteFactory.getReplaceableProducts(QuoteId)
+                ];
+                
+                $q.all(promises).then(
+                    function(data){
+                        var res1 = data[0];
+                        var message = '';
+                        if(res1 && res1.length > 0) {
+                            message += 'This quote contains non-quotable products: ';
+                            var codes = [];
+                            angular.forEach(res1, function(item){
+                                codes.push(item.Product2.ProductCode);
+                            });
+                            message += codes.join(', ');
+                        }
+                        var res2 = data[1];
+                        if(res2 && res2.length > 0){
+                            if(message.length == 0) {
+                                message = 'This quote contains products with limited supply: ';
+                            } else {
+                                message += '\nand products with limited supply: ';
+                            }
+                            var codes = [];
+                            angular.forEach(res2, function(item){
+                                codes.push(item.Product2.ProductCode);
+                            });
+                            message += codes.join(', ');
+                        }
+                        var res3 = data[2];
+                        var replaceableProducts = '';
+                        angular.forEach(res3, function(value, key){
+                            replaceableProducts += key + ' => ' + value + '\n';
+                        });
+                        if(replaceableProducts.length != 0){
+                            if(message.length == 0) {
+                                message = 'This quote contains products which must be replaced with new products:\n';
+                            } else {
+                                message += '\nand products which must be replaced with new products: ';
+                            }
+                            message += '\n' + replaceableProducts;
+                        }
+                        if(message && message.length > 0) jAlert('Alert!', message);
+                        if(replacementsAlert) jAlert('Alert!', replacementsAlert);
+                    },function(error){
+                        jAlert('Error', error.message);
+                    }
+                );
+            }
+            
+            $scope.showProductAlerts();
+        }]);
+    </script>
+    <script>
+        var $treeview;
+        var quoteId;
+        var defaultSolution = '{!defaultSolutionSet}';
+        var quoteSettings = undefined;
+        var selectedSolutionSet = defaultSolution;
+
+        //JSTREE functions
+        function init_tree() {
+            Visualforce.remoting.Manager.invokeAction(
+               '{!$RemoteAction.QuoteLineItemsPageController.quoteSolutionsWithChildren}',
+               quoteId,
+               function(result, event){
+                $treeview = $('[id *=solutionSetSortable]');
+                if(result == '') return;
+                $treeview.jstree({
+                    plugins:["wholerow","dnd","types","contextmenu","grid"],
+                    core : {
+                        'multiple' : false,
+                        'check_callback': true,
+                        'themes' : {
+                            "stripes" : true,
+                            "dots" : true,
+                            "icons" : true
+                        },
+                        data: JSON.parse(result.replace("&quot;", "\"")),
+                        force_text: true
+                    },
+                    'types' : {
+                        'master' : {
+                            "max_depth" : 1,
+                            "valid_children" : ["master"]
+                        },
+                        'optional' : {
+                            "max_depth" : 1,
+                            "valid_children" : ["optional"]
+                        }
+                    },
+                    "contextmenu":{         
+                        "items": function($node) {
+                            var tree = $treeview.jstree(true);
+                            return {
+                                "Rename": {
+                                    "separator_before": false,
+                                    "separator_after": true,
+                                    "label": "Rename",
+                                    "action": function (obj) { 
+                                        tree.edit($node);
+                                        $('.jstree-rename-input').attr('maxLength', 80);
+                                    }
+                                },                         
+                                "Delete": {
+                                    "separator_before": false,
+                                    "separator_after": true,
+                                    "label": "Delete",
+                                    "action": function (obj) { 
+                                        tree.delete_node($node);
+                                    }
+                                }
+                            };
+                        }
+                    },
+                    grid: {
+                        columns: [
+                            { /*width: 280,*/ header:'Solution Set', title:'text', headerClass:'js-tree-header', cellClass:'js-tree-cell' },
+                            { width: 140, header:'Total List Price', value: function(node){
+                                return node.data.total_list_price.toFixed(2);
+                            }, title:'text', headerClass:'js-tree-header', cellClass:'js-tree-cell' },
+                            { width: 140, header:'Total Price', value: 'total_price', title:'text', headerClass:'js-tree-header', cellClass:'js-tree-cell' },
+                            { width: 200, header:'Total Discount Amount', value:function(node){
+                                var v = (node.data.total_list_price - node.data.total_price).toFixed(2);
+                                return isNaN(v) ? 0 : v;
+                                }, title:'text', headerClass:'js-tree-header',cellClass:'js-tree-cell'},
+                            { width: 140, header:'Total Margin %', value: 'total_margin', title:'text', headerClass:'js-tree-header', cellClass:'js-tree-cell'
+                            },
+                            { width: 150, header:'Total Discount %', value:function(node){
+                                var v = (node.data.total_list_price == 0) ? 0 : (((node.data.total_list_price - node.data.total_price) / node.data.total_list_price) * 100).toFixed(2);
+                                return isNaN(v) ? 0 : v;
+                                }, title:'text', headerClass:'js-tree-header', cellClass:'js-tree-cell'
+                            }
+                        ],
+                        contextmenu: true
+                    }
+                }, {escape: false});
+
+                function populateWarning(){
+                    $("#solutionSetSortable").find(".iconClass").each(function(){
+                        $(this).append('<img  src="{!$Resource.WaringImage}" width="13" height="13" style="margin-left:5px;margin-top:5px;" title="This solution contains line items" />');
+                    });
+                }
+
+                //populate warning image
+                $treeview.on("ready.jstree", function (event, data) {
+                    populateWarning();
+                 });
+
+                //Open all nodes of tree on load
+                $treeview.on("loaded.jstree", function (event, data) {
+                // you get two params - event & data - check the core docs for a detailed description
+                    $(this).jstree("select_node","#"+defaultSolution);
+                });
+                $treeview.on("refresh.jstree", function (event, data) {
+                    $(this).jstree("select_node","#"+defaultSolution);
+                });
+                //Select first node of tree on load
+                $treeview.on("reselect.jstree",function(event,data) {
+                    $(this).jstree('select_node', 'ul > li:first');
+                    $(this).jstree("select_node","#"+defaultSolution);
+                });
+                $treeview.on("refresh.jstree", function (event, data) {
+                    $(this).jstree("select_node","#"+defaultSolution);
+                });
+                $treeview.on("refresh.jstree", function (event, data) {
+                    $(this).jstree("select_node","#"+defaultSolution);
+                    populateWarning();
+                });
+                //Select tree evenet handler
+                $treeview.on('select_node.jstree', function (event,data) {
+                    var selectedSolution = $treeview.jstree('get_selected');
+                    if(selectedSolution.length != 0 && defaultSolution != selectedSolution[0]) {
+                        selectedSolutionSet = selectedSolution[0];
+                        console.log(selectedSolutionSet);
+                        updateDefault(JSON.stringify(selectedSolution));
+                    }
+                });
+                //rename tree event handler
+                $treeview.on('rename_node.jstree',function(event,data) {
+                    data.text = data.text.replace(/"/g, '\'');
+                    renameSolution(data.node.id, data.text);
+                });
+                $treeview.on('delete_node.jstree',function(event,data) {
+                    deleteNode(data.node.id);
+                });
+
+                $treeview.on('update_cell.jstree-grid',function(event,data){
+                    if(data.node && data.node.data.is_parent == false) {
+                        if(data.col && data.col == 'total_price') {
+                            var newValue = parseFloat(unformatInput(data.value));
+                            if(newValue > 0 && newValue <= data.node.data.total_list_price) {
+                                onUpdateTotalPrice(data.node.id, newValue);
+                            } else {
+                                data.node.data.total_price = data.old;
+                            }
+                        } else if (data.col && data.col == 'total_margin') {
+                            var newValue = parseFloat(data.value);
+                            if(newValue > 0 && newValue <= 100) {
+                                onUpdateTotalMargin(data.node.id, newValue);
+                            } else {
+                                data.node.data.total_margin = data.old;
+                            }
+                        } else {
+                            data.node.data[data.col] = data.old;
+                        }
+                    } else {
+                        data.node.data[data.col] = data.old;
+                    }
+                });
+                //move tree event handler
+                $treeview.on('move_node.jstree',function(event,data) {
+                    //ready data to transmit to controller
+                    var inst = $treeview.jstree(true);
+                    var nodes = inst.get_json('#', { 'flat': true });
+                    var mappedNodes =$.map(nodes,function(n,i){
+                        var node = inst.get_node(n.id);
+                        //If statement is to maintain coloring on optional after move, find type and apply correct color tag
+                        if(node.type == 'optional'){
+                            var aNode = $treeview.jstree(true).get_node(node,true).find('a');
+                            $(aNode).attr('data-color','red');
+                        }
+                        else if(node.type == 'master'){
+                            var aNode = $treeview.jstree(true).get_node(node,true).find('a');
+                            $(aNode).attr('data-color','');
+                        }
+
+                        var parent = inst.get_node(node.parent);
+                        nodes[i].position = $.inArray(node.id, parent.children);
+                        var mappedNode =  {id : n.id,Order__c : $.inArray(node.id, parent.children)+1};
+                        if(parent.id != '#')
+                            mappedNode.Parent_Solution__c = parent.id;
+                        else
+                            mappedNode.Parent_Solution__c = '';
+                        return mappedNode;
+                    });
+                    moveSolution(JSON.stringify(mappedNodes));
+                });
+
+                $treeview.on('loaded_grid.jstree', function(event, data) {
+                    setTimeout(stripeJSTreeGrid, 1000);
+                    setTimeout(setupEditIcons, 1000);
+                });
+
+                $treeview.on('hover_node.jstree', function(event, data) {
+                    showEditIcons(data);
+                });
+
+                $treeview.on('dehover_node.jstree', function(event, data) {
+                    hideEditIcons(data);
+                });
+                   
+                $treeview.on('open_node.jstree', function(event, data){
+                    setTimeout(stripeJSTreeGrid, 1000);
+                    setTimeout(setupEditIcons, 1000);
+                });
+
+               },{escape:false}
+            );
+        }
+
+        function stripeJSTreeGrid() {
+            $('.jstree-grid-column').each(function(i, col){
+                if(i > 0) {
+                    $(col).children('.jstree-grid-col-'+i).each(function(j, cell){
+                        if(j % 2 == 0 && !$(cell).hasClass('jstree-clicked')) {
+                            $(cell).addClass('jstree-striped');
+                        } else {
+                            $(cell).removeClass('jstree-striped');
+                        }
+                    });
+                }
+            });
+        }
+
+        function setupEditIcons() {
+            $('.jstree-grid-column').each(function(i, col){
+                if(i == 0) {
+                    $(col).find('a.jstree-grid-col-0').each(function(k, ele){
+                        if($(ele).find('span.ui-icon-pencil').length == 0) {
+                            $(ele).append('<span class="ui-icon ui-icon-pencil margin-right-32 hide"></span>');
+                        } else {
+                            $(ele).find('span.ui-icon-pencil').addClass('hide');
+                        }
+                    });
+                } else if (i == 2 || i == 4) {
+                    $(col).children('.jstree-grid-col-'+i).each(function(j, cell){
+                        if($(cell).find('span.ui-icon-pencil').length == 0) {
+                            $(cell).append('<span class="ui-icon ui-icon-pencil margin-right-8 hide"></span>');
+
+                        } else {
+                            $(cell).find('span.ui-icon-pencil').addClass('hide');
+                        }
+                    });
+                }
+            });
+        }
+
+        function showEditIcons(data) {
+            $('#'+data.node.id+'_anchor').find('span.ui-icon-pencil').removeClass('hide');
+            $('#jsgrid_'+data.node.id+'_col2').find('span.ui-icon-pencil').removeClass('hide');
+            $('#jsgrid_'+data.node.id+'_col4').find('span.ui-icon-pencil').removeClass('hide');
+        }
+
+        function hideEditIcons(data) {
+            $('#'+data.node.id+'_anchor').find('span.ui-icon-pencil').addClass('hide');
+            $('#jsgrid_'+data.node.id+'_col2').find('span.ui-icon-pencil').addClass('hide');
+            $('#jsgrid_'+data.node.id+'_col4').find('span.ui-icon-pencil').addClass('hide');
+        }
+
+        function refreshTree(){
+            if($treeview) $treeview.jstree(true).refresh();
+            setTimeout(stripeJSTreeGrid, 1000);
+            setTimeout(setupEditIcons, 1000);
+        }
+
+        function reload_tree(cb) {
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.QuoteLineItemsPageController.quoteSolutionsWithChildren}',
+                quoteId,
+                function(result, event){
+                    var data = JSON.parse(result.replace("&quot;", "\""));
+                    $treeview.jstree(true).settings.core.data = data;
+                    $treeview.jstree(true).refresh();
+                    // reset
+                    $("[id$=moveToSolution]").val('');
+                    $("[id$=copyToSolution]").val('');
+                    if(cb) {
+                        cb();
+                    }
+                    setTimeout(stripeJSTreeGrid, 1000);
+                    setTimeout(setupEditIcons, 1000);
+                },
+                {escape:false}
+            );
+        }
+    
+        function demo_rename() {
+            var ref = $treeview.jstree(true),
+                sel = ref.get_selected();
+            if(!sel.length) { return false; }
+            sel = sel[0];
+            ref.edit(sel);
+            $('.jstree-rename-input').attr('maxLength', 80);
+        };
+
+        function demo_create() {
+            var quoteId = $("[id*=quoteId]").text();
+            Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.QuoteLineItemsPageController.createSolutionSet}',
+            quoteId,
+            function(result, event){
+                if(result != null){
+                    if(event.status){
+                        reload_tree(function(){
+                            $("#solutionSetSortable").find(".iconClass").each(function(){
+                                $(this).append('<img  src="{!$Resource.WaringImage}" width="13" height="13" style="margin-left:5px;margin-top:5px;" title="This solution contains line items" />');
+                            });
+                        });
+                    }
+                    else if(event.type ==='exception'){
+                        jAlert('Error', event.message);
+                    }
+                }
+
+            });
+        }
+
+        function demo_delete() {
+            var selectedNode = $treeview.jstree(true).get_node($treeview.jstree('get_selected')[0]);
+            if(selectedNode) {
+                $.confirm({
+                    useBootstrap: false,
+                    title: 'Confirm Delete',
+                    content: 'Are you sure you want to delete '+selectedNode.text+'?',
+                    buttons: {
+                        confirm: function() {
+                            deleteNode($treeview.jstree('get_selected')[0]);
+                        },
+                        cancel: function() {}
+                    }
+                });
+            } else {
+                jAlert('No Solution Set Selected', 'Please select Solution Set to proceed.');
+            }
+        }
+
+        function deleteAllSolutionSets() {
+            $.confirm({
+                useBootstrap: false,
+                title: 'Confirm Delete',
+                content: 'Are you sure you want to delete all solution sets and related quote line items?',
+                buttons: {
+                    yes: function() {
+                        blockPage();
+                        Visualforce.remoting.Manager.invokeAction(
+                            '{!$RemoteAction.QuoteLineItemsPageController.deleteAllQuoteSolutions}',
+                            '{!quoteId}',
+                            function(result, event){
+                                unBlockPage();
+                                if(event.status == true){
+                                    if(result.success == true){
+                                        defaultSolution = result.defaultSolution;
+                                        reload_tree(function(){
+                                            renderQLISection();
+                                            rerenderButtonsPanel();
+                                            setSelectedSolution(defaultSolution);
+                                        });
+                                    } else {
+                                        jAlert('Error', result.error);
+                                        console.log(result.details);
+                                    }
+                                }
+                            }
+                        );
+                    },
+                    cancel: function() {
+                        // do nothing
+                    }
+                }
+            });
+        }
+
+        function expandAllSolutionSets(){
+            $('#solutionSetSortable').jstree().open_all(null, 200);
+        }
+
+        function collapseAllSolutionSets(){
+            $('#solutionSetSortable').jstree().close_all(null, 200);
+        }
+
+        function showDeleteSuccess(){
+            jAlert('Success', 'All quote solutions with quote line items deleted successfully.');
+        }
+
+        function deleteNode(solutionId) {
+            blockPage();
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.QuoteLineItemsPageController.findNumberQLIOnSolution}',
+                solutionId,
+                function(result, event){
+                    unBlockPage();
+                    if(event.status){
+                        if(result == true){//No QLIS on Solution
+                            deleteSolutionSet(solutionId, false);
+                        } else {
+                            $.confirm({
+                                useBootstrap: false,
+                                title: 'Delete Child Items',
+                                content: 'Selected Solution Set has Quote Line Items or Child Solution Sets and they will be deleted as well, do you want to proceed?',
+                                buttons: {
+                                    confirm: function() {
+                                        deleteSolutionSet(solutionId, true);
+                                    },
+                                    cancel: function() {
+                                        reload_tree();
+                                    }
+                                }
+                            });
+                        }
+                    } else if(event.type === 'exception'){
+                        jAlert('Error', event.message);
+                    }
+                }
+            );
+        }
+
+        function deleteSolutionSet(solutionSetId, withChildren){
+            blockPage();
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.QuoteLineItemsPageController.deleteSolutionSet}',
+                quoteId, solutionSetId, withChildren, 
+                function(result, event){
+                    unBlockPage();
+                    if(event.status){
+                        if(result.success == true) {
+                            reload_tree(function(){
+                                renderQLISection();
+                                rerenderButtonsPanel();
+                            });
+                        } else if (result.error) {
+                            jAlert('Error', result.error.message);
+                        } else {
+                            jAlert('Error', 'Something went wrong, please contact your administrator.');
+                        }
+                    } else if(event.type === 'exception'){
+                        jAlert('Error', event.message);
+                    }
+                }
+            );
+        }
+
+        function demo_optional() {
+            if($treeview.jstree('get_selected')[0] === undefined){
+                  jAlert('No Quote Solution Set Selected', 'Please select atleast one Solution Set.');
+                  return;
+             }
+            Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.QuoteLineItemsPageController.optionalSolutionSet}',
+            $treeview.jstree('get_selected')[0],quoteId,
+            function(result, event){
+                if(event.status){
+                    //jsut refresh window instead, ignore below
+                    refreshParent();
+                    //set node type to optional
+                    var node = $treeview.jstree(true).get_node($treeview.jstree("get_selected")[0]);
+                    if(node.type == 'master')
+                        $treeview.jstree(true).set_type(node,'optional');
+                    else if(node.type == 'optional')
+                        $treeview.jstree(true).set_type(node,'master');
+                    //Set each child node type to optional as well
+                    $.each(node.children, function(i,v){
+                        var childNode = $treeview.jstree(true).get_node(v);
+                        if(node.type == 'master')
+                            $treeview.jstree(true).set_type(node,'optional');
+                        else if(node.type == 'optional')
+                            $treeview.jstree(true).set_type(node,'master');
+
+                    });
+                    //set all below nodes to red
+                    //already set type to optional, need to set data-red attribute to red so css will color it red
+                    $.each($treeview.jstree(true).get_node($treeview.jstree("get_selected")[0],true).find('a'),function(i,v){
+                    if($(v).attr('data-color') == '' || $(v).attr('data-color') == null)
+                        $(v).attr('data-color','red');
+                    else
+                        $(v).attr('data-color','');
+                    });
+                }
+                else if(event.type ==='exception'){
+                    jAlert('Error', event.message);
+                }
+            });
+
+        }
+        
+        //Action Function support functions
+        function setupMassUpdateQLIs() {
+            var checked = getCheckedBoxes();
+            if(checked.length == 0) {
+                jAlert('No Quote Line Item Selected', 'Please select atleast one Quote line item.');
+            } else {
+                var longDescription = $('#longDescription').val();
+                var customPartNumber = $('#customPartNumber').val();
+                var unitPrice = unformatInput($('#unitPrice').val());
+                if(unitPrice <= 0) {
+                    unitPrice = '';
+                }
+                var productCost = unformatInput($('#productCost').val());
+                if(productCost <= 0) {
+                    productCost = '';
+                }
+                var quantity = $('#quantity').val();
+                var lineDiscount = $('#lineDiscount').val();
+                var discount = parseFloat(lineDiscount);
+                if(!isNaN(discount) && discount > 100) lineDiscount = '100';
+                $('#lineDiscount').val(lineDiscount);
+                massUpdateQLIs(longDescription,customPartNumber,unitPrice,productCost,quantity,lineDiscount);
+            }
+        }
+
+        function getQuoteSolutions() {
+            var quoteId = $("[id*=quoteId]").text();
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.QuoteLineItemsPageController.quoteSolutionsWithChildren}',
+                quoteId,
+                function(result, event){
+                    var appendData = tree(result);
+                    $('[id *= solutionSetSortable]').append(appendData);
+                }
+            );
+        }
+        function tree(data) {
+            if (typeof(data) == 'object') {
+                var ol = $('<ol>');
+                for (var i in data) {
+                    ol.append(tree(data[i]));
+                }
+                return ol;
+            } else {
+                var textNode = $('<li>').append(document.createTextNode(data));
+                return textNode;
+            }
+        }
+        function tableJavascriptInit() {
+            //SORT QLI TABLE
+            //adding settimeout because this isn't working without it
+             $("[id*=theTable]").find("tbody").sortable({
+                update: function(event, ui) {
+                    var sortedIds = [];
+                    var sortOrder = $("[id*=theTable]").find("tbody").find('tr').each(function(){
+                        sortedIds.push($(this).data('id'));
+                    });
+                    updateSortOrder(sortedIds.join());
+                }});
+
+            //Set click handler for top checkbox
+            $('[id*=selectAllCheckbox]').on('click',function(e){
+                if($('[id*=selectAllCheckbox]').is(":checked")){
+                    $('input[type="checkbox"]').prop('checked',true);
+                }
+                else{
+                    $('input[type="checkbox"]').prop('checked',false);
+                }
+            });
+        }
+
+        // handle currency values
+        function hasFraction(str){
+            var dotIndex = str.lastIndexOf('.');
+            var commaIndex = str.lastIndexOf(',');
+            var len = str.length;
+            return (dotIndex + 3 == len) || (commaIndex + 3 == len);
+        }
+
+        function lastNonNumber(str) {
+            var result = '';
+            var len = str.length;   
+            for(var i=0; i<len; i++){
+                var s = str[i];
+                if(/^\d+$/.test(s) == false) {
+                    result = s;
+                }
+            }
+            return result;
+        }
+
+        function unformatInput(value){
+            var result = '';
+            if(hasFraction(value)) {
+                result = lastNonNumber(value);
+            } else {
+                result = lastNonNumber(value);
+                if(result == '.') {
+                    result = ',';
+                } else {
+                    result = '.';
+                }
+            }
+            return accounting.unformat(value, result);
+        }
+        
+        function saveItem(){
+            saveQLI();
+        }
+    
+        function deleteQLI(){
+            var checked = getCheckedBoxes();
+            if(checked.length == 0) {
+                jAlert('No Quote Line Item Selected', 'Please select atleast one Quote line item.');
+            } else {
+                deleteQLIs(JSON.stringify(checked));
+            }
+        }
+    
+        function getCheckedBoxes(){
+            var checked = [];
+            $('.rowCheckboxes:checked').each(function(i,n){
+                checked.push($(n).closest('tr').data('id'));
+            });
+            return checked;
+        }
+    
+        function moveItem(){
+            var checked = getCheckedBoxes();
+            var selection = $("[id$=moveToSolution]").val();
+            if(checked.length == 0) {
+                jAlert('No Quote Line Item Selected', 'Please select atleast one Quote line item.');
+            } else if (selection == '') {
+                jAlert('Destination Solution Set Not Selected', 'Please select destination solution set.');
+            } else {
+                moveQLI(selection);
+            }
+        }
+    
+        function copyItem(){
+            var checked = getCheckedBoxes();
+            var selection = $("[id$=copyToSolution]").val();
+            if(checked.length == 0) {
+                jAlert('No Quote Line Item Selected', 'Please select atleast one Quote line item.');
+            } else if (selection == '') {
+                jAlert('Destination Solution Set Not Selected', 'Please select destination solution set.');
+            } else {
+                copyQLI(selection);
+            }
+        }
+        
+        // inline edit state + functions
+        var inlineFields = undefined;
+        
+        function initInlineFields(){
+            inlineFields = {
+                Id: undefined,
+                Quantity: {value: undefined},
+                Part_Number2__c: {value: undefined},
+                Long_Description__c: {value: undefined},
+                Line_Discount__c: {value: undefined},
+                UnitPrice: {value: undefined},
+                Product_Cost2__c: {value: undefined}
+            };
+        }
+
+        function onFieldChanged(id, fieldName, field) {
+            if(quoteSettings && quoteSettings.indexOf('Disable Auto-Save') != -1) {
+                initInlineFields();
+            } else {
+                inlineFields.Id = id;
+                if(fieldName == 'Long_Description__c' || fieldName == 'Part_Number2__c') {
+                    inlineFields[fieldName].value = field.value;
+                } else {
+                    field.value = unformatInput(field.value);
+                    var temp = parseFloat(field.value);
+                    if(fieldName == 'UnitPrice' || fieldName == 'Product_Cost2__c') {
+                        temp = temp.toFixed(2);
+                    }
+                    inlineFields[fieldName].value = temp;
+                }
+            }
+        }
+        
+        function saveInline() {
+            if(inlineFields.Id) {
+                blockPage();
+                var qli = new sObject('QuoteLineItem', {Id: inlineFields.Id});
+                for (var field in inlineFields) {
+                    if (inlineFields.hasOwnProperty(field) && inlineFields[field].value != undefined) {
+                        if(field == 'Line_Discount__c' && inlineFields[field].value > 100) {
+                            inlineFields[field].value = 100;
+                        }
+                        qli[field] = inlineFields[field].value;
+                    }
+                }
+                // save quote line item
+                sObject.update(qli,function(results,event){
+                    unBlockPage();
+                    initInlineFields();
+                    if(event.status){
+                        // reset
+                        reload_tree();
+                    } else {
+                        // show error
+                        jAlert('Error', event.message);
+                    }
+                    renderQLISection();
+                });
+            }
+        }
+        
+        function blockPage(){
+            $.blockUI({
+                baseZ: 99999999,
+                message: '<img src="/img/loading32.gif" /><br/><center><h3> Please Wait...</h3></center>',
+                css: {
+                    border: 'none',
+                    padding: '15px',
+                    '-webkit-border-radius': '10px',
+                    '-moz-border-radius': '10px',
+                    opacity: .9,
+                    'font-size' : '138%'
+                }
+            });
+        }
+        
+        function unBlockPage(){
+            $.unblockUI();
+        }
+
+        function jAlert(alertTitle, alertMessage) {
+            $.alert({
+                useBootstrap: false,
+                title: alertTitle,
+                content: alertMessage
+            });
+        }
+        
+        initInlineFields();
+
+        //Visual Functions
+        function refreshParentWindow(hasErrors){
+            var headerId = "{!VFPageId}";
+            if({!ErrorsPresent} || hasErrors){
+                return false;
+            } else if(window.location.pathname == '/apex/QuoteLineItemsPage') {
+                window.location.reload();
+                return true;
+            } else {
+                window.top.location="/{!Quote.id}#"+headerId;
+                return true;
+            }
+        }
+    
+        function hideMessages() {
+            setTimeout(function(){
+                $("[id$='messages']").css('display', 'none');
+            }, 5000);
+        }
+        
+        function setFocusOnLoad() {} //Overriding standard salesforce functionality, should probably refactor
+
+        function grayOut(isVisible, shadowDivId, targetDivId){
+            var shadowDiv = document.getElementById(shadowDivId);
+            var targetDiv = document.getElementById(targetDivId);
+
+            if (isVisible) {
+                shadowDiv.style.offsetLeft = targetDiv.offsetLeft;
+                shadowDiv.style.top = targetDiv.offsetTop+'px';
+                shadowDiv.style.width = targetDiv.offsetWidth+'px';
+                shadowDiv.style.height = targetDiv.offsetHeight +'px';
+                shadowDiv.style.MozOpacity = 0.3;
+                shadowDiv.className = "shadowDivEnableClass";
+
+            } else {
+                shadowDiv.className = "shadowDivDisableClass";
+            }
+            setTimeout(stripeJSTreeGrid, 1000);
+            setTimeout(setupEditIcons, 1000);
+        }
+        
+        function inIframe () {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+        
+        function returnToQuote() {
+            redirectTo('/{!Quote.Id}');
+        }
+
+        function importLineItems () {
+            console.log(selectedSolutionSet);
+            if(selectedSolutionSet) {
+                switchDefault(selectedSolutionSet);
+            }
+        }
+
+         function switchDefaultComplete(val){
+            if(val != true){
+                var retToVF = '';
+                if(selectedSolutionSet) {
+                    retToVF += '&ss=' + selectedSolutionSet;
+                }
+                if(window.location.href.toLowerCase().includes('quotelineitemspage')) {
+                    retToVF += '&qli=1';
+                }
+                var url = '/apex/quoteupload?id={!Quote.Id}' + retToVF;
+                redirectTo(url);
+            }
+        }
+
+        function redirectTo(url){
+            if(window.sforce && window.sforce.one){
+                window.sforce.one.navigateToURL(url);
+            } else {
+                window.top.location = url;
+            }
+        }
+
+        function onClickBack(){
+            redirectTo('/{!Quote.Id}');
+        }
+
+        function onDocumentReady() {
+            //INITIALIZE JQ TREE
+            quoteId = $("[id*=quoteId]").text();
+            var baseURL = $("[id*=baseURL]").text();
+            init_tree();
+            //set event handlers for table(sorting)
+            tableJavascriptInit();
+            sObject.query("SELECT Quote_Line_Item_Settings__c FROM User WHERE Id = '{!$User.Id}'", function(result, event){
+                if(event.status = true && result.length == 1) {
+                    quoteSettings = result[0].Quote_Line_Item_Settings__c;
+                }
+            });
+            // check in iframe
+            if (inIframe()) {
+                $('input[value="Return to Quote"]').hide();
+            }
+            // read js cookie
+            var cookies = document.cookie.split(';');
+            var redirect = false;
+            for(var i=0; i<cookies.length; i++) {
+                var cookie = cookies[i];
+                if(cookie.indexOf('apex__do_redirect') != -1) {
+                    redirect = true;
+                    break;
+                }
+            }
+            if(redirect == true) {
+                window.parent.location.href = '/apex/QuoteLineItemsPage?id={!quote.Id}&stopRedirect=true';
+            }
+        }
+
+        $(document).ready(onDocumentReady);
+    </script>
+    <div ng-app="QuoteApp" ng-controller="QuoteController"></div>
+    <div id="ShadowDivId" class="shadowDivDisableClass" ></div>
+    <apex:outputText styleClass="hidden" id="quoteId" value="{!quoteId}"></apex:outputText>
+    <apex:outputText styleClass="hidden" id="baseURL" value="{!baseURL}"></apex:outputText>
+    <apex:form >
+        <!--apex:commandButton action="{!cancel}" value="Back to Quote"/-->
+
+        <!-- Action Functions -->
+        <apex:actionFunction name="renderQLISection" action="{!setupQliWrappers}" reRender="qlisBlock" />
+        <apex:actionFunction name="refreshParent" rerender="message" oncomplete="refreshParentWindow();"/>
+
+        <apex:actionFunction name="updateDefault" action="{!updateDefaultSolution}" rerender="thePanel,messages" status="actionStatus" oncomplete="refreshTree()">
+            <apex:param name="strSerialVal" value=""/>
+        </apex:actionFunction>
+
+        <apex:actionFunction name="switchDefault" action="{!switchDefaultSolution}" rerender="thePanel,messages" status="actionStatus" oncomplete="switchDefaultComplete({!IsErrorOccurs});" >
+            <apex:param name="strSerialVal" value=""/>
+        </apex:actionFunction>
+
+        <apex:actionFunction name="updateSortOrder" action="{!reorderQli}" rerender="thePanel,messages" status="actionStatus">
+            <apex:param name="strSerialVal" value="" />
+        </apex:actionFunction>
+
+        <apex:actionFunction name="setSelectedSolution" action="{!updateSolutionSets}" reRender="" status="actionStatus" oncomplete="showDeleteSuccess();">
+            <apex:param name="defaultSoln" assignTo="{!defaultSolutionSet}" value="" />
+        </apex:actionFunction>
+
+        <apex:actionFunction name="renameSolution" action="{!renameSolutionSet}" rerender="theButtonsPanel,messages" status="actionStatus" oncomplete="reload_tree();">
+            <apex:param name="solutionId" value=""/>
+            <apex:param name="solutionNewName" value=""/>
+        </apex:actionFunction>
+
+        <apex:actionFunction name="onUpdateTotalPrice" action="{!onUpdateTotalPrice}" rerender="theButtonsPanel,thePanel,messages" status="actionStatus" oncomplete="reload_tree();">
+            <apex:param name="solutionId" value=""/>
+            <apex:param name="newTotalPrice" value=""/>
+        </apex:actionFunction>
+
+        <apex:actionFunction name="onUpdateTotalMargin" action="{!onUpdateTotalMargin}" rerender="theButtonsPanel,thePanel,messages" status="actionStatus" oncomplete="reload_tree();">
+            <apex:param name="solutionId" value=""/>
+            <apex:param name="newTotalMargin" value=""/>
+        </apex:actionFunction>
+
+        <apex:actionFunction name="rerenderButtonsPanel" rerender="theButtonsPanel, messages"/>
+
+        <apex:actionFunction name="moveSolution" action="{!moveSolutionSet}" rerender="theButtonsPanel, messages" status="actionStatus" oncomplete="reload_tree();">
+            <apex:param name="strSerialVal" value="" />
+        </apex:actionFunction>
+
+        <apex:actionFunction name="deleteQLIs" action="{!deleteQLI}" rerender="messages,theButtonsPanel,thePanel" status="actionStatus" oncomplete="reload_tree();">
+            <apex:param name="selectedQli" value=""/>
+        </apex:actionFunction>
+
+        <apex:actionFunction name="massUpdateQLIs" action="{!massUpdateQLI}" rerender="thePanel,theButtonsPanel,messages" oncomplete="reload_tree();" status="actionStatus">
+            <apex:param name="longDescription" value=""/>
+            <apex:param name="customPartNumber" value=""/>
+            <apex:param name="unitPrice" value=""/>
+            <apex:param name="productCost" value=""/>
+            <apex:param name="quantity" value=""/>
+            <apex:param name="lineDiscount" value=""/>
+        </apex:actionFunction>
+
+        <!-- Action status to gray out the screen when an action is in progress-->
+        <apex:actionStatus id="actionStatus" onstart="blockPage();" onstop="unBlockPage();"/>
+
+        <!-- END Action Functions -->
+
+        <apex:pageMessages id="messages"/>
+
+        <div id="MainDiv">
+            <apex:outputPanel rendered="{!$User.UIThemeDisplayed == 'Theme4d'}" layout="block" styleClass="slds-scope">
+                <!-- add lightning header -->
+                <div class="slds-page-header">
+                    <div class="slds-grid">
+                        <div class="slds-col slds-has-flexi-truncate">
+                            <div class="slds-media slds-no-space slds-grow">
+                                <div class="slds-media__figure">
+                                    <span class="slds-icon_container slds-icon-standard-quotes" title="Quote">
+                                        <svg class="slds-icon slds-page-header__icon" aria-hidden="true">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/standard-sprite/svg/symbols.svg#quotes')}" />
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="slds-media__body">
+                                    <h1 class="slds-page-header__title slds-truncate slds-align-middle" title="{!quote.Quote_Name__c}">{!quote.Quote_Name__c}</h1>
+                                    <p class="slds-text-body_small slds-line-height_reset">Quote Line Items</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-col slds-no-flex slds-grid slds-align-top slds-p-bottom_xx-small">
+                            <div class="slds-button-group" role="group">
+                                <button type="button" class="slds-button slds-button_neutral" onclick="onClickBack()">Back</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </apex:outputPanel>
+
+            <!-- solution sets block -->
+            <apex:pageBlock id="setsBlock" title="Solution Sets">
+                <apex:commandButton onclick="demo_rename();return false;" value="Rename"/>&nbsp;
+                <apex:commandButton onclick="demo_create();return false;" value="Create"/>&nbsp;
+                <apex:commandButton onclick="demo_delete();return false;" value="Delete"/>&nbsp;
+                <apex:commandButton onclick="deleteAllSolutionSets();return false;" value="Delete All"/>&nbsp;
+                <apex:commandButton onclick="expandAllSolutionSets();return false;" value="Expand All"/>&nbsp;
+                <apex:commandButton onclick="collapseAllSolutionSets();return false;" value="Collapse All"/>&nbsp;
+                <apex:commandButton onclick="demo_optional();return false;" value="Optional"/>&nbsp;
+                <apex:commandButton onclick="returnToQuote();return false;" value="Return to Quote"/>&nbsp;
+                <apex:commandButton onclick="importLineItems(); return false;" value="Import Line Items"/>
+                <div id="solutionSetSortable"></div>
+            </apex:pageBlock>
+
+            <!-- quote line items block -->
+            <apex:pageBlock id="qlisBlock" title="Edit Quote Line Items">
+                <apex:outputPanel id="theButtonsPanel">
+                    <apex:commandButton value="Move to:" onclick="moveItem(); return false;"/>
+                    <apex:actionFunction name="moveQLI" action="{!moveQLI}" rerender="messages,theButtonsPanel,thePanel" status="actionStatus" oncomplete="reload_tree();">
+                        <apex:param name="selectedSolution" value="" assignTo="{!moveToSolution}" />
+                    </apex:actionFunction>
+                    <apex:selectList id="moveToSolution" multiselect="false" size="1">
+                        <apex:selectOptions value="{!QuoteSolutions}"/>
+                    </apex:selectList>&nbsp;&nbsp;
+                    <apex:commandButton value="Copy to:" onclick="copyItem(); return false;"/>
+                    <apex:actionFunction name="copyQLI" action="{!copyQLI}" rerender="messages,theButtonsPanel,thePanel" status="actionStatus" oncomplete="reload_tree();">
+                        <apex:param name="selectedSolution" value="" assignTo="{!copyToSolution}" />
+                    </apex:actionFunction>
+                    <apex:selectList id="copyToSolution" value="{!copyToSolution}" multiselect="false" size="1">
+                        <apex:selectOptions value="{!QuoteSolutions}"/>
+                    </apex:selectList>
+                </apex:outputPanel>
+                <apex:commandLink value="New" id="newProduct" action="{!newQLI}" target="_top" styleClass="btn" style="text-decoration:none;padding:4px;"/>&nbsp;
+                <apex:commandButton value="Delete" onclick="deleteQLI();return false;"/>&nbsp;
+                <apex:commandButton value="Save" onclick="saveItem(); return false;" />&nbsp;
+                <apex:actionFunction name="saveQLI" action="{!saveQli}" oncomplete="reload_tree();" rerender="messages,theButtonsPanel,thePanel" status="actionStatus" />
+                <apex:commandButton value="Mass Edit" onclick="setupMassUpdateQLIs(); return false;"/>
+                <apex:outputPanel id="thePanel" layout="block" styleClass="table-container">
+                    <table id="theTable" class="quote-line-items-table">
+                        <thead>
+                            <th>
+                                <input type="checkbox" id="selectAllCheckbox"/>
+                            </th>
+                            <th>Quantity<br/>
+                                <input id="quantity" style="width:50%;" type="text"/>
+                            </th>
+                            <th>
+                                Part Number
+                            </th>
+                            <th>Custom Part Number<br/>
+                                <input id="customPartNumber" style="width:50%;" type="text"/>
+                            </th>
+                            <th>
+                                Product Name
+                            </th>
+                            <th>
+                                Product Line
+                            </th>
+                            <th>
+                                Product Type
+                            </th>
+                            <th>
+                                Long Description<br/>
+                                <textarea id="longDescription" style="width:90%;"/>
+                            </th>
+                            <th>
+                                List Price
+                            </th>
+                            <th>Line Discount<br/>
+                                <input id="lineDiscount" min="0" max="100" style="width:50%;" type="text"/>
+                            </th>
+                            <th>Unit Price<br/>
+                                <input id="unitPrice" style="width:100%;" type="text"/>
+                            </th>
+                            <th>
+                                Unit Net Price
+                            </th>
+                            <th>
+                                Total Price
+                            </th>
+                            <th>Product Cost<br/>
+                                <input id="productCost" style="width:100%;" type="text"/>
+                            </th>
+                            <th>
+                                Total Cost
+                            </th>
+                            <th>
+                                Margin %
+                            </th>
+                        </thead>
+                        <tbody>
+                            <apex:repeat value="{!qliList}" var="qli">
+                                <tr data-id="{!qli.q.Id}">
+                                    <td >
+                                        <apex:inputCheckbox id="qliSelected" value="{!qli.selected}" styleClass="rowCheckboxes"/>
+                                    </td>
+                                    <td>
+                                        <apex:inputField id="quantity" value="{!qli.q.Quantity}" required="false" onchange="onFieldChanged('{!qli.q.Id}', 'Quantity', this);" onblur="saveInline();"/>
+                                    </td>
+                                    <td>
+                                        <apex:outputField value="{!qli.q.Part_Number__c}"/>
+                                    </td>
+                                    <td>
+                                        <apex:inputField value="{!qli.q.Part_Number2__c}" onchange="onFieldChanged('{!qli.q.Id}', 'Part_Number2__c', this);" onblur="saveInline();"/>
+                                    </td>
+                                    <td>
+                                        <apex:outputField value="{!qli.q.Product2.Name}"/>
+                                    </td>
+                                    <td>
+                                        <apex:outputField value="{!qli.q.Product2.Product_Line__c}"/>
+                                    </td>
+                                    <td>
+                                        <apex:outputField value="{!qli.q.Product2.Salesforce_Product_Type__c}"/>
+                                    </td>
+                                    <td>
+                                        <apex:inputField value="{!qli.q.Long_Description__c}" onchange="onFieldChanged('{!qli.q.Id}', 'Long_Description__c', this);" onblur="saveInline();"/>
+                                    </td>
+                                    <td>
+                                        <apex:outputField value="{!qli.q.ListPrice}"/>
+                                    </td>
+                                    <td>
+                                        <apex:variable var="editDiscountAllowed" value="{!OR(NOT(qli.q.Product2.Nondiscountable__c), adminProfile)}" />
+                                        <apex:inputField value="{!qli.q.Line_Discount__c}" html-data-min="0" html-data-max="100" rendered="{!editDiscountAllowed}" required="false" onchange="onFieldChanged('{!qli.q.Id}', 'Line_Discount__c', this);" onblur="saveInline();"/>
+                                        <apex:outputField value="{!qli.q.Line_Discount__c}" rendered="{!NOT(editDiscountAllowed)}"/>
+                                    </td>
+                                    <td style="padding-left:0px;">
+                                        <apex:inputField value="{!qli.q.UnitPrice}" required="false" style="width:100%;" onchange="onFieldChanged('{!qli.q.Id}', 'UnitPrice', this);" onblur="saveInline();"/>
+                                    </td>
+                                    <td>
+                                        <apex:outputField value="{!qli.q.Unit_Net_Price__c}"/>
+                                    </td>
+                                    <td>
+                                        <apex:outputField value="{!qli.q.TotalPrice}"/>
+                                    </td>
+                                    <td style="padding-left:0px;">
+                                        <apex:inputField value="{!qli.q.Product_Cost2__c}" rendered="{!IF(OR(qli.q.Product2.Allow_Cost_Override__c, CONTAINS(LOWER(qli.q.Part_Number__c), "bcd999"),adminProfile), "true", "false")}" style="width:100%;" onchange="onFieldChanged('{!qli.q.Id}', 'Product_Cost2__c', this);" onblur="saveInline();"/>
+                                        <apex:outputField value="{!qli.q.Product_Cost2__c}" rendered="{!IF(OR(qli.q.Product2.Allow_Cost_Override__c, CONTAINS(LOWER(qli.q.Part_Number__c), "bcd999"),adminProfile), "false", "true")}" style="width:100%;"/>
+                                    </td>
+                                    <td>
+                                        <apex:outputField value="{!qli.q.Extended_Cost__c}"/>
+                                    </td>
+                                    <td>
+                                        <apex:outputField value="{!qli.q.Margin__c}"/>
+                                    </td>
+                                </tr>
+                            </apex:repeat>
+                        </tbody>
+                    </table>
+                    <script>
+                        //Needed to use this solution putting this method on oncomplete on actionFunction doesn't work
+                        tableJavascriptInit();
+                        defaultSolution = '{!defaultSolutionSet}';
+                    </script>
+                </apex:outputPanel>
+            </apex:pageBlock>            
+        </div>
+
+    </apex:form>
+    <style>
+        body .bPageBlock .pbBody .red .pbSubheader{
+            border-style: solid;
+            border-width: 5px;
+
+        }
+        .shadowDivDisableClass{
+                display:none;
+        }
+
+        .shadowDivEnableClass{
+            position:absolute;
+            overflow:hidden;
+            opacity:0.3;
+            z-Index:50;
+            filter:alpha(opacity=30);
+            background-Color:#000000;
+            display:block;
+        }
+        a[data-color="red"] {
+            color: red !important;
+        }
+        input[type="text"] {
+            width:50%;
+        }
+        .jstree-grid-wrapper {
+            margin-top: 8px;
+        }
+        .quote-line-items-table {
+            margin-top: 8px;
+        }
+        .quote-line-items-table th {
+            font: bold 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+            color: #4f6b72;
+            border-right: 1px solid #C1DAD7;
+            border-bottom: 1px solid #C1DAD7;
+            border-top: 1px solid #C1DAD7;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-align: left;
+            padding: 6px 6px 6px 12px;
+            background: #e5eff8;
+        }
+
+        .quote-line-items-table th.nobg {
+            border-top: 0;
+            border-left: 0;
+            border-right: 1px solid #C1DAD7;
+            background: none;
+        }
+
+        .quote-line-items-table td {
+            border-right: 1px solid #C1DAD7;
+            border-bottom: 1px solid #C1DAD7;
+            background: #fff;
+            padding: 6px 6px 6px 12px;
+            color: #4f6b72;
+        }
+
+
+        .quote-line-items-table td.alt {
+            background: #F5FAFA;
+            color: #797268;
+        }
+
+        .quote-line-items-table th.spec {
+            border-left: 1px solid #C1DAD7;
+            border-top: 0;
+            background: #fff url(images/bullet1.gif) no-repeat;
+            font: bold 10px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+        }
+
+        .quote-line-items-table th.specalt {
+            border-left: 1px solid #C1DAD7;
+            border-top: 0;
+            background: #f5fafa url(images/bullet2.gif) no-repeat;
+            font: bold 10px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+            color: #797268;
+        }
+        .js-tree-header {
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .js-tree-cell {
+            font-size: 14px;
+        }
+        .vakata-context li {
+            margin-left: 0;
+        }
+        .ui-icon-pencil {
+            float: right;
+            margin-top: 2px;
+        }
+        .ui-icon-pencil.margin-right-8 {
+            margin-right: 8px;
+        }
+        .ui-icon-pencil.margin-right-32 {
+            margin-right: 32px;
+        }
+        .ui-icon-pencil.hide {
+            /*display: none;*/
+            opacity: 0; /* means the space is reserved so table doesn't change size on hover */
+        }
+        input.jstree-rename-input {
+            width:100% !important;
+        }
+        .table-container {
+            overflow: scroll;
+        }
+    </style>
+
+</apex:page>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>6</activeVersionNumber>
+    <description>Copies the contents of the specialized case notes field on the account into the Case Comments with a non-public comment.  Updated to not include media for now, it was confusing them.</description>
+    <masterLabel>Update Specialized Case notes on Case</masterLabel>
+</FlowDefinition>

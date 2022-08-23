@@ -1,0 +1,5 @@
+<apex:page standardController="Account" extensions="LogoController">        
+    <apex:outputLink value="/{!logoId}" target="_blank" rendered="{!logoId != null}">
+        <apex:image url="/servlet/servlet.FileDownload?file={!logoId}" width="150" height="150"/>
+    </apex:outputLink>
+</apex:page>

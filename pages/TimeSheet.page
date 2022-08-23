@@ -1,0 +1,1891 @@
+<apex:page sidebar="false" controller="TimeSheetController" showHeader="true" applyBodyTag="false" standardStylesheets="false" docType="html-5.0">
+    <head>
+        <title>Timesheet App</title>
+        <c:sObjectRemote ></c:sObjectRemote>
+        <c:importvisualstrap theme="flatly"></c:importvisualstrap>
+        <apex:variable var="res" value="{!URLFOR($Resource.Cloudanswers, '/node_modules')}"/>
+        <!-- link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" / -->
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/angular-ui-select/0.20.0/select.min.css"/>
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.css" />
+        <!--
+          IE8 support, see AngularJS Internet Explorer Compatibility https://docs.angularjs.org/guide/ie
+          For Firefox 3.6, you will also need to include jQuery and ECMAScript 5 shim
+        -->
+        <!--[if lt IE 9]>
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/2.2.0/es5-shim.js"></script>
+          <script>
+            document.createElement('ui-select');
+            document.createElement('ui-select-match');
+            document.createElement('ui-select-choices');
+          </script>
+        <![endif]-->
+        <style type="text/css">
+            .ui-select-toggle {
+                border: 1px solid #DCE4E4;
+                border-radius: 4px;
+            }
+            li.ui-select-choices-group {
+                margin-left: 0;
+            }
+            .ui-select-search {
+                min-width: 162px;
+                border-width: 2px;
+                border-radius: 4px;
+            }
+            .ui-select-container .btn-default {
+                color: black;
+                background-color: white;
+                border: 2px solid #dce4ec;
+                border-radius: 4px !important;
+            }
+            .ui-select-container .btn-default:hover {
+                color: black !important;
+                background-color: white;
+            }
+            .ui-select-container .ui-select-search {
+                border-radius: 4px !important;
+            }
+            .ui-select-container {
+                min-width: 162px;
+            }
+            .btn-date-popup {
+                padding: 12px 14px !important;
+                font-size: 12px !important;
+            }
+            .uib-datepicker-popup.dropdown-menu {
+                display: block;
+            }
+            .uib-datepicker-popup li {
+                margin-left: 0;
+            }
+            .uib-daypicker th {
+                padding: 1px;
+            }
+            .uib-monthpicker th {
+                padding: 1px;
+            }
+            .uib-yearpicker th {
+                padding: 1px;
+            }
+            .uib-daypicker td {
+                padding: 1px;
+            }
+            .uib-monthpicker td {
+                padding: 1px;
+            }
+            .uib-yearpicker td {
+                padding: 1px;
+            }
+            .create-time {
+                font-size: 14px !important;
+                padding: 7px 10px !important;
+                font-weight: bold !important;
+            }
+            .form-group.required .control-label:after { 
+                content:"*";
+                color:red;
+            }
+            table th.action-column {
+                width: 120px;
+            }
+            table th.date-column {
+                width: 85px;
+            }
+            .inline-box {
+                max-width: 60px;
+            }
+            .inline-box.editing {
+                background: url(/img/loading24.gif) right;
+                background-repeat: no-repeat;
+                background-size: 16px 16px;
+            }
+            .invalid-input {
+                border-color: red !important;
+            }
+            .visualstrap .panel {
+                margin-top: 10px;
+                margin-bottom: 0px;
+            }
+            .table-header {
+                cursor: pointer;
+            }
+            .btn-xs {
+                margin-top: 2px !important;
+            }
+            .submitted {
+                background-color: #e4e4e4;
+                cursor: not-allowed;
+            }
+        </style>
+    </head>
+    <body ng-app="TimeSheetApp">
+        <div ng-controller="TimeSheetController" class="container visualstrap ng-cloak">
+            <div class="container-fluid" ng-form="">
+                <h3>Weekly Time Sheet</h3>
+                <br /><br />
+                <div class="row">
+                    <div class="col-md-12">
+                        <button class="btn btn-md" ng-click="previousWeek()">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                        </button>
+                        <span>
+                            <b>Week: {{week.display}}</b>
+                        </span>
+                        <button class="btn btn-md" ng-click="nextWeek()">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </button>
+                        &nbsp;&nbsp;
+                        <button class="btn btn-md btn-success create-time" ng-click="openTimeEntryModal()">
+                            <span class="glyphicon glyphicon-plus-sign"></span> Create Time Entry
+                        </button>
+                        &nbsp;&nbsp;
+                        <button class="btn btn-md btn-info create-time" ng-click="openCloneModal()" title="Copy previous week's Time entries">
+                            <span class="glyphicon glyphicon-copy"></span> Copy Timesheet
+                        </button>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>Total Hours this Week: <b>{{grandHours() | number : 2}}</b></h4>
+                    </div>
+                </div>
+                <div class="row" ng-show="errors.length != 0">
+                    <div class="col-md-12">
+                        <div uib-alert="true" ng-repeat="error in errors" class="alert-danger" close="closeAlert($index)">{{error.message}}</div>
+                    </div>
+                </div>
+                <br />
+
+                <div>
+                    <!-- project section submitted -->
+                    <div class="panel panel-info" ng-if="commonTasksSubmitted.length > 0">
+                        <div class="panel-heading">
+                            <h5>Project Time Entries (Submitted)</h5>
+                        </div>
+                        <div class="panel-body" ng-if="loading">
+                            <center><img src="/img/loading24.gif" />&nbsp;&nbsp;<h4> Loading...</h4></center>
+                        </div>
+                        <table class="table table-striped" ng-if="!loading">
+                            <thead>
+                                <tr>
+                                    <th class="action-column">Action</th>
+                                    <th width="10%" class="table-header" ng-click="setSortBy('taskPanel', 'projectName')">Project</th>
+                                    <th width="10%" class="table-header" ng-click="setSortBy('taskPanel', 'milestoneName')">Milestone</th>
+                                    <th width="15%" class="table-header" ng-click="setSortBy('taskPanel', 'name')">Task</th>
+                                    <th class="date-column" ng-repeat="dt in week.dates">{{toDisplayDate(dt)}}</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="5" class="text-right"><b>Total Hours: </b></td>
+                                    <td ng-repeat="dt in week.dates">
+                                        <b>{{totalHoursByDay(commonTasksSubmitted, dt) | number : 2}}</b>
+                                    </td>
+                                    <td><b>{{totalWeekHours(commonTasksSubmitted) | number : 2}}</b></td>
+                                </tr>
+                            </tfoot>
+                            <tbody>
+                                <tr ng-repeat="entry in commonTasksSubmitted">
+                                    <td>
+                                        &nbsp;
+                                    </td>
+                                    <td>
+                                        <a tabindex="-1" ng-href="/{{entry.projectId}}" target="_blank">{{entry.projectName}}
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a tabindex="-1" ng-href="/{{entry.milestoneId}}" target="_blank">
+                                        {{entry.milestoneName}}
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a tabindex="-1" ng-href="/{{entry.id}}" target="_blank">
+                                        {{entry.name}}
+                                        </a>
+                                    </td>
+                                    <td ng-repeat="dt in week.dates" ng-init="index = hasEntryForDate(entry.entries, dt)">
+                                        <span style="display: none;">{{index = hasEntryForDate(entry.entries, dt)}}</span>
+                                        <span ng-if="entry.entries.length != 0 && index != -1">
+                                            <input type="number" class="inline-box" ng-model="entry.entries[index].attributes.Hours__c" ng-blur="saveInline(entry,entry.entries[index])" ng-class="{'submitted': entry.entries[index].attributes.Submitted__c}" ng-min="-24" ng-max="24" ng-step="0.01" ng-disabled="entry.entries[index].attributes.Submitted__c == true" />
+                                        </span>
+                                        <span ng-if="index == -1">
+                                            <input type="number" class="inline-box submitted" ng-blur="createInline('Project Task',entry,dt,$event)" ng-value="0" ng-min="-24" ng-max="24" ng-step="0.01" ng-disabled="true" />
+                                        </span>
+                                    </td>
+                                    <td>{{totalHours(entry) | number : 2}}</td>
+                                </tr>
+                                <tr ng-if="commonTasksSubmitted.length == 0">
+                                    <td colspan="12">No records found for selected week.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- project section -->
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h5>Project Time Entries</h5>
+                        </div>
+                        <div class="panel-body" ng-if="loading">
+                            <center><img src="/img/loading24.gif" />&nbsp;&nbsp;<h4> Loading...</h4></center>
+                        </div>
+                        <table class="table table-striped" ng-if="!loading">
+                            <thead>
+                                <tr>
+                                    <th class="action-column">Action</th>
+                                    <th width="10%" class="table-header" ng-click="setSortBy('taskPanel', 'projectName')">Project</th>
+                                    <th width="10%" class="table-header" ng-click="setSortBy('taskPanel', 'milestoneName')">Milestone</th>
+                                    <th width="15%" class="table-header" ng-click="setSortBy('taskPanel', 'name')">Task</th>
+                                    <th width="15%" class="table-header" ng-click="setSortBy('taskPanel', 'description')">Description</th>
+                                    <th class="date-column" ng-repeat="dt in week.dates">{{toDisplayDate(dt)}}</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="5" class="text-right"><b>Total Hours: </b></td>
+                                    <td ng-repeat="dt in week.dates">
+                                        <b>{{totalHoursByDay(commonTasks,dt) | number : 2}}</b>
+                                    </td>
+                                    <td><b>{{totalWeekHours(commonTasks) | number : 2}}</b></td>
+                                </tr>
+                            </tfoot>
+                            <tbody>
+                                <tr ng-repeat="entry in commonTasks">
+                                    <td>
+                                        <button tabindex="-1" class="btn btn-xs btn-info" ng-click="editTimeEntries(entry.entries)">Edit</button>&nbsp;
+                                        <button tabindex="-1" class="btn btn-xs btn-danger" ng-click="deleteTimeEntry(entry)">Delete</button>
+                                    </td>
+                                    <td>
+                                        <a tabindex="-1" ng-href="/{{entry.projectId}}" target="_blank">{{entry.projectName}}
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a tabindex="-1" ng-href="/{{entry.milestoneId}}" target="_blank">
+                                        {{entry.milestoneName}}
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a tabindex="-1" ng-href="/{{entry.id}}" target="_blank">
+                                        {{entry.name}}
+                                        </a>
+                                    </td>
+                                    <td>
+                                        {{entry.description}}
+                                    </td>
+                                    <td ng-repeat="dt in week.dates" ng-init="index = hasEntryForDate(entry.entries, dt)">
+                                        <span style="display: none;">{{index = hasEntryForDate(entry.entries, dt)}}</span>
+                                        <span ng-if="entry.entries.length != 0 && index != -1">
+                                            <input type="number" class="inline-box" ng-model="entry.entries[index].attributes.Hours__c" ng-blur="saveInline(entry,entry.entries[index])" ng-class="{'editing': entry.entries[index].attributes.editing}" ng-min="-24" ng-max="24" ng-step="0.01" ng-disabled="entry.entries[index].attributes.Submitted__c == true" />
+                                        </span>
+                                        <span ng-if="index == -1">
+                                            <input type="number" class="inline-box" ng-blur="createInline('Project Task',entry,dt,$event)" ng-value="0" ng-min="-24" ng-max="24" ng-step="0.01" />
+                                        </span>
+                                    </td>
+                                    <td>{{totalHours(entry) | number : 2}}</td>
+                                </tr>
+                                <tr ng-if="commonTasks.length == 0">
+                                    <td colspan="12">No records found for selected week.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <span class="h4 pull-right">Total Project Hours: {{(totalWeekHours(commonTasks) + totalWeekHours(commonTasksSubmitted)) | number : 2}}</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- case section -->
+                <div>
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h5>Case Time Entries</h5>
+                        </div>
+                        <div class="panel-body" ng-if="loading">
+                            <center><img src="/img/loading24.gif" />&nbsp;&nbsp;<h4> Loading...</h4></center>
+                        </div>
+                        <table class="table table-striped" ng-if="!loading">
+                            <thead>
+                                <tr>
+                                    <th class="action-column">Action</th>
+                                    <th width="10%" class="table-header" ng-click="setSortBy('casePanel', 'name')">Case Number</th>
+                                    <th width="15%" class="table-header" ng-click="setSortBy('casePanel', 'accountName')">Account</th>
+                                    <th width="20%" class="table-header" ng-click="setSortBy('casePanel', 'subject')">Subject</th>
+                                    <th class="date-column" ng-repeat="dt in week.dates">{{toDisplayDate(dt)}}</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="4" class="text-right"><b>Total Hours: </b></td>
+                                    <td ng-repeat="dt in week.dates">
+                                        <b>{{totalHoursByDay(commonCases,dt) | number : 2}}</b>
+                                    </td>
+                                    <td><b>{{totalWeekHours(commonCases) | number : 2}}</b></td>
+                                </tr>
+                            </tfoot>
+                            <tbody>
+                                <tr ng-repeat="entry in commonCases">
+                                    <td>
+                                        <button tabindex="-1" class="btn btn-xs btn-info" ng-click="editTimeEntries(entry.entries)">Edit</button>&nbsp;
+                                        <button tabindex="-1" class="btn btn-xs btn-danger" ng-click="deleteTimeEntry(entry)">Delete</button>
+                                    </td>
+                                    <td>
+                                        <a tabindex="-1" ng-href="/{{entry.id}}" target="_blank">
+                                        {{entry.caseNumber}}
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <span ng-if="entry.accountId">
+                                            <a tabindex="-1" ng-href="/{{entry.accountId}}" target="_blank">
+                                            {{entry.accountName}}
+                                            </a>
+                                        </span>
+                                        <span ng-if="entry.accountId == undefined">N/A</span>
+                                    </td>
+                                    <td>{{entry.subject}}</td>
+                                    <td ng-repeat="dt in week.dates" ng-init="index = hasEntryForDate(entry.entries, dt)">
+                                        <span style="display: none;">{{index = hasEntryForDate(entry.entries, dt)}}</span>
+                                        <span ng-if="entry.entries.length != 0 && index != -1">
+                                            <input type="number" class="inline-box" ng-model="entry.entries[index].attributes.Hours__c" ng-blur="saveInline(entry,entry.entries[index])" ng-class="{'editing': entry.entries[index].attributes.editing}" ng-min="0" ng-max="24" ng-step="0.01" />
+                                        </span>
+                                        <span ng-if="index == -1">
+                                            <input type="number" class="inline-box" ng-blur="createInline('Case',entry,dt,$event)" ng-value="0" ng-min="0" ng-max="24" ng-step="0.01" />
+                                        </span>
+                                    </td>
+                                    <td>{{totalHours(entry) | number : 2}}</td>
+                                </tr>
+                                <tr ng-if="commonCases.length == 0">
+                                    <td colspan="12">No records found for selected week.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <span class="h4 pull-right">Total Case Hours: {{totalWeekHours(commonCases) | number : 2}}</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- opportunity section -->
+                <div ng-if="oppTimeAllowed == true">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h5>Opportunity Time Entries</h5>
+                        </div>
+                        <div class="panel-body" ng-if="loading">
+                            <center><img src="/img/loading24.gif" />&nbsp;&nbsp;<h4> Loading...</h4></center>
+                        </div>
+                        <table class="table table-striped" ng-if="!loading">
+                            <thead>
+                                <tr>
+                                    <th class="action-column">Action</th>
+                                    <th width="15%" class="table-header" ng-click="setSortBy('oppPanel', 'oppNumber')">Opportunity Number</th>
+                                    <th width="20%" class="table-header" ng-click="setSortBy('oppPanel', 'name')">Opportunity Name</th>
+                                    <th width="20%" class="table-header" ng-click="setSortBy('oppPanel', 'description')">Description</th>
+                                    <th class="date-column" ng-repeat="dt in week.dates">{{toDisplayDate(dt)}}</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="4" class="text-right"><b>Total Hours: </b></td>
+                                    <td ng-repeat="dt in week.dates">
+                                        <b>{{totalHoursByDay(commonOpps,dt) | number : 2}}</b>
+                                    </td>
+                                    <td><b>{{totalWeekHours(commonOpps) | number : 2}}</b></td>
+                                </tr>
+                            </tfoot>
+                            <tbody>
+                                <tr ng-repeat="entry in commonOpps">
+                                    <td>
+                                        <button tabindex="-1" class="btn btn-xs btn-info" ng-click="editTimeEntries(entry.entries)">Edit</button>&nbsp;
+                                        <button tabindex="-1" class="btn btn-xs btn-danger" ng-click="deleteTimeEntry(entry)">Delete</button>
+                                    </td>
+                                    <td>{{entry.oppNumber}}</td>
+                                    <td>
+                                        <a tabindex="-1" ng-href="/{{entry.id}}" target="_blank">
+                                        {{entry.name}}
+                                        </a>
+                                    </td>
+                                    <td>
+                                        {{entry.description}}
+                                    </td>
+                                    <td ng-repeat="dt in week.dates" ng-init="index = hasEntryForDate(entry.entries, dt)">
+                                        <span style="display: none;">{{index = hasEntryForDate(entry.entries, dt)}}</span>
+                                        <span ng-if="entry.entries.length != 0 && index != -1">
+                                            <input type="number" class="inline-box" ng-model="entry.entries[index].attributes.Hours__c" ng-blur="saveInline(entry,entry.entries[index])" ng-class="{'editing': entry.entries[index].attributes.editing}" ng-min="0" ng-max="24" ng-step="0.01" />
+                                        </span>
+                                        <span ng-if="index == -1">
+                                            <input type="number" class="inline-box" ng-blur="createInline('Opportunity',entry,dt,$event)" ng-value="0" ng-min="0" ng-max="24" ng-step="0.01" />
+                                        </span>
+                                    </td>
+                                    <td>{{totalHours(entry) | number : 2}}</td>
+                                </tr>
+                                <tr ng-if="commonOpps.length == 0">
+                                    <td colspan="11">No records found for selected week.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <span class="h4 pull-right">Total Opportunity Hours: {{totalWeekHours(commonOpps) | number : 2}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Time Entry modal -->
+        <script type="text/ng-template" id="timeEntryModal.html">
+            <div class="visualstrap" ng-form="timeEntryForm">
+                <div class="modal-header">
+                    <h4 class="modal-title">{{title}}</h4>
+                </div>
+                <div class="modal-body">
+                    <ng-form name="createTimeEntry">
+                        <div class="container-fluid">
+                            <div class="row" ng-show="errors.length != 0">
+                                <div class="col-md-12">
+                                    <div uib-alert="true" ng-repeat="error in errors" class="alert-danger" close="closeAlert($index)">{{error.message}}</div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div class="form-group required">
+                                        <label for="timeFor" class="control-label">Log time for:</label>
+                                        <select class="form-control" name="timeFor" ng-model="timeFor" ng-required="true" ng-change="onTypeSelected()">
+                                            <option value="">--Select--</option>
+                                            <option value="Case">Case</option>
+                                            <option value="Project">Project</option>
+                                            <option value="Opportunity" ng-disabled="!oppTimeAllowed">Opportunity</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default" ng-show="timeFor != undefined">
+                                <div class="panel-body">
+                                    <div class="form-group required" ng-if="timeFor == 'Case'">
+                                        <label for="case" class="control-label">Search Case</label>
+                                        <ui-select id="case" name="selectCase" ng-model="selected.case" theme="bootstrap" ng-required="true">
+                                            <ui-select-match placeholder="Select Case">{{$select.selected.Subject}}</ui-select-match>
+                                            <ui-select-choices refresh="searchCases($select)" refresh-delay="500" repeat="case in cases | orderBy:'Subject'">
+                                                <div ng-bind-html="case.Subject | highlight: $select.search"></div>
+                                                <small ng-bind-html="case.CaseNumber | highlight: $select.search"></small>
+                                            </ui-select-choices>
+                                        </ui-select>
+                                    </div>
+                                    <!-- opportunity lookup -->
+                                    <div class="form-group required" ng-if="timeFor == 'Opportunity'">
+                                        <label for="opportunity" class="control-label">Search Opportunity</label>
+                                        <ui-select id="opportunity" name="selectOpportunity" ng-model="selected.opportunity" theme="bootstrap" ng-required="true">
+                                            <ui-select-match placeholder="Select Opportunity">{{$select.selected.Name}}</ui-select-match>
+                                            <ui-select-choices refresh="searchOpportunities($select)" refresh-delay="500" repeat="opp in opportunities | orderBy:'Name'">
+                                                <div ng-bind-html="opp.Name | highlight: $select.search"></div>
+                                                <small ng-bind-html="opp.Opportunity_ID__c | highlight: $select.search"></small>
+                                            </ui-select-choices>
+                                        </ui-select>
+                                    </div>
+                                    <div class="form-group required" ng-if="timeFor == 'Project'">
+                                        <label for="project" class="control-label">Search Project</label>
+                                        <ui-select id="project" name="selectProject" ng-model="selected.project" theme="bootstrap" on-select="onProjectSelected($item,$model)" ng-required="true">
+                                            <ui-select-match placeholder="Select Project">{{$select.selected.Name}}</ui-select-match>
+                                            <ui-select-choices repeat="project in projects | orderBy:'Name'">
+                                                <div ng-bind-html="project.Name | highlight: $select.search"></div>
+                                            </ui-select-choices>
+                                        </ui-select>
+                                    </div>
+                                    <div class="form-group required" ng-if="timeFor == 'Project' && selected.project != undefined" ng-required="true">
+                                        <label for="milestone" class="control-label">Select Milestone</label>
+                                        <ui-select id="milestone" name="selectMilestone" ng-model="selected.milestone" theme="bootstrap" ng-required="true">
+                                            <ui-select-match placeholder="Select Milestone">{{$select.selected.Name}}</ui-select-match>
+                                            <ui-select-choices repeat="milestone in milestones | orderBy:'Name'" on-select="onMilestoneSelected($item,$model)">
+                                                <div ng-bind-html="milestone.Name | highlight: $select.search"></div>
+                                            </ui-select-choices>
+                                        </ui-select>
+                                    </div>
+                                    <div class="form-group required" ng-if="timeFor == 'Project' && selected.milestone != undefined">
+                                        <label for="task" class="control-label">Select Task</label>
+                                        <ui-select id="task" name="selectTask" ng-model="selected.task" ng-required="true" theme="bootstrap">
+                                            <ui-select-match placeholder="Select Task">{{$select.selected.Name}}</ui-select-match>
+                                            <ui-select-choices repeat="task in tasks | filter: selected.milestone.Id | orderBy:'Name'">
+                                                <div ng-bind-html="task.Name | highlight: $select.search"></div>
+                                            </ui-select-choices>
+                                        </ui-select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default" ng-show="selected.case != undefined || selected.opportunity != undefined || (selected.project && selected.milestone && selected.task)">
+                                <div class="panel-body">
+                                    <div class="input-group">
+                                        <input type="text" name="entryDate" class="form-control" uib-datepicker-popup="{{format}}" ng-model="popup.entryDate" is-open="popup.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-default btn-date-popup" ng-click="openDatepicker($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                        </span>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="hours" class="control-label">Hours</label>
+                                                <input id="hours" class="form-control" type="number" name="hours" ng-model="timeEntry.Hours__c" placeholder="0" ng-min="timeFor == 'Project'?-24:0" ng-max="24" ng-class="{'invalid-input': (createTimeEntry.hours.$error.min || createTimeEntry.hours.$error.max)}" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6" ng-if="timeFor == 'Case'">
+                                            <div class="form-group">
+                                                <label for="minutes" class="control-label">Minutes</label>
+                                                <input id="minutes" class="form-control" type="number" name="minutes" ng-model="timeEntry.attributes.minutes" placeholder="0" ng-min="1" ng-max="59" ng-class="{'invalid-input': (createTimeEntry.minutes.$error.min || createTimeEntry.minutes.$error.max)}" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="description">Description</label>
+                                                <textarea id="description" name="description" class="form-control" rows="3" ng-model="timeEntry.Description__c"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" ng-show="errors.length != 0">
+                                <div class="col-md-12">
+                                    <div uib-alert="true" ng-repeat="error in errors" class="alert-danger" close="closeAlert($index)">{{error.message}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-md btn-success" ng-click="save()" ng-disabled="saving || timeEntryForm.$invalid">
+                        <span class="glyphicon glyphicon-ok-circle"></span> Save
+                    </button>
+                    <button class="btn btn-md btn-warning" ng-click="cancel()" ng-disabled="saving">
+                        <span class="glyphicon glyphicon-remove-circle"></span> Cancel
+                    </button>
+                </div>
+            </div>
+        </script>
+        <!-- edit time entries -->
+        <script type="text/ng-template" id="editTimeEntry.html">
+            <div class="visualstrap">
+                <div class="modal-header">
+                    <h4 class="modal-title">Edit Time Entries</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid" ng-form="editTimeEntries">
+                        <div class="row" ng-show="errors.length != 0">
+                            <div class="col-md-12">
+                                <div uib-alert="true" ng-repeat="error in errors" class="alert-danger" close="closeAlert($index)">{{error.message}}</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <th>Day</th>
+                                        <th>Title</th>
+                                        <th>Hours</th>
+                                        <th>Description</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="entry in timeEntries">
+                                            <td><nobr>{{entry.Date__c | date: 'EEE MM/dd/yyyy' : 'UTC'}}</nobr></td>
+                                            <td>{{entry.Name}}</td>
+                                            <td>
+                                                <input type="number" name="{{entry.Id}}" class="form-control" style="width: 120px" ng-model="entry.Hours__c" ng-min="0" ng-max="24" ng-class="{'invalid-input': editTimeEntries[entry.Id].$error.min || editTimeEntries[entry.Id].$error.max}" />
+                                            </td>
+                                            <td>
+                                                <textarea ng-model="entry.Description__c" rows="1" class="form-control"></textarea>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-md btn-success" ng-click="save()" ng-disabled="isEditing || editTimeEntries.$invalid">
+                        <span class="glyphicon glyphicon-ok-circle"></span> Save
+                    </button>
+                    <button class="btn btn-md btn-warning" ng-click="cancel()" ng-disabled="isEditing">
+                        <span class="glyphicon glyphicon-remove-circle"></span> Cancel
+                    </button>
+                </div>
+            </div>
+        </script>
+        <!-- delete modal -->
+        <script type="text/ng-template" id="deleteTimeEntry.html">
+            <div class="visualstrap">
+                <div class="modal-header">
+                    <h4 class="modal-title">Delete Time Entry</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row" ng-show="errors.length != 0">
+                            <div class="col-md-12">
+                                <div uib-alert="true" ng-repeat="error in errors" class="alert-danger" close="closeAlert($index)">{{error.message}}</div>
+                            </div>
+                        </div>
+                        <p>Do you want to delete {{timeEntry.entries.length + (timeEntry.entries.length == 1 ? ' item' : ' items')}} ?</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-danger" ng-click="ok()" ng-disabled="isDeleting">
+                        <span class="glyphicon glyphicon-ok-circle"></span> Yes
+                    </button>
+                    <button class="btn btn-warning" ng-click="cancel()" ng-disabled="isDeleting">
+                        <span class="glyphicon glyphicon-remove-circle"></span> Cancel
+                    </button>
+                </div>
+            </div>
+        </script>
+        <!-- copy time entries modal -->
+        <script type="text/ng-template" id="copyTimeEntries.html">
+            <div class="visualstrap">
+                <div class="modal-header">
+                    <h4 class="modal-title">Copy Time Entries</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row" ng-show="errors.length != 0">
+                            <div class="col-md-12">
+                                <div uib-alert="true" ng-repeat="error in errors" class="alert-danger" close="closeAlert($index)">{{error.message}}</div>
+                            </div>
+                        </div>
+                        <p>Do you want to copy previous week's time entries?</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-danger" ng-click="ok()" ng-disabled="isCopying">
+                        <span class="glyphicon glyphicon-ok-circle"></span> Yes
+                    </button>
+                    <button class="btn btn-warning" ng-click="cancel()" ng-disabled="isCopying">
+                        <span class="glyphicon glyphicon-remove-circle"></span> Cancel
+                    </button>
+                </div>
+            </div>
+        </script>
+        <!-- scripts -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.4.9/angular-sanitize.min.js"></script>
+
+        <script src="{!res}/moment/min/moment.min.js"></script>
+        <script src="{!res}/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-select/0.20.0/select.min.js"></script>
+        <script type="text/javascript">
+            var TimeSheetApp = angular.module('TimeSheetApp', ['ui.bootstrap', 'ui.bootstrap.datepickerPopup', 'ui.select', 'ngSanitize']);
+            TimeSheetApp.value('UserId', '{!$User.Id}');
+            TimeSheetApp.value('SObjectId', '{!$CurrentPage.parameters.id}');
+            TimeSheetApp.constant('moment', moment);
+            TimeSheetApp.factory('TimeSheetFactory', function($q,moment){
+                return {
+                    querySObjects: querySObjects,
+                    createSObjects: createSObjects,
+                    updateSObjects: updateSObjects,
+                    deleteSObjects: deleteSObjects,
+                    getUserTasks: getUserTasks,
+                    isOpportunityTimeAllowed: isOpportunityTimeAllowed,
+                    getPicklistOptions: getPicklistOptions,
+                    stripMPM4Prefix : stripMPM4Prefix,
+                    addMPM4Prefix : addMPM4Prefix
+                };
+
+                function querySObjects(query, options) {
+                    var deferred = $q.defer();
+                    options = options || {};
+                    sObject.query(query, options, function(results, event){
+                        if(event.status) {
+                            deferred.resolve(results);
+                        } else {
+                            deferred.reject(event);
+                        }
+                    });
+                    return deferred.promise;
+                }
+
+                function createSObjects(sobjects) {
+                    var deferred = $q.defer();
+                    sObject.insert(sobjects, function(result, event){
+                        if(event.status) {
+                            deferred.resolve(result[0]);
+                        } else {
+                            deferred.reject(event);
+                        }
+                    });
+                    return deferred.promise;
+                }
+
+                function updateSObjects(sobjects) {
+                    var deferred = $q.defer();
+                    sObject.update(sobjects, function(result, event){
+                        if(event.status) {
+                            deferred.resolve(result);
+                        } else {
+                            deferred.reject(event);
+                        }
+                    });
+                    return deferred.promise;
+                }
+
+                function deleteSObjects(sobjs, dmlOptions) {
+                    var deferred = $q.defer();
+                    dmlOptions = dmlOptions || {};
+                    sObject.del(sobjs, dmlOptions, function(result, event){
+                        if(event.status) {
+                            deferred.resolve(result);
+                        } else {
+                            deferred.reject(event);
+                        }
+                    });
+                    return deferred.promise;
+                }
+
+                function getUserTasks(){
+                    var deferred = $q.defer();
+                    Visualforce.remoting.Manager.invokeAction(
+                        '{!$RemoteAction.TimeSheetController.getUserTasks}',
+                        function(result, event){
+                            if(event.status == true) {
+                                deferred.resolve(result);
+                            } else {
+                                deferred.reject(event);
+                            }
+                        }, {escape: false}
+                    );
+                    return deferred.promise;
+                }
+
+                function isOpportunityTimeAllowed(){
+                    var deferred = $q.defer();
+                    Visualforce.remoting.Manager.invokeAction(
+                        '{!$RemoteAction.TimeSheetController.isOpportunityTimeAllowed}',
+                        function(result, event){
+                            if(event.status == true) {
+                                deferred.resolve(result);
+                            } else {
+                                deferred.reject(event);
+                            }
+                        }
+                    );
+                    return deferred.promise;
+                }
+
+                function getPicklistOptions(){
+                    var deferred = $q.defer();
+                    Visualforce.remoting.Manager.invokeAction(
+                        '{!$RemoteAction.TimeSheetController.getPicklistOptions}',
+                        function(result, event){
+                            if(event.status == true) {
+                                deferred.resolve(result);
+                            } else {
+                                deferred.reject(event);
+                            }
+                        }
+                    );
+                    return deferred.promise;
+                } 
+                function addMPM4Prefix(obj){
+                     var mpm4fields = ['Date__c','Description__c','Hours__c','ImportID__c','Incurred_By_Resource__c','Project_Task__c','Incurred_By__c', 'Project_Task__r', 'Milestone1_Time__c'];
+                 
+                     if(obj.Project_Task__c || obj.MPM4_BASE__Project_Task__c){ 
+                
+                       function addMPM4PrefixRecursive(obj){ 
+                              for(var p in obj){   
+                                if(p === 'sObjectType'){
+                                    obj[p] = 'MPM4_BASE__' + obj[p];
+                                }
+                            
+                                let old_key = p;
+                                let new_key;
+                                let final_key = old_key;
+                                
+                                if(mpm4fields.indexOf(old_key) !== -1){ 
+                                   new_key = 'MPM4_BASE__' + old_key;
+                                   final_key = new_key;
+                                   Object.defineProperty(obj, new_key,
+                                   Object.getOwnPropertyDescriptor(obj, old_key));
+                                   delete obj[old_key];
+                                }
+                                 
+                                if (typeof obj[final_key] == "object" && obj[final_key] !== null){  
+                                  addMPM4PrefixRecursive(obj[final_key]); 
+                                }                    
+                             }                    
+                       }
+                       
+                       addMPM4PrefixRecursive(obj);
+                
+                     } 
+                } 
+
+                function stripMPM4Prefix(obj){  
+                    
+                    for(var p in obj){  
+ 
+                      let old_key = p;
+                      let new_key = p.replace(/^MPM4_BASE__/, '');
+                     
+                      if (old_key !== new_key) { 
+                        Object.defineProperty(obj, new_key,
+                        Object.getOwnPropertyDescriptor(obj, old_key)); 
+                        delete obj[old_key];
+                      }
+                      
+                      if (typeof obj[new_key] == "object" && obj[new_key] !== null){ 
+                        stripMPM4Prefix(obj[new_key]);
+                      }
+                    } 
+                }
+            });
+            TimeSheetApp.controller('TimeSheetController', function($scope,$filter,$q,$uibModal,$timeout,TimeSheetFactory,UserId,moment,SObjectId){
+                $scope.commonTasks = [];
+                $scope.commonTasksSubmitted = [];
+                $scope.commonCases = [];
+                $scope.commonOpps = [];                
+                $scope.errors = [];
+                $scope.week = {
+                    start: undefined,
+                    end: undefined,
+                    display: '',
+                    dates: []
+                }
+                $scope.loading = false;
+                $scope.oppTimeAllowed = false;
+                $scope.fieldOptions = {};
+                $scope.sortOptions = {
+                    taskPanel: {
+                        field: 'projectName',
+                        reverse: false
+                    },
+                    casePanel: {
+                        field: 'subject',
+                        reverse: false
+                    },
+                    oppPanel: {
+                        field: 'name',
+                        reverse: false
+                    }
+                };
+
+                $scope.openTimeEntryModal = function(t){
+                    var modalInstance = $uibModal.open({
+                        animation: true,
+                        templateUrl: 'timeEntryModal.html',
+                        controller: 'TimeEntryController',
+                        size: 'lg',
+                        resolve: {
+                            timeEntry: function () {
+                                var te = angular.copy(t);
+                                return te;
+                            },
+                            week: function() {
+                                return $scope.week;
+                            },
+                            oppTimeAllowed: function() {
+                                return $scope.oppTimeAllowed;
+                            },
+                            userData: function(){
+                                return $scope.userTasks;
+                            },
+                            fieldOptions: function(){
+                                return $scope.fieldOptions;
+                            }
+                        }
+                    });
+
+                    modalInstance.result.then(function(te) {
+                        if(SObjectId) {
+                            window.location.href = '/' + SObjectId;
+                        } else {
+                            loadTimeEntries();
+                        }
+                    });
+                }
+
+                $scope.openCloneModal = function(){
+                    var modalInstance = $uibModal.open({
+                        animation: true,
+                        templateUrl: 'copyTimeEntries.html',
+                        controller: 'CopyTimeEntriesCtrl',
+                        size: 'md',
+                        resolve: {
+                            week: function(){
+                                return angular.copy($scope.week);
+                            },
+                            oppTimeAllowed: function() {
+                                return $scope.oppTimeAllowed;
+                            }
+                        }
+                    });
+
+                    modalInstance.result.then(function(result) {
+                        if(result == true) {
+                            loadTimeEntries();    
+                        }
+                    });
+                }
+
+                $scope.setSortBy = function(panel, key){
+                    if($scope.sortOptions[panel].key == key) {
+                        $scope.sortOptions[panel].reverse = !$scope.sortOptions[panel].reverse;
+                    }
+                    $scope.sortOptions[panel].key = key;
+                    if(panel == 'submittedTaskPanel') {
+                        $scope.commonTasksSubmitted = $filter('orderBy')($scope.commonTasksSubmitted, $scope.sortOptions[panel].key, $scope.sortOptions[panel].reverse);
+                    } else if(panel == 'taskPanel') {
+                        $scope.commonTasks = $filter('orderBy')($scope.commonTasks,$scope.sortOptions[panel].key,$scope.sortOptions[panel].reverse);
+                    } else if (panel == 'casePanel') {
+                        $scope.commonCases = $filter('orderBy')($scope.commonCases,$scope.sortOptions[panel].key,$scope.sortOptions[panel].reverse);
+                    } else if (panel == 'oppPanel') {
+                        $scope.commonOpps = $filter('orderBy')($scope.commonOpps,$scope.sortOptions[panel].key,$scope.sortOptions[panel].reverse);
+                    }
+                }
+
+                $scope.editTimeEntries = function(entries){
+                    var modalInstance = $uibModal.open({
+                        animation: true,
+                        templateUrl: 'editTimeEntry.html',
+                        controller: 'EditTimeEntryCtrl',
+                        size: 'lg',
+                        resolve: {
+                            timeEntries: function () { 
+                                var te = angular.copy(entries);
+                                return te;
+                            },
+                            fieldOptions: function() {
+                                return $scope.fieldOptions;
+                            }
+                        }
+                    });
+
+                    modalInstance.result.then(function(te) {
+                        loadTimeEntries();
+                    });
+                }
+
+                $scope.deleteTimeEntry = function(t){
+                    var modalInstance = $uibModal.open({
+                        animation: true,
+                        templateUrl: 'deleteTimeEntry.html',
+                        controller: 'DeleteTimeEntryCtrl',
+                        size: 'md',
+                        resolve: {
+                            timeEntry: function () {
+                                return angular.copy(t);
+                            }
+                        }
+                    });
+
+                    modalInstance.result.then(function() {
+                        loadTimeEntries();
+                    });
+                }
+
+                $scope.currentWeek = function() {
+                    $scope.week.start = moment.utc().startOf('week');
+                    $scope.week.end = moment.utc().endOf('week');
+                    $scope.week.display = displayWeek();
+                }
+
+                $scope.previousWeek = function() {
+                    $scope.week.start = moment.utc($scope.week.start).subtract(7, 'days');
+                    $scope.week.end = moment.utc($scope.week.end).subtract(7, 'days');
+                    $scope.week.display = displayWeek();
+                    loadTimeEntries();
+                }
+
+                $scope.nextWeek = function() {
+                    $scope.week.start = moment.utc($scope.week.start).add(7, 'days');
+                    $scope.week.end = moment.utc($scope.week.end).add(7, 'days');
+                    $scope.week.display = displayWeek();
+                    loadTimeEntries();
+                }
+
+                $scope.isEmpty = function(item){
+                    return angular.equals(item, {});
+                }
+
+                $scope.toUserDate = function(dt) {
+                    return moment.utc(dt).format('MM/DD/YYYY');
+                }
+
+                $scope.toDisplayDate = function(dt){
+                    var md = undefined;
+                    if(typeof dt === 'object') {
+                        md = moment(dt.toDate());
+                    } else {
+                        md = moment(new Date(dt));
+                    }
+                    var day = md.format('ddd');
+                    var d = md.toDate();
+                    return day + ' ' + d.toLocaleDateString();
+                }
+
+                $scope.hasEntryForDate = function(entries, dt){
+                    var index = -1;
+                    angular.forEach(entries, function(entry, $index){
+                        if($scope.toUserDate(entry.Date__c) == dt) {
+                            index = $index;
+                        }
+                    });
+                    return index;
+                }
+
+                $scope.totalHours = function(entry) {
+                    var hours = 0;
+                    angular.forEach($scope.week.dates, function(dt){
+                        hours += entry.weeklyLog[dt];
+                    });
+                    return hours;
+                }
+
+                $scope.totalHoursByDay = function(list, dt){
+                    var hours = 0;
+                    angular.forEach($scope.week.dates, function(d){
+                        angular.forEach(list, function(entry){
+                            if(d == dt) {
+                                hours += entry.weeklyLog[dt];
+                            }
+                        });
+                    });
+                    return hours;
+                }
+
+                $scope.totalWeekHours = function(list) {
+                    var totalHours = 0;
+                    angular.forEach(list, function(entry){
+                        totalHours += $scope.totalHours(entry);
+                    });
+                    return totalHours;
+                }
+
+                $scope.grandHours = function(){
+                    var hours = 0;
+                    hours += $scope.totalWeekHours($scope.commonTasks);
+                    hours += $scope.totalWeekHours($scope.commonTasksSubmitted);
+                    hours += $scope.totalWeekHours($scope.commonCases);
+                    hours += $scope.totalWeekHours($scope.commonOpps);
+                    return hours;
+                }
+
+                $scope.saveInline = function(row,entry) {
+                    var entries = new Array();
+                    if(entry.attributes.Hours__c == undefined || entry.attributes.Hours__c < -24 || entry.attributes.Hours__c > 24) {
+                        entry.attributes.Hours__c = entry.Hours__c;
+                    } else if (entry.attributes.Hours__c == 0) {
+                        // handle delete
+                        entry.attributes.editing = true;
+                        TimeSheetFactory.deleteSObjects([entry])
+                            .then(function(result){
+                                entry.attributes.editing = false;
+                                if(result.length && result[0].success == true) {
+                                    // remove entry from row
+                                    var dt = $scope.toUserDate(entry.Date__c);
+                                    row.weeklyLog[dt] -= entry.Hours__c;
+                                    row.entries.splice(row.entries.indexOf(entry), 1);
+                                }
+                            }).catch(handleError);
+                    } else if(entry.Hours__c != entry.attributes.Hours__c){
+                        var originalHours = entry.Hours__c;
+                        entry.attributes.editing = true;
+                        entry.attributes.Hours__c = Math.round(entry.attributes.Hours__c * 100) / 100;
+                        entry.Hours__c =  entry.attributes.Hours__c;
+ 
+                        let copied = angular.copy(entry);
+                        TimeSheetFactory.addMPM4Prefix(copied);  
+                        entries.push(copied);
+                        
+                        TimeSheetFactory.updateSObjects(entries)
+                            .then(function(results){
+                                entry.attributes.editing = false;
+                                if(results[0].success == false) {
+                                    entry.attributes.Hours__c = entry.Hours__c = originalHours;
+                                } else {
+                                    var dt = $scope.toUserDate(entry.Date__c);
+                                    row.weeklyLog[dt] = entry.Hours__c;
+                                }
+                            }).catch(handleError);
+                    }
+                }
+
+                $scope.createInline = function(timeFor,row,day,evt){
+                    var hours = parseFloat(evt.target.value);
+                    if(timeFor == 'Project Task'){
+                        if(isNaN(hours) || hours < -24 || hours > 24) {
+                            evt.target.value = 0;
+                            return;
+                        }
+                    } else {
+                        if(isNaN(hours) || hours <= 0 || hours > 24) {
+                            evt.target.value = 0;
+                            return;
+                        }
+                    }
+                    // create entry
+                    angular.element(evt.target).addClass('editing');
+                    var entry = new sObject('Milestone1_Time__c');
+                    entry.Hours__c = Math.round(hours * 100) / 100;
+                    if(timeFor == 'Case') {
+                        entry.Case__c = row.id;
+                    } else if (timeFor == 'Opportunity') {
+                        entry.Opportunity__c = row.id;
+                    } else {
+                        entry.Project_Task__c = row.id;
+                        entry.Description__c = row.description;
+                    }
+                    // set entry date
+                    var utc = moment.utc(moment(day, 'MM/DD/YYYY').format('YYYY-MM-DD'));
+                    entry.Date__c = utc.valueOf();
+                    TimeSheetFactory.addMPM4Prefix(entry);  
+
+                    // insert
+                    TimeSheetFactory.createSObjects([entry])
+                        .then(function(result){
+
+                            if(result.success == true) {
+                                TimeSheetFactory.stripMPM4Prefix(result);   
+                                var query = buildQuery(result.id); 
+                                TimeSheetFactory.querySObjects(query, {escape: false})
+                                .then(function(r){
+                                    if(r.length) {
+                                        TimeSheetFactory.stripMPM4Prefix(r);
+                                        $timeout(function(){
+                                            r[0].attributes.Hours__c = r[0].Hours__c;
+                                            row.entries.push(r[0]);
+                                            row.weeklyLog[day] += r[0].Hours__c;
+                                        });
+                                    }
+                                });
+                                
+                                query = buildMPM4TimeQuery(result.id); 
+                                TimeSheetFactory.querySObjects(query, {escape: false})
+                                .then(function(r){
+                                    if(r.length) {
+                                        TimeSheetFactory.stripMPM4Prefix(r);
+                                        $timeout(function(){
+                                            r[0].attributes.Hours__c = r[0].Hours__c;
+                                            row.entries.push(r[0]);
+                                            row.weeklyLog[day] += r[0].Hours__c;
+                                        });
+                                    }
+                                });
+                            }
+                            angular.element(evt.target).removeClass('editing');
+                        }).catch(function(error){
+                            angular.element(evt.target).removeClass('editing');
+                            handleError(error);
+                        });
+                }
+
+                function displayWeek() {
+                    return $scope.toDisplayDate(moment.utc($scope.week.start).format('MM/DD/YYYY')) + ' - ' + 
+                        $scope.toDisplayDate(moment.utc($scope.week.end).format('MM/DD/YYYY'));
+                }
+
+                function buildQuery(entryId) {
+                    // query data
+                    var query = "select Id, Name, Project_Task__r.Name, Project_Task__r.Project_Milestone__r.Name, "
+                    +"Project_Task__r.Project_Milestone__r.Project__r.Name, Hours__c, Time_Type__c, Case__c, Case__r.Subject, Case__r.CaseNumber, Case__r.Account.Name, ";
+
+                    // query opp field only if allowed
+                    if($scope.oppTimeAllowed == true) {
+                        query += "Opportunity__c, Opportunity__r.Name, Opportunity__r.Opportunity_Id__c, "
+                    }
+
+                    query += "Description__c, Billable__c, Date__c, Category__c from Milestone1_Time__c"
+                    query += " where Incurred_By__c = '"+ UserId + "'";
+                    query += " and Project_Task__c = null"
+                    
+                    if(entryId != undefined) {
+                        query += " and Id = '" + entryId + "'";
+                    } else {
+                        query += " and (Date__c >= " + moment.utc($scope.week.start).format('YYYY-MM-DD') + " AND Date__c <= " + moment.utc($scope.week.end).format('YYYY-MM-DD') + ") ORDER BY Date__c";
+                    }
+                    return query;
+                }
+                
+                function buildMPM4TimeQuery(entryId) {
+                    // query data
+                    var query = "select Id, Name, MPM4_BASE__Project_Task__r.Name, MPM4_BASE__Project_Task__r.MPM4_BASE__Project_Milestone__r.Name, "
+                    +"MPM4_BASE__Project_Task__r.MPM4_BASE__Project_Milestone__r.MPM4_BASE__Project__r.Name, MPM4_BASE__Hours__c, Time_Type__c, Submitted__c, ";
+
+                    query += "MPM4_BASE__Description__c, Billable__c, MPM4_BASE__Date__c, Category__c from MPM4_BASE__Milestone1_Time__c"
+                    query += " where MPM4_BASE__Incurred_By__c = '"+ UserId + "'";
+                    query += " and MPM4_BASE__Project_Task__c != null"
+                    
+                    if(entryId != undefined) {
+                        query += " and Id = '" + entryId + "'";
+                    } else {
+                        query += " and (MPM4_BASE__Date__c >= " + moment.utc($scope.week.start).format('YYYY-MM-DD') + " AND MPM4_BASE__Date__c <= " + moment.utc($scope.week.end).format('YYYY-MM-DD') + ") ORDER BY MPM4_BASE__Date__c";
+                    }
+                    return query;
+                }
+                
+                function loadTimeEntries(background){
+                    $scope.loading = true && !background;
+                    var entryId = '{!$CurrentPage.parameters.eid}';
+                    // build dates
+                    $scope.week.dates = [];
+                    for(var i=0; i<7; i++) {
+                        var str = moment.utc($scope.week.start).add(i, 'days').format('MM/DD/YYYY');
+                        $scope.week.dates.push(str);
+                    }
+                    var query = buildQuery();
+                    TimeSheetFactory.querySObjects(query, {escape: false})
+                    .then(function(result){
+                        $scope.commonTasks = [];
+                        $scope.commonTasksSubmitted = [];
+                        $scope.commonCases = [];
+                        $scope.commonOpps = [];
+                        var openForEdit = undefined;
+                        angular.forEach(result, function(r){
+                            openForEdit = mapTimeEntry(r, entryId);
+                        });
+                        // check if there is SObject Id
+                        if(SObjectId) {
+                            $scope.openTimeEntryModal();
+                        } else if (openForEdit) {
+                            entryId = undefined; // reset
+                            $scope.editTimeEntries(openForEdit.entries);
+                        }
+                        $scope.loading = false;
+                    }).catch(handleError);
+                    
+                    
+                    var mpm4query = buildMPM4TimeQuery();
+                    TimeSheetFactory.querySObjects(mpm4query, {escape: false})
+                    .then(function(result){  
+                         
+                        var openForEdit = undefined;
+                        angular.forEach(result, function(r){
+                            openForEdit = mapTimeEntry(r, entryId);
+                        });
+                        // check if there is SObject Id
+                        if(SObjectId) {
+                            $scope.openTimeEntryModal();
+                        } else if (openForEdit) {
+                            entryId = undefined; // reset
+                            $scope.editTimeEntries(openForEdit.entries);
+                        }
+                        $scope.loading = false;
+                    }).catch(handleError);
+                    
+                }
+ 
+                function mapTimeEntry(r, entryId) { 
+                    TimeSheetFactory.stripMPM4Prefix(r);  
+                    var dt = $scope.toUserDate(r.Date__c);
+                    r.attributes.Hours__c = r.Hours__c;
+                    var openForEdit = undefined;
+                    if(r.Case__c) {
+                        var c = {entries: []};
+                        var entry = findEntry(r.Case__c, $scope.commonCases, dt);
+                        if(entry != undefined) {
+                            c = entry;
+                            c.weeklyLog[dt] += r.Hours__c;
+                            c.entries.push(r);
+                        } else {
+                            c.id = r.Case__c;
+                            c.subject = r.Case__r.Subject;
+                            c.caseNumber = r.Case__r.CaseNumber;
+                            if(r.Case__r.Account) {
+                                c.accountId = r.Case__r.AccountId;
+                                c.accountName = r.Case__r.Account.Name;
+                            }
+                            c.weeklyLog = {};
+                            angular.forEach($scope.week.dates, function(dt){
+                                c.weeklyLog[dt] = 0;
+                            });
+                            c.weeklyLog[dt] += r.Hours__c;
+                            c.entries.push(r);
+                            $scope.commonCases.push(c);
+                        }
+                        if(entryId && r.Id.indexOf(entryId) == 0) {
+                            openForEdit = c;
+                        }
+                    } else if(r.Opportunity__c){
+                        var opp = {entries: []};
+                        var key = r.Opportunity__c + '||' + (r.Description__c ? r.Description__c : 'NA');
+                        var entry = findEntryByKey(key, $scope.commonOpps, dt);
+                        if(entry != undefined) {
+                            opp = entry;
+                            opp.weeklyLog[dt] += r.Hours__c;
+                            opp.entries.push(r);
+                        } else {
+                            opp.id = r.Opportunity__c;
+                            opp.key = key;
+                            opp.name = r.Opportunity__r.Name;
+                            opp.description = r.Description__c;
+                            opp.oppNumber = r.Opportunity__r.Opportunity_Id__c;
+                            opp.weeklyLog = {};
+                            angular.forEach($scope.week.dates, function(dt){
+                                opp.weeklyLog[dt] = 0;
+                            });
+                            opp.weeklyLog[dt] += r.Hours__c;
+                            opp.entries.push(r);
+                            $scope.commonOpps.push(opp);
+                        }
+                        if(entryId && r.Id.indexOf(entryId) == 0) {
+                            openForEdit = opp;
+                        }
+                    } else if(r.Project_Task__c) {
+                        var task = {entries: []};
+                        r.attributes.Submitted__c = r.Submitted__c;
+                        var row = undefined;
+                        var rowKey = r.Project_Task__c + '||' + (r.Description__c ? r.Description__c : 'NA');
+                        if(r.Submitted__c == true) {
+                            row = findEntryByKey(rowKey, $scope.commonTasksSubmitted, dt);
+                        } else {
+                            row = findEntryByKey(rowKey, $scope.commonTasks, dt);
+                        }
+                        if(row) {
+                            task = row;
+                            task.weeklyLog[dt] += r.Hours__c;
+                            task.entries.push(r);
+                        } else {
+                            task.id = r.Project_Task__c;
+                            task.key = rowKey;
+                            task.name = r.Project_Task__r.Name;
+                            task.description = r.Description__c;
+                            task.milestoneId = r.Project_Task__r.Project_Milestone__c;
+                            task.milestoneName = r.Project_Task__r.Project_Milestone__r.Name;
+                            task.projectId = r.Project_Task__r.Project_Milestone__r.Project__c;
+                            task.projectName = r.Project_Task__r.Project_Milestone__r.Project__r.Name;
+                            task.weeklyLog = {};
+                            angular.forEach($scope.week.dates, function(dt){
+                                task.weeklyLog[dt] = 0;
+                            });
+                            task.weeklyLog[dt] += r.Hours__c;
+                            task.entries.push(r);
+                            if(r.Submitted__c == true) {
+                                $scope.commonTasksSubmitted.push(task);
+                            } else {
+                                $scope.commonTasks.push(task);
+                            }
+                        }
+                        if(entryId && r.Id.indexOf(entryId) == 0 && r.Submitted__c != true) {
+                            openForEdit = task;
+                        }
+                    }
+                    return openForEdit;
+                }
+
+                function findEntry(id, list, dt) {
+                    var entry = undefined;
+                    angular.forEach(list, function(item){
+                        if(item.id == id && item.weeklyLog[dt] == 0) {
+                            entry = item;
+                        }
+                    });
+                    return entry;
+                }
+
+                // this method finds the row to which the entry belongs
+                // entries are grouped by taskId and description
+                function findEntryByKey(key, list, dt) {
+                    var taskDescRow = undefined;
+                    angular.forEach(list, function(item){
+                        if(item.key == key && item.weeklyLog[dt] == 0) {
+                            taskDescRow = item;
+                        }
+                    });
+                    return taskDescRow;
+                }
+
+                $scope.closeAlert = function($index) {
+                    $scope.errors.splice($index, 1);
+                }
+
+                function handleError(error){
+                    $scope.loading = false;
+                    $scope.editing = false;
+                    console.log(error);
+                    $scope.errors.push(error);
+                }
+
+                function init() {
+                    $scope.currentWeek();
+                    var promises = [
+                        TimeSheetFactory.getPicklistOptions(),
+                        TimeSheetFactory.isOpportunityTimeAllowed(),
+                        TimeSheetFactory.getUserTasks()
+                    ];
+                    $q.all(promises)
+                        .then(function(data){
+                            $scope.fieldOptions = data[0];
+                            $scope.fieldOptions['Case_Time_Type__c'] = [
+                                {value:'Communication',label:'Communication'}, 
+                                {value:'Troubleshooting',label:'Troubleshooting'}
+                            ];
+                            $scope.fieldOptions['Project_Time_Type__c'] = [
+                                {value: 'Other', label: 'Other'}, 
+                                {value: 'PM', label: 'PM'}
+                            ];
+                            $scope.oppTimeAllowed = data[1];
+                            $scope.userTasks = data[2];
+                            loadTimeEntries();
+                        }).catch(handleError);
+                }
+                init();
+            });
+            TimeSheetApp.controller('TimeEntryController', function($scope,$uibModalInstance,TimeSheetFactory,UserId,moment,SObjectId,timeEntry,week,oppTimeAllowed,userData,fieldOptions){
+                $scope.timeEntry = undefined;
+                $scope.timeFor = undefined;
+                $scope.fieldOptions = fieldOptions;
+                $scope.cases = [];
+                $scope.opportunities = [];
+                $scope.projects = [];
+                $scope.milestones = [];
+                $scope.tasks = [];
+                if(userData){
+                    angular.forEach(userData.projects, function(project){
+                        $scope.projects.push(project);
+                    });
+                    angular.forEach(userData.tasks, function(task){
+                        $scope.tasks.push(task);
+                    });
+                }
+                $scope.errors = [];
+                $scope.selected = {
+                    case: undefined,
+                    project: undefined,
+                    milestone: undefined,
+                    opportunity: undefined
+                };
+                $scope.saving = false;
+                // datepicker variables
+                $scope.popup = {
+                    opened: false
+                };
+                $scope.dateOptions = {
+                    formatYear: 'yy',
+                    minDate: moment(moment.utc(week.start).format('YYYY-MM-DD')).toDate(),
+                    startingDay: 1
+                };
+                $scope.openDatepicker = function($event){
+                    $scope.popup.opened = true;
+                    $event.preventDefault();
+                    $event.stopPropagation();
+                }
+                $scope.format = 'MM/dd/yyyy';
+                $scope.altInputFormats = ['M!/d!/yyyy'];
+                $scope.oppTimeAllowed = oppTimeAllowed;
+
+                // handle SObjectId
+                if(SObjectId.indexOf('500') == 0) {
+                    // log time for Case
+                    $scope.timeFor = 'Case';
+                    var query = "SELECT Id, CaseNumber, Subject, SuppliedEmail FROM Case WHERE Id = '" + SObjectId + "'";
+                    TimeSheetFactory.querySObjects(query, {escape: false})
+                        .then(function(result){
+                            $scope.cases = result;
+                            $scope.selected.case = $scope.cases[0];
+                        }).catch(handleError);
+                } else if(SObjectId.indexOf('006') == 0){
+                    $scope.timeFor = 'Opportunity';
+                    var query = "SELECT Id, Name, Opportunity_Id__c FROM Opportunity WHERE Id = '" + SObjectId + "'";
+                    TimeSheetFactory.querySObjects(query, {escape: false})
+                        .then(function(result){
+                            $scope.opportunities = result;
+                            $scope.selected.opportunity = $scope.opportunities[0];
+                        }).catch(handleError);
+                } else if(SObjectId.indexOf('a2s') == 0) {
+                    // log time for MPM4_BASE Project Task
+                    $scope.timeFor = 'Project'; 
+                    angular.forEach($scope.projects, function(project){
+                        angular.forEach(project.MPM4_BASE__Project_Milestones__r, function(milestone){
+                            angular.forEach($scope.tasks, function(task){
+                                if(milestone.Id == task.MPM4_BASE__Project_Milestone__c && task.Id.indexOf(SObjectId) == 0) {
+                                    $scope.selected.project = project;
+                                    $scope.milestones = filterMilestones(project.MPM4_BASE__Project_Milestones__r);
+                                    $scope.selected.milestone = milestone;
+                                    $scope.selected.task = task;
+                                }
+                            });
+                        });
+                    });
+                } else if (SObjectId.indexOf('a0D') == 0 || SObjectId.indexOf('a0C') == 0) {
+                    // log time for Project or Milestone
+                    $scope.timeFor = 'Project';
+                    if(SObjectId.indexOf('a0D') == 0) {
+                        angular.forEach($scope.projects, function(project){
+                            if(project.Id.indexOf(SObjectId) == 0) {
+                                $scope.selected.project = project;
+                                $scope.milestones = filterMilestones(project.Project_Milestones__r);
+                            }
+                        });
+                    } else {
+                        angular.forEach($scope.projects, function(project){
+                            angular.forEach(project.Project_Milestones__r, function(milestone){
+                                if(milestone.Id.indexOf(SObjectId) == 0) {
+                                    $scope.selected.project = project;
+                                    $scope.milestones = filterMilestones(project.Project_Milestones__r);
+                                    $scope.selected.milestone = milestone;
+                                }
+                            });
+                        });
+                    }
+                }
+
+                $scope.title = ' Time Entry';
+                if(timeEntry) {
+                    $scope.title = 'Edit ' + $scope.title;
+                    $scope.timeEntry = timeEntry;
+                    $scope.timeEntry.Incurred_By__c = UserId;
+                    // populate selections
+                    if(timeEntry.Project_Task__c) {
+                        $scope.timeFor = 'Project';
+                        $scope.selected.task = timeEntry.Project_Task__r;
+                        $scope.tasks.push($scope.selected.task);
+                        $scope.selected.milestone = timeEntry.Project_Task__r.Project_Milestone__r;
+                        $scope.selected.project = timeEntry.Project_Task__r.Project_Milestone__r.Project__r;
+                    } else if (timeEntry.Opportunity__c) {
+                        $scope.timeFor = 'Opportunity';
+                        $scope.selected.opportunity = timeEntry.Opportunity__r;
+                        $scope.opportunities.push($scope.selected.opportunity);
+                    } else {
+                        $scope.timeFor = 'Case';
+                        $scope.selected.case = timeEntry.Case__r;
+                        $scope.cases.push($scope.selected.case);
+                    }
+                    // populate date
+                    var utc = moment.utc(timeEntry.Date__c);
+                    $scope.popup.entryDate = moment(utc.format('YYYY-MM-DD')).toDate();
+                } else {
+                    $scope.title = 'Create ' + $scope.title;
+                    $scope.timeEntry = new sObject('Milestone1_Time__c');
+                    TimeSheetFactory.stripMPM4Prefix($scope.timeEntry); 
+                    $scope.timeEntry.Incurred_By__c = UserId;
+                    var startDate = moment().utc();
+                    $scope.popup.entryDate = moment(startDate.format('YYYY-MM-DD')).toDate();
+                }
+
+                $scope.onTypeSelected = function(){
+                    if($scope.timeFor == 'Case' && !$scope.timeEntry.Id) {
+                        // default to billable for Case time
+                        $scope.timeEntry.Billable__c = true;
+                    } else {
+                        $scope.timeEntry.Billable__c = false;
+                    }
+                }
+
+                $scope.searchCases = function($select){
+                    if($select.search && $select.search.length > 2) {
+                        var query = "SELECT Id, CaseNumber, Subject, SuppliedEmail FROM Case WHERE CaseNumber like '" + $select.search + "%' OR Subject like '" + $select.search + "%'";
+                        TimeSheetFactory.querySObjects(query, {escape: false})
+                            .then(function(result){
+                                $scope.cases = result;
+                            }).catch(handleError);
+                    }
+                }
+
+                $scope.searchOpportunities = function($select){
+                    if($select.search && $select.search.length > 2) {
+                        var query = "SELECT Id, Name, Opportunity_ID__c FROM Opportunity WHERE Name like '" + $select.search + "%' OR Opportunity_ID__c like '" + $select.search + "%'";
+                        TimeSheetFactory.querySObjects(query, {escape: false})
+                            .then(function(result){
+                                $scope.opportunities = result;
+                            }).catch(handleError);
+                    }
+                }
+
+                function loadProjectsAndMilestones(query) {
+                    TimeSheetFactory.querySObjects(query, {escape: false})
+                        .then(function(result){
+                            $scope.projects = result;
+                        }).catch(handleError);
+                }
+
+                $scope.onProjectSelected = function($item,$model){
+                    $scope.selected.milestone = undefined;
+                    $scope.selected.task = undefined;
+                    $scope.milestones = filterMilestones($item.MPM4_BASE__Project_Milestones__r); 
+                }
+
+                function filterMilestones(milestones){
+                    var result = [];
+                    angular.forEach(milestones, function(milestone){
+                        // has atleast one task for user
+                        var hasTask = false;
+                        angular.forEach($scope.tasks, function(t){
+                            if(t.MPM4_BASE__Project_Milestone__c == milestone.Id) {
+                                hasTask = true;
+                            }
+                        });
+                        if(hasTask) result.push(milestone);
+                    });
+                    return result;
+                }
+
+                $scope.onMilestoneSelected = function($item,$model){
+                    $scope.selected.task = undefined;
+                }
+
+                $scope.cancel = function() {
+                    $uibModalInstance.dismiss('cancel');
+                }
+
+                $scope.save = function() {
+                    $scope.saving = true;
+                    if(($scope.timeEntry.Hours__c == undefined || $scope.timeEntry.Hours__c == 0) && ($scope.timeEntry.attributes.minutes == undefined || $scope.timeEntry.attributes.minutes == 0)) {
+                        alert('Please enter hours or minutes');
+                        $scope.saving = false;
+                        return;
+                    }
+                    if($scope.timeFor == 'Case') {
+                        $scope.timeEntry.Case__c = $scope.selected.case.Id;
+                        if($scope.timeEntry.Hours__c == undefined) {
+                            $scope.timeEntry.Hours__c = 0;
+                        }
+                        if($scope.timeEntry.attributes.minutes != undefined) {
+                            var minutes = $scope.timeEntry.attributes.minutes / 60;
+                            $scope.timeEntry.Hours__c += parseFloat(minutes.toFixed(2));
+                        }
+                    } else if ($scope.timeFor == 'Opportunity') {
+                        $scope.timeEntry.Opportunity__c = $scope.selected.opportunity.Id;
+                    } else {
+                        $scope.timeEntry.Project_Task__c = $scope.selected.task.Id;
+                    }
+                    // set entry date
+                    var utc = moment.utc(moment($scope.popup.entryDate).format('YYYY-MM-DD'));
+                    $scope.timeEntry.Date__c = utc.valueOf();
+                    $scope.timeEntry.Hours__c = Math.round($scope.timeEntry.Hours__c * 100) / 100;
+                    // save
+                    if($scope.timeEntry.Id) {
+                        // update
+                        var te = angular.copy($scope.timeEntry);
+                        TimeSheetFactory.addMPM4Prefix(te);
+                        
+                        TimeSheetFactory.updateSObjects(te)
+                            .then(function(result){
+                                $scope.saving = false;
+                                $uibModalInstance.close(te);
+                            }).catch(handleError);
+                    } else {
+                        // insert
+                        var te = angular.copy($scope.timeEntry);
+                        TimeSheetFactory.addMPM4Prefix(te);  
+                        TimeSheetFactory.createSObjects([te])
+                            .then(function(result){
+                                $scope.saving = false;
+                                te.Id = result.id; 
+                                $uibModalInstance.close(te);
+                            }).catch(handleError);
+                    }
+                }
+
+                $scope.closeAlert = function($index) {
+                    $scope.errors.splice($index, 1);
+                }
+
+                function handleError(error) {
+                    $scope.saving = false;
+                    console.log(error);
+                    $scope.errors.push(error);
+                }
+            });
+            TimeSheetApp.controller('EditTimeEntryCtrl', function($scope, $uibModalInstance, TimeSheetFactory, moment, timeEntries, fieldOptions) {
+                $scope.timeEntries = timeEntries;
+                $scope.fieldOptions = fieldOptions;
+                $scope.isEditing = false;
+                $scope.errors = [];
+
+                $scope.toDisplayDate = function(dt){
+                    var md = undefined;
+                    if(typeof dt === 'object') {
+                        md = moment(dt.toDate());
+                    } else {
+                        md = moment(new Date(dt));
+                    }
+                    var day = md.format('ddd');
+                    var d = md.toDate();
+                    return day + ' ' + d.toLocaleDateString();
+                }
+
+                $scope.save = function() {
+                    $scope.isEditing = true;
+                    var entries = [];
+                    angular.forEach($scope.timeEntries, function(entry){ 
+                        let copied = angular.copy(entry);
+                        TimeSheetFactory.addMPM4Prefix(copied);
+                        entries.push(copied);
+                    });
+                    TimeSheetFactory.updateSObjects(entries)
+                    .then(function(result){
+                        $scope.isEditing = false;
+                        var url = window.location.toString(); 
+                        window.location = url.replace(/\?eid=.+/, '');
+                        
+                        $uibModalInstance.close(entries);
+                        }).catch(handleError);
+                };
+
+                $scope.cancel = function() {
+                    $scope.isEditing = false;
+                    $uibModalInstance.dismiss('cancel');
+                };
+
+                $scope.closeAlert = function($index) {
+                    $scope.errors.splice($index, 1);
+                }
+
+                function handleError(error){
+                    $scope.isEditing = false;
+                    console.log(error);
+                    $scope.errors.push(error);
+                }
+            });
+            TimeSheetApp.controller('DeleteTimeEntryCtrl', function($scope, $uibModalInstance, TimeSheetFactory, timeEntry) {
+                $scope.timeEntry = timeEntry;
+                $scope.isDeleting = false;
+                $scope.errors = [];
+
+                $scope.ok = function() {
+                    $scope.isDeleting = true;
+                    TimeSheetFactory.deleteSObjects($scope.timeEntry.entries)
+                        .then(function(result){
+                            $scope.isDeleting = false;
+                            $uibModalInstance.close($scope.timeEntry);
+                        }).catch(handleError);
+                };
+
+                $scope.cancel = function() {
+                    $scope.isDeleting = false;
+                    $uibModalInstance.dismiss('cancel');
+                };
+
+                $scope.closeAlert = function($index) {
+                    $scope.errors.splice($index, 1);
+                }
+
+                function handleError(error){
+                    $scope.isDeleting = false;
+                    console.log(error);
+                    $scope.errors.push(error);
+                }
+            });
+            TimeSheetApp.controller('CopyTimeEntriesCtrl', function($scope, $uibModalInstance, TimeSheetFactory, UserId, week, oppTimeAllowed) {
+                $scope.timeEntries = [];
+                $scope.isCopying = false;
+                $scope.errors = [];
+                $scope.oppTimeAllowed = oppTimeAllowed;
+                // calculate dates for previous week dates
+                $scope.week = {
+                    start: week.start.subtract(7, 'days'),
+                    end: week.end.subtract(7, 'days')
+                }
+
+                // query time entries for previous week
+                function init() {
+                    // query data
+                    var query = "SELECT Id, Name, Project_Task__c, "
+                    + "Hours__c, Time_Type__c, Case__c, ";
+
+                    // query opp field only if allowed
+                    if($scope.oppTimeAllowed == true) {
+                        query += "Opportunity__c, "
+                    }
+                    
+                    query += "Description__c, Billable__c, Date__c, Category__c "
+                    +" FROM Milestone1_Time__c WHERE Project_Task__c = null AND Project_Task__r.Complete__c != True AND Case__r.Status != 'Closed' AND Incurred_By__c = '"+ UserId +"' AND (Date__c >= " + moment.utc($scope.week.start).format('YYYY-MM-DD') + " AND Date__c <= " + moment.utc($scope.week.end).format('YYYY-MM-DD') + ") ";
+                    
+                   
+                    if($scope.oppTimeAllowed == true) {
+                        query += "AND Opportunity__r.StageName != '06 - CLOSED/WON' AND Opportunity__r.StageName != '07- CLOSED/LOST' ";
+                    }
+                    
+                    query += "ORDER BY Date__c";
+                    
+                    TimeSheetFactory.querySObjects(query, {escape: false})
+                        .then(function(result){
+                            $scope.timeEntries = result;
+                        }).catch(handleError);                       
+                 
+                    var mpm4query = "SELECT Id, Name, MPM4_BASE__Project_Task__c, "
+                    + "MPM4_BASE__Hours__c, Time_Type__c, Case__c, ";
+
+                    mpm4query += "MPM4_BASE__Description__c, Billable__c, MPM4_BASE__Date__c, Category__c, MPM4_BASE__Incurred_By__c "
+                    +" FROM MPM4_BASE__Milestone1_Time__c WHERE MPM4_BASE__Project_Task__c != null AND MPM4_BASE__Project_Task__r.MPM4_BASE__Complete__c != True AND Case__r.Status != 'Closed' AND MPM4_BASE__Incurred_By__c = '"+ UserId +"' AND (MPM4_BASE__Date__c >= " + moment.utc($scope.week.start).format('YYYY-MM-DD') + " AND MPM4_BASE__Date__c <= " + moment.utc($scope.week.end).format('YYYY-MM-DD') + ") ORDER BY MPM4_BASE__Date__c";
+                                       
+                    TimeSheetFactory.querySObjects(mpm4query, {escape: false})
+                        .then(function(result){  
+                            $scope.mpm4TimeEntries = result;
+                        }).catch(handleError);                        
+                }
+                init();
+
+                $scope.ok = function() { 
+                 
+                    $scope.isCopying = true;
+                    let nothingToCopy = false;
+                    let nothingToCopyForMPM4 = false;
+                    
+                    // clone time entries on confirm
+                     console.log('$scope.timeEntries.length:', $scope.timeEntries.length); 
+                    
+                    if($scope.timeEntries.length > 0) {
+                        var entries = [];
+                        
+                        angular.forEach($scope.timeEntries, function(entry){
+                            var te = angular.copy(entry);
+                            te.Id = undefined;
+                            var entryDate = moment.utc(entry.Date__c).add(7, 'days');
+                            te.Date__c = entryDate.valueOf();
+                            entries.push(te);
+                        });
+                        TimeSheetFactory.createSObjects(entries)
+                            .then(function(result){
+                                $uibModalInstance.close(true);
+                            }).catch(handleError);
+                    } else {
+                        nothingToCopy = true;  
+                    } 
+ 
+                    if($scope.mpm4TimeEntries.length > 0) {
+                        var entries = [];
+                        angular.forEach($scope.mpm4TimeEntries, function(entry){
+                            var te = angular.copy(entry);
+                            te.Id = undefined;
+                            var entryDate = moment.utc(entry.MPM4_BASE__Date__c).add(7, 'days');
+                            te.MPM4_BASE__Date__c = entryDate.valueOf(); 
+                            entries.push(te);
+                        }); 
+                 
+                        TimeSheetFactory.createSObjects(entries)
+                            .then(function(result){
+                               $uibModalInstance.close(true);
+                            }).catch(handleError);  
+                    } else {
+                        nothingToCopyForMPM4 = true;  
+                    }
+                    
+                    if(nothingToCopy && nothingToCopyForMPM4){
+                        $uibModalInstance.close(false); 
+                    }
+                    
+                };
+
+                $scope.cancel = function() {
+                    $scope.isDeleting = false;
+                    $uibModalInstance.dismiss('cancel');
+                };
+
+                $scope.closeAlert = function($index) {
+                    $scope.errors.splice($index, 1);
+                }
+
+                function handleError(error){
+                    $scope.isDeleting = false;
+                    console.log(error);
+                    $scope.errors.push(error);
+                }
+            });
+        </script>
+    </body>
+</apex:page>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Oracle Project</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Oracle Projects</value>
+    </caseValues>
+    <fields>
+        <label><!-- Business Unit --></label>
+        <name>Business_Unit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Comment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contractor Time --></label>
+        <name>Contractor_Time__c</name>
+    </fields>
+    <fields>
+        <help><!-- Default Oracle Task ID --></help>
+        <label><!-- Default Oracle Task ID --></label>
+        <name>Default_Oracle_Task_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Employee Time --></label>
+        <name>Employee_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project End Date --></label>
+        <name>Project_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Id --></label>
+        <name>Project_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Number --></label>
+        <name>Project_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Start Date --></label>
+        <name>Project_Start_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field will have RollUp Count Oracle Project Task --></help>
+        <label><!-- RollUp Count Oracle Project Task --></label>
+        <name>RollUp_Count_Oracle_Project_Task__c</name>
+    </fields>
+    <fields>
+        <label><!-- Roll Up Oracle Project Task --></label>
+        <name>Roll_Up_Oracle_Project_Task__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sum of Expense Reports --></label>
+        <name>Sum_of_Expense_Reports__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sum of Supplier Invoices --></label>
+        <name>Sum_of_Supplier_Invoices__c</name>
+    </fields>
+    <layouts>
+        <layout>Oracle Project Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

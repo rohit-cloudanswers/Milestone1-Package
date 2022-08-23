@@ -1,0 +1,20 @@
+<apex:page standardController="SBQQ__Quote__c">
+    <apex:includeLightning />
+    <style type="text/css">
+        .swal2-buttonswrapper button {
+        	background-image: none !important;
+        }
+    </style>
+    <div id="my_app"></div>
+    <script>
+        $Lightning.use("c:WarningApp", function() {
+            $Lightning.createComponent(
+                "c:NonQuotableWarning",
+                {"recordId": "{!SBQQ__Quote__c.Id}", "isVfPage": true},
+                "my_app",
+                function(cmp) {
+                    console.log("Lightning strikes!");
+                });
+            });        
+      </script>
+</apex:page>

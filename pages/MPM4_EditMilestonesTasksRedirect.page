@@ -1,0 +1,7 @@
+<apex:page recordSetVar="x" standardController="MPM4_BASE__Milestone1_Milestone__c" extensions="MPM4_EditMilestonesTasksRedirect" action="{!onLoad}">
+    You should have been redirected.<br/>
+    <br/>
+    DEBUG INFO:<br/>
+    x="{!x}"<br/>
+    x2="{!x2}"
+</apex:page>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Service Contract Header</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Service Contract Headers</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account Name --></label>
+        <name>Account_Name__c</name>
+        <relationshipLabel><!-- Service Contract Headers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Account Region --></label>
+        <name>Account_Region__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Sub-Region --></label>
+        <name>Account_Sub_Region__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bill To Account --></label>
+        <name>Bill_To_Account__c</name>
+        <relationshipLabel><!-- Service Contract Headers (Bill To Account) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Bill To Address --></label>
+        <name>Bill_To_Address__c</name>
+        <relationshipLabel><!-- Service Contract Headers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Contract Header End Date --></label>
+        <name>Contract_Header_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract Header Start Date --></label>
+        <name>Contract_Header_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract Header Status --></label>
+        <name>Contract_Header_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Oracle Contract Notes --></label>
+        <name>Contract_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract Term (Months) --></label>
+        <name>Contract_Term__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used for Cases --></help>
+        <label><!-- Default Business Hours --></label>
+        <name>Default_Business_Hours__c</name>
+        <relationshipLabel><!-- Service Contract Headers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Oracle Cloud Id --></label>
+        <name>Oracle_Cloud_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Oracle Contract Header ID --></label>
+        <name>Oracle_Contract_Header_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Oracle Contract Number --></label>
+        <name>Oracle_Contract_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Oracle Contract Version --></label>
+        <name>Oracle_Contract_Version__c</name>
+    </fields>
+    <fields>
+        <label><!-- Oracle Currency --></label>
+        <name>Oracle_Currency__c</name>
+    </fields>
+    <fields>
+        <label><!-- Price Book --></label>
+        <name>Price_Book__c</name>
+        <relationshipLabel><!-- Service Contract Headers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Renewal Type --></label>
+        <name>Renewal_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Level --></label>
+        <name>Service_Level__c</name>
+        <picklistValues>
+            <masterLabel>Care</masterLabel>
+            <translation><!-- Care --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Care+</masterLabel>
+            <translation><!-- Care+ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Default</masterLabel>
+            <translation><!-- Default --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Standard</masterLabel>
+            <translation><!-- Standard --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Ship To Account --></label>
+        <name>Ship_To_Account__c</name>
+        <relationshipLabel><!-- Service Contract Headers (Ship To Account) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Ship To Address --></label>
+        <name>Ship_To_Address__c</name>
+        <relationshipLabel><!-- Service Contract Headers (Ship To Address) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Z_DO_NOT_USE --></label>
+        <name>Total_Local_Currency__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Local Currency --></label>
+        <name>Total_Local_Currency_f__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total --></label>
+        <name>Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+    </fields>
+    <layouts>
+        <layout>Service Contract Header Layout</layout>
+        <sections>
+            <label><!-- Account Information --></label>
+            <section>Account Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Service Contract Layout</layout>
+        <sections>
+            <label><!-- Account Information --></label>
+            <section>Account Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

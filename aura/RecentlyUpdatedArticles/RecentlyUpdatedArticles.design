@@ -1,0 +1,4 @@
+<design:component label="Recently Updated Articles">
+    <design:attribute name="recentlyUpdatedArtlces_title" label="Title" description="" />
+    <design:attribute name="recentlyUpdatedArtlces_cssClass" label="CSS Class (optional)" description="" />
+</design:component>

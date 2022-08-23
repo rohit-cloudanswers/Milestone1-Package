@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <name>Assign_new_Enhancement_Type</name>
+        <label>Assign new Enhancement Type</label>
+        <locationX>431</locationX>
+        <locationY>209</locationY>
+        <assignmentItems>
+            <assignToReference>Bug_Record.Issue_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Customer Enhancement</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_Remaining_Fields</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_new_Issue_Type</name>
+        <label>Assign new Issue Type</label>
+        <locationX>548</locationX>
+        <locationY>50</locationY>
+        <assignmentItems>
+            <assignToReference>Bug_Record.Issue_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Customer Issue</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_Remaining_Fields</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Remaining_Fields</name>
+        <label>Assign Remaining Fields</label>
+        <locationX>631</locationX>
+        <locationY>153</locationY>
+        <assignmentItems>
+            <assignToReference>Bug_Record.RecordTypeId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>varRecordTypeID</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Bug_Record.Jira_Component_1__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Salesforce</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>feature_or_enhancement</name>
+        <label>issue or enhancement?</label>
+        <locationX>302</locationX>
+        <locationY>69</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>issue</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Bug_Record.Issue_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Product Issue/Bug</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_new_Issue_Type</targetReference>
+            </connector>
+            <label>issue</label>
+        </rules>
+        <rules>
+            <name>enhancement</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Bug_Record.Issue_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Feature Request</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_new_Enhancement_Type</targetReference>
+            </connector>
+            <label>enhancement</label>
+        </rules>
+    </decisions>
+    <description>used for converting server jira to cloud jira type</description>
+    <interviewLabel>Bug - Change Jira Record Type {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Bug - Change Jira Record Type</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Bug_Record</name>
+        <label>Bug Record</label>
+        <locationX>176</locationX>
+        <locationY>53</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Record_Type_ID</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varBugID</elementReference>
+            </value>
+        </filters>
+        <object>Bug__c</object>
+    </recordLookups>
+    <startElementReference>Bug_Record</startElementReference>
+    <status>Draft</status>
+    <subflows>
+        <name>Get_Record_Type_ID</name>
+        <label>Get Record Type ID</label>
+        <locationX>176</locationX>
+        <locationY>236</locationY>
+        <connector>
+            <targetReference>feature_or_enhancement</targetReference>
+        </connector>
+        <flowName>RecordTypeID_Lookup_Subflow</flowName>
+        <inputAssignments>
+            <name>ObjectName</name>
+            <value>
+                <stringValue>Bug__c</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>RecordTypeName</name>
+            <value>
+                <stringValue>Integrated_Jira_Cloud</stringValue>
+            </value>
+        </inputAssignments>
+        <outputAssignments>
+            <assignToReference>varRecordTypeID</assignToReference>
+            <name>RecordTypeID18</name>
+        </outputAssignments>
+    </subflows>
+    <variables>
+        <name>varBugID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varRecordTypeID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

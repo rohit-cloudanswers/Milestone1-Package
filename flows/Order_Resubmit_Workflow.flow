@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <description>Clear submitted date and change record type</description>
+        <name>Record_Updates</name>
+        <label>Record Updates</label>
+        <locationX>199</locationX>
+        <locationY>338</locationY>
+        <assignmentItems>
+            <assignToReference>Order_Record.Submitted_Date__c</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Order_Record.RecordTypeId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Record_Type_ID.RecordTypeID15</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Order</targetReference>
+        </connector>
+    </assignments>
+    <description>changes record type so order can be resubmitted</description>
+    <interviewLabel>Order - Resubmit Workflow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Order - Resubmit Workflow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Order_Record</name>
+        <label>Order Record</label>
+        <locationX>175</locationX>
+        <locationY>175</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Record_Type_ID</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>RecordId</elementReference>
+            </value>
+        </filters>
+        <object>Order</object>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Order</name>
+        <label>Update Order</label>
+        <locationX>227</locationX>
+        <locationY>479</locationY>
+        <inputReference>Order_Record</inputReference>
+    </recordUpdates>
+    <startElementReference>Order_Record</startElementReference>
+    <status>Active</status>
+    <subflows>
+        <name>Get_Record_Type_ID</name>
+        <label>Get Record Type ID</label>
+        <locationX>303</locationX>
+        <locationY>180</locationY>
+        <connector>
+            <targetReference>Record_Updates</targetReference>
+        </connector>
+        <flowName>RecordTypeID_Lookup_Subflow</flowName>
+        <inputAssignments>
+            <name>ObjectName</name>
+            <value>
+                <stringValue>Order</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>RecordTypeName</name>
+            <value>
+                <stringValue>Work_Order_Header</stringValue>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <variables>
+        <name>RecordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

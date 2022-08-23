@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Landmark Agency</name>
+    <queueMembers>
+        <users>
+            <user>amy.keenan@imaginecommunications.com</user>
+            <user>anthony.liddell@imaginecommunications.com</user>
+            <user>julie.provencher@imaginecommunications.com</user>
+            <user>kathleen.fava@imaginecommunications.com</user>
+            <user>robert.calce@imaginecommunications.com</user>
+            <user>shuli.selesnick@imaginecommunications.com</user>
+            <user>suzanne.travis@imaginecommunications.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

@@ -1,0 +1,808 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCategoryGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Eclipse</label>
+                    <name>Eclipse</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Landmark Agency Service (LAS)</label>
+                    <name>Landmark_Agency_Service_LAS</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Novar</label>
+                    <name>Novar</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>xG GamePlan</label>
+                    <name>xG_GamePlan</name>
+                </dataCategory>
+                <label>Advanced Advertising</label>
+                <name>Advanced_Advertising</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Broadcast Master</label>
+                    <name>Broadcast_Master</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Broadcast Master Nonlinear</label>
+                    <name>Broadcast_Master_Nonlinear</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>LandmarkOSI Sales</label>
+                    <name>LandmarkOSI_Sales</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Landmark Sales</label>
+                    <name>Landmark_Sales</name>
+                </dataCategory>
+                <label>Advertising Sales</label>
+                <name>Advertising_Sales</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Landmark Analytics</label>
+                    <name>Landmark_Analytics</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>xG Scorecard</label>
+                    <name>xG_Scorecard</name>
+                </dataCategory>
+                <label>Analytics</label>
+                <name>Analytics</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>xG Billing</label>
+                    <name>xG_Billing</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>xG Finance</label>
+                    <name>xG_Finance</name>
+                </dataCategory>
+                <label>Billing</label>
+                <name>Billing</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Landmark Rights &amp; Scheduling</label>
+                    <name>Landmark_Rights_Scheduling</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>xG Schedule</label>
+                    <name>xG_Schedule</name>
+                </dataCategory>
+                <label>Rights &amp; Programming</label>
+                <name>Rights_Programming</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>ADR</label>
+                    <name>xG_ADR</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>ADS</label>
+                    <name>ADS</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>AIM</label>
+                    <name>AIM</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>POIS</label>
+                    <name>POIS</name>
+                </dataCategory>
+                <label>Targeted Delivery</label>
+                <name>Targeted_Delivery</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Interactive Reporting</label>
+                    <name>Interactive_Reporting</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>LandmarkOSI Internet</label>
+                    <name>LandmarkOSI_Internet</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Program Plus</label>
+                    <name>Program_Plus</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>LandmarkOSI Traffic and Billing</label>
+                    <name>LandmarkOSI_Traffic_and_Billing</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>xG Linear</label>
+                    <name>xG_Linear</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>xG Live Log</label>
+                    <name>xG_Live_Log</name>
+                </dataCategory>
+                <label>Traffic</label>
+                <name>Traffic</name>
+            </dataCategory>
+            <label>Advertising</label>
+            <name>Advertising</name>
+        </dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>CloudXtream DVR</label>
+                    <name>CloudXtream_DVR_cDVR</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Telurio Cloud DVR</label>
+                    <name>Telurio_Cloud_DVR</name>
+                </dataCategory>
+                <label>Cloud DVR</label>
+                <name>Cloud_DVR_cDVR</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>SelenioFlex Ingest</label>
+                    <name>SelenioFlex_Ingest</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>SelenioFlex Live</label>
+                    <name>SelenioFlex_Live</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>SelenioFlex Live Manager</label>
+                    <name>SelenioFlex_Live_Manager</name>
+                </dataCategory>
+                <label>Distribution - Encoding</label>
+                <name>Encoding_Distribution</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Selenio One XC</label>
+                    <name>Selenio_One_XC</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Selenio One XO</label>
+                    <name>Selenio_One_XO</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>SelenioFlex File</label>
+                    <name>SelenioFlex_File</name>
+                </dataCategory>
+                <label>Distribution - Transcoding</label>
+                <name>Transcoding</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Telurio Packager</label>
+                    <name>Telurio_Packager</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Telurio Packager JITP</label>
+                    <name>Telurio_Packager_JITP</name>
+                </dataCategory>
+                <label>Packaging</label>
+                <name>Packaging</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Video Edge Delivery (VDE)</label>
+                <name>Selenio_Video_Edge_Delivery_VDE</name>
+            </dataCategory>
+            <label>Distribution</label>
+            <name>Distribution</name>
+        </dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>DPS</label>
+                    <name>DPS</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Magellan CSS Navigator</label>
+                    <name>Magellan_CSS_Navigator</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Magellan Router Control Panels (RCP)</label>
+                    <name>Magellan_Router_Control_Panels_RCP</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Magellan NMS Network Management System</label>
+                    <name>Magellan_NMS_Network_Management_System</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Magellan SDN Orchestrator</label>
+                    <name>Magellan_SDN_Orchestrator</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>NetVX</label>
+                    <name>NetVX</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>NUCLEUS</label>
+                    <name>NUCLEUS</name>
+                </dataCategory>
+                <label>Command &amp; Control</label>
+                <name>Command_Control</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>EPIC MV</label>
+                    <name>EPIC_MV</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Platinum II-GRF</label>
+                    <name>Platinum_II_GRF</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Platinum Predator II</label>
+                    <name>Platinum_Predator_II</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Platinum Predator II-GX &amp; Z-Configurator</label>
+                    <name>Platinum_Predator_II_GX_Z_Configurato</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Platinum SX Hybrid</label>
+                    <name>Platinum_SX_Hybrid</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Platinum SX Pro</label>
+                    <name>Platinum_SX_Pro</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Predator II</label>
+                    <name>Predator_II</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>QS100HD</label>
+                    <name>QS100HD</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Selenio 6800+ Multiviewer (QVM 6800+)</label>
+                    <name>Selenio_6800_Multiviewer_QVM_6800</name>
+                </dataCategory>
+                <label>Multiviewers</label>
+                <name>Multiviewers</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>DTS Neural</label>
+                    <name>DTS_Neural</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Selenio DL Video Legalizers</label>
+                    <name>Selenio_DL_Video_Legalizers</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Selenio MCP Controller</label>
+                    <name>Selenio_MCP_Controller</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Selenio MCP1</label>
+                    <name>Selenio_MCP1</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Selenio MCP3</label>
+                    <name>Selenio_MCP3</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Selenio MCP Modules</label>
+                    <name>Selenio_MCP_Modules</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Selenio NetPlus Model 300</label>
+                    <name>Selenio_NetPlus_Model_300</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Selenio NetPlus Model 400</label>
+                    <name>Selenio_NetPlus_Model_400</name>
+                </dataCategory>
+                <label>Networking - Encoding</label>
+                <name>Encoding_Networking</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>SelenioFlex</label>
+                    <name>SelenioFlex</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>SelenioICE</label>
+                    <name>SelenioICE</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>SelenioNext</label>
+                    <name>SelenioNext</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Selenio BNP</label>
+                    <name>Selenio_BNP</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Selenio VMG</label>
+                    <name>Selenio_VMG</name>
+                </dataCategory>
+                <label>Networking - Transcoding</label>
+                <name>Transcoding_Networking</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>NEO</label>
+                    <name>NEO</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Selenio 6800+ Fiber Optics</label>
+                    <name>Selenio_6800_Fiber_Optics</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Selenio 6800+</label>
+                    <name>Selenio_6800</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Selenio Network Processor (SNP)</label>
+                    <name>Selenio_Network_Processor_SNP</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Selenio X50, X75, X85, X100 and Calibre</label>
+                    <name>Selenio_X50_X75_X85_X100_and_Calibre</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Vidiem Element Management System</label>
+                    <name>Vidiem_Element_Management_System</name>
+                </dataCategory>
+                <label>Processing</label>
+                <name>Processing</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>DB Editor</label>
+                    <name>DB_Editor</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>EDGE</label>
+                    <name>EDGE</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Magellan Control Panels</label>
+                    <name>Magellan_Control_Panels</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Platinum Frames and Modules</label>
+                    <name>Platinum_Frames_and_Modules</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Platinum IP3 Frames &amp; Modules</label>
+                    <name>Platinum_IP3_Frames_Modules</name>
+                </dataCategory>
+                <dataCategory>
+                    <dataCategory>
+                        <label>Platinum MX</label>
+                        <name>Platinum_MX</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Platinum PT-HSR8C-IBG</label>
+                        <name>Platinum_PT_HSR8C_IBG</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Platinum PT-RES</label>
+                        <name>Platinum_PT_RES</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Platinum VX</label>
+                        <name>Platinum_VX</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>PX-IBG</label>
+                        <name>PX_IBG</name>
+                    </dataCategory>
+                    <label>Platinum (Routers)</label>
+                    <name>Platinum</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Remote General Purpose Interfaces</label>
+                    <name>Remote_General_Purpose_Interfaces</name>
+                </dataCategory>
+                <label>Router</label>
+                <name>Router</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>ASI, GEN, HD, SD, VSB-Star, PTM-305</label>
+                    <name>ASI_Star_GEN_Star_HD_Star_SD_Star_VS</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>DTD and UDC-RCU</label>
+                    <name>DTD_and_UDC_RCU</name>
+                </dataCategory>
+                <dataCategory>
+                    <dataCategory>
+                        <label>Videotek CMN, CVM, TVM, VMN, VTM, APM-21</label>
+                        <name>Videotek_CMN_Videotek_CVM_Videotek_TVM</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Videotek CSD and Videotek MTG</label>
+                        <name>Videotek_CSD_and_Videotek_MTG</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Videotek DDM</label>
+                        <name>Videotek_DDM</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Videotek GPS</label>
+                        <name>Videotek_GPS</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Videotek LLM-1770</label>
+                        <name>Videotek_LLM_1770</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Videotek MSA</label>
+                        <name>Videotek_MSA</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Videotek VMM</label>
+                        <name>Videotek_VMM</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Videotek VSG</label>
+                        <name>Videotek_VSG</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Videotek VSX</label>
+                        <name>Videotek_VSX</name>
+                    </dataCategory>
+                    <label>Videotek</label>
+                    <name>Videotek</name>
+                </dataCategory>
+                <label>Test &amp; Measurement</label>
+                <name>Test_Measurement</name>
+            </dataCategory>
+            <label>Networking</label>
+            <name>Networking</name>
+        </dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Other Legacy Playout</label>
+                    <name>Other_Legacy_Playout</name>
+                </dataCategory>
+                <label>Legacy Playout</label>
+                <name>Legacy_Playout</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <dataCategory>
+                        <label>Air Client</label>
+                        <name>Air_Client</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Broadcast Supervisor</label>
+                        <name>Broadcast_Supervisor</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Device Server</label>
+                        <name>Device_Server</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Diagnostic Monitor</label>
+                        <name>ADC_Diagnostic_Monitor</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>LRCC</label>
+                        <name>LRCC</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Media Client</label>
+                        <name>ADC_Media_Client</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Missing Media Viewer</label>
+                        <name>ADC_Missing_Media_Viewer</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Notification Agent</label>
+                        <name>ADC_Notification_Agent</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Playlist and Services</label>
+                        <name>Playlist_and_Services</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Security Administration Tool</label>
+                        <name>ADC_Security_Administration_Tool</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>SynchroServer</label>
+                        <name>ADC_SynchroServer</name>
+                    </dataCategory>
+                    <label>Automation - ADC</label>
+                    <name>Automation_ADC</name>
+                </dataCategory>
+                <dataCategory>
+                    <dataCategory>
+                        <label>D-Series A8600, A8100, A7500</label>
+                        <name>D_Series_A8600_A8100_A7500</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>D-AIS</label>
+                        <name>D_AIS</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>DAL</label>
+                        <name>DAL</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>D-Services</label>
+                        <name>D_Services</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>DRSS</label>
+                        <name>DRSS</name>
+                    </dataCategory>
+                    <label>Automation - D-Series</label>
+                    <name>Automation_D_Series</name>
+                </dataCategory>
+                <dataCategory>
+                    <dataCategory>
+                        <label>Nexio Capture</label>
+                        <name>Nexio_Capture</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Nexio Insight</label>
+                        <name>Nexio_Insight</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Nexio Motion</label>
+                        <name>Nexio_Motion</name>
+                    </dataCategory>
+                    <label>Asset Management</label>
+                    <name>Asset_Management</name>
+                </dataCategory>
+                <label>Automation &amp; Asset Management</label>
+                <name>Automation_Asset_Management</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Infocaster</label>
+                    <name>Infocaster</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Infocaster Manager</label>
+                    <name>Infocaster_Manager</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Infocaster Traffic</label>
+                    <name>Infocaster_Traffic</name>
+                </dataCategory>
+                <label>Digital Signage</label>
+                <name>Digital_Signage</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Azure</label>
+                    <name>Azure</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Animation Builder</label>
+                    <name>Animation_Builder</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Gen-9 Playout Systems</label>
+                    <name>Gen_9_Playout_Systems</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Magellan Diagnostic Logging</label>
+                    <name>Magellan_Diagnostic_Logging</name>
+                </dataCategory>
+                <label>Integrated Playout</label>
+                <name>Integrated_Playout</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Content Receiver</label>
+                    <name>Content_Receiver</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Content Transmitter</label>
+                    <name>Content_Transmitter</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>G-Scribe</label>
+                    <name>G_Scribe</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>LogoCreator</label>
+                    <name>LogoCreator</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Nexio+ Channelbrand</label>
+                    <name>Nexio_Channelbrand</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Nexio IconMaster</label>
+                    <name>Nexio_IconMaster</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Nexio TitleOne</label>
+                    <name>Nexio_TitleOne</name>
+                </dataCategory>
+                <label>Master Control, Branding &amp; Graphics</label>
+                <name>Master_Control_Branding_Graphics</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Nexio Farad</label>
+                    <name>Nexio_Farad</name>
+                </dataCategory>
+                <label>Storage</label>
+                <name>Storage</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Versio 2</label>
+                    <name>Versio_2</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Versio 3</label>
+                    <name>Versio_3</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Versio IOX</label>
+                    <name>Versio_IOX</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Versio IOX SAN</label>
+                    <name>Versio_IOX_SAN</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Versio IOX Scale-Out NAS</label>
+                    <name>Versio_IOX_Scale_Out_NAS</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Versio IOX Scale-Out NAS SINGLE</label>
+                    <name>Versio_IOX_Scale_Out_NAS_SINGLE</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Versio MCS</label>
+                    <name>Versio_Master_Control_Touchscreen_Spor</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Versio Platform</label>
+                    <name>Versio_Platform</name>
+                </dataCategory>
+                <label>Versio</label>
+                <name>Versio</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Nexio Premier Pro Panels</label>
+                    <name>Nexio_Premier_Pro_Panels</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Velocity</label>
+                    <name>Velocity</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Nexio MOS Gateway</label>
+                    <name>Nexio_MOS_Gateway</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Nexio InstantOnline</label>
+                    <name>Nexio_InstantOnline</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Nexio NLE Gateway</label>
+                    <name>Nexio_NLE_Gateway</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Nexio PRX Transcoder</label>
+                    <name>Nexio_PRX_Transcoder</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Nexio MOS Playlist Manager</label>
+                    <name>Nexio_MOS_Playlist_Manager</name>
+                </dataCategory>
+                <label>Video Server News &amp; Editing</label>
+                <name>Video_Server_News_Editing</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Nexio AMP ChannelView</label>
+                    <name>Nexio_AMP_ChannelView</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Nexio ClipSync</label>
+                    <name>Nexio_ClipSync</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Nexio Remote</label>
+                    <name>Nexio_Remote</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Nexio Playlist</label>
+                    <name>Nexio_Playlist</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Nexio Delay</label>
+                    <name>Nexio_Delay</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Nexio Track Router</label>
+                    <name>Nexio_Track_Router</name>
+                </dataCategory>
+                <label>Video Servers Nexio Media Applications</label>
+                <name>Videos_Servers_Nexio_Media_Server_Applic</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Nexio Amp</label>
+                    <name>Nexio_Amp</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Nexio NXIQ Series</label>
+                    <name>Nexio_NXIQ_Series</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>NXESD 1224X2</label>
+                    <name>NXESD_1224X2</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>NXESB 600 Series</label>
+                    <name>NXESB_600_Series</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>NXFS8500 Series</label>
+                    <name>NXFS8500_Series</name>
+                </dataCategory>
+                <label>Video Servers Other</label>
+                <name>Video_Servers_Other</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Nexio Digital Turnaround Processor</label>
+                    <name>Nexio_Digital_Turnaround_Processor</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Nexio Ingest Control Manager</label>
+                    <name>Nexio_Ingest_Control_Manager</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Nexio Media Gateway Server</label>
+                    <name>Nexio_Media_Gateway_Server</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Nexio Media Host Server</label>
+                    <name>Nexio_Media_Host_Server</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Nexio Production Playout Center</label>
+                    <name>Nexio_Production_Playout_Center</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Nexio Transport Stream Delay Server</label>
+                    <name>Nexio_Transport_Stream_Delay_Server</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Nexio mCAPTURE</label>
+                    <name>Nexio_mCAPTURE</name>
+                </dataCategory>
+                <label>Video Servers Transmission And Specialty</label>
+                <name>Video_Servers_Transmission_And_Specialty</name>
+            </dataCategory>
+            <label>Playout</label>
+            <name>Playout</name>
+        </dataCategory>
+        <dataCategory>
+            <label>Partners</label>
+            <name>Partners</name>
+        </dataCategory>
+        <label>All</label>
+        <name>All</name>
+    </dataCategory>
+    <label>Products</label>
+    <objectUsage>
+        <object>KnowledgeArticleVersion</object>
+    </objectUsage>
+</DataCategoryGroup>

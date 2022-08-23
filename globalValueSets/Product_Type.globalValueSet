@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Executive Discount</fullName>
+        <default>false</default>
+        <label>Executive Discount</label>
+    </customValue>
+    <customValue>
+        <fullName>Hardware</fullName>
+        <default>false</default>
+        <label>Hardware</label>
+    </customValue>
+    <customValue>
+        <fullName>Managed Services</fullName>
+        <default>false</default>
+        <label>Managed Services</label>
+    </customValue>
+    <customValue>
+        <fullName>OEM</fullName>
+        <default>false</default>
+        <label>OEM</label>
+    </customValue>
+    <customValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </customValue>
+    <customValue>
+        <fullName>Product</fullName>
+        <default>false</default>
+        <label>Product</label>
+    </customValue>
+    <customValue>
+        <fullName>Service</fullName>
+        <default>false</default>
+        <label>Service</label>
+    </customValue>
+    <customValue>
+        <fullName>Software</fullName>
+        <default>false</default>
+        <label>Software</label>
+    </customValue>
+    <customValue>
+        <fullName>Support</fullName>
+        <default>false</default>
+        <label>Support</label>
+    </customValue>
+    <customValue>
+        <fullName>Professional Services</fullName>
+        <default>false</default>
+        <label>Professional Services</label>
+    </customValue>
+    <customValue>
+        <fullName>SLA/SSA</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>SLA/SSA</label>
+    </customValue>
+    <customValue>
+        <fullName>CARE</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>CARE</label>
+    </customValue>
+    <customValue>
+        <fullName>LICENSE</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>LICENSE</label>
+    </customValue>
+    <customValue>
+        <fullName>Professional Service</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Professional Service</label>
+    </customValue>
+    <masterLabel>Product Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

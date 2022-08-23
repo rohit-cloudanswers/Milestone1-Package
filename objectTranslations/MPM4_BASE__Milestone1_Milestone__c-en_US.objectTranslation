@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>Close &amp; Handoff Milestone</layout>
+        <sections>
+            <label><!-- Budget --></label>
+            <section>Budget</section>
+        </sections>
+        <sections>
+            <label><!-- Charts --></label>
+            <section>Charts</section>
+        </sections>
+        <sections>
+            <label><!-- Checklist Items --></label>
+            <section>Checklist Items</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Expense Information (Calculated) --></label>
+            <section>Expense Information (Calculated)</section>
+        </sections>
+        <sections>
+            <label><!-- Hours Information (Calculated) --></label>
+            <section>Hours Information (Calculated)</section>
+        </sections>
+        <sections>
+            <label><!-- Project Tasks Gantt View --></label>
+            <section>Project Tasks Gantt View</section>
+        </sections>
+        <sections>
+            <label><!-- Status Summary --></label>
+            <section>Status Summary</section>
+        </sections>
+        <sections>
+            <label><!-- Summary Metrics (Calculated) --></label>
+            <section>Summary Metrics (Calculated)</section>
+        </sections>
+        <sections>
+            <label><!-- Task Information --></label>
+            <section>Task Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Custom Project Milestone Layout</layout>
+        <sections>
+            <label><!-- Budget --></label>
+            <section>Budget</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Expense Information (Calculated) --></label>
+            <section>Expense Information (Calculated)</section>
+        </sections>
+        <sections>
+            <label><!-- Hours Information (Calculated) --></label>
+            <section>Hours Information (Calculated)</section>
+        </sections>
+        <sections>
+            <label><!-- Project Tasks Gantt View --></label>
+            <section>Project Tasks Gantt View</section>
+        </sections>
+        <sections>
+            <label><!-- Status Summary --></label>
+            <section>Status Summary</section>
+        </sections>
+        <sections>
+            <label><!-- Summary Metrics (Calculated) --></label>
+            <section>Summary Metrics (Calculated)</section>
+        </sections>
+        <sections>
+            <label><!-- Task Information (Calculated) --></label>
+            <section>Task Information (Calculated)</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Development Milestone</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Hours Metrics --></label>
+            <section>Hours Metrics</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Project Kickoff Milestone</layout>
+        <sections>
+            <label><!-- Budget --></label>
+            <section>Budget</section>
+        </sections>
+        <sections>
+            <label><!-- Charts --></label>
+            <section>Charts</section>
+        </sections>
+        <sections>
+            <label><!-- Checklist Items --></label>
+            <section>Checklist Items</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Expense Information (Calculated) --></label>
+            <section>Expense Information (Calculated)</section>
+        </sections>
+        <sections>
+            <label><!-- Hours Information (Calculated) --></label>
+            <section>Hours Information (Calculated)</section>
+        </sections>
+        <sections>
+            <label><!-- Project Tasks Gantt View --></label>
+            <section>Project Tasks Gantt View</section>
+        </sections>
+        <sections>
+            <label><!-- Status Summary --></label>
+            <section>Status Summary</section>
+        </sections>
+        <sections>
+            <label><!-- Summary Metrics (Calculated) --></label>
+            <section>Summary Metrics (Calculated)</section>
+        </sections>
+        <sections>
+            <label><!-- Task Information --></label>
+            <section>Task Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Project Planning Milestone</layout>
+        <sections>
+            <label><!-- Budget --></label>
+            <section>Budget</section>
+        </sections>
+        <sections>
+            <label><!-- Charts --></label>
+            <section>Charts</section>
+        </sections>
+        <sections>
+            <label><!-- Checklist Items --></label>
+            <section>Checklist Items</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Expense Information (Calculated) --></label>
+            <section>Expense Information (Calculated)</section>
+        </sections>
+        <sections>
+            <label><!-- Hours Information (Calculated) --></label>
+            <section>Hours Information (Calculated)</section>
+        </sections>
+        <sections>
+            <label><!-- Project Tasks Gantt View --></label>
+            <section>Project Tasks Gantt View</section>
+        </sections>
+        <sections>
+            <label><!-- Status Summary --></label>
+            <section>Status Summary</section>
+        </sections>
+        <sections>
+            <label><!-- Summary Metrics (Calculated) --></label>
+            <section>Summary Metrics (Calculated)</section>
+        </sections>
+        <sections>
+            <label><!-- Task Information --></label>
+            <section>Task Information</section>
+        </sections>
+    </layouts>
+</CustomObjectTranslation>

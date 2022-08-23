@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>after save to update MS task with default.  old version &quot;Defalut MSTask from Oracle Task&quot;</description>
+    <interviewLabel>Project - {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Project - Task Automation</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_MS_Task</name>
+        <label>Update MS Task</label>
+        <locationX>250</locationX>
+        <locationY>377</locationY>
+        <filters>
+            <field>MPM4_BASE__Project_Lookup__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Oracle_Project_Task__c</field>
+            <value>
+                <elementReference>$Record.Default_Oracle_Project_Task__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>MPM4_BASE__Milestone1_Task__c</object>
+    </recordUpdates>
+    <status>Active</status>
+</Flow>

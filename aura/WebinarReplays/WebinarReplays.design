@@ -1,0 +1,9 @@
+<design:component label="Webinar Replays">
+    <design:attribute name="webinar_section_heading" label="Section Heading" description="" />
+    <design:attribute name="webinar_image_url" label="Image URL" description="" />
+    <design:attribute name="webinar_date" label="Date" description="" />
+    <design:attribute name="webinar_title" label="Title" description="" />
+    <design:attribute name="webinar_cta" label="CTA" description="" />
+    <design:attribute name="webinar_cta_text" label="CTA Text" description="" />
+    <design:attribute name="webinar_cta_new_window" label="Open CTA in new Window" />
+</design:component>

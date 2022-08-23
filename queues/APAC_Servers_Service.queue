@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>APAC Servers Service</name>
+    <queueMembers>
+        <users>
+            <user>albert.zhang@imaginecommunications.com</user>
+            <user>andy.lin@imaginecommunications.com</user>
+            <user>anil.ratra@imaginecommunications.com</user>
+            <user>emily.hu@imaginecommunications.com</user>
+            <user>john.d&apos;mello@imaginecommunications.com</user>
+            <user>john.dimitrievich@imaginecommunications.com</user>
+            <user>kelvin.yap@imaginecommunications.com</user>
+            <user>khengbeng.ng@imaginecommunications.com</user>
+            <user>manish.kumar@imaginecommunications.com</user>
+            <user>mark.darnay@imaginecommunications.com</user>
+            <user>navneet.kumar@imaginecommunications.com</user>
+            <user>nick.vaughan@imaginecommunications.com</user>
+            <user>prashant.tripathi@imaginecommunications.com</user>
+            <user>richard.hewitt3@imaginecommunications.com</user>
+            <user>ronald.hui@imaginecommunications.com</user>
+            <user>sahil.bindra@imaginecommunications.com</user>
+            <user>santosh.tiwari@imaginecommunications.com</user>
+            <user>shashikant.sharma@imaginecommunications.com</user>
+            <user>takuya.hoshikaya@imaginecommunications.com</user>
+            <user>tzewei.ng@imaginecommunications.com</user>
+            <user>vivek.pandey@imaginecommunications.com</user>
+            <user>webster.neo@imaginecommunications.com</user>
+            <user>yamunesh.rastogi@imaginecommunications.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

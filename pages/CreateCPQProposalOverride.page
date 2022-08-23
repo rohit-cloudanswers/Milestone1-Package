@@ -1,0 +1,86 @@
+<apex:page standardController="SBQQ__Quote__c" extensions="QuoteProposalExtension" docType="html-5.0">
+    
+    <style type="text/css">
+        .white-cover {
+            position: absolute;
+            z-index: 100;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: white;
+        }
+    </style>
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <apex:includeScript value="{!$Resource.DomToImage}" />
+    
+    <c:ShowProductReportDataCtrl_CPQ qId="{!SBQQ__Quote__c.Name}" exportCode="USD"></c:ShowProductReportDataCtrl_CPQ>
+    <div class="white-cover"></div>
+    
+    <script type="text/javascript">
+        const quoteId = "{!SBQQ__Quote__c.Id}";
+        const sessionId = "{!$API.Session_ID}";
+        const serverUrl = "{!$API.Partner_Server_URL_290}";
+        const queries = "[BlankOptional]a1b3r0000039XFkAAM,[OptionalTrue]a1b3r0000039XFpAAM,[QuoteLineGroupsFalse]a1b3r0000039XFuAAM,[QuoteLineGroupsTrue]a1b3r0000039XFzAAM,[QLTrue]a1b3r0000039XG4AAM,[ExportLines]a1b3r0000039XQxAAM,[ExpLineNoBndl]a1b3r0000019at2AAA,[Opportunity]a1b3r0000039Zv9AAE,[OpptyCommits]a1b3r0000039ZvEAAU,[Team]a1b3r0000039ZvJAAU,[Attachment]a1b3r0000039ZvOAAU";
+        const quoteCurrency = "{!SBQQ__Quote__c.Conga_Currency__c}";
+        const OFN = "{!JSENCODE(SBQQ__Quote__c.Conga_File_Name__c )}";
+
+        if (domtoimage) {
+            var node = document.getElementById('business_data');
+            var promises = [];
+            promises.push(domtoimage.toPng(node));
+            Promise.all(promises).then(function(results) {
+                var dataUrl = results[0];
+                if(quoteId) {
+                    var att = {};
+                    att.Name = 'BusinessData_' + quoteId + '.png';
+                    att.ParentId = quoteId;
+                    att.Body = dataUrl.split(',')[1];
+                    Visualforce.remoting.Manager.invokeAction(
+                        '{!$RemoteAction.QuoteProposalExtension.saveImage}',
+                        att.Name, att.Body, att.ParentId,
+                        function(event, result) {
+                            // build conga composer link
+                            var nextLocation = undefined;
+                            var theme = '{!$User.UIThemeDisplayed}';
+                            if (theme == 'Theme4d') {
+                                // lightning url
+                                nextLocation = '/apex/APXTConga4__Conga_Composer?serverUrl=' 
+                                    + serverUrl + '&Id=' + quoteId
+                                    + '&CurrencyCulture=' + quoteCurrency
+                                    + '&SC0=1&SC1=SalesforceFile&OFN=' + OFN 
+                                    + '&TemplateGroup=CPQQuote'
+                                    + '&QueryId=' + queries;
+                            } else {
+                                nextLocation = 'https://composer.congamerge.com?sessionId=' + sessionId 
+                                    + '&serverUrl=' + serverUrl
+                                    + '&id=' + quoteId
+                                    + '&CurrencyCulture=' + quoteCurrency
+                                    + '&SC0=1&SC1=SalesforceFile&OFN=' + OFN
+                                    + '&TemplateGroup=CPQQuote'
+                                    + '&QueryId=' + queries;
+                            }
+                            /*setTimeout(function(){
+                                Swal.fire({
+                                    title: '<strong>Create Proposal</strong>',
+                                    html: 'Click ' + 
+                                        '<a href="'+nextLocation+'">this link</a> to continue.',
+                                    showCloseButton: false,
+                                    showCancelButton: false,
+                                    showConfirmButton: false,
+                                    focusConfirm: false
+                                });
+                            }, 10000);*/
+                            window.location.href = nextLocation;
+                        }
+                    );
+                }
+            }).catch(function (error) {
+                console.error('oops, something went wrong!', error);
+            });
+        } else {
+            alert('Something went wrong, please refresh the page.');
+        }
+    </script>
+</apex:page>

@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <name>Add_to_Collection</name>
+        <label>Add to Collection</label>
+        <locationX>208</locationX>
+        <locationY>877</locationY>
+        <assignmentItems>
+            <assignToReference>ContactToUpdate</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Contact_Loop</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Contact_Loop</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Values</name>
+        <label>Assign Values</label>
+        <locationX>307</locationX>
+        <locationY>725</locationY>
+        <assignmentItems>
+            <assignToReference>Contact_Loop.AccountId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>0013100001dJ3eGAAS</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Contact_Loop.Active__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Contact_Loop.Comments__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>textComment</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Contact_Loop.Email</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>returnInactiveEmail</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Contact_Loop.Primary_Address__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Add_to_Collection</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Capture_Email_address</name>
+        <label>Capture Email address</label>
+        <locationX>174</locationX>
+        <locationY>611</locationY>
+        <assignmentItems>
+            <assignToReference>varEmailAddress</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>returnEmailFromBody</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Contact_Record</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Grab_Old_Email_Quick</name>
+        <label>Grab Old Email Quick</label>
+        <locationX>160</locationX>
+        <locationY>727</locationY>
+        <assignmentItems>
+            <assignToReference>varOldEmail</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Contact_Loop.Email</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_Values</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Check_Body</name>
+        <label>Check Body</label>
+        <locationX>20</locationX>
+        <locationY>460</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Body_says_Can_t_be_Sent</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>Case_Record.Description</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>only accepts messages from people in its organization or on its allowed senders list</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Case_Record.Description</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>suspects your message is spam</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Case_Record.Description</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Something went wrong and your message couldn&apos;t be delivered.</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Delete</targetReference>
+            </connector>
+            <label>Body says Can&apos;t be Sent</label>
+        </rules>
+        <rules>
+            <name>Wasn_t_Found_At</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>Case_Record.Description</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue> wasn&apos;t found at</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Case_Record.Description</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Delivery has failed to these recipients or groups:</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Capture_Email_address</targetReference>
+            </connector>
+            <label>Wasn&apos;t Found At</label>
+        </rules>
+        <rules>
+            <name>Wasn_t_Found_At_MULTIPLE</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Case_Record.Description</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Your message couldn&apos;t be delivered to the recipients shown below.</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Delete</targetReference>
+            </connector>
+            <label>Wasn&apos;t Found At MULTIPLE</label>
+        </rules>
+        <rules>
+            <name>have_rejected_your_message</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Case_Record.Description</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>have rejected your message.</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Delete</targetReference>
+            </connector>
+            <label>have rejected your message.</label>
+        </rules>
+        <rules>
+            <name>DNS_doesn_t_exist</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Case_Record.Description</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>The Domain Name System (DNS) reported that the recipient&apos;s domain does not exist</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Delete</targetReference>
+            </connector>
+            <label>DNS doesn&apos;t exist</label>
+        </rules>
+        <rules>
+            <name>Policy_violation_or_system_error</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Case_Record.Description</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Policy violation or system error</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Delete</targetReference>
+            </connector>
+            <label>Policy violation or system error</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Subject_Decision</name>
+        <label>Subject Decision</label>
+        <locationX>169</locationX>
+        <locationY>302</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Subject_Starts_with_Automatic_Reply</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>Case_Record.Subject</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>Automatic reply:</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Case_Record.Subject</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>Automatische Antwort:</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Case_Record.Subject</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>Firma</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Case_Record.Subject</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>Returned mail: see transcript for details</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Case_Record.Subject</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>Risposta automatica</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Delete</targetReference>
+            </connector>
+            <label>Subject Starts with Automatic Reply</label>
+        </rules>
+        <rules>
+            <name>Subject_Starts_with_Undeliverable</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Case_Record.Subject</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>Undeliverable:</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_Body</targetReference>
+            </connector>
+            <label>Subject Starts with Undeliverable</label>
+        </rules>
+        <rules>
+            <name>Your_message_couldn_t_be_delivered</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Case_Record.Subject</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Your message couldn&apos;t be delivered</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Delete</targetReference>
+            </connector>
+            <label>Your message couldn&apos;t be delivered</label>
+        </rules>
+    </decisions>
+    <formulas>
+        <name>returnEmailFromBody</name>
+        <dataType>String</dataType>
+        <expression>MID( {!Case_Record.Description}, 
+( FIND (&quot;Your message to&quot;, {!Case_Record.Description})+16 ),
+( ( FIND(&quot;couldn&apos;t be delivered.&quot;, {!Case_Record.Description})-1) - (FIND(&quot;Your message to&quot;, {!Case_Record.Description})+16) )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>returnInactiveEmail</name>
+        <dataType>String</dataType>
+        <expression>LEFT({!Contact_Loop.Email},FIND(&quot;@&quot;, {!Contact_Loop.Email})) + &quot;inactive.com&quot;</expression>
+    </formulas>
+    <interviewLabel>MAS - Community Queue Cleanup {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>MAS - Community Queue Cleanup</label>
+    <loops>
+        <name>Contact_Loop</name>
+        <label>Contact Loop</label>
+        <locationX>31</locationX>
+        <locationY>724</locationY>
+        <collectionReference>Contact_Record</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Grab_Old_Email_Quick</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Update_Contact</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordDeletes>
+        <name>Delete</name>
+        <label>Delete!</label>
+        <locationX>543</locationX>
+        <locationY>423</locationY>
+        <inputReference>Case_Record</inputReference>
+    </recordDeletes>
+    <recordLookups>
+        <name>Case_Record</name>
+        <label>Case Record</label>
+        <locationX>177</locationX>
+        <locationY>173</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Subject_Decision</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>RecordId</elementReference>
+            </value>
+        </filters>
+        <object>Case</object>
+    </recordLookups>
+    <recordLookups>
+        <name>Contact_Record</name>
+        <label>Contact Record</label>
+        <locationX>29</locationX>
+        <locationY>603</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Contact_Loop</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Delete</targetReference>
+        </faultConnector>
+        <filters>
+            <field>Email</field>
+            <operator>Contains</operator>
+            <value>
+                <elementReference>varEmailAddress</elementReference>
+            </value>
+        </filters>
+        <object>Contact</object>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Contact</name>
+        <label>Update Contact</label>
+        <locationX>537</locationX>
+        <locationY>599</locationY>
+        <connector>
+            <targetReference>Delete</targetReference>
+        </connector>
+        <inputReference>ContactToUpdate</inputReference>
+    </recordUpdates>
+    <startElementReference>Case_Record</startElementReference>
+    <status>Active</status>
+    <textTemplates>
+        <name>textComment</name>
+        <text>Automatic Process - Email bounced, contact inactivated.  Old Email - {!varOldEmail}</text>
+    </textTemplates>
+    <variables>
+        <name>ContactToUpdate</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Contact</objectType>
+    </variables>
+    <variables>
+        <name>RecordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varEmailAddress</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varOldEmail</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

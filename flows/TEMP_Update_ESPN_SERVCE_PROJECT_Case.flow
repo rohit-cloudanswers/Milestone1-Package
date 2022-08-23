@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <name>Update_Record_Type</name>
+        <label>Update Record Type</label>
+        <locationX>380</locationX>
+        <locationY>322</locationY>
+        <assignmentItems>
+            <assignToReference>Case_Record.RecordTypeId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>0123r0000016GE1</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Times</targetReference>
+        </connector>
+    </assignments>
+    <interviewLabel>TEMP - Update ESPN SERVCE &gt; PROJECT Case {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>TEMP - Update ESPN SERVCE &gt; PROJECT Case</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Case_Record</name>
+        <label>Case Record</label>
+        <locationX>176</locationX>
+        <locationY>180</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Update_Times</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>RecordId</elementReference>
+            </value>
+        </filters>
+        <object>Case</object>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Cases</name>
+        <label>Update Cases</label>
+        <locationX>187</locationX>
+        <locationY>545</locationY>
+        <inputReference>Case_Record</inputReference>
+    </recordUpdates>
+    <startElementReference>Case_Record</startElementReference>
+    <status>Draft</status>
+    <subflows>
+        <name>Update_Times</name>
+        <label>Update Times</label>
+        <locationX>177</locationX>
+        <locationY>434</locationY>
+        <connector>
+            <targetReference>Update_Cases</targetReference>
+        </connector>
+        <flowName>MAS_One_Time_Time_Update</flowName>
+        <inputAssignments>
+            <name>RecordId</name>
+            <value>
+                <elementReference>RecordId</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <variables>
+        <name>RecordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

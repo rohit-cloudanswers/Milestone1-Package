@@ -1,0 +1,3 @@
+<apex:page standardController="Asset">
+Asset edits are temporarily disabled during the bulk data load. Edit functionality will be restored when the load completes. Use the back button to return to the Asset.
+</apex:page>

@@ -1,0 +1,91 @@
+<apex:page docType="html-5.0" controller="CustomLoginController"
+           showHeader="false" sidebar="false" standardStylesheets="false">
+
+    <html>
+    <head lang="en">
+        <title>Imagine Communications - {!$Site.Name}</title>
+
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300'
+              rel='stylesheet' type='text/css'/>
+        <apex:stylesheet value="{!URLFOR($Resource.semantic,'packaged/css/index.css')}"/>
+        <apex:stylesheet value="{!URLFOR($Resource.semantic,'packaged/css/semantic.css')}"/>
+
+        <apex:includeScript value="{!URLFOR($Resource.semantic,'packaged/javascript/jquery-2.1.0.min.js')}"/>
+        <apex:includeScript value="{!URLFOR($Resource.semantic,'packaged/javascript/jquery.address-1.5.min.js')}"/>
+        <apex:includeScript value="{!URLFOR($Resource.semantic,'packaged/javascript/semantic.min.js')}"/>
+
+    </head>
+    <body>
+
+    <div class="one column page grid">
+        <div class="sixteen wide column">
+            <div class="ui secondary menu">
+
+                <div class="item">
+                    <a href="{!$Page.PartnerHome}" class="fitted item">
+                        <img src="{!URLFOR($Resource.ImagineLogo)}"/>
+                    </a>
+                </div>
+
+                <div class="item">
+                    <h2 class="ui header">
+                        <i class="cloud icon"></i>
+
+                        <div class="content">
+                            Partner portal login
+                            <div class="sub header">
+                                Enter your credentials to login below
+                            </div>
+                        </div>
+                    </h2>
+                </div>
+
+            </div>
+
+            <!--Begin form -->
+            <apex:form >
+                <apex:pageMessages />
+                <div class="ui form segment">
+                    <div class="field">
+                        <label for="username">Username</label>
+
+                        <div class="ui left labeled icon input">
+                            <apex:inputText value="{!username}" id="username"/>
+                            <i class="user icon"></i>
+
+                            <div class="ui corner label">
+                                <i class="icon asterisk"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="password">Password</label>
+
+                        <div class="ui left labeled icon input">
+                            <apex:inputSecret value="{!password}" id="password"/>
+                            <i class="lock icon"></i>
+
+                            <div class="ui corner label">
+                                <i class="icon asterisk"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <apex:commandButton action="{!login}" styleClass="ui blue submit button" value="Login"/>
+                    &nbsp;&nbsp;
+                    <apex:commandButton action="{!forgotPass}" styleClass="ui blue submit button"
+                                        value="Forgot Password"/>
+                </div>
+            </apex:form>
+            <!--End form -->
+
+
+            <!-- Begin footer segment -->
+            <c:PartnerHomeFooter ></c:PartnerHomeFooter>
+            <!--End footer segment -->
+
+        </div>
+    </div>
+
+    </body>
+    </html>
+</apex:page>

@@ -1,0 +1,75 @@
+<apex:page controller="AddressFinder" lightningStylesheets="true">
+    <style>
+        .vfHelpText a            {position:relative;}
+        .vfHelpText a span       {display: none;}
+        .vfHelpText a:hover span {display: block;
+                                  position:absolute;
+                                  top:1.25em;
+                                  padding:2px 5px;
+                                  left:-15em; width:15em;
+                                  z-index:100;
+                                  border:1px solid orange;
+                                  background-color:#FEFDB9;
+                                  color:black;
+                                 }
+        .pbSubheader {
+            color: black !important;
+        }
+    </style>
+    <apex:sectionHeader title="{!IF(ISBLANK(sObjectName), 'No Record Selected', sObjectName)}" subtitle="Address Finder" />
+    <div class="bPageTitle" style="padding-top: 0;">
+        <div class="ptBreadcrumb">&nbsp;«&nbsp;<a href="{! '/' + $CurrentPage.parameters.recordId }">Back</a></div>
+    </div>
+    <apex:pageMessages id="messages"></apex:pageMessages>
+    <apex:form rendered="{! $CurrentPage.parameters.recordId != null}">
+        <apex:pageBlock title="Address Finder">
+            <apex:pageBlockButtons >
+                <apex:commandButton value="New" action="{!newAction}" rendered="{! NOT(newAddress)}" />
+                <apex:commandButton value="Save" action="{!saveAction}" rendered="{! newAddress}" />
+                <apex:commandButton value="Search" rendered="{! NOT(newAddress)}" />
+                <apex:commandButton value="Cancel" action="{!cancel}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection rendered="">
+            </apex:pageBlockSection>
+            <apex:pageBlockSection rendered="{! toUpdate != null }" columns="2">
+                <apex:outputField value="{!toUpdate[nameField]}" />
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Select Address Field"></apex:outputLabel>
+                    <apex:selectList value="{!addressField}" label="Select Address Field" multiselect="false" size="1">
+                        <apex:selectOptions value="{!addressFields}"></apex:selectOptions>
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <!-- new address section -->
+            <apex:pageBlockSection rendered="{!newAddress}">
+                <apex:repeat value="{!$ObjectType.Address__c.FieldSets.AddressFinder_New_Fields}" var="f">
+                    <apex:pageBlockSectionItem >
+                        <span class="label" style="align: right;">{!f.label}</span>
+                        <apex:inputField value="{!address[f.fieldPath]}" />
+                    </apex:pageBlockSectionItem>
+                </apex:repeat>
+            </apex:pageBlockSection>
+            <!-- show search fields -->
+            <apex:pageBlockSection columns="2" title="Search Criteria" collapsible="false" rendered="{!NOT(newAddress)}">
+                <apex:repeat value="{!$ObjectType.Address__c.FieldSets.AddressFinder_Search_Fields}" var="f">
+                    <apex:pageBlockSectionItem >
+                        <span class="label" style="align: right;">{!f.label}</span>
+                        <apex:inputText value="{!searchFields[f.fieldPath]}" />
+                    </apex:pageBlockSectionItem>
+                </apex:repeat>
+            </apex:pageBlockSection>
+            <!-- show results -->
+            <apex:pageBlockTable value="{!addresses}" var="address" width="100%" rendered="{!NOT(newAddress)}">
+                <apex:repeat value="{!$ObjectType.Address__c.FieldSets.AddressFinder_Display_Fields}" var="df">
+                    <apex:column headerValue="{!df.label}" value="{!address[df.fieldPath]}" />
+                </apex:repeat>
+                <apex:column rendered="{!toUpdate != null}" headerValue="Action">
+                    <apex:commandLink action="{!updateAddress}">
+                        Select
+                        <apex:param name="addressId" assignTo="{!addressId}" value="{!address.Id}"/>
+                    </apex:commandLink>
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

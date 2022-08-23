@@ -1,0 +1,7 @@
+<apex:page showHeader="true" sidebar="true" standardController="Quote" extensions="SyncQuote" action="{!autoSync}">
+    <apex:pageMessages id="pmShowMessages" escape="false" />
+
+    <p>
+        <apex:outputLink value="/{!theQuote.id}" >Back</apex:outputLink>
+    </p>
+</apex:page>

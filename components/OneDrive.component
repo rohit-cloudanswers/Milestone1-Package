@@ -1,0 +1,998 @@
+<apex:component layout="none" controller="OneDriveController">
+    <apex:attribute name="recordId" type="string" description="record in context" required="false" />
+    <c:sObjectRemote ></c:sObjectRemote>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/angular-ui-tree/2.22.2/angular-ui-tree.min.css" />
+    <style type="text/css">
+        body { 
+            padding-top: 50px; 
+        }
+        .breadcrumb {
+            margin: 8px 0px;
+        }
+        .body-padding {
+            padding-top: 70px;
+        }
+        .remove-margin {
+            margin-bottom: 0px;
+        }
+        a .btn-xs {
+            padding: 5px 5px;
+        }
+        .brand-color {
+            color: #0078d7 !important;
+        }
+        .panel-primary>.panel-heading {
+            color: #fff;
+            background-color: #0078d7;
+            border-color: #0078d7;
+        }
+    </style>
+    <div ng-app="OneDriveApp" ng-controller="OneDriveController" ng-class="{'body-padding': breadcrumbs.length == 0}" ng-cloak="true">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" ng-class="{'remove-margin': breadcrumbs.length != 0}">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#primary-navbar" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand brand-color" href="">SharePoint - Files &amp; Folders</a>
+                </div>
+                <div class="collapse navbar-collapse" id="primary-navbar">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#" ng-click="initOAuth()" ng-if="!hasToken">Login</a></li>
+                        <li><a href="#" ng-click="logout()" ng-if="hasToken">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="navbar navbar-default navbar-static-top" role="navigation" ng-if="breadcrumbs.length > 0">
+            <div class="container">
+                <ul class="breadcrumb list-inline">
+                    <li ng-repeat="breadcrumb in breadcrumbs">
+                        <a href="#" ng-click="navigateTo($index)" ng-if="!$last">{{breadcrumb.title}}</a>
+                        <span ng-if="$last">{{breadcrumb.title}}</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row" ng-show="errors.length != 0">
+                <div class="col-md-12">
+                    <div uib-alert="true" ng-repeat="error in errors" class="alert-danger" close="closeAlert($index)">{{error.message || error.statusText}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="container" ng-if="hasToken">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <span class="pull-left" style="max-width: 400px;">
+                                <button class="btn btn-xs btn-danger" title="Back" ng-click="navigateBack()" ng-disabled="breadcrumbs.length < 2">
+                                    <span class="glyphicon glyphicon-circle-arrow-left"></span> Back
+                                </button>
+                                &nbsp;&nbsp;{{selectedNode.title}}
+                            </span>
+                            <span class="pull-right">
+                                <button ng-click="initFileUpload(selectedNode)" class="btn btn-xs btn-warning" ng-disabled="loading.status">
+                                    <span class="glyphicon glyphicon-upload"></span> Upload file
+                                </button>&nbsp;
+                                <button ng-click="initCreateFolder(selectedNode)" class="btn btn-xs btn-success" ng-disabled="loading.status">
+                                    <span class="glyphicon glyphicon-plus"></span> Create subfolder
+                                </button>&nbsp;
+                                <button ng-click="openInSharepoint(selectedNode)" class="btn btn-xs btn-info" ng-disabled="loading.status">
+                                    <span class="glyphicon glyphicon-new-window"></span> Open
+                                </button>
+                            </span>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="panel-body" ng-if="loading.status">
+                            <center><img src="/img/loading24.gif" />&nbsp;&nbsp;<h4> {{loading.message}}</h4></center>
+                        </div>
+                        <ul class="list-group" ng-if="loading.status == false">
+                            <a href="#" ng-repeat="node in selectedNode.nodes" class="list-group-item" ng-click="openFolder(node)">
+                                <span class="badge">{{node.folder.childCount}}</span>
+                                <span class="glyphicon glyphicon-folder-open" ng-if="node.folder"></span>
+                                <span class="glyphicon glyphicon-file" ng-if="node.file"></span>
+                                &nbsp;&nbsp;{{node.title}}
+                                <button class="btn btn-xs btn-info pull-right" ng-if="node.file" ng-click="downloadFile(node.downloadUrl)"><span class="glyphicon glyphicon-download" title="Download"></span></button>
+                            </a>
+                            <li class="list-group-item" ng-if="selectedNode.nodes.length == 0">Folder is empty.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container" ng-if="!hasToken">
+            <div class="jumbotron" ng-if="loading.status == false">
+                <h2 class="display-3 brand-color">SharePoint</h2>
+                <p class="lead">Please login to your SharePoint account to access files/folders stored on SharePoint.</p>
+                <p><a class="btn btn-lg btn-success" href="#" ng-click="initOAuth()" role="button">Log In</a></p>
+            </div>
+            <div class="row" ng-if="loading.status == true">
+                <div class="col-md-12">
+                    <center><img src="/img/loading24.gif" />&nbsp;&nbsp;<h4> {{loading.message}}</h4></center>
+                </div>
+            </div>
+        </div>
+        <!-- create folder modal -->
+        <script type="text/ng-template" id="createFolderModal.html">
+            <div ng-form="createFolderForm">
+                <div class="modal-header">
+                    <h4 class="modal-title">Create new folder</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row" ng-show="errors.length != 0">
+                            <div class="col-md-12">
+                                <div uib-alert="true" ng-repeat="error in errors" class="alert-danger" close="closeAlert($index)">{{error.message || error.statusText}}</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="folderName">Folder name</label>
+                            <input id="folderName" class="form-control" placeholder="Folder name" type="text" maxlength="255" ng-model="folderName" ng-required="true" />
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-md btn-warning" ng-click="cancel()" ng-disabled="creating">
+                        <span class="glyphicon glyphicon-remove-circle"></span> Cancel
+                    </button>
+                    <button class="btn btn-md btn-success" ng-click="save()" ng-disabled="creating || createFolderForm.$invalid">
+                        <span class="glyphicon glyphicon-ok-circle"></span> Create
+                    </button>
+                </div>
+            </div>
+        </script>
+        <!-- create opportunity folder modal -->
+        <script type="text/ng-template" id="recFolderModal.html">
+            <div ng-form="recFolderForm">
+                <div class="modal-header">
+                    <h4 class="modal-title">Create record folder</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row" ng-show="errors.length != 0">
+                            <div class="col-md-12">
+                                <div uib-alert="true" ng-repeat="error in errors" class="alert-danger" close="closeAlert($index)">{{error.message || error.statusText}}</div>
+                            </div>
+                        </div>
+                        <div class="alert alert-warning">
+                            <strong>Warning!</strong> No matching folder found for selected object record.
+                        </div>
+                        <div class="form-group">
+                            <label for="folderName">Folder name</label>
+                            <input id="folderName" class="form-control" placeholder="Folder name" type="text" maxlength="255" ng-model="folderName" ng-required="true" ng-disabled="true" />
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-md btn-warning" ng-click="cancel()" ng-disabled="creating">
+                        <span class="glyphicon glyphicon-remove-circle"></span> Cancel
+                    </button>
+                    <button class="btn btn-md btn-success" ng-click="save()" ng-disabled="creating">
+                        <span class="glyphicon glyphicon-ok-circle"></span> Create
+                    </button>
+                </div>
+            </div>
+        </script>
+        <!-- upload file modal -->
+        <script type="text/ng-template" id="uploadFileModal.html">
+            <div ng-form="uploadFileForm">
+                <div class="modal-header">
+                    <h4 class="modal-title">Upload file</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row" ng-show="errors.length != 0">
+                            <div class="col-md-12">
+                                <div uib-alert="true" ng-repeat="error in errors" class="alert-danger" close="closeAlert($index)">{{error.message || error.statusText}}</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="fileName">Select file</label>
+                            <input id="fileName" name="theFile" class="form-control" type="file" multiple="false" onchange="angular.element(this).scope().selectFile(this)" ng-required="true" />
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-md btn-warning" ng-click="cancel()" ng-disabled="uploading">
+                        <span class="glyphicon glyphicon-remove-circle"></span> Cancel
+                    </button>
+                    <button class="btn btn-md btn-success" ng-click="uploadFile()" ng-disabled="uploading">
+                        <span class="glyphicon glyphicon-ok-circle"></span> Upload
+                    </button>
+                </div>
+            </div>
+        </script>
+        <!-- scripts -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.4.9/angular-sanitize.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.10/ngStorage.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.4.0/ui-bootstrap-tpls.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-tree/2.22.2/angular-ui-tree.min.js"></script>
+        <script type="text/javascript">
+            var AppConfig = {
+                OneDriveController: {
+                    getObjectSettings: '{!$RemoteAction.OneDriveController.getObjectSettings}'
+                },
+                OneDriveAuthManager: {
+                    getAuthStartUrl: '{!$RemoteAction.OneDriveController.getAuthStartUrl}',
+                    getTokenFromCode: '{!$RemoteAction.OneDriveController.getTokenFromCode}',
+                    getTokenFromRefreshToken: '{!$RemoteAction.OneDriveController.getTokenFromRefreshToken}',
+                    redirectTo: '{!$RemoteAction.OneDriveController.redirectTo}'
+                },
+                Visualforce: Visualforce
+            };
+            // angular code
+            var OneDriveApp = angular.module('OneDriveApp', ['ui.bootstrap', 'ui.tree', 'ngSanitize','ngStorage']);
+            OneDriveApp.value('AppConfig', AppConfig);
+            OneDriveApp.value('UserId', '{!$User.Id}');
+            OneDriveApp.value('RecordId', '{!$CurrentPage.parameters.id}');
+            OneDriveApp.value('GroupId', '{!$Setup.Sharepoint_Site__c.Site_Id__c}');
+            OneDriveApp.factory('OneDriveFactory', function($q, $http, AppConfig, $sessionStorage, GroupId){
+
+                var factory = {
+                    buildAuthUrl: buildAuthUrl,
+                    redirectTo: redirectTo,
+                    getRefreshToken: getRefreshToken,
+                    getAccessToken: getAccessToken,
+                    loadDocumentLibrary: loadDocumentLibrary,
+                    createFolder: createFolder,
+                    uploadFile: uploadFile,
+                    loadChildren: loadChildren,
+                    loadItemWithChildren: loadItemWithChildren,
+                    querySObjects: querySObjects,
+                    updateSObjects: updateSObjects,
+                    getObjectSettings: getObjectSettings,
+                    cleanFolderName: cleanFolderName,
+                    hasToken: hasToken,
+                    logout: logout
+                };
+                return factory;
+                
+                function buildAuthUrl(url, state) {
+                    var deferred = $q.defer();
+                    AppConfig.Visualforce.remoting.Manager.invokeAction(
+                        AppConfig.OneDriveAuthManager.getAuthStartUrl,
+                        url, state,
+                        function(result, event) {
+                            if(event.status) {
+                                deferred.resolve(result);
+                            } else {
+                                deferred.reject(event);
+                            }
+                        },
+                        {escape: false}
+                    );
+                    return deferred.promise;
+                }
+                
+                function getRefreshToken(code, uri) {
+                    var deferred = $q.defer();
+                    AppConfig.Visualforce.remoting.Manager.invokeAction(
+                        AppConfig.OneDriveAuthManager.getTokenFromCode,
+                        code, uri,
+                        function(result, event) {
+                            if(event.status) {
+                                var sess = JSON.parse(result);
+                                if(sess && sess.access_token) {
+                                    $sessionStorage.accessToken = sess.access_token;
+                                    $sessionStorage.refreshToken = sess.refresh_token;
+                                    deferred.resolve(true);
+                                } else {
+                                    deferred.resolve(false);
+                                }
+                            } else {
+                                deferred.reject(event);
+                            }
+                        },
+                        {escape: false}
+                    );
+                    return deferred.promise;
+                }
+
+                function getObjectSettings(recordId) {
+                    var deferred = $q.defer();
+                    AppConfig.Visualforce.remoting.Manager.invokeAction(
+                        AppConfig.OneDriveController.getObjectSettings,
+                        recordId,
+                        function(result, event) {
+                            if(event.status) {
+                                deferred.resolve(result);
+                            } else {
+                                deferred.reject(event);
+                            }
+                        },
+                        {escape: false}
+                    );
+                    return deferred.promise;
+                }
+                
+                function getAccessToken() {
+                    var deferred = $q.defer();
+                    AppConfig.Visualforce.remoting.Manager.invokeAction(
+                        AppConfig.OneDriveAuthManager.getTokenFromRefreshToken,
+                        $sessionStorage.refreshToken,
+                        function(result, event) {
+                            if(event.status) {
+                                if(result && result.access_token){
+                                    $sessionStorage.refreshToken = result.refresh_token;
+                                    $sessionStorage.accessToken = result.access_token;
+                                    deferred.resolve(true);
+                                } else {
+                                    deferred.resolve(false);
+                                }
+                            } else {
+                                deferred.reject(event);
+                            }
+                        },
+                        {escape: false}
+                    );
+                    return deferred.promise;
+                }
+
+                function hasToken(){
+                    return $sessionStorage.refreshToken !== undefined;
+                }
+
+                function logout(){
+                    delete $sessionStorage.accessToken;
+                    delete $sessionStorage.refreshToken;
+                }
+
+                function redirectTo(uri) {
+                    var deferred = $q.defer();
+                    AppConfig.Visualforce.remoting.Manager.invokeAction(
+                        AppConfig.OneDriveAuthManager.redirectTo,
+                        uri,
+                        function(result, event) {
+                            if(event.status) {
+                                deferred.resolve(result);
+                            } else {
+                                deferred.reject(event);
+                            }
+                        },
+                        {escape: false}
+                    );
+                    return deferred.promise;
+                }
+
+                function querySObjects(query, options) {
+                    var deferred = $q.defer();
+                    options = options || {};
+                    sObject.query(query, options, function(results, event){
+                        if(event.status) {
+                            deferred.resolve(results);
+                        } else {
+                            deferred.reject(event);
+                        }
+                    });
+                    return deferred.promise;
+                }
+
+                function updateSObjects(sobjects) {
+                    var deferred = $q.defer();
+                    sObject.update(sobjects, function(result, event){
+                        if(event.status) {
+                            deferred.resolve(result);
+                        } else {
+                            deferred.reject(event);
+                        }
+                    });
+                    return deferred.promise;
+                }
+
+                function loadDocumentLibrary(){
+                    var req = {
+                        method: 'GET',
+                        url: 'https://graph.microsoft.com/v1.0/sites/'+GroupId+'/drive',
+                        headers: {
+                            'Authorization': 'Bearer ' + $sessionStorage.accessToken
+                        }
+                    };
+                    return $http(req);
+                }
+                
+                function createFolder(folderName, parentId){
+                    folderName = factory.cleanFolderName(folderName);
+                    var data = {
+                        name: folderName,
+                        folder: {}
+                    };
+                    var req = {
+                        method: 'POST',
+                        url: 'https://graph.microsoft.com/v1.0/sites/'+GroupId+'/drive/items/'+parentId+'/children',
+                        headers: {
+                            'Authorization': 'Bearer ' + $sessionStorage.accessToken,
+                            'Content-Type': 'application/json'
+                        },
+                        data: angular.toJson(data)
+                    };
+                    return $http(req);
+                }
+
+                function uploadFile(theFile, parentId){
+                    var fileName = theFile.name;
+                    fileName = fileName.replace(/\(/g, '%28').replace(/\)/g, '%29');
+                    var req = {
+                        method: 'PUT',
+                        url: 'https://graph.microsoft.com/v1.0/sites/'+GroupId+'/drive/items/'+parentId+'/children/'+encodeURIComponent(fileName)+'/content',
+                        headers: {
+                            'Authorization': 'Bearer ' + $sessionStorage.accessToken,
+                            'Content-Type': theFile.type
+                        },
+                        data: theFile.body
+                    };
+                    return $http(req);
+                }
+
+                function loadChildren(folderId){
+                    var req = {
+                        method: 'GET',
+                        url: 'https://graph.microsoft.com/v1.0/sites/'+GroupId+'/drive/items/'+folderId+'/children',
+                        headers: {
+                            'Authorization': 'Bearer ' + $sessionStorage.accessToken
+                        }
+                    };
+                    return $http(req);
+                }
+
+                function loadItemWithChildren(itemId){
+                    var req = {
+                        method: 'GET',
+                        url: 'https://graph.microsoft.com/v1.0/sites/'+GroupId+'/drive/items/'+itemId+'?expand=children',
+                        headers: {
+                            'Authorization': 'Bearer ' + $sessionStorage.accessToken
+                        }
+                    };
+                    return $http(req);
+                }
+
+                function cleanFolderName(folderName) {
+                    if(!folderName) return folderName;
+                    return folderName.replace(/[~#%\&\*{}\\:<>?\/\+\|"]/g, '');
+                }
+            });
+            OneDriveApp.controller('OneDriveController', function($scope, $window, $http, $q,  $uibModal, AppConfig, OneDriveFactory, UserId, RecordId, GroupId){
+                $scope.oneDrive = undefined;
+                $scope.breadcrumbs = [];
+                $scope.recordSetting = undefined;
+                $scope.selectedNode = undefined;
+                $scope.record = undefined;
+                $scope.errors = [];
+                $scope.loading = {
+                    status: false,
+                    message: ''
+                };
+                $scope.hasToken = false;
+                
+                $scope.initOAuth = function() {
+                    var url = '/apex/OneDriveManager';
+                    var state = '{!$CurrentPage.Name}';
+                    if(RecordId) state += '?id=' + RecordId;
+                    OneDriveFactory.buildAuthUrl(url, state)
+                        .then(function(result){
+                            window.open(result, '_top');
+                        }).catch(handleError)
+                }
+                
+                $scope.init = function() {
+                    $scope.hasToken = OneDriveFactory.hasToken();
+                    if($scope.hasToken == false) {
+                        var search = $window.location.search;
+                        search = search.substring(1);
+                        var params = search.split("&");
+                        // parse params
+                        var authCode, state;
+                        for (var i=0; i<params.length; i++) {
+                            var val = params[i].split("=");
+                            if(val[0] == 'code'){
+                                authCode = decodeURIComponent(val[1]);
+                            }
+                        }
+                        if(authCode) {
+                            var url = '/apex/OneDriveManager';
+                            startLoading('Fetching tokens...');
+                            OneDriveFactory.getRefreshToken(authCode, url)
+                                .then(function(result){
+                                    stopLoading();
+                                    if(result == true) {
+                                        $scope.errors = [];
+                                        $scope.hasToken = true;
+                                        // redirect to opp page
+                                        startLoading('Redirecting...');
+                                        stopLoading();
+                                        window.location.href = '/'+RecordId;
+                                    } else {
+                                        $scope.hasToken = false;
+                                    }
+                                }).catch(handleError);
+                        } else {
+                            $scope.logout();
+                        }
+                    } else {
+                        loadDocumentLibrary();
+                    }
+                }
+
+                $scope.navigateTo = function($index){
+                    $scope.breadcrumbs = $scope.breadcrumbs.slice(0, $index+1);
+                    $scope.selectedNode = $scope.breadcrumbs[$index];
+                }
+
+                $scope.navigateBack = function() {
+                    if($scope.breadcrumbs.length > 1) {
+                        var index = $scope.breadcrumbs.length - 2;
+                        $scope.navigateTo(index);
+                    }
+                }
+
+                $scope.openFolder = function(node, subNode){
+                    if(node && node.file) return;
+                    if(node && node.folder.childCount > 0 && node.nodes.length == 0){
+                        // fetch data
+                        loadChildren(node, subNode);
+                    } else {
+                        if(node) {
+                            $scope.breadcrumbs.push(node);
+                            $scope.selectedNode = node;
+                        }
+                        if(subNode) {
+                            loadChildren(subNode);
+                        } else {
+                            stopLoading();
+                        }
+                    }
+                }
+
+                $scope.logout = function(){
+                    $scope.hasToken = false;
+                    $scope.oneDrive = [];
+                    $scope.errors = [];
+                    $scope.breadcrumbs = [];
+                    // logout using factory
+                    OneDriveFactory.logout();
+                }
+
+                $scope.downloadFile = function(url){
+                    $window.open(url);
+                }
+
+                $scope.openInSharepoint = function(node) {
+                    if(node.webUrl) {
+                        window.open(node.webUrl);
+                    }
+                }
+                
+                $scope.initCreateFolder = function(pn) {
+                    var modalInstance = $uibModal.open({
+                        animation: true,
+                        templateUrl: 'createFolderModal.html',
+                        controller: 'CreateFolderCtrl',
+                        size: 'md',
+                        resolve: {
+                            parentNode: function () {
+                                var node = angular.copy(pn);
+                                return node;
+                            }
+                        }
+                    });
+
+                    modalInstance.result.then(function(n) {
+                        var node = buildNode(n);
+                        pn.nodes.push(node);
+                        pn.folder.childCount++;
+                    });
+                }
+
+                $scope.promptCreateFolder = function(pn, fn, df){
+                    var modalInstance = $uibModal.open({
+                        animation: true,
+                        templateUrl: 'recFolderModal.html',
+                        controller: 'RecordFolderCtrl',
+                        size: 'md',
+                        resolve: {
+                            parentNode: function () {
+                                var node = angular.copy(pn);
+                                return node;
+                            },
+                            folderName: function(){
+                                return fn;
+                            },
+                            defaultFolders: function(){
+                                var folders = [];
+                                if(df) {
+                                    var parts = df.split(';');
+                                    angular.forEach(parts, function(part){
+                                        folders.push(part.trim());
+                                    })
+                                }
+                                return folders;
+                            }
+                        }
+                    });
+
+                    modalInstance.result.then(function(n) {
+                        var node = buildNode(n);
+                        pn.nodes.push(node);
+                        if(!pn.folder) pn.folder = {childCount: 0};
+                        pn.folder.childCount++;
+                        // navigate to opportunity folder
+                        $scope.openFolder(pn, node);
+                        // update folder id on opportunity
+                        var rec = new sObject($scope.recordSetting.objectName);
+                        rec.Id = $scope.record.Id;
+                        rec.OneDrive_Folder_Id__c=node.id;
+                        OneDriveFactory.updateSObjects([rec])
+                            .then(function(result){
+                                $scope.record.OneDrive_Folder_Id__c = node.id;
+                            }).catch(handleError);
+                    });
+                }
+
+                $scope.initFileUpload = function(pn) {
+                    var modalInstance = $uibModal.open({
+                        animation: true,
+                        templateUrl: 'uploadFileModal.html',
+                        controller: 'UploadFileCtrl',
+                        size: 'md',
+                        resolve: {
+                            parentNode: function () {
+                                var node = angular.copy(pn);
+                                return node;
+                            }
+                        }
+                    });
+
+                    modalInstance.result.then(function(n) {
+                        var node = buildNode(n);
+                        pn.nodes.push(node);
+                        pn.folder.childCount++;
+                    });
+                }
+
+                function loadDocumentLibrary(){
+                    startLoading('Loading...');
+                    OneDriveFactory.loadDocumentLibrary().then(
+                        function(result){
+                            if(result.status == 200) {
+                                var drive = result.data;
+                                var rootNode = {
+                                    id: drive.id,
+                                    title: drive.name,
+                                    isRoot: true,
+                                    nodes: [],
+                                    webUrl: drive.webUrl
+                                };
+                                $scope.oneDrive = rootNode;
+                                $scope.selectedNode = rootNode;
+                                $scope.breadcrumbs.push($scope.selectedNode);
+                                stopLoading();
+                                loadRecordFolder();
+                            } else {
+                                stopLoading();
+                            }
+                        }, 
+                        function(error){
+                            if(error && error.status == 401){
+                                startLoading('Refreshing tokens...');
+                                OneDriveFactory.getAccessToken().then(function(result){
+                                    $scope.hasToken = result;
+                                    stopLoading();
+                                    if($scope.hasToken == true) loadDocumentLibrary();
+                                }).catch(handleError);
+                            } else {
+                                handleError(error);
+                            }
+                        }
+                    ).catch(handleError);
+                }
+
+                function loadRecordFolder() {
+                    startLoading('Loading...');
+                    // load data from custom setting
+                    OneDriveFactory.getObjectSettings(RecordId)
+                        .then(function(setting){
+                            $scope.recordSetting = setting;
+                            // next load salesforce record information
+                            if(RecordId) {
+                                var rs = $scope.recordSetting;
+                                startLoading('Please wait...');
+                                var query = "select Id, "+rs.folderField+", OneDrive_Folder_Id__c from "+rs.objectName+" where Id = '" + RecordId + "'";
+                                OneDriveFactory.querySObjects(query)
+                                    .then(function(sfRecord){
+                                        if(sfRecord.length){
+                                            $scope.record = sfRecord[0];
+                                            if($scope.record.OneDrive_Folder_Id__c){
+                                                // search item by folder id
+                                                loadOneDriveItem($scope.record.OneDrive_Folder_Id__c);
+                                            } else {
+                                                // prompt to create folder
+                                                stopLoading();
+                                                $scope.promptCreateFolder($scope.selectedNode, $scope.record[$scope.recordSetting.folderField], $scope.recordSetting.defaultFolders);
+                                            }
+                                        }
+                                    }).catch(handleError);
+                            }
+                        }).catch(handleError);
+                }
+
+                function loadOneDriveItem(itemId){
+                    OneDriveFactory.loadItemWithChildren(itemId).then(
+                        function(result){ 
+                            if(result.status == 200) {
+                                var driveItem = result.data;
+                                var folderNode = buildNode(driveItem);
+                                angular.forEach(driveItem.children, function(child){
+                                    var node = buildNode(child);
+                                    folderNode.nodes.push(node);
+                                });
+                                $scope.oneDrive.nodes.push(folderNode);
+                                $scope.selectedNode = folderNode;
+                                $scope.breadcrumbs.push($scope.selectedNode);
+                                stopLoading();
+                            } else {
+                                stopLoading();
+                            }
+                        }, 
+                        function(error){
+                            if(error && error.status == 401){
+                                startLoading('Refreshing tokens...');
+                                OneDriveFactory.getAccessToken().then(function(result){
+                                    $scope.hasToken = result;
+                                    stopLoading();
+                                    if($scope.hasToken == true) loadOneDriveItem(itemId);
+                                }).catch(handleError);
+                            } else {
+                                handleError(error);
+                            }
+                        }
+                    ).catch(handleError);
+                }
+                
+                function loadChildren(node, subNode){
+                    startLoading('Fetching data...');
+                    OneDriveFactory.loadChildren(node.id).then(
+                        function(result){
+                            angular.forEach(result.data.value, function(child){
+                                var childNode = buildNode(child);
+                                node.nodes.push(childNode);
+                            });
+                            // select node + update breadcrumbs
+                            $scope.selectedNode = node;
+                            $scope.breadcrumbs.push(node);
+                            stopLoading();
+                            if(typeof subNode === 'string') {
+                                angular.forEach($scope.selectedNode.nodes, function(n){
+                                    if(n.id == subNode) {
+                                        subNode = n;
+                                    }
+                                })
+                            }
+                            if(subNode) $scope.openFolder(subNode);
+                        }, 
+                        function(error){
+                            if(error && error.status == 401){
+                                startLoading('Refreshing tokens...');
+                                OneDriveFactory.getAccessToken().then(function(result){
+                                    $scope.hasToken = result;
+                                    stopLoading();
+                                    if($scope.hasToken == true) loadChildren(node, subNode);
+                                }).catch(handleError);
+                            } else {
+                                handleError(error);
+                            }
+                        }
+                    ).catch(handleError);
+                }
+                
+                function buildNode(child){
+                    var node = {};
+                    node.id = child.id;
+                    node.title = child.name;
+                    node.nodes = [];
+                    if(child.folder) {
+                        node.folder = angular.copy(child.folder);
+                    } else {
+                        node.file = angular.copy(child.file);
+                        node.downloadUrl = child['@microsoft.graph.downloadUrl'];
+                    }
+                    node.size = child.size;
+                    node.webUrl = child.webUrl;
+                    return node;
+                }
+
+                function startLoading(msg) {
+                    $scope.loading.status = true;
+                    $scope.loading.message = msg;
+                }
+
+                function stopLoading(){
+                    $scope.loading.status = false;
+                    $scope.loading.message = '';
+                }
+
+                $scope.closeAlert = function($index) {
+                    $scope.errors.splice($index, 1);
+                }
+                
+                function handleError(error) {
+                    stopLoading();
+                    console.log(error);
+                    $scope.errors.push(error);
+                }
+                $scope.init();
+            });
+            OneDriveApp.controller("CreateFolderCtrl", function($scope, $uibModalInstance, parentNode, OneDriveFactory){
+                $scope.creating = false;
+                $scope.parentNode = parentNode;
+                $scope.folderName = undefined;
+                $scope.errors = [];
+                
+                $scope.cancel = function(){
+                    $uibModalInstance.dismiss('cancel');
+                }
+                
+                $scope.save = function(){
+                    $scope.creating = true;
+                    var fn = $scope.folderName;
+                    var pid = $scope.parentNode.isRoot == true ? 'root' : $scope.parentNode.id;
+                    OneDriveFactory.createFolder(fn, pid)
+                        .then(function(result){
+                            $scope.creating = false;
+                            if(result.status == 201) {
+                                $uibModalInstance.close(result.data);
+                            }
+                        }, function(error){
+                            if(error && error.status == 401){
+                                OneDriveFactory.getAccessToken().then(function(result){
+                                    if(result == true) $scope.save();
+                                }).catch(handleError);
+                            } else {
+                                handleError(error);
+                            }
+                        }).catch(handleError);
+                }
+
+                $scope.closeAlert = function($index) {
+                    $scope.errors.splice($index, 1);
+                }
+
+                function handleError(error){
+                    $scope.creating = false;
+                    $scope.errors.push(error);
+                    console.log(error);
+                }
+            });
+            OneDriveApp.controller("RecordFolderCtrl", function($scope, $uibModalInstance, OneDriveFactory, $q, parentNode, folderName, defaultFolders){
+                $scope.creating = false;
+                $scope.parentNode = parentNode;
+                $scope.folderName = folderName;
+                $scope.defaultFolders = defaultFolders;
+                $scope.errors = [];
+                
+                $scope.cancel = function(){
+                    $uibModalInstance.dismiss('cancel');
+                }
+                
+                $scope.save = function(){
+                    $scope.creating = true;
+                    var fn = $scope.folderName;
+                    var pid = $scope.parentNode.isRoot == true ? 'root' : $scope.parentNode.id;
+                    $scope.errors.push({
+                        message: 'Creating record folder...',
+                        status: 'info'
+                    });
+                    OneDriveFactory.createFolder(fn, pid)
+                        .then(function(result){
+                            $scope.creating = false;
+                            $scope.closeAlert(0);
+                            if(result.status == 201) {
+                                // create sub-folders
+                                if($scope.defaultFolders.length != 0) {
+                                    $scope.errors.push({
+                                        message: 'Creating default folders...',
+                                        status: 'info'
+                                    });
+                                    var promises = new Array();
+                                    angular.forEach($scope.defaultFolders, function(folder){
+                                        promises.push(OneDriveFactory.createFolder(folder, result.data.id));
+                                    });
+                                    $q.all(promises)
+                                        .then(function(data){
+                                            $scope.closeAlert(0);
+                                            $uibModalInstance.close(result.data);
+                                        }).catch(function(error){
+                                            $scope.closeAlert(0);
+                                            handleError(error);
+                                        });
+                                } else {
+                                    $uibModalInstance.close(result.data);
+                                }
+                            }
+                        }).catch(handleError);
+                }
+
+                $scope.closeAlert = function($index) {
+                    $scope.errors.splice($index, 1);
+                }
+
+                function handleError(error){
+                    $scope.creating = false;
+                    $scope.errors.push(error);
+                    console.log(error);
+                }
+            });
+            OneDriveApp.controller("UploadFileCtrl", function($scope,$uibModalInstance,OneDriveFactory,parentNode){
+                $scope.files = [];
+                $scope.uploading = false;
+                $scope.errors = [];
+
+                $scope.cancel = function(){
+                    $uibModalInstance.dismiss('cancel');
+                }
+
+                $scope.selectFile = function(elem){
+                    $scope.files = [];
+                    for (var i = 0; i < elem.files.length; i++) {
+                        // init reader
+                        var f = elem.files[i];
+                        var reader = new FileReader();
+                        // on file loaded
+                        reader.onload = (function(theFile){
+                            return function(e){
+                                f.body = e.target.result;
+                                $scope.files.push(f);
+                            }
+                        })(f);
+                        // read file
+                        reader.readAsBinaryString(f);
+                    }
+                }
+                
+                $scope.uploadFile = function(){
+                    if($scope.files.length == 1) {
+                        $scope.uploading = true;
+                        // upload file
+                        var parentId = parentNode.isRoot ? 'root' : parentNode.id;
+                        OneDriveFactory.uploadFile($scope.files[0], parentId)
+                            .then(function(result){
+                                $scope.uploading = false;
+                                if(result.status == 201) {
+                                    $uibModalInstance.close(result.data);
+                                } else {
+                                    // display error
+                                    console.log(result);
+                                }
+                            },function(error){
+                                $scope.uploading = false;
+                                if(error && error.status == 401){
+                                    OneDriveFactory.getAccessToken().then(function(result){
+                                        if(result == true) $scope.uploadFile();
+                                    }).catch(handleError);
+                                } else {
+                                    handleError(error);
+                                }
+                            });
+                    } else {
+                        alert('Please select file to upload.');
+                    }
+                }
+
+                $scope.closeAlert = function($index) {
+                    $scope.errors.splice($index, 1);
+                }
+
+                function handleError(error){
+                    $scope.uploading = false;
+                    $scope.errors.push(error);
+                    console.log(error);
+                }
+            });
+        </script>
+    </div>
+</apex:component>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>hold the api name of the current Adtech Deal process for the custom button/apex page</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>AdTech_Deal_Approval_Name__c</fullName>
+        <description>API NAME of the AdTech Deal Approval process.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>API NAME of the AdTech Deal Approval process.</inlineHelpText>
+        <label>AdTech Deal Approval Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>AdTech Deal Approval Proc</label>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,158 @@
+<apex:page standardcontroller="Account" sidebar="false">
+    <apex:slds />
+    <div ng-app="MyApp" ng-controller="MyController" class="slds-scope">
+        <a href="/{!Account.Id}">&lt; &nbsp;back</a>
+        <c:sObjectRemote escape="false"></c:sObjectRemote>
+        
+        <div class="slds-page-header">
+          <div class="slds-media">
+            <div class="slds-media__figure">
+              <span class="slds-icon_container slds-icon-standard-opportunity" title="Description of icon when needed">
+                <img src="{!URLFOR($Asset.SLDS, 'assets/icons/standard/account_60.png')}" alt="Account Standard Icon" />
+              </span>
+            </div>
+            <div class="slds-media__body">
+              <h1 class="slds-page-header__title slds-truncate slds-align-middle" title="Rohde Corp - 80,000 Widgets">{!Account.Name}</h1>
+              <p class="slds-text-body_small slds-line-height_reset">{!Account.Owner.Name} • {!Account.Account_Classification__c}</p>
+            </div>
+          </div>
+        </div>
+        <br/>
+        <h3 class="slds-text-heading--large slds-m-bottom--x-small">Orders &amp; Opportunities</h3>
+        <table>
+            <tr>
+                <td><analytics:reportChart reportId="00O0Z000006Yk75" cacheResults="false" size="small" showRefreshButton="false" filter="[{column:'Account.Id',operator:'equals', value:'{!$CurrentPage.parameters.id}'}]"></analytics:reportChart></td>
+                <td><analytics:reportChart reportId="00O0Z000006Yk78" cacheResults="false" size="small" showRefreshButton="false" filter="[{column:'Order.Account_Id__c',operator:'equals', value:'{!$CurrentPage.parameters.id}'}]"></analytics:reportChart></td>
+                <td><analytics:reportChart reportId="00O0Z000006Yk76" cacheResults="false" size="small" showRefreshButton="false" filter="[{column:'Account.Id',operator:'equals', value:'{!$CurrentPage.parameters.id}'}]"></analytics:reportChart></td>
+            </tr>
+        </table>
+        <div class="slds-scrollable">
+            <div><report-table report-data="reports['00O0Z000006Yk73']"></report-table></div>
+            <div><report-table report-data="reports['00O0Z000006Yk74']"></report-table></div>
+            <div><report-table report-data="reports['00O0Z000006h2l9']"></report-table></div>
+        </div>
+        <h3 class="slds-text-heading--large slds-m-bottom--x-small">Cases</h3>
+        <table>
+            <tr>
+                <td><analytics:reportChart reportId="00O0Z000006Yk71" cacheResults="false" size="small" showRefreshButton="false" filter="[{column:'Account.Account_Salesforce_Id__c',operator:'equals', value:'{!$CurrentPage.parameters.id}'}]"></analytics:reportChart></td>
+                <td><analytics:reportChart reportId="00O0Z000006Yk70" cacheResults="false" size="small" showRefreshButton="false" filter="[{column:'Account.Account_Salesforce_Id__c',operator:'equals', value:'{!$CurrentPage.parameters.id}'}]"></analytics:reportChart></td>
+                <td><analytics:reportChart reportId="00O0Z000006Yk72" cacheResults="false" size="small" showRefreshButton="false" filter="[{column:'Account.Account_Salesforce_Id__c',operator:'equals', value:'{!$CurrentPage.parameters.id}'}]"></analytics:reportChart></td>
+            </tr>
+        </table>
+        <div class="slds-scrollable">
+            <!--<h3 class="slds-text-heading--medium">Service Survey Response Average: - Table of averages</h3>-->
+            <div><report-table report-data="reports['00O0Z000006Yk77']"></report-table></div>
+        </div>
+        
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+    <script>
+        angular.module('MyApp', [])
+        .config(['$httpProvider',function ($httpProvider) {
+            var sessionId = "{!$Api.Session_ID}";
+            $httpProvider.defaults.useXDomain = true;
+            delete $httpProvider.defaults.headers.common["X-Requested-With"];
+            $httpProvider.defaults.headers.common["Access-Control-Allow-Origin"] = "*";
+            $httpProvider.defaults.headers.common['Authorization'] = "OAuth " + sessionId ;
+            $httpProvider.defaults.headers.common['X-User-Agent'] = "MyClient" ;
+         }]) 
+        .controller('MyController', ['$scope', '$http', function ($scope, $http) {
+            $scope.reports = {};
+            getReport('00O0Z000006Yk73',0,`,
+                                {
+                                    "value": "06 - CLOSED/WON,07- CLOSED/LOST",
+                                    "operator": "notEqual",
+                                    "column": "STAGE_NAME"
+                                }`);
+            getReport('00O0Z000006Yk74',0,`,
+                                {
+                                    "value": "06 - CLOSED/WON",
+                                    "operator": "equals",
+                                    "column": "STAGE_NAME"
+                                },
+                                {
+                                    "value": "LAST 180 DAYS",
+                                    "operator": "equals",
+                                    "column": "CLOSE_DATE"
+                                }`);
+            getReport('00O0Z000006h2l9',0,`,
+                                {
+                                    "value": "WARRANTY,175,SUBSCRIPTION,4S",
+                                    "operator": "notEqual",
+                                    "column": "ServiceContract.Type__c"
+                                },
+                                {
+                                    "value": "SERVICE WARRANTY",
+                                    "operator": "notEqual",
+                                    "column": "ServiceContract.Line_Name__c"
+                                },
+                                {
+                                    "value": "Expired,Inactive",
+                                    "operator": "notEqual",
+                                    "column": "ServiceContract.Status"
+                                }`);
+            getReport('00O0Z000006Yk77',0,`,
+                                {
+                                    "value": "Media Software",
+                                    "operator": "notEqual",
+                                    "column": "Case.Product_Line__c"
+                                }`);
+            function getReport (reportId, tryNumber, extrafilter) {
+                if (!tryNumber) tryNumber = 0;
+                var filterColumns = ['ACCOUNT_ID', 'ServiceContract.Account_ID__c']
+                var filterColumn = filterColumns[tryNumber];
+                console.log('getting report ' + reportId);
+                return $http({
+                    method: 'POST',
+                    cache: true,
+                    url: "/services/data/v40.0/analytics/reports/"+reportId+"?includeDetails=true",
+                    data: `{
+                        "reportMetadata": {
+                            "id": "`+reportId+`",
+                            "reportFilters": [
+                                {
+                                    "value": "{!left(Account.Id,15)}",
+                                    "operator": "equals",
+                                    "column": "` + filterColumn + `"
+                                }`+extrafilter+`
+                            ]
+                        }
+                    }`
+                }).then(function(data, status, headers, config) {
+                    console.log(' *** success ***  ==> ', data, status, headers, config );
+                    $scope.reports[reportId] = data;
+                    return data;
+                }).catch(function(data, status, headers, config) {
+                    if (tryNumber < filterColumns.length - 1) return getReport(reportId, tryNumber+1);
+                    console.error(' *** error ***', reportId, data, status, headers, config);
+                    //alert(data.data[0].message + ' for report id' + reportId);
+                })
+            };
+        }])
+        .component('reportTable', {
+            template: `
+                <br/>
+                <h3 class="slds-text-heading--medium"><a ng-href="/{{$ctrl.reportData.data.reportMetadata.id}}?pv0={!left(Account.Id,15)}">{{$ctrl.reportData.data.reportMetadata.name}}</a></h3>
+                <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+                    <thead>
+                        <tr class="slds-text-title_caps">
+                            <th scope="col" ng-repeat="col in $ctrl.reportData.data.reportMetadata.detailColumns track by $index">
+                                <div class="slds-truncate" title="{{col}}">{{col.replace('ServiceContract.', '').replace('Account.', '').replace('__c', '').replace('__c', '').replace('_', ' ').replace('_', ' ').replace('_', ' ').replace('_', ' ')}}</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="row in $ctrl.reportData.data.factMap['T!T'].rows">
+                            <td ng-repeat="col in row.dataCells" data-label="{{col.label}}">
+                                <div class="slds-truncate" title="{{col.label}}">{{col.label}}</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+          `,
+          bindings: {
+            reportData: '=',
+          }
+        })
+    </script>
+</apex:page>

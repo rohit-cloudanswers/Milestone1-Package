@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Chat Landmark Team</name>
+    <queueMembers>
+        <users>
+            <user>carmel.foxe@imaginecommunications.com</user>
+            <user>clayton.benz@imaginecommunications.com</user>
+            <user>gregory.weitz@imaginecommunications.com</user>
+            <user>jack.murphy@imaginecommunications.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>LiveChatTranscript</sobjectType>
+    </queueSobject>
+</Queue>

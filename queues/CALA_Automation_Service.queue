@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>CALA Automation Service</name>
+    <queueMembers>
+        <users>
+            <user>alberto.esteves@imaginecommunications.com</user>
+            <user>brian.flynn@imaginecommunications.com</user>
+            <user>david.orenstein@imaginecommunications.com</user>
+            <user>eugene.palombo@imaginecommunications.com</user>
+            <user>gilberto.gomez@imaginecommunications.com</user>
+            <user>jason.korinetz@imaginecommunications.com</user>
+            <user>manuelalberto.loyola@imaginecommunications.com</user>
+            <user>mariano.cantaluppi@imaginecommunications.com</user>
+            <user>ricardo.balladares@imaginecommunications.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Executive Escalation Points</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Executive Escalation Points</value>
+    </caseValues>
+    <fields>
+        <label><!-- Available Points 100 --></label>
+        <name>Available_Points_100__c</name>
+    </fields>
+    <fields>
+        <label><!-- Available Points 10 --></label>
+        <name>Available_Points_10__c</name>
+    </fields>
+    <fields>
+        <label><!-- Available Points 25 --></label>
+        <name>Available_Points_25__c</name>
+    </fields>
+    <fields>
+        <label><!-- Available Points 50 --></label>
+        <name>Available_Points_50__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notes --></label>
+        <name>Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Oversight --></label>
+        <name>Oversight__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Points 100 --></label>
+        <name>Total_Points_100__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Points 10 --></label>
+        <name>Total_Points_10__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Points 25 --></label>
+        <name>Total_Points_25__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Points 50 --></label>
+        <name>Total_Points_50__c</name>
+    </fields>
+    <fields>
+        <label><!-- Used Points 100 --></label>
+        <name>Used_Points_100__c</name>
+    </fields>
+    <fields>
+        <label><!-- Used Points 10 --></label>
+        <name>Used_Points_10__c</name>
+    </fields>
+    <fields>
+        <label><!-- Used Points 25 --></label>
+        <name>Used_Points_25__c</name>
+    </fields>
+    <fields>
+        <label><!-- Used Points 50 --></label>
+        <name>Used_Points_50__c</name>
+    </fields>
+    <fields>
+        <label><!-- User --></label>
+        <name>User__c</name>
+        <relationshipLabel><!-- Executive Escalation Points --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Executive Escalation Points Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

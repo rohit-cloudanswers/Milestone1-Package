@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Time Card</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Time Cards</value>
+    </caseValues>
+    <fields>
+        <label><!-- Fri Hours --></label>
+        <name>Fri_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mon Hours --></label>
+        <name>Mon_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Professional Service Resource --></label>
+        <name>Professional_Service_Resource__c</name>
+        <relationshipLabel><!-- Time Cards --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sat Hours --></label>
+        <name>Sat_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Draft</masterLabel>
+            <translation><!-- Draft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted</masterLabel>
+            <translation><!-- Submitted --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sun Hours --></label>
+        <name>Sun_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Thu Hours --></label>
+        <name>Thu_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tue Hours --></label>
+        <name>Tue_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Wed Hours --></label>
+        <name>Wed_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Week End --></label>
+        <name>Week_End__c</name>
+    </fields>
+    <fields>
+        <label><!-- Week Start --></label>
+        <name>Week_Start__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

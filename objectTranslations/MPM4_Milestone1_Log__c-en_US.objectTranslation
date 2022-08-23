@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Weekly Status</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Weekly Status</value>
+    </caseValues>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Detail --></label>
+        <name>Detail__c</name>
+    </fields>
+    <fields>
+        <label><!-- Highlights This Week --></label>
+        <name>Highlights_Last_Week__c</name>
+    </fields>
+    <fields>
+        <label><!-- Path to Green --></label>
+        <name>Path_to_Green__c</name>
+    </fields>
+    <fields>
+        <label><!-- Focus for Next Week --></label>
+        <name>Plans_This_Week__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program --></label>
+        <name>Program__c</name>
+        <relationshipLabel><!-- Weekly Status --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Weekly Status --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Reason For Red/Amber --></label>
+        <name>Reason_For_Red_Amber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Report Date --></label>
+        <name>Report_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subject --></label>
+        <name>Subject__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Program Log</masterLabel>
+            <translation><!-- Program Log --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Project Log</masterLabel>
+            <translation><!-- Project Log --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weekly Status</masterLabel>
+            <translation><!-- Weekly Status --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Week Of Year --></label>
+        <name>Week_Of_Year__c</name>
+    </fields>
+    <layouts>
+        <layout>New Weekly Status</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Program Weekly Status</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Project Weekly Status</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <description><!-- Initial record creation - that then defaults to associated record type. --></description>
+        <label><!-- New --></label>
+        <name>New</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Logs used on Programs --></description>
+        <label><!-- Program Log --></label>
+        <name>Program_Log</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Logs used on Projects --></description>
+        <label><!-- Project Log --></label>
+        <name>Project_Log</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Please enter &quot;Reason For Red/Amber&quot; --></errorMessage>
+        <name>ValidationReasonForRed</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter &quot;Path to Green&quot;. --></errorMessage>
+        <name>ValidationforPathtoGreen</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- New_Program_Status --></label>
+        <name>New_Program_Status</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Project_Status --></label>
+        <name>New_Project_Status</name>
+    </webLinks>
+</CustomObjectTranslation>

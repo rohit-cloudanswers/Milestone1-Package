@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <decisions>
+        <name>Status_Approved</name>
+        <label>Status = Approved</label>
+        <locationX>809</locationX>
+        <locationY>551</locationY>
+        <defaultConnector>
+            <targetReference>Status_Rejected</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Status_Approved_Outcome</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.sbaa__Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Approved</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>update_date_approved</targetReference>
+            </connector>
+            <label>Status = Approved</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Status_Assigned</name>
+        <label>Status = Assigned</label>
+        <locationX>561</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>Status_Approved</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Status_Assigned_Outcome</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.sbaa__Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Assigned</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>update_date_assigned</targetReference>
+            </connector>
+            <label>Status Assigned</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Status_Rejected</name>
+        <label>Status = Rejected</label>
+        <locationX>1040</locationX>
+        <locationY>671</locationY>
+        <defaultConnector>
+            <targetReference>Status_Revoked</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Status_Rejected_Outcome</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.sbaa__Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Rejected</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>update_date_rejected</targetReference>
+            </connector>
+            <label>Status = Rejected</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Status_Requested</name>
+        <label>Status = Requested</label>
+        <locationX>305</locationX>
+        <locationY>311</locationY>
+        <defaultConnector>
+            <targetReference>Status_Assigned</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Status_Requested_Outcome</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.sbaa__Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Requested</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>update_requested_date</targetReference>
+            </connector>
+            <label>Status Requested</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Status_Revoked</name>
+        <label>Status = Revoked</label>
+        <locationX>1238</locationX>
+        <locationY>791</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Status_Revoked_Outcome</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.sbaa__Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Revoked</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Date_Revoked</targetReference>
+            </connector>
+            <label>Status = Revoked</label>
+        </rules>
+    </decisions>
+    <interviewLabel>Approval Edit (Advanced Approvals) {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Approval Edit (Advanced Approvals)</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>update_date_approved</name>
+        <label>update date approved</label>
+        <locationX>578</locationX>
+        <locationY>671</locationY>
+        <inputAssignments>
+            <field>Date_Approved__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>update_date_assigned</name>
+        <label>update date assigned</label>
+        <locationX>314</locationX>
+        <locationY>551</locationY>
+        <inputAssignments>
+            <field>Date_Assigned__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>update_date_rejected</name>
+        <label>update date rejected</label>
+        <locationX>842</locationX>
+        <locationY>791</locationY>
+        <inputAssignments>
+            <field>Date_Rejected__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Date_Revoked</name>
+        <label>Update Date Revoked</label>
+        <locationX>1106</locationX>
+        <locationY>911</locationY>
+        <inputAssignments>
+            <field>Date_Revoked__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>update_requested_date</name>
+        <label>update requested date</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
+        <inputAssignments>
+            <field>Date_Requested__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <startElementReference>Status_Requested</startElementReference>
+    <status>Active</status>
+</Flow>

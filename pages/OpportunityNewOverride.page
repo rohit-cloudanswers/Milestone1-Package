@@ -1,0 +1,25 @@
+<apex:page standardController="Opportunity" lightningStylesheets="true">
+    You should have been redirected.  Please refresh to try again or contact your administrator.
+    <script src="../../soap/ajax/37.0/connection.js" type="text/javascript"></script>
+    <script>
+    	var uiTheme = '{!$User.UIThemeDisplayed}';
+    	if(uiTheme == 'Theme4d'){
+            if(SfdcApp.projectOneNavigator){
+                SfdcApp.projectOneNavigator.fireContainerEvent(
+                    "force:navigateToComponent",{
+                        componentDef: 'c:NewOpportunityComponent',
+                        componentAttributes: {
+                            sObjectName: "Opportunity",
+                            recordTypeId: "012i0000000xkOp",
+                            accId: "{!$CurrentPage.parameters.accid}",
+                            conId: "{!$CurrentPage.parameters.conid}"
+                        },
+                        resetHistory: false
+                    }
+                );
+            }
+        } else {
+            window.location.href = "{!URLFOR($Action.Opportunity.New, null, [RecordTypeId='012i0000000xkOp', retURL=$CurrentPage.parameters.retURL, accid=$CurrentPage.parameters.accid, conid=$CurrentPage.parameters.conid], true)}";
+        }
+    </script>
+</apex:page>

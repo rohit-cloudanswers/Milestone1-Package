@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Bids Proposals Engagements</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Bids Proposals Engagements</value>
+    </caseValues>
+    <fields>
+        <label><!-- Bid Manager --></label>
+        <name>Bid_Manager__c</name>
+        <picklistValues>
+            <masterLabel>Geoff Howells</masterLabel>
+            <translation><!-- Geoff Howells --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hal York</masterLabel>
+            <translation><!-- Hal York --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lane Lobaugh</masterLabel>
+            <translation><!-- Lane Lobaugh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lynn Hines</masterLabel>
+            <translation><!-- Lynn Hines --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prue Mair</masterLabel>
+            <translation><!-- Prue Mair --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RSM</masterLabel>
+            <translation><!-- RSM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sharon Marshall</masterLabel>
+            <translation><!-- Sharon Marshall --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tom Watts</masterLabel>
+            <translation><!-- Tom Watts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vimala Bari</masterLabel>
+            <translation><!-- Vimala Bari --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wolfram Hedewig</masterLabel>
+            <translation><!-- Wolfram Hedewig --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Classification --></label>
+        <name>Classification__c</name>
+        <picklistValues>
+            <masterLabel>Proactive</masterLabel>
+            <translation><!-- Proactive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reactive</masterLabel>
+            <translation><!-- Reactive --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Dependencies --></label>
+        <name>Dependencies__c</name>
+    </fields>
+    <fields>
+        <label><!-- Documents Received --></label>
+        <name>Documents_Received__c</name>
+        <picklistValues>
+            <masterLabel>FTP download coordinates provided</masterLabel>
+            <translation><!-- FTP download coordinates provided --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Online RFx Coordinates provided</masterLabel>
+            <translation><!-- Online RFx Coordinates provided --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sent via Email</masterLabel>
+            <translation><!-- Sent via Email --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Due Date --></label>
+        <name>Due_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- FolderId --></label>
+        <name>FolderId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Has Budget Approval? --></label>
+        <name>Has_Budget_Approval__c</name>
+    </fields>
+    <fields>
+        <label><!-- History / Customer Relationship --></label>
+        <name>History_Customer_Relationship__c</name>
+    </fields>
+    <fields>
+        <label><!-- Incumbent --></label>
+        <name>Incumbent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Next Step to Close --></label>
+        <name>Next_Step_to_Close__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Bids Proposals Engagements --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Other Info, Details, Comments --></label>
+        <name>Other_Info_Details_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Required Deliverables --></label>
+        <name>Required_Deliverables__c</name>
+        <picklistValues>
+            <masterLabel>Drawning/BOM for SI Support</masterLabel>
+            <translation><!-- Drawning/BOM for SI Support --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Financial Package</masterLabel>
+            <translation><!-- Financial Package --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Full RFx Response</masterLabel>
+            <translation><!-- Full RFx Response --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Packaged Proposal (RFx-like)</masterLabel>
+            <translation><!-- Packaged Proposal (RFx-like) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Qualification Questionnaire</masterLabel>
+            <translation><!-- Qualification Questionnaire --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SOW</masterLabel>
+            <translation><!-- SOW --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Risk --></label>
+        <name>Risk__c</name>
+        <picklistValues>
+            <masterLabel>Non-Standard T&amp;Cs</masterLabel>
+            <translation><!-- Non-Standard T&amp;Cs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product Development</masterLabel>
+            <translation><!-- Product Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technical Non-Compliance</masterLabel>
+            <translation><!-- Technical Non-Compliance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Timeline</masterLabel>
+            <translation><!-- Timeline --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Risk Details --></label>
+        <name>Risks__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lost</masterLabel>
+            <translation><!-- Lost --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Bid</masterLabel>
+            <translation><!-- No Bid --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On Hold</masterLabel>
+            <translation><!-- On Hold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Re-tendered</masterLabel>
+            <translation><!-- Re-tendered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted</masterLabel>
+            <translation><!-- Submitted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Win</masterLabel>
+            <translation><!-- Win --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Tender Type --></label>
+        <name>Tender_Type__c</name>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PQQ (Pre-Qualification Questionnaire)</masterLabel>
+            <translation><!-- PQQ (Pre-Qualification Questionnaire) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Proposal (Non-RFx)</masterLabel>
+            <translation><!-- Proposal (Non-RFx) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RFI</masterLabel>
+            <translation><!-- RFI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RFP</masterLabel>
+            <translation><!-- RFP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RFQ</masterLabel>
+            <translation><!-- RFQ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SI RFP Support</masterLabel>
+            <translation><!-- SI RFP Support --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SOW</masterLabel>
+            <translation><!-- SOW --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Top Tier Account --></label>
+        <name>Top_Tier_Account__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total RFP Value --></label>
+        <name>Total_RFP_Value__c</name>
+    </fields>
+    <layouts>
+        <layout>Proposal Layout</layout>
+        <sections>
+            <label><!-- Additional Info --></label>
+            <section>Additional Info</section>
+        </sections>
+        <sections>
+            <label><!-- Box Files --></label>
+            <section>Box Files</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- New Box Files --></label>
+            <section>New Box Files</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- New_Proposal --></label>
+        <name>New_Proposal</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Print_Proposal --></label>
+        <name>Print_Proposal</name>
+    </webLinks>
+</CustomObjectTranslation>

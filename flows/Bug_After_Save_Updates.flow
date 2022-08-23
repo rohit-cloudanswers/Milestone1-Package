@@ -1,0 +1,624 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Feed_Post</name>
+        <label>Feed Post</label>
+        <locationX>1112</locationX>
+        <locationY>1455</locationY>
+        <actionName>chatterPost</actionName>
+        <actionType>chatterPost</actionType>
+        <connector>
+            <targetReference>Update_Case</targetReference>
+        </connector>
+        <inputParameters>
+            <name>text</name>
+            <value>
+                <elementReference>textFieldValidationComment</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>subjectNameOrId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>visibility</name>
+            <value>
+                <stringValue>internalUsers</stringValue>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_Jira_Issue_has_been_Updated_Alert</name>
+        <label>Send Jira Issue has been Updated Alert</label>
+        <locationX>1258</locationX>
+        <locationY>1142</locationY>
+        <actionName>Bug__c.Jira_Issue_has_been_Updated</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Update_Case</targetReference>
+        </connector>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <assignments>
+        <name>Update_Case_Bug</name>
+        <label>Update Case Bug #</label>
+        <locationX>704</locationX>
+        <locationY>658</locationY>
+        <assignmentItems>
+            <assignToReference>Case_Record.Bug_s__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>returnBugNumberList</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Case_Record.Jira__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Bug_Number__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Case_Record.Last_Bug_Update__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>returnFormattedBugUpdate</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>General_Jira_Changes</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Update_Case_Field_Latest_JIRA_Summary</name>
+        <label>Update Case Field - Latest JIRA Summary</label>
+        <locationX>667</locationX>
+        <locationY>1139</locationY>
+        <assignmentItems>
+            <assignToReference>Case_Record.Latest_JIRA_Summary__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Latest_JIRA_Summary__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_JIRA_Comment_Record</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>This needs to grow.  starting out with just the jira status field but should bring in anything else, check process builder and workflows.  Likely other flows too and depreciate them.</description>
+        <name>Update_Case_Fields</name>
+        <label>Update Case Fields</label>
+        <locationX>703</locationX>
+        <locationY>804</locationY>
+        <assignmentItems>
+            <assignToReference>Case_Record.Jira_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Jira_Status__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Case_Record.Last_Bug_Update__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>returnFormattedBugUpdate</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Case_Record.Jira_Sprint__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Jira_Sprint__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>JIRA_Status_Change</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Compare_Weight_against_Peek</name>
+        <label>Compare Weight against Peek</label>
+        <locationX>449</locationX>
+        <locationY>418</locationY>
+        <defaultConnector>
+            <targetReference>Case_Record</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Peak_needs_update</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Peak_Case_Weight__c</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <elementReference>$Record.Case_Weight__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Bug_Record_UpdatePath</targetReference>
+            </connector>
+            <label>Peak needs update</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Did_Bug_Number_Change</name>
+        <label>Did Bug Number Change?</label>
+        <locationX>451</locationX>
+        <locationY>662</locationY>
+        <defaultConnector>
+            <targetReference>General_Jira_Changes</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_it_changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior.Bug_Number__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Bug_Number__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Case_Bug</targetReference>
+            </connector>
+            <label>Yes it changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Field_Validation_Comment_Change</name>
+        <label>Field Validation Comment Change</label>
+        <locationX>448</locationX>
+        <locationY>1314</locationY>
+        <defaultConnector>
+            <targetReference>Update_Case</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Validation_Comment_Changed</name>
+            <conditionLogic>(1 AND 2 AND 4) OR 3</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Field_Validation_Comment__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.Field_Validation_Comment__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Field_Validation_Comment__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Field_Validation_Comment__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue></stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Record_Type</targetReference>
+            </connector>
+            <label>Yes Validation Comment Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>collection of some single field case updates for pretty much all jira changes.</description>
+        <name>General_Jira_Changes</name>
+        <label>General Jira Changes</label>
+        <locationX>453</locationX>
+        <locationY>794</locationY>
+        <defaultConnector>
+            <targetReference>JIRA_Status_Change</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Jira_Changes</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Jira_Status__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Jira_Status__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Jira_Sprint__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Jira_Sprint__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Fixed_Version_Number__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Fixed_Version_Number__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Case_Fields</targetReference>
+            </connector>
+            <label>Yes Jira Changes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>JIRA_Status_Change</name>
+        <label>JIRA Status Change?</label>
+        <locationX>450</locationX>
+        <locationY>941</locationY>
+        <defaultConnector>
+            <targetReference>Last_JIRA_Summary_Field_Updated</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Jira_Status_Change</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Jira_Status__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Jira_Status__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Run_Status_Comment_Notification_and_Automation</targetReference>
+            </connector>
+            <label>Yes Jira Status Change</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Landmark_Sales_Cloud_Managed_Services_Case</name>
+        <label>Landmark Sales Cloud/Managed Services Case?</label>
+        <locationX>1093</locationX>
+        <locationY>1141</locationY>
+        <defaultConnector>
+            <targetReference>Update_Case</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_MS</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Case_Record.Product_Family__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Landmark Sales Cloud</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Jira_Issue_has_been_Updated_Alert</targetReference>
+            </connector>
+            <label>Yes MS</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>this means inbound comment!</description>
+        <name>Last_JIRA_Summary_Field_Updated</name>
+        <label>Last JIRA Summary Field Updated?</label>
+        <locationX>450</locationX>
+        <locationY>1112</locationY>
+        <defaultConnector>
+            <targetReference>Field_Validation_Comment_Change</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Last_JIRA_Summary_Updated</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Latest_JIRA_Summary__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Latest_JIRA_Summary__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Latest_JIRA_Summary__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Latest_SF_Comment__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Case_Field_Latest_JIRA_Summary</targetReference>
+            </connector>
+            <label>Yes Last JIRA Summary Updated</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>New_or_Updated</name>
+        <label>New or Updated?</label>
+        <locationX>239</locationX>
+        <locationY>421</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>New</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Bug_Record</targetReference>
+            </connector>
+            <label>New</label>
+        </rules>
+        <rules>
+            <name>Updated</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Compare_Weight_against_Peek</targetReference>
+            </connector>
+            <label>Updated</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Record_Type</name>
+        <label>Record Type?</label>
+        <locationX>683</locationX>
+        <locationY>1314</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Integrated_Jira</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Integrated Jira</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Feed_Post</targetReference>
+            </connector>
+            <label>Integrated Jira</label>
+        </rules>
+        <rules>
+            <name>Integrated_Jira_Cloud</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Case_Record.RecordType.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Integrated Jira Cloud</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Jira_Comment_for_Validation</targetReference>
+            </connector>
+            <label>Integrated Jira Cloud</label>
+        </rules>
+    </decisions>
+    <formulas>
+        <name>returnBugNumberList</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK( {!Case_Record.Bug_s__c} ),  {!$Record.Bug_Number__c} , 
+
+  IF(CONTAINS ( {!Case_Record.Bug_s__c}, {!$Record.Bug_Number__c} ), {!Case_Record.Bug_s__c}, {!Case_Record.Bug_s__c}+ &quot;|&quot; + {!$Record.Bug_Number__c} ))</expression>
+    </formulas>
+    <formulas>
+        <name>returnFormattedBugUpdate</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!$Record.Bug_Number__c}), &quot;Bug Number: &quot;, &quot;Bug Number: &quot; &amp; {!$Record.Bug_Number__c})
+&amp; BR() &amp; IF(ISBLANK({!$Record.Status__c} ), &quot;Status: &quot;, &quot;Status: &quot; &amp; {!$Record.Status__c}) &amp; BR() &amp;
+IF(ISBLANK({!$Record.Fixed_Version_Number__c} ), &quot;Fixed Version Number: &quot;, &quot;Fixed Version Number: &quot; &amp; {!$Record.Fixed_Version_Number__c}) &amp; BR() &amp;
+IF(ISBLANK({!$Record.Jira_Sprint__c}), &quot;Jira Sprint: &quot;, &quot;Jira Sprint: &quot; &amp; {!$Record.Jira_Sprint__c})</expression>
+    </formulas>
+    <interviewLabel>Bug - After Save Updates {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Bug - After Save Updates</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Jira_Comment_for_Validation</name>
+        <label>Create Jira Comment for Validation</label>
+        <locationX>1120</locationX>
+        <locationY>1322</locationY>
+        <connector>
+            <targetReference>Update_Case</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Bug__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Comment_Direction__c</field>
+            <value>
+                <stringValue>SF -&gt; Jira</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Jira_Comment__c</field>
+            <value>
+                <elementReference>textFieldValidationComment</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Jira_Comments__c</object>
+    </recordCreates>
+    <recordCreates>
+        <name>Create_JIRA_Comment_Record</name>
+        <label>Create JIRA Comment Record</label>
+        <locationX>820</locationX>
+        <locationY>1141</locationY>
+        <connector>
+            <targetReference>Run_Status_Comment_Notification_and_Automation_0</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Bug__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Comment_Direction__c</field>
+            <value>
+                <stringValue>Jira -&gt; SF</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Date_Time__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Jira_Comment__c</field>
+            <value>
+                <elementReference>$Record.Latest_JIRA_Summary__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Jira_Comments__c</object>
+    </recordCreates>
+    <recordLookups>
+        <description>get this first, gonna need it!</description>
+        <name>Case_Record</name>
+        <label>Case Record</label>
+        <locationX>457</locationX>
+        <locationY>545</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Did_Bug_Number_Change</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Case__c</elementReference>
+            </value>
+        </filters>
+        <object>Case</object>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Bug_Record</name>
+        <label>Update Bug Record</label>
+        <locationX>50</locationX>
+        <locationY>418</locationY>
+        <inputAssignments>
+            <field>Peak_Case_Weight__c</field>
+            <value>
+                <elementReference>Case_Record.Weighting_Overall__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Bug_Record_UpdatePath</name>
+        <label>Update Bug Record</label>
+        <locationX>671</locationX>
+        <locationY>419</locationY>
+        <connector>
+            <targetReference>Case_Record</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Peak_Case_Weight__c</field>
+            <value>
+                <elementReference>$Record.Case_Weight__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Case</name>
+        <label>Update Case</label>
+        <locationX>459</locationX>
+        <locationY>1529</locationY>
+        <inputReference>Case_Record</inputReference>
+    </recordUpdates>
+    <startElementReference>New_or_Updated</startElementReference>
+    <status>Active</status>
+    <subflows>
+        <description>Cleaned up, sending just bug record now.</description>
+        <name>Run_Status_Comment_Notification_and_Automation</name>
+        <label>Run - Status/Comment Notification and Automation</label>
+        <locationX>670</locationX>
+        <locationY>957</locationY>
+        <connector>
+            <targetReference>Last_JIRA_Summary_Field_Updated</targetReference>
+        </connector>
+        <flowName>Bug_Status_Comment_Notificaiton_and_Automation</flowName>
+        <inputAssignments>
+            <name>BugRecord</name>
+            <value>
+                <elementReference>$Record</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>varChangeType</name>
+            <value>
+                <stringValue>Status</stringValue>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <subflows>
+        <description>Cleaned up, sending just bug record now.</description>
+        <name>Run_Status_Comment_Notification_and_Automation_0</name>
+        <label>Run - Status/Comment Notification and Automation</label>
+        <locationX>967</locationX>
+        <locationY>1140</locationY>
+        <connector>
+            <targetReference>Landmark_Sales_Cloud_Managed_Services_Case</targetReference>
+        </connector>
+        <flowName>Bug_Status_Comment_Notificaiton_and_Automation</flowName>
+        <inputAssignments>
+            <name>BugRecord</name>
+            <value>
+                <elementReference>$Record</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>varChangeType</name>
+            <value>
+                <stringValue>Comment</stringValue>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <textTemplates>
+        <name>textFieldValidationComment</name>
+        <text>Field Validation Comment:  {!$Record.Field_Validation_Comment__c}</text>
+    </textTemplates>
+</Flow>

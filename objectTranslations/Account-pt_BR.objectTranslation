@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>Channel Partner Feed Layout</layout>
+        <sections>
+            <label><!-- Demandbase Data Integrity --></label>
+            <section>Demandbase Data Integrity</section>
+        </sections>
+        <sections>
+            <label><!-- Message --></label>
+            <section>Message</section>
+        </sections>
+        <sections>
+            <label><!-- Products and Discounts --></label>
+            <section>Products and Discounts</section>
+        </sections>
+        <sections>
+            <label><!-- Service Survey Responses --></label>
+            <section>Service Survey Responses</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Channel Partner Integrated Account Feed Layout</layout>
+        <sections>
+            <label><!-- Account Financial Information --></label>
+            <section>Account Financial Information</section>
+        </sections>
+        <sections>
+            <label><!-- Demandbase Data Integrity --></label>
+            <section>Demandbase Data Integrity</section>
+        </sections>
+        <sections>
+            <label><!-- Message --></label>
+            <section>Message</section>
+        </sections>
+        <sections>
+            <label><!-- Partner Details, Pricing and Discounts --></label>
+            <section>Partner Details, Pricing and Discounts</section>
+        </sections>
+        <sections>
+            <label><!-- Service Survey Responses --></label>
+            <section>Service Survey Responses</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Channel Partner Integrated Account Layout</layout>
+        <sections>
+            <label><!-- Financial Information --></label>
+            <section>Financial Information</section>
+        </sections>
+        <sections>
+            <label><!-- Message --></label>
+            <section>Message</section>
+        </sections>
+        <sections>
+            <label><!-- Products and Discounts --></label>
+            <section>Products and Discounts</section>
+        </sections>
+        <sections>
+            <label><!-- Service Survey Responses --></label>
+            <section>Service Survey Responses</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Direct Account Feed Layout</layout>
+        <sections>
+            <label><!-- CPQ Information --></label>
+            <section>CPQ Information</section>
+        </sections>
+        <sections>
+            <label><!-- Demandbase Data Integrity --></label>
+            <section>Demandbase Data Integrity</section>
+        </sections>
+        <sections>
+            <label><!-- Description Information --></label>
+            <section>Description Information</section>
+        </sections>
+        <sections>
+            <label><!-- Message --></label>
+            <section>Message</section>
+        </sections>
+        <sections>
+            <label><!-- Service Survey Responses --></label>
+            <section>Service Survey Responses</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Direct Account Feed Layout - Sales Console</layout>
+        <sections>
+            <label><!-- Data.com --></label>
+            <section>Data.com</section>
+        </sections>
+        <sections>
+            <label><!-- Demandbase Data Integrity --></label>
+            <section>Demandbase Data Integrity</section>
+        </sections>
+        <sections>
+            <label><!-- Description Information --></label>
+            <section>Description Information</section>
+        </sections>
+        <sections>
+            <label><!-- Message --></label>
+            <section>Message</section>
+        </sections>
+        <sections>
+            <label><!-- Service Survey Responses --></label>
+            <section>Service Survey Responses</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Direct Account Layout - For Customer Community</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Direct Integrated Account Feed Layout</layout>
+        <sections>
+            <label><!-- Account Financial Fields --></label>
+            <section>Account Financial Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Demandbase Data Integrity --></label>
+            <section>Demandbase Data Integrity</section>
+        </sections>
+        <sections>
+            <label><!-- Description Information --></label>
+            <section>Description Information</section>
+        </sections>
+        <sections>
+            <label><!-- Message --></label>
+            <section>Message</section>
+        </sections>
+        <sections>
+            <label><!-- Survey Responses --></label>
+            <section>Survey Responses</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Direct Integrated Account Feed Layout - Sales Console</layout>
+        <sections>
+            <label><!-- Account Financial Information --></label>
+            <section>Account Financial Information</section>
+        </sections>
+        <sections>
+            <label><!-- Demandbase Data Integrity --></label>
+            <section>Demandbase Data Integrity</section>
+        </sections>
+        <sections>
+            <label><!-- Description Information --></label>
+            <section>Description Information</section>
+        </sections>
+        <sections>
+            <label><!-- Message --></label>
+            <section>Message</section>
+        </sections>
+        <sections>
+            <label><!-- Survey Responses --></label>
+            <section>Survey Responses</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Z  - No Longer Used - Channel Partner Layout</layout>
+        <sections>
+            <label><!-- Message --></label>
+            <section>Message</section>
+        </sections>
+        <sections>
+            <label><!-- Products and Discounts --></label>
+            <section>Products and Discounts</section>
+        </sections>
+        <sections>
+            <label><!-- Service Survey Responses --></label>
+            <section>Service Survey Responses</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Z  - No Longer Used - Direct Account Layout</layout>
+        <sections>
+            <label><!-- Description Information --></label>
+            <section>Description Information</section>
+        </sections>
+        <sections>
+            <label><!-- Message --></label>
+            <section>Message</section>
+        </sections>
+        <sections>
+            <label><!-- Service Survey Responses --></label>
+            <section>Service Survey Responses</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Z  - No Longer Used - Direct Integrated Account Layout</layout>
+        <sections>
+            <label><!-- Account Financial Fields --></label>
+            <section>Account Financial Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Description Information --></label>
+            <section>Description Information</section>
+        </sections>
+        <sections>
+            <label><!-- Message --></label>
+            <section>Message</section>
+        </sections>
+        <sections>
+            <label><!-- Survey Responses --></label>
+            <section>Survey Responses</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Create Case --></label>
+        <name>Create_Case</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Request Change --></label>
+        <name>Request_Change</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Update Account --></label>
+        <name>Update_Account</name>
+    </quickActions>
+</CustomObjectTranslation>

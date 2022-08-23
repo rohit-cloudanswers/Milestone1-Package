@@ -1,0 +1,13 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" >
+    <aura:attribute name="featuredTextSection_title" type="String" default="" access="global"/>
+    <aura:attribute name="featuredTextSection_text" type="String" default="" access="global"/>
+    
+	<div class="featuredTextSection">
+        <div class="featureGrid">
+            <div class="text">
+                <h3>{!v.featuredTextSection_title}</h3>
+                <p>{!v.featuredTextSection_text}</p>
+            </div>
+        </div>
+	</div>
+</aura:component>

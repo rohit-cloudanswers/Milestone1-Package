@@ -1,0 +1,9 @@
+<design:component label="Featured">
+    <design:attribute name="feature_section_heading" label="Section Heading" description="" />
+    <design:attribute name="feature_icon_url" label="Icon URL" description="" />
+    <design:attribute name="feature_title" label="Title" description="" />
+    <design:attribute name="feature_text" label="Text" description="" />
+    <design:attribute name="feature_cta" label="CTA" description="" />
+    <design:attribute name="feature_cta_text" label="CTA Text" description="" />
+    <design:attribute name="feature_cta_new_window" label="Open CTA in new Window" />
+</design:component>

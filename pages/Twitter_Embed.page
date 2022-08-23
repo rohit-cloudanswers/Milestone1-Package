@@ -1,0 +1,4 @@
+<apex:page id="TwitterFeed" showHeader="false">
+    <apex:includeScript value="{!$Resource.TwitterEmbedScript}"/>
+    <a class="twitter-timeline" data-width="350" data-link-color="#19CF86" href="https://twitter.com/imagine_comms?lang=en"></a>
+</apex:page>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>CALA Broadcast Graphics Service</name>
+    <queueMembers>
+        <users>
+            <user>julio.hernandez@imaginecommunications.com</user>
+            <user>kevin.kolde@imaginecommunications.com</user>
+            <user>manuelalberto.loyola@imaginecommunications.com</user>
+            <user>mariano.cantaluppi@imaginecommunications.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

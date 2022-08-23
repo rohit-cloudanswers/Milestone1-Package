@@ -1,0 +1,10 @@
+.THIS .headerColumn {
+    text-align: center;
+    font-weight: bold;
+}
+.THIS .bodyColumn {
+    text-align: center;
+}
+.THIS .slds-card__body {
+    font-size: .75rem;
+}

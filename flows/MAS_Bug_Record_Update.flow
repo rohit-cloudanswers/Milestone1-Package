@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <name>Update_fields</name>
+        <label>Update fields</label>
+        <locationX>170</locationX>
+        <locationY>305</locationY>
+        <assignmentItems>
+            <assignToReference>Bug_Record.Jira_Sync__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Bug_Record.Jira_Sync_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_bug</targetReference>
+        </connector>
+    </assignments>
+    <description>used with MAS to update a whack of bug records to get around the APEX error i was getting.  Batch must be &lt;50</description>
+    <interviewLabel>MAS - Bug Record Update {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>MAS - Bug Record Update</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Bug_Record</name>
+        <label>Bug Record</label>
+        <locationX>173</locationX>
+        <locationY>173</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Update_fields</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>RecordId</elementReference>
+            </value>
+        </filters>
+        <object>Bug__c</object>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_bug</name>
+        <label>Update bug</label>
+        <locationX>170</locationX>
+        <locationY>438</locationY>
+        <inputReference>Bug_Record</inputReference>
+    </recordUpdates>
+    <startElementReference>Bug_Record</startElementReference>
+    <status>Active</status>
+    <variables>
+        <name>RecordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

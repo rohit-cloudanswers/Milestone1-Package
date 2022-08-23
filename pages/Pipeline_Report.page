@@ -1,0 +1,91 @@
+<apex:page standardController="Opportunity" extensions="Pipeline_Report_Ctrl" sidebar="false">
+    <style type="text/css">
+        .oddrow{background-color: #C0C0C0; } 
+        .evenrow{background-color: #F8F8F8; } 
+        .textalign{text-align:center; } 
+    </style>
+    
+    <apex:form > 
+            <apex:pageBlock id="pgblock" title="PIPELINE REPORT">
+            <apex:outputPanel >
+                <b>FILTER BY : Classification: </b>
+                <apex:selectList value="{!classification}" onchange="classChanged();" size="1">
+                    <apex:selectOptions value="{!items}"/>
+                </apex:selectList>
+                <apex:actionFunction action="{!classChanged}" name="classChanged"/>
+            </apex:outputPanel>
+            <apex:datatable value="{!opportunityList}" var="opp" columnsWidth="12%,12%,12%,12%,12%,12%,12%,12%" rowClasses="oddrow,evenrow">
+                <apex:column >
+                    <apex:facet name="header">
+                    Logo   
+                    </apex:facet>
+                    <apex:outputLink value="/{!opp.account.Logo_Id__c}" target="_blank" rendered="{!opp.account.Logo_Id__c != null}">
+                        <apex:image url="/servlet/servlet.FileDownload?file={!opp.account.Logo_Id__c}" width="50" height="40"/>
+                    </apex:outputLink>
+                </apex:column> 
+                <apex:column >
+                    <apex:facet name="header">
+                       <apex:commandLink value="Account Name" action="{!toggleSort}" rerender="pgblock">
+                            <apex:param name="sortField" value="account.name" assignTo="{!sortField}"/>
+                       </apex:commandLink>
+                    </apex:facet>
+                    <apex:outputField value="{!opp.account.name}"/>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">
+                       <apex:commandLink value="Name" action="{!toggleSort}" rerender="pgblock">
+                            <apex:param name="sortField" value="Name" assignTo="{!sortField}"/>
+                       </apex:commandLink>
+                    </apex:facet>
+                    <apex:outputField value="{!opp.name}"/>
+                </apex:column> 
+                <apex:column >
+                    <apex:facet name="header">
+                       <apex:commandLink value="Owner Name" action="{!toggleSort}" rerender="pgblock">
+                            <apex:param name="sortField" value="owner.name" assignTo="{!sortField}"/>
+                       </apex:commandLink>
+                    </apex:facet>
+                    <apex:outputField value="{!opp.owner.name}"/>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">
+                       <apex:commandLink value="Opportunity Status" action="{!toggleSort}" rerender="pgblock">
+                            <apex:param name="sortField" value="StageName" assignTo="{!sortField}"/>
+                       </apex:commandLink>
+                    </apex:facet>
+                    <apex:outputField value="{!opp.StageName}"/>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">
+                       <apex:commandLink value="Close Date" action="{!toggleSort}" rerender="pgblock">
+                            <apex:param name="sortField" value="CloseDate" assignTo="{!sortField}"/>
+                       </apex:commandLink>
+                    </apex:facet>
+                    <apex:outputField value="{!opp.CloseDate}"/>
+                </apex:column>           
+                <apex:column >
+                    <apex:facet name="header">
+                       <apex:commandLink value="Probability" action="{!toggleSort}" rerender="pgblock">
+                            <apex:param name="sortField" value="Probability" assignTo="{!sortField}"/>
+                       </apex:commandLink>
+                    </apex:facet>
+                    <apex:outputField value="{!opp.Probability}"/>
+                </apex:column> 
+                <apex:column >
+                    <apex:facet name="header">
+                       <apex:commandLink value="Amount" action="{!toggleSort}" rerender="pgblock">
+                            <apex:param name="sortField" value="Amount" assignTo="{!sortField}"/>
+                       </apex:commandLink>
+                    </apex:facet>
+                    <apex:outputField value="{!opp.Amount}"/>
+                </apex:column>           
+            </apex:datatable>
+            <apex:panelGrid columns="4" >
+                <apex:commandLink action="{!first}" rerender="pgblock">First</apex:commandlink>
+                <apex:commandLink action="{!previous}" rendered="{!hasPrevious}" rerender="pgblock">Previous</apex:commandlink>
+                <apex:commandLink action="{!next}" rendered="{!hasNext}" rerender="pgblock">Next</apex:commandlink>
+                <apex:commandLink action="{!last}" rerender="pgblock">Last</apex:commandlink>
+            </apex:panelGrid>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

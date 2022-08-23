@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Case_Share_for_NA_Solutions_Engineering_Group</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Case Share for NA Solutions Engineering Group</description>
+        <label>Case Share for NA Solutions Engineering Group</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>VP_NA_Solutions_Engineering</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Service</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>ESM_Case_Management</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>ESM Case Management</label>
+        <sharedTo>
+            <group>ESM_Case_Management_Group</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Service</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Service_Access_to_Service_and_User_Cases</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Roles &amp; Subordinates have Read/Write Access to Service Cases</description>
+        <label>Service Access to Service and User Cases</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>Service</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Service,Community User Approval</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_Service_cases_with_IT_role</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Needed for order/RMA integration with Oracle</description>
+        <label>Share Service cases with IT role</label>
+        <sharedTo>
+            <role>IT</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Service,Community User Approval</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_Service_cases_with_Service_Engineers</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Share Service cases with Service Engineers</label>
+        <sharedTo>
+            <group>Service_Engineers</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Service</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>Case_Access_for_Case_Survey_2</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Case Access for Case Survey 2</label>
+        <sharedTo>
+            <group>Case_Feedback_Guest_User_Group</group>
+        </sharedTo>
+        <sharedFrom>
+            <role>Service</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

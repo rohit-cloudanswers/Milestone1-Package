@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>1</activeVersionNumber>
+    <description>Subflow for weighting.  Takes Asset ID input and returns the MAX revenue value of the contract lines.  Probably could use some updates, no error handling</description>
+    <masterLabel>Asset Contract Value Lookup</masterLabel>
+</FlowDefinition>

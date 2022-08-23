@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NetworkBranding xmlns="http://soap.sforce.com/2006/04/metadata">
+    <loginFooterText>© 2014 Imagine Communications Corp</loginFooterText>
+    <loginPrimaryColor>#6195C9</loginPrimaryColor>
+    <loginQuaternaryColor>#989898</loginQuaternaryColor>
+    <network>Partners</network>
+    <primaryColor>#6195C9</primaryColor>
+    <primaryComplementColor>#222222</primaryComplementColor>
+    <quaternaryColor>#989898</quaternaryColor>
+    <quaternaryComplementColor>#222222</quaternaryComplementColor>
+    <secondaryColor>#EFEFEF</secondaryColor>
+    <tertiaryColor>#3283D5</tertiaryColor>
+    <tertiaryComplementColor>#FFFFFF</tertiaryComplementColor>
+    <zeronaryColor>#EFEFEF</zeronaryColor>
+    <zeronaryComplementColor>#222222</zeronaryComplementColor>
+</NetworkBranding>

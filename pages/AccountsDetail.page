@@ -1,0 +1,43 @@
+<apex:page docType="html-5.0" standardStylesheets="false" showHeader="false"
+           sidebar="false" standardController="Account">
+
+<html>
+<head lang="en">
+    <title>
+        Imagine Communications - {!$Site.Name}
+    </title>
+    
+    <!-- Page meta data -->
+    <c:partnerMeta />
+
+</head>
+<body>
+
+<div class="stackable ui grid">
+
+    <div class="sixteen wide column">
+        
+        <!-- Partner Header Component -->
+        <c:partnerHeader />
+
+        <!-- Takes values Account, Contact, Lead, Opportunity, Pricebook -->
+        <c:partnerMainNav active="Account" />
+        
+        <apex:detail subject="{!account.ownerId}" relatedList="false" title="false"/>
+
+    </div>
+
+    <div class="row">
+        <div class="sixteen wide column">
+
+            <!-- Partner Footer Component -->
+            <c:partnerFooter />
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
+</apex:page>

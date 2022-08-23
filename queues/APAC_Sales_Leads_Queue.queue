@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>APAC Sales Leads Queue</name>
+    <queueMembers>
+        <users>
+            <user>betty.lim@imaginecommunications.com</user>
+            <user>colin.simonetta@imaginecommunications.com</user>
+            <user>crystal.lee@imaginecommunications.com</user>
+            <user>minling.luo@imaginecommunications.com</user>
+            <user>prue.mair@imaginecommunications.com</user>
+            <user>rishabh.jain@imaginecommunications.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Lead</sobjectType>
+    </queueSobject>
+</Queue>

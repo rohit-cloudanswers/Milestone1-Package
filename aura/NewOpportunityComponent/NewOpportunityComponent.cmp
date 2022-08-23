@@ -1,0 +1,9 @@
+<aura:component implements="lightning:actionOverride,force:hasRecordId,force:hasSObjectName,flexipage:availableForRecordHome" access="global">
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="accId" type="Id" />
+    <aura:attribute name="conId" type="Id" />
+    <aura:attribute name="recordTypeId" type="Id" />
+    <aura:attribute name="sObjectName" type="String" />
+    
+    <lightning:spinner variant="brand" size="large" />
+</aura:component>

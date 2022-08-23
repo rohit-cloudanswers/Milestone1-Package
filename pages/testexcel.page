@@ -1,0 +1,63 @@
+<apex:page controller="ProductViewerController" showHeader="false" sidebar="false" contenttype="application/vnd.ms-excel#{!exportCSVFileName}.xls" cache="false" readOnly="true">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+</head>
+
+    <style type="text/css">
+        p { font-style: italic; color: #0000FF; font-weight: bold;}
+        h1 { color: #0099FF; }
+    </style>
+
+   <apex:pageBlock title="Hello {!$User.FirstName}!">
+      <p> DISCLAIMER: THIS IMAGINE COMMUNICATIONS PRODUCT PRICE SHEET CONTAINS MATERIAL THAT IS 'IMAGINE COMMUNICATIONS PROPRIETARY INFORMATION' OR OTHERWISE CONFIDENTIAL, AND IT IS FOR THE SOLE USE OF IMAGINE COMMUNICATIONS AND ITS AUTHORIZED RESELLERS. ANY REVIEW, RELIANCE, DISTRIBUTION, DISCLOSURE, OR FORWARDING WITHOUT THE EXPRESS PERMISSION OF IMAGINE COMMUNICATIONS IS STRICTLY PROHIBITED. IF YOU ARE NOT AN AUTHORIZED RESELLER OF IMAGINE COMMUNICATIONS, PLEASE CONTACT IMAGINE COMMUNICATIONS AND DESTROY ALL COPIES WITHOUT READING, PRINTING, OR SAVING IN ANY MANNER. </p>
+   </apex:pageBlock> 
+   <apex:pageBlock title="">
+       <h1>  Imagine Communications - Products/Pricebooks </h1>
+   </apex:pageBlock>    
+
+   <apex:pageBlock title="">
+      <apex:pageBlockTable value="{!ExportData}" var="p">
+         <apex:column headerValue="Part Number">
+             <apex:outputText value="{!p.ProductCode}" />
+         </apex:column>
+         <apex:column headerValue="List Price ({!$ObjectType.Product2.Fields.Can_Dom__c.label})" rendered="{!isCan_Dom}" >
+             <apex:outputText value="{0, number, $0.00}" rendered="{!isCan_Dom}"><apex:param value="{!p.Can_Dom__c}" /></apex:outputText>
+         </apex:column>
+         <apex:column headerValue="List Price ({!$ObjectType.Product2.Fields.Euro__c.label})" rendered="{!isEuro}">                  
+             <apex:outputText value="{0, number, €0.00}" rendered="{!isEuro}"><apex:param value="{!p.Euro__c}" /></apex:outputText>
+         </apex:column>
+         <apex:column headerValue="List Price ({!$ObjectType.Product2.Fields.Asia_US__c.label})" rendered="{!isAsia_US}"> 
+            <apex:outputText value="{0, number, $0.00}" rendered="{!isAsia_US}"><apex:param value="{!p.Asia_US__c}" /></apex:outputText>
+         </apex:column>
+         <apex:column headerValue="List Price ({!$ObjectType.Product2.Fields.UK_Dom__c.label})" rendered="{!isUK_Dom}"> 
+            <apex:outputText value="{0, number, £0.00}" rendered="{!isUK_Dom}"><apex:param value="{!p.UK_Dom__c}" /></apex:outputText>
+         </apex:column>
+         <apex:column headerValue="List Price ({!$ObjectType.Product2.Fields.US_Domestic__c.label})" rendered="{!isUS_Domestic}"> 
+            <apex:outputText value="{0, number, $0.00}" rendered="{!isUS_Domestic}"><apex:param value="{!p.US_Domestic__c}" /></apex:outputText>
+         </apex:column>
+         <apex:column headerValue="List Price ({!$ObjectType.Product2.Fields.US_Int_l_EA__c.label})" rendered="{!isUS_Int_l_EA}"> 
+            <apex:outputText value="{0, number, $0.00}" rendered="{!isUS_Int_l_EA}"><apex:param value="{!p.US_Int_l_EA__c}" /></apex:outputText>
+         </apex:column>
+         <apex:column headerValue="List Price ({!$ObjectType.Product2.Fields.MESA_US__c.label})" rendered="{!isMESA_US}"> 
+            <apex:outputText value="{0, number, $0.00}" rendered="{!isMESA_US}"><apex:param value="{!p.MESA_US__c}" /></apex:outputText>
+         </apex:column>
+         <apex:column headerValue="{!$ObjectType.Product2.Fields.Name.label}"> 
+            <apex:outputText value="{!p.Name}" />
+         </apex:column>
+         <apex:column headerValue="{!$ObjectType.Product2.Fields.Pillar__c.label}"> 
+            <apex:outputText value="{!p.Pillar__c}" />
+         </apex:column>
+         <apex:column headerValue="{!$ObjectType.Product2.Fields.Product_Family__c.label}"> 
+            <apex:outputText value="{!p.Product_Family__c}" />
+         </apex:column>
+         <apex:column headerValue="{!$ObjectType.Product2.Fields.Product_Group__c.label}"> 
+            <apex:outputText value="{!p.Product_Group__c}" />
+         </apex:column>
+         <apex:column headerValue="{!$ObjectType.Product2.Fields.Description.label}"> 
+            <apex:outputText value="{!p.Description}" />         
+         </apex:column>                                         
+      </apex:pageBlockTable>
+   </apex:pageBlock>   
+
+
+</apex:page>

@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Project Survey Response</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Project Survey Responses</value>
+    </caseValues>
+    <fields>
+        <help><!-- Trainer ability to present material clearly --></help>
+        <label><!-- Ability to communicate clearly --></label>
+        <name>Ability_to_present_material_clearly__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Project Survey Responses --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Do you have any other comments, questions or concerns? --></help>
+        <label><!-- Additional Comments --></label>
+        <name>Additional_Comments__c</name>
+    </fields>
+    <fields>
+        <help><!-- The balance between the lecture and the workshops was appropriate --></help>
+        <label><!-- Balance was approrpiate --></label>
+        <name>Balance_was_approrpiate__c</name>
+    </fields>
+    <fields>
+        <help><!-- I felt comfortable approaching the consultant with questions or concerns --></help>
+        <label><!-- Comfortable approaching --></label>
+        <name>Comfortable_approaching__c</name>
+    </fields>
+    <fields>
+        <label><!-- Completed Date/Time --></label>
+        <name>Completed_Date_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Project Survey Responses --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Optional field --></help>
+        <label><!-- Event description --></label>
+        <name>Event_description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Final Comments --></label>
+        <name>Final_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Identifier --></label>
+        <name>Identifier__c</name>
+    </fields>
+    <fields>
+        <help><!-- Knowledge and expertise of the trainer --></help>
+        <label><!-- Knowledge and expertise --></label>
+        <name>Knowledge_and_expertise__c</name>
+    </fields>
+    <fields>
+        <help><!-- Length of training for the topics presented
+Length of consulting was appropriate for the required tasks --></help>
+        <label><!-- Length --></label>
+        <name>Length_of_training__c</name>
+    </fields>
+    <fields>
+        <help><!-- Think about your Imagine Communications training experience.  How likely would you be to recommend Imagine Communications to others? --></help>
+        <label><!-- Likely to recommend --></label>
+        <name>Likely_to_recommend__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Resource --></label>
+        <name>MPM_Project_Resource__c</name>
+        <relationshipLabel><!-- Project Survey Responses --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The material was presented in a logical flow for my learning experience --></help>
+        <label><!-- Material was presented in a logical flow --></label>
+        <name>Material_was_presented_in_a_logical_flow__c</name>
+    </fields>
+    <fields>
+        <help><!-- The class met my learning objectives --></help>
+        <label><!-- Met my learning objectives --></label>
+        <name>Met_my_learning_objectives__c</name>
+    </fields>
+    <fields>
+        <help><!-- When multiple IC consultants were involved, they worked well together --></help>
+        <label><!-- Multiple consultants worked well --></label>
+        <name>Multiple_consultants_worked_well__c</name>
+    </fields>
+    <fields>
+        <label><!-- Old Project --></label>
+        <name>Old_Project2__c</name>
+        <relationshipLabel><!-- Project Survey Responses --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Overall quality of the training --></help>
+        <label><!-- Overall quality --></label>
+        <name>Overall_Quality__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prepared for the assignment --></label>
+        <name>Prepared_for_the_assignment__c</name>
+    </fields>
+    <fields>
+        <help><!-- Class content was presented at a level for my comprehension --></help>
+        <label><!-- Presented at level for my comprehension --></label>
+        <name>Presented_at_level_for_my_comprehension__c</name>
+    </fields>
+    <fields>
+        <help><!-- Professionalism and courtesy of the trainer --></help>
+        <label><!-- Professionalism and courtesy --></label>
+        <name>Professionalism_and_courtesy__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Project Survey Responses --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Do you have any questions regarding any of the topics reviewed in this session?
+Do you have any questions or concerns that are still unanswered? --></help>
+        <label><!-- Questions or Concerns --></label>
+        <name>Questions_or_Concerns__c</name>
+    </fields>
+    <fields>
+        <help><!-- The consultant was readily available --></help>
+        <label><!-- Readily available --></label>
+        <name>Readily_available__c</name>
+    </fields>
+    <fields>
+        <label><!-- Resource Name --></label>
+        <name>Resource_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Responsive and thorough --></label>
+        <name>Responsive_and_thorough__c</name>
+    </fields>
+    <fields>
+        <help><!-- The review questions/quizzes were an effective tool for helping me learn --></help>
+        <label><!-- Review was effective --></label>
+        <name>Review_was_effective__c</name>
+    </fields>
+    <fields>
+        <help><!-- link to the full survey result --></help>
+        <label><!-- Survey link --></label>
+        <name>Survey_link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Trainee Email --></label>
+        <name>Trainee_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Trainee Name --></label>
+        <name>Trainee_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Optional field --></help>
+        <label><!-- Trainer/Consultant --></label>
+        <name>Trainer__c</name>
+        <relationshipLabel><!-- Project Survey Responses (Trainer/Consultant) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- User --></label>
+        <name>User__c</name>
+        <relationshipLabel><!-- Project Survey Responses (User) --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Consulting Survey Response</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Responses --></label>
+            <section>Responses</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Eclipse Survey Response Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Responses --></label>
+            <section>Responses</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Project Survey Response Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Responses --></label>
+            <section>Responses</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <description><!-- ID 01231000000y2jR --></description>
+        <label><!-- Consulting --></label>
+        <name>Consulting_Survey</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- General Project Survey --></label>
+        <name>General_Project_Survey</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- ID 01231000000y2T9 --></description>
+        <label><!-- Training --></label>
+        <name>Training_Survey</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- New_Consulting_Survey_Request --></label>
+        <name>New_Consulting_Survey_Request</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Training_Survey_Request --></label>
+        <name>New_Training_Survey_Request</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_Training_Survey --></label>
+        <name>Send_Training_Survey</name>
+    </webLinks>
+</CustomObjectTranslation>

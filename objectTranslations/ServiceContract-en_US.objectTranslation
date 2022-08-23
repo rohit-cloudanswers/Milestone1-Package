@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Not Used</value>
+        </caseValues>
+        <name>servicecontract_totalprice</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <layouts>
+        <layout>Service Contract Layout</layout>
+        <sections>
+            <label><!-- Contract Follow Up --></label>
+            <section>Contract Follow Up</section>
+        </sections>
+        <sections>
+            <label><!-- Contract Header --></label>
+            <section>Contract Header</section>
+        </sections>
+        <sections>
+            <label><!-- Line Item --></label>
+            <section>Line Item</section>
+        </sections>
+        <sections>
+            <label><!-- Service Contract Information --></label>
+            <section>Service Contract Information</section>
+        </sections>
+    </layouts>
+</CustomObjectTranslation>

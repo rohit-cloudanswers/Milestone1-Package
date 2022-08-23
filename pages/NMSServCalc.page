@@ -1,0 +1,23 @@
+<apex:page controller="NMSCalcController" sidebar="true" showHeader="true" action="{!calculateNMSServ}">
+    <style type="text/css">
+        .loading {
+        	padding: 10px;
+        	border: 1px solid black;
+        	border-radius: 5px;
+        }
+    </style>
+    <apex:sectionHeader title="Calculating NMS Service" subtitle="Quote" />
+    <apex:outputPanel rendered="{!processing}">
+        <div class="loading">
+            <center><img src="/img/loading32.gif" /><br/><h3> Calculating NMS Service...</h3></center>
+        </div>
+    </apex:outputPanel>
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageMessages id="messages"></apex:pageMessages>
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!cancel}" value="   OK   " />
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

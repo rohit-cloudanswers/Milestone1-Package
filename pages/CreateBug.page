@@ -1,0 +1,128 @@
+<apex:page standardController="Bug__c" tabStyle="Bug__c">
+    <c:sObjectRemote ></c:sObjectRemote>
+    <head>
+        <style type="text/css">
+            .container{
+                min-height: 400px;
+            }
+            .loading{
+                font-size: 18px;
+                vertical-align: super;
+            }
+        </style>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+        <script type="text/javascript">
+            var CreateBugApp = angular.module('CreateBugApp', []);
+            CreateBugApp.value('moment', moment);
+            CreateBugApp.value('CaseId', '{!$CurrentPage.parameters.caseId}');
+            CreateBugApp.factory('SObjectFactory', function($q){
+                return {
+                    querySObjects: querySObjects
+                };
+    
+                function querySObjects(query, options) {
+                    var deferred = $q.defer();
+                    options = options || {};
+                    sObject.query(query, options, function(results, event){
+                        if(event.status) {
+                            deferred.resolve(results);
+                        } else {
+                            deferred.reject(event);
+                        }
+                    });
+                    return deferred.promise;
+                }
+            });
+            CreateBugApp.controller('CreateBugController', function($scope, $q, SObjectFactory, moment, CaseId){
+                $scope.caseObj = undefined;
+                $scope.bugServer = undefined;
+                
+                function init(){
+                    var caseQuery = "select Id, CaseNumber, Bug_Server__c from Case where Id = '"+CaseId+"'"; 
+                    var milestoneQuery = "select CaseId, TargetDate from CaseMilestone where CaseId = '"+CaseId+"'";
+                    milestoneQuery += " and MilestoneType.Name = 'Resolution'";
+                    
+                    var promises = [
+                        SObjectFactory.querySObjects(caseQuery),
+                        SObjectFactory.querySObjects(milestoneQuery)
+                    ];
+                    
+                    $q.all(promises)
+                        .then(function(data){
+                            var caseObjs = data[0];
+                            if(caseObjs && caseObjs.length != 0) {
+                                $scope.caseObj = caseObjs[0];
+                                $scope.bugServer = $scope.caseObj.Bug_Server__c;
+                                handleRedirect(data[1]);
+                            } else {
+                                doRedirect('/home/home.jsp');
+                            }
+                        }).catch(handleError);
+                }
+                init();
+                
+                function handleRedirect(milestones) {
+                    var url = '';
+                    if($scope.bugServer == 'Biztalk') {
+                        var milestoneDate = undefined;
+                        if(milestones && milestones.length != 0) {
+                            var milestone = milestones[0];
+                            milestoneDate = moment.utc(milestone.TargetDate).format('M/D/YYYY');
+                            // Integrated
+                            url = '/a1M/e?CF00Ni000000GHwjH='+$scope.caseObj.CaseNumber+'&CF00Ni000000GHwjH_lkid='+CaseId+'&RecordType=012i0000000xw9lAAA&retURL=%2F'+CaseId;
+                            url += '&00Ni000000GHwka=' + milestoneDate;
+                            doRedirect(url);
+                        } else {
+                            // show error
+                       //     url = '/' + CaseId;
+                       //     showErrorAndRedirect('No Case Milestone record with name Resolution found, please check.', url);
+                       // trying to remove error for Mark Christensen
+                       url = '/a1M/e?CF00Ni000000GHwjH='+$scope.caseObj.CaseNumber+'&CF00Ni000000GHwjH_lkid='+CaseId+'&RecordType=012i0000000xw9lAAA&retURL=%2F'+CaseId;
+                            
+                        doRedirect(url);
+                       
+                        }
+                    } else if ($scope.bugServer == 'Non-Integrated') {
+                        // Non-Integrated
+                        url = '/a1M/e?CF00Ni000000GHwjH='+$scope.caseObj.CaseNumber+'&CF00Ni000000GHwjH_lkid='+CaseId+'&RecordType=012i0000000xw9mAAA&retURL=%2F'+CaseId;
+                        doRedirect(url);
+                    } else if ($scope.bugServer == 'Jira') {
+                        // Integrated_Jira
+                        url = "/a1M/e?CF00Ni000000GHwjH="+$scope.caseObj.CaseNumber+"&CF00Ni000000GHwjH_lkid="+CaseId+"&RecordType=0120Z0000011xlc";
+                        url += "&CF00Ni000000GHwkf={!$User.FirstName + IF(NOT(ISBLANK($User.LastName)), ' ' + $User.LastName, '')}&CF00Ni000000GHwkf_lkid={!$User.Id}";
+                        url += "&retURL=%2F"+CaseId;
+                        doRedirect(url);
+                    } else {
+                        // redirect to case
+                        url = '/' + CaseId;
+                        showErrorAndRedirect($scope.bugServer + ' value on Case is not supported, please check.', url);
+                    }
+                }
+                
+                function doRedirect(url){
+                    if(window.sforce && window.sforce.one) {
+                        window.sforce.one.navigateToURL(url);
+                    } else {
+                        window.location.href = url;
+                    }
+                }
+
+                function showErrorAndRedirect(message, url){
+                    if(!alert(message)){
+                        doRedirect(url);
+                    }
+                }
+                
+                function handleError(error){
+                    console.log(error);
+                }
+            });
+        </script>
+    </head>
+    <body ng-app="CreateBugApp">
+        <div class="container" ng-controller="CreateBugController">
+            <center><img src="/img/loading24.gif" />&nbsp;<h4 class="loading"> Redirecting...</h4></center>
+        </div>
+    </body>
+</apex:page>

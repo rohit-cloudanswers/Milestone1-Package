@@ -1,0 +1,34 @@
+<apex:component >
+    <apex:attribute name="active" type="string" required="true"
+    description="Which link is active" />
+    
+    <div class="ui secondary pointing medium menu">
+            <apex:outputLink styleClass="{!IF((active=='Home'),'active item blue2','item')}" value="{!$Page.PartnerHome}">
+                <i class="open folder icon"></i>
+                Home
+            </apex:outputLink>
+            <apex:outputLink styleClass="{!IF((active=='Account'),'active item blue2','item')}" value="/001/o">
+                <i class="open folder icon"></i>
+                My Accounts
+            </apex:outputLink>
+            <apex:outputLink styleClass="{!IF((active=='Contact'),'active item blue2','item')}" value="/003/o">
+                <i class="book icon"></i>
+                My Contacts
+            </apex:outputLink>
+            <!-- /00Q/o -->
+            
+             <apex:outputLink styleClass="{!IF((active=='Opportunity'),'active item blue2','item')}" value="{!$Page.OpportunityListView}" rendered="{!IF($Profile.Name =='Partner User (Pilot)',true,false)}">
+                 <i class="bolt icon"></i>
+                 My Opportunities
+             </apex:outputLink>
+            <apex:outputLink styleClass="{!IF((active=='Quote'),'active item blue2','item')}" value="{!$Page.QuotesListView}" rendered="{!IF($Profile.Name =='Partner User (Pilot)',true,false)}">
+                <i class="user icon"></i>
+                My Quotes
+            </apex:outputLink>
+           
+            <apex:outputLink styleClass="{!IF((active=='Pricebook'),'active item blue2','item')}" value="{!$Page.ProductViewer}">
+                <i class="dollar icon"></i>
+                My Pricebook
+            </apex:outputLink>
+        </div>
+</apex:component>

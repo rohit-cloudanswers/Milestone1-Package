@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Service Contract Business Hour</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Service Contract Business Hours</value>
+    </caseValues>
+    <fields>
+        <label><!-- Business Hours Name --></label>
+        <name>Business_Hours_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Business Hours --></label>
+        <name>Business_Hours__c</name>
+        <relationshipLabel><!-- Service Contract Business Hours --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Business Unit --></label>
+        <name>Business_Unit__c</name>
+        <picklistValues>
+            <masterLabel>Media</masterLabel>
+            <translation><!-- Media --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Networking</masterLabel>
+            <translation><!-- Networking --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Playout</masterLabel>
+            <translation><!-- Playout --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transmission</masterLabel>
+            <translation><!-- Transmission --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Country Name --></label>
+        <name>Country_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country Region --></label>
+        <name>Country_Region__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country --></label>
+        <name>Country__c</name>
+        <relationshipLabel><!-- el	  Service Contract Business Hours --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Formula Region --></label>
+        <name>Formula_Region__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>Product__c</name>
+        <relationshipLabel><!-- el	  Service Contract Business Hours --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Region Override --></label>
+        <name>Region_Override__c</name>
+        <picklistValues>
+            <masterLabel>ASIA</masterLabel>
+            <translation><!-- ASIA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CALA</masterLabel>
+            <translation><!-- CALA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA</masterLabel>
+            <translation><!-- EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NORTH AMERICA</masterLabel>
+            <translation><!-- NORTH AMERICA --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Service Contract Business Hour Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

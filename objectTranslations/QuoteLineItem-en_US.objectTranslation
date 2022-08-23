@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Total Line Discount</value>
+        </caseValues>
+        <name>quotelineitem_discount</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>List Sub Total</value>
+        </caseValues>
+        <name>quotelineitem_subtotal</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <layouts>
+        <layout>Partner Community - Quote Line Item Layout</layout>
+        <sections>
+            <label><!-- Additional Information --></label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Quote Analysis Information --></label>
+            <section>Quote Analysis Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Quote Line Item Layout</layout>
+        <sections>
+            <label><!-- Additional Information --></label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Quote Analysis Information --></label>
+            <section>Quote Analysis Information</section>
+        </sections>
+        <sections>
+            <label><!-- SLA Details --></label>
+            <section>SLA Details</section>
+        </sections>
+    </layouts>
+</CustomObjectTranslation>

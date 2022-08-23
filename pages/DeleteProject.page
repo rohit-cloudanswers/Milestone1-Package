@@ -1,0 +1,7 @@
+<apex:page standardcontroller="MPM4_BASE__Milestone1_Project__c" extensions="CheckProjectDelete" action="{!CheckProjectDelete}">
+    <apex:outputText value="{!MPM4_BASE__Milestone1_Project__c.MPM4_BASE__Total_Hours_Incurred__c}" rendered="false"/>
+    
+    Projects can only be deleted if there is no time on them.
+    
+    <br /><br />Click&nbsp;<apex:outputLink value="/{!MPM4_BASE__Milestone1_Project__c.id}">here</apex:outputLink> to return to the Project page.
+</apex:page>

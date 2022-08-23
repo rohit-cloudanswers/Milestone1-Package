@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <name>Add_to_Update_Collection</name>
+        <label>Add to Update Collection</label>
+        <locationX>936</locationX>
+        <locationY>1035</locationY>
+        <assignmentItems>
+            <assignToReference>varProjectsToUpdate</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Loop_Projects</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Projects</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Deactivate_Old_Labor_Rate</name>
+        <label>Deactivate Old Labor Rate</label>
+        <locationX>639</locationX>
+        <locationY>646</locationY>
+        <assignmentItems>
+            <assignToReference>Labor_Rate_Record_Old.Active__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Are_we_changing_ALL_the_things</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Update_Labor_Rate</name>
+        <label>Update Labor Rate</label>
+        <locationX>922</locationX>
+        <locationY>926</locationY>
+        <assignmentItems>
+            <assignToReference>Loop_Projects.Labor_Rate__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Add_to_Update_Collection</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Are_we_changing_ALL_the_things</name>
+        <label>Are we changing ALL the things?</label>
+        <locationX>768</locationX>
+        <locationY>649</locationY>
+        <defaultConnector>
+            <targetReference>Update_Old_Labor_Rate</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_change_projects</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Retroactive_Change__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Project_Record_Collection</targetReference>
+            </connector>
+            <label>Yes change projects</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Do_we_have_an_old_matching_labor_rate</name>
+        <label>Do we have an old matching labor rate?</label>
+        <locationX>770</locationX>
+        <locationY>500</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_we_do</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Labor_Rate_Record_Old</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Deactivate_Old_Labor_Rate</targetReference>
+            </connector>
+            <label>Yes we do</label>
+        </rules>
+    </decisions>
+    <description>New Record – Added checkbox Retroactive Change?  
+If checked - Goes out, finds the matching name, pulls in all not complete/cancelled projects with that labor rate and updates to the newly created labor rate.  Deactivates the old labor rate.  Happens immediately, effective date is just for reference.
+If not checked – Deactivates old labor rate, does nothing else
+Edit Record – Does nothing special.  New rate will be used any time going forward, old rates not changed.
+
+If a new rate is created without having a matching existing labor rate it will just be added, nothing fancy.
+Oh also the lookup field on the project shows only active ones</description>
+    <interviewLabel>Labor Rate - New Record Automation {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Labor Rate - New Record Automation</label>
+    <loops>
+        <name>Loop_Projects</name>
+        <label>Loop Projects</label>
+        <locationX>764</locationX>
+        <locationY>924</locationY>
+        <collectionReference>Project_Record_Collection</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Update_Labor_Rate</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Update_Projects</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Labor_Rate_Record_Old</name>
+        <label>Labor Rate Record - Old</label>
+        <locationX>778</locationX>
+        <locationY>365</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Do_we_have_an_old_matching_labor_rate</targetReference>
+        </connector>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Name</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Active__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>Labor_Rates__c</object>
+        <sortField>CreatedDate</sortField>
+        <sortOrder>Asc</sortOrder>
+    </recordLookups>
+    <recordLookups>
+        <name>Project_Record_Collection</name>
+        <label>Project Record Collection</label>
+        <locationX>774</locationX>
+        <locationY>787</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_Projects</targetReference>
+        </connector>
+        <filters>
+            <field>Labor_Rate__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Labor_Rate_Record_Old.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Project_Stage__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Cancelled</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Project_Stage__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Complete</stringValue>
+            </value>
+        </filters>
+        <object>MPM4_BASE__Milestone1_Project__c</object>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Old_Labor_Rate</name>
+        <label>Update Old Labor Rate</label>
+        <locationX>530</locationX>
+        <locationY>851</locationY>
+        <inputReference>Labor_Rate_Record_Old</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Projects</name>
+        <label>Update Projects</label>
+        <locationX>765</locationX>
+        <locationY>1082</locationY>
+        <connector>
+            <targetReference>Update_Old_Labor_Rate</targetReference>
+        </connector>
+        <inputReference>varProjectsToUpdate</inputReference>
+    </recordUpdates>
+    <startElementReference>Labor_Rate_Record_Old</startElementReference>
+    <status>Active</status>
+    <variables>
+        <name>varProjectsToUpdate</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>MPM4_BASE__Milestone1_Project__c</objectType>
+    </variables>
+</Flow>

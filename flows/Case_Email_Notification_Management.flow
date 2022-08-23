@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Send_notification_to_Customer</name>
+        <label>Send notification to Customer</label>
+        <locationX>776</locationX>
+        <locationY>474</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>emailBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>getContactEmail</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <stringValue>support@imaginecommunications.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>emailSubject</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <decisions>
+        <name>Make_sure_email_isn_t_null</name>
+        <label>Make sure email isn&apos;t null</label>
+        <locationX>768</locationX>
+        <locationY>330</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Email_Address_Good</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>getContactEmail</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Case_Record</targetReference>
+            </connector>
+            <label>Email Address Good</label>
+        </rules>
+    </decisions>
+    <description>Input is recordID..  should I add a type?  Hmmmm!</description>
+    <formulas>
+        <name>getContactEmail</name>
+        <dataType>String</dataType>
+        <expression>{!Case_Comment_Record.Parent.Contact.Email}</expression>
+    </formulas>
+    <interviewLabel>Case - Email Notification Management {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Case - Email Notification Management</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Case_Comment_Record</name>
+        <label>Case Comment Record</label>
+        <locationX>776</locationX>
+        <locationY>180</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Make_sure_email_isn_t_null</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <object>CaseComment</object>
+    </recordLookups>
+    <recordLookups>
+        <name>Case_Record</name>
+        <label>Case Record</label>
+        <locationX>619</locationX>
+        <locationY>403</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Send_notification_to_Customer</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Case_Comment_Record.ParentId</elementReference>
+            </value>
+        </filters>
+        <object>Case</object>
+    </recordLookups>
+    <startElementReference>Case_Comment_Record</startElementReference>
+    <status>Active</status>
+    <textTemplates>
+        <name>emailBody</name>
+        <text>Dear {!Case_Record.Contact_Full_Name__c},
+
+The following comment has been added to case {!Case_Record.CaseNumber}.
+
+{!Case_Comment_Record.CommentBody}
+
+You can visit our customer community, where you can:
+
+·    Update your case with any additional information
+·    Access our knowledge base
+
+ You can respond to this email if you want to update this case but please do not modify the subject line because this will impact our ability to track your case.
+
+Thank you for contacting Imagine Customer Care.</text>
+    </textTemplates>
+    <textTemplates>
+        <name>emailSubject</name>
+        <text>{!Case_Record.CaseNumber} - {!Case_Record.Priority} - {!Case_Record.Subject} [{!Case_Record.Thread_ID__c}}]</text>
+    </textTemplates>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

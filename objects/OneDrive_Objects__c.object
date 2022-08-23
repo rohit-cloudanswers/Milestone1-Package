@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Base_Folder_Id__c</fullName>
+        <description>GUID of Base Folder in Document Root on Sharepoint</description>
+        <externalId>false</externalId>
+        <label>Base Folder Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Base_Folder_Identifier__c</fullName>
+        <description>OneDrive folder id or name which we will used as root for all records of particular Object type.</description>
+        <externalId>false</externalId>
+        <label>Base Folder Identifier</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Create_Nested_Folder__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Create Nested Folder</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Default_Folders__c</fullName>
+        <externalId>false</externalId>
+        <label>Default Folders</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Object_Identifier__c</fullName>
+        <description>Salesforce object name for which we want to enable OneDrive.</description>
+        <externalId>false</externalId>
+        <label>Object Identifier</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Parent_Object_Identifier__c</fullName>
+        <externalId>false</externalId>
+        <label>Parent Object Identifier</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Record_Folder_Identifier__c</fullName>
+        <description>It&apos;s the name of field which holds the folder name for record on OneDrive. It can be a formula field or any other Salesforce field.</description>
+        <externalId>false</externalId>
+        <label>Record Folder Identifier</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>OneDrive Objects</label>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,3 @@
+<apex:page standardController="Contact">
+<apex:iframe scrolling="true" src="https://login.eloqua.com/auth/saml2/autologin?LoginPrefix=HRSC&ReturnUrl=/apps/embed/salesTools/profiler?emailAddress={!contact.email}"/>
+</apex:page>

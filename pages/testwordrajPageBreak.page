@@ -1,0 +1,487 @@
+<apex:page standardController="Quote" extensions="AccountHierrachyReArch" showHeader="false" standardstylesheets="false" contentType="{!IF($CurrentPage.parameters.renderAs!=null && $CurrentPage.parameters.renderAs='word' ,'application/msWord','')}" renderAs="{!IF($CurrentPage.parameters.renderAs!=null && $CurrentPage.parameters.renderAs='pdf' ,'pdf','')}">
+<htmlxmlns="http://www.w3.org/TR/REC-html40" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word"/>  
+<metaHTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE"/>
+<metaHTTP-EQUIV="Expires" content="Mon, 01 Jan 1990 12:00:00 GMT"/>
+<style>
+    p.MsoHeader,li.MsoHeader,div.MsoHeader{
+     margin:0in;
+     margin-top:.0001pt;mso-pagination:widow-orphan;
+     tab-stops:center 3.0in right 6.0in;
+    }
+    p.MsoFooter,li.MsoFooter,div.MsoFooter{
+     margin:0in;
+     margin-bottom:.0001pt;
+     mso-pagination:widow-orphan;
+     tab-stops:center 3.0in right 6.0in;
+    }
+    table#hrdftrtbl{
+     margin:0in 0in 0in 13in;
+    }
+    @page Main {
+        mso-header:h1;
+        mso-footer:f1;
+    }
+    div.Main{
+        page:Main;
+    }
+    p.MyFoot, li.MyFoot, div.MyFoot{
+        mso-pagination:widow-orphan;
+        tab-stops:center 216.0pt right 432.0pt;
+    }
+    p.MyHead {
+
+    }    
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <apex:form >
+     <div class="Main">
+        <div style="mso-element:header" id="h1">
+            <p class="MyHead">Imagination Communications and ADD MORE HEADER</p>
+        </div>     
+        <div class="Section1">
+
+
+        <apex:outputPanel rendered="{!!showType}" id="oPanel2">
+
+            <hr/><br/>
+            <table>
+                <tr>
+                    <td>
+                        <apex:image url="{!$Resource.ImagineLogo}" width="250" height="100"/><br/>
+                        <font size="3"><b>Imagine Communications Corp.</b></font>
+                    </td><td width="100"/>
+                    <td style="text-align: right;"><a href="#"><font color="blue" size="3">www.ImagineCommunications.com</font></a></td>
+                </tr>
+            </table><hr/>
+            <font size="2">
+            <table>
+                <div id="sectiondiv1" >
+                <tr>
+                    <td>
+                        <apex:outputText value="{0,date,MMMM dd, yyyy}">
+                             <apex:param value="{!TODAY()}" />
+                        </apex:outputText><br/>
+                        Quote#: {!qt.QuoteNumber}&nbsp;Rev #{!qt.Quote_Version__c}<br/><br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>{!qt.Account.name}</b><br/>
+                        {!qt.account.BillingStreet},<br/>
+                        {!qt.account.BillingCity},<br/>
+                        {!qt.account.BillingState},<br/>
+                        {!qt.account.BillingCountry}&nbsp;{!qt.account.BillingPostalCode}<br/><br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Dear,<br/><br/>
+                        Based on the discussions we have had and an analysis of your requirements, I am pleased to offer the attached proposal ({!qt.QuoteNumber}, Revision {!qt.Quote_Version__c}).<br/><br/>
+                        Please review at your earliest convenience.<br/><br/>
+                        Should you have any questions or require any additional information, please feel free to contact me.<br/><br/>
+                        Sincerely,<br/><br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>{!qt.opportunity.owner.name}</b><br/>
+                        {!qt.opportunity.owner.title}<br/>
+                        <b>Imagine Communications</b><br/>
+                        {!qt.opportunity.owner.street},<br/>
+                        {!qt.opportunity.owner.city},{!qt.opportunity.owner.state}<br/>
+                        {!qt.opportunity.owner.country}&nbsp;{!qt.opportunity.owner.PostalCode}<br/>
+                        C : {!qt.opportunity.owner.mobilephone}<br/>
+                        F : {!qt.opportunity.owner.fax}<br/>
+                        E : {!qt.opportunity.owner.email}<br/>
+                        <a><font color="blue">www.ImagineCommunications.com</font></a><br/><br/>
+                    </td>
+                </tr>
+                </div>
+                <div id="sectiondiv2" style="page-break-before: always;">
+                <!-- display To and From here -->
+                <tr>
+                    <td>
+                        <center><b><font style="text-align:center;">Summary – All Prices in USD</font></b></center>
+                    </td>
+                </tr>
+                </div>
+            </table>
+            </font>
+            <center>
+                <apex:outputPanel rendered="{!showDisc}">
+                <table border="1" bordercolor="gray" cellpadding="10" cellspacing="0" width="100%">
+                    <tr>
+                        <th style="background-color:#D0D0D0;"></th>
+                        <th style="background-color:#D0D0D0;">Total Price</th>
+                    </tr>
+                    <apex:repeat value="{!sols}" var="eachSol">
+                        <tr>
+                            <td>{!solIds[eachSol]}</td>
+                            <td>${!solVsAmount[eachSol]}</td>
+                        </tr>
+                    </apex:repeat>
+                    <tr>
+                        <td>
+                            Discounts
+                        </td>
+                        <td>
+                            $({!qtAmount})
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Total Quote Price (Options Not Included) 
+                        </td>
+                        <td>
+                            ${!qtAmountAfterDisc}
+                        </td>
+                    </tr>
+                </table>
+                </apex:outputPanel>
+                <apex:outputPanel rendered="{!!showDisc}">
+                <table border="1" bordercolor="gray" cellpadding="10" cellspacing="0" width="100%">
+                    <tr>
+                        <th style="background-color:#D0D0D0;"></th>
+                        <th style="background-color:#D0D0D0;">Total Price</th>
+                    </tr>
+                    <apex:repeat value="{!sols}" var="eachSol">
+                        <tr>
+                            <td>{!solIds[eachSol]}</td>
+                            <td>${!solVsAmount[eachSol]}</td>
+                        </tr>
+                    </apex:repeat>
+                    <tr>
+                        <td>
+                            Total Quote Price (Options Not Included) 
+                        </td>
+                        <td>
+                            ${!solTotal}
+                        </td>
+                    </tr>
+                </table>
+                </apex:outputPanel>
+            </center>
+            <hr/><br/><br/>
+            <!-- <textarea rows="25" cols="100">{!dToday}&#10;Quote Name: {!qName}</textarea> -->
+    <!--   <apex:inputTextArea rows="25" cols="100" value="{!qt.UserEnteredData_Dummy__c}"/><br/> -->
+        
+         <table>
+            <tr>
+                <td>
+                    <font size="2">
+                        Is the purchase of this equipment or services exempt from sales tax? YES or NO <br/>
+                        If NO - sales tax will be added to your invoices at the rate assigned to the ship to address.<br/><br/>
+                        If YES - Sales Tax Exemption Number ______________________________ COPY OF CERTIFICATE MUST BE ATTACHED<br/><br/>
+                        Who can we contact regarding sales tax questions on behalf of your company?<br/><br/>
+                        Name:_____________________________________<br/> <br/>
+                        Phone Number: _____________________________ <br/><br/>
+                    </font>
+                </td>
+            </tr>
+         </table>
+                <div id="sectiondiv3" style="page-break-before: always;">  
+                </div>       
+         <font size="2">
+         <table>
+            <tr>
+                    <td width="50%">
+                        <b>Bill To:</b><br/>
+                        {!qt.BillingName}<br/>
+                        {!qt.BillingStreet}<br/>
+                        {!qt.BillingCity}<br/>
+                        {!qt.BillingState}<br/>
+                        {!qt.BillingCountry}&nbsp;{!qt.BillingPostalCode}
+                    </td><td width="100"/>
+                    <td width="50%">
+                        <b>Ship To:</b><br/>
+                        {!qt.ShippingName}<br/>
+                        {!qt.ShippingStreet}<br/>
+                        {!qt.ShippingCity}<br/>
+                        {!qt.ShippingState}<br/>
+                        {!qt.ShippingCountry}&nbsp;{!qt.ShippingPostalCode}<br/><br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <br/>
+                        <b>Quote#:</b>{!qt.QuoteNumber}<br/>
+                        Effective Date: {!qt.Effective__c}<br/>
+                        Valid Through: {!qt.ExpirationDate}
+                    </td>
+                </tr>
+        </table>
+        </font><br/><br/><br/>
+        <div class="treeNode">
+            <apex:outputPanel rendered="{!showDisc}">
+                  <table style="border: 1px solid black;">
+                       <apex:repeat value="{!ObjectStructure}" var="pos" >
+                                <tr>
+                                    <td width="14%">
+                                                <apex:outputPanel rendered="{!IF(pos.account.id != null,true,false)}">
+                                                    <apex:outputPanel rendered="{!solIdVsRender[pos.account.id]}">
+                                                         <div style="background-color:#D0D0D0;vertical-align: middle; width:100%; height:20px;">
+                                                            <b>{!pos.account.name}</b><br/>
+                                                        </div>  
+                                                        <table border="1" bordercolor="gray" cellpadding="10" cellspacing="0">  
+                                                                <tr bordercolor="gray">
+                                                                    <th>Line item name</th>
+                                                                    <th>Qnty</th>
+                                                                    <th>Part #</th>
+                                                                    <th>Description</th>
+                                                                    <th>List Price</th>
+                                                                    <th>Discount %</th>
+                                                                    <th>Ext. Price</th>
+                                                                </tr>                           
+                                                                <apex:repeat value="{!solIdVsQLitems[pos.account.id]}" var="qt">
+                                                                    <apex:repeat value="{!qt}" var="q">
+                                                                        <tr >
+                                                                            <td width="14%" style="vertical-align:top;">
+                                                                                <apex:outputPanel rendered="{!If(q.product2.name != null,true,false)}">
+                                                                                    <apex:outputText value="{!q.product2.name}"/><br/>
+                                                                                </apex:outputPanel>
+                                                                            </td>
+                                                                            <td width="5%" style="vertical-align:top;">
+                                                                                <apex:outputPanel >
+                                                                                    <apex:outputText value="{!q.Quantity}" /><br/>
+                                                                                </apex:outputPanel>
+                                                                            </td>
+                                                                            <td width="14%" style="vertical-align:top;"> 
+                                                                                <apex:outputPanel >
+                                                                                    <apex:outputText value="{!q.Part_Number__c}"/><br/>
+                                                                                </apex:outputPanel>
+                                                                            </td>
+                                                                            <td width="35%" style="vertical-align:top;">
+                                                                                <apex:outputPanel >
+                                                                                    <apex:outputText value="{!q.Long_Description__c}"/><br/>
+                                                                                </apex:outputPanel>
+                                                                            </td>
+                                                                            <td width="10%" style="vertical-align:top;">
+                                                                                <apex:outputPanel >
+                                                                                    <apex:outputText value="{!q.ListPrice}"/><br/>
+                                                                                </apex:outputPanel>
+                                                                            </td>
+                                                                            <td width="10%" style="vertical-align:top;">
+                                                                                <apex:outputText value="{!q.Discount}"/><br/>
+                                                                            </td>
+                                                                            <td width="10%" style="vertical-align:top;">
+                                                                                <apex:outputPanel >
+                                                                                    <apex:outputText value="{!q.Extended_List_Price__c}"/><br/>
+                                                                                </apex:outputPanel>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </apex:repeat>
+                                                            </apex:repeat>
+                                                        </table>
+                                                    </apex:outputPanel>
+                                                </apex:outputPanel>
+                                        </td>
+                                </tr>
+                        </apex:repeat>
+                    </table>
+                </apex:outputPanel>
+                <apex:outputPanel rendered="{!!showDisc}">
+                      <table style="border: 1px solid black;">
+                           <apex:repeat value="{!ObjectStructure}" var="pos" >
+                                    <tr>
+                                        <td width="14%">
+                                                    <apex:outputPanel rendered="{!IF(pos.account.id != null,true,false)}">
+                                                        <apex:outputPanel rendered="{!solIdVsRender[pos.account.id]}">
+                                                             <div style="background-color:#D0D0D0;vertical-align: middle; width:100%; height:20px;">
+                                                                <b>{!pos.account.name}</b><br/>
+                                                            </div>  
+                                                            <table border="1" bordercolor="gray" cellpadding="10" cellspacing="0">  
+                                                                    <tr bordercolor="gray">
+                                                                        <th>Line item name</th>
+                                                                        <th>Qnty</th>
+                                                                        <th>Part #</th>
+                                                                        <th>Description</th>
+                                                                        <th>List Price</th>
+                                                                        <th>Ext. Price</th>
+                                                                    </tr>                           
+                                                                    <apex:repeat value="{!solIdVsQLitems[pos.account.id]}" var="qt">
+                                                                        <apex:repeat value="{!qt}" var="q">
+                                                                            <tr >
+                                                                                <td width="14%" style="vertical-align:top;">
+                                                                                    <apex:outputPanel rendered="{!If(q.product2.name != null,true,false)}">
+                                                                                        <apex:outputText value="{!q.product2.name}"/><br/>
+                                                                                    </apex:outputPanel>
+                                                                                </td>
+                                                                                <td width="5%" style="vertical-align:top;">
+                                                                                    <apex:outputPanel >
+                                                                                        <apex:outputText value="{!q.Quantity}" /><br/>
+                                                                                    </apex:outputPanel>
+                                                                                </td>
+                                                                                <td width="14%" style="vertical-align:top;"> 
+                                                                                    <apex:outputPanel >
+                                                                                        <apex:outputText value="{!q.Part_Number__c}"/><br/>
+                                                                                    </apex:outputPanel>
+                                                                                </td>
+                                                                                <td width="35%" style="vertical-align:top;">
+                                                                                    <apex:outputPanel >
+                                                                                        <apex:outputText value="{!q.Long_Description__c}"/><br/>
+                                                                                    </apex:outputPanel>
+                                                                                </td>
+                                                                                <td width="10%" style="vertical-align:top;">
+                                                                                    <apex:outputPanel >
+                                                                                        <apex:outputText value="{!q.ListPrice}"/><br/>
+                                                                                    </apex:outputPanel>
+                                                                                </td>
+                                                                                <td width="10%" style="vertical-align:top;">
+                                                                                    <apex:outputPanel >
+                                                                                        <apex:outputText value="{!q.Extended_List_Price__c}"/><br/>
+                                                                                    </apex:outputPanel>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </apex:repeat>
+                                                                </apex:repeat>
+                                                            </table>
+                                                        </apex:outputPanel>
+                                                    </apex:outputPanel>
+                                            </td>
+                                    </tr>
+                            </apex:repeat>
+                        </table>
+                </apex:outputPanel>
+        </div><br/>
+        <apex:outputPanel rendered="{!IF(itemsWithNoSolutions.size>0,true,false)}">
+        <div style="background-color:#D0D0D0;vertical-align: middle; width:100%; height:20px;"><b>Line items with no solutions.</b></div> 
+            <apex:outputPanel rendered="{!showDisc}">
+                <table border="1" bordercolor="gray" cellpadding="10" cellspacing="0">  
+                                <tr bordercolor="gray">
+                                    <th>Line item name</th>
+                                    <th>Qnty</th>
+                                    <th>Part #</th>
+                                    <th>Description</th>
+                                    <th>List Price</th>
+                                    <th>Discount %</th>
+                                    <th>Ext. Price</th>
+                                </tr>   
+                                <apex:repeat value="{!itemsWithNoSolutions}" var="q">
+                                    <tr >
+                                        <td width="14%" style="vertical-align:top;">
+                                            <apex:outputPanel rendered="{!If(q.product2.name != null,true,false)}">
+                                                <apex:outputText value="{!q.product2.name}"/><br/>
+                                            </apex:outputPanel>
+                                        </td>
+                                        <td width="5%" style="vertical-align:top;">
+                                            <apex:outputPanel >
+                                                <apex:outputText value="{!q.Quantity}" /><br/>
+                                            </apex:outputPanel>
+                                        </td>
+                                        <td width="14%" style="vertical-align:top;"> 
+                                            <apex:outputPanel >
+                                                <apex:outputText value="{!q.Part_Number__c}"/><br/>
+                                            </apex:outputPanel>
+                                        </td>
+                                        <td width="35%" style="vertical-align:top;">
+                                            <apex:outputPanel >
+                                                <apex:outputText value="{!q.Long_Description__c}"/><br/>
+                                            </apex:outputPanel>
+                                        </td>
+                                        <td width="10%" style="vertical-align:top;">
+                                            <apex:outputPanel >
+                                                <apex:outputText value="{!q.ListPrice}"/><br/>
+                                            </apex:outputPanel>
+                                        </td>
+                                        <td width="10%" style="vertical-align:top;">
+                                            <apex:outputPanel >
+                                                <apex:outputText value="{!q.Discount}"/><br/>
+                                            </apex:outputPanel>
+                                        </td>
+                                        <td width="10%" style="vertical-align:top;">
+                                            <apex:outputPanel >
+                                                <apex:outputText value="{!q.Extended_List_Price__c}"/><br/>
+                                            </apex:outputPanel>
+                                        </td>
+                                    </tr>
+                                </apex:repeat>
+                        </table>
+                    </apex:outputPanel>
+                    <apex:outputPanel rendered="{!!showDisc}">
+                         <table border="1" bordercolor="gray" cellpadding="10" cellspacing="0"> 
+                            <tr bordercolor="gray">
+                                <th>Line item name</th>
+                                <th>Qnty</th>
+                                <th>Part #</th>
+                                <th>Description</th>
+                                <th>List Price</th>
+                                <th>Ext. Price</th>
+                            </tr>   
+                            <apex:repeat value="{!itemsWithNoSolutions}" var="q">
+                                <tr >
+                                    <td width="14%" style="vertical-align:top;">
+                                        <apex:outputPanel rendered="{!If(q.product2.name != null,true,false)}">
+                                            <apex:outputText value="{!q.product2.name}"/><br/>
+                                        </apex:outputPanel>
+                                    </td>
+                                    <td width="5%" style="vertical-align:top;">
+                                        <apex:outputPanel >
+                                            <apex:outputText value="{!q.Quantity}" /><br/>
+                                        </apex:outputPanel>
+                                    </td>
+                                    <td width="14%" style="vertical-align:top;"> 
+                                        <apex:outputPanel >
+                                            <apex:outputText value="{!q.Part_Number__c}"/><br/>
+                                        </apex:outputPanel>
+                                    </td>
+                                    <td width="35%" style="vertical-align:top;">
+                                        <apex:outputPanel >
+                                            <apex:outputText value="{!q.Long_Description__c}"/><br/>
+                                        </apex:outputPanel>
+                                    </td>
+                                    <td width="10%" style="vertical-align:top;">
+                                        <apex:outputPanel >
+                                            <apex:outputText value="{!q.ListPrice}"/><br/>
+                                        </apex:outputPanel>
+                                    </td>
+                                    <td width="10%" style="vertical-align:top;">
+                                        <apex:outputPanel >
+                                            <apex:outputText value="{!q.Extended_List_Price__c}"/><br/>
+                                        </apex:outputPanel>
+                                    </td>
+                                </tr>
+                            </apex:repeat>
+                    </table>
+                </apex:outputPanel>
+                </apex:outputPanel>
+            </apex:outputPanel><br/><br/>
+            <hr/><br/>
+                <div id="sectiondiv4" style="page-break-before: always;">  
+                </div>             
+            <apex:outputPanel rendered="{!!showType}" >
+                <font size="2">
+                    This Quote, and any Order resulting from this Quote, is subject to the Standard Terms and Conditions of Sale for Imagine Communications which are located at http://www.imaginecommunications.com/company/legal-compliance/Terms-Conditions.aspx and which are incorporated herein by reference. The Standard Terms and Conditions of Sale for Imagine Communications shall apply to the exclusion of any other terms and conditions except where expressly agreed in writing and signed by Imagine Communications. For a hardcopy of these terms and conditions, please call (U.S.) 303-476-5000, fax your request to 303-476-5025, or email your request to ICcontracts@imaginecommunications.com.  If Services are included in this Quote, or any Order resulting from this Quote, performance of the Services are subject to the Statement of Work as attached to this Quote and which is incorporated herein by reference, the Standard Terms and Conditions and the Statement of Work constitute the entire agreement of the parties with respect to the responsibilities and services to be performed by each party for the commissioning and implementation of the equipment and software as defined herein.  Capitalized terms not otherwise defined herein shall have the meanings ascribed to them in the Imagine Communications Standard Terms and Conditions of Sale.  In the event of a conflict between the terms of the attached Statement of Work and the Imagine Communications Standard Terms and Conditions of Sale, the terms of the Statement of Work will prevail.
+                    <hr/><br/>
+                    As a part of its marketing efforts, Imagine Communications may publish general information about this order including customer name, solutions acquired, application for which the solutions are intended, and deal value.  Imagine Communications will not publicize specific prices or other specific Confidential Information.
+                    <br/><br/>
+                    ___  I do not authorize Imagine Communications to publicize this order.<br/>
+                    Imagine Communications Approval:            ________________________________________
+                                                       Sales Persons  name  <br/>
+                    
+                    <br/>Customer Approval:     ________________________________________    <br/>
+                    
+                    Title:      ________________________________________    <br/>
+                    
+                    Date:   ________________________________________<br/>
+                    
+                    Purchase Order #:   ________________________________________<br/>       <br/>
+                    
+                    <b>Email signed quote to</b>    <br/>
+                        
+                    <a>NA-Orders@imaginecommunications.com</a><br/>
+                    <a>EMEA-Orders@imaginecomminucations.com</a><br/>
+                    <a>ASIA-Orders@imaginecommunications.com</a><br/>
+                    <a>CALA-Orders@imaginecommunications.com</a><br/>
+                </font>
+            </apex:outputPanel>
+            </div>
+            <div style="mso-element:footer" id="f1">
+                <p class="MyFoot">
+                    <span style='mso-field-code:" FILENAME "'> </span>
+                    <span style='mso-tab-count:2'></span>
+                    Page <span style='mso-field-code:" PAGE "'></span> of <span style='mso-field-code:" NUMPAGES "'></span>
+                </p>
+            </div>            
+        </div>    
+    </apex:form>
+</apex:page>

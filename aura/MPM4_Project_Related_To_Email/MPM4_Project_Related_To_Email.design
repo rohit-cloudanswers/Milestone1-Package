@@ -1,0 +1,5 @@
+<design:component> 
+    <design:attribute name="includeFrom" label="Include 'From' Address" />
+    <design:attribute name="includeTo" label="Include 'To' Addresses" />
+    <design:attribute name="includeCC" label="Include 'CC' Addresses" />
+</design:component>

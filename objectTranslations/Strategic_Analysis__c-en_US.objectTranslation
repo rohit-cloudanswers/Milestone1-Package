@@ -1,0 +1,1321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Strategic Analysis - Blue Sheet</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Strategic Analysis - Blue Sheets</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account Name --></label>
+        <name>Account_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Strategic Analysis - Blue Sheets --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Action Plan 1 Who, What, When --></label>
+        <name>Action_Plan_1_Who_What_When__c</name>
+    </fields>
+    <fields>
+        <label><!-- Action Plan 2 Who, What, When --></label>
+        <name>Action_Plan_2_Who_What_When__c</name>
+    </fields>
+    <fields>
+        <label><!-- Action Plan 3 Who, What, When --></label>
+        <name>Action_Plan_3_Who_What_When__c</name>
+    </fields>
+    <fields>
+        <label><!-- Action Plan 4 Who, What, When --></label>
+        <name>Action_Plan_4_Who_What_When__c</name>
+    </fields>
+    <fields>
+        <label><!-- Action Plan 5 Who, What, When --></label>
+        <name>Action_Plan_5_Who_What_When__c</name>
+    </fields>
+    <fields>
+        <label><!-- Adequacy of Current Position --></label>
+        <name>Adequacy_of_Current_Position__c</name>
+        <picklistValues>
+            <masterLabel>Comfort</masterLabel>
+            <translation><!-- Comfort --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Concern</masterLabel>
+            <translation><!-- Concern --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Discomfort</masterLabel>
+            <translation><!-- Discomfort --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fear</masterLabel>
+            <translation><!-- Fear --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OK</masterLabel>
+            <translation><!-- OK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Panic</masterLabel>
+            <translation><!-- Panic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Secure</masterLabel>
+            <translation><!-- Secure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Worry</masterLabel>
+            <translation><!-- Worry --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Name, Title, Location --></help>
+        <label><!-- Buying Influence 1 --></label>
+        <name>Buying_Influence_1__c</name>
+    </fields>
+    <fields>
+        <help><!-- Name, Title, Location --></help>
+        <label><!-- Buying Influence 2 --></label>
+        <name>Buying_Influence_2__c</name>
+    </fields>
+    <fields>
+        <help><!-- Name, Title, Location --></help>
+        <label><!-- Buying Influence 3 --></label>
+        <name>Buying_Influence_3__c</name>
+    </fields>
+    <fields>
+        <help><!-- Name, Title, Location --></help>
+        <label><!-- Buying Influence 4 --></label>
+        <name>Buying_Influence_4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Buying Influence 5 --></label>
+        <name>Buying_Influence_5__c</name>
+    </fields>
+    <fields>
+        <help><!-- What is the target date for closing the proposed product or service business --></help>
+        <label><!-- Close Date --></label>
+        <name>Close_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Competition Type --></label>
+        <name>Competition_Type__c</name>
+        <picklistValues>
+            <masterLabel>Buying from Someone Else</masterLabel>
+            <translation><!-- Buying from Someone Else --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Doiing Nothing</masterLabel>
+            <translation><!-- Doiing Nothing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Using Budget for Something Else</masterLabel>
+            <translation><!-- Using Budget for Something Else --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Using Internal Resources</masterLabel>
+            <translation><!-- Using Internal Resources --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Current Volume --></label>
+        <name>Current_Volume__c</name>
+        <picklistValues>
+            <masterLabel>$0 No Current Volume</masterLabel>
+            <translation><!-- $0 No Current Volume --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>$0-50K Annual</masterLabel>
+            <translation><!-- $0-50K Annual --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>$100K to $500K Annual</masterLabel>
+            <translation><!-- $100K to $500K Annual --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>$50K to $100K Annual</masterLabel>
+            <translation><!-- $50K to $100K Annual --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>&gt;$500K Annual</masterLabel>
+            <translation><!-- &gt;$500K Annual --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Date --></label>
+        <name>Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Development Partnership --></label>
+        <name>Development_Partnership__c</name>
+        <picklistValues>
+            <masterLabel>+1</masterLabel>
+            <translation><!-- +1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+2</masterLabel>
+            <translation><!-- +2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+3</masterLabel>
+            <translation><!-- +3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+4</masterLabel>
+            <translation><!-- +4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+5</masterLabel>
+            <translation><!-- +5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-1</masterLabel>
+            <translation><!-- -1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-2</masterLabel>
+            <translation><!-- -2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-3</masterLabel>
+            <translation><!-- -3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-4</masterLabel>
+            <translation><!-- -4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-5</masterLabel>
+            <translation><!-- -5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Evidence to support Rating Influence 1 --></label>
+        <name>Evidence_to_support_Rating_Influence_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Evidence to support Rating Influence 2 --></label>
+        <name>Evidence_to_support_Rating_Influence_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Evidence to support Rating Influence 3 --></label>
+        <name>Evidence_to_support_Rating_Influence_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Evidence to support Rating Influence 4 --></label>
+        <name>Evidence_to_support_Rating_Influence_4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Evidence to support Rating Influence 5 --></label>
+        <name>Evidence_to_support_Rating_Influence_5__c</name>
+    </fields>
+    <fields>
+        <label><!-- Highly Technical --></label>
+        <name>Highly_Technical__c</name>
+        <picklistValues>
+            <masterLabel>+1</masterLabel>
+            <translation><!-- +1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+2</masterLabel>
+            <translation><!-- +2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+3</masterLabel>
+            <translation><!-- +3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+4</masterLabel>
+            <translation><!-- +4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+5</masterLabel>
+            <translation><!-- +5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-1</masterLabel>
+            <translation><!-- -1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-2</masterLabel>
+            <translation><!-- -2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-3</masterLabel>
+            <translation><!-- -3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-4</masterLabel>
+            <translation><!-- -4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-5</masterLabel>
+            <translation><!-- -5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- A short statement of the personal Win that this influence attains when important measurable business results are delivered. --></help>
+        <label><!-- Influence 1 Key Win-Results --></label>
+        <name>Influence_1_Key_Win_Results__c</name>
+    </fields>
+    <fields>
+        <help><!-- Rate how well your base is covered with each Buying Influence for this sales objective. --></help>
+        <label><!-- Base Covered Rating - IFL-2 --></label>
+        <name>Influence_2_Base_Covered__c</name>
+        <picklistValues>
+            <masterLabel>+1</masterLabel>
+            <translation><!-- +1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+2</masterLabel>
+            <translation><!-- +2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+3</masterLabel>
+            <translation><!-- +3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+4</masterLabel>
+            <translation><!-- +4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+5</masterLabel>
+            <translation><!-- +5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-1</masterLabel>
+            <translation><!-- -1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-2</masterLabel>
+            <translation><!-- -2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-3</masterLabel>
+            <translation><!-- -3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-4</masterLabel>
+            <translation><!-- -4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-5</masterLabel>
+            <translation><!-- -5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- A short statement of the personal Win that this influence attains when important measurable business results are delivered. --></help>
+        <label><!-- Influence 2 Key Win-Results --></label>
+        <name>Influence_2_Key_Win_Results__c</name>
+    </fields>
+    <fields>
+        <help><!-- A short statement of the personal Win that this influence attains when important measurable business results are delivered. --></help>
+        <label><!-- Influence 3 Key Win-Results --></label>
+        <name>Influence_3_Key_Win_Results__c</name>
+    </fields>
+    <fields>
+        <help><!-- A short statement of the personal Win that this influence attains when important measurable business results are delivered. --></help>
+        <label><!-- Influence 4 Key Win-Results --></label>
+        <name>Influence_4_Key_Win_Results__c</name>
+    </fields>
+    <fields>
+        <help><!-- A short statement of the personal Win that this influence attains when important measurable business results are delivered. --></help>
+        <label><!-- Influence 5 Key Win-Results --></label>
+        <name>Influence_5_Key_Win_Results__c</name>
+    </fields>
+    <fields>
+        <help><!-- What is need and from whom --></help>
+        <label><!-- Information Needed 1 --></label>
+        <name>Information_Needed_1__c</name>
+    </fields>
+    <fields>
+        <help><!-- What is needed and from whom --></help>
+        <label><!-- Information Needed 2 --></label>
+        <name>Information_Needed_2__c</name>
+    </fields>
+    <fields>
+        <help><!-- what is needed and from whom --></help>
+        <label><!-- Information Needed 3 --></label>
+        <name>Information_Needed_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Information Needed 4 --></label>
+        <name>Information_Needed_4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Information Needed 5 --></label>
+        <name>Information_Needed_5__c</name>
+    </fields>
+    <fields>
+        <label><!-- Loyal to Vendors --></label>
+        <name>Loyal_to_Vendors__c</name>
+        <picklistValues>
+            <masterLabel>+1</masterLabel>
+            <translation><!-- +1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+2</masterLabel>
+            <translation><!-- +2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+3</masterLabel>
+            <translation><!-- +3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+4</masterLabel>
+            <translation><!-- +4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+5</masterLabel>
+            <translation><!-- +5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-1</masterLabel>
+            <translation><!-- -1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-2</masterLabel>
+            <translation><!-- -2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-3</masterLabel>
+            <translation><!-- -3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-4</masterLabel>
+            <translation><!-- -4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-5</masterLabel>
+            <translation><!-- -5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Mode Influnecer 1 --></label>
+        <name>Mode_Influnecer_1__c</name>
+        <picklistValues>
+            <masterLabel>Even Keel</masterLabel>
+            <translation><!-- Even Keel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Growth</masterLabel>
+            <translation><!-- Growth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Over Confident</masterLabel>
+            <translation><!-- Over Confident --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trouble</masterLabel>
+            <translation><!-- Trouble --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Mode Influnecer 2 --></label>
+        <name>Mode_Influnecer_2__c</name>
+        <picklistValues>
+            <masterLabel>Even Keel</masterLabel>
+            <translation><!-- Even Keel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Growth</masterLabel>
+            <translation><!-- Growth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Over Confident</masterLabel>
+            <translation><!-- Over Confident --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trouble</masterLabel>
+            <translation><!-- Trouble --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Mode Influnecer 3 --></label>
+        <name>Mode_Influnecer_3__c</name>
+        <picklistValues>
+            <masterLabel>Even Keel</masterLabel>
+            <translation><!-- Even Keel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Growth</masterLabel>
+            <translation><!-- Growth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Over Confident</masterLabel>
+            <translation><!-- Over Confident --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trouble</masterLabel>
+            <translation><!-- Trouble --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Mode Influnecer 4 --></label>
+        <name>Mode_Influnecer_4__c</name>
+        <picklistValues>
+            <masterLabel>Even Keel</masterLabel>
+            <translation><!-- Even Keel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Growth</masterLabel>
+            <translation><!-- Growth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Over Confident</masterLabel>
+            <translation><!-- Over Confident --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trouble</masterLabel>
+            <translation><!-- Trouble --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Mode Influnecer 5 --></label>
+        <name>Mode_Influnecer_5__c</name>
+        <picklistValues>
+            <masterLabel>Even Keel</masterLabel>
+            <translation><!-- Even Keel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Growth</masterLabel>
+            <translation><!-- Growth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Over Confident</masterLabel>
+            <translation><!-- Over Confident --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trouble</masterLabel>
+            <translation><!-- Trouble --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- My Position vs. Competition --></label>
+        <name>My_Position_vs_Competition__c</name>
+        <picklistValues>
+            <masterLabel>Front Runner</masterLabel>
+            <translation><!-- Front Runner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Only Alternative</masterLabel>
+            <translation><!-- Only Alternative --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shared</masterLabel>
+            <translation><!-- Shared --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zero</masterLabel>
+            <translation><!-- Zero --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Open Transparent Vendor Communications --></label>
+        <name>Open_Transparent_Vendor_Communications__c</name>
+        <picklistValues>
+            <masterLabel>+1</masterLabel>
+            <translation><!-- +1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+2</masterLabel>
+            <translation><!-- +2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+3</masterLabel>
+            <translation><!-- +3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+4</masterLabel>
+            <translation><!-- +4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+5</masterLabel>
+            <translation><!-- +5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-1</masterLabel>
+            <translation><!-- -1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-2</masterLabel>
+            <translation><!-- -2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-3</masterLabel>
+            <translation><!-- -3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-4</masterLabel>
+            <translation><!-- -4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-5</masterLabel>
+            <translation><!-- -5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Strategic Analysis - Blue Sheets --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Owner Name --></label>
+        <name>Owner_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Place in Sales Funnel --></label>
+        <name>Place_in_Sales_Funnel__c</name>
+        <picklistValues>
+            <masterLabel>Above</masterLabel>
+            <translation><!-- Above --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Best Few</masterLabel>
+            <translation><!-- Best Few --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In</masterLabel>
+            <translation><!-- In --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Universe</masterLabel>
+            <translation><!-- Universe --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Possible Actions 1 --></label>
+        <name>Possible_Actions_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Possible Actions 2 --></label>
+        <name>Possible_Actions_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Possible Actions 3 --></label>
+        <name>Possible_Actions_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Possible Actions 4 --></label>
+        <name>Possible_Actions_4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Possible Actions 5 --></label>
+        <name>Possible_Actions_5__c</name>
+    </fields>
+    <fields>
+        <help><!-- A good sales strategy leverages strengths and reduces or eliminates red flags --></help>
+        <label><!-- Possible Actions - Red Flags 1 --></label>
+        <name>Possible_Actions_Red_Flags_1__c</name>
+    </fields>
+    <fields>
+        <help><!-- A good sales strategy leverages strengths and reduces or eliminates red flags --></help>
+        <label><!-- Possible Actions - Red Flags 2 --></label>
+        <name>Possible_Actions_Red_Flags_2__c</name>
+    </fields>
+    <fields>
+        <help><!-- A good sales strategy leverages strengths and reduces or eliminates red flags --></help>
+        <label><!-- Possible Actions - Red Flags 3 --></label>
+        <name>Possible_Actions_Red_Flags_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Possible Actions - Red Flags 4 --></label>
+        <name>Possible_Actions_Red_Flags_4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Possible Actions - Red Flags 5 --></label>
+        <name>Possible_Actions_Red_Flags_5__c</name>
+    </fields>
+    <fields>
+        <help><!-- A good sales strategy leverages strengths and reduces or eliminates red flags --></help>
+        <label><!-- Possible Actions - Strengths 1 --></label>
+        <name>Possible_Actions_Strengths_1__c</name>
+    </fields>
+    <fields>
+        <help><!-- A good sales strategy leverages strengths and reduces or eliminates red flags --></help>
+        <label><!-- Possible Actions -Strengths 2 --></label>
+        <name>Possible_Actions_Strengths_2__c</name>
+    </fields>
+    <fields>
+        <help><!-- A good sales strategy leverages strengths and reduces or eliminates red flags --></help>
+        <label><!-- Possible Actions - Strengths 3 --></label>
+        <name>Possible_Actions_Strengths_3__c</name>
+    </fields>
+    <fields>
+        <help><!-- A good sales strategy leverages strengths and reduces or eliminates red flags --></help>
+        <label><!-- Possible Actions - Strengths 4 --></label>
+        <name>Possible_Actions_Strengths_4__c</name>
+    </fields>
+    <fields>
+        <help><!-- A good sales strategy leverages strengths and reduces or eliminates red flags --></help>
+        <label><!-- Possible Actions - Strengths 5 --></label>
+        <name>Possible_Actions_Strengths_5__c</name>
+    </fields>
+    <fields>
+        <help><!-- What is the potential value for stated Product or Service --></help>
+        <label><!-- Potential Sales Revenue --></label>
+        <name>Potential_Sales_Revenue__c</name>
+    </fields>
+    <fields>
+        <help><!-- What Imagine Product of Service best fits understood needs of this potential customer or opportunity --></help>
+        <label><!-- Product/Service --></label>
+        <name>Product_Service__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rating Influence 1 --></label>
+        <name>Rating_Influence_1__c</name>
+        <picklistValues>
+            <masterLabel>+1</masterLabel>
+            <translation><!-- +1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+2</masterLabel>
+            <translation><!-- +2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+3</masterLabel>
+            <translation><!-- +3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+4</masterLabel>
+            <translation><!-- +4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+5</masterLabel>
+            <translation><!-- +5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-1</masterLabel>
+            <translation><!-- -1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-2</masterLabel>
+            <translation><!-- -2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-3</masterLabel>
+            <translation><!-- -3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-4</masterLabel>
+            <translation><!-- -4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-5</masterLabel>
+            <translation><!-- -5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Rating Influence 2 --></label>
+        <name>Rating_Influence_2__c</name>
+        <picklistValues>
+            <masterLabel>+1</masterLabel>
+            <translation><!-- +1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+2</masterLabel>
+            <translation><!-- +2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+3</masterLabel>
+            <translation><!-- +3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+4</masterLabel>
+            <translation><!-- +4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+5</masterLabel>
+            <translation><!-- +5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-1</masterLabel>
+            <translation><!-- -1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-2</masterLabel>
+            <translation><!-- -2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-3</masterLabel>
+            <translation><!-- -3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-4</masterLabel>
+            <translation><!-- -4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-5</masterLabel>
+            <translation><!-- -5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Rating Influence 3 --></label>
+        <name>Rating_Influence_3__c</name>
+        <picklistValues>
+            <masterLabel>+1</masterLabel>
+            <translation><!-- +1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+2</masterLabel>
+            <translation><!-- +2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+3</masterLabel>
+            <translation><!-- +3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+4</masterLabel>
+            <translation><!-- +4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+5</masterLabel>
+            <translation><!-- +5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-1</masterLabel>
+            <translation><!-- -1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-2</masterLabel>
+            <translation><!-- -2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-3</masterLabel>
+            <translation><!-- -3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-4</masterLabel>
+            <translation><!-- -4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-5</masterLabel>
+            <translation><!-- -5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Rating Influence 4 --></label>
+        <name>Rating_Influence_4__c</name>
+        <picklistValues>
+            <masterLabel>+1</masterLabel>
+            <translation><!-- +1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+2</masterLabel>
+            <translation><!-- +2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+3</masterLabel>
+            <translation><!-- +3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+4</masterLabel>
+            <translation><!-- +4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+5</masterLabel>
+            <translation><!-- +5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-1</masterLabel>
+            <translation><!-- -1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-2</masterLabel>
+            <translation><!-- -2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-3</masterLabel>
+            <translation><!-- -3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-4</masterLabel>
+            <translation><!-- -4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-5</masterLabel>
+            <translation><!-- -5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Rating Influence 5 --></label>
+        <name>Rating_Influence_5__c</name>
+        <picklistValues>
+            <masterLabel>+1</masterLabel>
+            <translation><!-- +1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+2</masterLabel>
+            <translation><!-- +2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+3</masterLabel>
+            <translation><!-- +3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+4</masterLabel>
+            <translation><!-- +4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+5</masterLabel>
+            <translation><!-- +5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-1</masterLabel>
+            <translation><!-- -1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-2</masterLabel>
+            <translation><!-- -2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-3</masterLabel>
+            <translation><!-- -3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-4</masterLabel>
+            <translation><!-- -4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-5</masterLabel>
+            <translation><!-- -5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Red Flag 1 --></label>
+        <name>Red_Flag_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Red Flag 2 --></label>
+        <name>Red_Flag_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Red Flag 3 --></label>
+        <name>Red_Flag_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Red Flag 4 --></label>
+        <name>Red_Flag_4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Red Flag 5 --></label>
+        <name>Red_Flag_5__c</name>
+    </fields>
+    <fields>
+        <label><!-- Role Influencer 1 --></label>
+        <name>Role_Influencer_1__c</name>
+        <picklistValues>
+            <masterLabel>Coach</masterLabel>
+            <translation><!-- Coach --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Economic</masterLabel>
+            <translation><!-- Economic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technical</masterLabel>
+            <translation><!-- Technical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User</masterLabel>
+            <translation><!-- User --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Role Influencer 2 --></label>
+        <name>Role_Influencer_2__c</name>
+        <picklistValues>
+            <masterLabel>Coach</masterLabel>
+            <translation><!-- Coach --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Economic</masterLabel>
+            <translation><!-- Economic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technical</masterLabel>
+            <translation><!-- Technical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User</masterLabel>
+            <translation><!-- User --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Role Influencer 3 --></label>
+        <name>Role_Influencer_3__c</name>
+        <picklistValues>
+            <masterLabel>Coach</masterLabel>
+            <translation><!-- Coach --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Economic</masterLabel>
+            <translation><!-- Economic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technical</masterLabel>
+            <translation><!-- Technical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User</masterLabel>
+            <translation><!-- User --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Role Influencer 4 --></label>
+        <name>Role_Influencer_4__c</name>
+        <picklistValues>
+            <masterLabel>Coach</masterLabel>
+            <translation><!-- Coach --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Economic</masterLabel>
+            <translation><!-- Economic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technical</masterLabel>
+            <translation><!-- Technical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User</masterLabel>
+            <translation><!-- User --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Role Influencer 5 --></label>
+        <name>Role_Influencer_5__c</name>
+        <picklistValues>
+            <masterLabel>Coach</masterLabel>
+            <translation><!-- Coach --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Economic</masterLabel>
+            <translation><!-- Economic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technical</masterLabel>
+            <translation><!-- Technical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User</masterLabel>
+            <translation><!-- User --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Significant Budget for Broadcast Technol --></label>
+        <name>Significant_Budget_for_Broadcast_Technol__c</name>
+        <picklistValues>
+            <masterLabel>+1</masterLabel>
+            <translation><!-- +1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+2</masterLabel>
+            <translation><!-- +2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+3</masterLabel>
+            <translation><!-- +3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+4</masterLabel>
+            <translation><!-- +4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+5</masterLabel>
+            <translation><!-- +5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-1</masterLabel>
+            <translation><!-- -1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-2</masterLabel>
+            <translation><!-- -2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-3</masterLabel>
+            <translation><!-- -3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-4</masterLabel>
+            <translation><!-- -4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-5</masterLabel>
+            <translation><!-- -5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Specify Compeitor(s) --></label>
+        <name>Specify_Compeitor_s__c</name>
+    </fields>
+    <fields>
+        <label><!-- Strength 1 --></label>
+        <name>Strength_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Strength 2 --></label>
+        <name>Strength_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Strength 3 --></label>
+        <name>Strength_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Strength 4 --></label>
+        <name>Strength_4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Strength 5 --></label>
+        <name>Strength_5__c</name>
+    </fields>
+    <fields>
+        <label><!-- Timing for Priorities --></label>
+        <name>Timing_for_Priorities__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Later</masterLabel>
+            <translation><!-- Later --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Urgent</masterLabel>
+            <translation><!-- Urgent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Worki it In</masterLabel>
+            <translation><!-- Worki it In --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Total Potential Volume --></label>
+        <name>Total_Potential_Volume__c</name>
+        <picklistValues>
+            <masterLabel>$0-50K Annual</masterLabel>
+            <translation><!-- $0-50K Annual --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>$100K to $500K Annual</masterLabel>
+            <translation><!-- $100K to $500K Annual --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>$50 to 100K Annual</masterLabel>
+            <translation><!-- $50 to 100K Annual --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>&gt;$500K Annual</masterLabel>
+            <translation><!-- &gt;$500K Annual --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Rate how well your base is covered with each Buying Influence for this sales objective. --></help>
+        <label><!-- Base Covered Rating - IFL-1 --></label>
+        <name>influence_1_Base_Covered__c</name>
+        <picklistValues>
+            <masterLabel>+1</masterLabel>
+            <translation><!-- +1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+2</masterLabel>
+            <translation><!-- +2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+3</masterLabel>
+            <translation><!-- +3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+4</masterLabel>
+            <translation><!-- +4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+5</masterLabel>
+            <translation><!-- +5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-1</masterLabel>
+            <translation><!-- -1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-2</masterLabel>
+            <translation><!-- -2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-3</masterLabel>
+            <translation><!-- -3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-4</masterLabel>
+            <translation><!-- -4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-5</masterLabel>
+            <translation><!-- -5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Rate how well your base is covered with each Buying Influence for this sales objective. --></help>
+        <label><!-- Base Covered Rating - IFL-3 --></label>
+        <name>influence_3_Base_Covered__c</name>
+        <picklistValues>
+            <masterLabel>+1</masterLabel>
+            <translation><!-- +1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+2</masterLabel>
+            <translation><!-- +2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+3</masterLabel>
+            <translation><!-- +3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+4</masterLabel>
+            <translation><!-- +4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+5</masterLabel>
+            <translation><!-- +5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-1</masterLabel>
+            <translation><!-- -1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-2</masterLabel>
+            <translation><!-- -2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-3</masterLabel>
+            <translation><!-- -3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-4</masterLabel>
+            <translation><!-- -4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-5</masterLabel>
+            <translation><!-- -5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Rate how well your base is covered with each Buying Influence for this sales objective. --></help>
+        <label><!-- Base Covered Rating - IFL-4 --></label>
+        <name>influence_4_Base_Covered__c</name>
+        <picklistValues>
+            <masterLabel>+1</masterLabel>
+            <translation><!-- +1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+2</masterLabel>
+            <translation><!-- +2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+3</masterLabel>
+            <translation><!-- +3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+4</masterLabel>
+            <translation><!-- +4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+5</masterLabel>
+            <translation><!-- +5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-1</masterLabel>
+            <translation><!-- -1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-2</masterLabel>
+            <translation><!-- -2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-3</masterLabel>
+            <translation><!-- -3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-4</masterLabel>
+            <translation><!-- -4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-5</masterLabel>
+            <translation><!-- -5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Rate how well your base is covered with each Buying Influence for this sales objective. --></help>
+        <label><!-- Base Covered Rating - IFL-5 --></label>
+        <name>influence_5_Base_Covered__c</name>
+        <picklistValues>
+            <masterLabel>+1</masterLabel>
+            <translation><!-- +1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+2</masterLabel>
+            <translation><!-- +2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+3</masterLabel>
+            <translation><!-- +3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+4</masterLabel>
+            <translation><!-- +4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>+5</masterLabel>
+            <translation><!-- +5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-1</masterLabel>
+            <translation><!-- -1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-2</masterLabel>
+            <translation><!-- -2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-3</masterLabel>
+            <translation><!-- -3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-4</masterLabel>
+            <translation><!-- -4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-5</masterLabel>
+            <translation><!-- -5 --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Strategic Analysis Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Influences --></label>
+            <section>Influences</section>
+        </sections>
+        <sections>
+            <label><!-- Objective --></label>
+            <section>Objective</section>
+        </sections>
+        <sections>
+            <label><!-- Strengths - Red Flags - Plan --></label>
+            <section>Strengths - Red Flags - Plan</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Create_Blue_Sheet_Export --></label>
+        <name>Create_Blue_Sheet_Export</name>
+    </webLinks>
+</CustomObjectTranslation>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>APAC Digital Signage Service</name>
+    <queueMembers>
+        <users>
+            <user>anil.ratra@imaginecommunications.com</user>
+            <user>christopher.palmer@imaginecommunications.com</user>
+            <user>john.d&apos;mello@imaginecommunications.com</user>
+            <user>kelvin.yap@imaginecommunications.com</user>
+            <user>khengbeng.ng@imaginecommunications.com</user>
+            <user>tzewei.ng@imaginecommunications.com</user>
+            <user>yeuk-shek.liu@imaginecommunications.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

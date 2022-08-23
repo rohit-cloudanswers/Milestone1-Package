@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>NA Distribution Service</name>
+    <queueMembers>
+        <users>
+            <user>bruce.townsend@imaginecommunications.com</user>
+            <user>jian.yi@imaginecommunications.com</user>
+            <user>myke.encarnacion@imaginecommunications.com</user>
+            <user>nevila.hysa@imaginecommunications.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

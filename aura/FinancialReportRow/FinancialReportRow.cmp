@@ -1,0 +1,18 @@
+<aura:component >
+    
+    <aura:attribute name="columns" type="List" access="global" />
+    <aura:attribute name="isLastRow" type="Boolean" default="false" access="global" />
+    
+    <tr class="bodyRow" style="{!v.isLastRow ? 'font-weight: bold;' : ''}">
+        <aura:iteration items="{!v.columns}" var="columnData" indexVar="colIndex">
+            <td class="bodyColumn" style="{!colIndex == 1 ? 'text-align:left;' : and(colIndex != 0, colIndex != v.columns.length - 1) ? 'text-align: right;' : colIndex == v.columns.length - 1 ? 'text-align: right; font-weight: bold;' : ''}">
+                <span>
+                    <aura:iteration items="{!columnData}" var="data">
+                        {!data.label}<br />
+                    </aura:iteration>
+                </span>    
+            </td>
+        </aura:iteration>
+    </tr>
+    
+</aura:component>

@@ -1,0 +1,66 @@
+<apex:page title="Quotes" controller="QuoteTabController" showHeader="true" sidebar="false" cache="false">
+ 
+<apex:sectionHeader subtitle="Quotes" title="Home"/>
+<apex:form > 
+<apex:pageBlock title="Quotes View">   
+   <apex:pageBlockButtons location="top" >
+   <apex:outputPanel id="myButtons">
+        <apex:commandButton action="{!Beginning}" title="Beginning" value="<<" disabled="{!disablePrevious}" reRender="myPanel,myPendingPanel,myApprovedPanel,myButtons"/>
+        <apex:commandButton action="{!Previous}" title="Previous" value="<" disabled="{!disablePrevious}" reRender="myPanel,myPendingPanel,myApprovedPanel,myButtons"/>        
+        <apex:commandButton action="{!Next}" title="Next" value=">" disabled="{!disableNext}" reRender="myPanel,myPendingPanel,myApprovedPanel,myButtons"/>
+        <apex:commandButton action="{!End}" title="End" value=">>" disabled="{!disableNext}" reRender="myPanel,myPendingPanel,myApprovedPanel,myButtons"/>        
+   </apex:outputPanel>
+   </apex:pageBlockButtons>
+   <apex:outputPanel >
+       <b>View: </b>
+       <apex:selectList value="{!viewName}" onchange="viewChanged();" size="1">
+           <apex:selectOptions value="{!views}"/>
+       </apex:selectList>
+       <apex:actionFunction action="{!viewChanged}" name="viewChanged"/>
+   </apex:outputPanel>
+
+   <apex:outputPanel id="myPanel" rendered="{!IF((viewName!='My Quotes - Pending Approvals' )&& (viewName!='My Quotes - Completed Approvals'), true, false)}">
+   <apex:pageMessages id="theMessages" />
+   <apex:pageBlockTable value="{!quotes}" var="c" align="center">
+        <apex:column headerValue="Quote Name" width="15%"> <apex:outputlink value="/{!c.Id}" target="_self">{!c.name}</apex:outputlink></apex:column>   
+        <apex:column headerValue="Opportunity" width="20%"> <apex:outputlink value="/{!c.OpportunityId}" target="_self">{!c.Opportunity.name}</apex:outputlink></apex:column>   
+        <apex:column headerValue="Account" width="20%"> <apex:outputlink value="/{!c.AccountId}" target="_self">{!c.Account.name}</apex:outputlink></apex:column>   
+        <apex:column headerValue="Partner" width="15%"> <apex:outputlink value="/{!c.Partner_Name__r.Id}" target="_self">{!c.Partner_Name__r.Name}</apex:outputlink></apex:column>   
+        <apex:column headerValue="Active" width="2%" value="{!c.Active__c}"/> 
+        <apex:column headerValue="Status" width="5%" value="{!c.Status}"/> 
+        <apex:column headerValue="Effective Date" width="5%" value="{!c.Effective__c}"/> 
+        <apex:column headerValue="Expiration Date" width="5%" value="{!c.ExpirationDate}"/> 
+        <apex:column headerValue="Grand Total" width="5%" value="{!c.NEW_Grand_Total__c}"/> 
+        <apex:column headerValue="Record Type" width="8%" value="{!c.RecordType.Name}"/> 
+        <apex:facet name="footer">Showing Page # {!pageNumber} of {!totalPages}</apex:facet>
+   </apex:pageBlockTable>
+   </apex:outputPanel>
+
+   <apex:outputPanel id="myPendingPanel" rendered="{!IF(viewName=='My Quotes - Pending Approvals', true, false)}">
+   <apex:pageMessages id="thePendingMessages"/>
+   <apex:pageBlockTable value="{!quotePendings}" var="c" align="center">
+        <apex:column headerValue="Quote Name" width="50%"> <apex:outputlink value="/{!c.quoteRecord.Id}" target="_self">{!c.quoteRecord.name}</apex:outputlink></apex:column>   
+        <apex:column headerValue="Approval Page Link" width="50%"> <apex:outputlink value="/p/process/ProcessInstanceWorkitemWizardStageManager?id={!c.workItemId}" target="_self">Approval Process: {!c.workItemId}</apex:outputlink></apex:column>   
+        <apex:facet name="footer">Showing Page # {!pageNumber} of {!totalPages}</apex:facet>
+   </apex:pageBlockTable>
+   </apex:outputPanel>
+
+   <apex:outputPanel id="myApprovedPanel" rendered="{!IF(viewName=='My Quotes - Completed Approvals', true, false)}">
+   <apex:pageMessages id="theApprovedMessages"/>
+   <apex:pageBlockTable value="{!quoteApprovals}" var="c" align="center">
+        <apex:column headerValue="Quote Name" width="20%"> <apex:outputlink value="/{!c.quoteRecord.Id}" target="_self">{!c.quoteRecord.name}</apex:outputlink></apex:column>   
+        <apex:column headerValue="Opportunity" width="20%"> <apex:outputlink value="/{!c.quoteRecord.OpportunityId}" target="_self">{!c.quoteRecord.Opportunity.name}</apex:outputlink></apex:column>   
+        <apex:column headerValue="Account" width="20%"> <apex:outputlink value="/{!c.quoteRecord.AccountId}" target="_self">{!c.quoteRecord.Account.name}</apex:outputlink></apex:column>   
+        <apex:column headerValue="Effective Date" width="5%" value="{!c.quoteRecord.Effective__c}"/> 
+        <apex:column headerValue="Expiration Date" width="5%" value="{!c.quoteRecord.ExpirationDate}"/> 
+        <apex:column headerValue="Grand Total" width="5%" value="{!c.quoteRecord.NEW_Grand_Total__c}"/>
+        <apex:column headerValue="Record Type" width="8%" value="{!c.quoteRecord.RecordType.Name}"/>          
+        <apex:column headerValue="Approval Completion Date" width="8%" value="{!c.workItemId.CompletedDate}"/>
+        <apex:column headerValue="Approval Elapsed Time" width="8%" value="{!c.workItemId.ElapsedTimeInDays}"/> 
+        <apex:facet name="footer">Showing Page # {!pageNumber} of {!totalPages}</apex:facet>
+   </apex:pageBlockTable>
+   </apex:outputPanel>
+ 
+</apex:pageBlock>
+</apex:form> 
+</apex:page>

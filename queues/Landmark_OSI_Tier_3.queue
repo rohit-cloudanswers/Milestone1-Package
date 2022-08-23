@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>true</doesSendEmailToMembers>
+    <name>Landmark OSI Tier 3</name>
+    <queueMembers>
+        <users>
+            <user>abhir.elandasserry@imaginecommunications.com</user>
+            <user>brandon.roberts@imaginecommunications.com</user>
+            <user>brandon.upson@imaginecommunications.com</user>
+            <user>eric.dunsworth@imaginecommunications.com</user>
+            <user>jack.alterman@imaginecommunications.com</user>
+            <user>librado.sanchez@imaginecommunications.com</user>
+            <user>randy.novick@imaginecommunications.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

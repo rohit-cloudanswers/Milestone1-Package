@@ -1,0 +1,30 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="public" controller="OrgInfoController" >
+  <aura:attribute name="OrgInfoList" type="Organization" />
+  <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+  <lightning:card title="Orginaztion">
+    <aura:set attribute="body">
+      <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+        <thead>
+          <tr class="slds-text-title_caps">
+            <th scope="col">Org Id</th>
+            <th scope="col">Instance</th>
+            <th scope="col">Sandbox</th>
+            <th scope="col">Name</th>
+            <th scope="col">Version</th>
+           </tr>
+        </thead>
+        <tbody>
+          <aura:iteration items="{!v.OrgInfoList}" var="OrgInfoList">
+            <tr scope="row">
+              <td> <a href = "{!'/lightning/setup/CompanyProfileInfo/home'}" target="_blank">{!OrgInfoList.Id}</a></td>
+              <td> {!OrgInfoList.InstanceName}</td>
+              <td> {!OrgInfoList.IsSandbox}</td>
+              <td> {!OrgInfoList.Name}</td>
+              <td> {!OrgInfoList.OrganizationType}</td>
+            </tr>
+          </aura:iteration>
+        </tbody>
+      </table>
+    </aura:set>
+  </lightning:card>	
+</aura:component>

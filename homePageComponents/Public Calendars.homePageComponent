@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HomePageComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <links>Eclipse_AM_PM_Calendar</links>
+    <links>Eclipse_Support_Calendar</links>
+    <links>Tech_Ops_Resource_Roadmap</links>
+    <pageComponentType>links</pageComponentType>
+</HomePageComponent>

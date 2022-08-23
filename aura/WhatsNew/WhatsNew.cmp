@@ -1,0 +1,80 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" >
+	<aura:attribute name="item_1_title" type="String" default="Webinar Title" access="global"/>
+	<aura:attribute name="item_1_icon_url" type="String" default="/sfsites/c/resource/icon_downloads" access="global"/>
+	<aura:attribute name="item_1_text" type="String" default="" access="global"/>
+	<aura:attribute name="item_1_cta" type="String" default="" access="global"/>
+	<aura:attribute name="item_1_cta_text" type="String" default="Watch Webinar" access="global"/>
+
+    <aura:attribute name="item_2_title" type="String" default="Newsletter Title" access="global"/>
+	<aura:attribute name="item_2_icon_url" type="String" default="/sfsites/c/resource/icon_support_articles" access="global"/>
+	<aura:attribute name="item_2_text" type="String" default="" access="global"/>
+	<aura:attribute name="item_2_cta" type="String" default="" access="global"/>
+	<aura:attribute name="item_2_cta_text" type="String" default="Read Newsletter" access="global"/>
+
+    <aura:attribute name="item_3_title" type="String" default="Media Title" access="global"/>
+	<aura:attribute name="item_3_icon_url" type="String" default="/sfsites/c/resource/icon_media" access="global"/>
+	<aura:attribute name="item_3_text" type="String" default="" access="global"/>
+	<aura:attribute name="item_3_cta" type="String" default="" access="global"/>
+	<aura:attribute name="item_3_cta_text" type="String" default="View Media" access="global"/>
+
+    <aura:attribute name="item_4_title" type="String" default="Video Title" access="global"/>
+	<aura:attribute name="item_4_icon_url" type="String" default="/sfsites/c/resource/icon_video" access="global"/>
+	<aura:attribute name="item_4_text" type="String" default="" access="global"/>
+	<aura:attribute name="item_4_cta" type="String" default="" access="global"/>
+	<aura:attribute name="item_4_cta_text" type="String" default="Watch Video" access="global"/>
+
+  
+	<div class="whatsNew">
+        <h2>What's New</h2>
+    	<div class="whatsNewGrid">
+            <aura:renderIf isTrue="{!v.item_1_title}">
+        	<div class="item">
+                <div class="image">
+                  <img src="{!v.item_1_icon_url}" alt="" title=""/>
+                </div>
+                <div class="text">
+                    <h3>{!v.item_1_title}</h3>
+                    <p>{!v.item_1_text}</p>
+                    <a href="{!v.item_1_cta}">{!v.item_1_cta_text}</a>
+                </div>
+            </div>
+            </aura:renderIf> 
+            <aura:renderIf isTrue="{!v.item_2_title}">
+        	<div class="item">
+                <div class="image">
+                  <img src="{!v.item_2_icon_url}" alt="" title=""/>
+                </div>
+                <div class="text">
+                    <h3>{!v.item_2_title}</h3>
+                    <p>{!v.item_2_text}</p>
+                    <a href="{!v.item_2_cta}">{!v.item_2_cta_text}</a>
+                </div>
+            </div>
+            </aura:renderIf>
+            <aura:renderIf isTrue="{!v.item_3_title}">
+            <div class="item">
+                <div class="image">
+                  <img src="{!v.item_3_icon_url}" alt="" title=""/>
+                </div>
+                <div class="text">
+                    <h3>{!v.item_3_title}</h3>
+                    <p>{!v.item_3_text}</p>
+                    <a href="{!v.item_3_cta}">{!v.item_3_cta_text}</a>
+                </div>
+            </div>
+            </aura:renderIf>
+            <aura:renderIf isTrue="{!v.item_4_title}">
+        	<div class="item">
+                <div class="image">
+                  <img src="{!v.item_4_icon_url}" alt="" title=""/>
+                </div>
+                <div class="text">
+                    <h3>{!v.item_4_title}</h3>
+                    <p>{!v.item_4_text}</p>
+                    <a href="{!v.item_4_cta}">{!v.item_4_cta_text}</a>
+                </div>
+            </div>
+            </aura:renderIf>
+        </div>
+    </div>
+</aura:component>

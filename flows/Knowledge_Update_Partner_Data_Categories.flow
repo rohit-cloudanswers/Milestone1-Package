@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <decisions>
+        <name>Product_Notification_Type</name>
+        <label>Product Notification Type?</label>
+        <locationX>155</locationX>
+        <locationY>327</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Article_Record.Record_Type_Developer_Name__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Product_Notifications</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Data_Category</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <description>One time use with MAS to update categories on Partner Articles</description>
+    <interviewLabel>Knowledge - Update Partner Data Categories {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Knowledge - Update Partner Data Categories</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Update_Data_Category</name>
+        <label>Update Data Category</label>
+        <locationX>301</locationX>
+        <locationY>449</locationY>
+        <inputAssignments>
+            <field>DataCategoryGroupName</field>
+            <value>
+                <stringValue>Products</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>DataCategoryName</field>
+            <value>
+                <stringValue>Partners</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ParentId</field>
+            <value>
+                <elementReference>Article_Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Knowledge__DataCategorySelection</object>
+    </recordCreates>
+    <recordLookups>
+        <name>Article_Record</name>
+        <label>Article Record</label>
+        <locationX>254</locationX>
+        <locationY>228</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Product_Notification_Type</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>RecordId</elementReference>
+            </value>
+        </filters>
+        <object>Knowledge__kav</object>
+    </recordLookups>
+    <startElementReference>Article_Record</startElementReference>
+    <status>Active</status>
+    <variables>
+        <name>RecordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

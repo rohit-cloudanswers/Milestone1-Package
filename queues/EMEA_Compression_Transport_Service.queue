@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>EMEA Compression &amp; Transport Service</name>
+    <queueMembers>
+        <users>
+            <user>ashok.gangatharan@imaginecommunications.com</user>
+            <user>chung.vantran@imaginecommunications.com</user>
+            <user>hisham.matkari@imaginecommunications.com</user>
+            <user>joey.d&apos;aguiar@imaginecommunications.com</user>
+            <user>kevin.sharman@imaginecommunications.com</user>
+            <user>sebastien.lebret@imaginecommunications.com</user>
+            <user>vish.nekitsing@imaginecommunications.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

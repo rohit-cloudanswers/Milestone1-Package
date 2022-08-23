@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Time</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Times</value>
+    </caseValues>
+    <fields>
+        <label><!-- Billable --></label>
+        <name>Billable__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case Project --></label>
+        <name>Case_Project__c</name>
+        <relationshipLabel><!-- Times (Case Project) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Case --></label>
+        <name>Case__c</name>
+        <relationshipLabel><!-- Times --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Category --></label>
+        <name>Category__c</name>
+        <picklistValues>
+            <masterLabel>Design</masterLabel>
+            <translation><!-- Design --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Installation</masterLabel>
+            <translation><!-- Installation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Meeting</masterLabel>
+            <translation><!-- Meeting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pre-Sales</masterLabel>
+            <translation><!-- Pre-Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service</masterLabel>
+            <translation><!-- Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Training</masterLabel>
+            <translation><!-- Training --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Charge Code --></label>
+        <name>Charge_Code__c</name>
+        <picklistValues>
+            <masterLabel>Design</masterLabel>
+            <translation><!-- Design --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal Project</masterLabel>
+            <translation><!-- Internal Project --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Leave of Absence</masterLabel>
+            <translation><!-- Leave of Absence --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PM</masterLabel>
+            <translation><!-- PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paid Time Off (PTO)</masterLabel>
+            <translation><!-- Paid Time Off (PTO) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pre-Sales</masterLabel>
+            <translation><!-- Pre-Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Research</masterLabel>
+            <translation><!-- Research --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Training</masterLabel>
+            <translation><!-- Training --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The date the time was incurred. Defaults to today if left blank. --></help>
+        <label><!-- Date Incurred --></label>
+        <name>Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- A description about the time. For example, why the time was incurred. --></help>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- The number of hours charged. Note: This cannot be more than 1 day (24 hours). --></help>
+        <label><!-- Hours --></label>
+        <name>Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- ImportID --></label>
+        <name>ImportID__c</name>
+    </fields>
+    <fields>
+        <help><!-- The user who incurred the time being charged. Defaults to current user if left blank. --></help>
+        <label><!-- Service Rep --></label>
+        <name>Incurred_By__c</name>
+        <relationshipLabel><!-- Times --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Not Future Date --></label>
+        <name>Not_Future_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Times --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Oracle Support Project Task --></label>
+        <name>Oracle_Support_Project_Task__c</name>
+        <relationshipLabel><!-- Time --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Oracle Support Project --></label>
+        <name>Oracle_Support_Project__c</name>
+        <relationshipLabel><!-- Time_s --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project Task2 --></label>
+        <name>Project_Task2__c</name>
+        <relationshipLabel><!-- Times --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Salesforce Id --></label>
+        <name>Salesforce_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Submitted --></label>
+        <name>Submitted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Support Project --></label>
+        <name>Support_Project__c</name>
+    </fields>
+    <fields>
+        <label><!-- Time Type --></label>
+        <name>Time_Type__c</name>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PM</masterLabel>
+            <translation><!-- PM --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Transitioned Project --></label>
+        <name>Transitioned_Project__c</name>
+        <relationshipLabel><!-- Tim_es --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- 3 Days Old --></label>
+        <name>X3_Days_Old__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

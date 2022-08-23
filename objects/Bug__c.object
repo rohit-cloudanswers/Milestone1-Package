@@ -1,0 +1,4401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Bugs related to Service cases and integrate with the bug tracking system</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Account_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Case__r.Account.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Affects_Version__c</fullName>
+        <externalId>false</externalId>
+        <label>Affects Version</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Anticipated_Due_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Anticipated Due Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Bug_Attachments__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>When this box is checked, it means that there are Bug related attachments in Chatter on the Bug record.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When this box is checked, it means that there are Bug related attachments in Chatter on the Bug record.</inlineHelpText>
+        <label>Bug Attachments</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Bug_Integration_Id__c</fullName>
+        <description>The Correlation Id received from a successful bug submission.</description>
+        <externalId>false</externalId>
+        <label>Bug Integration Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Bug_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Bug Number</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Bug_Process_Status__c</fullName>
+        <description>status within the process of submitting and resolving a bug.  Managed by process builder.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This shows what status the bug is in regards to the process of submission and resolution. 
+Created - created in SF but not sent to JIRA
+Submitted - sent to JIRA, no response from development
+Updated by Development - updated
+Closed - issue is complete</inlineHelpText>
+        <label>Depreciated Bug Process Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Created</fullName>
+                    <default>true</default>
+                    <label>Created</label>
+                </value>
+                <value>
+                    <fullName>Submitted to JIRA</fullName>
+                    <default>false</default>
+                    <label>Submitted to JIRA</label>
+                </value>
+                <value>
+                    <fullName>Updated by Development</fullName>
+                    <default>false</default>
+                    <label>Updated by Development</label>
+                </value>
+                <value>
+                    <fullName>Closed</fullName>
+                    <default>false</default>
+                    <label>Closed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Bug_Server__c</fullName>
+        <description>Used to determine which bug system to send the bug to</description>
+        <externalId>false</externalId>
+        <formula>Case__r.Bug_Server__c</formula>
+        <inlineHelpText>Used to determine which bug system to send the bug to</inlineHelpText>
+        <label>Bug Server</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Bugzilla_URL__c</fullName>
+        <externalId>false</externalId>
+        <label>Bug URL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CCF_Project__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Case__r.CCF_Project__c)</formula>
+        <label>CCF Project</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case_Asset_Version__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(Case__r.Reported_Version__c), Case__r.Asset.Version__c,Case__r.Reported_Version__c)</formula>
+        <label>Case Asset Version</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case_Impact__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Case__r.Impact__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Case Impact</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case_Last_Case_Comment__c</fullName>
+        <externalId>false</externalId>
+        <label>Case Last Case Comment</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Case_Last_Public_Comment__c</fullName>
+        <externalId>false</externalId>
+        <label>Depreciated - Case Last Public Comment</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Case_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>Case__r.CaseNumber</formula>
+        <label>Case Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case_Open_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Case__r.CreatedDate</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Case Open Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Case_Priority__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Case__r.Priority)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Case Priority</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case_Product_Category__c</fullName>
+        <externalId>false</externalId>
+        <formula>Case__r.Product_Class_Category__r.Name</formula>
+        <label>Case Product Category</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case_Product_Family__c</fullName>
+        <externalId>false</externalId>
+        <formula>Case__r.Product_Class__r.Service_Product_Family__c</formula>
+        <label>Case Product Family</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case_Product_Line__c</fullName>
+        <externalId>false</externalId>
+        <formula>Case__r.Product__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Case Product Line</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case_Severity__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(  Case__r.Severity__c  )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Case Severity</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Case__r.Status)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Case Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case_Urgency__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Case__r.Urgency__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Case Urgency</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case_Weight__c</fullName>
+        <externalId>false</externalId>
+        <formula>Case__r.Weighting_Overall__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Case Weight</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case__c</fullName>
+        <externalId>false</externalId>
+        <label>Case</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>Bugs</relationshipLabel>
+        <relationshipName>Bugs</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Closed__c</fullName>
+        <externalId>false</externalId>
+        <formula>CONTAINS ( &quot;Completed:Resolved:Closed:Complete:CLOSED:Closed:REJECTED:Rejected:Done:DONE:Fixed&quot;, Status__c )</formula>
+        <label>Closed?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Customer_Reference__c</fullName>
+        <externalId>false</externalId>
+        <formula>Case__r.Customer_Reference_Number__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Customer Reference</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Developer_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Developer Comments</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EPIC_Link__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>If you don&apos;t know what this is...  don&apos;t fill it in!</inlineHelpText>
+        <label>EPIC Link</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>End_User_Account__c</fullName>
+        <externalId>false</externalId>
+        <formula>Case__r.End_User_Account__r.Name</formula>
+        <label>End User Account</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Entitlement__c</fullName>
+        <description>copy of entitlement from Case</description>
+        <externalId>false</externalId>
+        <label>Entitlement</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Environment_Other__c</fullName>
+        <externalId>false</externalId>
+        <label>Environment - Other</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Environment__c</fullName>
+        <description>List of landmark sales environments</description>
+        <externalId>false</externalId>
+        <label>Environment</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>PROD</fullName>
+                    <default>false</default>
+                    <label>PROD</label>
+                </value>
+                <value>
+                    <fullName>Pre-Prod</fullName>
+                    <default>false</default>
+                    <label>Pre-Prod</label>
+                </value>
+                <value>
+                    <fullName>DR</fullName>
+                    <default>false</default>
+                    <label>DR</label>
+                </value>
+                <value>
+                    <fullName>QAT</fullName>
+                    <default>false</default>
+                    <label>QAT</label>
+                </value>
+                <value>
+                    <fullName>UAT</fullName>
+                    <default>false</default>
+                    <label>UAT</label>
+                </value>
+                <value>
+                    <fullName>DEV</fullName>
+                    <default>false</default>
+                    <label>DEV</label>
+                </value>
+                <value>
+                    <fullName>Staging</fullName>
+                    <default>false</default>
+                    <label>Staging</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Executive_Escalation_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Executive Escalation Comments</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Executive_Escalation_EE__c</fullName>
+        <externalId>false</externalId>
+        <formula>Case__r.Executive_Escalation_EE__c</formula>
+        <label>Executive Escalation (EE)</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Field_Validation_Comment__c</fullName>
+        <description>required when changing the Field Validation picklist</description>
+        <externalId>false</externalId>
+        <label>Field Validation Comment</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Field_Validation_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Field Validation Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>PASSED</fullName>
+                    <default>false</default>
+                    <label>PASSED</label>
+                </value>
+                <value>
+                    <fullName>FAILED</fullName>
+                    <default>false</default>
+                    <label>FAILED</label>
+                </value>
+                <value>
+                    <fullName>Won&apos;t Validate</fullName>
+                    <default>false</default>
+                    <label>Won&apos;t Validate</label>
+                </value>
+                <value>
+                    <fullName>Blocked</fullName>
+                    <default>false</default>
+                    <label>Blocked</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Fixed_Build_Number__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>= implemented build version in Jira</inlineHelpText>
+        <label>Fixed Build Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Fixed_Version_Number__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>= Implemented Version in Jira</inlineHelpText>
+        <label>Fixed Version Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Focus_Project__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT( Project__r.Focus_Project__c )</formula>
+        <label>Focus Project</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Historical_Created_By_User__c</fullName>
+        <description>This is the Siebel user that created the record originally</description>
+        <externalId>false</externalId>
+        <label>Historical Created By User</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Historical_Owner__c</fullName>
+        <description>This is the original bug owner from within Siebel.</description>
+        <externalId>false</externalId>
+        <label>Historical Owner</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Historical_Siebel_Priority__c</fullName>
+        <externalId>false</externalId>
+        <label>Historical Siebel Priority</label>
+        <length>30</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Hosting__c</fullName>
+        <externalId>false</externalId>
+        <label>Hosting</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Cloud</fullName>
+                    <default>false</default>
+                    <label>Cloud</label>
+                </value>
+                <value>
+                    <fullName>On-Prem</fullName>
+                    <default>false</default>
+                    <label>On-Prem</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Issue_Type__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This defines what sort of assistance from the development team is being requested.</inlineHelpText>
+        <label>Issue Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Product Issue/Bug</fullName>
+                    <default>true</default>
+                    <label>Product Issue/Bug</label>
+                </value>
+                <value>
+                    <fullName>Customer Escalation</fullName>
+                    <default>false</default>
+                    <label>Customer Escalation</label>
+                </value>
+                <value>
+                    <fullName>Assistance</fullName>
+                    <default>false</default>
+                    <label>Assistance</label>
+                </value>
+                <value>
+                    <fullName>Feature Request</fullName>
+                    <default>false</default>
+                    <label>Feature Request</label>
+                </value>
+                <value>
+                    <fullName>Incident</fullName>
+                    <default>false</default>
+                    <label>Incident</label>
+                </value>
+                <value>
+                    <fullName>Service Request</fullName>
+                    <default>false</default>
+                    <label>Service Request</label>
+                </value>
+                <value>
+                    <fullName>Change</fullName>
+                    <default>false</default>
+                    <label>Change</label>
+                </value>
+                <value>
+                    <fullName>Customer Issue</fullName>
+                    <default>false</default>
+                    <label>Customer Issue</label>
+                </value>
+                <value>
+                    <fullName>Customer Question</fullName>
+                    <default>false</default>
+                    <label>Customer Question</label>
+                </value>
+                <value>
+                    <fullName>Customer Enhancement</fullName>
+                    <default>false</default>
+                    <label>Customer Enhancement</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Jira_Assignee__c</fullName>
+        <externalId>false</externalId>
+        <label>Jira Assignee</label>
+        <length>233</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Jira_Component_1__c</fullName>
+        <description>for interface - only Salesforce</description>
+        <externalId>false</externalId>
+        <label>Jira Component</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Jira_Component__c</fullName>
+        <description>initial list, will grow</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Initial list, will grow.</inlineHelpText>
+        <label>z - Depreciated Jira Component</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Salesforce Issue</fullName>
+                    <default>true</default>
+                    <label>Salesforce Issue</label>
+                </value>
+                <value>
+                    <fullName>Salesforce</fullName>
+                    <default>false</default>
+                    <label>Salesforce</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Jira_Description__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the detailed notes of the issue to be sent to Jira.  Use of rich text mark up is not recommended here as it will not display properly in Jira.</inlineHelpText>
+        <label>Jira Description</label>
+        <length>131072</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Jira_Issue_Type_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Jira Issue Type ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Jira_Issue_Type__c</fullName>
+        <description>captures incoming issue type from jira cloud</description>
+        <externalId>false</externalId>
+        <label>Jira Issue Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Jira_Priority__c</fullName>
+        <externalId>false</externalId>
+        <label>Jira Priority</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Jira_Project_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Jira Project ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Jira_Project_Name__c</fullName>
+        <description>** These values are set in Flow but keep note of them here to save my sanity **
+
+&quot;Broadcast Graphics&quot;, Versio Management, &quot;VMGMT&quot;,  11443
+&quot;Editing &amp; News&quot;, Versio Ingest/Nexio Engine &quot;VINE&quot;,  11441
+&quot;Servers&quot;, Versio Ingest/Nexio Engine, &quot;VINE&quot;,  11441
+&quot;Versio&quot;,Versio Management,  &quot;VMGMT&quot;,  11443
+&quot;SelenioFlex File&quot;, Versio Playout, &quot;VPLAY&quot;,  11440
+&quot;Motion&quot;, Versio Management, &quot;VMGMT&quot;, 11443
+&quot;Insight&quot;, Versio Management, &quot;VMGMT&quot;, 11443
+&quot;Landmark OSI&quot;, Landmark OSI,  &quot;OSI&quot;,    11348
+&quot;Landmark OSI Sales&quot;, AdConnections,  &quot;ADCON&quot;,  11444
+&quot;Landmark Rights and Scheduling&quot;, SAME,  &quot;LRS&quot;,  11328
+&quot;Eclipse Plus&quot;, xG Linear,  XGLT, 11232,  
+&quot;xG Linear&quot;, xG Linear, &quot;XGLT&quot;,   11323
+&quot;Broadcast Master&quot;, Broadcast Master, &quot;BD&quot;,  10601
+&quot;xG Gameplan&quot;, &quot;XGGT&quot;,   11330
+xG Scorecard, &quot;XGASC&quot;, 11325</description>
+        <externalId>false</externalId>
+        <label>Jira Project Name</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AdConnections</fullName>
+                    <default>false</default>
+                    <label>AdConnections</label>
+                </value>
+                <value>
+                    <fullName>BCM Development</fullName>
+                    <default>false</default>
+                    <label>BCM Development</label>
+                </value>
+                <value>
+                    <fullName>Landmark Rights and Scheduling</fullName>
+                    <default>false</default>
+                    <label>Landmark Rights and Scheduling</label>
+                </value>
+                <value>
+                    <fullName>Landmark OSI</fullName>
+                    <default>false</default>
+                    <label>Landmark OSI</label>
+                </value>
+                <value>
+                    <fullName>Versio Ingest/Nexio Engine</fullName>
+                    <default>false</default>
+                    <label>Versio Ingest/Nexio Engine</label>
+                </value>
+                <value>
+                    <fullName>Versio Management</fullName>
+                    <default>false</default>
+                    <label>Versio Management</label>
+                </value>
+                <value>
+                    <fullName>Versio Playout</fullName>
+                    <default>false</default>
+                    <label>Versio Playout</label>
+                </value>
+                <value>
+                    <fullName>Versio System</fullName>
+                    <default>false</default>
+                    <label>Versio System</label>
+                </value>
+                <value>
+                    <fullName>xG GamePlan</fullName>
+                    <default>false</default>
+                    <label>xG GamePlan</label>
+                </value>
+                <value>
+                    <fullName>xG Linear</fullName>
+                    <default>false</default>
+                    <label>xG Linear</label>
+                </value>
+                <value>
+                    <fullName>xG Scorecard</fullName>
+                    <default>false</default>
+                    <label>xG Scorecard</label>
+                </value>
+                <value>
+                    <fullName>xG Service Desk</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>xG Service Desk</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Jira_Sprint__c</fullName>
+        <externalId>false</externalId>
+        <label>Jira Sprint</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Jira_Status_Summary__c</fullName>
+        <description>used to capture the last jira status incoming from jira</description>
+        <externalId>false</externalId>
+        <inlineHelpText>used to capture the last jira status incoming from jira</inlineHelpText>
+        <label>Jira Status Summary</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Jira_Status__c</fullName>
+        <description>Determines the status of the bug.  Deployed, In Progress and Closed can only be set by Salesforce, other statuses will be set through the Jira Interface</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Deployed, In Progress and Closed can only be set by Salesforce, other statuses will be set through the Jira Interface. Change to &quot;Deployed&quot; when deployed to the customer or &quot;Closed&quot; when its confirmed the issue</inlineHelpText>
+        <label>Jira Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>DEPLOYED</fullName>
+                    <default>false</default>
+                    <label>DEPLOYED</label>
+                </value>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <default>false</default>
+                    <label>In Progress</label>
+                </value>
+                <value>
+                    <fullName>CLOSED</fullName>
+                    <default>false</default>
+                    <label>CLOSED</label>
+                </value>
+                <value>
+                    <fullName>Committed</fullName>
+                    <default>false</default>
+                    <label>Committed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Jira_Sync_Date__c</fullName>
+        <description>Retroactive note, I believe this is what gets stamped to prompt the interface to pick up the fact there was a change and sync</description>
+        <externalId>false</externalId>
+        <label>Jira Sync Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Jira_Sync__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Facilitates an automatic sync to Jira.  Only works with hard coded Jira IDs.</description>
+        <externalId>false</externalId>
+        <label>Jira Sync</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Jira_Team__c</fullName>
+        <externalId>false</externalId>
+        <label>Jira Team</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Jira_Title__c</fullName>
+        <externalId>false</externalId>
+        <label>Jira Title</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Jira_URL__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( OR ( RecordType.DeveloperName = &quot;Integrated_Jira_Cloud&quot;, RecordType.DeveloperName = &quot;Integrated_Jira_Cloud_MS&quot;), 
+
+HYPERLINK(&quot;https://imaginecommunications.atlassian.net/browse/&quot; &amp;  Bug_Number__c, Bug_Number__c),
+
+HYPERLINK(&quot;https://jira.imaginecommunications.com/browse/&quot; &amp;  Bug_Number__c, Bug_Number__c)
+
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Jira URL</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Landmark_Platform__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Only required for Landmark Sales Cloud products</inlineHelpText>
+        <label>Landmark Platform</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Cloud</fullName>
+                    <default>false</default>
+                    <label>Cloud</label>
+                </value>
+                <value>
+                    <fullName>On Prem</fullName>
+                    <default>false</default>
+                    <label>On Prem</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Last_Jira_Comment__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Jira Comment</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Latest_JIRA_Summary__c</fullName>
+        <externalId>false</externalId>
+        <label>Latest JIRA Summary</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Latest_SF_Comment__c</fullName>
+        <description>used to facility sending comments back to jira cloud</description>
+        <externalId>false</externalId>
+        <label>Latest SF Comment</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Latest_SF_Summary__c</fullName>
+        <externalId>false</externalId>
+        <label>Latest SF Summary</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Main_Jira_Issue__c</fullName>
+        <description>Set with create jira flow based on decision &quot;is this a duplicate of another customer&apos;s known issue?&quot;</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This should only be used to note the &quot;master&quot; issue in the case that this bug is being created to relay a duplicate report by another customer.</inlineHelpText>
+        <label>Main Jira Issue</label>
+        <length>25</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Max_Attached_File_Size__c</fullName>
+        <description>used with rollup helper for a warning on page layout</description>
+        <externalId>false</externalId>
+        <inlineHelpText>used with rollup helper for a warning on page layout</inlineHelpText>
+        <label>Max Attached File Size</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OSI_Component_List__c</fullName>
+        <defaultValue>&quot;Salesforce&quot;</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Used for OSI - Matches the Jira Component picklist</inlineHelpText>
+        <label>OSI Component List</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>3rd Party data</fullName>
+                    <default>false</default>
+                    <label>3rd Party data</label>
+                </value>
+                <value>
+                    <fullName>export</fullName>
+                    <default>false</default>
+                    <label>export</label>
+                </value>
+                <value>
+                    <fullName>Admin Tool</fullName>
+                    <default>false</default>
+                    <label>Admin Tool</label>
+                </value>
+                <value>
+                    <fullName>Announcements</fullName>
+                    <default>false</default>
+                    <label>Announcements</label>
+                </value>
+                <value>
+                    <fullName>Billing</fullName>
+                    <default>false</default>
+                    <label>Billing</label>
+                </value>
+                <value>
+                    <fullName>Client Profile</fullName>
+                    <default>false</default>
+                    <label>Client Profile</label>
+                </value>
+                <value>
+                    <fullName>Commercial Library</fullName>
+                    <default>false</default>
+                    <label>Commercial Library</label>
+                </value>
+                <value>
+                    <fullName>Contracts</fullName>
+                    <default>false</default>
+                    <label>Contracts</label>
+                </value>
+                <value>
+                    <fullName>Copy</fullName>
+                    <default>false</default>
+                    <label>Copy</label>
+                </value>
+                <value>
+                    <fullName>Credit Mgmt</fullName>
+                    <default>false</default>
+                    <label>Credit Mgmt</label>
+                </value>
+                <value>
+                    <fullName>Electronic Contracting</fullName>
+                    <default>false</default>
+                    <label>Electronic Contracting</label>
+                </value>
+                <value>
+                    <fullName>General</fullName>
+                    <default>false</default>
+                    <label>General</label>
+                </value>
+                <value>
+                    <fullName>Internet Contracts</fullName>
+                    <default>false</default>
+                    <label>Internet Contracts</label>
+                </value>
+                <value>
+                    <fullName>Inventory</fullName>
+                    <default>false</default>
+                    <label>Inventory</label>
+                </value>
+                <value>
+                    <fullName>Log</fullName>
+                    <default>false</default>
+                    <label>Log</label>
+                </value>
+                <value>
+                    <fullName>Personnel</fullName>
+                    <default>false</default>
+                    <label>Personnel</label>
+                </value>
+                <value>
+                    <fullName>Programming</fullName>
+                    <default>false</default>
+                    <label>Programming</label>
+                </value>
+                <value>
+                    <fullName>Recon</fullName>
+                    <default>false</default>
+                    <label>Recon</label>
+                </value>
+                <value>
+                    <fullName>Reports</fullName>
+                    <default>false</default>
+                    <label>Reports</label>
+                </value>
+                <value>
+                    <fullName>Salesforce</fullName>
+                    <default>false</default>
+                    <label>Salesforce</label>
+                </value>
+                <value>
+                    <fullName>Sales Management</fullName>
+                    <default>false</default>
+                    <label>Sales Management</label>
+                </value>
+                <value>
+                    <fullName>Security</fullName>
+                    <default>false</default>
+                    <label>Security</label>
+                </value>
+                <value>
+                    <fullName>Technical</fullName>
+                    <default>false</default>
+                    <label>Technical</label>
+                </value>
+                <value>
+                    <fullName>Workflow</fullName>
+                    <default>false</default>
+                    <label>Workflow</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Old_Bug_Number__c</fullName>
+        <description>This field shows the original Bug Number if the developers realized it was a duplicate and changed the Bug Number to an alternate value.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field shows the original Bug Number if the developers realized it was a duplicate and changed the Bug Number to an alternate value.</inlineHelpText>
+        <label>Old Bug Number</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Operation_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Operation Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Oracle_Customer_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>Case__r.Oracle_Customer_Number__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Oracle Customer Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Peak_Case_Weight__c</fullName>
+        <businessStatus>Active</businessStatus>
+        <defaultValue>0</defaultValue>
+        <description>managed with Bug After Save flow.  keeps track of the max value on case weight</description>
+        <externalId>false</externalId>
+        <label>Peak Case Weight</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Planned_Completion__c</fullName>
+        <externalId>false</externalId>
+        <label>Planned Completion</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Product_Class__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Copied from Case</description>
+        <externalId>false</externalId>
+        <label>Product Class</label>
+        <referenceTo>Product_Class__c</referenceTo>
+        <relationshipLabel>Bugs</relationshipLabel>
+        <relationshipName>Bugs</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Project_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Case__r.Project__r.Name</formula>
+        <label>Project Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_Related__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( NOT ( ISBLANK( Case__r.Project__c  ) ),
+
+TRUE, FALSE)</formula>
+        <label>Project Related?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Project__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Project</label>
+        <referenceTo>MPM4_BASE__Milestone1_Project__c</referenceTo>
+        <relationshipLabel>Bugs</relationshipLabel>
+        <relationshipName>Bugs</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Record_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>RecordType.Name</formula>
+        <label>Record Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Related_Customer_Commitment__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>If this bug is related to a customer commitment you can enter that commitment here.</inlineHelpText>
+        <label>Related Customer Commitment</label>
+        <referenceTo>Customer_Commitments__c</referenceTo>
+        <relationshipLabel>Bugs</relationshipLabel>
+        <relationshipName>Bugs</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Release_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Release Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Reported_By__c</fullName>
+        <externalId>false</externalId>
+        <formula>CreatedBy.Full_Name__c</formula>
+        <label>Reported By</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Resolution__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The resolution sent from Bug system.</inlineHelpText>
+        <label>Resolution</label>
+        <length>40</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SLA_Target_Date_Updated__c</fullName>
+        <externalId>false</externalId>
+        <label>SLA Target Date Updated</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>SLA_Target_Date__c</fullName>
+        <description>copied from Next Milestone Target Date on Case in flow but remains editable</description>
+        <externalId>false</externalId>
+        <label>SLA Target Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Salesforce_Id__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASESAFEID(Id)</formula>
+        <inlineHelpText>Salesforce Id</inlineHelpText>
+        <label>Salesforce Id</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Siebel_Row_Id__c</fullName>
+        <externalId>true</externalId>
+        <label>Siebel Row Id</label>
+        <length>15</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Site_Owner__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>For large projects please specify a site owner that can be contacted when R&amp;D have time critical questions.  This is generally the Project Manager but can be anyone in charge of the site.</inlineHelpText>
+        <label>Site Owner</label>
+        <length>35</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>For Non-Integrated bugs, enter &quot;Completed&quot; when the fix is completed</inlineHelpText>
+        <label>Status</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sub_Project__c</fullName>
+        <description>Used for jira integration</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Currently only a needed field for JIRA integrated bugs for the VER project.</inlineHelpText>
+        <label>Versio Sub-Project</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AATR (Advanced Audio Track Router)</fullName>
+                    <default>false</default>
+                    <label>AATR (Advanced Audio Track Router)</label>
+                </value>
+                <value>
+                    <fullName>DATS (DataSourcerer)</fullName>
+                    <default>false</default>
+                    <label>DATS (DataSourcerer)</label>
+                </value>
+                <value>
+                    <fullName>GFX (Graphics)</fullName>
+                    <default>false</default>
+                    <label>GFX (Graphics)</label>
+                </value>
+                <value>
+                    <fullName>NAV (Global Navigator)</fullName>
+                    <default>false</default>
+                    <label>NAV (Global Navigator)</label>
+                </value>
+                <value>
+                    <fullName>NEX (Nexio Core)</fullName>
+                    <default>false</default>
+                    <label>NEX (Nexio Core)</label>
+                </value>
+                <value>
+                    <fullName>ONYX (Automation)</fullName>
+                    <default>false</default>
+                    <label>ONYX (Automation)</label>
+                </value>
+                <value>
+                    <fullName>VCM (Versio Config Manager)</fullName>
+                    <default>false</default>
+                    <label>VCM (Versio Config Manager)</label>
+                </value>
+                <value>
+                    <fullName>VCP (Content Portal)</fullName>
+                    <default>false</default>
+                    <label>VCP (Content Portal)</label>
+                </value>
+                <value>
+                    <fullName>VED (Versio Deployment)</fullName>
+                    <default>false</default>
+                    <label>VED (Versio Deployment)</label>
+                </value>
+                <value>
+                    <fullName>VER (Versio Core)</fullName>
+                    <default>false</default>
+                    <label>VER (Versio Core)</label>
+                </value>
+                <value>
+                    <fullName>VIN (Ingest)</fullName>
+                    <default>false</default>
+                    <label>VIN (Ingest)</label>
+                </value>
+                <value>
+                    <fullName>VVS (Versio Video Server)</fullName>
+                    <default>false</default>
+                    <label>VVS (Versio Video Server)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Submitted_By__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This is the user that completed the submission of the bug to the bug system.</description>
+        <externalId>false</externalId>
+        <label>Submitted By</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Bugs</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Submitted_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Submitted Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Target_Release_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Target Release Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Target_Release_Version__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This is supplied by the bug system if integrated bug and is the release version being targeted to include the fix.</inlineHelpText>
+        <label>Target Release Version</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Target_Version__c</fullName>
+        <description>= Target Version in Jira</description>
+        <externalId>false</externalId>
+        <label>Target Version</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Submitted to Dev - Enhance</fullName>
+                    <default>false</default>
+                    <label>Submitted to Dev - Enhance</label>
+                </value>
+                <value>
+                    <fullName>Submitted to Dev - Bug</fullName>
+                    <default>false</default>
+                    <label>Submitted to Dev - Bug</label>
+                </value>
+                <value>
+                    <fullName>Submitted to Dev - Support</fullName>
+                    <default>false</default>
+                    <label>Submitted to Dev - Support</label>
+                </value>
+                <value>
+                    <fullName>Submitted to Dev - Work Item</fullName>
+                    <default>false</default>
+                    <label>Submitted to Dev - Work Item</label>
+                </value>
+                <value>
+                    <fullName>Submitted to Dev - Work Order</fullName>
+                    <default>false</default>
+                    <label>Submitted to Dev - Work Order</label>
+                </value>
+                <value>
+                    <fullName>Updated by Development</fullName>
+                    <default>false</default>
+                    <label>Updated by Development</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Unique_Flow_Identifier__c</fullName>
+        <description>Used in flow to determine newly created record.</description>
+        <externalId>false</externalId>
+        <label>Unique Flow Identifier</label>
+        <length>250</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Update_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Update Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Weighting_Last_Updated__c</fullName>
+        <externalId>false</externalId>
+        <label>Weighting Last Updated</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <label>Bug</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Case__c</columns>
+        <columns>Issue_Type__c</columns>
+        <columns>Bug_Number__c</columns>
+        <columns>Description__c</columns>
+        <columns>Status__c</columns>
+        <columns>Planned_Completion__c</columns>
+        <columns>Release_Date__c</columns>
+        <columns>Case_Product_Family__c</columns>
+        <columns>Case_Product_Category__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Biztalk</fullName>
+        <columns>NAME</columns>
+        <columns>Case__c</columns>
+        <columns>Bug_Server__c</columns>
+        <columns>Bug_Number__c</columns>
+        <columns>Bugzilla_URL__c</columns>
+        <columns>Status__c</columns>
+        <columns>Submitted_Date__c</columns>
+        <columns>Case_Product_Family__c</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Record_Type__c</field>
+            <operation>equals</operation>
+            <value>Integrated</value>
+        </filters>
+        <label>Biztalk</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>New_JIRA_Bugs</fullName>
+        <columns>NAME</columns>
+        <columns>Bug_Number__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Submitted_Date__c</columns>
+        <columns>Case_Product_Family__c</columns>
+        <columns>Case_Product_Line__c</columns>
+        <columns>Case_Product_Category__c</columns>
+        <columns>Target_Release_Version__c</columns>
+        <columns>Target_Version__c</columns>
+        <columns>Project__c</columns>
+        <columns>Project_Name__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Jira_Status__c</field>
+            <operation>equals</operation>
+            <value>New</value>
+        </filters>
+        <label>New JIRA Bugs</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Service_Desk_Issues</fullName>
+        <columns>NAME</columns>
+        <columns>Bug_Number__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Submitted_Date__c</columns>
+        <columns>Case_Product_Family__c</columns>
+        <columns>Case_Product_Line__c</columns>
+        <columns>Case_Product_Category__c</columns>
+        <columns>Target_Release_Version__c</columns>
+        <columns>Target_Version__c</columns>
+        <columns>Project__c</columns>
+        <columns>Project_Name__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Bug_Number__c</field>
+            <operation>startsWith</operation>
+            <value>XSD</value>
+        </filters>
+        <filters>
+            <field>Case_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Closed,Cancelled</value>
+        </filters>
+        <label>Service Desk Issues</label>
+    </listViews>
+    <nameField>
+        <displayFormat>Bug-{0}</displayFormat>
+        <label>SF Bug Number</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Bugs</pluralLabel>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Integrated</fullName>
+        <active>true</active>
+        <description>Bugs for Broadband Support, Paradigm, Broadcast Master, Landmark OSI, Landmark Airtime Sales, Landmark Rights &amp; Scheduling, EAS product lines  ID 012i0000000xw9l</description>
+        <label>Integrated</label>
+        <picklistValues>
+            <picklist>Bug_Process_Status__c</picklist>
+            <values>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Created</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Submitted to JIRA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Updated by Development</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Environment__c</picklist>
+            <values>
+                <fullName>DEV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PROD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pre-Prod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QAT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Staging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UAT</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Field_Validation_Status__c</picklist>
+            <values>
+                <fullName>FAILED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PASSED</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Hosting__c</picklist>
+            <values>
+                <fullName>Cloud</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Issue_Type__c</picklist>
+            <values>
+                <fullName>Assistance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Escalation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Feature Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Issue%2FBug</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Jira_Component__c</picklist>
+            <values>
+                <fullName>Salesforce Issue</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Jira_Project_Name__c</picklist>
+            <values>
+                <fullName>AdConnections</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BCM Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Landmark OSI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Landmark Rights and Scheduling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Versio Ingest%2FNexio Engine</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Versio Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Versio Playout</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Versio System</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>xG GamePlan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>xG Linear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>xG Scorecard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Jira_Status__c</picklist>
+            <values>
+                <fullName>CLOSED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DEPLOYED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Landmark_Platform__c</picklist>
+            <values>
+                <fullName>Cloud</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Prem</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>OSI_Component_List__c</picklist>
+            <values>
+                <fullName>3rd Party data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Admin Tool</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Announcements</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Billing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Profile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Library</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contracts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Copy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Credit Mgmt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Electronic Contracting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internet Contracts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inventory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Log</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Personnel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Programming</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reports</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Salesforce</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Security</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technical</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Workflow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>export</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sub_Project__c</picklist>
+            <values>
+                <fullName>AATR %28Advanced Audio Track Router%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DATS %28DataSourcerer%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GFX %28Graphics%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NAV %28Global Navigator%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NEX %28Nexio Core%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ONYX %28Automation%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VCM %28Versio Config Manager%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VCP %28Content Portal%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VED %28Versio Deployment%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VER %28Versio Core%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VIN %28Ingest%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VVS %28Versio Video Server%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Submitted to Dev - Bug</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted to Dev - Enhance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted to Dev - Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted to Dev - Work Item</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted to Dev - Work Order</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Updated by Development</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Integrated_Jira</fullName>
+        <active>true</active>
+        <description>For bugs integrated with Jira for PND products.  ID 0120Z0000011xlc</description>
+        <label>Integrated Jira</label>
+        <picklistValues>
+            <picklist>Bug_Process_Status__c</picklist>
+            <values>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Created</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Submitted to JIRA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Updated by Development</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Environment__c</picklist>
+            <values>
+                <fullName>DEV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PROD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pre-Prod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QAT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Staging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UAT</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Field_Validation_Status__c</picklist>
+            <values>
+                <fullName>Blocked</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAILED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PASSED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Won%27t Validate</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Hosting__c</picklist>
+            <values>
+                <fullName>Cloud</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Issue_Type__c</picklist>
+            <values>
+                <fullName>Feature Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Issue%2FBug</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Jira_Component__c</picklist>
+            <values>
+                <fullName>Salesforce Issue</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Jira_Project_Name__c</picklist>
+            <values>
+                <fullName>AdConnections</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BCM Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Landmark OSI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Landmark Rights and Scheduling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Versio Ingest%2FNexio Engine</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Versio Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Versio Playout</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Versio System</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>xG GamePlan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>xG Linear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>xG Scorecard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Jira_Status__c</picklist>
+            <values>
+                <fullName>CLOSED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DEPLOYED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Landmark_Platform__c</picklist>
+            <values>
+                <fullName>Cloud</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Prem</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>OSI_Component_List__c</picklist>
+            <values>
+                <fullName>3rd Party data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Admin Tool</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Announcements</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Billing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Profile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Library</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contracts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Copy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Credit Mgmt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Electronic Contracting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internet Contracts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inventory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Log</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Personnel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Programming</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reports</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Salesforce</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Security</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technical</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Workflow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>export</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sub_Project__c</picklist>
+            <values>
+                <fullName>AATR %28Advanced Audio Track Router%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DATS %28DataSourcerer%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GFX %28Graphics%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NAV %28Global Navigator%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NEX %28Nexio Core%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ONYX %28Automation%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VCM %28Versio Config Manager%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VCP %28Content Portal%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VED %28Versio Deployment%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VER %28Versio Core%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VIN %28Ingest%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VVS %28Versio Video Server%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Updated by Development</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Integrated_Jira_Cloud</fullName>
+        <active>true</active>
+        <label>Integrated Jira Cloud</label>
+        <picklistValues>
+            <picklist>Bug_Process_Status__c</picklist>
+            <values>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Created</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Submitted to JIRA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Updated by Development</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Environment__c</picklist>
+            <values>
+                <fullName>DEV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PROD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pre-Prod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QAT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Staging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UAT</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Field_Validation_Status__c</picklist>
+            <values>
+                <fullName>Blocked</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAILED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PASSED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Won%27t Validate</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Hosting__c</picklist>
+            <values>
+                <fullName>Cloud</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Issue_Type__c</picklist>
+            <values>
+                <fullName>Customer Enhancement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Question</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Jira_Component__c</picklist>
+            <values>
+                <fullName>Salesforce</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Salesforce Issue</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Jira_Project_Name__c</picklist>
+            <values>
+                <fullName>AdConnections</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BCM Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Landmark OSI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Landmark Rights and Scheduling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Versio Ingest%2FNexio Engine</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Versio Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Versio Playout</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Versio System</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>xG GamePlan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>xG Linear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>xG Scorecard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Jira_Status__c</picklist>
+            <values>
+                <fullName>CLOSED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Committed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DEPLOYED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Landmark_Platform__c</picklist>
+            <values>
+                <fullName>Cloud</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Prem</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>OSI_Component_List__c</picklist>
+            <values>
+                <fullName>3rd Party data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Admin Tool</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Announcements</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Billing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Profile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Library</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contracts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Copy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Credit Mgmt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Electronic Contracting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internet Contracts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inventory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Log</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Personnel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Programming</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reports</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Salesforce</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Security</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technical</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Workflow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>export</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sub_Project__c</picklist>
+            <values>
+                <fullName>AATR %28Advanced Audio Track Router%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DATS %28DataSourcerer%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GFX %28Graphics%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NAV %28Global Navigator%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NEX %28Nexio Core%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ONYX %28Automation%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VCM %28Versio Config Manager%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VCP %28Content Portal%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VED %28Versio Deployment%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VER %28Versio Core%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VIN %28Ingest%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VVS %28Versio Video Server%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Submitted to Dev - Bug</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted to Dev - Enhance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted to Dev - Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted to Dev - Work Item</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted to Dev - Work Order</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Updated by Development</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Integrated_Jira_Cloud_MS</fullName>
+        <active>true</active>
+        <description>Special record type for managed services becasue they want a different set of fields</description>
+        <label>Integrated Jira Cloud MS</label>
+        <picklistValues>
+            <picklist>Bug_Process_Status__c</picklist>
+            <values>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Created</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Submitted to JIRA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Updated by Development</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Environment__c</picklist>
+            <values>
+                <fullName>DEV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PROD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pre-Prod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QAT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Staging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UAT</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Field_Validation_Status__c</picklist>
+            <values>
+                <fullName>FAILED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PASSED</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Hosting__c</picklist>
+            <values>
+                <fullName>Cloud</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On-Prem</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Issue_Type__c</picklist>
+            <values>
+                <fullName>Change</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incident</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service Request</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Jira_Component__c</picklist>
+            <values>
+                <fullName>Salesforce Issue</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Jira_Project_Name__c</picklist>
+            <values>
+                <fullName>AdConnections</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BCM Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Landmark OSI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Landmark Rights and Scheduling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Versio Ingest%2FNexio Engine</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Versio Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Versio Playout</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Versio System</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>xG GamePlan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>xG Linear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>xG Scorecard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Jira_Status__c</picklist>
+            <values>
+                <fullName>CLOSED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DEPLOYED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Landmark_Platform__c</picklist>
+            <values>
+                <fullName>Cloud</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Prem</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>OSI_Component_List__c</picklist>
+            <values>
+                <fullName>3rd Party data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Admin Tool</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Announcements</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Billing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Profile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Library</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contracts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Copy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Credit Mgmt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Electronic Contracting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internet Contracts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inventory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Log</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Personnel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Programming</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reports</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Salesforce</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Security</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technical</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Workflow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>export</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sub_Project__c</picklist>
+            <values>
+                <fullName>AATR %28Advanced Audio Track Router%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DATS %28DataSourcerer%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GFX %28Graphics%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NAV %28Global Navigator%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NEX %28Nexio Core%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ONYX %28Automation%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VCM %28Versio Config Manager%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VCP %28Content Portal%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VED %28Versio Deployment%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VER %28Versio Core%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VIN %28Ingest%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VVS %28Versio Video Server%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Submitted to Dev - Bug</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted to Dev - Enhance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted to Dev - Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted to Dev - Work Item</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted to Dev - Work Order</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Updated by Development</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Integrated_Jira_Feature</fullName>
+        <active>true</active>
+        <description>id=0120Z0000011yb4</description>
+        <label>Integrated Jira Feature</label>
+        <picklistValues>
+            <picklist>Bug_Process_Status__c</picklist>
+            <values>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Created</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Submitted to JIRA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Updated by Development</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Environment__c</picklist>
+            <values>
+                <fullName>DEV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PROD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pre-Prod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QAT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Staging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UAT</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Field_Validation_Status__c</picklist>
+            <values>
+                <fullName>FAILED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PASSED</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Hosting__c</picklist>
+            <values>
+                <fullName>Cloud</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Issue_Type__c</picklist>
+            <values>
+                <fullName>Feature Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Issue%2FBug</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Jira_Component__c</picklist>
+            <values>
+                <fullName>Salesforce Issue</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Jira_Project_Name__c</picklist>
+            <values>
+                <fullName>AdConnections</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BCM Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Landmark OSI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Landmark Rights and Scheduling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Versio Ingest%2FNexio Engine</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Versio Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Versio Playout</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Versio System</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>xG GamePlan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>xG Linear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>xG Scorecard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Jira_Status__c</picklist>
+            <values>
+                <fullName>CLOSED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DEPLOYED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Landmark_Platform__c</picklist>
+            <values>
+                <fullName>Cloud</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Prem</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>OSI_Component_List__c</picklist>
+            <values>
+                <fullName>3rd Party data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Admin Tool</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Announcements</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Billing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Profile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Library</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contracts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Copy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Credit Mgmt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Electronic Contracting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internet Contracts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inventory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Log</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Personnel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Programming</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reports</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Salesforce</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Security</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technical</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Workflow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>export</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sub_Project__c</picklist>
+            <values>
+                <fullName>AATR %28Advanced Audio Track Router%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DATS %28DataSourcerer%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GFX %28Graphics%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NAV %28Global Navigator%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NEX %28Nexio Core%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ONYX %28Automation%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VCM %28Versio Config Manager%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VCP %28Content Portal%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VED %28Versio Deployment%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VER %28Versio Core%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VIN %28Ingest%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VVS %28Versio Video Server%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Submitted to Dev - Bug</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted to Dev - Enhance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted to Dev - Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted to Dev - Work Item</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted to Dev - Work Order</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Updated by Development</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Non_Integrated</fullName>
+        <active>true</active>
+        <description>Bugs for non-integrated bug tracking systems.  ID 012i0000000xw9m</description>
+        <label>Non-Integrated</label>
+        <picklistValues>
+            <picklist>Bug_Process_Status__c</picklist>
+            <values>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Created</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Submitted to JIRA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Updated by Development</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Environment__c</picklist>
+            <values>
+                <fullName>DEV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PROD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pre-Prod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QAT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Staging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UAT</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Field_Validation_Status__c</picklist>
+            <values>
+                <fullName>FAILED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PASSED</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Hosting__c</picklist>
+            <values>
+                <fullName>Cloud</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Issue_Type__c</picklist>
+            <values>
+                <fullName>Assistance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Escalation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Feature Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Issue%2FBug</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Jira_Component__c</picklist>
+            <values>
+                <fullName>Salesforce Issue</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Jira_Project_Name__c</picklist>
+            <values>
+                <fullName>AdConnections</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BCM Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Landmark OSI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Landmark Rights and Scheduling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Versio Ingest%2FNexio Engine</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Versio Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Versio Playout</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Versio System</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>xG GamePlan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>xG Linear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>xG Scorecard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Jira_Status__c</picklist>
+            <values>
+                <fullName>CLOSED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DEPLOYED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Landmark_Platform__c</picklist>
+            <values>
+                <fullName>Cloud</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Prem</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>OSI_Component_List__c</picklist>
+            <values>
+                <fullName>3rd Party data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Admin Tool</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Announcements</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Billing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Profile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Library</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contracts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Copy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Credit Mgmt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Electronic Contracting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internet Contracts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inventory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Log</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Personnel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Programming</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reports</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Salesforce</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Security</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technical</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Workflow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>export</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sub_Project__c</picklist>
+            <values>
+                <fullName>AATR %28Advanced Audio Track Router%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DATS %28DataSourcerer%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GFX %28Graphics%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NAV %28Global Navigator%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NEX %28Nexio Core%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ONYX %28Automation%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VCM %28Versio Config Manager%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VCP %28Content Portal%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VED %28Versio Deployment%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VER %28Versio Core%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VIN %28Ingest%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VVS %28Versio Video Server%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Submitted to Dev - Bug</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted to Dev - Enhance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted to Dev - Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted to Dev - Work Item</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted to Dev - Work Order</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Updated by Development</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Account_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Bug_Server__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
+        <searchResultsAdditionalFields>Bug_Number__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Case__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Description__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Product_Line_is_Invalid</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND(RecordType.Name = &quot;Integrated&quot;, 
+NOT(ISPICKVAL(Case__r.Product_Family__c, &quot;Broadband Support&quot;)), 
+NOT(ISPICKVAL(Case__r.Product_Family__c, &quot;Paradigm&quot;)), 
+NOT(ISPICKVAL(Case__r.Product_Family__c, &quot;Broadcast Master&quot;)), 
+NOT(ISPICKVAL(Case__r.Product_Family__c, &quot;Landmark OSI&quot;)), 
+NOT(ISPICKVAL(Case__r.Product_Family__c, &quot;Landmark Airtime Sales&quot;)), 
+NOT(ISPICKVAL(Case__r.Product_Family__c, &quot;Landmark Sales&quot;)),
+NOT(ISPICKVAL(Case__r.Product_Family__c, &quot;Landmark OSI Sales&quot;)), 
+NOT(ISPICKVAL(Case__r.Product_Family__c, &quot;Landmark Rights &amp; Scheduling&quot;)), 
+NOT(ISPICKVAL(Case__r.Product_Family__c, &quot;Landmark Analytics&quot;)), 
+NOT(ISPICKVAL(Case__r.Product_Family__c, &quot;Novar&quot;)), 
+NOT(ISBLANK(Submitted_Date__c)))</errorConditionFormula>
+        <errorMessage>Bugs that integrate with external bug systems can only be created against cases in the following product lines: Broadband Support, Paradigm, Novar, Broadcast Master, Landmark: OSI, OSI Sales, Airtime Sales or Rights and Scheduling.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Update_Validation_Comment_after_Status</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND ( OR (ISPICKVAL(Field_Validation_Status__c,&quot;FAILED&quot;),
+ISPICKVAL(Field_Validation_Status__c,&quot;Won&apos;t Validate&quot;),
+ISPICKVAL(Field_Validation_Status__c,&quot;Blocked&quot;)), 
+ISBLANK(Field_Validation_Comment__c),
+NOT(Closed__c) )</errorConditionFormula>
+        <errorMessage>Please enter a reason for your Validation Status</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Wait_for_bug_number_after_submitting</fullName>
+        <active>false</active>
+        <description>Weird as hell but I can&apos;t get this not to fire.  Going to shut it off and warn the few people not to overdo it. - Darcie 4/29/2020</description>
+        <errorConditionFormula>AND ( NOT(ISBLANK(PRIORVALUE( Submitted_Date__c ) )), 
+ISBLANK(Bug_Number__c),  Bug_Server__c &lt;&gt; &quot;Jira&quot;,
+
+AND ( $Profile.Name &lt;&gt; &quot;System Administrator&quot;, $Profile.Name &lt;&gt; &quot;Interface Account&quot;, $Profile.Name &lt;&gt; &quot;Imagine - API User&quot; )
+)</errorConditionFormula>
+        <errorMessage>You have already submitted the bug.  Please wait for the bug developers to respond.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>Change_Jira_Record_Type</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Change Jira Record Type</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/flow/Bug_Change_Jira_Record_Type?varBugID={!Bug__c.Id}&amp;retURL={!Bug__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Change_MR_to_Jira</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Change MR to Jira</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/flow/Bug_Convert_MR_Tracker_to_Jira_Type?BugId={!Bug__c.Id}&amp;retURL={!Bug__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Close_Bug</fullName>
+        <availability>online</availability>
+        <description>CHANGE Process Builder for lighting - Basically &quot;finish later&quot;</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Close Bug</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/flow/Bug_Update_Case_to_Closed?recordId={!Bug__c.Id}&amp;retURL={!Bug__c.CaseId__c}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Create_Bug</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Create Bug javascript</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/29.0/connection.js&quot;)}
+
+var newUrl = &apos;a1M/e?CF00Ni000000GHwjH={!Case.CaseNumber}&amp;CF00Ni000000GHwjH_lkid={!Case.Id}&amp;RecordType=012i0000000xw9l&amp;retURL=%2F{!Case.Id}&apos;;
+
+ var caseQuery = sforce.connection.query(&quot;SELECT TargetDate, CaseId From CaseMilestone  WHERE CaseId = &apos;{!Case.Id}&apos; AND MilestoneType.Name = &apos;Resolution&apos; &quot;);
+
+var caseMile = caseQuery.getArray(&quot;records&quot;);
+
+if( caseMile.length &gt; 0){
+  var caseDate =caseMile[0].TargetDate.split(&apos;T&apos;)[0];
+
+  var dates = caseDate.split(&apos;-&apos;); //yyyy-month-day
+
+  newUrl = newUrl + &apos;&amp;00Ni000000GHwka=&apos;+ dates[1]+&apos;/&apos;+dates[2]+&apos;/&apos;+dates[0];
+}
+location.replace(newUrl);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Create_Bug_New</fullName>
+        <availability>online</availability>
+        <description>Create a new bug</description>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Create MR Tracker Bug</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/apex/CreateBug?caseId={!Case.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Create_JIRA_Bug</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Create JIRA</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/flow/Bug_System_Integration_Management_Start_Here?recordId={!Case.Id}&amp;UniqueId={!NOW()}{!Case.Id}&amp;retURL=/apex/FlowRedirectController?Id={!NOW()}{!Case.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Create_New_Jira_Feature</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Create New Jira Feature</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://jira.imaginecommunications.com/plugins/servlet/create-issue?crmtoken=69wn4mL0y81k&amp;id=Bug__c:{!Bug__c.Id}&amp;issue-type=Customer Enhancement&amp;reporter={!User.Email}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Create_Non_Integrated_Bug</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Create Non-Integrated Bug</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/flow/Bug_Create_NonIntegrated_Button?RecordId={!Case.Id}&amp;retURL={!Case.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Create_Update_Jira</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Create New Jira Issue</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://jira.imaginecommunications.com/plugins/servlet/create-issue?crmtoken=69wn4mL0y81k&amp;id=Bug__c:{!Bug__c.Id}&amp;issue-type=Customer Escalation&amp;reporter={!User.Email}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Link_to_Jira</fullName>
+        <availability>online</availability>
+        <description>Links this bug to an bug that already exists in Jira</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Unlink Jira</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://jira.imaginecommunications.com/plugins/servlet/link-issue?crmtoken=69wn4mL0y81k&amp;id=Bug__c:{!Bug__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Submit</fullName>
+        <availability>online</availability>
+        <description>This button submits the bug to the bug systems</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Submit</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/22.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/apex.js&quot;)}
+var newRecords = []; 
+
+var b = new sforce.SObject(&quot;Bug__c&quot;); 
+var user = sforce.connection.getUserInfo(); 
+
+b.id =&quot;{!Bug__c.Id}&quot;; 
+b.Submitted_Date__c = new Date().toISOString(); 
+b.Submitted_By__c = user.userId; 
+var cont = &quot;true&quot;;
+if(&quot;{!Bug__c.Submitted_Date__c}&quot;!=&quot;&quot;){
+  cont = &quot;false&quot;;
+  if(prompt(&quot;This bug has already been submitted.\nType &apos;y&apos; if you want to resubmit.&quot;,&apos;&apos;)==&quot;y&quot;){
+    cont = &quot;true&quot;;
+  }
+}
+if(cont==&quot;true&quot;){
+
+newRecords.push(b); 
+result = sforce.connection.update(newRecords); 
+
+
+//check for errors 
+var message = &quot;&quot;; 
+
+if (result[0].getBoolean(&apos;success&apos;)) { 
+  //success 
+  response = sforce.apex.execute(&quot;blogic_Bug&quot;,&quot;sendBug&quot;,{bugId:b.id});
+  if(response ==&quot;Success.&quot;){
+    alert(&quot;The bug has been submitted successfully.&quot;);
+    window.location.reload(); 
+  } else {
+    alert(response);
+  }
+  
+} else { 
+  for (var i=0; i&lt;result.length; i++) { 
+    message += &quot;\n&quot;; 
+    message += result[i].errors.message; 
+  } 
+  message = &quot;An error occurred:\n&quot; + message; 
+  alert(message); 
+}
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Submit_Bug</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Submit Bug</masterLabel>
+        <openType>sidebar</openType>
+        <page>BugSubmit</page>
+        <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>Update_Jira_Issue</fullName>
+        <availability>online</availability>
+        <description>Send an update to the Jira system</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Update Jira Issue</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>https://jira.imaginecommunications.com/plugins/servlet/create-issue?crmtoken=69wn4mL0y81k&amp;id=Bug__c:{!Bug__c.Id}</url>
+    </webLinks>
+</CustomObject>

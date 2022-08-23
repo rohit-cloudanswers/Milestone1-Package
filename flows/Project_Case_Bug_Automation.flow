@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <name>Add_to_New_Case_Collection</name>
+        <label>Add to New Case Collection</label>
+        <locationX>544</locationX>
+        <locationY>774</locationY>
+        <assignmentItems>
+            <assignToReference>CasestoUpdate</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Cases_Loop</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Cases_Loop</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Update_Case_Values_for_Weight_Rev</name>
+        <label>Update Case Values for Weight/Rev</label>
+        <locationX>542</locationX>
+        <locationY>637</locationY>
+        <assignmentItems>
+            <assignToReference>Cases_Loop.REV_for_Flow__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>returnRevForFlow</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Cases_Loop.Weighting_Last_Updated__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Cases_Loop.Weighting_Last_Updated_By__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$User.Full_Name__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Cases_Loop.Weighting_Last_Updated_Process__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Project</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Add_to_New_Case_Collection</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>If there is no cases we don&apos;t need any of this.  Bail!</description>
+        <name>Get_Cases</name>
+        <label>Get Cases?</label>
+        <locationX>171</locationX>
+        <locationY>465</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Cases</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Case_Collection</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Cases_Loop</targetReference>
+            </connector>
+            <label>Yes Cases</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Rev_Difference</name>
+        <label>Rev Difference?</label>
+        <locationX>450</locationX>
+        <locationY>510</locationY>
+        <defaultConnector>
+            <targetReference>Update_Case_Values_for_Weight_Rev</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Rev_Change_Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Cases_Loop.REV_for_Flow__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>returnRevForFlow</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Case_Values_for_Weight_Rev</targetReference>
+            </connector>
+            <label>Rev Change Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>check on stage change - should update to check on actual revenue change though.</description>
+        <name>Weighting_Related_Change</name>
+        <label>Weighting Related Change</label>
+        <locationX>171</locationX>
+        <locationY>625</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yup_Weighting_Related_Change</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Project_Stage__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Rev_Rec_90_Days_Rev_100K__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Focus_Project__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Highlight_Project__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Cases_Loop</targetReference>
+            </connector>
+            <label>Yup Weighting Related Change</label>
+        </rules>
+        <rules>
+            <name>General_Rev_Update</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Project_Number__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>General Rev Update</label>
+        </rules>
+    </decisions>
+    <description>come back here and re-add the decision before change loop after changes have worked their way through.  10/20/21</description>
+    <formulas>
+        <name>returnRevForFlow</name>
+        <dataType>Number</dataType>
+        <expression>IF ( AND( {!$Record.Total_Revenue__c} &gt;= 1, {!$Record.Total_Revenue__c}&lt;= 250000 ), 1, 
+IF ( AND( {!$Record.Total_Revenue__c} &gt;=250001, {!$Record.Total_Revenue__c} &lt;= 500000 ), 2, 
+IF ( AND( {!$Record.Total_Revenue__c} &gt;= 500001, {!$Record.Total_Revenue__c} &lt;=750000 ), 3, 
+IF ( AND( {!$Record.Total_Revenue__c} &gt;= 750001, {!$Record.Total_Revenue__c} &lt;= 1000000 ), 4,
+IF ( {!$Record.Total_Revenue__c} &gt;= 1000001, 5, 0
+))))) 
++ IF ({!$Record.Rev_Rec_90_Days_Rev_100K__c}, 10, 0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <interviewLabel>Project - Case/Bug Automation {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Project - Case/Bug Automation</label>
+    <loops>
+        <name>Cases_Loop</name>
+        <label>Cases Loop</label>
+        <locationX>372</locationX>
+        <locationY>625</locationY>
+        <collectionReference>Case_Collection</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Rev_Difference</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Update_Cases</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>gotta catch em all!  We&apos;ll need them.</description>
+        <name>Case_Collection</name>
+        <label>Case Collection</label>
+        <locationX>180</locationX>
+        <locationY>348</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Cases</targetReference>
+        </connector>
+        <filters>
+            <field>Project__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Transitioned_Project__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Record_Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Project Case</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Closed</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Cancelled</stringValue>
+            </value>
+        </filters>
+        <object>Case</object>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Cases</name>
+        <label>Update Cases</label>
+        <locationX>185</locationX>
+        <locationY>839</locationY>
+        <inputReference>CasestoUpdate</inputReference>
+    </recordUpdates>
+    <startElementReference>Case_Collection</startElementReference>
+    <status>Active</status>
+    <variables>
+        <name>CasestoUpdate</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Case</objectType>
+    </variables>
+</Flow>

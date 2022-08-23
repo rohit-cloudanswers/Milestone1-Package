@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Survey Response</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Survey Responses</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Survey Responses --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- In order to help improve our service, please provide any additional comments on the positive or negative aspects of you service experience with Imagine Communications. --></help>
+        <label><!-- Additional Comments --></label>
+        <name>Additional_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case Owner Manager Email --></label>
+        <name>Case_Owner_Manager_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case --></label>
+        <name>Case__c</name>
+        <relationshipLabel><!-- Survey Responses --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Survey Responses --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Please tell us your satisfaction regarding your service experience with Imagine Communications: Amount of Time for Initial Callback or Response
+
+0 = Not satisfied
+10 = Very Satisfied --></help>
+        <label><!-- Initial Callback --></label>
+        <name>Initial_Callback__c</name>
+    </fields>
+    <fields>
+        <help><!-- Do you agree that your issue is closed? --></help>
+        <label><!-- Issue Closed --></label>
+        <name>Issue_Closed__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Please tell us your satisfaction regarding your service experience with Imagine Communications: Knowledge and Expertise of Service Representative
+
+0 = Not satisfied
+10 = Very Satisfied --></help>
+        <label><!-- Knowledge of Imagine Rep --></label>
+        <name>Knowledge_of_Imagine_Rep__c</name>
+    </fields>
+    <fields>
+        <help><!-- If you would like to explain why you don&apos;t feel the issue is resolved, please do that here. --></help>
+        <label><!-- Not closed explanation --></label>
+        <name>Not_closed_explanation__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please tell us your satisfaction regarding your service experience with Imagine Communications: Overall Quality of Service
+
+0 = Not satisfied
+10 = Very Satisfied --></help>
+        <label><!-- Overall Service Quality --></label>
+        <name>Overall_Service_Quality__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please tell us your satisfaction regarding your service experience with Imagine Communications: Professionalism and Courtesy of Service Representative
+
+0 = Not satisfied
+10 = Very Satisfied --></help>
+        <label><!-- Professionalism and Courtesy --></label>
+        <name>Professionalism_and_Courtesy__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please tell us your satisfaction regarding your service experience with Imagine Communications: Likelihood to Recommend Imagine Communications to Others
+
+0 = Not satisfied
+10 = Very Satisfied --></help>
+        <label><!-- Recommendation Likelihood --></label>
+        <name>Recommendation_Likelihood__c</name>
+    </fields>
+    <fields>
+        <label><!-- Responder Email --></label>
+        <name>Responder_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Responder Name --></label>
+        <name>Responder_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field indicates the date and time at which the customer completed and submitted the survey --></help>
+        <label><!-- Survey Completion Date/Time --></label>
+        <name>Survey_Completion_Date_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Survey response --></label>
+        <name>Survey_response__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please tell us your satisfaction regarding your service experience with Imagine Communications: Speed In Resolving Issue
+
+0 = Not satisfied
+10 = Very Satisfied --></help>
+        <label><!-- Time Resolution Satisfaction --></label>
+        <name>Time_Resolution_Satisfaction__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please tell us your satisfaction regarding your service experience with Imagine Communications: Timely Updates Provided Throughout the Case
+
+0 = Not satisfied
+10 = Very Satisfied --></help>
+        <label><!-- Timely Updates Provided --></label>
+        <name>Timely_Updates_Provided__c</name>
+    </fields>
+    <layouts>
+        <layout>Survey Response Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Survey Responses --></label>
+            <section>Survey Responses</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

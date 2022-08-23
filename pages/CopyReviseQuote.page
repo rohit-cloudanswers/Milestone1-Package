@@ -1,0 +1,135 @@
+<apex:page controller="CopyReviseQuoteController" tabStyle="Quote" lightningStylesheets="true">
+    <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"/>
+    <apex:includeScript value="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.min.js" />
+    <script>
+        function blockPage(){
+            $.blockUI({
+                baseZ: 99999999,
+                message: '<img src="/img/loading32.gif" /><br/><center><h3> Please Wait...</h3></center>',
+                 css: {
+                  border: 'none',
+                  padding: '15px',
+                  '-webkit-border-radius': '10px',
+                  '-moz-border-radius': '10px',
+                  opacity: .9,
+                  'font-size' : '138%'
+                 }
+            });
+        }
+    
+        function jsSelectQuote(quoteId) {
+            selectQuote(quoteId);
+        }
+
+        function unBlockPage(){
+            $.unblockUI();
+        }
+    </script>
+
+    <apex:sectionHeader title="Quote" subtitle="{!IF(isQuote, 'Revise Quote', 'Copy Quote')}" />
+    <apex:form id="page" >
+        <apex:pageMessages id="messages" escape="false"></apex:pageMessages>
+        <apex:pageBlock id="theBlock" title="{!IF(isQuote,'Revise Quote', 'Copy Quote')}">
+            <apex:actionFunction name="selectQuote" immediate="true" action="{!copyFromQuote}" reRender="messages,theBlock" oncomplete="unBlockPage();">
+                <apex:param name="quoteId" value="" />
+            </apex:actionFunction>
+            <apex:actionRegion >
+                <apex:actionFunction name="listQuotes" action="{!searchQuotes}" reRender="messages,page" oncomplete="unBlockPage();">
+                </apex:actionFunction>
+                <apex:pageBlockSection rendered="{!isQuote=false}" title="Search Quote" collapsible="false" columns="3">  
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel for="accountName">Account Name</apex:outputLabel>
+                        <apex:inputText id="accountName" value="{!accountName}" />
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel for="oppName">Opportunity Name</apex:outputLabel>
+                        <apex:inputText id="oppName" value="{!oppName}" />
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel for="quoteName">Quote Name</apex:outputLabel>
+                        <apex:inputText id="quoteName" value="{!quoteName}" />
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel for="quoteNumber">Quote Number</apex:outputLabel>
+                        <apex:inputText id="quoteNumber" value="{!quoteNumber}" />
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel for="imagineQuoteNumber">Imagine Quote Number</apex:outputLabel>
+                        <apex:inputText id="imagineQuoteNumber" value="{!imagineQuoteNumber}" />
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputPanel >&nbsp;</apex:outputPanel>
+                        <apex:commandButton onclick="blockPage(); listQuotes(); return false;" value="Search" />
+                    </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>
+            </apex:actionRegion>
+            <apex:outputPanel layout="block" id="matchingQuotes">
+                <apex:pageBlockSection title="Select Quote" columns="1" rendered="{!AND(NOT(isQuote), wrappers.empty=false)}">
+                    <apex:pageBlockTable value="{!wrappers}" var="qw">
+                        <apex:column headerValue="Select" width="55px">
+                            <apex:inputCheckbox value="{!qw.selected}" onchange="blockPage(); jsSelectQuote('{!qw.q.Id}');" />
+                        </apex:column>
+                        <apex:column headerValue="Account Name" value="{!qw.q.Account.Name}" />
+                        <apex:column headerValue="Opportunity Name" value="{!qw.q.Opportunity.Name}" />
+                        <apex:column headerValue="Quote Name" value="{!qw.q.Name}" />
+                        <apex:column headerValue="Quote Number" value="{!qw.q.QuoteNumber}" />
+                        <apex:column headerValue="Imagine Quote Number" value="{!qw.q.Imagine_Quote_Number__c}" />
+                        <apex:column headerValue="Status" value="{!qw.q.Status}" />
+                        <apex:column headerValue="Expiration Date" value="{!qw.q.ExpirationDate}" />
+                    </apex:pageBlockTable>
+                </apex:pageBlockSection>
+                <apex:pageBlockSection columns="1" rendered="{!AND(NOT(isQuote), wrappers.empty=false)}">
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel for="resetFlag">Reset Quote</apex:outputLabel>
+                        <apex:inputCheckbox value="{!resetQuote}" id="resetFlag" />
+                    </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>
+            </apex:outputPanel>
+            <!-- on revising quote, show non-quotable products -->
+            <apex:pageBlockSection title="Cost and Price Reset Options" columns="2" collapsible="false" rendered="{!isQuote}">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="costsCkb">Copy Current Standard Costs</apex:outputLabel>
+                    <apex:inputCheckbox id="costsCkb" value="{!resetCosts}" disabled="false" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="pricesCkb">Reset Prices Based To Current Pricebook Prices</apex:outputLabel>
+                    <apex:inputCheckbox id="pricesCkb" value="{!resetPrices}" disabled="false" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Quote Line Items" columns="1" collapsible="false" rendered="{!isQuote}">
+                <apex:pageBlockSectionItem rendered="{!NOT(lineItems.empty)}">
+                    <apex:pageBlockTable title="Non-Quotable Products" value="{!lineItems}" var="qli">
+                        <apex:column headerValue="Line Number">
+                            <apex:outputLink target="_blank" value="/{!qli.Id}">{!qli.LineNumber}</apex:outputLink>
+                        </apex:column>
+                        <apex:column headerValue="Product">
+                            <apex:outputLink target="_blank" value="/{!qli.Product2Id}">{!qli.Product2.ProductCode}</apex:outputLink>
+                        </apex:column>
+                        <apex:column headerValue="Description" value="{!qli.Product2.Description}" />
+                        <apex:column headerValue="Part Number" value="{!qli.Product2.Part_No__c}" />
+                        <apex:column headerValue="Quotable" value="{!qli.Product2.Quotable__c}" />
+                    </apex:pageBlockTable>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem rendered="{!lineItems.empty}">
+                    <apex:outputPanel >This quote has no non-quotable products.</apex:outputPanel>
+                </apex:pageBlockSectionItem>                    
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons id="buttonsPanel" location="both">
+                <apex:commandButton action="{!cancel}" value="Cancel" rendered="{!isQuote = true}"/>
+                <apex:commandButton action="{!copy}" value="Copy" rendered="{!AND(NOT(isQuote), NOT(needConfirm), NOT(ISBLANK(newQuote.Parent_Quote__c)))}"/>
+                <apex:commandButton action="{!confirmCopy}" value="Confirm Copy" rendered="{!AND(NOT(isQuote), needConfirm)}"/>
+                <apex:commandButton action="{!revise}" value="Revise Quote" rendered="{!AND(isQuote, NOT(needConfirm))}"/>
+                <apex:commandButton action="{!confirmRevise}" value="Confirm Revise" rendered="{!AND(isQuote, needConfirm)}"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+        <apex:actionFunction name="rerenderOptions" rerender="optionsSection,messages"/>
+        <apex:commandButton action="{!Back}" value="Back"/>
+    </apex:form>
+    
+    <script>
+        if({!isQuote})
+        {
+            $("input[type=text]").prop('disabled',true);
+        }   
+    </script>
+</apex:page>

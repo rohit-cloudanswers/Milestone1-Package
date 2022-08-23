@@ -1,0 +1,534 @@
+<apex:page LightningStylesheets="true" controller="ProductViewerController" readonly="true" sidebar="false">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+ 
+ <style>
+   .info{
+    color: #CC0000;
+    font-weight: bold;
+    padding-bottom: 8px;
+    padding-left: 8px;
+    padding-top: 15px;
+   }
+   
+   .pageNavigation{
+    margin: 0;
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+    padding-top:10px;
+   }
+   
+   .pageNavigation .prevNextLinks {
+    color: #A8A8A8;
+   }
+   
+   .pageNavigation .prevNextLinks .prevNext {
+    margin: 0 3px;
+   }
+   
+   .pageNavigation .prevNextLinks .prevNext a{
+    text-decoration:none
+   }
+   
+   .firstPage {
+    background-image: url("/img/paginationArrows.gif");
+    background-position: 0 1px;
+    background-repeat: no-repeat;
+    height: 10px;
+    width: 9px;
+  }
+  
+  .firstPageOff {
+   background-image: url("/img/paginationArrows.gif");
+   background-position: 0 -10px;
+   background-repeat: no-repeat;
+   height: 10px;
+   width: 9px;
+  }
+   
+  .prevPage {
+   background-image: url("/img/paginationArrows.gif");
+   background-position: -10px 1px;
+   background-repeat: no-repeat;
+   height: 10px;
+   margin: 0;
+   padding: 0;
+   width: 9px;
+  }
+  
+  .prevPageOff {
+   background-image: url("/img/paginationArrows.gif");
+   background-position: -10px -10px;
+   background-repeat: no-repeat;
+   height: 10px;
+   margin: 0;
+   padding: 0;
+   width: 9px;
+  }
+  
+  .nextPage {
+   background-image: url("/img/paginationArrows.gif");
+   background-position: -17px 1px;
+   background-repeat: no-repeat;
+   height: 10px;
+   width: 9px;
+  }
+  
+  .nextPageOff {
+   background-image: url("/img/paginationArrows.gif");
+   background-position: -17px -10px;
+   background-repeat: no-repeat;
+   height: 10px;
+   width: 9px;
+  }
+  
+  .lastPage {
+   background-image: url("/img/paginationArrows.gif");
+   background-position: -27px 1px;
+   background-repeat: no-repeat;
+   height: 10px;
+   width: 9px;
+  }
+  
+  .lastPageOff {
+   background-image: url("/img/paginationArrows.gif");
+   background-position: -27px -10px;
+   background-repeat: no-repeat;
+   height: 10px;
+   width: 9px;
+  }
+  </style>
+ 
+  <style> 
+  .cColHeader{
+   padding-top:10px;
+   text-align: center;
+   white-space: normal;
+  }
+ 
+  .cLabel{
+   width:40px;
+   display:inline-block;
+   text-align:right;
+   padding-right:2px;
+  }
+  
+  .cColumnWrap{
+   white-space: normal !important;
+   width:50px;
+  }
+  
+  .rightAlign{
+   text-align:right;
+  }
+ </style>
+ 
+ <script type="text/javascript">
+   
+  function validateFilter(ctrl,event){
+   if($(ctrl).get(0).nodeName=='INPUT'){
+    var keycode = (event.keyCode ? event.keyCode : event.which);
+    if(keycode == '13'){
+      initiateSearch();            
+    }
+   }
+   else if($(ctrl).get(0).nodeName=='SELECT'){
+    initiateSearch();
+   }
+    
+   return false;
+  }
+  
+  function handleGoToPage(event,obj){
+   var keycode = (event.keyCode ? event.keyCode : event.which);
+    if(keycode == '13'){
+      if(!isNaN($(obj).val())){
+        if(parseInt($(obj).val()) > 0 && parseInt($(obj).val()) <= parseInt($('#idTotalPage').html())){
+          goToPage();
+        }
+        else{
+          $(obj).val($('#idCurrentPage').html());  
+          alert('Please enter valid page no to navigate'); 
+        }
+      }
+      else{
+        $(obj).val($('#idCurrentPage').html());  
+        alert('Please enter valid page no to navigate'); 
+      }
+      return false;
+    }
+  }
+  
+  function initiateSearch(){
+   searchProducts($('#txtProductName').val(),$('#selProductName_Operator').val(),
+                  $('#txtProductFamily').val(),$('#selProductFamily_Operator').val(),
+                  $('#txtChannelProductFamily').val(),$('#selChannelProductFamily_Operator').val(),
+                  $('#txtProductCode').val(),$('#selProductCode_Operator').val(),
+                  $('#txtOpportunityProductGroup').val(),$('#selOpportunityProductGroup_Operator').val(),
+                  $('#txtBusinessUnitPillar').val(),$('#selBusinessUnitPillar_Operator').val()
+                 ); 
+  }
+ </script>
+
+ <apex:sectionHeader title="Products View" />
+ 
+ <apex:form id="frmProductViewer">
+ 
+  <apex:actionFunction action="{!searchProducts}" name="searchProducts" rerender="pbProductViewer" status="searchStaus">
+   <apex:param assignTo="{!sProductName}" name="sProductName" value="" />
+   <apex:param assignTo="{!sProductName_Operator}" name="sProductName_Operator" value="" />
+   
+   <apex:param assignTo="{!sProductFamily}" name="sProductFamily" value="" />
+   <apex:param assignTo="{!sProductFamily_Operator}" name="sProductFamily_Operator" value="" />
+
+   <apex:param assignTo="{!sChannelProductFamily}" name="sChannelProductFamily" value="" />
+   <apex:param assignTo="{!sChannelProductFamily_Operator}" name="sChannelProductFamily_Operator" value="" />
+      
+   <apex:param assignTo="{!sProductCode}" name="sProductCode" value="" />
+   <apex:param assignTo="{!sProductCode_Operator}" name="sProductCode_Operator" value="" />
+
+   <apex:param assignTo="{!sOpportunityProductGroup}" name="sOpportunityProductGroup" value="" /> 
+   <apex:param assignTo="{!sOpportunityProductGroup_Operator}" name="sOpportunityProductGroup_Operator" value="" />
+   
+   <apex:param assignTo="{!sBusinessUnitPillar}" name="sBusinessUnitPillar" value="" />
+   <apex:param assignTo="{!sBusinessUnitPillar_Operator}" name="sBusinessUnitPillar_Operator" value="" />
+   
+  </apex:actionFunction>
+  
+  <apex:actionFunction action="{!exportPDF}" name="exportPDF" />
+  <apex:actionFunction action="{!exportCSV}" name="exportCSV" />
+  
+  <apex:actionFunction action="{!goToPage}" name="goToPage" reRender="pbProductViewer" status="pageNavigationStatus"/>
+  <apex:actionFunction action="{!prevPage}" name="prevPage" reRender="pbProductViewer" status="pageNavigationStatus"/>
+  <apex:actionFunction action="{!nextPage}" name="nextPage" reRender="pbProductViewer" status="pageNavigationStatus"/>
+  <apex:actionFunction action="{!firstPage}" name="firstPage" reRender="pbProductViewer" status="pageNavigationStatus"/>
+  <apex:actionFunction action="{!lastPage}" name="lastPage" reRender="pbProductViewer" status="pageNavigationStatus"/>
+      
+  <apex:pageMessages />
+   
+  <div style="padding-bottom:10px;text-align:center;">
+   <input type="button" class="btn" value="Apply Filter" onclick="initiateSearch();"/>
+   <apex:commandButton value="Remove Filter" action="{!removeFilters}" rerender="pbProductViewer"  status="removeFilterStaus"/>
+   <input type="button" class="btn" value="Export to PDF" onclick="exportPDF();" />
+   <input type="button" class="btn" value="Export to Excel" onclick="exportCSV();" />
+   
+   <apex:actionstatus id="searchStaus">
+      <apex:facet name="start"> 
+        <span style="color:red;font-weight:bold;padding-left:5px;">searching products...</span>
+        <img src="/img/loading.gif" alt="" />
+      </apex:facet>
+   </apex:actionstatus>
+   
+   <apex:actionstatus id="removeFilterStaus">
+      <apex:facet name="start"> 
+        <span style="color:red;font-weight:bold;padding-left:5px;">removing filters...</span>
+        <img src="/img/loading.gif" alt="" />
+      </apex:facet>
+   </apex:actionstatus>
+  </div> 
+  
+  <apex:pageBlock id="pbProductViewer"> 
+   
+   <apex:pageblockTable value="{!lstProduct}" var="p" id="pbtProductViewer">
+   
+    <apex:column >
+    <apex:facet name="header">
+     <div style="text-align:center;">
+      <select title="Filters" id="selProductCode_Operator" style="width: 104px;">
+       <option value="c">contains</option>
+       <option value="k">does not contain</option>
+       <option value="e">equals</option>
+       <option value="n">not equal to</option> 
+       <option value="s">starts with</option>
+       <option value="d">ends with</option>
+      </select>
+      <br/> 
+      <input type="text" id="txtProductCode" value="{!sProductCode}" style="padding-right:2px;width:100px;" onkeypress="validateFilter(this,event);"/>
+      </div>
+      <!--<div class="cColHeader">{!$ObjectType.Product2.Fields.ProductCode.label}</div>-->
+      <div class="cColHeader">Part Number</div>
+     </apex:facet>
+     <!--<span>{!p.ProductCode}</span>-->
+     <a href="/{!pageType}/ProductDetail?id={!p.Id}">{!p.ProductCode}</a>
+    </apex:column>
+    
+    <apex:column headerClass="cColumnWrap" styleClass="rightAlign" headerValue="List Price ({!$ObjectType.Product2.Fields.Can_Dom__c.label})" rendered="{!isCan_Dom}">
+     <apex:outputText value="{0, number, $0.00}">
+        <apex:param value="{!p.Can_Dom__c}" />
+     </apex:outputText>
+    </apex:column>
+    
+    <apex:column headerClass="cColumnWrap" styleClass="rightAlign" headerValue="List Price ({!$ObjectType.Product2.Fields.Euro__c.label})" rendered="{!isEuro}">
+     <apex:outputText value="{0, number, €0.00}">
+        <apex:param value="{!p.Euro__c}" />
+     </apex:outputText>
+    </apex:column>
+    
+    <apex:column headerClass="cColumnWrap" styleClass="rightAlign" headerValue="List Price ({!$ObjectType.Product2.Fields.Asia_US__c.label})" rendered="{!isAsia_US}">
+     <apex:outputText value="{0, number, $0.00}">
+        <apex:param value="{!p.Asia_US__c}" />
+     </apex:outputText>
+    </apex:column>
+    
+    <apex:column headerClass="cColumnWrap" styleClass="rightAlign" headerValue="List Price ({!$ObjectType.Product2.Fields.UK_Dom__c.label})" rendered="{!isUK_Dom}">
+     <apex:outputText value="{0, number, £0.00}">
+        <apex:param value="{!p.UK_Dom__c}" />
+     </apex:outputText>
+    </apex:column>
+    
+    <apex:column headerClass="cColumnWrap" styleClass="rightAlign" headerValue="List Price ({!$ObjectType.Product2.Fields.US_Domestic__c.label})" rendered="{!isUS_Domestic}">
+     <apex:outputText value="{0, number, $0.00}">
+        <apex:param value="{!p.US_Domestic__c}" />
+     </apex:outputText>
+    </apex:column>
+    
+    <apex:column headerClass="cColumnWrap" styleClass="rightAlign" headerValue="List Price ({!$ObjectType.Product2.Fields.US_Int_l_EA__c.label})"  rendered="{!isUS_Int_l_EA}">
+     <apex:outputText value="{0, number, $0.00}">
+        <apex:param value="{!p.US_Int_l_EA__c}" />
+     </apex:outputText>
+    </apex:column>
+    <!--
+    <apex:column headerClass="cColumnWrap" styleClass="rightAlign" headerValue="List Price ({!$ObjectType.Product2.Fields.MESA_US__c.label})"  rendered="{!isMESA_US}">
+     <apex:outputText value="{0, number, $0.00}">
+        <apex:param value="{!p.MESA_US__c}" />
+     </apex:outputText>
+    </apex:column>-->
+
+    <apex:column headerClass="cColumnWrap" styleClass="rightAlign" headerValue="List Price ({!$ObjectType.Product2.Fields.Australia_Domestic__c.label})"  rendered="{!isAusDom}">
+     <apex:outputText value="{0, number, $0.00}">
+        <apex:param value="{!p.Australia_Domestic__c}" />
+     </apex:outputText>
+    </apex:column>
+    
+    <apex:column headerClass="cColumnWrap" styleClass="rightAlign" headerValue="List Price ({!$ObjectType.Product2.Fields.China_Domestic_US__c.label})"  rendered="{!isChinaDom}">
+     <apex:outputText value="{0, number, $0.00}">
+        <apex:param value="{!p.China_Domestic_US__c}" />
+     </apex:outputText>
+    </apex:column>
+    
+    <apex:column headerClass="cColumnWrap" styleClass="rightAlign" headerValue="List Price ({!$ObjectType.Product2.Fields.CALA_List_Price__c.label})" rendered="{!isCALA}">
+     <apex:outputText value="{0, number, $0.00}">
+        <apex:param value="{!p.CALA_List_Price__c}" />
+     </apex:outputText>
+    </apex:column>
+       
+    <apex:column >
+     <apex:facet name="header">
+      <div style="text-align:center;">
+      <select title="Filters" id="selProductName_Operator"  style="width: 104px;">
+       <option value="c">contains</option>
+       <option value="k">does not contain</option>
+       <option value="e">equals</option>
+       <option value="n">not equal to</option>
+       <option value="s">starts with</option>
+       <option value="d">ends with</option>
+      </select>
+      <br/>
+      <input type="text" id="txtProductName" value="{!sProductName}" style="padding-right:2px;width:100px;" onkeypress="validateFilter(this,event);"/>
+      </div>
+      <div class="cColHeader">{!$ObjectType.Product2.Fields.Name.label}</div>
+     </apex:facet>
+     <!--<span title="{!p.Name}">{!IF(LEN(p.Name)>20,LEFT(p.Name,20) + '...',p.Name)}</span>-->
+     <a href="/{!pageType}/ProductDetail?id={!p.Id}" target="_blank" title="{!p.Name}">{!IF(LEN(p.Name)>20,LEFT(p.Name,20) + '...',p.Name)}</a>
+    </apex:column>
+    
+    <!-- hide pillar 
+    <apex:column >
+    <apex:facet name="header">
+     <div style="text-align:center;">
+      <select title="Filters" id="selBusinessUnitPillar_Operator"  style="width: 104px;">
+       <option value="c">contains</option>
+       <option value="k">does not contain</option>
+       <option value="e">equals</option>
+       <option value="n">not equal to</option>
+       <option value="s">starts with</option>
+       <option value="d">ends with</option>
+      </select>
+      <br/> 
+      <input type="text" id="txtBusinessUnitPillar" value="{!sBusinessUnitPillar}" style="padding-right:2px;width:100px;" onkeypress="validateFilter(this,event);"/>
+      </div>
+      <div class="cColHeader">{!$ObjectType.Product2.Fields.Pillar__c.label}</div>
+     </apex:facet>
+     <span>{!p.Pillar__c}</span>
+    </apex:column>
+    -->
+    
+    <apex:column >
+    <apex:facet name="header">
+     <div style="text-align:center;">
+      <select title="Filters" id="selChannelProductFamily_Operator" style="width: 104px;">
+       <option value="c">contains</option>
+       <option value="k">does not contain</option>
+       <option value="e">equals</option>
+       <option value="n">not equal to</option>
+       <option value="s">starts with</option>
+       <option value="d">ends with</option>
+      </select>
+      <br/> 
+      <input type="text" id="txtChannelProductFamily" value="{!sChannelProductFamily}" style="padding-right:2px;width:100px;" onkeypress="validateFilter(this,event);"/>
+      </div>
+      <!--<div class="cColHeader">{!$ObjectType.Product2.Fields.Product_Line__c.label}</div>-->
+      <div class="cColHeader">Product Line</div>
+     </apex:facet>
+     <span>{!p.Product_Line__c}</span>
+    </apex:column>
+       
+       
+    <apex:column >
+    <apex:facet name="header">
+     <div style="text-align:center;">
+      <select title="Filters" id="selProductFamily_Operator" style="width: 104px;">
+       <option value="c">contains</option>
+       <option value="k">does not contain</option>
+       <option value="e">equals</option>
+       <option value="n">not equal to</option>
+       <option value="s">starts with</option>
+       <option value="d">ends with</option>
+      </select>
+      <br/> 
+      <input type="text" id="txtProductFamily" value="{!sProductFamily}" style="padding-right:2px;width:100px;" onkeypress="validateFilter(this,event);"/>
+      </div>
+      <div class="cColHeader">{!$ObjectType.Product2.Fields.Product_Family__c.label}</div>
+     </apex:facet>
+     <span>{!p.Product_Family__c}</span>
+    </apex:column>
+
+    <!--
+    <apex:column >
+    <apex:facet name="header">
+     <div style="text-align:center;">
+      <select title="Filters" id="selOpportunityProductGroup_Operator" style="width: 104px;">
+       <option value="c">contains</option>
+       <option value="k">does not contain</option>
+       <option value="e">equals</option>
+       <option value="n">not equal to</option>
+       <option value="s">starts with</option>
+       <option value="d">ends with</option>
+      </select>
+      <br/> 
+      <input type="text" id="txtOpportunityProductGroup" value="{!sOpportunityProductGroup}" style="padding-right:2px;width:100px;" onkeypress="validateFilter(this,event);"/>
+      </div>
+      <div class="cColHeader">{!$ObjectType.Product2.Fields.Product_Group__c.label}</div>
+     </apex:facet>
+     <span>{!p.Product_Group__c}</span>
+    </apex:column>
+    -->
+       
+    <apex:column headerValue="{!$ObjectType.Product2.Fields.Description.label}" >
+     <span title="{!p.Description}">{!IF(LEN(p.Description)>20,LEFT(p.Description,20) + '...',p.Description)}</span>
+    </apex:column>
+                        
+   </apex:pageBlockTable>
+   
+   <apex:outputPanel layout="block" rendered="{!prdPaginator.moreThan5000}" style="padding-top: 10px;">
+     <span class="info">
+       More than 5000 Products returned. 
+     </span>
+   </apex:outputPanel>
+   
+   <apex:outputPanel rendered="{!NOT(ISNULL(prdSearchResults)) && prdSearchResults.size>0}">
+    <table style="width: 100%;" id="tblPaginator">
+      <tr>
+        <td align="left" width="33%" valign="top">
+          <div style="padding-top: 10px;">
+            <span id="pageDetails">
+              {!prdPaginator.showingFrom} - {!prdPaginator.showingTo} of {!prdPaginator.totalResults}
+            </span>
+          </div>
+        </td>
+        <td width="35%" valign="top">
+          <div class="pageNavigation">
+            <span class="prevNextLinks">                    
+              <apex:outputPanel styleclass="prevNext" rendered="{!prdPaginator.hasFirstPage}">
+                <a href="javascript:firstPage();">
+                  <img class="firstPage" src="/s.gif" />
+                </a>
+              </apex:outputPanel>
+              
+              <apex:outputPanel styleclass="prevNext"
+              rendered="{!!prdPaginator.hasFirstPage}">
+                <img class="firstPageOff" src="/s.gif" />
+              </apex:outputPanel>
+              <apex:outputPanel styleclass="prevNext"
+              rendered="{!prdPaginator.hasPrevPage}">
+                <a href="javascript:prevPage();">                        
+                  <img class="prevPage" src="/s.gif" />
+                  Previous 
+                </a>
+              </apex:outputPanel>                   
+              <apex:outputPanel styleclass="prevNext"
+              rendered="{!!prdPaginator.hasPrevPage}">
+                <img class="prevPageOff" src="/s.gif" />
+                Previous
+              </apex:outputPanel>
+              <apex:outputPanel styleclass="prevNext"
+              rendered="{!prdPaginator.hasNextPage}">
+                <a href="javascript:nextPage();">
+                  Next 
+                  <img class="nextPage" alt="Next" title="Next" src="/s.gif" />
+                </a>
+              </apex:outputPanel>
+              
+              <apex:outputPanel styleclass="prevNext"
+              rendered="{!!prdPaginator.hasNextPage}">                      
+                Next
+                <img class="nextPageOff" alt="Next" title="Next" src="/s.gif" />
+              </apex:outputPanel>
+              <apex:outputPanel styleclass="prevNext"
+              rendered="{!prdPaginator.hasLastPage}">
+                <a href="javascript:lastPage();">                        
+                  <img class="lastPage" alt="Last Page" title="Last Page" src="/s.gif" />
+                </a>
+              </apex:outputPanel>                    
+              <apex:outputPanel styleclass="prevNext"
+              rendered="{!!prdPaginator.hasLastPage}">
+                <img class="lastPageOff" alt="Last Page" title="Last Page" src="/s.gif" />
+              </apex:outputPanel>
+            </span>
+          </div>
+          <div style="text-align: center; padding-top: 4px;">
+            <apex:actionstatus id="pageNavigationStatus">
+              <apex:facet name="start">
+                <span style="color: red; font-weight: bold;">
+                  Navigating...
+                </span>
+                <img src="/img/loading.gif" alt=" " />
+              </apex:facet>
+            </apex:actionstatus>
+          </div>
+        </td>
+        <td align="right" width="33%" valign="top">
+          <div style="padding-top: 10px;">
+            Page&nbsp;
+            <apex:outputPanel style="display:{!IF(prdPaginator.moreThan5000,'','none')}">
+              <span id="idCurrentPage">{!prdPaginator.currentPage}</span>
+            </apex:outputPanel>
+            <apex:outputPanel rendered="{!!prdPaginator.moreThan5000}">
+              <apex:inputText value="{!prdPaginator.pageNumber}"
+              onkeypress="return handleGoToPage(event,this);"
+              style="width:25px;text-align: center;" />
+            </apex:outputPanel>
+            <apex:outputPanel rendered="{!!prdPaginator.moreThan5000}">
+              &nbsp;of 
+              <span
+              id="idTotalPage">
+                {!prdPaginator.totalPage}
+              </span>
+            </apex:outputPanel>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </apex:outputPanel>
+   
+   <script type="text/javascript">
+    $('#selProductName_Operator').val('{!sProductName_Operator}');
+    $('#selProductFamily_Operator').val('{!sProductFamily_Operator}');
+    $('#selChannelProductFamily_Operator').val('{!sChannelProductFamily_Operator}');
+    $('#selProductCode_Operator').val('{!sProductCode_Operator}');
+    $('#selOpportunityProductGroup_Operator').val('{!sOpportunityProductGroup_Operator}');
+    $('#selBusinessUnitPillar_Operator').val('{!sBusinessUnitPillar_Operator}');
+   </script>
+  </apex:pageBlock> 
+ </apex:form>
+</apex:page>

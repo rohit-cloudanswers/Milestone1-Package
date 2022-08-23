@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Landmark OSI Sales</name>
+    <queueMembers>
+        <users>
+            <user>beth.gephart@imaginecommunications.com</user>
+            <user>harshita.patel@imaginecommunications.com</user>
+            <user>julie.provencher@imaginecommunications.com</user>
+            <user>leah.rocci@imaginecommunications.com</user>
+            <user>melissa.dougherty@imaginecommunications.com</user>
+            <user>robert.calce@imaginecommunications.com</user>
+            <user>shana.morgan@imaginecommunications.com</user>
+            <user>shuli.selesnick@imaginecommunications.com</user>
+            <user>suzanne.travis@imaginecommunications.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

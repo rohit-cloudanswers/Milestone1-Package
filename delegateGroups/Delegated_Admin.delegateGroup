@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DelegateGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customObjects>Conga_Composer_Settings</customObjects>
+    <customObjects>Conga_Email_Template</customObjects>
+    <customObjects>Conga_Merge_Query</customObjects>
+    <customObjects>Conga_Template</customObjects>
+    <groups>Finance Group</groups>
+    <groups>Global Bids&amp;Proposal Group</groups>
+    <groups>NORTH AMERICA - Professional Groups</groups>
+    <groups>CALA - Professional Groups</groups>
+    <groups>EMEA - Professional Groups</groups>
+    <groups>Regional Leads</groups>
+    <groups>ASIA - Professional Groups</groups>
+    <groups>North America Sales Group</groups>
+    <groups>EMEA UKISA Sales Group</groups>
+    <groups>CALA Sales Group</groups>
+    <groups>APAC Sales Group</groups>
+    <groups>EMEA Sales Group</groups>
+    <groups>All Regions Sales Ops</groups>
+    <label>Delegated Admin Sales</label>
+    <loginAccess>true</loginAccess>
+    <profiles>Imagine - Adtech Sales User</profiles>
+    <profiles>Imagine - Adtech Sales Ops User DLX</profiles>
+    <profiles>Imagine - Channel Manager</profiles>
+    <profiles>Imagine - Channel User</profiles>
+    <profiles>Z - No Longer Used - Imagine - Sales Manager</profiles>
+    <profiles>Imagine - P&amp;N Sales User</profiles>
+    <profiles>Imagine - P&amp;N Sales Ops User</profiles>
+    <profiles>Imagine - P&amp;N Sales Ops User DLX</profiles>
+    <profiles>Imagine - Order Management User</profiles>
+    <roles>Operations</roles>
+    <roles>Sales</roles>
+    <roles>NA Sales Operations VP</roles>
+    <roles>Sales Proposal Manager</roles>
+    <roles>Order Management</roles>
+</DelegateGroup>

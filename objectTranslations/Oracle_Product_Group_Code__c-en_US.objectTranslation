@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Oracle Product Group Code</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Oracle Product Group Codes</value>
+    </caseValues>
+    <fields>
+        <label><!-- Product Group Description --></label>
+        <name>Product_Group_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Type --></label>
+        <name>Product_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Salesforce Product Type --></label>
+        <name>Salesforce_Product_Type__c</name>
+    </fields>
+    <layouts>
+        <layout>Oracle Product Group Code Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <assignments>
+        <name>Assign_Choices_Calculated_Variables</name>
+        <label>Assign Choices Calculated Variables</label>
+        <locationX>352</locationX>
+        <locationY>158</locationY>
+        <assignmentItems>
+            <assignToReference>CalculatedIOIWeight</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>FormulaCalculateIOIWeight</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Has_the_Value_Changed</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Has_the_Value_Changed</name>
+        <label>Has the Value Changed?</label>
+        <locationX>495</locationX>
+        <locationY>156</locationY>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CaseRecord.IOI_for_Flow__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>CalculatedIOIWeight</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>UpdateCase_with_Weights</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_There_a_Case_ID</name>
+        <label>Is There a Case ID?</label>
+        <locationX>193</locationX>
+        <locationY>44</locationY>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>CaseID_Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CaseRecord</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Capture_User_Input_Values</targetReference>
+            </connector>
+            <label>CaseID Yes</label>
+        </rules>
+        <rules>
+            <name>CaseID_No</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CaseRecord</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>No_Case_ID</targetReference>
+            </connector>
+            <label>CaseID No</label>
+        </rules>
+    </decisions>
+    <dynamicChoiceSets>
+        <name>DaysOfFreeOnsiteSupport_Choice</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Days_of_free_onsite_support__c</picklistField>
+        <picklistObject>Case</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>ImpactOfIssue_Choice</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Impact_of_Issue__c</picklistField>
+        <picklistObject>Case</picklistObject>
+    </dynamicChoiceSets>
+    <formulas>
+        <name>DetermineCurrentUser</name>
+        <dataType>String</dataType>
+        <expression>{!$User.Full_Name__c}</expression>
+    </formulas>
+    <formulas>
+        <name>FormulaCalculateIOIWeight</name>
+        <dataType>Number</dataType>
+        <expression>IF ({!Impact_of_Issue_Capture} = &quot;None, report only&quot;,0,
+  IF ({!Impact_of_Issue_Capture} = &quot;Workaround exists, no impact to operation&quot;, 1,
+    IF ({!Impact_of_Issue_Capture} = &quot;Workaround exists, requires increased manpower&quot;, 2,
+      IF ({!Impact_of_Issue_Capture} = &quot;Workaround exists, requires 3rd party device or loaner&quot;, 3, 
+        IF ({!Impact_of_Issue_Capture} = &quot;No workaround exists&quot;, 5,
+          IF ({!Impact_of_Issue_Capture} = &quot;Customer will not place system online&quot;, 7,
+            IF ({!Impact_of_Issue_Capture} = &quot;On air system media lost/deleted/corrupted&quot;, 10, 0
+
+)))))))</expression>
+        <scale>0</scale>
+    </formulas>
+    <interviewLabel>Issue Weights Input Fields {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Issue Weights Input Fields</label>
+    <processType>Flow</processType>
+    <recordLookups>
+        <name>Lookup_Case</name>
+        <label>Lookup Case</label>
+        <locationX>39</locationX>
+        <locationY>43</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Is_There_a_Case_ID</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>CaseId</elementReference>
+            </value>
+        </filters>
+        <object>Case</object>
+        <outputReference>CaseRecord</outputReference>
+        <queriedFields>AccountId</queriedFields>
+        <queriedFields>Impact_of_Issue__c</queriedFields>
+        <queriedFields>IOI_for_Flow__c</queriedFields>
+        <queriedFields>Bug_Server__c</queriedFields>
+        <queriedFields>Open_Bug_Records__c</queriedFields>
+        <queriedFields>Product_Line__c</queriedFields>
+        <queriedFields>Weighting_Last_Updated_By__c</queriedFields>
+        <queriedFields>Weighting_Last_Updated__c</queriedFields>
+    </recordLookups>
+    <recordUpdates>
+        <name>UpdateCase_with_Weights</name>
+        <label>UpdateCase with Weights</label>
+        <locationX>568</locationX>
+        <locationY>38</locationY>
+        <connector>
+            <targetReference>Jira_Reminder</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>CaseId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>IOI_for_Flow__c</field>
+            <value>
+                <elementReference>CalculatedIOIWeight</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Weighting_Last_Updated_By__c</field>
+            <value>
+                <elementReference>DetermineCurrentUser</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Weighting_Last_Updated_Process__c</field>
+            <value>
+                <stringValue>Impact of Issue</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Weighting_Last_Updated__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Case</object>
+    </recordUpdates>
+    <screens>
+        <name>Capture_User_Input_Values</name>
+        <label>Capture User Input Values</label>
+        <locationX>350</locationX>
+        <locationY>43</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Assign_Choices_Calculated_Variables</targetReference>
+        </connector>
+        <fields>
+            <name>Impact_of_Issue_Capture</name>
+            <choiceReferences>ImpactOfIssue_Choice</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Impact of Issue</fieldText>
+            <fieldType>RadioButtons</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Jira_Reminder</name>
+        <label>Jira Reminder</label>
+        <locationX>716</locationX>
+        <locationY>42</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>JiraReminder</name>
+            <fieldText>It looks like you&apos;ve changed the IOI value!  Don&apos;t forget to go to the linked Jira bug in the case and click CREATE/UPDATE Jira so our Product teams can know about this change too!</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>No_Case_ID</name>
+        <label>No Case ID</label>
+        <locationX>98</locationX>
+        <locationY>165</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>NoCaseID_Field</name>
+            <fieldText>No Case ID
+
+{!$Flow.FaultMessage}</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <startElementReference>Lookup_Case</startElementReference>
+    <status>Obsolete</status>
+    <variables>
+        <name>CalculatedIOIWeight</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <name>CaseId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>CaseRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Case</objectType>
+    </variables>
+    <variables>
+        <name>ImpactOfIssue_PicklistChoice</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

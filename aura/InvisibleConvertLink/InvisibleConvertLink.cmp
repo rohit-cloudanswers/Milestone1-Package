@@ -1,0 +1,3 @@
+<aura:component implements="flexipage:availableForRecordHome"  >
+	<aura:handler event="aura:doneWaiting" action="{!c.hideConvertLink}"/>
+</aura:component>

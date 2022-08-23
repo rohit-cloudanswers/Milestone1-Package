@@ -1,0 +1,6 @@
+<apex:page standardController="Asset" showHeader="false" docType="html-4.01-strict">
+<CRMC_PP:Grid ObjectName="Asset" FKName="RootAssetId" FKValue="{!Asset.Id}"  DelayLoad="false"  ViewID="a2T3r0000022iTvEAI" 
+ EnableNewButton="true"  EnableNewInline="true"  EnableEdit="true"  EnableActions="true"  EnableFieldChooser="true" 
+ EnableStickyViews="true"  EnableToolbar="true"  EnableViews="true"  EnableFormatting="true"  EnableReadingPane="true" />
+<CRMC_PP:DrillUp />
+</apex:page>

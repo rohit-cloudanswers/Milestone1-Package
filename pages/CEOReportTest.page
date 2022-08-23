@@ -1,0 +1,296 @@
+<!-- FAST -->
+<apex:page controller="CEOReport" showHeader="true" sidebar="false" action="{!onLoad}">
+    <pbe:PageBlockTableEnhancerADV targetPbTableIds="theTable" paginate="false" defaultPageSize="100000" pageSizeOptions="100000" />
+    <style>
+        span .dateFormat {
+            display: none;
+        }
+    </style>
+        <apex:pageBlock id="thePageBlock" html-ng-controller="MyController">
+            <div id="contentLoading">
+                <span ng-if="loading">Content loading...</span>
+            </div>
+            <apex:pageBlockSection columns="1">
+                <nobr>Customer Name: <input type="text" ng-model="searchString"/></nobr>
+                <nobr>Rep: <select ng-model="ownerId"><option ng-repeat="option in ownerIdOptions" ng-value="option.value">{{option.label}}</option></select></nobr>
+                <nobr>Region: <select ng-model="regionFilter"><option ng-repeat="option in regionFilterOptions" ng-value="option.value">{{option.label}}</option></select></nobr>
+                <nobr>Role: <select ng-model="roleId"><option ng-repeat="option in roleIdOptions" ng-value="option.value">{{option.label}}</option></select></nobr>
+                <button ng-click="load()">Run</button>
+                <button type="button" ng-csv="getCSV" filename="CEOReport.csv" lazy-load="true" quote-strings="true">Export</button>
+            </apex:pageBlockSection>
+            <table cellspacing="0" cellpadding="0" border="0" class="list" id="theTableX">
+                <thead class="rich-table-thead">
+                    <tr class="headerRow">
+                        <th ng-click="sortType='name';sortReverse=!sortReverse;">Customer</th>
+                        <th ng-click="sortType='region';sortReverse=!sortReverse;">Region</th>
+                        <th ng-click="sortType='subRegion';sortReverse=!sortReverse;">Sub-Region</th>
+                        <th ng-click="sortType='rsm';sortReverse=!sortReverse;">RSM</th>
+                        <th ng-click="sortType='leadManager';sortReverse=!sortReverse;">Lead Manager</th>
+                        <th ng-click="sortType='oppsOpenCount';sortReverse=!sortReverse;">Account Status</th>
+                        <th ng-click="sortType='accountLastActivityDate';sortReverse=!sortReverse;">Last Contact</th>
+                        <th ng-click="sortType='accountLastActivitySubject';sortReverse=!sortReverse;">Last Contact Notes</th>
+                        <th></th>
+
+                        <th ng-repeat-start="year in years" ng-if="yearsToggle[year]">AMS</th>
+                        <th ng-if="yearsToggle[year]">PLAYOUT</th>
+                        <th ng-if="yearsToggle[year]">NETWKG</th>
+                        <th ng-if="yearsToggle[year]">DIST</th>
+                        <th ng-if="yearsToggle[year]">PND</th>
+                        <th ng-repeat-end="ng-repeat-end" ng-click="sortType='customerPerformances['+year+'].Total__c';sortReverse=!sortReverse;">
+                            {{year + 2014}}
+                            <input type="checkbox" ng-model="yearsToggle[year]"/>
+                        </th>
+                        <th ng-click="sortType='customerPerformancesTotal';sortReverse=!sortReverse;">Total</th>
+                        <th ng-click="sortType='oppsOpenCount';sortReverse=!sortReverse;">Open Opps</th>
+                        <th ng-click="sortType='oppsOpenAmount';sortReverse=!sortReverse;">Open Opps $</th>
+                    </tr>
+                </thead>
+                <tbody id="theTableBody" ng-if="rows.length">
+                    <tr onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" onmouseout="if (window.hiOff){hiOff(this);} " onmouseover="if (window.hiOn){hiOn(this);} " class="dataRow even  first" ng-repeat="r in rows|orderBy:sortType:sortReverse|limitTo:limitTo">
+                        <td class="dataCell">
+                            <a target="_blank" href="/{{::r.accountId}}">
+                                {{::r.accountName}}
+                            </a>
+                        </td>
+                        <td class="dataCell">{{::r.region}}</td>
+                        <td class="dataCell">{{::r.subRegion}}</td>
+                        <td class="dataCell">{{::r.rsm}}</td>
+                        <td class="dataCell">{{::r.leadManager}}</td>
+                        <td class="dataCell">
+                            <a href="/{!$Label.CEOReport_Opp_Jump_Report}?pv1={{::r.accountName}}" target="_blank">
+                                {{ ::r.oppsOpenCount > 0 ? 'Active' : 'Inactive'}}
+                            </a>
+                        </td>
+                        <td class="dataCell" data-order="{{::r.accountLastActivityDate}}">
+                            <span ng-if="r.accountLastActivityDate < 1000">
+                                {{::r.accountLastActivityDate}} days ago
+                            </span>
+                        </td>
+                        <td class="dataCell">
+                            {{::r.accountLastActivitySubject}}
+                        </td>
+                        <td class="dataCell">
+                        </td>
+                        <td ng-repeat-start="year in years" ng-if="yearsToggle[year]">
+                            {{::r.customerPerformances[year].AMS_Revenue__c }}
+                        </td>
+                        <td class="dataCell" ng-if="yearsToggle[year]">
+                            {{::r.customerPerformances[year].PLAYOUT_Revenue__c }}
+                        </td>
+                        <td class="dataCell" ng-if="yearsToggle[year]">
+                            {{::r.customerPerformances[year].NETWORKING_Revenue__c }}
+                        </td>
+                        <td class="dataCell" ng-if="yearsToggle[year]">
+                            {{::r.customerPerformances[year].DISTRIBUTION_Revenue__c }}
+                        </td>
+                        <td class="dataCell" ng-if="yearsToggle[year]">
+                            {{::r.customerPerformances[year].PND_Revenue__c }}
+                        </td>
+                        <td ng-repeat-end="ng-repeat-end">{{::r.customerPerformances[year].Total__c }}</td>
+                        <td class="dataCell" data-order="{{r.customerPerformancesTotal}}">
+                            {{ ::r.customerPerformancesTotal }}
+                        </td>
+                        <td class="dataCell">
+                            <a href="/{!$Label.CEOReport_Opp_Jump_Report}?pv1={{::r.accountName}}" target="_blank">
+                                {{::r.oppsOpenCount }}
+                            </a>
+                        </td>
+                        <td class="dataCell">
+                            {{::r.oppsOpenAmount | number:0 }}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <span ng-if="limitTo < rows.length">
+                Showing {{limitTo|number:0}} of {{rows.length|number:0}} records
+                <a ng-click="showMore()">show 1,000 more</a> | 
+                <a ng-click="showAll()">show all</a>
+            </span>
+        </apex:pageBlock>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.6.2/angular-sanitize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ng-csv/0.3.6/ng-csv.min.js"></script>
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-messages.min.js"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.3/angular-material.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.3/angular-material.min.js"></script>
+    
+    <script>
+        Visualforce.remoting.timeout = 2 * 60 * 1000;
+        var app = angular.module('MyApp', ['ngSanitize', 'ngCsv', 'ngMaterial'])
+        .controller('MyController', function($scope, $q, $mdDialog) {
+            $scope.loading = false;
+            $scope.rows = [];
+            $scope.years = [0, 1, 2];
+            $scope.yearsToggle = [false, false, false];
+
+            $scope.searchString = '';
+            
+            $scope.ownerId = '{!$User.Id}';
+            $scope.ownerIdOptions = [{value: '{!$User.Id}', label: '{!$User.FirstName} {!$User.LastName}'}];
+            <apex:repeat value="{!ownerOptions}" var="o">
+                $scope.ownerIdOptions.push({value: '{!o.value}', label: '{!JSENCODE(o.label)}'});
+            </apex:repeat>
+
+            $scope.regionFilter = '';
+            $scope.regionFilterOptions = [];
+            <apex:repeat value="{!regionOptions}" var="o">
+                $scope.regionFilterOptions.push({value: '{!o.value}', label: '{!JSENCODE(o.label)}'});
+            </apex:repeat>
+
+            $scope.roleId = '';
+            $scope.roleIdOptions = [];
+            <apex:repeat value="{!roleOptions}" var="o">
+                $scope.roleIdOptions.push({value: '{!o.value}', label: '{!JSENCODE(o.label)}'});
+            </apex:repeat>
+
+            $scope.sortType = '';
+            $scope.sortReverse = false;
+            $scope.limitTo = 1000;
+            $scope.load = load;
+
+            $scope.showMore = function () {
+                $scope.limitTo += 1000;
+            }
+
+            $scope.showAll = function () {
+                $scope.limitTo = $scope.rows.length;
+            }
+
+            $scope.getCSV = function getCSV () {
+                var res = [[
+                    'Customer Name', 'Region', 'Sub-Region', 'RSM', 'Lead Manager', 'Account Status', 'Days Since Activity', 'Last Activity Subject',
+                    'AMS', 'PLAYOUT', 'NETWORKING', 'DISTRIBUTION', 'PND', '2014',
+                    'AMS', 'PLAYOUT', 'NETWORKING', 'DISTRIBUTION', 'PND', '2015',
+                    'AMS', 'PLAYOUT', 'NETWORKING', 'DISTRIBUTION', 'PND', '2016',
+                    'Total', 'Open Opps', 'Open Opps $'
+                ]];
+                for (var i=0; i<$scope.rows.length; i++) {
+                    res.push([
+                        $scope.rows[i].accountName, 
+                        $scope.rows[i].region,
+                        $scope.rows[i].subRegion,
+                        $scope.rows[i].rsm,
+                        $scope.rows[i].leadManager,
+                        $scope.rows[i].oppsOpenCount > 0 ? 'Active' : 'Inactive',
+                        $scope.rows[i].accountLastActivityDate > 1000 ? '' : $scope.rows[i].accountLastActivityDate,
+                        $scope.rows[i].accountLastActivitySubject,
+
+                        $scope.rows[i].customerPerformances[0].AMS_Revenue__c,
+                        $scope.rows[i].customerPerformances[0].PLAYOUT_Revenue__c,
+                        $scope.rows[i].customerPerformances[0].NETWORKING_Revenue__c,
+                        $scope.rows[i].customerPerformances[0].DISTRIBUTION_Revenue__c,
+                        $scope.rows[i].customerPerformances[0].PND_Revenue__c,
+                        $scope.rows[i].customerPerformances[0].Total__c,
+                        
+                        $scope.rows[i].customerPerformances[1].AMS_Revenue__c,
+                        $scope.rows[i].customerPerformances[1].PLAYOUT_Revenue__c,
+                        $scope.rows[i].customerPerformances[1].NETWORKING_Revenue__c,
+                        $scope.rows[i].customerPerformances[1].DISTRIBUTION_Revenue__c,
+                        $scope.rows[i].customerPerformances[1].PND_Revenue__c,
+                        $scope.rows[i].customerPerformances[1].Total__c,
+                        
+                        $scope.rows[i].customerPerformances[2].AMS_Revenue__c,
+                        $scope.rows[i].customerPerformances[2].PLAYOUT_Revenue__c,
+                        $scope.rows[i].customerPerformances[2].NETWORKING_Revenue__c,
+                        $scope.rows[i].customerPerformances[2].DISTRIBUTION_Revenue__c,
+                        $scope.rows[i].customerPerformances[2].PND_Revenue__c,
+                        $scope.rows[i].customerPerformances[2].Total__c,
+                        
+                        $scope.rows[i].customerPerformancesTotal,
+                        $scope.rows[i].oppsOpenCount,
+                        $scope.rows[i].oppsOpenAmount
+                    ]);
+                }
+                return res;
+            }
+            
+            load();
+
+            function load () {
+                $scope.rows = [];
+                $scope.loading = true;
+                NProgress.configure({ parent: '#contentLoading' });
+                NProgress.start();
+                var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
+                var date1 = (new Date()).getTime();
+                getRowsRemote()
+                .then(function(res){
+                    NProgress.inc(0.6);
+                    $scope.rows = res;
+
+                    // convert last activity date to days ago
+                    for (var i=0; i<res.length; i++) {
+                        if (!res[i].accountLastActivityDate) res[i].accountLastActivityDate = 0;
+                        res[i].accountLastActivityDate = Math.round(Math.abs((date1 - res[i].accountLastActivityDate)/(oneDay)));;
+                    }
+                    
+                    NProgress.inc();
+                    
+                    $scope.loading = false;
+                    
+                    NProgress.done();
+
+                })
+                .catch(function(e){
+                    if (e.xhr && e.xhr.isTimeout) {
+                        $mdDialog.show(
+                          $mdDialog.alert()
+                            .parent(angular.element(document.querySelector('body')))
+                            .clickOutsideToClose(true)
+                            .title('Salesforce is not responding in a timely fashion')
+                            .textContent('Please retry in a few minutes')
+                            .ariaLabel('Salesforce is not responding, please retry in a few minutes')
+                            .ok('OK')
+                            // .targetEvent(ev)
+                        );
+                    } else {
+                        $mdDialog.show(
+                          $mdDialog.alert()
+                            .parent(angular.element(document.querySelector('body')))
+                            .clickOutsideToClose(true)
+                            .title(e.message ? e.message : 'An unknown salesforce error has occurred')
+                            .textContent('If retrying does not resolve the issue, please send the following text to the admin: ' + JSON.stringify(e))
+                            .ariaLabel('Salesforce error')
+                            .ok('OK')
+                            // .targetEvent(ev)
+                        );
+                        NProgress.done();
+                        $scope.loading = false;
+                    }
+                });
+            }
+    
+            function getRowsRemote () {
+                var defer = $q.defer();
+                try {
+                    Visualforce.remoting.Manager.invokeAction(
+                        '{!$RemoteAction.CEOReport.getRowsRemote}',
+                        $scope.searchString, $scope.ownerId, $scope.regionFilter, $scope.roleId,
+                        function getRowsRemoteCallback (res, event) {
+                            console.log(['debug', res, event]);
+                            if (!event.status) {
+                                defer.reject(event);
+                            } else {
+                                defer.resolve(res);
+                            }
+                        }
+                    );
+                } catch (e) {
+                    defer.reject(e);
+                }
+                return defer.promise;
+            }
+            
+        });
+        angular.bootstrap(document, ['MyApp']);
+    </script>
+
+</apex:page>

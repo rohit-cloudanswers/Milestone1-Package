@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>adds 1 to # of Contacts on Opportunity</description>
+    <formulas>
+        <name>returnNewContactCount</name>
+        <dataType>Number</dataType>
+        <expression>IF ( ISBLANK({!$Record.Opportunity.of_Contacts__c}), 1, {!$Record.Opportunity.of_Contacts__c}+1)</expression>
+        <scale>0</scale>
+    </formulas>
+    <interviewLabel>Opportunity Contact Role - Add to Oppty Count {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity Contact Role - Add to Oppty Count</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Opportunity_with_Contact_Count</name>
+        <label>Update Opportunity with Contact Count</label>
+        <locationX>176</locationX>
+        <locationY>335</locationY>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.OpportunityId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>of_Contacts__c</field>
+            <value>
+                <elementReference>returnNewContactCount</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordUpdates>
+    <startElementReference>Update_Opportunity_with_Contact_Count</startElementReference>
+    <status>Active</status>
+</Flow>

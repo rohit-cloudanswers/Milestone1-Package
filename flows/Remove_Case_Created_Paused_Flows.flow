@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>There is a replacement job to handle this</description>
+    <interviewLabel>Remove Case Created Paused Flows {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Remove Case Created Paused Flows</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordDeletes>
+        <name>Remove_paused_and_waiting_flows</name>
+        <label>Remove paused and waiting flows</label>
+        <locationX>171</locationX>
+        <locationY>50</locationY>
+        <filters>
+            <field>InterviewLabel</field>
+            <operator>Contains</operator>
+            <value>
+                <stringValue>Case_Automation_Created</stringValue>
+            </value>
+        </filters>
+        <object>FlowInterview</object>
+    </recordDeletes>
+    <startElementReference>Remove_paused_and_waiting_flows</startElementReference>
+    <status>Draft</status>
+</Flow>

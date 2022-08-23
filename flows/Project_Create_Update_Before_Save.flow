@@ -1,0 +1,742 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <name>Assign_Actual_Finish_Date</name>
+        <label>Assign Actual Finish Date</label>
+        <locationX>777</locationX>
+        <locationY>487</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.MPM4_BASE__Actual_Finish_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>PMCompletionDateFormula</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Total_PS_Hours_Budget_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Final_Fields</name>
+        <label>Assign Final Fields</label>
+        <locationX>1246</locationX>
+        <locationY>1621</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.forFlow_Expense_Budget__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>varExpenseToUse</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.forFlow_Hours_Budget__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>varBudgetToSet</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Assign_Finish_Date_and_Last_Changed</name>
+        <label>Assign Finish Date and Last Changed</label>
+        <locationX>352</locationX>
+        <locationY>531</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.MPM4_BASE__Actual_Finish_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>PMCompletionDateFormula</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.PM_Completion_Date_Last_Change__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Assign_Start</name>
+        <label>Assign Start</label>
+        <locationX>758</locationX>
+        <locationY>338</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.MPM4_BASE__Actual_Start_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.CreatedDate</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Actual_Finish_Date_NULL_or_Completion_Date_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Total_Hours_Budget</name>
+        <label>Assign Total Hours Budget</label>
+        <locationX>763</locationX>
+        <locationY>627</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.MPM4_BASE__Total_Hours_Budget__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Total_PS_Hours_Budget__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Revised_Total_Expense_Budget_Updated</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Default_Actual_Start_Date</name>
+        <label>Default Actual Start Date</label>
+        <locationX>104</locationX>
+        <locationY>480</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.MPM4_BASE__Actual_Start_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Start_Blank</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Default_to_USD</name>
+        <label>Default to USD</label>
+        <locationX>107</locationX>
+        <locationY>349</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.CurrencyIsoCode</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>USD</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Default_Actual_Start_Date</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Exclude_from_Margin_Reports_to_TRUE</name>
+        <label>Exclude from Margin Reports to TRUE</label>
+        <locationX>774</locationX>
+        <locationY>1091</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Exclude_from_Margin_Reports__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Labor_Rate_Changed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Revised_Budget</name>
+        <label>Set Revised Budget</label>
+        <locationX>1116</locationX>
+        <locationY>1554</locationY>
+        <assignmentItems>
+            <assignToReference>varBudgetToSet</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Revised_Total_Hours_Budget__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_Final_Fields</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Revised_Expense</name>
+        <label>Set Revised Expense</label>
+        <locationX>824</locationX>
+        <locationY>1551</locationY>
+        <assignmentItems>
+            <assignToReference>varExpenseToUse</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Revised_Total_Expense_Budget__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_Revised_Hours_Budget_Field</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Total_Budget</name>
+        <label>Set Total Budget</label>
+        <locationX>1122</locationX>
+        <locationY>1686</locationY>
+        <assignmentItems>
+            <assignToReference>varBudgetToSet</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.MPM4_BASE__Total_Hours_Budget__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_Final_Fields</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Total_Expense</name>
+        <label>Set Total Expense</label>
+        <locationX>822</locationX>
+        <locationY>1666</locationY>
+        <assignmentItems>
+            <assignToReference>varExpenseToUse</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.MPM4_BASE__Total_Expense_Budget__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_Revised_Hours_Budget_Field</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Update_Extra_Required_Expense_Date</name>
+        <label>Update Extra Required Expense Date</label>
+        <locationX>768</locationX>
+        <locationY>789</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Extra_Required_Expense_Modified_On__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Revised_Total_Hours_Budget_Updated</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Update_Extra_Required_Hours_Modified_On</name>
+        <label>Update Extra Required Hours - Modified On</label>
+        <locationX>768</locationX>
+        <locationY>939</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Extra_Required_Hours_Modified_On__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>TOtal_DEV_PLM_Hours_Budget_Updated</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>update_Labor_Rate_Static</name>
+        <label>update Labor Rate Static</label>
+        <locationX>767</locationX>
+        <locationY>1256</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Labor_Rate_Static__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Labor_Rate__r.Rate__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_Revised_Expenses_Field</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>This can be improve and the custom field depreciated by doing the calculation in flow.</description>
+        <name>Update_MAX_PM_Project_Date</name>
+        <label>Update MAX PM Project Date</label>
+        <locationX>1177</locationX>
+        <locationY>552</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.MAX_PM_Project_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>returnMAXRevReqDate</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Actual_Finish_Date_NULL_or_Completion_Date_Changed</name>
+        <label>Actual Finish Date NULL or Completion Date Changed</label>
+        <locationX>490</locationX>
+        <locationY>477</locationY>
+        <defaultConnector>
+            <targetReference>Total_PS_Hours_Budget_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Revised_Completion_Changed</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.PM_Revised_Rev_Rec_Date__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.PM_Revised_Rev_Rec_Date__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.PM_Orig_Rev_Rec_Date__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.PM_Orig_Rev_Rec_Date__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Finish_Date_and_Last_Changed</targetReference>
+            </connector>
+            <label>Revised Completion Changed</label>
+        </rules>
+        <rules>
+            <name>Yes_field_is_null</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.MPM4_BASE__Actual_Finish_Date__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.PM_Revised_Rev_Rec_Date__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.PM_Orig_Rev_Rec_Date__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Actual_Finish_Date</targetReference>
+            </connector>
+            <label>Yes field is null</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>this depreciates process builder project automation + Project - Manage Revised Fields flow</description>
+        <name>Check_Revised_Expenses_Field</name>
+        <label>Check Revised Expenses Field</label>
+        <locationX>502</locationX>
+        <locationY>1583</locationY>
+        <defaultConnector>
+            <targetReference>Set_Revised_Expense</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_Expenses_Null</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Revised_Total_Expense_Budget__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Total_Expense</targetReference>
+            </connector>
+            <label>Is Expenses Null?</label>
+        </rules>
+        <rules>
+            <name>Is_Expenses_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Revised_Total_Expense_Budget__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Revised_Expense</targetReference>
+            </connector>
+            <label>Is Expenses 0?</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Revised_Hours_Budget_Field</name>
+        <label>Check Revised Hours Budget Field</label>
+        <locationX>964</locationX>
+        <locationY>1616</locationY>
+        <defaultConnector>
+            <targetReference>Set_Revised_Budget</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_it_Blank</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Revised_Total_Hours_Budget__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Total_Budget</targetReference>
+            </connector>
+            <label>Is it Blank?</label>
+        </rules>
+        <rules>
+            <name>Is_it_Zero</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Revised_Total_Hours_Budget__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Revised_Budget</targetReference>
+            </connector>
+            <label>Is it Zero?</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>they want revised completion date pushed to actual end date but end date still editable.  should only be pushed when end is blank but there is nothing to push if revised isn&apos;t populated yet.  OH MAN they make me crazy</description>
+        <name>End_Blank_Revised_Completion_Date_Populated</name>
+        <label>End Blank &amp; Revised Completion Date Populated</label>
+        <locationX>1164</locationX>
+        <locationY>699</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_lets_stamp_the_field</name>
+            <conditionLogic>(1 AND 2) OR (1 AND 3) OR (1 AND 4)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.MPM4_BASE__Actual_Finish_Date__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.PM_Revised_Rev_Rec_Date__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.PM_Revised_Rev_Rec_Date__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.PM_Revised_Rev_Rec_Date__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.PM_Orig_Rev_Rec_Date__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.PM_Orig_Rev_Rec_Date__c</elementReference>
+                </rightValue>
+            </conditions>
+            <label>Yes lets stamp the field</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Has_the_Rev_Rec_Dates_Changed</name>
+        <label>Has the Rev Rec Dates Changed?</label>
+        <locationX>1008</locationX>
+        <locationY>578</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Rev_Rec_Date_Changed</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.PM_Orig_Rev_Rec_Date__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.PM_Revised_Rev_Rec_Date__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Rev Rec Date Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Labor_Rate_Changed</name>
+        <label>Labor Rate Changed?</label>
+        <locationX>492</locationX>
+        <locationY>1246</locationY>
+        <defaultConnector>
+            <targetReference>Check_Revised_Expenses_Field</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Labor_Rate_Change</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Labor_Rate__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Labor_Rate__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>update_Labor_Rate_Static</targetReference>
+            </connector>
+            <label>Yes Labor Rate Change</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>New_Project_Creation</name>
+        <label>New Project Creation?</label>
+        <locationX>332</locationX>
+        <locationY>340</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_New_Project</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Default_to_USD</targetReference>
+            </connector>
+            <label>Yes New Project</label>
+        </rules>
+        <rules>
+            <name>No_Edited_Project</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Start_Blank</targetReference>
+            </connector>
+            <label>No Edited Project</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Revised_Total_Expense_Budget_Updated</name>
+        <label>Revised Total Expense Budget Updated?</label>
+        <locationX>486</locationX>
+        <locationY>776</locationY>
+        <defaultConnector>
+            <targetReference>Revised_Total_Hours_Budget_Updated</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Revised_Total_Expense_Budget_Updated</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Revised_Total_Expense_Budget__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Revised_Total_Expense_Budget__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Project_Stage__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Complete</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Extra_Required_Expense_Date</targetReference>
+            </connector>
+            <label>Yes Revised Total Expense Budget Updated</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Revised_Total_Hours_Budget_Updated</name>
+        <label>Revised Total Hours Budget Updated?</label>
+        <locationX>488</locationX>
+        <locationY>933</locationY>
+        <defaultConnector>
+            <targetReference>TOtal_DEV_PLM_Hours_Budget_Updated</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Revised_Total_Hours_Budget_Updated</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Revised_Total_Hours_Budget__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Revised_Total_Hours_Budget__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Extra_Required_Hours_Modified_On</targetReference>
+            </connector>
+            <label>Yes Revised Total Hours Budget Updated</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Start_Blank</name>
+        <label>Start Blank?</label>
+        <locationX>493</locationX>
+        <locationY>339</locationY>
+        <defaultConnector>
+            <targetReference>Actual_Finish_Date_NULL_or_Completion_Date_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>actual_start_date</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.MPM4_BASE__Actual_Start_Date__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Start</targetReference>
+            </connector>
+            <label>actual start date</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>I have no idea why anymore but we want to add the exclude from margin reports flag.  I question why it is changed to &gt;= 0 but this is a straight copy from Process Builder at this point.  Old formula:
+
+AND ( ISCHANGED([MPM4_BASE__Milestone1_Project__c].Bugeted_DEV_PLM_Hours__c ), 
+OR ( ISBLANK([MPM4_BASE__Milestone1_Project__c].Bugeted_DEV_PLM_Hours__c), 
+[MPM4_BASE__Milestone1_Project__c].Bugeted_DEV_PLM_Hours__c &gt;= 0 ) )</description>
+        <name>TOtal_DEV_PLM_Hours_Budget_Updated</name>
+        <label>TOtal DEV/PLM Hours Budget Updated</label>
+        <locationX>492</locationX>
+        <locationY>1083</locationY>
+        <defaultConnector>
+            <targetReference>Labor_Rate_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Total_DEV_PLM_Hours_Budget_Updated</name>
+            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Bugeted_DEV_PLM_Hours__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Bugeted_DEV_PLM_Hours__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Bugeted_DEV_PLM_Hours__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Bugeted_DEV_PLM_Hours__c</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Exclude_from_Margin_Reports_to_TRUE</targetReference>
+            </connector>
+            <label>Yes Total DEV/PLM Hours Budget Updated</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Total_PS_Hours_Budget_Changed</name>
+        <label>Total PS Hours Budget Changed</label>
+        <locationX>486</locationX>
+        <locationY>621</locationY>
+        <defaultConnector>
+            <targetReference>Revised_Total_Expense_Budget_Updated</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_PS_Hours_Budget_Changed</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Total_PS_Hours_Budget__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Total_PS_Hours_Budget__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Total_Hours_Budget</targetReference>
+            </connector>
+            <label>Yes PS Hours Budget Changed</label>
+        </rules>
+    </decisions>
+    <description>record triggerd for before save field updates.  created &amp; updated records.  Updated with Process Builder items</description>
+    <formulas>
+        <name>PMCompletionDateFormula</name>
+        <dataType>Date</dataType>
+        <expression>IF(ISNULL({!$Record.PM_Revised_Rev_Rec_Date__c}), {!$Record.PM_Orig_Rev_Rec_Date__c}, {!$Record.PM_Revised_Rev_Rec_Date__c})</expression>
+    </formulas>
+    <formulas>
+        <name>returnBestFinishDate</name>
+        <dataType>Date</dataType>
+        <expression>IF({!$Record.PM_Orig_Rev_Rec_Date__c} &gt; {!$Record.PM_Revised_Rev_Rec_Date__c} , {!$Record.PM_Orig_Rev_Rec_Date__c}, {!$Record.PM_Revised_Rev_Rec_Date__c})</expression>
+    </formulas>
+    <formulas>
+        <name>returnMAXRevReqDate</name>
+        <dataType>Date</dataType>
+        <expression>IF( IF ( ISBLANK({!$Record.PM_Orig_Rev_Rec_Date__c}), TODAY()-5000, {!$Record.PM_Orig_Rev_Rec_Date__c}) &gt;= IF ( ISBLANK({!$Record.PM_Revised_Rev_Rec_Date__c}), TODAY()-5000, {!$Record.PM_Revised_Rev_Rec_Date__c}) , {!$Record.PM_Orig_Rev_Rec_Date__c}, {!$Record.PM_Revised_Rev_Rec_Date__c} )</expression>
+    </formulas>
+    <interviewLabel>Project - Create/Update Before Save {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Project - Create/Update Before Save</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <startElementReference>New_Project_Creation</startElementReference>
+    <status>Active</status>
+    <variables>
+        <name>varBudgetToSet</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+    </variables>
+    <variables>
+        <name>varExpenseToUse</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+    </variables>
+</Flow>

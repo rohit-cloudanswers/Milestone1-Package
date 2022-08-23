@@ -1,0 +1,4 @@
+<aura:event type="APPLICATION">
+    <aura:attribute name="status" type="Boolean" />
+    <aura:attribute name="data" type="List" />
+</aura:event>

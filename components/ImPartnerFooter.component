@@ -1,0 +1,19 @@
+<apex:component >
+    <footer>
+            <div id="non-printable"><span id="supportTemplateFooter">
+         <div class="footer">
+            <div class="nav">
+            <a href="http://www.imaginecommunications.com/media-center/news.aspx" target="_New">news</a>
+            <a href="http://www.imaginecommunications.com/company/contact-us.aspx" target="_New">contact us</a>
+            <a href="http://www.imaginecommunications.com/company/legal-compliance/terms-of-use.aspx" target="_New">terms</a>
+            <a href="http://www.imaginecommunications.com/media-center/events.aspx" target="_New">events</a>
+            <a href="http://www.imaginecommunications.com/company/about-us.aspx" target="_New">about</a>
+            <a href="http://www.imaginecommunications.com/company/legal-compliance/Privacy-Policy.aspx" target="_New">privacy policy</a>                              
+            </div>
+            <div class="copyright">
+              © 2014 Imagine Communications Corp.
+            </div>
+          </div></span>
+            </div>
+    </footer>
+</apex:component>

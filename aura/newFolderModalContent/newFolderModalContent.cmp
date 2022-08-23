@@ -1,0 +1,6 @@
+<aura:component >
+	
+    <aura:attribute name="folderName" type="String" />
+    
+    <lightning:input name="folderName" label="Enter folder name" value="{!v.folderName}" />
+</aura:component>

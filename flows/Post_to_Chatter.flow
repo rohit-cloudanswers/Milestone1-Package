@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Post_to_Chatter</name>
+        <label>Post to Chatter</label>
+        <locationX>415</locationX>
+        <locationY>262</locationY>
+        <actionName>chatterPost</actionName>
+        <actionType>chatterPost</actionType>
+        <inputParameters>
+            <name>subjectNameOrId</name>
+            <value>
+                <elementReference>CaseRecord.AccountId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>text</name>
+            <value>
+                <elementReference>ChatterMessage</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <decisions>
+        <name>Is_there_an_account</name>
+        <label>Is there an account?</label>
+        <locationX>265</locationX>
+        <locationY>178</locationY>
+        <defaultConnector>
+            <targetReference>Do_Nothing</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Account</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CaseRecord.AccountId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Post_to_Chatter</targetReference>
+            </connector>
+            <label>Yes Account</label>
+        </rules>
+    </decisions>
+    <description>Two inputs, ObjectID and Message that will automatically post to chatter feed.</description>
+    <interviewLabel>Post to Chatter {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Post to Chatter</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Lookup_Case</name>
+        <label>Lookup Case</label>
+        <locationX>393</locationX>
+        <locationY>67</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Is_there_an_account</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Do_Nothing</targetReference>
+        </faultConnector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>ObjectID</elementReference>
+            </value>
+        </filters>
+        <object>Case</object>
+        <outputReference>CaseRecord</outputReference>
+        <queriedFields>CaseNumber</queriedFields>
+        <queriedFields>Priority</queriedFields>
+        <queriedFields>AccountId</queriedFields>
+        <queriedFields>Contact_Full_Name__c</queriedFields>
+    </recordLookups>
+    <startElementReference>Lookup_Case</startElementReference>
+    <status>Active</status>
+    <subflows>
+        <name>Do_Nothing</name>
+        <label>Do Nothing</label>
+        <locationX>589</locationX>
+        <locationY>169</locationY>
+        <flowName>Do_Nothing</flowName>
+    </subflows>
+    <textTemplates>
+        <name>ChatterMessage</name>
+        <text>Case# {!CaseRecord.CaseNumber}, Priority {!CaseRecord.Priority} has been created for {!CaseRecord.Contact_Full_Name__c}</text>
+    </textTemplates>
+    <variables>
+        <name>CaseRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Case</objectType>
+    </variables>
+    <variables>
+        <name>Message</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>ObjectID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

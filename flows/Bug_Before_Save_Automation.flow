@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <name>Clear_Field_Validation_Status</name>
+        <label>Clear Field Validation Status</label>
+        <locationX>810</locationX>
+        <locationY>446</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Field_Validation_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Was_the_SLA_Date_updated</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Copy_Over_to_SLA_Updated</name>
+        <label>Copy Over to SLA Updated</label>
+        <locationX>816</locationX>
+        <locationY>661</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.SLA_Target_Date_Updated__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>returnDateOnlySLADate</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Update_Bug_Status</name>
+        <label>Update Bug Status</label>
+        <locationX>811</locationX>
+        <locationY>288</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Jira_Status__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Validation_Field_Updated</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Update_Record_Type</name>
+        <label>Update Record Type</label>
+        <locationX>34</locationX>
+        <locationY>412</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.RecordTypeId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>0120Z0000011yb4</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Update_Submitted_By</name>
+        <label>Update Submitted By</label>
+        <locationX>50</locationX>
+        <locationY>270</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Submitted_By__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Submitted_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Is_Record_Type_to_be_Feature</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>This is used with On Prem/Server Jira ONLY!</description>
+        <name>Is_Record_Type_to_be_Feature</name>
+        <label>Is Record Type to be Feature?</label>
+        <locationX>236</locationX>
+        <locationY>399</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_OnPrem_Feature_Request</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Issue_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Feature Request</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Record_Type</targetReference>
+            </connector>
+            <label>Yes OnPrem Feature Request</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Jira_Status_Change</name>
+        <label>Jira Status Change?</label>
+        <locationX>581</locationX>
+        <locationY>269</locationY>
+        <defaultConnector>
+            <targetReference>Validation_Field_Updated</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Jira_status_change</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Jira_Status__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Jira_Status__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Bug_Status</targetReference>
+            </connector>
+            <label>Yes Jira status change</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>New_or_Edited</name>
+        <label>New or Edited?</label>
+        <locationX>391</locationX>
+        <locationY>265</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>New</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Submitted_By</targetReference>
+            </connector>
+            <label>New</label>
+        </rules>
+        <rules>
+            <name>Edited</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Jira_Status_Change</targetReference>
+            </connector>
+            <label>Edited</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Validation_Field_Updated</name>
+        <label>Validation Field Updated?</label>
+        <locationX>581</locationX>
+        <locationY>432</locationY>
+        <defaultConnector>
+            <targetReference>Was_the_SLA_Date_updated</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Validation_Fail</name>
+            <conditionLogic>1 AND (2 OR 3 OR 4 OR 5)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Field_Validation_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>FAILED</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Jira_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>New</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Jira_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Assessing</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Jira_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>In Progress</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Jira_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Backlog</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Clear_Field_Validation_Status</targetReference>
+            </connector>
+            <label>Validation - Fail</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>need to make the other one match.  why is there 2?  I have no idea anymore!</description>
+        <name>Was_the_SLA_Date_updated</name>
+        <label>Was the SLA Date updated?</label>
+        <locationX>576</locationX>
+        <locationY>653</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>SLA_Date_Change</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.SLA_Target_Date__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.SLA_Target_Date__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_Over_to_SLA_Updated</targetReference>
+            </connector>
+            <label>SLA Date Change?</label>
+        </rules>
+    </decisions>
+    <description>currently just some simple field updates on jira status &gt; status and submitted by.  hardcoded record ID for onPrem feature request record type</description>
+    <formulas>
+        <name>returnDateOnlySLADate</name>
+        <dataType>Date</dataType>
+        <expression>DATEVALUE({!$Record.SLA_Target_Date__c})</expression>
+    </formulas>
+    <interviewLabel>Bug - Before Save Automation {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Bug - Before Save Automation</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <startElementReference>New_or_Edited</startElementReference>
+    <status>Active</status>
+</Flow>

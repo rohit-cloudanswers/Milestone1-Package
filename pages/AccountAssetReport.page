@@ -1,0 +1,52 @@
+<apex:page standardController="Account" sidebar="false" showHeader="false" standardStylesheets="false">
+    <apex:includeScript value="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"/>
+    <c:sObjectRemote escape="false"/>
+    <script>
+    var soql = `
+    select id, name, product2.name, Product2.Business_Unit__c, Product2.Product_Line__c, 
+    Product2.End_of_Sale_Date__c, Product2.Long_Term_Support_Date__c,
+    (select id, Status, StartDate, EndDate, Service_Level__c from ContractLineItems order by servicecontract.enddate desc limit 1) 
+    from asset
+    where account.name like '%{!account.name}%'
+    or account.parent.name like '%{!account.name}%'
+    `;
+    //     or ship_to__r.name like '%{!account.name}%'
+
+    angular
+    .module("MyApp", [])
+    .controller("MyController", ['$scope', function ($scope) {
+        sObject.query(soql, function (res) {
+            console.log(res);
+            $scope.rows = res;
+            $scope.$apply();
+        });
+    }])
+    </script>
+    <div ng-app="MyApp" ng-controller="MyController">
+        <table border="1">
+            <tr>
+                <td>Asset</td>
+                <td>Product Name</td>
+                <td>Product Business Unit</td>
+                <td>Product Product Line</td>
+                <td>Product End of Sale Date</td>
+                <td>Product Long Term Support Date</td>
+                <td>Contract Line Item Status</td>
+                <td>Contract Line Item Start Date</td>
+                <td>Contract Line Item End Date</td>
+                <td>Contract Line Item Service Level</td>
+            </tr>
+            <tr ng-repeat="row in rows">
+                <td>{{row.Name}}</td>
+                <td>{{row.Product2.Busines_Unit__c}}</td>
+                <td>{{row.Product2.Product_Line__c}}</td>
+                <td>{{row.Product2.End_of_Sale_Date__c | date}}</td>
+                <td>{{row.Product2.Long_Term_Support_Date__c | date}}</td>
+                <td>{{row.ContractLineItems[0].Status}}</td>
+                <td>{{row.ContractLineItems[0].StartDate | date}}</td>
+                <td>{{row.ContractLineItems[0].EndDate | date}}</td>
+                <td>{{row.ContractLineItems[0].Service_Level__c}}</td>
+            </tr>
+        </table>
+    </div>
+</apex:page>

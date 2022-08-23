@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Sales Request</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Sales Requests</value>
+    </caseValues>
+    <fields>
+        <label><!-- Further Information --></label>
+        <name>Further_Information__c</name>
+    </fields>
+    <fields>
+        <label><!-- List of Third Party Connections --></label>
+        <name>List_of_Third_Party_Connections__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Channels --></label>
+        <name>Number_of_Channels__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Users --></label>
+        <name>Number_of_Users__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Account --></label>
+        <name>Opportunity_Account__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Description --></label>
+        <name>Opportunity_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity ID --></label>
+        <name>Opportunity_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Line of Business --></label>
+        <name>Opportunity_Line_of_Business__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Link --></label>
+        <name>Opportunity_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Name --></label>
+        <name>Opportunity_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Owner --></label>
+        <name>Opportunity_Owner__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Product Group --></label>
+        <name>Opportunity_Product_Group__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Sales Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Size of Current Database (GB) --></label>
+        <name>Size_of_Current_Database_GB__c</name>
+    </fields>
+    <fields>
+        <label><!-- Term (Years) --></label>
+        <name>Term_Years__c</name>
+    </fields>
+    <layouts>
+        <layout>Managed Service Request</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <description><!-- Managed Service Request --></description>
+        <label><!-- Managed Service --></label>
+        <name>Managed_Service</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

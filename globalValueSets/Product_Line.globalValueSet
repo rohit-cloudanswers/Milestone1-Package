@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Ad Sales</fullName>
+        <default>false</default>
+        <label>Ad Sales</label>
+    </customValue>
+    <customValue>
+        <fullName>ADVANCED ADVERTISING</fullName>
+        <default>false</default>
+        <label>ADVANCED ADVERTISING</label>
+    </customValue>
+    <customValue>
+        <fullName>Agency</fullName>
+        <default>false</default>
+        <label>Agency</label>
+    </customValue>
+    <customValue>
+        <fullName>Analytics</fullName>
+        <default>false</default>
+        <label>Analytics</label>
+    </customValue>
+    <customValue>
+        <fullName>ASSET MANAGEMENT</fullName>
+        <default>false</default>
+        <label>ASSET MANAGEMENT</label>
+    </customValue>
+    <customValue>
+        <fullName>Automation</fullName>
+        <default>false</default>
+        <label>Automation</label>
+    </customValue>
+    <customValue>
+        <fullName>Command &amp; Control</fullName>
+        <default>false</default>
+        <label>Command &amp; Control</label>
+    </customValue>
+    <customValue>
+        <fullName>Compress &amp; Transport</fullName>
+        <default>false</default>
+        <label>Compress &amp; Transport</label>
+    </customValue>
+    <customValue>
+        <fullName>COMPRESSION</fullName>
+        <default>false</default>
+        <label>COMPRESSION</label>
+    </customValue>
+    <customValue>
+        <fullName>CONSOLES</fullName>
+        <default>false</default>
+        <label>CONSOLES</label>
+    </customValue>
+    <customValue>
+        <fullName>DELIVERY</fullName>
+        <default>false</default>
+        <label>DELIVERY</label>
+    </customValue>
+    <customValue>
+        <fullName>DOH</fullName>
+        <default>false</default>
+        <label>DOH</label>
+    </customValue>
+    <customValue>
+        <fullName>DTP</fullName>
+        <default>false</default>
+        <label>DTP</label>
+    </customValue>
+    <customValue>
+        <fullName>EDITING</fullName>
+        <default>false</default>
+        <label>EDITING</label>
+    </customValue>
+    <customValue>
+        <fullName>Editing &amp; Graphics</fullName>
+        <default>false</default>
+        <label>Editing &amp; Graphics</label>
+    </customValue>
+    <customValue>
+        <fullName>GRAPHICS</fullName>
+        <default>false</default>
+        <label>GRAPHICS</label>
+    </customValue>
+    <customValue>
+        <fullName>INFOCASTER</fullName>
+        <default>false</default>
+        <label>INFOCASTER</label>
+    </customValue>
+    <customValue>
+        <fullName>Integrated Playout</fullName>
+        <default>false</default>
+        <label>Integrated Playout</label>
+    </customValue>
+    <customValue>
+        <fullName>INTRAPLEX</fullName>
+        <default>false</default>
+        <label>INTRAPLEX</label>
+    </customValue>
+    <customValue>
+        <fullName>MAM</fullName>
+        <default>false</default>
+        <label>MAM</label>
+    </customValue>
+    <customValue>
+        <fullName>Master Control</fullName>
+        <default>false</default>
+        <label>Master Control</label>
+    </customValue>
+    <customValue>
+        <fullName>MEDIA SERVER</fullName>
+        <default>false</default>
+        <label>MEDIA SERVER</label>
+    </customValue>
+    <customValue>
+        <fullName>MULTIVIEWERS</fullName>
+        <default>false</default>
+        <label>MULTIVIEWERS</label>
+    </customValue>
+    <customValue>
+        <fullName>Processing</fullName>
+        <default>false</default>
+        <label>Processing</label>
+    </customValue>
+    <customValue>
+        <fullName>Professional Services</fullName>
+        <default>false</default>
+        <label>Professional Services</label>
+    </customValue>
+    <customValue>
+        <fullName>Program Scheduling</fullName>
+        <default>false</default>
+        <label>Program Scheduling</label>
+    </customValue>
+    <customValue>
+        <fullName>Routers</fullName>
+        <default>false</default>
+        <label>Routers</label>
+    </customValue>
+    <customValue>
+        <fullName>ROUTING SWITCHERS</fullName>
+        <default>false</default>
+        <label>ROUTING SWITCHERS</label>
+    </customValue>
+    <customValue>
+        <fullName>Servers &amp; Storage</fullName>
+        <default>false</default>
+        <label>Servers &amp; Storage</label>
+    </customValue>
+    <customValue>
+        <fullName>Signaling &amp; Transcoding</fullName>
+        <default>false</default>
+        <label>Signaling &amp; Transcoding</label>
+    </customValue>
+    <customValue>
+        <fullName>STORAGE</fullName>
+        <default>false</default>
+        <label>STORAGE</label>
+    </customValue>
+    <customValue>
+        <fullName>Support</fullName>
+        <default>false</default>
+        <label>Support</label>
+    </customValue>
+    <customValue>
+        <fullName>Test &amp; Measurement</fullName>
+        <default>false</default>
+        <label>Test &amp; Measurement</label>
+    </customValue>
+    <customValue>
+        <fullName>TRAFFIC &amp; BILLING</fullName>
+        <default>false</default>
+        <label>TRAFFIC &amp; BILLING</label>
+    </customValue>
+    <customValue>
+        <fullName>SERVICES</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>SERVICES</label>
+    </customValue>
+    <customValue>
+        <fullName>PACKAGING</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>PACKAGING</label>
+    </customValue>
+    <customValue>
+        <fullName>MASTER CNTRL &amp; BRAND</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>MASTER CNTRL &amp; BRAND</label>
+    </customValue>
+    <customValue>
+        <fullName>INTREGRATED PLAYOUT</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>INTREGRATED PLAYOUT</label>
+    </customValue>
+    <customValue>
+        <fullName>Punctuate</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Punctuate</label>
+    </customValue>
+    <customValue>
+        <fullName>CLOUD DVR</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>CLOUD DVR</label>
+    </customValue>
+    <customValue>
+        <fullName>Service Rate</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Service Rate</label>
+    </customValue>
+    <customValue>
+        <fullName>MIDDLEWARE</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>MIDDLEWARE</label>
+    </customValue>
+    <customValue>
+        <fullName>T&amp;M</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>T&amp;M</label>
+    </customValue>
+    <customValue>
+        <fullName>CLOUD RESOURCES</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>CLOUD RESOURCES</label>
+    </customValue>
+    <customValue>
+        <fullName>TARGETED DELIVERY</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>TARGETED DELIVERY</label>
+    </customValue>
+    <customValue>
+        <fullName>AD INSERTION</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>AD INSERTION</label>
+    </customValue>
+    <customValue>
+        <fullName>Ad Agency</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Ad Agency</label>
+    </customValue>
+    <masterLabel>Product Line</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>InDevelopment</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Scrum_Team_Members__c</fullName>
+        <externalId>false</externalId>
+        <label>Scrum Team Members</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <controllingField>Scrum_Team_Name__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Raj Vooturi</fullName>
+                    <default>false</default>
+                    <label>Raj Vooturi</label>
+                </value>
+                <value>
+                    <fullName>Suraj Aluru</fullName>
+                    <default>false</default>
+                    <label>Suraj Aluru</label>
+                </value>
+                <value>
+                    <fullName>Eric Cordell</fullName>
+                    <default>false</default>
+                    <label>Eric Cordell</label>
+                </value>
+                <value>
+                    <fullName>Bryan Lauth</fullName>
+                    <default>false</default>
+                    <label>Bryan Lauth</label>
+                </value>
+                <value>
+                    <fullName>Rick J.</fullName>
+                    <default>false</default>
+                    <label>Rick J.</label>
+                </value>
+                <value>
+                    <fullName>Jeff Kurth</fullName>
+                    <default>false</default>
+                    <label>Jeff Kurth</label>
+                </value>
+                <value>
+                    <fullName>Eric Mackey</fullName>
+                    <default>false</default>
+                    <label>Eric Mackey</label>
+                </value>
+                <value>
+                    <fullName>Pablo Gargiulo</fullName>
+                    <default>false</default>
+                    <label>Pablo Gargiulo</label>
+                </value>
+                <value>
+                    <fullName>Jeff Liening</fullName>
+                    <default>false</default>
+                    <label>Jeff Liening</label>
+                </value>
+                <value>
+                    <fullName>Simon Lockington</fullName>
+                    <default>false</default>
+                    <label>Simon Lockington</label>
+                </value>
+                <value>
+                    <fullName>Paul Nagle</fullName>
+                    <default>false</default>
+                    <label>Paul Nagle</label>
+                </value>
+                <value>
+                    <fullName>Ajay Kapoor</fullName>
+                    <default>false</default>
+                    <label>Ajay Kapoor</label>
+                </value>
+                <value>
+                    <fullName>Tony Morelli</fullName>
+                    <default>false</default>
+                    <label>Tony Morelli</label>
+                </value>
+                <value>
+                    <fullName>Steve Foreman</fullName>
+                    <default>false</default>
+                    <label>Steve Foreman</label>
+                </value>
+                <value>
+                    <fullName>Emily Etzborn</fullName>
+                    <default>false</default>
+                    <label>Emily Etzborn</label>
+                </value>
+                <value>
+                    <fullName>Victoria Canton</fullName>
+                    <default>false</default>
+                    <label>Victoria Canton</label>
+                </value>
+                <value>
+                    <fullName>Kim Lee</fullName>
+                    <default>false</default>
+                    <label>Kim Lee</label>
+                </value>
+                <value>
+                    <fullName>Jaime Cangas</fullName>
+                    <default>false</default>
+                    <label>Jaime Cangas</label>
+                </value>
+                <value>
+                    <fullName>Mark Jordan</fullName>
+                    <default>false</default>
+                    <label>Mark Jordan</label>
+                </value>
+                <value>
+                    <fullName>Oliver Abadeer</fullName>
+                    <default>false</default>
+                    <label>Oliver Abadeer</label>
+                </value>
+                <value>
+                    <fullName>Kathy Bienz</fullName>
+                    <default>false</default>
+                    <label>Kathy Bienz</label>
+                </value>
+                <value>
+                    <fullName>Jeff Enderle</fullName>
+                    <default>false</default>
+                    <label>Jeff Enderle</label>
+                </value>
+                <value>
+                    <fullName>Mehmet Balos</fullName>
+                    <default>false</default>
+                    <label>Mehmet Balos</label>
+                </value>
+                <value>
+                    <fullName>TBD</fullName>
+                    <default>false</default>
+                    <label>TBD</label>
+                </value>
+                <value>
+                    <fullName>Lisa Cline</fullName>
+                    <default>false</default>
+                    <label>Lisa Cline</label>
+                </value>
+                <value>
+                    <fullName>David Poling</fullName>
+                    <default>false</default>
+                    <label>David Poling</label>
+                </value>
+                <value>
+                    <fullName>Mark Cowles</fullName>
+                    <default>false</default>
+                    <label>Mark Cowles</label>
+                </value>
+                <value>
+                    <fullName>Ole Calderone</fullName>
+                    <default>false</default>
+                    <label>Ole Calderone</label>
+                </value>
+                <value>
+                    <fullName>John Bortharye</fullName>
+                    <default>false</default>
+                    <label>John Bortharye</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Channel (Resellers &amp; Distributors)</controllingFieldValue>
+                <valueName>Jaime Cangas</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Channel (Resellers &amp; Distributors)</controllingFieldValue>
+                <valueName>Mark Jordan</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Channel (Resellers &amp; Distributors)</controllingFieldValue>
+                <valueName>Oliver Abadeer</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Channel (Resellers &amp; Distributors)</controllingFieldValue>
+                <valueName>Kathy Bienz</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Channel (Resellers &amp; Distributors)</controllingFieldValue>
+                <valueName>Jeff Enderle</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Channel (Resellers &amp; Distributors)</controllingFieldValue>
+                <valueName>Mehmet Balos</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Siebel</controllingFieldValue>
+                <valueName>Lisa Cline</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Siebel</controllingFieldValue>
+                <valueName>David Poling</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Siebel</controllingFieldValue>
+                <valueName>Mark Cowles</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Siebel</controllingFieldValue>
+                <valueName>Ole Calderone</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Siebel</controllingFieldValue>
+                <valueName>John Bortharye</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Marketing</controllingFieldValue>
+                <valueName>Emily Etzborn</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Marketing</controllingFieldValue>
+                <valueName>Victoria Canton</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Marketing</controllingFieldValue>
+                <valueName>Kim Lee</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Sales</controllingFieldValue>
+                <valueName>Jeff Kurth</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Sales</controllingFieldValue>
+                <valueName>Eric Mackey</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Sales</controllingFieldValue>
+                <valueName>Pablo Gargiulo</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Sales</controllingFieldValue>
+                <valueName>Jeff Liening</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Service</controllingFieldValue>
+                <valueName>Simon Lockington</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Service</controllingFieldValue>
+                <valueName>Paul Nagle</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Service</controllingFieldValue>
+                <valueName>Ajay Kapoor</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Service</controllingFieldValue>
+                <valueName>Tony Morelli</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Service</controllingFieldValue>
+                <valueName>Steve Foreman</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Volo</controllingFieldValue>
+                <valueName>Raj Vooturi</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Volo</controllingFieldValue>
+                <valueName>Suraj Aluru</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Volo</controllingFieldValue>
+                <valueName>Eric Cordell</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Volo</controllingFieldValue>
+                <valueName>Bryan Lauth</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Volo</controllingFieldValue>
+                <valueName>Rick J.</valueName>
+            </valueSettings>
+        </valueSet>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Scrum_Team_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Scrum Team Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Channel (Resellers &amp; Distributors)</fullName>
+                    <default>false</default>
+                    <label>Channel (Resellers &amp; Distributors)</label>
+                </value>
+                <value>
+                    <fullName>IT - Oracle</fullName>
+                    <default>false</default>
+                    <label>IT - Oracle</label>
+                </value>
+                <value>
+                    <fullName>IT - Peoplesoft</fullName>
+                    <default>false</default>
+                    <label>IT - Peoplesoft</label>
+                </value>
+                <value>
+                    <fullName>IT - Siebel</fullName>
+                    <default>false</default>
+                    <label>IT - Siebel</label>
+                </value>
+                <value>
+                    <fullName>Marketing</fullName>
+                    <default>false</default>
+                    <label>Marketing</label>
+                </value>
+                <value>
+                    <fullName>Operations (Supply Chain)</fullName>
+                    <default>false</default>
+                    <label>Operations (Supply Chain)</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Sales</fullName>
+                    <default>false</default>
+                    <label>Sales</label>
+                </value>
+                <value>
+                    <fullName>Service</fullName>
+                    <default>false</default>
+                    <label>Service</label>
+                </value>
+                <value>
+                    <fullName>Volo</fullName>
+                    <default>false</default>
+                    <label>Volo</label>
+                </value>
+                <value>
+                    <fullName>Eloqua</fullName>
+                    <default>false</default>
+                    <label>Eloqua</label>
+                </value>
+                <value>
+                    <fullName>Onprocess</fullName>
+                    <default>false</default>
+                    <label>Onprocess</label>
+                </value>
+                <value>
+                    <fullName>LMS</fullName>
+                    <default>false</default>
+                    <label>LMS</label>
+                </value>
+                <value>
+                    <fullName>D&amp;B</fullName>
+                    <default>false</default>
+                    <label>D&amp;B</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Scrum Team</label>
+    <nameField>
+        <label>Scrum Teams Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Scrum Teams</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

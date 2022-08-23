@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Used for reviews of case quality</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Article_Review_Only__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Article Review Only</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Base_Case_Score__c</fullName>
+        <description>Case score without percentage</description>
+        <externalId>false</externalId>
+        <formula>Total_Correct__c/ Total_Eligable__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Case score without percentage</inlineHelpText>
+        <label>Base Case Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case_Owner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Case Owner</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Case_Feedback</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Case_Score__c</fullName>
+        <externalId>false</externalId>
+        <formula>Total_Correct__c/ Total_Eligable__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Case Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Case__c</fullName>
+        <description>Case this feedback is for</description>
+        <externalId>false</externalId>
+        <label>Case</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>Case Feedback</relationshipLabel>
+        <relationshipName>Case_Feedback</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Clearly_Out__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Does the subject and description clearly outline the problem?</inlineHelpText>
+        <label>Clearly Outlines the Problem</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Yes_No_NA</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Client_confirmed_ok_to_close__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Did the client confirm the case was ok to close?  3x5 rule</inlineHelpText>
+        <label>Client confirmed ok to close</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Yes_No_NA</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Consistent_timely_updates_follow_up__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Was there consistent, timely updates and follow ups recorded in the comments?</inlineHelpText>
+        <label>Clear, timely and consistant updates</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Yes_No_NA</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Contains_Searchable_Terms_Keywords__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The subject and description of the case has searchable keywords making it easy to understand at a glance</inlineHelpText>
+        <label>Contains Searchable Terms &amp; Keywords</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>N/A</fullName>
+                    <default>false</default>
+                    <label>N/A</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Date_Reviewed__c</fullName>
+        <defaultValue>NOW()</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Date of review</inlineHelpText>
+        <label>Date Reviewed</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Feedback_Details__c</fullName>
+        <externalId>false</externalId>
+        <label>Feedback Details</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Milestones_accurately_captured_noted__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Was the milestones accurately captured and noted?</inlineHelpText>
+        <label>Milestones accurately captured &amp; noted</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Yes_No_NA</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Outline_of_steps_to_get_given_error__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Is there an outline of steps to reproduce the given error?</inlineHelpText>
+        <label>Outline of steps to get given error</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Yes_No_NA</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Proper_article_associated__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Was the proper article attached, modified or authored?</inlineHelpText>
+        <label>Proper article associated</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Yes_No_NA</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Screenshots__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Are screenshots included?</inlineHelpText>
+        <label>Screenshots</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Yes_No_NA</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>State_expected_vs_actual_results__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Is the expected result stated as well as the actual result?</inlineHelpText>
+        <label>State expected vs actual results</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Yes_No_NA</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Total_Correct__c</fullName>
+        <description>Adds weights and adds all yes answers</description>
+        <externalId>false</externalId>
+        <formula>CASE( Clearly_Out__c, &quot;Yes&quot;, 10, &quot;No&quot;, 0, &quot;N/A&quot;, 0,0) + 
+CASE( Client_confirmed_ok_to_close__c, &quot;Yes&quot;, 5, &quot;No&quot;, 0, &quot;N/A&quot;, 0,0) + 
+CASE( Consistent_timely_updates_follow_up__c , &quot;Yes&quot;, 10, &quot;No&quot;, 0, &quot;N/A&quot;, 0,0) + 
+CASE( Contains_Searchable_Terms_Keywords__c , &quot;Yes&quot;, 10, &quot;No&quot;, 0, &quot;N/A&quot;, 0,0) + 
+CASE( Milestones_accurately_captured_noted__c , &quot;Yes&quot;, 10, &quot;No&quot;, 0, &quot;N/A&quot;, 0,0) + 
+CASE( Outline_of_steps_to_get_given_error__c , &quot;Yes&quot;, 7.5, &quot;No&quot;, 0, &quot;N/A&quot;, 0,0) + 
+CASE( Proper_article_associated__c , &quot;Yes&quot;, 25, &quot;No&quot;, 0, &quot;N/A&quot;, 0,0) + 
+CASE( Screenshots__c , &quot;Yes&quot;, 5, &quot;No&quot;, 0, &quot;N/A&quot;, 0,0) + 
+CASE( State_expected_vs_actual_results__c , &quot;Yes&quot;, 7.5, &quot;No&quot;, 0, &quot;N/A&quot;, 0,0) + 
+CASE( Updates_are_provided_to_clients__c , &quot;Yes&quot;, 10, &quot;No&quot;, 0, &quot;N/A&quot;, 0,0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Adds weights and adds all yes answers</inlineHelpText>
+        <label>Total Correct</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Eligable__c</fullName>
+        <description>Adds weights and counts Yes/No answers</description>
+        <externalId>false</externalId>
+        <formula>CASE( Clearly_Out__c, &quot;Yes&quot;, 10, &quot;No&quot;, 10, &quot;N/A&quot;, 0,0) +
+CASE(  Client_confirmed_ok_to_close__c, &quot;Yes&quot;, 5, &quot;No&quot;, 5, &quot;N/A&quot;, 0,0) +
+CASE(  Consistent_timely_updates_follow_up__c , &quot;Yes&quot;, 10, &quot;No&quot;, 10, &quot;N/A&quot;, 0,0) +
+CASE(  Contains_Searchable_Terms_Keywords__c , &quot;Yes&quot;, 10, &quot;No&quot;, 10, &quot;N/A&quot;, 0,0) +
+CASE(  Milestones_accurately_captured_noted__c , &quot;Yes&quot;, 10, &quot;No&quot;, 10, &quot;N/A&quot;, 0,0) +
+CASE(  Outline_of_steps_to_get_given_error__c , &quot;Yes&quot;, 7.5, &quot;No&quot;, 7.5, &quot;N/A&quot;, 0,0) +
+CASE(  Proper_article_associated__c , &quot;Yes&quot;, 25, &quot;No&quot;, 25, &quot;N/A&quot;, 0,0) +
+CASE(  Screenshots__c , &quot;Yes&quot;, 5, &quot;No&quot;, 5, &quot;N/A&quot;, 0,0) + 
+CASE(  State_expected_vs_actual_results__c , &quot;Yes&quot;, 7.5, &quot;No&quot;, 7.5, &quot;N/A&quot;, 0,0) +
+CASE(  Updates_are_provided_to_clients__c , &quot;Yes&quot;, 10, &quot;No&quot;, 10, &quot;N/A&quot;, 0,0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Adds weights and counts Yes/No answers</inlineHelpText>
+        <label>Total Eligable</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Updates_are_provided_to_clients__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Were updates provided to clients within the SLA/SLO</inlineHelpText>
+        <label>Updates are provided to clients</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Yes_No_NA</valueSetName>
+        </valueSet>
+    </fields>
+    <label>Case Feedback</label>
+    <nameField>
+        <displayFormat>CF-{0000}</displayFormat>
+        <label>Case Feedback Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Case Feedback</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>New</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>New</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/a2F/e?CF00N3100000FvcP2={!Case.CaseNumber}&amp;CF00N3100000FvcP2_lkid={!Case.Id}&amp;CF00N3100000FvcP3={!Case.OwnerFullName}&amp;CF00N3100000FvcP3_lkid={!Case.OwnerId}&amp;retURL=%2F{!Case.Id}</url>
+    </webLinks>
+</CustomObject>

@@ -1,0 +1,802 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <name>Assign_Feature_Values</name>
+        <label>Assign Feature Values</label>
+        <locationX>743</locationX>
+        <locationY>485</locationY>
+        <assignmentItems>
+            <assignToReference>BugRecord.Jira_Title__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>JIRA_Title2</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>BugRecord.Jira_Description__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Description_of_Feature</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>BugRecord.Case__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>CaseID</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>BugRecord.RecordTypeId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>BugRecordType</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>BugRecord.Issue_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Issue_Type</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>BugRecord.Project__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ProjectRecord.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>BugRecord.Weighting_Last_Updated__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_Bug</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>assign_text</name>
+        <label>assign text</label>
+        <locationX>927</locationX>
+        <locationY>650</locationY>
+        <assignmentItems>
+            <assignToReference>BugRecord.Jira_Description__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TextBlurb</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>BugRecord.Jira_Title__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>JIRA_Title</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>BugRecord.Issue_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Issue_Type</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>BugRecord.Case__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>CaseID</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>BugRecord.RecordTypeId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>BugRecordType</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>BugRecord.Project__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ProjectRecord.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>BugRecord.SLA_Target_Date_Updated__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>returnSLATargetDate</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_Bug</targetReference>
+        </connector>
+    </assignments>
+    <choices>
+        <name>Always</name>
+        <choiceText>Always</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Always</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>FeatureRequest</name>
+        <choiceText>Feature Request</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Feature Request</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Maytakemorethan1month</name>
+        <choiceText>May take more than 1 month to re-occur</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>May take more than 1 month to re-occur</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>No</name>
+        <choiceText>No</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>No</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Occurswithin1day</name>
+        <choiceText>Occurs within 1 day</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Occurs within 1 day</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Occurswithin1hour</name>
+        <choiceText>Occurs within 1 hour</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Occurs within 1 hour</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Occurswithin1month</name>
+        <choiceText>Occurs within 1 month</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Occurs within 1 month</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Occurswithin1week</name>
+        <choiceText>Occurs within 1 week</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Occurs within 1 week</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Onetimeoccurrence</name>
+        <choiceText>One Time Occurance</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>One time occurrence</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>ProductIssueBug</name>
+        <choiceText>Product Issue/Bug</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Product Issue/Bug</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Yes</name>
+        <choiceText>Yes</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Yes</stringValue>
+        </value>
+    </choices>
+    <decisions>
+        <name>Bug_or_Feature</name>
+        <label>Bug or Feature?</label>
+        <locationX>591</locationX>
+        <locationY>314</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Bug</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Issue_Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>ProductIssueBug</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Find_Bug_Record_Type_ID</targetReference>
+            </connector>
+            <label>Bug</label>
+        </rules>
+        <rules>
+            <name>Feature</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Issue_Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>FeatureRequest</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Find_Feature_Record_Type_ID</targetReference>
+            </connector>
+            <label>Feature</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Checkbox_Configuration</name>
+        <label>Checkbox Configuration</label>
+        <locationX>1530</locationX>
+        <locationY>171</locationY>
+        <defaultConnector>
+            <targetReference>assign_text</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Both_Checked</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>reproducible3</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Yes</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Workaround_Available2</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Yes</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Additional_Information</targetReference>
+            </connector>
+            <label>Both Checked</label>
+        </rules>
+        <rules>
+            <name>ReproducibleChecked</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>reproducible3</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Yes</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Additional_Information_Reproducable</targetReference>
+            </connector>
+            <label>Reproducible?</label>
+        </rules>
+        <rules>
+            <name>WorkaroundChecked</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Workaround_Available2</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Yes</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Additional_Information3</targetReference>
+            </connector>
+            <label>Workaround?</label>
+        </rules>
+    </decisions>
+    <formulas>
+        <name>CurrentRunningUserEmail</name>
+        <dataType>String</dataType>
+        <expression>{!$User.Email}</expression>
+    </formulas>
+    <formulas>
+        <name>JIRALinktoCreateNewIssue</name>
+        <dataType>String</dataType>
+        <expression>HYPERLINK(&quot;https://jira.imaginecommunications.com/plugins/servlet/create-issue?crmtoken=69wn4mL0y81k&amp;id=BugRecord.Id&amp;issue-type=Customer Escalation&amp;reporter=$User.Email&quot;, &quot;_self&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>ReproducibleFullText</name>
+        <dataType>String</dataType>
+        <expression>IF ({!reproducible3} = {!Yes}, 
+IF ( ISBLANK({!Steps_to_Reproduce}), {!ReproduceTextFieldsCombined2}, {!ReproduceTextFieldsCombined} ),
+&quot; &quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>returnSLATargetDate</name>
+        <dataType>Date</dataType>
+        <expression>DATEVALUE({!Case_Record.Resolution_Milestone_Target_Date__c})</expression>
+    </formulas>
+    <formulas>
+        <name>WorkaroundFullText</name>
+        <dataType>String</dataType>
+        <expression>IF ({!Workaround_Available2} = {!Yes}, 
+IF ( ISBLANK({!Workaround_Details}), {!Workaround_Details2}, {!Workaround_Details} ),
+&quot; &quot;)</expression>
+    </formulas>
+    <interviewLabel>Create JIRA Bug {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Create JIRA Bug</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordCreates>
+        <name>Create_Bug</name>
+        <label>Create Bug</label>
+        <locationX>1326</locationX>
+        <locationY>580</locationY>
+        <connector>
+            <targetReference>Bug_Record_Created</targetReference>
+        </connector>
+        <inputReference>BugRecord</inputReference>
+    </recordCreates>
+    <recordLookups>
+        <name>Case_Record</name>
+        <label>Case Record</label>
+        <locationX>409</locationX>
+        <locationY>84</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Create_a_Bug_Feature</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>CaseID</elementReference>
+            </value>
+        </filters>
+        <object>Case</object>
+    </recordLookups>
+    <screens>
+        <name>Additional_Information</name>
+        <label>Additional Information</label>
+        <locationX>859</locationX>
+        <locationY>308</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>assign_text</targetReference>
+        </connector>
+        <fields>
+            <name>ReproducibleTitle</name>
+            <fieldText>Issue is Reproducible</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>System_Setup_Details</name>
+            <fieldText>System Setup Details</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Steps_to_Reproduce</name>
+            <fieldText>Steps to Reproduce</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Expected_Results</name>
+            <fieldText>Expected Results</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Actual_Results</name>
+            <fieldText>Actual Results</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>AWorkaroundIsAvailable</name>
+            <fieldText>Workaround Is Available</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Workaround_Details</name>
+            <fieldText>Workaround Details</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Additional_Information3</name>
+        <label>Additional Information</label>
+        <locationX>1158</locationX>
+        <locationY>318</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>assign_text</targetReference>
+        </connector>
+        <fields>
+            <name>WorkaroundAvailable</name>
+            <fieldText>Workaround Is Available</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Workaround_Details2</name>
+            <fieldText>Workaround Details</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Additional_Information_Reproducable</name>
+        <label>Additional Information</label>
+        <locationX>1005</locationX>
+        <locationY>315</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>assign_text</targetReference>
+        </connector>
+        <fields>
+            <name>ReproducibleTitle2</name>
+            <fieldText>Issue Is Reproducible</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>System_Setup_Details2</name>
+            <fieldText>System Setup Details</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Steps_to_Reproduce2</name>
+            <fieldText>Steps to Reproduce</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Expected_Results2</name>
+            <fieldText>Expected Results</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Actual_Results2</name>
+            <fieldText>Actual Results</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Bug_Record_Created</name>
+        <label>Bug Record Created</label>
+        <locationX>1500</locationX>
+        <locationY>443</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>CreatedConfirmation</name>
+            <fieldText>&lt;p&gt;The bug was created in Salesforce only.  BE SURE TO&lt;b&gt; CLICK &quot;CREATE NEW JIRA ISSUE&quot;&lt;/b&gt; to send the record to JIRA.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Click here to &lt;b&gt;CREATE NEW JIRA ISSUE&lt;/b&gt;!!  &lt;a href=&quot;https://jira.imaginecommunications.com/plugins/servlet/create-issue?crmtoken=69wn4mL0y81k&amp;amp;id=Bug__c:{!BugRecord.Id}&amp;amp;issue-type=Customer Escalation&amp;amp;reporter={!CurrentRunningUserEmail}&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: Calibri, sans-serif; font-size: 11pt;&quot;&gt;https://jira.imaginecommunications.com&lt;/a&gt;&lt;a href=&quot;https://jira.imaginecommunications.com/plugins/servlet/create-issue?crmtoken=69wn4mL0y81k&amp;amp;id=Bug__c:{!BugRecord.Id}&amp;amp;issue-type=Customer Escalation&amp;amp;reporter={!CurrentRunningUserEmail}&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;/plugins/servlet/create-issue?crmtoken=69wn4mL0y81k&amp;amp;id=Bug__c:{!BugRecord.Id}&amp;amp;issue-type=Customer Escalation&amp;amp;reporter={!CurrentRunningUserEmail}&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Or, click here to go to the bug where the Create New JIRA Issue button is available:  &lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://imaginecommunications.my.salesforce.com/{!BugRecord.Id}&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;https://imaginecommunications.my.salesforce.com/{!BugRecord.Id}&lt;/a&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Create_a_Bug_Feature</name>
+        <label>Create a Bug/Feature</label>
+        <locationX>527</locationX>
+        <locationY>84</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Bug_or_Feature</targetReference>
+        </connector>
+        <fields>
+            <name>Issue_Type</name>
+            <choiceReferences>ProductIssueBug</choiceReferences>
+            <choiceReferences>FeatureRequest</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Issue Type</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Create_New_JIRA_Feature_Request</name>
+        <label>Create New JIRA Feature Request</label>
+        <locationX>613</locationX>
+        <locationY>485</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Assign_Feature_Values</targetReference>
+        </connector>
+        <fields>
+            <name>JIRA_Title2</name>
+            <dataType>String</dataType>
+            <fieldText>JIRA Title</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Description_of_Feature</name>
+            <fieldText>Description of Feature</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Create_New_JIRA_Issue_Bug</name>
+        <label>Create New JIRA Issue/Bug</label>
+        <locationX>824</locationX>
+        <locationY>50</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Checkbox_Configuration</targetReference>
+        </connector>
+        <fields>
+            <name>JIRA_Title</name>
+            <dataType>String</dataType>
+            <fieldText>JIRA Title</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Issue_Description</name>
+            <fieldText>Issue Description</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Customer_Impact2</name>
+            <fieldText>Customer Impact</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <helpText>Guidelines for describing customer impact:&lt;br&gt;
+1. Current operating status: [In-operable], [With-Restriction], [Reduced-Performance]&lt;br&gt;
+2. Is Redundancy or HA components activated? [Yes/No]&lt;br&gt;
+3. If it is a transient issue –&lt;br&gt;
+    - How often the issue occurs?  &lt;br&gt;
+    - How long does it take to recover from the issue when it occurs?  &lt;br&gt;
+    - Does the system recover with/without manual intervention?&lt;br&gt;  
+    - If manual intervention is required, describe the process and how long it takes to execute and recover.&lt;br&gt;</helpText>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Firmware_Software_Version_s</name>
+            <dataType>String</dataType>
+            <fieldText>Firmware/Software Version(s)</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>How_often_does_the_issue_occur</name>
+            <choiceReferences>Onetimeoccurrence</choiceReferences>
+            <choiceReferences>Always</choiceReferences>
+            <choiceReferences>Occurswithin1hour</choiceReferences>
+            <choiceReferences>Occurswithin1day</choiceReferences>
+            <choiceReferences>Occurswithin1week</choiceReferences>
+            <choiceReferences>Occurswithin1month</choiceReferences>
+            <choiceReferences>Maytakemorethan1month</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>How often does the issue occur?</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>reproducible3</name>
+            <choiceReferences>No</choiceReferences>
+            <choiceReferences>Yes</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Reproducible?</fieldText>
+            <fieldType>RadioButtons</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Workaround_Available2</name>
+            <choiceReferences>No</choiceReferences>
+            <choiceReferences>Yes</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Workaround Available?</fieldText>
+            <fieldType>RadioButtons</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <startElementReference>Case_Record</startElementReference>
+    <status>Active</status>
+    <subflows>
+        <name>Find_Bug_Record_Type_ID</name>
+        <label>Find Bug Record Type ID</label>
+        <locationX>825</locationX>
+        <locationY>181</locationY>
+        <connector>
+            <targetReference>Create_New_JIRA_Issue_Bug</targetReference>
+        </connector>
+        <flowName>RecordTypeID_Lookup_Subflow</flowName>
+        <inputAssignments>
+            <name>ObjectName</name>
+            <value>
+                <stringValue>Bug__c</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>RecordTypeName</name>
+            <value>
+                <stringValue>Integrated_Jira</stringValue>
+            </value>
+        </inputAssignments>
+        <outputAssignments>
+            <assignToReference>BugRecordType</assignToReference>
+            <name>RecordTypeID15</name>
+        </outputAssignments>
+    </subflows>
+    <subflows>
+        <name>Find_Feature_Record_Type_ID</name>
+        <label>Find Feature Record Type ID</label>
+        <locationX>494</locationX>
+        <locationY>449</locationY>
+        <connector>
+            <targetReference>Create_New_JIRA_Feature_Request</targetReference>
+        </connector>
+        <flowName>RecordTypeID_Lookup_Subflow</flowName>
+        <inputAssignments>
+            <name>ObjectName</name>
+            <value>
+                <stringValue>Bug__c</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>RecordTypeName</name>
+            <value>
+                <stringValue>Integrated_Jira_Feature</stringValue>
+            </value>
+        </inputAssignments>
+        <outputAssignments>
+            <assignToReference>BugRecordType</assignToReference>
+            <name>RecordTypeID15</name>
+        </outputAssignments>
+    </subflows>
+    <textTemplates>
+        <name>ReproduceTextFieldsCombined</name>
+        <text>[SYSTEM SETUP DETAILS]
+{!System_Setup_Details}
+
+
+[STEPS TO REPRODUCE]
+{!Steps_to_Reproduce}
+
+
+[EXPECTED RESULTS]
+{!Expected_Results}
+
+
+[ACTUAL RESULTS]
+{!Actual_Results}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ReproduceTextFieldsCombined2</name>
+        <text>[SYSTEM SETUP DETAILS]
+{!System_Setup_Details2}
+
+
+[STEPS TO REPRODUCE]
+{!Steps_to_Reproduce2}
+
+
+[EXPECTED RESULTS]
+{!Expected_Results2}
+
+
+[ACTUAL RESULTS]
+{!Actual_Results2}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TextBlurb</name>
+        <text>[ISSUE DESCRIPTION]
+{!Issue_Description}
+
+
+[CUSTOMER IMPACT]
+{!Customer_Impact2}
+
+
+[FIRMWARE/SOFTWARE VERSION(S)]
+{!Firmware_Software_Version_s}
+
+
+[HOW OFTEN DOES THIS ISSUE OCCUR?]
+{!How_often_does_the_issue_occur}
+
+
+[IS REPRODUCIBLE?]  -   {!reproducible3}
+{!ReproducibleFullText}
+
+
+[IS WORKAROUND AVAILABLE?]  -  {!Workaround_Available2}
+{!WorkaroundFullText}</text>
+    </textTemplates>
+    <variables>
+        <name>BugRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Bug__c</objectType>
+    </variables>
+    <variables>
+        <name>BugRecordType</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>CaseID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>ProjectRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>MPM4_BASE__Milestone1_Project__c</objectType>
+    </variables>
+    <variables>
+        <name>Type</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

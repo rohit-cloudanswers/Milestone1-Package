@@ -1,0 +1,938 @@
+<apex:page sidebar="false" standardController="Quote">
+
+<head>
+
+    <apex:variable var="res" value="{!URLFOR($Resource.Cloudanswers, '/node_modules')}"/>
+    <apex:variable var="bowerRes" value="{!URLFOR($Resource.Cloudanswers, '/bower_components')}"/>
+
+  <c:importvisualstrap theme="paper" />
+
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="{!res}/ui-select/dist/select.min.css"/>
+  <link rel="stylesheet" href="{!bowerRes}/sweetalert/dist/sweetalert.css"/>
+  <link rel="stylesheet" href="{!bowerRes}/ngprogress/ngProgress.css"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="https://cdn.rawgit.com/SheetJS/js-xlsx/v0.8.0/dist/xlsx.full.min.js"></script>
+    <script src="https://cdn.rawgit.com/SheetJS/js-xlsx/v0.8.0/dist/ods.js"></script>
+    <script src="{!res}/ui-select/dist/select.min.js"></script>
+    <script src="{!res}/moment/min/moment.min.js"></script>
+    <script src="{!res}/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+    <script src="{!res}/angular-animate/angular-animate.min.js"></script>
+    <script src="{!bowerRes}/ngSweetAlert/SweetAlert.min.js"></script>
+    <script src="{!bowerRes}/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="{!bowerRes}/ngprogress/build/ngprogress.min.js"></script>
+
+  <c:sObjectRemote />
+
+  <style>
+
+    table{
+      width:100%;
+    }
+
+    table.preview th, table.preview td {
+        vertical-align: bottom;
+        border: 1px solid #eceeef;
+        text-align:center;
+    }
+
+    .grid input[type="file"] {
+      font-size: 14px;
+      display: inline-block;
+    }
+
+    .overlay { 
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 20000;
+        background-color: gray;
+        opacity: .5;
+    }
+
+    .loading {
+        position: fixed;
+        width: 700px;
+        height: 70px;
+        top: 50%;
+        left: 50%;
+        font-size: 40px;
+        line-height:60px;
+        margin-top: -35px; /* Negative half of height. */
+        margin-left: -350px; /* Negative half of width. */
+        z-index:25000;
+        border: 1px solid #333;
+    }
+    .tab-content {
+        padding: 20px;
+    }
+
+    .form-input {
+        margin: 20px 0px;
+    }
+
+    .visualstrap .dropdown-menu { display: inherit; }
+
+    button.confirm { background: none; }
+    button.cancel { background: none; }
+    .bodyDiv #bodyTable {
+      table-layout: fixed;
+    }
+
+  </style>
+</head>
+
+<body>
+  <c:visualstrapblock >
+  <div ng-app="app" ng-controller="MainCtrl as vm" ng-cloak="true">
+    <div class="overlay" ng-if="vm.saving"></div>
+    <uib-tabset active="active">
+        <uib-tab index="0" heading="Import New Line Items" select="setUpload(false)">
+          <div class="row container-fluid">
+            <div class="form-group col-md-3">
+              <div class="form-input">
+                Choose file for upload....
+              </div>
+              <div id="grid1" class="form-input">
+                <input class="form-control" type="file" accept=".xls,.xlsx,.ods" fileread="true" opts="vm.gridOptions" multiple="false" />
+              </div>
+              <p ng-if="vm.workbookData.length > 0">
+                <button ng-click="vm.saveRecords()" ng-if="!vm.saving" class="btn btn-primary">Import {{ vm.gridOptions.data.length }} Line Items</button>
+              </p>
+            </div>
+            <div class="col-md-9"></div>
+            <div class="col-md-12" style="overflow: scroll;">
+              <table class="table table-striped">
+                <tr>
+                  <th ng-repeat="r in vm.gridOptions.columnDefs">{{r.field}}</th>
+                </tr>
+                <tr ng-repeat="d in vm.gridOptions.data">
+                  <td ng-repeat="r in vm.gridOptions.columnDefs">
+                    {{d[r.field]}}
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </uib-tab>
+        <uib-tab index="1" heading="Recent Quotes" select="setUpload(false)">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Quote Name</th>
+                <th>Grand Total</th>
+                <th>Account</th>
+                <th>Status</th>
+                <th>Created</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="po in vm.recentQuotes">
+                <td><a href="/{{po.Id}}" target="_new">{{ po.Name }}</a></td>
+                <td>{{ po.GrandTotal | currency }}</td>
+                <td>{{ po.Account.Name }}</td>
+                <td>{{ po.Status }}</td>
+                <td>{{ vm.timeAgo(po.CreatedDate) }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </uib-tab>
+    </uib-tabset>
+  </div>
+
+</c:visualstrapblock>
+</body>
+
+<script type="text/javascript">
+
+Date.prototype.addDays = function(days) {
+    var dat = new Date(this.valueOf());
+    dat.setDate(dat.getDate() + days);
+    return dat;
+}
+
+String.prototype.replaceAll = function(search, replacement) {
+    var target = this;
+    return target.replace(new RegExp(search, 'g'), replacement);
+};
+
+if (FileReader.prototype.readAsBinaryString === undefined) {
+    FileReader.prototype.readAsBinaryString = function (fileData) {
+        var binary = "";
+        var pt = this;
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            var bytes = new Uint8Array(reader.result);
+            var length = bytes.byteLength;
+            for (var i = 0; i < length; i++) {
+                binary += String.fromCharCode(bytes[i]);
+            }
+            //pt.result  - readonly so assign content to another property
+            pt.content = binary;
+            $(pt).trigger('onload');
+        }
+        reader.readAsArrayBuffer(fileData);
+    }
+}
+
+function numFromPercent(d) {
+  return d.replace('%', '') / 100;
+}
+
+function numFromCurrency(d) {
+  return Number(d.replace('$', '').replace('€', '').replaceAll(',', ''));
+}
+
+function dateWithinRange(raceDate, campaignDate) {
+  return raceDate > campaignDate.addDays(-5) && raceDate < campaignDate.addDays(360);
+}
+
+function getExternalId(rawValue, ccd, engine) {
+  return ccd.getFullYear().toString() + (ccd.getMonth() + 1).toString() + ccd.getDate().toString() + engine.replaceAll(' ', '') + rawValue.replaceAll(' ', '_');
+}
+
+var Campaigns = [];
+
+angular.module('app', ['ui.select', 'ui.bootstrap', 'ngAnimate', 'oitozero.ngSweetAlert', 'ngProgress'])
+
+.controller('MainCtrl', ['$scope', '$q', '$timeout', 'SweetAlert', 'ngProgressFactory', function ($scope, $q, $timeout, SweetAlert, ngProgressFactory) {
+
+  var vm = this;
+  vm.gridOptions = {};
+  vm.lineItems = [];
+  vm.parentSolutions = {};
+  vm.childSolutions = {};
+  vm.defaultSolutionSet;
+  vm.defaultSolutionSetId = '{!$CurrentPage.parameters.ss}';
+  vm.dssKey = '--Default Solution Set--';
+  vm.lineItemMaxOrder = {};
+  vm.childSolutionMaxOrder = {};
+  vm.solutionMaxOrder = 0;
+  vm.quote = {
+    id: null,
+    name: '{!JSENCODE(Quote.Name)}',
+    lineItems: [],
+    solutions: {},
+    optional: false
+  };
+  vm.fieldsMap = {
+    'Qty': {field: 'Quantity', type: 'number'},
+    'Part #': {field: 'Product2Id', type: 'product'},
+    'Custom Part #': {field: 'Part_Number2__c', type: 'text'},
+    'Description': {field: 'Long_Description__c', type: 'text'},
+    'Unit Price': {field: 'UnitPrice', type: 'currency'},
+    'Disc %': {field: 'Line_Discount__c', type: 'number'},
+    'Solution': {field: 'Solution__c', type: 'text'},
+    'Quote': {field: 'QuoteId', type: 'text'},
+    'Optional': {field: 'Optional__c', type: 'boolean'},
+    'Cost': {field: 'Product_Cost2__c', type: 'currency'}
+  };
+
+  vm.saving = false;
+  vm.numChunksRemaining = 0;
+  vm.allSetup = false;
+  vm.workbookData;
+  vm.products = {};
+  vm.existingSolutions = [];
+  vm.priceBookEntries = {};
+  vm.recentQuotes = [];
+  vm.errors = [];
+  vm.progressBar = ngProgressFactory.createInstance();
+  vm.progressBar.setHeight('30px');
+  vm.progressBar.setColor('blue');
+
+  $scope.$watch(function() {
+    return vm.gridOptions;
+  }, function(newValue, oldValue) {
+    if(newValue) {
+      vm.workbookData = newValue.data;
+      vm.setupQuote(newValue);
+    }
+  }, true);
+
+  vm.toggleProgress = function(start) {
+    vm.saving = start;
+    if(start) {
+        vm.progressBar.start();
+    } else {
+        vm.progressBar.complete();
+    }
+  }
+
+  vm.createSolutions = function() {
+    var deferred = $q.defer();
+    var promises = [];
+    for(var n in vm.parentSolutions) {
+        var s = vm.parentSolutions[n];
+        if(s.id == null) {
+          var pn = n.split('---')[0];
+          var ord = vm.solutionMaxOrder + 1;
+          vm.solutionMaxOrder = ord;
+          promises.push(vm.createSolution({ name: pn, optional: s.optional, parent: null, key: n, order: ord }));
+        }
+    }
+
+    $q.all(promises).then(function(promiseResults) {
+      promiseResults.forEach(function(pr) {
+        vm.parentSolutions[pr.name].id = pr.id;
+      });
+      var childpromises = [];
+      for(n in vm.childSolutions) {
+        s = vm.childSolutions[n];
+        var cn = n.split('---')[1];
+        if(s.id == null) {
+          var parentId = vm.parentSolutions[s.parent + '---' + vm.opt(s.optional)].id;
+          var ord = (vm.childSolutionMaxOrder[parentId] || 0) + 1;
+          vm.childSolutionMaxOrder[parentId] = ord;
+          childpromises.push(vm.createSolution({ 
+            name: cn, 
+            optional: s.optional, 
+            parent: parentId, 
+            key: n,
+            order: ord
+          }));
+        }
+      }
+      $q.all(childpromises).then(function(childPromiseResults) {
+        childPromiseResults.forEach(function(pr) {
+          vm.childSolutions[pr.name].id = pr.id;
+        });
+        deferred.resolve(childPromiseResults);
+      });
+    });
+    return deferred.promise;
+  }
+
+  vm.validateSolutionNames = function() {
+    var longNames = [];
+    for(n in vm.parentSolutions) {
+      n = n.split('---')[0];
+      if(n && n.length > 80) {
+        longNames.push(n);
+      }
+    }
+    for(n in vm.childSolutions) {
+      n = n.split('---')[1];
+      if(n && n.length > 80) {
+        longNames.push(n);
+      }
+    }
+    return longNames.length;
+  }
+
+  vm.createSolution = function(solution){
+    var deferred = $q.defer();
+
+    var sol = new sObject('Quote_Solutions__c');
+    // reached here after confirmation
+    sol.Name = solution.name;
+    if(sol.Name) sol.Name = sol.Name.substring(0, 80);
+    // replace double quotes with single quotes
+    sol.Name = sol.Name.replace(/"/g, '\'');
+    sol.Parent_Solution__c = solution.parent;
+    sol.Quote__c = '{!Quote.Id}';
+    sol.Optional__c = solution.optional;
+    if(solution.order !== undefined) {
+      sol.Order__c = solution.order;
+    }
+    sObject.insert(sol, function(result,event) {
+      if(event.status) {
+        deferred.resolve({name: solution.key, id: result[0].id});
+      } else {
+        deferred.reject(event);
+      }
+    });
+
+    return deferred.promise;
+  }
+
+  vm.createLineItems = function() {
+    var deferred = $q.defer();
+    var lineItems = [];
+    vm.workbookData.forEach(function(row, idx) {
+        if(!row.Qty) {
+            return false;
+        }
+      var key;
+      var pss = row['Parent Solution Set'] || vm.dssKey;
+      var opt = vm.translateOpt(row['Optional']);
+      if(!row['Parent Solution Set'] && !row['Child Solution Set']) {
+        if(vm.defaultSolutionSet) {
+          row.Solution = vm.defaultSolutionSet.Id;
+        } else {
+          // Figure out how to handle this
+        }
+      } else {
+        // TODO: come back to this below
+        if(row['Child Solution Set'] && row['Parent Solution Set']) {
+          key = pss + '---' + row['Child Solution Set'] + '---' + opt;
+          row.Solution = vm.childSolutions[key].id;
+        } else if(row['Child Solution Set']) {
+          key = pss + '---' + row['Child Solution Set'] + '---' + opt;
+          row.Solution = vm.childSolutions[key].id;
+        } else if(row['Parent Solution Set']) {
+          key = pss + '---' + opt;
+          row.Solution = vm.parentSolutions[key].id;          
+        }
+      }
+      row.Quote = '{!Quote.Id}';
+      var qli = vm.rowToQLI(row);
+      qli.UnitPrice = qli.UnitPrice == null ? vm.priceBookEntries[qli.Product2Id].price : qli.UnitPrice;
+      /** Don't need this.  Cost is auto-populated if not present
+        qli.Product_Cost2__c = qli.Product_Cost2__c || vm.products[row['Part #'].toUpperCase()].cost;
+      **/
+      var product = vm.products[vm.getPartNumber(row['Part #'], false).toUpperCase()] || vm.products[vm.getPartNumber(row['Part #'], true).toUpperCase()];
+
+      qli.Line_Discount__c = product.nondiscountable ? null : qli.Line_Discount__c;
+      qli.QuoteSolutionOrder__c = vm.lineItemMaxOrder[qli.Solution__c] === undefined ? 1 : vm.lineItemMaxOrder[qli.Solution__c] + 1;
+      vm.lineItemMaxOrder[qli.Solution__c] = qli.QuoteSolutionOrder__c;
+        lineItems.push(qli);
+    });
+
+    sObject.insert(lineItems, function(result, event) {
+        if(event.status) {
+            deferred.resolve(result);
+        } else {
+            deferred.reject(event);
+        }
+    });
+
+    return deferred.promise;
+  }
+
+  vm.quoteValid = function() {
+    var quoteErrors = [];
+    if(vm.workbookData.length >= 1000) {
+      quoteErrors.push('Please import less than 1000 line items at a time');
+    } else {
+        var missingDefault = false;
+        var notQuotableErrors = [];
+        angular.forEach(vm.workbookData, function(row) {
+          var partNumber = vm.getPartNumber(row['Part #'], false);
+          var qli = vm.rowToQLI(row);
+          if(!qli.Quantity) { 
+            quoteErrors.push('Quantity must be greater than zero: ' + partNumber);
+          } else if(!qli.Product2Id) {
+            quoteErrors.push('No product entry found: ' + partNumber);
+          } else if(!row['Parent Solution Set'] && !vm.defaultSolutionSet) {
+            missingDefault = true;
+          } else {
+            if(!qli.PriceBookEntryId) {
+              quoteErrors.push('No pricebook entry found: ' + partNumber + ' (Quote Currency: {!Quote.CurrencyIsoCode})');
+            }
+            var product = vm.products[partNumber.toUpperCase()] || vm.products[vm.getPartNumber(row['Part #'], true).toUpperCase()];
+            if(!product.quotable) {
+              notQuotableErrors.push('Product is not Quotable: ' + partNumber);
+            }
+            if(qli.Line_Discount__c < 0 || qli.Line_Discount__c > 100) {
+              quoteErrors.push('Line discount must be between 0 and 100: ' + partNumber);
+            }
+          }
+        });
+        if(missingDefault) {
+          quoteErrors.push('No default solution set defined for this quote.  Please select a default or specify solution set names in spreadsheet');
+        }
+    }
+    vm.errors = vm.errors.concat(quoteErrors);
+    return { valid: quoteErrors.length == 0, nonQuotable: notQuotableErrors };
+  }
+
+  vm.getPartNumber = function(pn, withSpaces) {
+    // trim and replace multiple spaces with single space
+    var pn = pn.trim();
+    if(withSpaces == true){
+      pn = pn.replace(/\s+/g, ' ');
+    } else {
+      pn = pn.replace(/\s+/g, '');
+    }
+    return vm.replaceWordChars(pn);
+  }
+
+
+  vm.replaceWordChars = function(text) {
+    var s = text;
+    // smart single quotes and apostrophe
+    s = s.replace(/[\u2018\u2019\u201A]/g, ""); // '
+    // smart double quotes
+    s = s.replace(/[\u201C\u201D\u201E]/g, ""); // "
+    // ellipsis
+    s = s.replace(/\u2026/g, "");
+    // dashes
+    s = s.replace(/[\u2013\u2014\u2011]/g, "-"); // -
+    // circumflex
+    s = s.replace(/\u02C6/g, "^"); // ^
+    // open angle bracket
+    s = s.replace(/\u2039/g, "<"); // <
+    // close angle bracket
+    s = s.replace(/\u203A/g, ">"); // >
+    // spaces
+    s = s.replace(/[\u02DC\u00A0]/g, "");
+    
+    return s;
+}
+
+  vm.formValid = function() {
+    return true;
+  }
+
+  vm.htmlify = function(errors) {
+    return errors.map(function(e) {
+        return e + "\n\r";
+    });
+  }
+
+  vm.getPriceBookEntries = function() {
+    var deferred = $q.defer();
+    var hasProducts = false;
+    for(var p in vm.products) {
+      hasProducts = true;
+    }
+    if(!hasProducts) {
+      deferred.resolve({});
+    } else {
+        var productIds = [];
+        for(var i in vm.products) {
+            productIds.push(vm.products[i].id);
+        }
+        var withQuotes = productIds.map(function(p) {
+            return "'" + p + "'";
+        });
+        var q = 'select Id, Product2Id, UnitPrice from PriceBookEntry where IsActive = true ' +
+            'and PriceBook2Id = \'{!Quote.Pricebook2Id}\' ' +
+            'and CurrencyIsoCode = \'{!Quote.CurrencyIsoCode}\' ' +
+            'and Product2Id in (' + withQuotes.join(',') + ')';
+        sObject.query(q, function(result, event) {
+            if(event.status) {
+                var ret = {};
+                angular.forEach(result, function(record) {
+                    ret[record.Product2Id] = { 
+              id: record.Id, 
+              price: record.UnitPrice 
+            };
+                });
+                deferred.resolve(ret);
+            }
+        });
+    }
+
+    return deferred.promise;
+  }
+
+  vm.checkForErrors = function() {
+    var deferred = $q.defer();
+    if(vm.formValid()) {
+        vm.getPriceBookEntries().then(function(pbePromise) {
+            vm.priceBookEntries = pbePromise;
+            var validStatus = vm.quoteValid();
+            if(validStatus.valid) {
+                deferred.resolve({ valid: true, nqProducts: validStatus.nonQuotable });
+            } else {
+                deferred.resolve({ valid: false });
+            }
+        });
+    } else {
+        deferred.resolve({ valid: false });
+    }
+    return deferred.promise;
+  }
+
+  vm.saveRecords = function() {
+    vm.errors = [];
+    vm.checkForErrors().then(function(isValid) {
+        if(isValid.valid) {
+            if(isValid.nqProducts.length != 0) {
+              SweetAlert.swal({
+                  title: "Warning!",
+                  text: "This import contains non-quoteable products. Would you like to proceed?",
+                  type: "warning",
+                  showCancelButton: true,
+                  confirmButtonColor: "#42BCF4",
+                  confirmButtonText: "Import",
+                  cancelButtonText: "Cancel",
+                  closeOnConfirm: true
+              }, function(isConfirm) {
+                if(isConfirm) {
+                  vm.doImport();
+                }
+              });              
+            } else {
+              vm.doImport();
+            }
+        } else {
+            SweetAlert.swal({
+                title: "Please fix the following errors",
+                text: vm.htmlify(vm.errors),
+                type: "warning",
+                showCancelButton: false,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "OK",
+                closeOnConfirm: true
+            });
+        }
+    });
+
+    return false;
+    
+  }
+
+  vm.doImport = function() {
+    if(vm.validateSolutionNames() != 0) {
+      SweetAlert.swal({
+        title: "Warning!",
+        text: 'Some solution set names are longer than 80 characters. Do you want to truncate them?',
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#42BCF4",
+        confirmButtonText: "Yes",
+        cancelButtonText: "Cancel",
+        closeOnConfirm: true
+      }, function(isConfirm) {
+        if(isConfirm){
+          vm.handleImport();
+        } else {
+           console.log('cancelled');
+        }
+      });
+    } else {
+      vm.handleImport();
+    }
+  }
+
+  vm.handleImport = function(){
+    vm.toggleProgress(true);
+    vm.createSolutions().then(function(response) {
+        vm.createLineItems().then(function(liresponse) {
+          vm.doneWithStuff();
+          SweetAlert.swal({
+            title: "Congratulations!",
+            text: "Your quote has been saved!",
+            type: "success",
+            showCancelButton: false,
+            confirmButtonText: "Boom!",
+            closeOnConfirm: true,
+            closeOnCancel: false 
+          }, function(isConfirm) { 
+              if (isConfirm) {
+                if('{!$CurrentPage.parameters.qli}' == '1') {
+                  window.location.href = '/apex/quotelineitemspage?id={!Quote.Id}';
+                } else {
+                  window.location.href = '/{!Quote.Id}';
+                }
+              }
+            }
+          );                    
+        }, function(error) {
+            alert('Something went wrong, check the console');
+        }).finally(function() {
+            vm.doneWithStuff();
+        });
+    }, function(error) { 
+        vm.doneWithStuff(); 
+        alert('Something went wrong, check the console');
+    });
+  }
+
+  vm.rowToQLI = function(row) {
+    ret = new sObject('QuoteLineItem');
+    for(var key in row) {
+      if(vm.fieldsMap[key] === undefined) {
+        continue;
+      }
+      mapField = vm.fieldsMap[key];
+      if(mapField.type == 'product') {
+        var woSpaces = vm.getPartNumber(row[key], false);
+        var wSpaces = vm.getPartNumber(row[key], true);
+        ret.Product2Id = vm.products[woSpaces.toUpperCase()] === undefined ? (vm.products[wSpaces.toUpperCase()] == undefined ? null : vm.products[wSpaces.toUpperCase()].id) : vm.products[woSpaces.toUpperCase()].id;
+        ret.PriceBookEntryId = vm.priceBookEntries[ret.Product2Id] !== undefined ? vm.priceBookEntries[ret.Product2Id].id : null;
+      } else {
+        ret[mapField.field] = $scope.dataTranslate(row[key], mapField.type);
+      }
+    }
+    return ret;
+  }
+
+  vm.getProducts = function(products) {
+    var deferred = $q.defer();
+    if(products.length == 0) { 
+        deferred.resolve([]);
+    } else {
+        var withQuotes = products.map(function(p) {
+            return "'" + p + "'";
+        });
+        var q = 'select Id, ProductCode, Product_Cost__c, Quotable__c, Nondiscountable__c from Product2 where ProductCode in (' + withQuotes.join(',') + ')';
+        console.log(q);
+        sObject.query(q, function(result, event) {
+            if(event.status) {
+                var ret = {};
+                result.forEach(function(record) {
+                    ret[record.ProductCode.toUpperCase()] = { id: record.Id, cost: record.Product_Cost__c, quotable: record.Quotable__c, nondiscountable: record.Nondiscountable__c };
+                });
+                deferred.resolve(ret);
+            }
+        });
+    }
+    return deferred.promise;
+  }
+
+  vm.setupQuote = function(workbookData) {
+    var products = [];
+    var errors = false;
+    angular.forEach(workbookData.data, function(row) {
+        if(!row.Qty || !row['Part #']) { errors = true; return false; }
+        products.push(vm.getPartNumber(row['Part #'], false));
+        products.push(vm.getPartNumber(row['Part #'], true));
+    });
+
+    if(errors) {
+        SweetAlert.swal({
+            title: "Error!",
+            text: "All rows must specify part number and quantity.  Please fix and upload again",
+            type: "error",
+            showCancelButton: false,
+            confirmButtonColor: "#42BCF4",
+            confirmButtonText: "Sorry :-(",
+            closeOnConfirm: true
+        }, function(isConfirm) {
+          vm.workbookData = null;
+          vm.gridOptions = {};
+        });    
+    }
+    if(products.length == 0) { return; }
+
+    vm.getProducts(products).then(function(promise) {
+        vm.products = promise;
+        workbookData.data.forEach(function(row) {
+            if(!row.Qty) { return false; }
+            if(!row['Parent Solution Set'] && !row['Child Solution Set'] && (vm.defaultSolutionSet || vm.defaultSolutionSetId)) { return false; }
+
+            var pss = row['Parent Solution Set'] || vm.dssKey;
+            var css = row['Child Solution Set'];
+            var opt = vm.translateOpt(row['Optional']);
+
+            var parentSolutionId = (pss == vm.dssKey) ? vm.defaultSolutionSet ? vm.defaultSolutionSet.Id : null : null;
+            
+            if(pss && vm.parentSolutions[pss + '---' + opt] === undefined) {
+              vm.parentSolutions[pss + '---' + opt] = { id: parentSolutionId, optional: $scope.dataTranslate(opt,'boolean') };
+            }
+
+            if(css) {
+              if(vm.childSolutions[pss + '---' + css + '---' + opt] === undefined) {
+                if(vm.parentSolutions[pss + '---' + opt] === undefined) {
+                  // this shouldn't happen?
+                  vm.parentSolutions[pss + '---' + opt] = { 
+                    id: parentSolutionId,
+                    optional: 
+                    $scope.dataTranslate(opt,'boolean')
+                  };
+                }
+                vm.childSolutions[pss + '---' + css + '---' + opt] = { 
+                  id: null, 
+                  parent: pss,
+                  optional: $scope.dataTranslate(opt,'boolean')
+                };
+              }
+            }
+
+        });
+        console.log('child and parent solutions:');
+        console.log(vm.childSolutions);
+        console.log(vm.parentSolutions);
+    });
+
+  };
+
+  vm.doneWithStuff = function() {
+    vm.toggleProgress(false);
+    vm.updateRecentQuotes();
+  }
+
+  vm.getExistingSolutions = function() {
+    var deferred = $q.defer();
+    var queryString = "select Id, Name, Parent_Solution__c, Optional__c, IsDefault__c, Parent_Solution__r.Name from Quote_Solutions__c where Quote__c = '{!Quote.Id}'";
+    sObject.query(queryString, function(result, event) {
+      if(event.status) {
+        deferred.resolve(result);
+      }
+    });
+    return deferred.promise;
+  }
+
+  vm.getLineItemMaxOrder = function() {
+    var deferred = $q.defer();
+    var queryString = "SELECT MAX(QuoteSolutionOrder__c) max, Solution__c from QuoteLineItem WHERE QuoteId = '{!Quote.Id}' GROUP BY Solution__c";
+    sObject.query(queryString, function(result, event) {
+      if(event.status) {
+        deferred.resolve(result);
+      }
+    });
+    return deferred.promise;
+  }
+
+  vm.getSolutionMaxOrder = function() {
+    var deferred = $q.defer();
+    var queryString = "SELECT MAX(Order__c) max from Quote_Solutions__c WHERE Quote__c = '{!Quote.Id}' AND Parent_Solution__c = null";
+    sObject.query(queryString, function(result, event) {
+      if(event.status) {
+        deferred.resolve(result);
+      }
+    });
+    return deferred.promise;
+  }
+
+  vm.getChildSolutionMaxOrder = function() {
+    var deferred = $q.defer();
+    var queryString = "SELECT MAX(Order__c) max, Parent_Solution__c from Quote_Solutions__c WHERE Quote__c = '{!Quote.Id}' AND Parent_Solution__c != null GROUP BY Parent_Solution__c";
+    sObject.query(queryString, function(result, event) {
+      if(event.status) {
+        deferred.resolve(result);
+      }
+    });
+    return deferred.promise;
+  }
+
+  vm.updateRecentQuotes = function() {
+      vm.getRecentQuotes().then(function(r) {
+          vm.recentQuotes = r;
+      });
+  }
+
+  vm.getRecentQuotes = function() {
+      var deferred = $q.defer();
+      var queryString = "select Id, Name, GrandTotal, Account.Name, Status, CreatedDate from Quote order by CreatedDate DESC limit 50";
+
+      sObject.query(queryString, function (result, event) {
+          if(event.status) {
+              deferred.resolve(result);
+          }
+      }, { escape: false });
+
+      return deferred.promise;
+  }
+
+  $scope.dataTranslate = function(data, type) {
+    if(type == 'currency') {
+      return numFromCurrency(data);
+    }
+    if(type == 'percent') {
+      return numFromPercent(data);
+    }
+    if(type == 'date') {
+      return new Date(data);
+    }
+    if(type == 'number') {
+      return Number(data);
+    }
+    if(type == 'boolean') {
+        return data == 'Y';
+    }
+    return data.trim();
+  }
+
+    vm.timeAgo = function(t) {
+        return moment(t).fromNow();
+    }
+
+  vm.opt = function(o) {
+    return o ? 'Y' : 'N';
+  }
+
+  vm.translateOpt = function(o) {
+    var up = o == null ? null : o.toUpperCase();
+    if(up == 'TRUE' || up == 'FALSE') {
+      return up == 'TRUE' ? 'Y' : 'N';
+    }
+    if(up == 'Y' || up == 'N') {
+      return up;
+    }
+    return 'N';
+  }
+
+  $scope.init = function() {
+    vm.updateRecentQuotes();
+    vm.getExistingSolutions().then(function(p) {
+        p.forEach(function(rec) {
+          if(rec.IsDefault__c) {
+            vm.defaultSolutionSet = rec;
+          }
+          if(rec.Parent_Solution__c) {
+            vm.childSolutions[rec.Parent_Solution__r.Name + '---' + rec.Name + '---' + vm.opt(rec.Optional__c)] = { 
+              id: rec.Id,
+              parent: rec.Parent_Solution__c,
+              optional: rec.Optional__c
+            };
+          } else {
+            vm.parentSolutions[rec.Name + '---' + vm.opt(rec.Optional__c)] = {
+              id: rec.Id,
+              parent: null,
+              optional: rec.Optional__c
+            };
+          }
+        });
+        console.log('default solution: ');
+        console.log(vm.defaultSolutionSet);
+    });
+    vm.getLineItemMaxOrder().then(function(p) {
+      p.forEach(function(rec) {
+        vm.lineItemMaxOrder[rec.Solution__c] = rec.max;
+      });
+    });
+    vm.getChildSolutionMaxOrder().then(function(p) {
+      p.forEach(function(rec) {
+        vm.childSolutionMaxOrder[rec.Parent_Solution__c] = rec.max;
+      });
+      console.log(vm.childSolutionMaxOrder);
+    });
+    vm.getSolutionMaxOrder().then(function(p) {
+      vm.solutionMaxOrder = (p[0].max == undefined || p[0].max == null || p.length == 0) ? 0 : p[0].max;
+    });
+  }
+
+  $scope.init();
+ 
+}])
+
+.directive("fileread", [function () {
+  return {
+    scope: {
+      opts: '='
+    },
+    link: function ($scope, $elm, $attrs) {
+      $elm.on('change', function (changeEvent) {
+        var reader = new FileReader();
+        
+        reader.onload = function (evt) {
+          $scope.$apply(function () {
+            var data;
+            if(!evt) {
+              data = reader.content;
+            } else {
+              data = evt.target.result;
+            }
+            
+            var workbook = XLSX.read(data, {type: 'binary'});
+            
+            var headerNames = XLSX.utils.sheet_to_json( workbook.Sheets[workbook.SheetNames[0]], { header: 1 })[0];
+            
+            var data = XLSX.utils.sheet_to_json( workbook.Sheets[workbook.SheetNames[0]]);
+            
+            $scope.opts.columnDefs = [];
+            headerNames.forEach(function (h) {
+              $scope.opts.columnDefs.push({ field: h });
+            });
+            
+            $scope.opts.data = data;
+            $elm.val(null);
+          });
+        };
+        
+        reader.readAsBinaryString(changeEvent.target.files[0]);
+      });
+    }
+  }
+}]);
+
+</script>
+</apex:page>

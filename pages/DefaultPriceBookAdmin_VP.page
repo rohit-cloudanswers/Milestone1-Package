@@ -1,0 +1,42 @@
+<apex:page standardcontroller="User" extensions="DefaultPriceBookAdmin_Ctrl">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<apex:form >
+		<apex:pagemessages id="pgMsg"/>
+		<apex:actionStatus id="LoadStatusPart">
+		     <apex:facet name="start">
+		            <apex:outputPanel styleClass="popupBackground" layout="block" /><br/>
+		          <apex:outputPanel ><img src="/img/loading.gif" /><font color="red">Please wait. Loading...</font><br /> </apex:outputPanel>
+		     </apex:facet>
+   		 </apex:actionStatus>
+		<table>
+			<tr>
+<!-- 				<th>Record Name : </th> -->
+				<th>Price Book : </th>
+				<th>Assign to this user : </th>
+			</tr>
+			<tr>
+<!-- 				<td><apex:inputText value="{!recName}"/></td> -->
+				<td>
+					<apex:selectList value="{!selectedPB}" size="1">
+						<apex:selectOptions value="{!pbOptions}"/>
+					</apex:selectList>
+				</td>
+				<td><apex:inputCheckbox value="{!assignToCurrentUser}"/> </td>
+			</tr>
+		</table>
+		<br/>
+		<apex:pageBlock id="pgblk">
+			<apex:pageblockbuttons id="pgblKbt">
+				<apex:commandButton value="Save" action="{!insertData}" rerender="pgblk,pgMsg" status="LoadStatusPart" onClick="$('html, body').animate({scrollTop:0},'slow');"/> 
+			</apex:pageblockbuttons>
+			<apex:pageblockTable value="{!genWrapList}" var="wrap">
+				<apex:column >
+					<apex:inputCheckBox value="{!wrap.isSelected}"/>
+				</apex:column>
+				<apex:column headerValue="Profile Name">
+					<apex:outputField value="{!wrap.prof.name}"/>
+				</apex:column>
+			</apex:pageblockTable>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

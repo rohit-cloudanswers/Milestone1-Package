@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Service Matrix</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Service Matrix</value>
+    </caseValues>
+    <fields>
+        <label><!-- PRODUCT LINE --></label>
+        <name>PRODUCT_LINE__c</name>
+    </fields>
+    <fields>
+        <label><!-- PRODUCT TYPE --></label>
+        <name>PRODUCT_TYPE__c</name>
+    </fields>
+    <fields>
+        <label><!-- Percentage of Line Total --></label>
+        <name>Percentage_of_Line_Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Type --></label>
+        <name>Service_Type__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

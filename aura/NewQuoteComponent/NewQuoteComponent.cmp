@@ -1,0 +1,6 @@
+<aura:component implements="force:hasRecordId,force:lightningQuickAction" controller="NewQuoteController">
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="recordId" type="String" />
+    
+    <lightning:spinner variant="brand" size="large" />
+</aura:component>

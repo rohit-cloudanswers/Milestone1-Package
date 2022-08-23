@@ -1,0 +1,3 @@
+<apex:page sidebar="false" >
+<iframe src="https://app.box.com/embed_widget/s/41isf222mj2z0u80fwe8?view=list&sort=name&direction=ASC&theme=blue" width="100%" height="600" frameborder="0"></iframe>
+</apex:page>

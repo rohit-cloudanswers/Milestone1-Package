@@ -1,0 +1,8 @@
+<apex:page standardController="Quote" extensions="UnlockQuoteController" action="{!toggleSync}" >
+    <apex:form >
+        <apex:pageBlock title="Toggle Sync Result">
+            <apex:pageMessages id="messages"></apex:pageMessages>
+            <apex:commandButton value="Cancel" action="{!cancel}" />
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

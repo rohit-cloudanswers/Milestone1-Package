@@ -1,0 +1,854 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <assignments>
+        <name>Assign_Fields</name>
+        <label>Assign Fields</label>
+        <locationX>879</locationX>
+        <locationY>278</locationY>
+        <assignmentItems>
+            <assignToReference>CommitmentRecord.Opportunity__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>OpportunityID</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CommitmentRecord.Opportunity_Last_Updated__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CommitmentRecord.Commitment_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Commitment_Date</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CommitmentRecord.Target_Acceptance_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Target_Acceptance_Date</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CommitmentRecord.Components__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Component</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CommitmentRecord.Description__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TextBlurb</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CommitmentRecord.Name</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Commitment_Title</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CommitmentRecord.Product_Group__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Product_Picklist</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CommitmentRecord.Jira_Issue_Type_ID__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>10294</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CommitmentRecord.Jira_Project_ID__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>11446</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CommitmentRecord.Jira_Sync__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CommitmentRecord.SOW_Signoff_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>SOW_Signoff_Date</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_Record</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Fields_with_Late_Reason</name>
+        <label>Assign Fields with Late Reason</label>
+        <locationX>948</locationX>
+        <locationY>467</locationY>
+        <assignmentItems>
+            <assignToReference>CommitmentRecord.Opportunity__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>OpportunityID</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CommitmentRecord.Opportunity_Last_Updated__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CommitmentRecord.Commitment_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Commitment_Date</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CommitmentRecord.Target_Acceptance_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Target_Acceptance_Date</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CommitmentRecord.Components__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Component</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CommitmentRecord.Description__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TextBlurb</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CommitmentRecord.Name</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Commitment_Title</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CommitmentRecord.Reason_for_Late_Commitment__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Reason_for_Late_Commitment</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CommitmentRecord.Product_Group__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Product_Picklist</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CommitmentRecord.Jira_Project_ID__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>11446</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CommitmentRecord.Jira_Issue_Type_ID__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>10294</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CommitmentRecord.Jira_Sync__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_Record</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>set_Record_Type_ID_Network</name>
+        <label>set Record Type ID Network</label>
+        <locationX>1276</locationX>
+        <locationY>79</locationY>
+        <assignmentItems>
+            <assignToReference>recordTypeID</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Record_Type_ID.RecordTypeID15</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>set_Record_Type_ID_Playout</name>
+        <label>set Record Type ID Playout</label>
+        <locationX>1140</locationX>
+        <locationY>24</locationY>
+        <assignmentItems>
+            <assignToReference>recordTypeID</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Record_Type_ID_0.RecordTypeID15</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Checking_again_for_Closed_Opp</name>
+        <label>Checking again for Closed Opp</label>
+        <locationX>751</locationX>
+        <locationY>404</locationY>
+        <defaultConnector>
+            <targetReference>Assign_Fields</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Closed_Opp</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Opportunity_Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed/Won</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Fields_with_Late_Reason</targetReference>
+            </connector>
+            <label>Closed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Did_we_get_an_Opportunity_ID</name>
+        <label>Did we get an Opportunity ID?</label>
+        <locationX>389</locationX>
+        <locationY>279</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>OpportunityID</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Opportunity_Record</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+        <rules>
+            <name>No</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>OpportunityID</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Error</targetReference>
+            </connector>
+            <label>No</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>allows sys admin to override restrictions</description>
+        <name>Is_the_Opportunity_still_open</name>
+        <label>Is the Opportunity still open?</label>
+        <locationX>590</locationX>
+        <locationY>577</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Open</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Opportunity_Record.StageName</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed/Won</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Opportunity_Record.StageName</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed/Lost</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Commitment</targetReference>
+            </connector>
+            <label>Yes Open</label>
+        </rules>
+        <rules>
+            <name>Closed_Won</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>Opportunity_Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed/Won</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Commitment</targetReference>
+            </connector>
+            <label>Closed Won</label>
+        </rules>
+        <rules>
+            <name>Closed_Lost</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Opportunity_Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed/Lost</stringValue>
+                </rightValue>
+            </conditions>
+            <label>Closed Lost</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_the_Product_Network</name>
+        <label>Is the Product Network?</label>
+        <locationX>608</locationX>
+        <locationY>50</locationY>
+        <defaultConnector>
+            <targetReference>Get_Record_Type_ID_0</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Network</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Product_Picklist</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Network</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Record_Type_ID</targetReference>
+            </connector>
+            <label>Yes Network</label>
+        </rules>
+    </decisions>
+    <dynamicChoiceSets>
+        <name>Components</name>
+        <dataType>Multipicklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Components__c</picklistField>
+        <picklistObject>Customer_Commitments__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>Product</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Product_Group__c</picklistField>
+        <picklistObject>Customer_Commitments__c</picklistObject>
+    </dynamicChoiceSets>
+    <formulas>
+        <name>RunningUserProfile</name>
+        <dataType>String</dataType>
+        <expression>{!$Profile.Name}</expression>
+    </formulas>
+    <interviewLabel>Create Customer Commitment {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Create Customer Commitment</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordCreates>
+        <name>Create_Record</name>
+        <label>Create Record</label>
+        <locationX>1006</locationX>
+        <locationY>277</locationY>
+        <connector>
+            <targetReference>Finish_Screen</targetReference>
+        </connector>
+        <inputReference>CommitmentRecord</inputReference>
+    </recordCreates>
+    <recordLookups>
+        <name>Opportunity_Record</name>
+        <label>Opportunity Record</label>
+        <locationX>512</locationX>
+        <locationY>276</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Is_the_Opportunity_still_open</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>OpportunityID</elementReference>
+            </value>
+        </filters>
+        <object>Opportunity</object>
+    </recordLookups>
+    <screens>
+        <name>Additional_Fields</name>
+        <label>Additional Fields</label>
+        <locationX>754</locationX>
+        <locationY>270</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Checking_again_for_Closed_Opp</targetReference>
+        </connector>
+        <fields>
+            <name>Commitment_Date</name>
+            <dataType>Date</dataType>
+            <fieldText>Original Commitment Date</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Target_Acceptance_Date</name>
+            <dataType>Date</dataType>
+            <fieldText>Target Acceptance Date</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>SOW_Signoff_Date</name>
+            <dataType>Date</dataType>
+            <fieldText>SOW Signoff Date</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Component</name>
+            <choiceReferences>Components</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Components</fieldText>
+            <fieldType>MultiSelectPicklist</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Create_Commitment</name>
+        <label>Create Commitment</label>
+        <locationX>631</locationX>
+        <locationY>275</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Additional_Fields</targetReference>
+        </connector>
+        <fields>
+            <name>IntroText</name>
+            <fieldText>&lt;p&gt;Please include a full description of the customer request.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;What problem is this trying to solve&lt;/li&gt;&lt;li&gt;Description of Feature being requested&lt;/li&gt;&lt;li&gt;Is there currently a solution/workaround&lt;/li&gt;&lt;li&gt;What is the customer&apos;s workflow&lt;/li&gt;&lt;li&gt;Impact to customer without this feature&lt;/li&gt;&lt;li&gt;Any other customers requesting this feature&lt;/li&gt;&lt;li&gt;Would they be willing to pay for the addition of the feature&lt;/li&gt;&lt;li&gt;Any other vendors in the industry that currently provide this feature&lt;/li&gt;&lt;/ul&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Product_Picklist</name>
+            <choiceReferences>Product</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Product</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <helpText>&lt;p&gt;This is used to determine if it should interface with Cloud Jira (Playout) or On Prem Jira (Network)&lt;/p&gt;</helpText>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Commitment_Title</name>
+            <dataType>String</dataType>
+            <fieldText>Commitment Title</fieldText>
+            <fieldType>InputField</fieldType>
+            <helpText>&lt;p&gt;Title must be less than 80 characters!&lt;/p&gt;</helpText>
+            <isRequired>true</isRequired>
+            <validationRule>
+                <errorMessage>&lt;p&gt;Title must be less than 80 characters!&lt;/p&gt;</errorMessage>
+                <formulaExpression>LEN({!Commitment_Title}) &lt;= 80</formulaExpression>
+            </validationRule>
+        </fields>
+        <fields>
+            <name>What_problem_is_this_trying_to_solve</name>
+            <fieldText>What problem is this trying to solve?</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <helpText>&lt;p&gt;Fill in a written non-technical description of the problem the customer has&lt;/p&gt;</helpText>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>OppClosedMessage</name>
+            <fieldText>&lt;p&gt;This opportunity is currently in a Closed - Won state.  Please provide a reason and approval for the late addition.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>Opportunity_Record.StageName</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>Closed/Won</stringValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>Reason_for_Late_Commitment</name>
+            <dataType>String</dataType>
+            <fieldText>Reason for Late Commitment</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>Opportunity_Record.StageName</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>Closed/Won</stringValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Create_Commitment_Backup</name>
+        <label>Create Commitment Backup</label>
+        <locationX>377</locationX>
+        <locationY>558</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>IntroText_0</name>
+            <fieldText>&lt;p&gt;This new form will guide you in providing the correct information for Product Line Management so that they can better evaluate the requested Customer Commitment.  The goal is to help reduce the overall back and forth of questions and reduce the time of the overall process.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;If you are unsure what is required click the &amp;lt;i&amp;gt; icon above the question.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Commitment_Title_0</name>
+            <dataType>String</dataType>
+            <fieldText>Commitment Title</fieldText>
+            <fieldType>InputField</fieldType>
+            <helpText>&lt;p&gt;Title must be less than 80 characters!&lt;/p&gt;</helpText>
+            <isRequired>true</isRequired>
+            <validationRule>
+                <errorMessage>&lt;p&gt;Title must be less than 80 characters!&lt;/p&gt;</errorMessage>
+                <formulaExpression>LEN({!Commitment_Title}) &lt;= 80</formulaExpression>
+            </validationRule>
+        </fields>
+        <fields>
+            <name>What_problem_is_this_trying_to_solve_0</name>
+            <fieldText>What problem is this trying to solve?</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <helpText>&lt;p&gt;Fill in a written non-technical description of the problem the customer has&lt;/p&gt;</helpText>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Description_of_Feature_being_requested_0</name>
+            <fieldText>Description of Feature being requested.</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <helpText>&lt;p&gt;Fill in a written description of the requested proposed feature here&lt;/p&gt;</helpText>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Do_they_currently_have_a_solution_or_workaround_new_0</name>
+            <fieldText>Do they currently have a solution or workaround?</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <helpText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 14px; font-family: Calibri, sans-serif; color: rgb(62, 62, 60);&quot;&gt;Does this use our software or a competitors? If there is a solution, how are they achieving this now?&lt;/span&gt;&lt;/p&gt;</helpText>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>What_is_the_customer_s_workflow_when_they_encounter_this_problem_0</name>
+            <fieldText>What is the customer&apos;s workflow when they encounter this problem?</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <helpText>&lt;p&gt;&lt;span style=&quot;font-family: Calibri, sans-serif; font-size: 10.5pt;&quot;&gt;Does this workflow use Imagine products or 3rd party, etc&lt;/span&gt;&lt;/p&gt;</helpText>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>What_is_the_impact_to_the_customer_if_they_do_not_have_this_function_feature_0</name>
+            <fieldText>What is the impact to the customer if they do not have this function/feature?</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <helpText>&lt;p&gt;&lt;span style=&quot;font-family: Calibri, sans-serif; font-size: 11pt;&quot;&gt;What happens if we cannot make the delivery date?&lt;/span&gt;&lt;/p&gt;</helpText>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Description_of_supporting_documents_customer_samples_0</name>
+            <fieldText>Description of supporting documents, customer samples.</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <helpText>&lt;p&gt;&lt;span style=&quot;font-family: Calibri, sans-serif; font-size: 10.5pt;&quot;&gt;Give a brief description of any supporting documents or samples attached&lt;/span&gt;&lt;/p&gt;</helpText>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Are_there_other_customers_requesting_this_feature_0</name>
+            <fieldText>Are there other customers requesting this feature?  Provide a list of customers.</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <helpText>&lt;p&gt;&lt;span style=&quot;font-size: 10.5pt;&quot;&gt;Provide a list of customers. Would this feature allow for additional opportunities?&lt;/span&gt;&lt;/p&gt;</helpText>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>If_not_in_the_roadmap_are_they_willing_to_pay_for_it_0</name>
+            <fieldText>If not in the roadmap, are they willing to pay for it?</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <helpText>&lt;p&gt;&lt;span style=&quot;font-size: 10.5pt;&quot;&gt;Provide customer&apos;s willingness to pay&lt;/span&gt;&lt;/p&gt;</helpText>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>What_is_the_customer_s_existing_deployment_0</name>
+            <fieldText>What is the customer&apos;s existing deployment?</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <helpText>&lt;p&gt;&lt;span style=&quot;font-family: Calibri, sans-serif; font-size: 10.5pt;&quot;&gt;What’s is the customer’s existing deployment and current connections? What are their future plans?&lt;/span&gt;&lt;/p&gt;</helpText>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>List_any_other_products_or_technical_information_in_the_industry_which_provide</name>
+            <fieldText>List any other products or technical information in the industry which provide this type of feature.</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <helpText>&lt;p&gt;These should be industry references.&lt;/p&gt;</helpText>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Error</name>
+        <label>Error</label>
+        <locationX>390</locationX>
+        <locationY>417</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>ErrorMessage</name>
+            <fieldText>&lt;p&gt;Well this is odd!  I&apos;m not sure how you got here but there is no Opportunity referenced.  Contact darcie.laur@imaginecommunications.com with how you got here.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>No</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>OppClosedText</name>
+            <fieldText>&lt;p&gt;This opportunity is already closed/lost.  You really shouldn&apos;t be adding a commitment to an opportunity that we won&apos;t be getting.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;You may want to check to make sure you&apos;re on the correct opportunity, there is often multiples!&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>Opportunity_Record.StageName</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>Closed/Lost</stringValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Finish_Screen</name>
+        <label>Finish Screen</label>
+        <locationX>1140</locationX>
+        <locationY>277</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>FinishText</name>
+            <fieldText>&lt;p&gt;The Customer Commitment was created.  BE SURE TO CLICK &quot;CREATE NEW JIRA&quot; to send the record to JIRA.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Click here to go to the new Commitment.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://imaginecommunications.my.salesforce.com/{!CommitmentRecord.Id}&quot; target=&quot;_blank&quot;&gt;https://imaginecommunications.my.salesforce.com/{!CommitmentRecord.Id}&lt;/a&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <startElementReference>Did_we_get_an_Opportunity_ID</startElementReference>
+    <status>Active</status>
+    <subflows>
+        <name>Get_Record_Type_ID</name>
+        <label>Get Record Type ID</label>
+        <locationX>868</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>set_Record_Type_ID_Network</targetReference>
+        </connector>
+        <flowName>RecordTypeID_Lookup_Subflow</flowName>
+        <inputAssignments>
+            <name>ObjectName</name>
+            <value>
+                <stringValue>Customer_Commitments__c</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>RecordTypeName</name>
+            <value>
+                <stringValue>OnPremJira</stringValue>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <subflows>
+        <name>Get_Record_Type_ID_0</name>
+        <label>Get Record Type ID</label>
+        <locationX>1006</locationX>
+        <locationY>106</locationY>
+        <connector>
+            <targetReference>set_Record_Type_ID_Playout</targetReference>
+        </connector>
+        <flowName>RecordTypeID_Lookup_Subflow</flowName>
+        <inputAssignments>
+            <name>ObjectName</name>
+            <value>
+                <stringValue>Customer_Commitments__c</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>RecordTypeName</name>
+            <value>
+                <stringValue>Master</stringValue>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <textTemplates>
+        <description>OLD BLURB
+What problem is this trying to solve?
+
+{!What_problem_is_this_trying_to_solve}
+
+
+
+
+
+Description of Feature being requested.
+
+{!Description_of_Feature_being_requested}
+
+
+
+
+
+Do they currently have a solution or workaround?
+
+{!Do_they_currently_have_a_solution_or_workaround_new}
+
+
+
+
+
+What is the customer&apos;s workflow when they encounter this problem?
+
+{!What_is_the_customer_s_workflow_when_they_encounter_this_problem}
+
+
+
+
+
+What is the impact to the customer if they do not have this function/feature?
+
+{!What_is_the_impact_to_the_customer_if_they_do_not_have_this_function_feature}
+
+
+
+
+
+Supporting Documents, Customer Samples
+
+{!Description_of_supporting_documents_customer_samples}
+
+
+
+
+
+Are there any other customers requesting this feature?
+
+{!Are_there_other_customers_requesting_this_feature}
+
+
+
+
+
+If not in the roadmap, are they willing to pay for it?
+
+{!If_not_in_the_roadmap_are_they_willing_to_pay_for_it}
+
+
+
+
+
+Customer&apos;s configuration
+
+{!What_is_the_customer_s_existing_deployment}
+
+
+
+
+
+Industry References
+
+{!List_any_other_products_or_technical_information_in_the_industry_which_provide_t}</description>
+        <name>TextBlurb</name>
+        <text>{!What_problem_is_this_trying_to_solve}</text>
+    </textTemplates>
+    <variables>
+        <name>CommitmentRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Customer_Commitments__c</objectType>
+    </variables>
+    <variables>
+        <name>OpportunityID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>recordTypeID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

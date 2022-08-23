@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>EMEA Test &amp; Measurement Service</name>
+    <queueMembers>
+        <users>
+            <user>ashok.gangatharan@imaginecommunications.com</user>
+            <user>errol.holder@imaginecommunications.com</user>
+            <user>hisham.matkari@imaginecommunications.com</user>
+            <user>kevin.sharman@imaginecommunications.com</user>
+            <user>kevin.shaw@imaginecommunications.com</user>
+            <user>nigel.birt@imaginecommunications.com</user>
+            <user>sergei.tcveshko@imaginecommunications.com</user>
+            <user>stefano.petrale@imaginecommunications.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

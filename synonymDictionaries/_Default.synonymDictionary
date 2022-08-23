@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SynonymDictionary xmlns="http://soap.sforce.com/2006/04/metadata">
+    <groups>
+        <languages>en_US</languages>
+        <terms>ADS</terms>
+        <terms>xG ADS</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>POIS</terms>
+        <terms>xG POIS</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>SelenioFlex File</terms>
+        <terms>Zenium</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>SEL-1UHD3</terms>
+        <terms>SEL-1UHD3-SIPL</terms>
+        <terms>SEL-1UHD3-UDFS</terms>
+        <terms>UHD3</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>Landmark OSI</terms>
+        <terms>LandmarkOSI</terms>
+        <terms>OSI</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>sa 353</terms>
+        <terms>sa353</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>MCS</terms>
+        <terms>Master Control Panel</terms>
+        <terms>Sports Panel</terms>
+        <terms>Versio Master Control Panel</terms>
+        <terms>Versio Master Control Touchscreen</terms>
+        <terms>Versio Master Control Touchscreen &amp; Sports Panel</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>ADC Missing Media Viewer</terms>
+        <terms>MMV</terms>
+        <terms>Missing Media Viewer</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>Config Tool</terms>
+        <terms>Device Server</terms>
+        <terms>Device Server &amp; Config Tool</terms>
+        <terms>Device Server and Config Tool</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>DAM Motion</terms>
+        <terms>DAM-Motion</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>Motion</terms>
+        <terms>Nexio Motion</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>Selenio X50</terms>
+        <terms>Selenio X50 Parametric Control</terms>
+        <terms>X50</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>Selenio X75</terms>
+        <terms>X75</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>Selenio X100</terms>
+        <terms>X100</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>ICM</terms>
+        <terms>Nexio Ingest Control Manager</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>Magellan SDN Orchestrator 2.9.4</terms>
+        <terms>Magellan SDN Orchestrator 2.9.5</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>Assembly</terms>
+        <terms>assy</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>Hang</terms>
+        <terms>Hung</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>D-AIS</terms>
+        <terms>D-Series D-AIS</terms>
+        <terms>D-Series DAIS</terms>
+        <terms>DAIS</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>Documentation</terms>
+        <terms>Handbook</terms>
+        <terms>Installation and Configuration</terms>
+        <terms>Installation and Operation</terms>
+        <terms>Manual</terms>
+        <terms>User Guide</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>Download</terms>
+        <terms>Maintenance Release</terms>
+        <terms>Release</terms>
+        <terms>Upgrade</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>Eclipse Plus</terms>
+        <terms>EclipsePlus</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>JITP</terms>
+        <terms>Telurio Packager JITP</terms>
+        <terms>just in time</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>packager</terms>
+        <terms>packaging</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>Magellan Router Control Panels</terms>
+        <terms>Magellan Router Control Panels RCP</terms>
+        <terms>RCP</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>Asset Management</terms>
+        <terms>DAM</terms>
+        <terms>Digital Asset Management</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>Release Note</terms>
+        <terms>Release Notes</terms>
+        <terms>ReleaseNote</terms>
+        <terms>ReleaseNotes</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>GEN 9</terms>
+        <terms>GEN-9</terms>
+        <terms>GEN9</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>Amp</terms>
+        <terms>Nexio Amp</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>Farad</terms>
+        <terms>Nexio Farad</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>Nexio Velocity</terms>
+        <terms>Velocity</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>ICM</terms>
+        <terms>Nexio Ingest Control Manager</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>Connectus</terms>
+        <terms>Nexio Connectus</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>EPIC</terms>
+        <terms>EPIC MV</terms>
+        <terms>EPIC Multiviewer</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>Magellan SDNO</terms>
+        <terms>SDNO</terms>
+        <terms>Software Defined Network Orchestrator</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>CCS Navigator</terms>
+        <terms>Magellan CCS Navigator</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>ABR</terms>
+        <terms>Adaptive Bitrate</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>TAP</terms>
+        <terms>Telurio Packager</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>Selenio Edge</terms>
+        <terms>Selenio VDE</terms>
+        <terms>SelenioEdge</terms>
+        <terms>VDE</terms>
+        <terms>Video Delivery Edge</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>Selenio VMG</terms>
+        <terms>VMG</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>SEP</terms>
+        <terms>Selenio SEP</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>BNP</terms>
+        <terms>Selenio BNP</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>PT-RES</terms>
+        <terms>Platinum PT-RES</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>IP3</terms>
+        <terms>Platinum IP3</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>SX Pro</terms>
+        <terms>SX-Pro</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>Platinum Predator</terms>
+        <terms>Predator</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>SMM</terms>
+        <terms>Selenio One Media Manager</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>Selenio Next</terms>
+        <terms>SelenioNext</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>Selenio X100</terms>
+        <terms>X100</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>Selenio X80</terms>
+        <terms>X80</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>Selenio X75</terms>
+        <terms>X75</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>Selenio X50</terms>
+        <terms>X50</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>6800</terms>
+        <terms>6800+</terms>
+        <terms>Selenio 6800</terms>
+        <terms>Selenio 6800+</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>Selenio ICE</terms>
+        <terms>SelenioICE</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>SNP</terms>
+        <terms>Selenio Network Processor</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>ENC 2</terms>
+        <terms>ENC1</terms>
+        <terms>SEL-1ENC1</terms>
+        <terms>SEL-ENC1</terms>
+        <terms>Selenio ENC1</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>ENC 2</terms>
+        <terms>ENC2</terms>
+        <terms>SEL-1ENC2</terms>
+        <terms>SEL-ENC2</terms>
+        <terms>Selenio ENC2</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>MCP</terms>
+        <terms>Selenio MCP</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>Flex</terms>
+        <terms>SelenioFlex</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>Landmark Rights &amp; Scheduling</terms>
+        <terms>Vision</terms>
+    </groups>
+    <groups>
+        <languages>en_US</languages>
+        <terms>Landmark</terms>
+        <terms>Landmark Airtime Sales</terms>
+    </groups>
+    <label>_Default</label>
+</SynonymDictionary>

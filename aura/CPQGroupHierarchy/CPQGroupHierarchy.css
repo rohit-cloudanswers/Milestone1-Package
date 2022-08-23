@@ -1,0 +1,25 @@
+.THIS .forceRelatedListCardHeader {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.THIS .slds-form-element.moveto {
+    display: inline-block;
+}
+.THIS .slds-form-element.copyto {
+    display: inline-block;
+}
+.THIS .moveto .slds-select {
+    vertical-align: middle;
+}
+.THIS .copyto .slds-select {
+    vertical-align: middle;
+}
+.THIS .slds-no-flex label {
+    display: none;
+}
+.THIS .mass-edit-spinner {
+    position: inherit;
+}
+.THIS .slds-icon-eq {
+    display: inline-block;
+}

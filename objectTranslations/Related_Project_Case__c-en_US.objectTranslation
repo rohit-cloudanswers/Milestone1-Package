@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Related Project &amp; Case</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Related Projects &amp; Cases</value>
+    </caseValues>
+    <fields>
+        <label><!-- Case Hours --></label>
+        <name>Case_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case Status --></label>
+        <name>Case_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case --></label>
+        <name>Case__c</name>
+        <relationshipLabel><!-- Related Projects &amp; Cases --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Field Rev Rec &lt; 90 Days/Rev =&gt; $100K --></label>
+        <name>Field_Rev_Rec_90_Days_Rev_100K__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>MPM4_Project__c</name>
+        <relationshipLabel><!-- Related Projects &amp; Cases --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Open Project Revenue --></label>
+        <name>Open_Project_Revenue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project3 --></label>
+        <name>Project3__c</name>
+        <relationshipLabel><!-- Related Projects &amp; Cases --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project Stage --></label>
+        <name>Project_Stage__c</name>
+    </fields>
+    <layouts>
+        <layout>Related Project &amp; Case Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

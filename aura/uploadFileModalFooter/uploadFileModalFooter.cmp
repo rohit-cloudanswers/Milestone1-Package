@@ -1,0 +1,8 @@
+<aura:component >
+
+    <aura:attribute name="folderId" type="String" />
+    
+    <lightning:overlayLibrary aura:id="overlayLib"/>
+    <lightning:button name="cancel" label="Cancel" onclick="{!c.handleCancel}" />
+    
+</aura:component>

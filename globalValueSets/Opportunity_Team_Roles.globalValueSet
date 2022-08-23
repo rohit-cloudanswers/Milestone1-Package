@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Account Manager</fullName>
+        <default>false</default>
+        <label>Account Manager</label>
+    </customValue>
+    <customValue>
+        <fullName>Bid Manager</fullName>
+        <default>false</default>
+        <label>Bid Manager</label>
+    </customValue>
+    <customValue>
+        <fullName>Channel Manager</fullName>
+        <default>false</default>
+        <label>Channel Manager</label>
+    </customValue>
+    <customValue>
+        <fullName>Contributor</fullName>
+        <default>false</default>
+        <label>Contributor</label>
+    </customValue>
+    <customValue>
+        <fullName>Enterprise Solutions Manager</fullName>
+        <default>false</default>
+        <label>Enterprise Solutions Manager</label>
+    </customValue>
+    <customValue>
+        <fullName>Executive Sponsor</fullName>
+        <default>false</default>
+        <label>Executive Sponsor</label>
+    </customValue>
+    <customValue>
+        <fullName>ISR</fullName>
+        <default>false</default>
+        <label>ISR</label>
+    </customValue>
+    <customValue>
+        <fullName>Lead Qualifier</fullName>
+        <default>false</default>
+        <label>Lead Qualifier</label>
+    </customValue>
+    <customValue>
+        <fullName>Partner Manager</fullName>
+        <default>false</default>
+        <label>Partner Manager</label>
+    </customValue>
+    <customValue>
+        <fullName>Partner User</fullName>
+        <default>false</default>
+        <label>Partner User</label>
+    </customValue>
+    <customValue>
+        <fullName>Pre-Sales/SE</fullName>
+        <default>false</default>
+        <label>Pre-Sales/SE</label>
+    </customValue>
+    <customValue>
+        <fullName>Project Manager</fullName>
+        <default>false</default>
+        <label>Project Manager</label>
+    </customValue>
+    <customValue>
+        <fullName>RSM</fullName>
+        <default>false</default>
+        <label>RSM</label>
+    </customValue>
+    <customValue>
+        <fullName>Sales Admin</fullName>
+        <default>false</default>
+        <label>Sales Admin</label>
+    </customValue>
+    <customValue>
+        <fullName>Sales Rep</fullName>
+        <default>false</default>
+        <label>Sales Rep</label>
+    </customValue>
+    <customValue>
+        <fullName>Siebel Migration</fullName>
+        <default>false</default>
+        <label>Siebel Migration</label>
+    </customValue>
+    <customValue>
+        <fullName>Solutions Architect</fullName>
+        <default>false</default>
+        <label>Solutions Architect</label>
+    </customValue>
+    <masterLabel>Opportunity Team Roles</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

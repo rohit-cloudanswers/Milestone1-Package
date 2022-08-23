@@ -1,0 +1,75 @@
+<apex:page Controller="userStoryController" title="Opportunity Dashboard - Sitech" showHeader="true" sidebar="false" standardStylesheets="true">
+<!--apex:composition template="{!$Site.Template}">
+  <apex:define name="body"-->
+  <head>
+    <apex:includeScript value="{!URLFOR($Resource.jQuery, '/jQuery/js/jquery.js')}"  />
+    <apex:includeScript value="{!URLFOR($Resource.jQuery, '/jQuery/js/advancedtable_v2.js')}"  />
+    
+    <apex:stylesheet value="{!URLFOR($Resource.jQuery, '/jQuery/css/advancedtable.css')}"  />
+  </head>
+  <apex:form >
+    <apex:pageBlock title="User Stories" id="qUstSelection" rendered="true">
+      <apex:pageBlockButtons location="top">
+        <apex:commandButton value="Process Selected Stories" action="{!process}" reRender="table"/>
+      </apex:pageBlockButtons>
+      <apex:pageMessages />    
+        <script language="javascript" type="text/javascript">
+            $().ready(function() {
+                $("#searchtable").show();
+                $("#table1").advancedtable({searchField: "#search", loadElement: "#loader",sorting: true,rowsPerPage: 50, searchCaseSensitive: false, ascImage: "{!URLFOR($Resource.jQuery, '/jQuery/images/up.png')}", descImage: "{!URLFOR($Resource.jQuery, '/jQuery/images/down.png')}", searchOnField: "#searchOn"});
+            });
+        </script>
+        <table width="100%" class="normal" id="searchtable" border="0" cellspacing="4" cellpadding="0" style="display:none;">
+            <tr>
+                <td width="37%">Search / Filter:  <select id="searchOn" name="searchOn" style="display:none;"/>&nbsp;&nbsp;<input name="search" type="text" id="search" style="display:none;" /></td>
+                <td width="63%"><div id="loader" style="display:none;"><img src="{!URLFOR($Resource.jQuery, '/jQuery/images/loader.gif')}" alt="Loader" /></div></td>
+            </tr>
+        </table>
+        <table  width="80%" id="table1" class="advancedtable" border="0" cellspacing="0" cellpadding="0">
+            <thead>
+            <tr>
+            
+                <th style="text-align:left;"></th>
+                <th style="text-align:left;">Name</th>
+                <th style="text-align:left;">As A</th>
+                <th style="text-align:left;">I Want</th>
+                <th style="text-align:left;">So That</th>
+                <th style="text-align:left;">Epic</th>
+                <th style="text-align:left;">Topic</th>
+                <th style="text-align:left;">Release</th>   
+                <th style="text-align:left;">LOE</th>                             
+                <th style="text-align:left;">Priority</th>                      
+                <th style="text-align:left;">Object_Or_Domain</th>                                            
+                <th style="text-align:left;">Notes</th> 
+                <th style="text-align:left;">Functional Area</th>                                
+                <th style="text-align:left;">Dependencies</th> 
+                <th style="text-align:left;">Burned</th> 
+               </tr>
+            </thead>
+            <tbody>            
+                <apex:repeat var="q" value="{!UserStories2}">
+                    <tr>
+                         <td style="padding-left:5px;text-align:left;" > <apex:inputCheckbox value="{!q.selected}"/>  </td>                    
+                        <td style="padding-left:5px;text-align:left;"> <a href="/{!q.ust.Id}"> <apex:outputField value="{!q.ust.Name}"/> </a> </td>
+                        <td style="padding-left:5px;text-align:left;"><apex:inputText value="{!q.ust.As_A__c}"/></td>
+                        <td style="padding-left:5px;text-align:left;"><apex:inputText value="{!q.ust.I_Want__c}"/></td>
+                        <td style="padding-left:5px;text-align:left;"><apex:inputText value="{!q.ust.So_That__c}"/> </td>
+                        <td style="padding-left:5px;text-align:left;"><apex:inputField value="{!q.ust.Epic__c}"/></td>
+                        <td style="padding-left:5px;text-align:left;"><apex:inputField value="{!q.ust.Topic__c}"/></td>
+                        <td style="padding-left:5px;text-align:left;">{!q.ust.Release__c}</td>
+                        <td style="padding-left:5px;text-align:left;"><apex:inputText value="{!q.ust.LOE__c}"/></td>
+                        <td style="padding-left:5px;text-align:left;"><apex:inputText value="{!q.ust.Harris_Broadcast_Priority__c}"/></td>
+                        <td style="padding-left:5px;text-align:left;"><apex:inputText value="{!q.ust.Object_Or_Domain__c}"/></td>                        
+                        <td style="padding-left:5px;text-align:left;"><apex:inputText value="{!q.ust.Notes__c}"/></td>
+                        <td style="padding-left:5px;text-align:left;"><apex:inputText value="{!q.ust.Functional_Area__c}"/></td>                                            
+                        <td style="padding-left:5px;text-align:left;"><apex:inputText value="{!q.ust.Dependencies__c}"/></td>
+                        <td style="padding-left:5px;text-align:left;"><apex:inputText value="{!q.ust.Burned__c}"/></td>                        
+                    </tr>
+                </apex:repeat> 
+            </tbody>
+        </table>
+    </apex:pageBlock>
+  </apex:form>
+  <!--/apex:define> 
+ </apex:composition-->
+</apex:page>

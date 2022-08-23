@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Jira Comments</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Jira Comments</value>
+    </caseValues>
+    <fields>
+        <help><!-- Jira Bug --></help>
+        <label><!-- Bug --></label>
+        <name>Bug__c</name>
+        <relationshipLabel><!-- Jira Comments --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Comment Direction --></label>
+        <name>Comment_Direction__c</name>
+        <picklistValues>
+            <masterLabel>Jira -&gt; SF</masterLabel>
+            <translation><!-- Jira -&gt; SF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SF -&gt; Jira</masterLabel>
+            <translation><!-- SF -&gt; Jira --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Customer Commitment --></label>
+        <name>Customer_Commitment__c</name>
+        <relationshipLabel><!-- Jira Comments --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- date and time of comment --></help>
+        <label><!-- Date/Time --></label>
+        <name>Date_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Jira Comment --></label>
+        <name>Jira_Comment__c</name>
+    </fields>
+    <layouts>
+        <layout>Jira Comments Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

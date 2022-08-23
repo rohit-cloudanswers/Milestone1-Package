@@ -1,0 +1,124 @@
+<apex:component >
+    <header id="header"> 
+        <div class="constraint"><span id="j_id0:SupportTemplate:j_id11">
+    <div class="header">
+        <div class="inner clearfix">
+            <!-- <div style="background-image:url('{!URLFOR($Resources.NewCoAImages, 'newLogoJpeg.JPEG')}');"><a href="/" target="_top">NewCoA</a> -->
+            <div class="site-name">
+             <a href="/" target="_top" style="padding-top: 4px;">
+              <img src="{!URLFOR($Resource.ImagineLogo)}" style="width:149px;"/>
+             </a>
+            </div>
+            
+            <div id="siteNav">
+        
+                <div class="primary">
+                      <ul class="nav clearfix">
+                        <!--
+                        <li class="item5">
+                          <div>
+                           <form action="/_ui/search/ui/UnifiedSearchResults" class="search" id="search_form" method="get" name="searchform">
+                             <input id="str" name="str" placeholder="Search" type="search" />
+                             <input name="sp_cs" type="hidden" value="UTF-8" />
+                             <input name="cc" type="hidden" value="us" />
+                             <input type="submit" value="Search" />
+                           </form>
+                          </div>  
+                        </li>
+                        -->
+                            <li class="item4"><a href="/partners/_ui/core/chatter/ui/ChatterPage" class="inactive">CHATTER</a>
+                            </li>            
+                            <li class="item3 parent li_dropdown"><a href="http://www.imaginecommunications.com/media-center.aspx" target="_top" class="inactive">MEDIA CENTER</a>
+                                    <ul class="dropdown">                            
+                                        <li><a id="News" name="News" href="http://www.imaginecommunications.com/media-center/news.aspx" target="_new">NEWS</a></li>                         
+                                        <li><a id="Articles" name="Articles" href="http://www.imaginecommunications.com/media-center/articles.aspx" target="_new">ARTICLES</a></li>  
+                                        <li><a id="webinar" name="webinar" href="http://www.imaginecommunications.com/media-center/webinar-series.aspx" target="_new">WEBINAR SERIES</a></li>   
+                                        <li><a id="2014Nab" name="2014Nab" href="http://www.imaginecommunications.com/media-center/NAB.aspx" target="_new">2014 NAB SHOW</a></li>                    
+                                    </ul>
+                                <b class="tab"></b>
+                            </li>
+                            <li class="item2 parent li_dropdown"><a href="http://www.imaginecommunications.com/services/technical-support.aspx" target="_new" class="inactive">SUPPORT HOME</a>
+                                <div class="kb_dropdowndiv">
+                                    <ul class="dropdown">
+                                        <li><a href="http://www.imaginecommunications.com/services/technical-support.aspx" target="_new">SUPPORT </a></li>
+                                        <li class="getStartedList"><a href="http://www.imaginecommunications.com/services/technical-support.aspx" target="_new">GLOBAL SUPPORT SERVICES</a> 
+                                                <ul id="dropdown-side">
+                                                    <li><a href="http://support.imaginecommunications.com/ecustomer_enu/start.swe?SWECmd=Start&SWEHo=support.imaginecommunications.com">CUSTOMER SUPPORT HOME</a></li>
+                                                    <li class="dottedline"></li>
+                                                    <li><a href="http://www.imaginecommunications.com/services/technical-support/repair.aspx">REPAIR</a></li>                                                    
+                                                    <li><a href="http://www.imaginecommunications.com/services/technical-support/service-agreements.aspx">SERVICE AGREEMENTS</a></li>
+                                                    <li><a href="http://www.imaginecommunications.com/services/technical-support/warranties.aspx">WARRANTIES</a></li>
+                                                </ul>
+                                        </li>
+                                        <li class="getStartedList"><a href="http://www.imaginecommunications.com/services/imagine-academy.aspx" target="_new">IMAGINE ACADEMY</a> 
+                                                <ul id="dropdown-side">
+                                                    <li><a href="http://www.imaginecommunications.com/services/training/training-resources.aspx">TRAINING RESOURCES</a></li>
+                                                    <li><a href="http://www.harrisbroadcast-academy.com">TRAINING PORTAL</a></li>
+                                                </ul>
+                                        </li>                                        
+                                        <li><a href="http://www.imaginecommunications.com/services/professional-services.aspx">PROFESSIONAL SERVICES</a></li>
+                                        <li><a href="http://support.imaginecommunications.com/ecustomer_enu/start.swe">BROWSER THE KNOWLEDGE BASE</a></li>
+                                        
+                                    </ul>
+                                </div>
+             
+                            <b class="tab"></b>
+        
+                            </li>
+                            <li class="item2 parent li_dropdown"><a href="/SalesPage">SALES/ MARKETING</a>
+                                  <ul class="dropdown">
+                                        <li class="getStartedList"><a href="/SalesPage">SALES</a> 
+                                                <ul id="dropdown-side">
+                                                    <li><a href="/partners/apex/ProductViewer" class="communityLink"> PRODUCTS/ PRICEBOOKS </a></li>
+                                                    <li><a href="http://support.imaginecommunications.com/ecustomer_enu/start.swe?SWENeedContext=false&SWEKeepContext=0&SWECmd=GotoPageTab&SWEScreen=eSales+Catalog+Screen" class="communityLink"> Product Catalog </a></li>
+                                                    <li><a href="http://www.imaginecommunications.com/solutions.aspx" class="communityLink"> See our solutions </a></li>
+                                                </ul>
+                                        </li>                                  
+                                    <li class="separator"><b></b></li>
+                                        <li class="getStartedList"><a href="/Marketing">Marketing</a> 
+                                                <ul id="dropdown-side">
+                                                    <li><a href="/partners/MarketingArticles" class="communityLink"> Marketing Articles </a></li>
+                                                    <li><a href="/partners/apex/MarketingEvents" class="communityLink"> Marketing Events </a></li>
+                                                    <li><a href="/partners/MarketingCollateral" class="communityLink"> Marketing Collateral </a></li>
+                                                </ul>
+                                        </li>                                     
+                                    <li><a href="http://www.imaginecommunications.com/markets.aspx" target="_top">Markets</a></li>                                                   
+                                  </ul>
+                                  <b class="tab"></b>
+                            </li>  
+                            <li class="item2 parent li_dropdown"><a href="/partners/apex/partnerHome" target="_new" class="inactive"> Home</a>
+                                <b class="tab"></b>
+                            </li>                                                                                                                           
+                   </ul>
+                      
+                   
+                </div>
+               <nav id="topNav">
+                    <div class="secondary">
+                      <ul class="nav">
+                       <!-- <li class="sign-in" id="sign-in"><a href="/partners/secur/logout.jsp?retUrl=/partners/apex/customLogin">Logout</a> &nbsp; </li> -->
+                        <li class="sign-in" id="sign-in"><a href="/partners/apex/customLogout">Logout</a> &nbsp; </li>
+                        <li><a href="http://www.imaginecommunications.com/company/contact-us.aspx" target="_top">Contact Us</a></li>                   
+                        <li class="parent">
+                            <a href="javascript:void(0)">Portals</a>
+                            <span class="dropdown">
+                              <span class="tooltip1"></span>
+                              <span class="tooltip2"></span> 
+                              <ul>
+                                <li><a href="http://support.imaginecommunications.com/ecustomer_enu/start.swe?SWECmd=Login&SWECM=S&SWEHo=support.imaginecommunications.com">Customer Portal</a></li>
+                              </ul>  
+                            </span>                                    
+                        </li>         
+                      </ul>
+                    </div>
+                </nav>
+                
+
+
+
+            </div> 
+        </div>
+    </div></span>   
+        </div>           
+    </header>
+</apex:component>

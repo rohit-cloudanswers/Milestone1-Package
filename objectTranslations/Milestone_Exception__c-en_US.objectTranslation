@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Milestone Exception</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Milestone Exceptions</value>
+    </caseValues>
+    <fields>
+        <label><!-- Case Milestone ID --></label>
+        <name>Case_Milestone_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case --></label>
+        <name>Case__c</name>
+        <relationshipLabel><!-- Milestone Exceptions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Milestone --></label>
+        <name>Milestone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Original Start Date --></label>
+        <name>Original_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Original Target Date --></label>
+        <name>Original_Target_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Proposed Start Date --></label>
+        <name>Proposed_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Proposed Target Date --></label>
+        <name>Proposed_Target_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Draft</masterLabel>
+            <translation><!-- Draft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted</masterLabel>
+            <translation><!-- Submitted --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>3rd Party Issue</masterLabel>
+            <translation><!-- 3rd Party Issue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer</masterLabel>
+            <translation><!-- Customer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PS Delivery</masterLabel>
+            <translation><!-- PS Delivery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Payment</masterLabel>
+            <translation><!-- Payment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product Quality/Delivery</masterLabel>
+            <translation><!-- Product Quality/Delivery --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Milestone Exception Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Required field --></errorMessage>
+        <name>Required_field</name>
+    </validationRules>
+</CustomObjectTranslation>

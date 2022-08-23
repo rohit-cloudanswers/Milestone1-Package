@@ -1,0 +1,34 @@
+<apex:component >
+    <div class="ui center aligned basic segment">
+
+            <div class="ui small celled horizontal list">
+                <div class="item">
+                    <a href="http://www.imaginecommunications.com/company/legal-compliance/Privacy-Policy.aspx" target="_blank">Privacy</a>
+                </div>
+                <div class="item">
+                    <a href="http://www.imaginecommunications.com/company/legal-compliance/terms-of-use.aspx" target="_blank">Legal</a>
+                </div>
+                <div class="item">Imagine Communications {!year(today())}</div>
+            </div>
+
+            <div class="ui small horizontal list">
+
+                <div class="item">
+                    <a href="http://www.linkedin.com/company/imagine-communications" class="icon-link" target="_blank">
+                        <i class="circular inverted blue linkedin link icon"></i>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="https://twitter.com/imagine_comms" class="icon-link" target="_blank">
+                        <i class="circular inverted blue twitter link icon"></i>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="https://www.youtube.com/user/imaginecomms" class="icon-link" target="_blank">
+                        <i class="circular inverted red youtube link icon"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+</apex:component>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Case</entityName>
+    <fieldName>Status</fieldName>
+    <masterLabel>Case Status - Project Case</masterLabel>
+    <pathAssistantSteps>
+        <fieldNames>Status_Detail__c</fieldNames>
+        <picklistValueName>Cancelled</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Status_Detail__c</fieldNames>
+        <fieldNames>Resolution_Type__c</fieldNames>
+        <fieldNames>Resolution__c</fieldNames>
+        <picklistValueName>Closed</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>AccountId</fieldNames>
+        <fieldNames>Type</fieldNames>
+        <picklistValueName>New</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Status_Detail__c</fieldNames>
+        <fieldNames>Environment__c</fieldNames>
+        <fieldNames>Reported_Version__c</fieldNames>
+        <picklistValueName>Open</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Status_Detail__c</fieldNames>
+        <fieldNames>Resolution_Type__c</fieldNames>
+        <fieldNames>Resolution__c</fieldNames>
+        <info>&lt;p&gt;&lt;span style=&quot;font-size: 13px;&quot;&gt;You&amp;#39;re almost done! Make sure Resolution and Resolution type are filled in and that you have an asset associated and an account linked with Oracle before closing.&lt;/span&gt;&lt;/p&gt;</info>
+        <picklistValueName>Resolved</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>Project_Case</recordTypeName>
+</PathAssistant>

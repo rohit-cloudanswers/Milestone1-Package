@@ -1,0 +1,9 @@
+<apex:page showheader="false">
+<head>
+<meta http-equiv="refresh" content="0;URL=/partners" />
+</head>
+<body>
+<iframe src="{!$Site.Prefix}/secur/logout.jsp" width="100%" height="0"></iframe>
+Logging Out ....
+</body>
+</apex:page>

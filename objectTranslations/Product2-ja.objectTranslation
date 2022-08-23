@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>CPQ Separate Layout</layout>
+        <sections>
+            <label><!-- Additional Details --></label>
+            <section>Additional Details</section>
+        </sections>
+        <sections>
+            <label><!-- CPQ --></label>
+            <section>CPQ</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Key Attributes --></label>
+            <section>Key Attributes</section>
+        </sections>
+        <sections>
+            <label><!-- Partner Price Book Information --></label>
+            <section>Partner Price Book Information</section>
+        </sections>
+        <sections>
+            <label><!-- Product Cost Information --></label>
+            <section>Product Cost Information</section>
+        </sections>
+        <sections>
+            <label><!-- Product Dimensions --></label>
+            <section>Product Dimensions</section>
+        </sections>
+        <sections>
+            <label><!-- Product Group Info --></label>
+            <section>Product Group Info</section>
+        </sections>
+        <sections>
+            <label><!-- Product Lifecyle Information --></label>
+            <section>Product Lifecyle Information</section>
+        </sections>
+        <sections>
+            <label><!-- Support Products --></label>
+            <section>Support Products</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Partner Product Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Key Attributes --></label>
+            <section>Key Attributes</section>
+        </sections>
+        <sections>
+            <label><!-- Product Dimensions --></label>
+            <section>Product Dimensions</section>
+        </sections>
+        <sections>
+            <label><!-- Product Group Info --></label>
+            <section>Product Group Info</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Product (Community) Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Product Lifecycle --></label>
+            <section>Product Lifecycle</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Product Admin Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Product Layout</layout>
+        <sections>
+            <label><!-- Additional Details --></label>
+            <section>Additional Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Key Attributes --></label>
+            <section>Key Attributes</section>
+        </sections>
+        <sections>
+            <label><!-- Partner Price Book Information --></label>
+            <section>Partner Price Book Information</section>
+        </sections>
+        <sections>
+            <label><!-- Product Cost Information --></label>
+            <section>Product Cost Information</section>
+        </sections>
+        <sections>
+            <label><!-- Product Dimensions --></label>
+            <section>Product Dimensions</section>
+        </sections>
+        <sections>
+            <label><!-- Product Group Info --></label>
+            <section>Product Group Info</section>
+        </sections>
+        <sections>
+            <label><!-- Product Lifecyle Information --></label>
+            <section>Product Lifecyle Information</section>
+        </sections>
+        <sections>
+            <label><!-- Support Products --></label>
+            <section>Support Products</section>
+        </sections>
+    </layouts>
+</CustomObjectTranslation>

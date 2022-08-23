@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Order ID</value>
+        </caseValues>
+        <name>order_owner</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <layouts>
+        <layout>Order Layout</layout>
+        <sections>
+            <label><!-- Account and Address Details --></label>
+            <section>Account and Address Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Order Line Item Rollups (USD) --></label>
+            <section>Order Line Item Rollups (USD)</section>
+        </sections>
+        <sections>
+            <label><!-- R11 Historical Data --></label>
+            <section>R11 Historical Data</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Order Layout Admin</layout>
+        <sections>
+            <label><!-- Account and Address Details --></label>
+            <section>Account and Address Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Order Line Item Rollups (USD) --></label>
+            <section>Order Line Item Rollups (USD)</section>
+        </sections>
+        <sections>
+            <label><!-- R11 Historical Data --></label>
+            <section>R11 Historical Data</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Work Order (Community) Layout</layout>
+        <sections>
+            <label><!-- Account and Address Details --></label>
+            <section>Account and Address Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Work Order Header (Community) Layout</layout>
+        <sections>
+            <label><!-- Account and Address Details --></label>
+            <section>Account and Address Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Work Order Header Layout</layout>
+        <sections>
+            <label><!-- Account and Address Details --></label>
+            <section>Account and Address Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Oracle EBS Historical Information --></label>
+            <section>Oracle EBS Historical Information</section>
+        </sections>
+        <sections>
+            <label><!-- System Infomation --></label>
+            <section>System Infomation</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Work Order Layout</layout>
+        <sections>
+            <label><!-- Account and Address Details --></label>
+            <section>Account and Address Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Oracle EBS Historical Information --></label>
+            <section>Oracle EBS Historical Information</section>
+        </sections>
+        <sections>
+            <label><!-- Report Links --></label>
+            <section>Report Links</section>
+        </sections>
+        <sections>
+            <label><!-- Salesforce Only Fields --></label>
+            <section>Salesforce Only Fields</section>
+        </sections>
+        <sections>
+            <label><!-- System Infomation --></label>
+            <section>System Infomation</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Work Order Request (Community) Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Work Order Request Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Accept --></label>
+        <name>Accept</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Calculate Rollups --></label>
+        <name>Calculate_Rollups</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Cancel Order --></label>
+        <name>Cancel_Order</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Submit --></label>
+        <name>Submit</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Waiting on Customer --></label>
+        <name>Waiting_on_Customer</name>
+    </quickActions>
+</CustomObjectTranslation>

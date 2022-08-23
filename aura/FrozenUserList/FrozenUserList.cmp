@@ -1,0 +1,32 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="public" controller="FrozenUserListController" >
+  <aura:attribute name="FrozenUserList" type="User" />
+  <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+  <lightning:card title="Frozen User List">
+    <aura:set attribute="body">
+      <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+        <thead>
+          <tr class="slds-text-title_caps">
+            <th scope="col">Name</th>
+            <th scope="col">User Name</th>
+            <th scope="col">Employee Number</th>
+            <th scope="col">Active</th>
+            <th scope="col">Created</th>
+            <th scope="col">Last Login</th>
+           </tr>
+        </thead>
+        <tbody>
+          <aura:iteration items="{!v.FrozenUserList}" var="frozenUserlist">
+            <tr scope="row">
+              <td> <a href = "{!'/lightning/setup/ManageUsers/page?address=%2F'+frozenUserlist.Id+'%3Fnoredirect%3D1%26isUserEntityOverride%3D1%26retURL%3D%252Fsetup%252Fhome'}" target="_blank">{!frozenUserlist.Name}</a></td>
+              <td> {!frozenUserlist.Username}</td>
+              <td> {!frozenUserlist.EmployeeNumber}</td>
+              <td> {!frozenUserlist.IsActive}</td>
+              <td> <lightning:formattedDateTime value="{!frozenUserlist.CreatedDate}"/></td>
+              <td> <lightning:formattedDateTime value="{!frozenUserlist.LastLoginDate}"/></td>
+            </tr>
+          </aura:iteration>
+        </tbody>
+      </table>
+    </aura:set>
+  </lightning:card>	
+</aura:component>

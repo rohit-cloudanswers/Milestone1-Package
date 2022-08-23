@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Risks</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Risks</value>
+    </caseValues>
+    <fields>
+        <help><!-- Who owns this risk? --></help>
+        <label><!-- Assigned To --></label>
+        <name>Assigned_To__c</name>
+        <relationshipLabel><!-- Risks --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Risk Description --></help>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Estimated financial impact to the nearest thousand (in USD only) --></help>
+        <label><!-- Financial Impact (USD) --></label>
+        <name>Financial_Impact_USD__c</name>
+    </fields>
+    <fields>
+        <help><!-- Decide the risk impact from low to high, with 1 being &apos;very low&apos; to 5 being &apos;very high&apos;. --></help>
+        <label><!-- Impact (very low to very high) --></label>
+        <name>Impact_low_to_high__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Mitigation --></help>
+        <label><!-- Mitigation --></label>
+        <name>Mitigation__c</name>
+    </fields>
+    <fields>
+        <help><!-- Decide the probability of the risk from low to high, with 1 being &quot;Very Low&quot; to 5 being &quot;Very High&quot; --></help>
+        <label><!-- Probability (very low to very high) --></label>
+        <name>Probability_low_to_high__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- What will your response be? --></help>
+        <label><!-- Response --></label>
+        <name>Response__c</name>
+        <picklistValues>
+            <masterLabel>Accept</masterLabel>
+            <translation><!-- Accept --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Avoid</masterLabel>
+            <translation><!-- Avoid --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enhance</masterLabel>
+            <translation><!-- Enhance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Exploit</masterLabel>
+            <translation><!-- Exploit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FallBack</masterLabel>
+            <translation><!-- FallBack --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reduce</masterLabel>
+            <translation><!-- Reduce --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reject</masterLabel>
+            <translation><!-- Reject --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Share</masterLabel>
+            <translation><!-- Share --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transfer</masterLabel>
+            <translation><!-- Transfer --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Risk Category --></help>
+        <label><!-- Risk Management Category --></label>
+        <name>Risk_Category__c</name>
+        <picklistValues>
+            <masterLabel>Executive</masterLabel>
+            <translation><!-- Executive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finance</masterLabel>
+            <translation><!-- Finance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Legal</masterLabel>
+            <translation><!-- Legal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Order</masterLabel>
+            <translation><!-- Order --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product</masterLabel>
+            <translation><!-- Product --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Project</masterLabel>
+            <translation><!-- Project --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales</masterLabel>
+            <translation><!-- Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Services</masterLabel>
+            <translation><!-- Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Solution</masterLabel>
+            <translation><!-- Solution --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Training</masterLabel>
+            <translation><!-- Training --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- impact * probability --></help>
+        <label><!-- Risk Value --></label>
+        <name>Risk_Value__c</name>
+    </fields>
+    <fields>
+        <help><!-- Service Case Number --></help>
+        <label><!-- Service Case Number --></label>
+        <name>Service_Case_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- What is the risk status? --></help>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed</masterLabel>
+            <translation><!-- Closed --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Title --></help>
+        <label><!-- Title --></label>
+        <name>Title__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is visibility set for internal or external users (for future implementation). --></help>
+        <label><!-- Visibility --></label>
+        <name>Visibility__c</name>
+        <picklistValues>
+            <masterLabel>External</masterLabel>
+            <translation><!-- External --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal</masterLabel>
+            <translation><!-- Internal --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Risks Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Risk Description --></label>
+            <section>Risk Description</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,181 @@
+<apex:page showHeader="False" id="customerCommunityLogin" docType="html-5.0" standardStylesheets="False" controller="ctrl_CustomerLogin">
+    <head lang="en">
+    <meta http-equiv="Refresh" content="3; url=https://community.imaginecommunications.com"/> 
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- TODO: IMPORT BOOTSTRAP AND BOOTSTRAP JQUERY TO STATIC RESOURCES -->
+    <title>Imagine Communications - {!$Site.Name}</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'/>
+    <apex:stylesheet value="{!URLFOR($Resource.semantic,'packaged/css/semantic.css')}"/>
+    <!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.css"/> -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet"/>
+    <apex:includeScript value="{!URLFOR($Resource.semantic,'packaged/javascript/jquery-2.1.0.min.js')}"/>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <apex:includeScript value="{!URLFOR($Resource.semantic,'packaged/javascript/semantic.min.js')}"/>
+  </head>
+  <body>
+    <style>
+      .colorBar{
+        background-repeat: repeat-x;
+        background-image: url("{!URLFOR($Resource.ImagineColorbar)}");
+        height: 10px;
+      }
+      #header{
+        margin-bottom: 10px;
+      }
+      #loginIntroduction{
+        text-align: center;
+      }
+      .login-intro-item{
+        border-right-style: solid;
+        height: 60px;
+        padding-top: 20px;
+        border-width: 2px;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      .login-intro-item:last-child{
+        border-right-style: none;
+      }
+      #loginBox{
+        /*padding-right: 5%;*/
+        /*height: 420px;*/
+        /*background-color: #e6e6e6;*/
+        margin-left: 0px;
+      }
+      #loginTitle{
+        margin-top: 5px;
+      }
+      #registerInfo{
+        margin-top: 50px;
+      }
+    </style>
+    <style>
+      html,
+      body {
+        margin:0;
+        padding:0;
+        height:100%;
+      }
+      #wrapper {
+        min-height:100%;
+        position:relative;
+      }
+      #header {
+        /*padding:10px;*/
+        /*background:#5ee;*/
+      }
+      #content {
+        /*padding:10px;*/
+        padding-bottom:50px;   /* Height of the footer element */
+      }
+      #footer {
+        width:100%;
+        height:50px;
+        position:absolute;
+        bottom:0;
+        left:0;
+        /*background:#ee5;*/
+      }
+      @media (max-width: 767px) {
+        .login-intro-item{
+          border-right-style: none;
+          padding-top: 0px;
+          height: 30px;
+          font-weight: normal;
+        }
+      }
+    </style>
+ 
+ <!-- Disable old page  
+ 
+    <div id="wrapper">
+      <div id="header">
+        <div class="container-fluid">
+          <div class="row" id="headerRow">
+            <div class="col-md-2">
+              <a href="#">
+                <img src="{!URLFOR($Resource.ImagineLogo)}" class="img-responsive" />
+              </a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="colorBar"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-5 col-md-push-7" id="loginBox">
+              <div class="row">
+                <div class="col-md-12">
+                  <h2 id="loginTitle">Log In</h2>
+                </div>
+              </div>
+              <apex:form >
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email Address</label>
+                  <!-- <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter username" /> -->
+ <!--                 <apex:inputText value="{!username}" styleClass="form-control" id="username"/>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <!-- <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" /> -->
+  <!--                <apex:inputSecret value="{!password}" styleClass="form-control" id="password"/>
+                </div>
+                <!-- <input id="loginButton" class="btn btn-primary pull-right" type="submit" value="Login" /> -->
+     <!--           <apex:commandButton action="{!login}" styleClass="btn btn-primary pull-right" value="Login"/>
+              </apex:form>
+              <div class="row">
+                <div class="col-md-12" id="registerInfo">
+                  <p>Don't have an account? <a href="{!URLFOR($Page.customerCommunityRegistration)}">Register</a></p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12" id="forgotPassword">
+                  <p><a href="{!URLFOR($Page.ForgotPassword)}">Forgot Password?</a></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-7 col-md-pull-5" id="loginIntroduction">
+              <img src="{!URLFOR($Resource.ImagineFeatureLogin)}" class="img-responsive" />
+              <div class="row">
+                <div class="col-md-12">
+                    <h2>Welcome to the Imagine Communications Customer Community</h2>
+                    <h4>Interact with our self-service options</h4>
+                </div>
+              </div>
+              <div class="row" id="login-intro-items">
+                <div class="col-md-4 login-intro-item">
+                  Create a support case                
+                </div>
+                <div class="col-md-4 login-intro-item">
+                  View your existing cases               
+                </div>
+                <div class="col-md-4 login-intro-item">
+                  Check on your RMAs/orders               
+                </div>
+                <div class="col-md-12"><p>
+                </p></div>
+                <div class="col-md-12">
+                 <p><h6>Please contact us if you have any questions:</h6>
+                    <h6><b>Americas and Canada:</b> 1 866 446 2446</h6>
+                    <h6><b>Europe and Africa:</b> 44 208 339 1900</h6>
+                    <h6><b>Middle East:</b> 971 4 433 8260</h6>
+                    <h6><b>Asia:</b> 852 2776 0628</h6></p>
+                </div>
+              </div>
+            </div>          
+          </div>
+        </div>
+      </div>
+      <div id="footer">
+        <c:PartnerHomeFooter ></c:PartnerHomeFooter>
+      </div>
+    </div>  -->
+  </body>
+</apex:page>

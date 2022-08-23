@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Product Class</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Product Class</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Business Unit --></label>
+        <name>Business_Unit__c</name>
+        <picklistValues>
+            <masterLabel>Broadcast</masterLabel>
+            <translation><!-- Broadcast --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cable</masterLabel>
+            <translation><!-- Cable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Networking</masterLabel>
+            <translation><!-- Networking --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Playout</masterLabel>
+            <translation><!-- Playout --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Common Name --></label>
+        <name>Common_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Use to determine if the class should be included in public facing lists such as community portal or cases.  Manually set. --></help>
+        <label><!-- Customer Facing? --></label>
+        <name>Customer_Facing__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Z - Depreciated Inactive --></label>
+        <name>Inactive__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used to pull into the bug create flow what epic the bug should be added to. --></help>
+        <label><!-- Jira Epic --></label>
+        <name>Jira_Epic__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the Jira Project that should be suggested at the end of the create bug project.  Does not currently have any impact on the actual Jira Project a bug is for.  May be used more in the future. --></help>
+        <label><!-- Jira Project --></label>
+        <name>Jira_Project__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is used to determine what Jira Issue Types are available on the create bug screen.  There is no impact on the type actually used when creating the Jira.  Could be more automatic in the future. --></help>
+        <label><!-- Jira Type Configuration --></label>
+        <name>Jira_Type_Configuration__c</name>
+        <picklistValues>
+            <masterLabel>Issue</masterLabel>
+            <translation><!-- Issue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Issue + Enhancement</masterLabel>
+            <translation><!-- Issue + Enhancement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Issue + Question</masterLabel>
+            <translation><!-- Issue + Question --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Limits</masterLabel>
+            <translation><!-- No Limits --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Last Updated Date --></label>
+        <name>Last_Updated_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Oracle Class Id --></label>
+        <name>Oracle_Class_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Oracle Support Project Task --></label>
+        <name>Oracle_Support_Project_Task__c</name>
+        <relationshipLabel><!-- Product Class --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Related Oracle Support project, must be present on all customer facing for time tracking purposes.  Oracle Support projects are provided by Finance --></help>
+        <label><!-- Oracle Support Project --></label>
+        <name>Oracle_Support_Project__c</name>
+        <relationshipLabel><!-- Product Class --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- z-Depreciated Pillar --></label>
+        <name>Pillar__c</name>
+        <picklistValues>
+            <masterLabel>CONTENT</masterLabel>
+            <translation><!-- CONTENT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NETWORK</masterLabel>
+            <translation><!-- NETWORK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Playout</masterLabel>
+            <translation><!-- Playout --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Product Family --></label>
+        <name>Product_Family__c</name>
+        <picklistValues>
+            <masterLabel>GEN OFFERINGS AVP</masterLabel>
+            <translation><!-- GEN OFFERINGS AVP --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Product GL Classcode --></label>
+        <name>Product_GL_Classcode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Group --></label>
+        <name>Product_Group__c</name>
+        <picklistValues>
+            <masterLabel>PRODUCT - GO - AVP</masterLabel>
+            <translation><!-- PRODUCT - GO - AVP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional Services - SEG</masterLabel>
+            <translation><!-- Professional Services - SEG --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Product Line Key --></label>
+        <name>Product_Line_Key__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Line --></label>
+        <name>Product_Line__c</name>
+        <picklistValues>
+            <masterLabel>ADVANCED ADVERTISING</masterLabel>
+            <translation><!-- ADVANCED ADVERTISING --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ASSET MANAGEMENT</masterLabel>
+            <translation><!-- ASSET MANAGEMENT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ad Sales</masterLabel>
+            <translation><!-- Ad Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Agency</masterLabel>
+            <translation><!-- Agency --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Analytics</masterLabel>
+            <translation><!-- Analytics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Automation</masterLabel>
+            <translation><!-- Automation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>COMPRESSION</masterLabel>
+            <translation><!-- COMPRESSION --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CONSOLES</masterLabel>
+            <translation><!-- CONSOLES --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Command &amp; Control</masterLabel>
+            <translation><!-- Command &amp; Control --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Compress &amp; Transport</masterLabel>
+            <translation><!-- Compress &amp; Transport --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DELIVERY</masterLabel>
+            <translation><!-- DELIVERY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DOH</masterLabel>
+            <translation><!-- DOH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DTP</masterLabel>
+            <translation><!-- DTP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EDITING</masterLabel>
+            <translation><!-- EDITING --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Editing &amp; Graphics</masterLabel>
+            <translation><!-- Editing &amp; Graphics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GRAPHICS</masterLabel>
+            <translation><!-- GRAPHICS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>INFOCASTER</masterLabel>
+            <translation><!-- INFOCASTER --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>INTRAPLEX</masterLabel>
+            <translation><!-- INTRAPLEX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Integrated Playout</masterLabel>
+            <translation><!-- Integrated Playout --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MAM</masterLabel>
+            <translation><!-- MAM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MEDIA SERVER</masterLabel>
+            <translation><!-- MEDIA SERVER --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MULTIVIEWERS</masterLabel>
+            <translation><!-- MULTIVIEWERS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Master Control</masterLabel>
+            <translation><!-- Master Control --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OTT - Monetization</masterLabel>
+            <translation><!-- OTT - Monetization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Processing</masterLabel>
+            <translation><!-- Processing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional Services</masterLabel>
+            <translation><!-- Professional Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Program Scheduling</masterLabel>
+            <translation><!-- Program Scheduling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ROUTING SWITCHERS</masterLabel>
+            <translation><!-- ROUTING SWITCHERS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Routers</masterLabel>
+            <translation><!-- Routers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>STORAGE</masterLabel>
+            <translation><!-- STORAGE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Servers &amp; Storage</masterLabel>
+            <translation><!-- Servers &amp; Storage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Signaling &amp; Transcoding</masterLabel>
+            <translation><!-- Signaling &amp; Transcoding --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Support</masterLabel>
+            <translation><!-- Support --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TRAFFIC &amp; BILLING</masterLabel>
+            <translation><!-- TRAFFIC &amp; BILLING --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Test &amp; Measurement</masterLabel>
+            <translation><!-- Test &amp; Measurement --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Service Business Unit --></label>
+        <name>Service_Business_Unit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Pillar --></label>
+        <name>Service_Pillar__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Product Family --></label>
+        <name>Service_Product_Family__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Product Line --></label>
+        <name>Service_Product_Line__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sub Category --></label>
+        <name>Sub_Category__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used for time reporting.  Value here must ALWAYS be provided by Finance --></help>
+        <label><!-- z-Depreciated-Support Project --></label>
+        <name>Support_Project__c</name>
+    </fields>
+    <fields>
+        <label><!-- forSearch --></label>
+        <name>forSearch__c</name>
+    </fields>
+    <layouts>
+        <layout>Product Class Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

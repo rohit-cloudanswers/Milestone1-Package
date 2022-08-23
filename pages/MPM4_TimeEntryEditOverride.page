@@ -1,0 +1,10 @@
+<apex:page standardController="MPM4_BASE__Milestone1_Time__c">
+    <script>
+    	var eid = '{!$CurrentPage.parameters.id}';
+    	var url = '/apex/TimeSheet';
+    	if(eid) {
+            url += '?eid=' + eid;
+        }
+    	window.location.href = url;
+    </script>
+</apex:page>

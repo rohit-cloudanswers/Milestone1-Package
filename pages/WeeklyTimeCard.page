@@ -1,0 +1,416 @@
+<apex:page controller="WeeklyTimecards" sidebar="false" tabstyle="Milestone1_Time__c">
+   
+ <apex:sectionHeader title="Weekly" subtitle="Timecards" />
+ 
+ <style>
+     .white_content
+     { 
+        display:none; 
+        position:absolute;
+        top:1%;
+        left:20%;
+        z-index:1002; 
+        width: 850;
+        color:#D6D6D6;
+        border:solid 1px #000000;
+        background-color:#e3f3ff;
+    }
+    
+    .black_overlay
+     { 
+        display:none; 
+        position:absolute;
+        top:0%;
+        left:0%;
+        z-index:1001; 
+        background-color:gray;
+        opacity:.80;
+    }
+    </style>
+    
+   <script>
+   
+   function getPageSize() {
+        var xScroll, yScroll;
+        if (window.innerHeight && window.scrollMaxY) {
+            xScroll = document.body.scrollWidth;
+            yScroll = window.innerHeight + window.scrollMaxY;
+        } else if (document.body.scrollHeight > document.body.offsetHeight) { // all but Explorer Mac
+            xScroll = document.body.scrollWidth;
+            yScroll = document.body.scrollHeight;
+        } else { // Explorer Mac...would also work in Explorer 6 Strict, Mozilla and Safari
+            xScroll = document.body.offsetWidth;
+            yScroll = document.body.offsetHeight;
+        }
+    
+        var windowWidth, windowHeight;
+        if (self.innerHeight) {    // all except Explorer
+            windowWidth = self.innerWidth;
+            windowHeight = self.innerHeight;
+        } else if (document.documentElement && document.documentElement.clientHeight) { // Explorer 6 Strict Mode
+            windowWidth = document.documentElement.clientWidth;
+            windowHeight = document.documentElement.clientHeight;
+        } else if (document.body) { // other Explorers
+            windowWidth = document.body.clientWidth;
+            windowHeight = document.body.clientHeight;
+        }
+    
+        // for small pages with total height less then height of the viewport
+        if (yScroll < windowHeight) pageHeight = windowHeight;
+        else pageHeight = yScroll;
+    
+        // for small pages with total width less then width of the viewport
+        if (xScroll < windowWidth) pageWidth = windowWidth;
+        else pageWidth = xScroll;
+    
+        if (navigator.userAgent.indexOf("Firefox") != -1)
+        { pageWidth = pageWidth - 17; }
+    
+        return {
+            "pageWidth": pageWidth,
+            "pageHeight": pageHeight,
+            "windowWidth": windowWidth,
+            "windowHeight": windowHeight
+        };
+    }
+    
+    function setOverlay() {
+        ///Get screen dimesions
+        var arrScrDim = getPageSize();
+    
+        ///Set dimensions of background div
+        document.getElementById('fade').style.width = (arrScrDim["pageWidth"] + 'px');
+        document.getElementById('fade').style.height = (arrScrDim["pageHeight"] + 'px');
+    }
+    
+    ///Show popup
+    function showPopup() {
+        setOverlay(); 
+        ///Display popup and background divs
+        //document.getElementById("content").style.display = 'block';
+        document.getElementById("fade").style.display = 'block';
+    }
+    
+    ///Close popup
+    function closePopup() {
+        //document.getElementById("content").style.display = 'none';
+        document.getElementById("fade").style.display = 'none';
+    }
+    $(document).ready(function(){
+        $("[id$=type]").change(function(){
+            if(this.value=="Other"){
+                $("input[id$=Phone]").prop("disabled",true);                       
+                $("[id$=Phone]").prop("disabled",true);
+                $("[id$=actNumber]").prop("disabled",true);
+                $("[id$=industry]").prop("disabled",true);
+                $("[id$=anualReven]").prop("disabled",true);
+                $("[id$=slaexpdate]").prop("disabled",true);
+            }
+            else{
+                $("[id$=Phone]").prop("disabled",false);
+                $("[id$=actNumber]").prop("disabled",false);
+                $("[id$=industry]").prop("disabled",false);
+                $("[id$=anualReven]").prop("disabled",false);
+                $("[id$=slaexpdate]").prop("disabled",false);
+            }               
+        });
+    });
+
+</script>
+ 
+ 
+ <apex:form >
+ 
+  
+ <apex:pageMessages id="pgMsg"/>
+ 
+ <apex:pageBlock id="pb">
+ 
+ <apex:pageBlockButtons location="bottom">
+    
+    <apex:commandButton value="Add Row" action="{!DoAddRow}" rerender="pb,pgMsg" status="status1"/>
+    <apex:commandButton value="Save"  action="{!DoSave}"  rerender="pb,pgMsg" status="status1"/>
+    <apex:commandButton value="Cancel" action="{!DoCancel}" />
+     
+    <apex:actionStatus stopText="" id="status1">
+               <apex:facet name="start">
+                   <img src="/img/loading.gif" />
+               </apex:facet>
+           </apex:actionStatus>
+           
+ </apex:pageBlockButtons>
+ 
+ <table width="100%" cellspacing="0" cellpadding="4">
+    <tr>
+        <td width="70%" valign="middle"> 
+        <apex:commandLink rerender="pb" status="status1" action="{!DoPreviousWeek}">
+            <apex:image url="{!URLFOR($Resource.TimeCards, 'Timecards/Left.png')}" width="25" height="25" title="Previous Week"/>
+        </apex:commandLink>&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Week: {!WeekStartDateText} - {!WeekEndDateText}</b>&nbsp;&nbsp;&nbsp;&nbsp;
+        <apex:commandLink rerender="pb" status="status1" action="{!DoNextWeek}">
+            <apex:image url="{!URLFOR($Resource.TimeCards, 'Timecards/Right.png')}" width="25" height="25" title="Next Week"/>
+        </apex:commandLink> 
+        </td>
+        <td width="30%" align="right"><b>User: {!Username}</b></td>
+    </tr>
+ </table>
+  
+   <apex:variable var="idx" value="{!0}" />
+   
+ <apex:actionFunction action="{!DoDelete}" name="doDelete" status="status1" rerender="pb,pgMsg">
+     <apex:param name="SelectedIndex" assignTo="{!SelectedIndex}" value="" />
+   </apex:actionFunction>
+   
+ <apex:pageBlockTable value="{!listTimecard}" var="t" id="pbt">
+   
+  
+ <apex:column >
+    <apex:facet Name="header">
+    
+    </apex:facet>
+  
+     <apex:outputLink value="javascript:void(0);" onclick="if(confirm('Are you sure?')){doDelete('{!idx}');}else{return false;} "><img src="{!URLFOR($Resource.TimeCards, 'Timecards/Delete.png')}" title="Delete"/></apex:outputLink>
+     
+     <apex:variable var="idx" value="{!idx + 1}" />
+     
+ </apex:column>
+  
+ <apex:column >
+    <apex:facet Name="header">
+    Project
+    </apex:facet>
+    <apex:selectList value="{!t.SelectedProject}" size="1"  disabled="{!t.IsDisable}">
+        <apex:selectOptions value="{!Projects}" />
+        <apex:actionSupport event="onchange" action="{!DoNothing}" rerender="pbt" status="status1"/>
+    </apex:selectList>
+ </apex:column>
+ 
+ <apex:column >
+    <apex:facet Name="header">
+    Milestone
+    </apex:facet>
+    <apex:selectList value="{!t.SelectedMilestone}" size="1" disabled="{!IF(t.SelectedProject != null && t.SelectedProject != '' && t.IsDisable == false, false, true)}">
+        <apex:selectOptions value="{!t.Milestones}" />
+        <apex:actionSupport event="onchange" action="{!DoNothing}" rerender="pbt" status="status1"/>
+    </apex:selectList>
+ </apex:column>
+    
+ <apex:column >
+    <apex:facet Name="header">
+    Task
+    </apex:facet>
+    <apex:outputText value="{!t.SelectedTaskName}" rendered="{!t.IsComplete}" />
+    <apex:selectList rendered="{! !t.IsComplete}" value="{!t.SelectedTask}" size="1" disabled="{!IF(t.SelectedProject != null && t.SelectedProject != '' && t.SelectedMilestone != null && t.SelectedMilestone != '' && t.IsDisable == false, false, true)}">
+        <apex:selectOptions value="{!t.Tasks}" />
+        <apex:actionSupport event="onchange" action="{!DoNothing}" rerender="pbt" status="status1"/>
+    </apex:selectList>
+ </apex:column>
+ 
+  <apex:column >
+    <apex:facet Name="header">
+    Task Type
+    </apex:facet>
+    <apex:outputLabel value="{!t.TaskType}" rendered="{!IF(t.SelectedProject != null && t.SelectedProject != '' && t.SelectedMilestone != null && t.SelectedMilestone != '' && t.SelectedTask != null && t.SelectedTask != '', true, false)}"></apex:outputLabel><!--  && t.IsDisable == false, true, false -->
+ </apex:column>
+ <!--  SelectedTaskType -->
+  <apex:column >
+    <apex:facet Name="header">
+    {!Sun}
+    </apex:facet>
+    <apex:outputPanel rendered="{! !t.IsComplete}">
+        <apex:inputField value="{!t.TimeSun.Hours__c}" style="width:40px;"/>
+    </apex:outputPanel>
+    <apex:outputPanel rendered="{!t.IsComplete}">
+        <apex:outputField value="{!t.TimeSun.Hours__c}" style="width:40px;"/>
+    </apex:outputPanel>
+ </apex:column>
+ 
+ <apex:column >
+    <apex:facet Name="header">
+    {!Mon}
+    </apex:facet>
+    <apex:outputPanel rendered="{! !t.IsComplete}">
+        <apex:inputField value="{!t.TimeMon.Hours__c}" style="width:40px;"/>
+    </apex:outputPanel>
+    <apex:outputPanel rendered="{!t.IsComplete}">
+        <apex:outputField value="{!t.TimeMon.Hours__c}" style="width:40px;"/>
+    </apex:outputPanel>
+ </apex:column>
+ 
+ <apex:column >
+    <apex:facet Name="header">
+    {!Tue}
+    </apex:facet>
+    <apex:outputPanel rendered="{! !t.IsComplete}">
+        <apex:inputField value="{!t.TimeTue.Hours__c}" style="width:40px;"/>
+    </apex:outputPanel>
+    <apex:outputPanel rendered="{!t.IsComplete}">
+        <apex:outputField value="{!t.TimeTue.Hours__c}" style="width:40px;"/>
+    </apex:outputPanel>
+ </apex:column>
+ 
+ <apex:column >
+    <apex:facet Name="header">
+    {!Wed}
+    </apex:facet>
+    <apex:outputPanel rendered="{! !t.IsComplete}">
+        <apex:inputField value="{!t.TimeWed.Hours__c}" style="width:40px;"/>
+    </apex:outputPanel>
+    <apex:outputPanel rendered="{!t.IsComplete}">
+        <apex:outputField value="{!t.TimeWed.Hours__c}" style="width:40px;"/>
+    </apex:outputPanel>
+ </apex:column>
+ 
+ <apex:column >
+    <apex:facet Name="header">
+    {!Thu}
+    </apex:facet>
+    <apex:outputPanel rendered="{! !t.IsComplete}">
+        <apex:inputField value="{!t.TimeThu.Hours__c}" style="width:40px;"/>
+    </apex:outputPanel>
+    <apex:outputPanel rendered="{!t.IsComplete}">
+        <apex:outputField value="{!t.TimeThu.Hours__c}" style="width:40px;"/>
+    </apex:outputPanel>
+ </apex:column>
+ 
+ <apex:column >
+    <apex:facet Name="header">
+    {!Fri}
+    </apex:facet>
+    <apex:outputPanel rendered="{! !t.IsComplete}">
+        <apex:inputField value="{!t.TimeFri.Hours__c}" style="width:40px;"/>
+    </apex:outputPanel>
+    <apex:outputPanel rendered="{!t.IsComplete}">
+        <apex:outputField value="{!t.TimeFri.Hours__c}" style="width:40px;"/>
+    </apex:outputPanel>
+ </apex:column>
+ 
+ <apex:column >
+    <apex:facet Name="header">
+    {!Sat}
+    </apex:facet>
+    <apex:outputPanel rendered="{! !t.IsComplete}">
+        <apex:inputField value="{!t.TimeSat.Hours__c}" style="width:40px;"/>
+    </apex:outputPanel>
+    <apex:outputPanel rendered="{!t.IsComplete}">
+        <apex:outputField value="{!t.TimeSat.Hours__c}" style="width:40px;"/>
+    </apex:outputPanel>
+ </apex:column>
+ 
+  <apex:column width="30px;">
+    <apex:facet Name="header">
+    Total
+    </apex:facet>
+    <apex:outputText value="{!t.TotalHours}" />
+ </apex:column>
+ 
+ <apex:column width="35px;">
+    <apex:facet Name="header">
+    Notes
+    </apex:facet> 
+    <apex:commandLink onclick="showPopup(); document.getElementById('dialog{!idx}').style.display = 'block';  return false;" rerender="pbt" status="status1" >
+        <apex:image url="{!URLFOR($Resource.TimeCards, 'Timecards/notes.png')}" width="25" height="25" title="click here to fill notes"/>
+    </apex:commandLink>
+     
+ 
+
+<div id="dialog{!idx}" class="white_content" style="display:none;">
+      
+ <table width="90%" cellspacing="0" cellpadding="4"  style="margin:10px; ">
+  
+     <tr>
+        <td><b>Day</b></td>
+        <td><b>Title</b></td>
+        <td><b>Category</b></td>
+        <td><b>Type</b></td>
+        <td><b>Description</b></td>
+     </tr>
+     
+      <tr>
+        <td>{!Sun}</td>
+        <td><apex:inputText value="{!t.TimeSun.Name}" style="width:250px;"/></td>
+        <td>  <apex:inputField value="{!t.TimeSun.Category__c}" /></td>
+        <td>  <apex:inputField value="{!t.TimeSun.Time_Type__c}" /></td>
+        <td><apex:inputTextArea style="width:300px;height:40px;" value="{!t.TimeSun.Description__c}" /></td>
+     </tr>
+     <tr>
+        <td>{!Mon}</td>
+        <td><apex:inputText value="{!t.TimeMon.Name}" style="width:250px;"/></td>
+        <td>
+        <apex:inputField value="{!t.TimeMon.Category__c}" /></td>
+        <td>  <apex:inputField value="{!t.TimeMon.Time_Type__c}" /></td>
+        <td><apex:inputTextArea style="width:300px;height:40px;" value="{!t.TimeMon.Description__c}" /></td>
+     </tr>
+     <tr>
+        <td>{!Tue}</td>
+        <td><apex:inputText value="{!t.TimeTue.Name}" style="width:250px;"/></td>
+        <td>
+        <apex:inputField value="{!t.TimeTue.Category__c}" /></td>
+        <td>  <apex:inputField value="{!t.TimeTue.Time_Type__c}" /></td>
+        <td><apex:inputTextArea style="width:300px;height:40px;" value="{!t.TimeTue.Description__c}" /></td>
+     </tr>
+     <tr>
+        <td>{!Wed}</td>
+        <td><apex:inputText value="{!t.TimeWed.Name}" style="width:250px;"/></td>
+        <td>
+        <apex:inputField value="{!t.TimeWed.Category__c}" /></td>
+        <td>  <apex:inputField value="{!t.TimeWed.Time_Type__c}" /></td>
+        <td><apex:inputTextArea style="width:300px;height:40px;" value="{!t.TimeWed.Description__c}" /></td>
+     </tr>
+     <tr>
+        <td>{!Thu}</td>
+        <td><apex:inputText value="{!t.TimeThu.Name}" style="width:250px;"/></td>
+        <td>
+        <apex:inputField value="{!t.TimeThu.Category__c}" /></td>
+        <td>  <apex:inputField value="{!t.TimeThu.Time_Type__c}" /></td>
+        <td><apex:inputTextArea style="width:300px;height:40px;" value="{!t.TimeThu.Description__c}" /></td>
+     </tr>
+     <tr>
+        <td>{!Fri}</td>
+        <td><apex:inputText value="{!t.TimeFri.Name}" style="width:250px;" /></td>
+        <td>
+        <apex:inputField value="{!t.TimeFri.Category__c}" /> </td>
+        <td>  <apex:inputField value="{!t.TimeFri.Time_Type__c}" /></td>
+        <td><apex:inputTextArea style="width:300px;height:40px;" value="{!t.TimeFri.Description__c}" /></td>
+     </tr>
+     <tr>
+        <td>{!Sat}</td>
+        <td><apex:inputText value="{!t.TimeSat.Name}" style="width:250px;"/></td>
+        <td>
+        <apex:inputField value="{!t.TimeSat.Category__c}" /></td>
+        <td>  <apex:inputField value="{!t.TimeSat.Time_Type__c}" /></td>
+        <td><apex:inputTextArea style="width:300px;height:40px;" value="{!t.TimeSat.Description__c}" /></td>
+     </tr>
+     
+     <tr>
+        <td colspan="4" align="center">
+            <apex:commandButton onclick="closePopup(); document.getElementById('dialog{!idx}').style.display = 'none';  return false;" value="CLOSE"/>
+        </td>
+     </tr>
+ 
+ </table>
+ 
+
+</div>
+
+ </apex:column>
+ 
+ </apex:pageBlockTable>
+ 
+ <table width="100%" >
+ <tr>
+    <td align="right"><b>Total Hours:</b>&nbsp;</td>
+    <td width="30px;"><b>{!TotalHours}</b></td>
+    <td width="35px;">&nbsp;</td>
+ </tr>
+ </table>
+ 
+ 
+ </apex:pageBlock>
+ 
+   
+   <div id="fade" class="black_overlay" />
+   
+ </apex:form>
+ 
+</apex:page>

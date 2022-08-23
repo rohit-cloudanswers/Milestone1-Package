@@ -1,0 +1,40 @@
+<apex:page showHeader="true" sidebar="true" standardController="Opportunity" extensions="OpportunityTeamEdit" lightningStylesheets="true">
+    <apex:form >
+    <apex:sectionHeader title="{!Opportunity.Name}" subtitle="Edit Opportunity Team" />
+    <apex:commandbutton value="Back" action="{!cancel}"/>
+    <apex:pageBlock title="" mode="view">
+        <apex:pageBlockButtons location="top">
+            <apex:commandbutton value="Save" action="{!save}"/>
+            <apex:commandbutton value="Cancel" action="{!cancel}"/>
+            <apex:commandButton value="Add" action="{!addTeamMemberRow}"/>
+        </apex:pageBlockButtons>
+        <apex:pageblocktable value="{!team}" var="tm" id="theTable">
+            <apex:column headerValue="Action">
+                <apex:outputPanel rendered="{!tm.Id != null}">
+                    <apex:commandLink value="Del" action="{!deleteTeamMember}">
+                        <apex:param name="deleteId" value="{!tm.Id}" assignTo="{!deleteId}"/>
+                    </apex:commandLink>
+                </apex:outputPanel>
+            </apex:column>
+            <apex:column headerValue="Team Member">
+                <apex:outputPanel rendered="{!tm.Id != null}">
+                    {!tm.Name}
+                </apex:outputPanel>
+                <apex:outputPanel rendered="{!tm.Id == null}">
+                    <apex:inputField value="{!tm.UserId}">
+                        <apex:actionSupport event="onchange" action="{!defaultRoles}" rerender="theTable"/>
+                    </apex:inputField>
+                </apex:outputPanel>
+            </apex:column>
+            <apex:column headerValue="Member Role">
+                <apex:outputPanel rendered="{!tm.Id != null}">
+                    {!tm.TeamMemberRole}
+                </apex:outputPanel>
+                <apex:outputPanel rendered="{!tm.Id == null}">
+                    <apex:inputField value="{!tm.TeamMemberRole}"/>
+                </apex:outputPanel>
+            </apex:column>
+        </apex:pageblocktable>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

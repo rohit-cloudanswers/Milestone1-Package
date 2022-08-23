@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Impediment</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Impediments</value>
+    </caseValues>
+    <fields>
+        <label><!-- Assigned Sprint --></label>
+        <name>Assigned_Sprint__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Due --></label>
+        <name>Due__c</name>
+    </fields>
+    <fields>
+        <label><!-- Epic --></label>
+        <name>Epic__c</name>
+        <relationshipLabel><!-- Impediments --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Impact --></label>
+        <name>Impact__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Primary Responsible --></label>
+        <name>Primary_Responsible__c</name>
+        <relationshipLabel><!-- Impediments (Primary Responsible) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Priority --></label>
+        <name>Priority__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Med</masterLabel>
+            <translation><!-- Med --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Responsible --></label>
+        <name>Responsible__c</name>
+        <picklistValues>
+            <masterLabel>Harris - David Poling</masterLabel>
+            <translation><!-- Harris - David Poling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Harris - Dawn Vance</masterLabel>
+            <translation><!-- Harris - Dawn Vance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Harris - Emily Etzborn</masterLabel>
+            <translation><!-- Harris - Emily Etzborn --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Harris - Glodina Connan</masterLabel>
+            <translation><!-- Harris - Glodina Connan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Harris - Jacquelyn McGann</masterLabel>
+            <translation><!-- Harris - Jacquelyn McGann --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Harris - Jaime Cangas</masterLabel>
+            <translation><!-- Harris - Jaime Cangas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Harris - Jeff Kurth</masterLabel>
+            <translation><!-- Harris - Jeff Kurth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Harris - Kathy Bienz</masterLabel>
+            <translation><!-- Harris - Kathy Bienz --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Harris - Lane Lobaugh</masterLabel>
+            <translation><!-- Harris - Lane Lobaugh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Harris - Lisa Cline</masterLabel>
+            <translation><!-- Harris - Lisa Cline --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Harris - Mark Cowles</masterLabel>
+            <translation><!-- Harris - Mark Cowles --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Harris - Mark Jordan</masterLabel>
+            <translation><!-- Harris - Mark Jordan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Harris - Ole Calderone</masterLabel>
+            <translation><!-- Harris - Ole Calderone --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Harris - Oliver Abadeer</masterLabel>
+            <translation><!-- Harris - Oliver Abadeer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Harris - Paul Nagle</masterLabel>
+            <translation><!-- Harris - Paul Nagle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Harris - Simon Lockington</masterLabel>
+            <translation><!-- Harris - Simon Lockington --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Harris - Vicky Canton</masterLabel>
+            <translation><!-- Harris - Vicky Canton --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Harris -Megan Varner</masterLabel>
+            <translation><!-- Harris -Megan Varner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Volo - Bryan Lauh</masterLabel>
+            <translation><!-- Volo - Bryan Lauh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Volo - Eric Cordell</masterLabel>
+            <translation><!-- Volo - Eric Cordell --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Volo - Raj Vooturi</masterLabel>
+            <translation><!-- Volo - Raj Vooturi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Volo - Suraj Aluru</masterLabel>
+            <translation><!-- Volo - Suraj Aluru --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Risk --></label>
+        <name>Risk__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Med</masterLabel>
+            <translation><!-- Med --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Secondary Responsible --></label>
+        <name>Secondary_Responsible__c</name>
+        <relationshipLabel><!-- Impediments (Secondary Responsible) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sprint --></label>
+        <name>Sprint__c</name>
+        <relationshipLabel><!-- Impediments --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Addressed</masterLabel>
+            <translation><!-- Addressed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Review</masterLabel>
+            <translation><!-- In Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Action Item</masterLabel>
+            <translation><!-- Action Item --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dependency</masterLabel>
+            <translation><!-- Dependency --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Issue</masterLabel>
+            <translation><!-- Issue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Note</masterLabel>
+            <translation><!-- Note --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Risk</masterLabel>
+            <translation><!-- Risk --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- User Story --></label>
+        <name>User_Story__c</name>
+        <relationshipLabel><!-- Impediments --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Action Item Dependency and Risk Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+    </layouts>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

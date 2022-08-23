@@ -1,0 +1,5 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" >
+    <a class="twitter-timeline" href="https://twitter.com/Imagine_Comms?ref_src=twsrc%5Etfw">Tweets by Imagine_Comms</a>
+	<ltng:require scripts="{!$Resource.TwitterEmbedScript}"
+	afterScriptsLoaded="{!c.afterScriptsLoaded}" />
+</aura:component>

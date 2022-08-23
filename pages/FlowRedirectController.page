@@ -1,0 +1,2 @@
+<apex:page controller="FlowRedirectController" action="{!onLoad}">
+</apex:page>

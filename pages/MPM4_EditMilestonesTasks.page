@@ -1,0 +1,340 @@
+<!--
+    Author : Appshark
+    Created On : 10th Dec 2014
+    Decription: Used to create and Edit multiple Milestones and Tasks from one screen.
+
+    Copied On : 19th Sept 2018 to act on Milestones PM+ objects by Passage Technology Development (John Zhao)
+-->
+<apex:page standardController="MPM4_BASE__Milestone1_Project__c" extensions="MPM4_EditMilestonesAndTasksController" sidebar="false">
+    <style>
+        .milestoneTbl input[type='text']{
+            border:solid 1px #ccc;
+            padding:0px 5px;
+            height:20px;
+        }
+        .milestoneTbl textarea{
+            border: solid 1px #ccc;
+            height: 30px;
+            width: 160px;
+        }
+        .milestoneTbl{
+            border-collapse:collapse;
+        }
+        .milestoneTbl th{
+            background:#E8E8E8;
+            padding:3px;
+            border:solid 1px #CDC4C4;
+        }
+        .milestoneTbl td{
+            background:#fff;
+            padding:5px;
+        }
+        .grey_overlay {
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            z-index:2;
+            -moz-opacity: 0.5;
+            opacity:.50;
+            filter: alpha(opacity=50);
+        }
+        .childtable{
+            background-color: white;
+            margin-left: 55px;
+            width: 98%;
+            border-collapse:collapse;
+            border:solid 1px #e0e3e5;
+        }
+        .childtable th{
+            background-color: #f2f3f3;
+            border:solid 1px #CBCBCB;
+            padding:3px;
+        }
+        .childtable td{
+            border:solid 1px #e0e3e5;
+            padding:3px;
+            border-left:none;
+            border-right:none;
+        }
+    </style>
+    <script>
+        function adjustDatePicker(indx){
+            var leftPos = document.getElementById(indx).scrollLeft;
+            var datePicker = document.getElementById('datePicker');
+            setTimeout(function(){ 
+                datePicker.style.left = (parseInt(datePicker.style.left) - parseInt(leftPos))+'px'; 
+            }, 1);
+        }
+    </script>
+    <apex:sectionHeader title="Milestones and Tasks (MPM4)" subtitle="{!MPM4_BASE__Milestone1_Project__c.Name}"/>
+    
+    <apex:actionstatus id="loading">
+        <apex:facet name="start">
+            <div id="dvLoading" class="grey_overlay" style="z-index:100;"></div>
+            <div style="position: absolute;top: 45%;left: 50%;">
+                <img src="/img/loading.gif" title="Please Wait..."/>
+            </div>
+        </apex:facet>
+    </apex:actionstatus>
+    <apex:form Id="frm">
+        <apex:pageMessages />
+        <apex:actionFunction name="Addmilestn" action="{!AddMilestone}" reRender="frm" status="loading"></apex:actionFunction>
+        <apex:actionFunction name="AddTask" action="{!AddChildTask}" reRender="frm" status="loading">
+            <apex:param value="" name="milestIndex" assignTo="{!milestoneIndex}"/>
+        </apex:actionFunction>
+        <apex:actionFunction name="SaveRecords" action="{!SaveRc}" reRender="frm" status="loading"></apex:actionFunction>
+        <apex:actionFunction name="DelTask" action="{!DelChildTask}" reRender="frm" status="loading">
+            <apex:param value="" name="tIndex" assignTo="{!taskIndex}"/>
+            <apex:param value="" name="milestIndex" assignTo="{!milestoneIndex}"/>
+        </apex:actionFunction>
+        <apex:actionFunction name="DelMilestone" action="{!DelMilestone}" reRender="frm" status="loading">
+            <apex:param value="" name="milestIndex" assignTo="{!milestoneIndex}"/>
+        </apex:actionFunction>
+        <apex:pageBlock title="" >
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Add Milestone" title="Add Milestone" onclick="Addmilestn();return false;"/>
+                <apex:commandButton value="Save" title="Save" onclick="SaveRecords();return false;"/>
+                <apex:commandButton value="Cancel" title="Cancel" action="{!Cancel}"/>
+            </apex:pageBlockButtons>
+            <apex:repeat value="{!lstMWrapper}" var="mstone">
+                <div style="overflow-x:auto;min-height:0%;" class="scrollDiv" id="{!mstone.mIndex}">
+                    <table style="width: 100%" class="milestoneTbl">
+                        <tr>
+                            <th>Actions</th>
+                            <th>Name</th>
+                            <th>Parent Milestone</th>
+                            <th>Predecessor Milestone</th>
+                            <th>Description</th>
+                            <th>Estimated Start Date</th>
+                            <th>Estimated End Date</th>
+                            <th>Actual Start Date</th>
+                            <th>Actual End Date</th>
+                            <th>Complete</th>
+                            <th>Milestone Hours Budget</th>
+                            <th>Milestone Expense Budget</th>
+                            <th>Hours Budget from Sub-Milestones</th>
+                            <th>Estimated Hours From Sub-Milestones</th>
+                            <th>Actual Hours From Sub-Milestones</th>
+                            <th>Expense Budget from Sub-Milestones</th>
+                            <th>Estimated Expense From Sub-Milestones</th>
+                            <th>Actual Expense From Sub-Milestones</th>
+                            <th>Open Tasks (in Sub-Milestones)</th>
+                            <th>Complete Tasks (in Sub-Milestones)</th>
+                            <th>Late Tasks (in Tasks)</th>
+                            <th>Late Tasks (in Sub-Milestones)</th>
+                            <th>Blocked Tasks (in Sub-Milestones)</th>
+                        </tr>
+                        <tr class="mrow">
+                            <td>
+                                <apex:outputLink value="javascript:void(0);" onclick="AddTask({!mstone.mIndex});return false;" style="float:left;margin-right:6px;">
+                                    <img src="{!URLFOR($Resource.milestoneimages, 'add.png')}" title="Add Task"/>
+                                </apex:outputLink>
+                                <apex:outputLink value="javascript:void(0);" onclick="if(confirm('Related Task will be deleted automatically, Are you sure you want to delete milestone permanently?')){DelMilestone({!mstone.mIndex});return false;} ">
+                                    <img src="{!URLFOR($Resource.milestoneimages, 'delete.png')}" title="Delete"/>
+                                </apex:outputLink>
+                            </td>
+                            <td>
+                                <apex:inputField value="{!mstone.milestone.Name}"/>
+                            </td>
+                            <td>
+                                <apex:inputField value="{!mstone.milestone.MPM4_BASE__Parent_Milestone__c}"/>
+                            </td>
+                            <td>
+                                <apex:inputField value="{!mstone.milestone.MPM4_BASE__Predecessor_Milestone__c}"/>
+                            </td>
+                            <td>
+                                <apex:inputField value="{!mstone.milestone.MPM4_BASE__Description__c}"/>
+                            </td>
+                            <td>
+                                <apex:inputField value="{!mstone.milestone.MPM4_BASE__Kickoff__c}" onclick="adjustDatePicker({!mstone.mIndex});"/>
+                            </td>
+                            <td>
+                                <apex:inputField value="{!mstone.milestone.MPM4_BASE__Deadline__c}" onclick="adjustDatePicker({!mstone.mIndex});"/>
+                            </td>
+                            <td>
+                                <apex:inputField value="{!mstone.milestone.MPM4_BASE__Actual_Start_Date__c}" onclick="adjustDatePicker({!mstone.mIndex});"/>
+                            </td>
+                            <td>
+                                <apex:inputField value="{!mstone.milestone.MPM4_BASE__Actual_Finish_Date__c}" onclick="adjustDatePicker({!mstone.mIndex});"/>
+                            </td>
+                            <td>
+                                <apex:inputField value="{!mstone.milestone.MPM4_BASE__Complete__c}"/>
+                            </td>
+                            <td>
+                                <apex:inputField value="{!mstone.milestone.MPM4_BASE__Hours_Budget__c}"/>
+                            </td>
+                            <td>
+                                <apex:inputField value="{!mstone.milestone.MPM4_BASE__Expense_Budget__c}"/>
+                            </td>
+                            <td>
+                                <apex:inputField value="{!mstone.milestone.MPM4_BASE__Hours_Budget_from_Sub_Milestones__c}"/>
+                            </td>
+                            <td>
+                                <apex:inputField value="{!mstone.milestone.MPM4_BASE__Estimated_Hours_From_Sub_Milestones__c}"/>
+                            </td>
+                            <td>
+                                <apex:inputField value="{!mstone.milestone.MPM4_BASE__Actual_Hours_From_Sub_Milestones__c}"/>
+                            </td>
+                            <td>
+                                <apex:inputField value="{!mstone.milestone.MPM4_BASE__Expense_Budget_from_Sub_Milestones__c}"/>
+                            </td>
+                            <td>
+                                <apex:inputField value="{!mstone.milestone.MPM4_BASE__Estimated_Expense_From_Sub_Milestones__c}"/>
+                            </td>
+                            <td>
+                                <apex:inputField value="{!mstone.milestone.MPM4_BASE__Actual_Expense_From_Sub_Milestones__c}"/>
+                            </td>
+                            <td>
+                                <apex:inputField value="{!mstone.milestone.MPM4_BASE__Open_Tasks_in_Sub_Milestones__c}"/>
+                            </td>
+                            <td>
+                                <apex:inputField value="{!mstone.milestone.MPM4_BASE__Complete_Tasks_in_Sub_Milestones__c}"/>
+                            </td>
+                            <td>
+                                <apex:inputField value="{!mstone.milestone.MPM4_BASE__Late_Tasks_in_Tasks__c}"/>
+                            </td>
+                            <td>
+                                <apex:inputField value="{!mstone.milestone.MPM4_BASE__Late_Tasks_in_Sub_Milestones__c}"/>
+                            </td>
+                            <td>
+                                <apex:inputField value="{!mstone.milestone.MPM4_BASE__Blocked_Tasks_in_Sub_Milestones__c}"/>
+                            </td>
+                        </tr>
+                        <apex:outputPanel rendered="{!IF(mstone.tWrapper.size > 0, true, false)}" layout="none">
+                            <tr><td colspan="23">
+                                <table class="childtable" border="0" cellpadding="1" cellspacing="0">
+                                    <tr>
+                                        <th>Action</th>
+                                        <th>Name</th>
+                                        <th>Predecessor Task</th>
+                                        <th>Description</th>
+                                        <th>Priority</th>
+                                        <th>Task Stage</th>
+                                        <th>Oracle Project Task</th>
+                                        <th>Type of Resource</th>
+                                        <th>Contractor vendor name</th>
+                                        <th>Task Type</th>
+                                        <th>Resource</th>
+                                        <th>Estimated Start Date</th>
+                                        <th>Estimated End Date</th>
+                                        <th>Actual Start Date</th>
+                                        <th>Actual End Date</th>
+                                        <th>Complete</th>
+                                        <th>Last Email Received</th>
+                                        <th>Blocked</th>
+                                        <th>Reason</th>
+                                        <th>Estimated Hours</th>
+                                        <th>Estimated Expense</th>
+                                    </tr>
+                                    <apex:repeat value="{!mstone.tWrapper}" var="twrap">
+                                        <tr>
+                                            <td>
+                                                <apex:outputLink value="javascript:void(0);" onclick="if(confirm('Are you sure you want to delete the task permanently?')){DelTask({!twrap.tIndex},{!mstone.mIndex});return false;} ">
+                                                    <img src="{!URLFOR($Resource.milestoneimages, 'delete.png')}" title="Delete"/>
+                                                </apex:outputLink>
+                                            </td>
+                                            <td>
+                                                <apex:inputField value="{!twrap.mTask.Name}"/>
+                                            </td>
+                                            <td>
+                                                <apex:inputField value="{!twrap.mTask.MPM4_BASE__Predecessor_Task__c}"/>
+                                            </td>
+                                            <td>
+                                                <apex:inputField value="{!twrap.mTask.MPM4_BASE__Description__c}"/>
+                                            </td>
+                                            <td>
+                                                <apex:inputField value="{!twrap.mTask.MPM4_BASE__Priority__c}"/>
+                                            </td>
+                                            <td>
+                                                <apex:inputField value="{!twrap.mTask.MPM4_BASE__Task_Stage__c}"/>
+                                            </td>
+                                            <td>
+                                                <apex:selectList value="{!twrap.selectedOracleTask}" multiselect="false" size="1" styleClass="{!IF(NOT(ISNULL(twrap.taskRequired)), 'error', '')}">
+                                                    <apex:selectOption itemLabel="-- Select --" itemValue=""></apex:selectOption>
+                                                    <apex:selectOptions id="select-o-tasks" value="{!mstone.orOracleTasks}"></apex:selectOptions>
+                                                </apex:selectList>
+                                                <apex:outputText rendered="{!NOT(ISNULL(twrap.taskRequired))}" value="{!twrap.taskRequired}" styleClass="errorMsg" style="display: block;"></apex:outputText>
+                                            </td>
+                                            <td>
+                                                <apex:inputField value="{!twrap.mTask.Type_of_Resource__c}"/>
+                                            </td>
+                                            <td>
+                                                <apex:inputField value="{!twrap.mTask.Contractor_vendor_name__c}"/>
+                                            </td>
+                                            <td>
+                                                <apex:inputField value="{!twrap.mTask.Task_Type__c}"/>
+                                            </td>
+                                            <td>
+                                                <apex:inputField value="{!twrap.mTask.MPM4_BASE__Resource__c}"/>
+                                            </td>
+                                            <td>
+                                                <apex:inputField value="{!twrap.mTask.MPM4_BASE__Start_Date__c}" onclick="adjustDatePicker({!mstone.mIndex});"/>
+                                            </td>
+                                            <td>
+                                                <apex:inputField value="{!twrap.mTask.MPM4_BASE__Due_Date__c}" onclick="adjustDatePicker({!mstone.mIndex});"/>
+                                            </td>
+                                            <td>
+                                                <apex:inputField value="{!twrap.mTask.MPM4_BASE__Actual_Start_Date__c}" onclick="adjustDatePicker({!mstone.mIndex});"/>
+                                            </td>
+                                            <td>
+                                                <apex:inputField value="{!twrap.mTask.MPM4_BASE__Actual_Finish_Date__c}" onclick="adjustDatePicker({!mstone.mIndex});"/>
+                                            </td>
+                                            <td>
+                                                <apex:inputField value="{!twrap.mTask.MPM4_BASE__Complete__c}"/>
+                                            </td>
+                                            <td>
+                                                <apex:inputField value="{!twrap.mTask.MPM4_BASE__Last_Email_Received__c}" onclick="adjustDatePicker({!mstone.mIndex});"/>
+                                            </td>
+                                            <td>
+                                                <apex:inputField value="{!twrap.mTask.MPM4_BASE__Blocked__c}"/>
+                                            </td>
+                                            <td>
+                                                <apex:inputField value="{!twrap.mTask.MPM4_BASE__Blocked_Reason__c}"/>
+                                            </td>
+                                            <td>
+                                                <apex:inputField value="{!twrap.mTask.MPM4_BASE__Estimated_Hours__c}"/>
+                                            </td>
+                                            <td>
+                                                <apex:inputField value="{!twrap.mTask.MPM4_BASE__Estimated_Expense__c}"/>
+                                            </td>
+                                        </tr>
+                                    </apex:repeat>
+                                </table>
+                            </td></tr>
+                        </apex:outputPanel>
+                    </table>
+                </div>
+            </apex:repeat>
+            <script>
+                //var lstDivs = document.getElementsByClassName('scrollDiv');
+                var lstDivs = document.querySelectorAll('.scrollDiv');
+                for(i = 0; i < lstDivs.length; i++){
+                    //lstDivs[i].style.width = window.outerWidth-65+'px';
+                    lstDivs[i].style.width = document.documentElement.clientWidth-65+'px';
+                    lstDivs[i].onscroll = function (event) {
+                        var datePicker = document.getElementById('datePicker');
+                        datePicker.style.display = 'none';
+                    }
+                }
+                
+                window.addEventListener("resize", myFunction);
+                
+                function myFunction() {
+                    //var lstDivs = document.getElementsByClassName('scrollDiv');
+                    var lstDivs = document.querySelectorAll('.scrollDiv');
+                    for(i = 0; i < lstDivs.length; i++){
+                        //lstDivs[i].style.width = window.outerWidth-65+'px';
+                        lstDivs[i].style.width = document.documentElement.clientWidth-65+'px';
+                        lstDivs[i].onscroll = function (event) {
+                            var datePicker = document.getElementById('datePicker');
+                            datePicker.style.display = 'none';
+                        }
+                    }
+                }
+            </script>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

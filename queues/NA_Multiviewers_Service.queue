@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>NA Multiviewers Service</name>
+    <queueMembers>
+        <users>
+            <user>danny.park@imaginecommunications.com</user>
+            <user>jack.tsai@imaginecommunications.com</user>
+            <user>joerg.appelbohm@imaginecommunications.com</user>
+            <user>kelvin.zhang@imaginecommunications.com</user>
+            <user>keyur.joshi@imaginecommunications.com</user>
+            <user>sunhua.yang@imaginecommunications.com</user>
+            <user>tina.kong@imaginecommunications.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

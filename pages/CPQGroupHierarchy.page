@@ -1,0 +1,22 @@
+<apex:page >
+    <apex:includeLightning />
+    <style type="text/css">
+        .swal2-buttonswrapper button {
+        	background-image: none !important;
+        }
+    </style>
+    <a href="/apex/SBQQ__sb?id={!$CurrentPage.parameters.id}">Back</a>
+    <div id="Con"></div>
+    <script>
+        $Lightning.use("c:CPQGroupHierarchyApp", function() {
+            $Lightning.createComponent(
+                "c:CPQGroupHierarchy",
+                {"recordId": "{!$CurrentPage.parameters.id}", "uiThemeFromVF": "{!$User.UIThemeDisplayed}"},
+                "Con",
+                function(cmp) {
+                    console.log("Component is created!");
+                    console.log(cmp);
+                });
+            });        
+      </script>
+</apex:page>

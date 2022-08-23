@@ -1,0 +1,684 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>AdTech Sales Feed Layout V2</layout>
+        <sections>
+            <label><!-- Address Information --></label>
+            <section>Address Information</section>
+        </sections>
+        <sections>
+            <label><!-- Bid Desk Document Data --></label>
+            <section>Bid Desk Document Data</section>
+        </sections>
+        <sections>
+            <label><!-- Bids and Proposals Engagement --></label>
+            <section>Bids and Proposals Engagement</section>
+        </sections>
+        <sections>
+            <label><!-- Credit Check --></label>
+            <section>Credit Check</section>
+        </sections>
+        <sections>
+            <label><!-- Financial Model --></label>
+            <section>Financial Model</section>
+        </sections>
+        <sections>
+            <label><!-- Financial Terms --></label>
+            <section>Financial Terms</section>
+        </sections>
+        <sections>
+            <label><!-- For Contract Renewal Only --></label>
+            <section>For Contract Renewal Only</section>
+        </sections>
+        <sections>
+            <label><!-- Message --></label>
+            <section>Message</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Description and Status --></label>
+            <section>Opportunity Description and Status</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Information --></label>
+            <section>Opportunity Information</section>
+        </sections>
+        <sections>
+            <label><!-- Planning and SCM --></label>
+            <section>Planning and SCM</section>
+        </sections>
+        <sections>
+            <label><!-- Product Forecast --></label>
+            <section>Product Forecast</section>
+        </sections>
+        <sections>
+            <label><!-- Sales Control --></label>
+            <section>Sales Control</section>
+        </sections>
+        <sections>
+            <label><!-- Services Information --></label>
+            <section>Services Information</section>
+        </sections>
+        <sections>
+            <label><!-- Tiger Team --></label>
+            <section>Tiger Team</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Adtech Sales Layout New</layout>
+        <sections>
+            <label><!-- Message --></label>
+            <section>Message</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Information --></label>
+            <section>Opportunity Information</section>
+        </sections>
+        <sections>
+            <label><!-- Product Forecast --></label>
+            <section>Product Forecast</section>
+        </sections>
+        <sections>
+            <label><!-- Revenue Model --></label>
+            <section>Revenue Model</section>
+        </sections>
+        <sections>
+            <label><!-- Tiger Team --></label>
+            <section>Tiger Team</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Adtech Sales feed Layout</layout>
+        <sections>
+            <label><!-- Address Information --></label>
+            <section>Address Information</section>
+        </sections>
+        <sections>
+            <label><!-- Bids and Proposals Engagement --></label>
+            <section>Bids and Proposals Engagement</section>
+        </sections>
+        <sections>
+            <label><!-- Leads and Campaign Details --></label>
+            <section>Leads and Campaign Details</section>
+        </sections>
+        <sections>
+            <label><!-- Message --></label>
+            <section>Message</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Information --></label>
+            <section>Opportunity Information</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Status --></label>
+            <section>Opportunity Status</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Team --></label>
+            <section>Opportunity Team</section>
+        </sections>
+        <sections>
+            <label><!-- Planning and SCM --></label>
+            <section>Planning and SCM</section>
+        </sections>
+        <sections>
+            <label><!-- Product Forecast --></label>
+            <section>Product Forecast</section>
+        </sections>
+        <sections>
+            <label><!-- Revenue Model --></label>
+            <section>Revenue Model</section>
+        </sections>
+        <sections>
+            <label><!-- Services Information --></label>
+            <section>Services Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Copy of Direct Sales Feed Layout - Sales Console Lane</layout>
+        <sections>
+            <label><!-- Address Information --></label>
+            <section>Address Information</section>
+        </sections>
+        <sections>
+            <label><!-- Bids and Proposals Engagement --></label>
+            <section>Bids and Proposals Engagement</section>
+        </sections>
+        <sections>
+            <label><!-- Financial Model --></label>
+            <section>Financial Model</section>
+        </sections>
+        <sections>
+            <label><!-- Financial Terms --></label>
+            <section>Financial Terms</section>
+        </sections>
+        <sections>
+            <label><!-- Leads and Campaign Details --></label>
+            <section>Leads and Campaign Details</section>
+        </sections>
+        <sections>
+            <label><!-- Message --></label>
+            <section>Message</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity --></label>
+            <section>Opportunity</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Description and Status --></label>
+            <section>Opportunity Description and Status</section>
+        </sections>
+        <sections>
+            <label><!-- Product Forecast --></label>
+            <section>Product Forecast</section>
+        </sections>
+        <sections>
+            <label><!-- Services Information --></label>
+            <section>Services Information</section>
+        </sections>
+        <sections>
+            <label><!-- TSSA --></label>
+            <section>TSSA</section>
+        </sections>
+        <sections>
+            <label><!-- Tiger Team --></label>
+            <section>Tiger Team</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Copy of Direct Sales Feed Layout - Sales Console No Clone Button</layout>
+        <sections>
+            <label><!-- Address Information --></label>
+            <section>Address Information</section>
+        </sections>
+        <sections>
+            <label><!-- Bids and Proposals Engagement --></label>
+            <section>Bids and Proposals Engagement</section>
+        </sections>
+        <sections>
+            <label><!-- Financial Terms --></label>
+            <section>Financial Terms</section>
+        </sections>
+        <sections>
+            <label><!-- Leads and Campaign Details --></label>
+            <section>Leads and Campaign Details</section>
+        </sections>
+        <sections>
+            <label><!-- Message --></label>
+            <section>Message</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Information --></label>
+            <section>Opportunity Information</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Status --></label>
+            <section>Opportunity Status</section>
+        </sections>
+        <sections>
+            <label><!-- PreSales Support --></label>
+            <section>PreSales Support</section>
+        </sections>
+        <sections>
+            <label><!-- Product Forecast --></label>
+            <section>Product Forecast</section>
+        </sections>
+        <sections>
+            <label><!-- Services Information --></label>
+            <section>Services Information</section>
+        </sections>
+        <sections>
+            <label><!-- TSSA --></label>
+            <section>TSSA</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Direct Sales Feed Layout</layout>
+        <sections>
+            <label><!-- Address Information --></label>
+            <section>Address Information</section>
+        </sections>
+        <sections>
+            <label><!-- Bids and Proposals Engagement --></label>
+            <section>Bids and Proposals Engagement</section>
+        </sections>
+        <sections>
+            <label><!-- Financial Terms --></label>
+            <section>Financial Terms</section>
+        </sections>
+        <sections>
+            <label><!-- Message --></label>
+            <section>Message</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Information --></label>
+            <section>Opportunity Information</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Status --></label>
+            <section>Opportunity Status</section>
+        </sections>
+        <sections>
+            <label><!-- PreSales Support --></label>
+            <section>PreSales Support</section>
+        </sections>
+        <sections>
+            <label><!-- Product Forecast --></label>
+            <section>Product Forecast</section>
+        </sections>
+        <sections>
+            <label><!-- Revenue Section --></label>
+            <section>Revenue Section</section>
+        </sections>
+        <sections>
+            <label><!-- Services Information --></label>
+            <section>Services Information</section>
+        </sections>
+        <sections>
+            <label><!-- TSSA --></label>
+            <section>TSSA</section>
+        </sections>
+        <sections>
+            <label><!-- Tiger Team --></label>
+            <section>Tiger Team</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Direct Sales Feed Layout - Sales Console</layout>
+        <sections>
+            <label><!-- Address Information --></label>
+            <section>Address Information</section>
+        </sections>
+        <sections>
+            <label><!-- Bids and Proposals Engagement --></label>
+            <section>Bids and Proposals Engagement</section>
+        </sections>
+        <sections>
+            <label><!-- Deal Desk Document Data --></label>
+            <section>Deal Desk Document Data</section>
+        </sections>
+        <sections>
+            <label><!-- Financial Model --></label>
+            <section>Financial Model</section>
+        </sections>
+        <sections>
+            <label><!-- Financial Terms --></label>
+            <section>Financial Terms</section>
+        </sections>
+        <sections>
+            <label><!-- Leads and Campaign Details --></label>
+            <section>Leads and Campaign Details</section>
+        </sections>
+        <sections>
+            <label><!-- Message --></label>
+            <section>Message</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity --></label>
+            <section>Opportunity</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Description and Status --></label>
+            <section>Opportunity Description and Status</section>
+        </sections>
+        <sections>
+            <label><!-- P&amp;N BSR --></label>
+            <section>P&amp;N BSR</section>
+        </sections>
+        <sections>
+            <label><!-- Planning and SCM --></label>
+            <section>Planning and SCM</section>
+        </sections>
+        <sections>
+            <label><!-- Product Forecast --></label>
+            <section>Product Forecast</section>
+        </sections>
+        <sections>
+            <label><!-- Services Information --></label>
+            <section>Services Information</section>
+        </sections>
+        <sections>
+            <label><!-- TSSA --></label>
+            <section>TSSA</section>
+        </sections>
+        <sections>
+            <label><!-- Tiger Team and Special Projects --></label>
+            <section>Tiger Team and Special Projects</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Indirect Sales Feed Layout</layout>
+        <sections>
+            <label><!-- Address Information --></label>
+            <section>Address Information</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Information --></label>
+            <section>Opportunity Information</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Status --></label>
+            <section>Opportunity Status</section>
+        </sections>
+        <sections>
+            <label><!-- Tiger Team --></label>
+            <section>Tiger Team</section>
+        </sections>
+        <sections>
+            <label><!-- message --></label>
+            <section>message</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Indirect Sales Feed Layout - Sales Console</layout>
+        <sections>
+            <label><!-- Address Information --></label>
+            <section>Address Information</section>
+        </sections>
+        <sections>
+            <label><!-- Bids and Proposals Engagement --></label>
+            <section>Bids and Proposals Engagement</section>
+        </sections>
+        <sections>
+            <label><!-- Deal Desk Document Data --></label>
+            <section>Deal Desk Document Data</section>
+        </sections>
+        <sections>
+            <label><!-- Financial Model --></label>
+            <section>Financial Model</section>
+        </sections>
+        <sections>
+            <label><!-- Financial Terms --></label>
+            <section>Financial Terms</section>
+        </sections>
+        <sections>
+            <label><!-- Leads and Campaign Details --></label>
+            <section>Leads and Campaign Details</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Description and Status --></label>
+            <section>Opportunity Description and Status</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Information --></label>
+            <section>Opportunity Information</section>
+        </sections>
+        <sections>
+            <label><!-- Product Forecast --></label>
+            <section>Product Forecast</section>
+        </sections>
+        <sections>
+            <label><!-- Services Information --></label>
+            <section>Services Information</section>
+        </sections>
+        <sections>
+            <label><!-- TSSA --></label>
+            <section>TSSA</section>
+        </sections>
+        <sections>
+            <label><!-- Tiger Team and Special Projects --></label>
+            <section>Tiger Team and Special Projects</section>
+        </sections>
+        <sections>
+            <label><!-- message --></label>
+            <section>message</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Indirect Sales Layout - Partner Community</layout>
+        <sections>
+            <label><!-- Address Information --></label>
+            <section>Address Information</section>
+        </sections>
+        <sections>
+            <label><!-- Description Information --></label>
+            <section>Description Information</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Information --></label>
+            <section>Opportunity Information</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Status --></label>
+            <section>Opportunity Status</section>
+        </sections>
+        <sections>
+            <label><!-- message --></label>
+            <section>message</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>P&amp;N Sales New</layout>
+        <sections>
+            <label><!-- Message --></label>
+            <section>Message</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity --></label>
+            <section>Opportunity</section>
+        </sections>
+        <sections>
+            <label><!-- Product Forecast --></label>
+            <section>Product Forecast</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Trial Feed Layout</layout>
+        <sections>
+            <label><!-- Address Information --></label>
+            <section>Address Information</section>
+        </sections>
+        <sections>
+            <label><!-- Message --></label>
+            <section>Message</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Information --></label>
+            <section>Opportunity Information</section>
+        </sections>
+        <sections>
+            <label><!-- Parent Direct Opportunity Information --></label>
+            <section>Parent Direct Opportunity Information</section>
+        </sections>
+        <sections>
+            <label><!-- Trial Opportunity Status --></label>
+            <section>Trial Opportunity Status</section>
+        </sections>
+        <sections>
+            <label><!-- Trials Information --></label>
+            <section>Trials Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Z - No Longer Used - Direct Sales Layout</layout>
+        <sections>
+            <label><!-- Address Information --></label>
+            <section>Address Information</section>
+        </sections>
+        <sections>
+            <label><!-- BOX --></label>
+            <section>BOX</section>
+        </sections>
+        <sections>
+            <label><!-- Business Develpoment --></label>
+            <section>Business Develpoment</section>
+        </sections>
+        <sections>
+            <label><!-- Financial Terms --></label>
+            <section>Financial Terms</section>
+        </sections>
+        <sections>
+            <label><!-- Leads and Campaign Details --></label>
+            <section>Leads and Campaign Details</section>
+        </sections>
+        <sections>
+            <label><!-- Message --></label>
+            <section>Message</section>
+        </sections>
+        <sections>
+            <label><!-- Product Forecast --></label>
+            <section>Product Forecast</section>
+        </sections>
+        <sections>
+            <label><!-- TSSA --></label>
+            <section>TSSA</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Z - No Longer Used - Direct Sales Layout with Box Section</layout>
+        <sections>
+            <label><!-- Address Information --></label>
+            <section>Address Information</section>
+        </sections>
+        <sections>
+            <label><!-- Box --></label>
+            <section>Box</section>
+        </sections>
+        <sections>
+            <label><!-- Message --></label>
+            <section>Message</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Z - No Longer Used - Indirect Sales Layout</layout>
+        <sections>
+            <label><!-- Address Information --></label>
+            <section>Address Information</section>
+        </sections>
+        <sections>
+            <label><!-- message --></label>
+            <section>message</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Z - No Longer Used - Indirect Sales Layout with Box Section</layout>
+        <sections>
+            <label><!-- Address Information --></label>
+            <section>Address Information</section>
+        </sections>
+        <sections>
+            <label><!-- Box --></label>
+            <section>Box</section>
+        </sections>
+        <sections>
+            <label><!-- message --></label>
+            <section>message</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Z - No Longer Used - Trial Layout</layout>
+        <sections>
+            <label><!-- Address Information --></label>
+            <section>Address Information</section>
+        </sections>
+        <sections>
+            <label><!-- BOX --></label>
+            <section>BOX</section>
+        </sections>
+        <sections>
+            <label><!-- Message --></label>
+            <section>Message</section>
+        </sections>
+        <sections>
+            <label><!-- Trials Information --></label>
+            <section>Trials Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Z - Opportunity Layout</layout>
+        <sections>
+            <label><!-- Message --></label>
+            <section>Message</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Status --></label>
+            <section>Opportunity Status</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Z - Trial Feed Layout - Sales Console</layout>
+        <sections>
+            <label><!-- Address Information --></label>
+            <section>Address Information</section>
+        </sections>
+        <sections>
+            <label><!-- BOX --></label>
+            <section>BOX</section>
+        </sections>
+        <sections>
+            <label><!-- Business Development --></label>
+            <section>Business Development</section>
+        </sections>
+        <sections>
+            <label><!-- Description Information --></label>
+            <section>Description Information</section>
+        </sections>
+        <sections>
+            <label><!-- Financial Information --></label>
+            <section>Financial Information</section>
+        </sections>
+        <sections>
+            <label><!-- Leads and Campaign Details --></label>
+            <section>Leads and Campaign Details</section>
+        </sections>
+        <sections>
+            <label><!-- Message --></label>
+            <section>Message</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Status --></label>
+            <section>Opportunity Status</section>
+        </sections>
+        <sections>
+            <label><!-- PreSales Support --></label>
+            <section>PreSales Support</section>
+        </sections>
+        <sections>
+            <label><!-- Product Forecast --></label>
+            <section>Product Forecast</section>
+        </sections>
+        <sections>
+            <label><!-- Services Information --></label>
+            <section>Services Information</section>
+        </sections>
+        <sections>
+            <label><!-- TSSA --></label>
+            <section>TSSA</section>
+        </sections>
+        <sections>
+            <label><!-- Trials Information --></label>
+            <section>Trials Information</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- New CPQ Quote --></label>
+        <name>New_CPQ_Quote_Flow</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- New POC/Trial --></label>
+        <name>New_POC_Trial_Lightning</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- New Project --></label>
+        <name>New_Project_Light_Action</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- DO NOT USE New Project --></label>
+        <name>New_Project_Lightning</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- New CPQ Quote --></label>
+        <name>New_Quote</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- New Quote --></label>
+        <name>New_Quote_Ltng</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Quick Update --></label>
+        <name>Quick_Update</name>
+    </quickActions>
+</CustomObjectTranslation>

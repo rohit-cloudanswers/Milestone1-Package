@@ -1,0 +1,48 @@
+<aura:component implements="clients:availableForMailAppAppPage,clients:hasItemContext"
+                controller="MPM4_ProjectRelatedToEmailCtrl"> 
+    
+    <aura:handler name="init" value="{!this}" action="{!c.updateResult}" />
+    <aura:handler name="change" value="{!v.subject}" action="{!c.updateResult}"/>
+    <aura:handler name="change" value="{!v.people}" action="{!c.updateResult}" />
+    
+    <aura:attribute name="projects" type="MPM4_BASE__Milestone1_Project__c[]"/>  
+    <aura:attribute name="fieldNames" type="Object[]" /> 
+    	
+    <aura:attribute name="showAllProjects" type="Boolean" default="false"/>
+    <aura:attribute name="includeFrom" type="Boolean" default="true"/>
+    <aura:attribute name="includeTo" type="Boolean" default="true"/>
+    <aura:attribute name="includeCC" type="Boolean" default="true"/> 
+    <aura:attribute name="total" type="String" default="0"/> 
+ 	<div style="margin:15px" >
+        <aura:if isTrue="{!empty(v.projects)}"> 
+            <lightning:spinner aura:id="spinner1" variant="brand" />
+            <aura:set attribute="else">
+                    <lightning:card title="{! 'Projects ('+v.total+')' }" iconName="custom:custom70" class='slds-card_boundary'> 
+                        <div class='slds-p-around_small slds-border_top'> 
+                            <aura:iteration items="{!v.projects}" var="project">  
+    
+                                <lightning:tile>  
+                                    <a href="" id='{!project.Id}' onclick="{!c.navi}" style='font-size: 1.2em; text-decoration: none;'>{!project.Name}</a>
+                                    
+                                    <dl class="slds-dl_horizontal" > 
+                                        <aura:iteration items="{!v.fieldNames}" var="fieldname">
+                                            <dt class="slds-dl_horizontal__label" title="{!fieldname.label}">
+                                                <span class="slds-truncate slds-text-color_weak">{!fieldname.label}</span>
+                                            </dt> 
+                                            <c:MPM4_TileValue record="{!project}" fieldName="{!fieldname.apiname}"  />  
+                                        </aura:iteration> 
+                                    </dl> 
+                                </lightning:tile>
+                                
+                            </aura:iteration>  
+                        </div>
+                        <div class="slds-card__footer" style="text-align:center">
+                            <aura:if isTrue="{! !v.showAllProjects}" >
+                                <a href="" onclick="{! c.gotoList }" style='font-size: 1.2em; text-decoration: none;'>View All</a>
+                            </aura:if>
+                        </div>
+                    </lightning:card>
+            </aura:set>
+        </aura:if> 
+	</div>
+</aura:component>

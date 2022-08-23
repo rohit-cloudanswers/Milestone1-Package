@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Order Status</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Order Status</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Order Status --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Actual Shipment Date --></label>
+        <name>Actual_Shipment_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bill To Account Number --></label>
+        <name>Bill_To_Account_Number_del__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bill To City --></label>
+        <name>Bill_To_City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bill To Country --></label>
+        <name>Bill_To_Country__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bill To Location --></label>
+        <name>Bill_To_Location__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bill To Name --></label>
+        <name>Bill_To_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bill To State --></label>
+        <name>Bill_To_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bill To Street --></label>
+        <name>Bill_To_Street__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bill To Zip --></label>
+        <name>Bill_To_Zip__c</name>
+    </fields>
+    <fields>
+        <label><!-- Booked Date --></label>
+        <name>Booked_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Business Unit --></label>
+        <name>Business_Unit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Number --></label>
+        <name>Customer_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer PO --></label>
+        <name>Customer_PO__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delivery Detail Id --></label>
+        <name>Delivery_Detail_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delivery Detail Status --></label>
+        <name>Delivery_Detail_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delivery Id --></label>
+        <name>Delivery_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delivery Status Date --></label>
+        <name>Delivery_Status_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- End User Address --></label>
+        <name>End_User_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- End User City --></label>
+        <name>End_User_City__c</name>
+    </fields>
+    <fields>
+        <label><!-- End User Country --></label>
+        <name>End_User_Country__c</name>
+    </fields>
+    <fields>
+        <label><!-- End User Name --></label>
+        <name>End_User_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- End User State --></label>
+        <name>End_User_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Extended Mfg Cost --></label>
+        <name>Extended_Mfg_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Freight Term --></label>
+        <name>Freight_Term__c</name>
+    </fields>
+    <fields>
+        <label><!-- Header Id --></label>
+        <name>Header_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Invoice To Org Id --></label>
+        <name>Invoice_To_Org_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item Class --></label>
+        <name>Item_Class__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item Type --></label>
+        <name>Item_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Line Id --></label>
+        <name>Line_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Line Item Cost --></label>
+        <name>Line_Item_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Line Shipment Number --></label>
+        <name>Line_Shipment_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Line Status Date --></label>
+        <name>Line_Status_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Line Status --></label>
+        <name>Line_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Local Net --></label>
+        <name>Local_Net__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Currency --></label>
+        <name>Order_Currency__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Line Type --></label>
+        <name>Order_Line_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Number --></label>
+        <name>Order_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Type --></label>
+        <name>Order_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ordered Quantity --></label>
+        <name>Ordered_Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Packing Instructions --></label>
+        <name>Packing_Instructions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pillar --></label>
+        <name>Pillar__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Description --></label>
+        <name>Product_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Family --></label>
+        <name>Product_Family__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Group Code --></label>
+        <name>Product_Group_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Group Description --></label>
+        <name>Product_Group_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Id --></label>
+        <name>Product_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Line --></label>
+        <name>Product_Line__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Number --></label>
+        <name>Product_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Promise Date --></label>
+        <name>Promise_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Request Date --></label>
+        <name>Request_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Percentage --></label>
+        <name>Sales_Percentage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Rep Name --></label>
+        <name>Sales_Rep_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Schedule Ship Date --></label>
+        <name>Schedule_Ship_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Serial Number --></label>
+        <name>Serial_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ship To Account Number --></label>
+        <name>Ship_To_Account_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ship To City --></label>
+        <name>Ship_To_City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ship To Country --></label>
+        <name>Ship_To_Country__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ship To Location --></label>
+        <name>Ship_To_Location__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ship To Name --></label>
+        <name>Ship_To_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ship To Org Id --></label>
+        <name>Ship_To_Org_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ship To State --></label>
+        <name>Ship_To_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ship To Street --></label>
+        <name>Ship_To_Street__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ship To Zip --></label>
+        <name>Ship_To_Zip__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipped Quantity --></label>
+        <name>Shipped_Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipping Method --></label>
+        <name>Shipping_Method__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sold To Account Number --></label>
+        <name>Sold_To_Account_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sold To Contact --></label>
+        <name>Sold_To_Contact__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sold To Org Id --></label>
+        <name>Sold_To_Org_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sold To --></label>
+        <name>Sold_To__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sub Category --></label>
+        <name>Sub_Category__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subinventory --></label>
+        <name>Subinventory__c</name>
+    </fields>
+    <fields>
+        <label><!-- USD FX Rate --></label>
+        <name>USD_FX_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- USD Net --></label>
+        <name>USD_Net__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unit Selling Price --></label>
+        <name>Unit_Selling_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Waybill --></label>
+        <name>Waybill__c</name>
+    </fields>
+    <layouts>
+        <layout>Order Status Layout</layout>
+        <sections>
+            <label><!-- Address --></label>
+            <section>Address</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Product Breakout</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Product Breakout</value>
+    </caseValues>
+    <fields>
+        <label><!-- Line of Business --></label>
+        <name>Line_of_Business__c</name>
+        <picklistValues>
+            <masterLabel>Media: Ad Sales</masterLabel>
+            <translation><!-- Media: Ad Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Media: Agency</masterLabel>
+            <translation><!-- Media: Agency --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Media: Analytics</masterLabel>
+            <translation><!-- Media: Analytics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Media: Program Scheduling</masterLabel>
+            <translation><!-- Media: Program Scheduling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Media: Punctuate</masterLabel>
+            <translation><!-- Media: Punctuate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Media: Traffic and Billing</masterLabel>
+            <translation><!-- Media: Traffic and Billing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Networking: Command and Control</masterLabel>
+            <translation><!-- Networking: Command and Control --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Networking: Compress and Transport</masterLabel>
+            <translation><!-- Networking: Compress and Transport --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Networking: Multiviewers</masterLabel>
+            <translation><!-- Networking: Multiviewers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Networking: Processing</masterLabel>
+            <translation><!-- Networking: Processing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Networking: Routing Switchers</masterLabel>
+            <translation><!-- Networking: Routing Switchers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Networking: T&amp;M</masterLabel>
+            <translation><!-- Networking: T&amp;M --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Playout: Asset Management</masterLabel>
+            <translation><!-- Playout: Asset Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Playout: Automation</masterLabel>
+            <translation><!-- Playout: Automation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Playout: Editing</masterLabel>
+            <translation><!-- Playout: Editing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Playout: Graphics</masterLabel>
+            <translation><!-- Playout: Graphics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Playout: Infocaster</masterLabel>
+            <translation><!-- Playout: Infocaster --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Playout: Integrated Playout</masterLabel>
+            <translation><!-- Playout: Integrated Playout --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Playout: Master Control and Brand</masterLabel>
+            <translation><!-- Playout: Master Control and Brand --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Playout: Media Server</masterLabel>
+            <translation><!-- Playout: Media Server --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Playout: Storage</masterLabel>
+            <translation><!-- Playout: Storage --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Product Breakout --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Product Breakout Amount --></label>
+        <name>Product_Breakout_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Group --></label>
+        <name>Product_Group__c</name>
+        <picklistValues>
+            <masterLabel>1RU Processing</masterLabel>
+            <translation><!-- 1RU Processing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6800</masterLabel>
+            <translation><!-- 6800 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ADC</masterLabel>
+            <translation><!-- ADC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ASG Other</masterLabel>
+            <translation><!-- ASG Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AdConnections</masterLabel>
+            <translation><!-- AdConnections --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Adtraq</masterLabel>
+            <translation><!-- Adtraq --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Asset Mgmt</masterLabel>
+            <translation><!-- Asset Mgmt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Audio</masterLabel>
+            <translation><!-- Audio --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Branding</masterLabel>
+            <translation><!-- Branding --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Broadcast Master</masterLabel>
+            <translation><!-- Broadcast Master --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Clock_Sync_Test</masterLabel>
+            <translation><!-- Clock_Sync_Test --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Compressed Domain</masterLabel>
+            <translation><!-- Compressed Domain --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Config &amp; Control</masterLabel>
+            <translation><!-- Config &amp; Control --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D-Series</masterLabel>
+            <translation><!-- D-Series --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DA</masterLabel>
+            <translation><!-- DA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Demodulators</masterLabel>
+            <translation><!-- Demodulators --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EAS</masterLabel>
+            <translation><!-- EAS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Editing &amp; Prodn</masterLabel>
+            <translation><!-- Editing &amp; Prodn --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fiber</masterLabel>
+            <translation><!-- Fiber --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Handhelds</masterLabel>
+            <translation><!-- Handhelds --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ICE</masterLabel>
+            <translation><!-- ICE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IRD</masterLabel>
+            <translation><!-- IRD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Infocaster</masterLabel>
+            <translation><!-- Infocaster --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Infrastructure</masterLabel>
+            <translation><!-- Infrastructure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Landmark</masterLabel>
+            <translation><!-- Landmark --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Larger Routers</masterLabel>
+            <translation><!-- Larger Routers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Legacy</masterLabel>
+            <translation><!-- Legacy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MCP-Compression</masterLabel>
+            <translation><!-- MCP-Compression --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MCP-Processing</masterLabel>
+            <translation><!-- MCP-Processing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MPEG Monitoring</masterLabel>
+            <translation><!-- MPEG Monitoring --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Master Control</masterLabel>
+            <translation><!-- Master Control --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Modular Processing</masterLabel>
+            <translation><!-- Modular Processing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monitoring AVP</masterLabel>
+            <translation><!-- Monitoring AVP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NetVX</masterLabel>
+            <translation><!-- NetVX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Netgain</masterLabel>
+            <translation><!-- Netgain --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Next</masterLabel>
+            <translation><!-- Next --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Novar</masterLabel>
+            <translation><!-- Novar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OEM</masterLabel>
+            <translation><!-- OEM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OSi Traffic_OSiCable</masterLabel>
+            <translation><!-- OSi Traffic_OSiCable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paradigm</masterLabel>
+            <translation><!-- Paradigm --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product - Graphics</masterLabel>
+            <translation><!-- Product - Graphics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product - Multiview</masterLabel>
+            <translation><!-- Product - Multiview --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product - Storage</masterLabel>
+            <translation><!-- Product - Storage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional Services - AM</masterLabel>
+            <translation><!-- Professional Services - AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional Services - AVP</masterLabel>
+            <translation><!-- Professional Services - AVP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional Services - Auto</masterLabel>
+            <translation><!-- Professional Services - Auto --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional Services - RMM</masterLabel>
+            <translation><!-- Professional Services - RMM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional Services - SEG</masterLabel>
+            <translation><!-- Professional Services - SEG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional Services - T&amp;M</masterLabel>
+            <translation><!-- Professional Services - T&amp;M --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional Services - VNS</masterLabel>
+            <translation><!-- Professional Services - VNS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Punctuate</masterLabel>
+            <translation><!-- Punctuate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QC</masterLabel>
+            <translation><!-- QC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RepLine_MediaLine</masterLabel>
+            <translation><!-- RepLine_MediaLine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SelenioFlex</masterLabel>
+            <translation><!-- SelenioFlex --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Servers</masterLabel>
+            <translation><!-- Servers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service - Asset Mgmt</masterLabel>
+            <translation><!-- Service - Asset Mgmt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service - Auto</masterLabel>
+            <translation><!-- Service - Auto --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service - SEG</masterLabel>
+            <translation><!-- Service - SEG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service - VNS</masterLabel>
+            <translation><!-- Service - VNS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service AVP</masterLabel>
+            <translation><!-- Service AVP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service RMM</masterLabel>
+            <translation><!-- Service RMM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service T&amp;M</masterLabel>
+            <translation><!-- Service T&amp;M --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Small Routers</masterLabel>
+            <translation><!-- Small Routers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TM QuiC</masterLabel>
+            <translation><!-- TM QuiC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VTM TVM - Series</masterLabel>
+            <translation><!-- VTM TVM - Series --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vision</masterLabel>
+            <translation><!-- Vision --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Product Breakout Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- New_Product_Breakout --></label>
+        <name>New_Product_Breakout</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Product_Breakout_Partner --></label>
+        <name>New_Product_Breakout_Partner</name>
+    </webLinks>
+</CustomObjectTranslation>

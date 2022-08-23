@@ -1,0 +1,28 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" >
+    <aura:attribute name="webinar_section_heading" type="String" default="Webinar Replays" access="global"/>
+    <aura:attribute name="webinar_image_url" type="String" default="/sfsites/c/resource/portal_default_webinar_replay" access="global"/>
+	<aura:attribute name="webinar_date" type="String" default="Webinar Date" access="global"/>
+	<aura:attribute name="webinar_title" type="String" default="Webinar Title" access="global"/>
+    <aura:attribute name="webinar_cta" type="String" default="" access="global"/>
+	<aura:attribute name="webinar_cta_text" type="String" default="See all webinar replays" access="global"/>
+	<aura:attribute name="webinar_cta_new_window" type="Boolean" access="global"/>
+
+    <div class="webinarReplayOuter">
+        <h2>{!v.webinar_section_heading}</h2>
+         <div class="webinarReplay">
+            <div class="image imgBox">
+                <img src="{!v.webinar_image_url}" alt="{!v.webinar_title}"/>
+            </div>
+            <div class="text">
+                <p class="date">{!v.webinar_date}</p>
+                <h3>{!v.webinar_title}</h3>
+                <aura:if isTrue="{!v.webinar_cta_new_window}">
+                    <a href="{!v.webinar_cta}" target="_blank">{!v.webinar_cta_text}</a>
+                    <aura:set attribute="else">
+                        <a href="{!v.webinar_cta}">{!v.webinar_cta_text}</a>
+                    </aura:set>
+                </aura:if>    
+            </div>
+        </div>
+	</div>
+</aura:component>

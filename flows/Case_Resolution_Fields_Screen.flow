@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <assignments>
+        <name>Assign_Fields</name>
+        <label>Assign Fields</label>
+        <locationX>409</locationX>
+        <locationY>161</locationY>
+        <assignmentItems>
+            <assignToReference>Case.Resolution__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Resolution</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Case.Resolution_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Resolution_Type</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Picklist_still_at_default</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Pick_Resolution_Reminder</name>
+        <label>Pick Resolution Reminder</label>
+        <locationX>596</locationX>
+        <locationY>66</locationY>
+        <assignmentItems>
+            <assignToReference>varReminder</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>ResolutionScreen</targetReference>
+        </connector>
+    </assignments>
+    <choices>
+        <name>ChoiceDefaultChoice</name>
+        <choiceText>{!returnDefaultPicklistValue}</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <elementReference>returnDefaultPicklistValue</elementReference>
+        </value>
+    </choices>
+    <choices>
+        <name>CodeChange</name>
+        <choiceText>Code Change</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Code Change</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>CodeFix</name>
+        <choiceText>Code Fix</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Code Fix</stringValue>
+        </value>
+    </choices>
+    <decisions>
+        <name>Picklist_still_at_default</name>
+        <label>Picklist still at default?</label>
+        <locationX>589</locationX>
+        <locationY>275</locationY>
+        <defaultConnector>
+            <targetReference>UpdateCase</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_default</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Resolution_Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Select a Reslolution</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Pick_Resolution_Reminder</targetReference>
+            </connector>
+            <label>Yes default</label>
+        </rules>
+    </decisions>
+    <dynamicChoiceSets>
+        <name>ResolutionType</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Resolution_Type__c</picklistField>
+        <picklistObject>Case</picklistObject>
+    </dynamicChoiceSets>
+    <formulas>
+        <name>returnDefaultPicklistValue</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK(TEXT({!Case.Resolution_Type__c})),&quot;Select a Reslolution&quot;, TEXT({!Case.Resolution_Type__c}))</expression>
+    </formulas>
+    <interviewLabel>Case - Resolution Fields Screen {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Case - Resolution Fields Screen</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordLookups>
+        <name>Case</name>
+        <label>Case</label>
+        <locationX>172</locationX>
+        <locationY>173</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>ResolutionScreen</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <object>Case</object>
+    </recordLookups>
+    <recordUpdates>
+        <name>UpdateCase</name>
+        <label>UpdateCase</label>
+        <locationX>403</locationX>
+        <locationY>373</locationY>
+        <inputReference>Case</inputReference>
+    </recordUpdates>
+    <screens>
+        <name>ResolutionScreen</name>
+        <label>ResolutionScreen</label>
+        <locationX>280</locationX>
+        <locationY>170</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Assign_Fields</targetReference>
+        </connector>
+        <fields>
+            <name>DisplayReminder</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(255, 0, 0);&quot;&gt;Please pick a Resolution Type!&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>varReminder</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>Resolution_Type</name>
+            <choiceReferences>ChoiceDefaultChoice</choiceReferences>
+            <choiceReferences>ResolutionType</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Resolution Type</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Resolution</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>Case.Resolution__c</elementReference>
+            </defaultValue>
+            <fieldText>Resolution</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <startElementReference>Case</startElementReference>
+    <status>Active</status>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varReminder</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+</Flow>

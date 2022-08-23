@@ -1,0 +1,8 @@
+<apex:page standardController="MPM4_BASE__Milestone1_Project__c" sidebar="false" showHeader="false" standardStylesheets="false">
+    <apex:outputPanel rendered="{!$User.UIThemeDisplayed != 'Theme4d'}" layout="block">
+        <c:OneDrive recordId="{!MPM4_BASE__Milestone1_Project__c.Id}"></c:OneDrive>
+    </apex:outputPanel>
+    <apex:outputPanel layout="block" rendered="{!$User.UIThemeDisplayed == 'Theme4d'}">
+        This version of OneDrive Widget is not available in Lightning Experience. Please check the new Lightning Widget under Sharepoint tab.
+    </apex:outputPanel>
+</apex:page>

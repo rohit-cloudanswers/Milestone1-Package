@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Scrum Team</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Scrum Teams</value>
+    </caseValues>
+    <fields>
+        <label><!-- Scrum Team Members --></label>
+        <name>Scrum_Team_Members__c</name>
+        <picklistValues>
+            <masterLabel>Ajay Kapoor</masterLabel>
+            <translation><!-- Ajay Kapoor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bryan Lauth</masterLabel>
+            <translation><!-- Bryan Lauth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>David Poling</masterLabel>
+            <translation><!-- David Poling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Emily Etzborn</masterLabel>
+            <translation><!-- Emily Etzborn --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Eric Cordell</masterLabel>
+            <translation><!-- Eric Cordell --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Eric Mackey</masterLabel>
+            <translation><!-- Eric Mackey --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jaime Cangas</masterLabel>
+            <translation><!-- Jaime Cangas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jeff Enderle</masterLabel>
+            <translation><!-- Jeff Enderle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jeff Kurth</masterLabel>
+            <translation><!-- Jeff Kurth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jeff Liening</masterLabel>
+            <translation><!-- Jeff Liening --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>John Bortharye</masterLabel>
+            <translation><!-- John Bortharye --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kathy Bienz</masterLabel>
+            <translation><!-- Kathy Bienz --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kim Lee</masterLabel>
+            <translation><!-- Kim Lee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lisa Cline</masterLabel>
+            <translation><!-- Lisa Cline --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mark Cowles</masterLabel>
+            <translation><!-- Mark Cowles --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mark Jordan</masterLabel>
+            <translation><!-- Mark Jordan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mehmet Balos</masterLabel>
+            <translation><!-- Mehmet Balos --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ole Calderone</masterLabel>
+            <translation><!-- Ole Calderone --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oliver Abadeer</masterLabel>
+            <translation><!-- Oliver Abadeer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pablo Gargiulo</masterLabel>
+            <translation><!-- Pablo Gargiulo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paul Nagle</masterLabel>
+            <translation><!-- Paul Nagle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Raj Vooturi</masterLabel>
+            <translation><!-- Raj Vooturi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rick J.</masterLabel>
+            <translation><!-- Rick J. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Simon Lockington</masterLabel>
+            <translation><!-- Simon Lockington --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Steve Foreman</masterLabel>
+            <translation><!-- Steve Foreman --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Suraj Aluru</masterLabel>
+            <translation><!-- Suraj Aluru --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TBD</masterLabel>
+            <translation><!-- TBD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tony Morelli</masterLabel>
+            <translation><!-- Tony Morelli --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Victoria Canton</masterLabel>
+            <translation><!-- Victoria Canton --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Scrum Team Name --></label>
+        <name>Scrum_Team_Name__c</name>
+        <picklistValues>
+            <masterLabel>Channel (Resellers &amp; Distributors)</masterLabel>
+            <translation><!-- Channel (Resellers &amp; Distributors) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D&amp;B</masterLabel>
+            <translation><!-- D&amp;B --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Eloqua</masterLabel>
+            <translation><!-- Eloqua --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IT - Oracle</masterLabel>
+            <translation><!-- IT - Oracle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IT - Peoplesoft</masterLabel>
+            <translation><!-- IT - Peoplesoft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IT - Siebel</masterLabel>
+            <translation><!-- IT - Siebel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LMS</masterLabel>
+            <translation><!-- LMS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marketing</masterLabel>
+            <translation><!-- Marketing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Onprocess</masterLabel>
+            <translation><!-- Onprocess --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Operations (Supply Chain)</masterLabel>
+            <translation><!-- Operations (Supply Chain) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales</masterLabel>
+            <translation><!-- Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service</masterLabel>
+            <translation><!-- Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Volo</masterLabel>
+            <translation><!-- Volo --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

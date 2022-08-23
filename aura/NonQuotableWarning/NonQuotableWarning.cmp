@@ -1,0 +1,129 @@
+<aura:component controller="NonQuotableWarningCtrl" implements="force:hasRecordId,flexipage:availableForAllPageTypes,force:appHostable">
+	
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="lineItems" type="List" default="[]" />
+    <aura:attribute name="longLeadItems" type="List" default="[]" />
+    <aura:attribute name="limitedSupplyItems" type="List" default="[]" />
+    <aura:attribute name="isOpen" type="Boolean" default="false" />
+    <aura:attribute name="isLeadTimeModal" type="Boolean" default="false" />
+    <aura:attribute name="isLimitedSupplyModal" type="Boolean" default="false" />
+    <aura:attribute name="processing" type="Boolean" default="false" />
+    <aura:attribute name="errorText" type="String" />
+    <aura:attribute name="isVfPage" type="Boolean" default="false" />
+     
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler name="render" value="{!this}" action="{!c.onRender}"/>
+    
+    <aura:if isTrue="{!or (or(v.isOpen, v.isLeadTimeModal), v.isLimitedSupplyModal)}">
+        <div role="dialog" tabindex="-1" aria-labelledby="modal99" class="slds-modal slds-fade-in-open slds-modal_medium">
+            <div class="slds-modal__container">
+                <div class="slds-modal__header">
+                    <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.closeModal}">
+                        X <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 id="modal99" class="slds-text-heading--medium">
+                        <aura:if isTrue="{!v.isOpen}">
+                            Warning: Non-Quotable Products
+                        </aura:if>
+                        <aura:if isTrue="{!v.isLeadTimeModal}">
+                            Warning: Products with Long Lead-Time
+                        </aura:if>
+                        <aura:if isTrue="{!v.isLimitedSupplyModal}">
+                            Warning: Products with Limited Supply
+                        </aura:if>
+                    </h2>
+                </div>
+                <div class="slds-modal__content slds-p-around--medium">
+                    
+                    <lightning:card>
+                        
+                        <aura:set attribute="footer">
+                            <aura:if isTrue="{!v.isOpen}">
+                                <lightning:button label="No" onclick="{!c.closeModal}" disabled="{!v.processing}" />&nbsp;
+                            	<lightning:button label="Yes" variant="destructive" onclick="{!c.removeNonQuotable}" disabled="{!v.processing}" />
+                            </aura:if>
+                            <aura:if isTrue="{!or(v.isLeadTimeModal, v.isLimitedSupplyModal)}">
+                                <lightning:button label="OK" variant="brand" onclick="{!c.closeModal}" />
+                            </aura:if>
+                        </aura:set>
+                        
+                        <aura:if isTrue="{!and(v.errorText != null, v.errorText != '')}">
+                            <div class="slds-notify slds-notify_alert slds-alert_error" role="alert">
+                                <span class="slds-assistive-text">Error</span>
+                                <h2>{!v.errorText}</h2>
+                                <div class="slds-notify__close">
+                                    <lightning:buttonIcon iconName="utility:close" variant="bare-inverse" title="Close" onclick="{!c.resetError}" alternativeText="Close" />
+                                </div>
+                            </div>
+                        </aura:if>
+                        
+                        <lightning:spinner aura:id="nqp_spinner" size="medium" variant="brand"></lightning:spinner>
+                        
+                        <aura:if isTrue="{!v.isOpen}">
+                            <div>
+                                <h3 class="slds-text-heading_small">This Quote contains following <b style="color: red;">non-quotable</b> products:</h3>
+                                <table class="slds-table">
+                                    <thead>
+                                        <th>Product Code</th>
+                                        <th>Description</th>
+                                    </thead>
+                                    <aura:iteration items="{!v.lineItems}" var="lineItem">
+                                        <tr>
+                                            <td>{!lineItem.SBQQ__Product__r.ProductCode}</td>
+                                            <td>{!lineItem.SBQQ__Product__r.Description}</td>
+                                        </tr>
+                                    </aura:iteration>
+                                </table>
+                                <br />
+                                <p>
+                                    Do you want to remove the line items with above products from this Quote?
+                                </p>
+                            </div>
+                        </aura:if>
+                        
+                        <aura:if isTrue="{!v.isLeadTimeModal}">
+                            <div>
+                                <h3 class="slds-text-heading_small">This Quote contains following products with <b style="color: red;">long lead times</b>:</h3>
+                                <table class="slds-table">
+                                    <thead>
+                                        <th>Product Code</th>
+                                        <th>Lead Time</th>
+                                        <th>Description</th>
+                                    </thead>
+                                    <aura:iteration items="{!v.longLeadItems}" var="longLeadItem">
+                                        <tr>
+                                            <td>{!longLeadItem.SBQQ__Product__r.ProductCode}</td>
+                                            <td>{!longLeadItem.SBQQ__Product__r.Lead_Time__c}</td>
+                                            <td>{!longLeadItem.SBQQ__Product__r.Description}</td>
+                                        </tr>
+                                    </aura:iteration>
+                                </table>
+                            </div>
+                        </aura:if>
+                        
+                        <aura:if isTrue="{!v.isLimitedSupplyModal}">
+                            <div>
+                                <h3 class="slds-text-heading_small">This Quote contains following products with <b style="color: red;">limited supply</b>:</h3>
+                                <table class="slds-table">
+                                    <thead>
+                                        <th>Product Code</th>
+                                        <th>Description</th>
+                                    </thead>
+                                    <aura:iteration items="{!v.limitedSupplyItems}" var="limitedSupplyItem">
+                                        <tr>
+                                            <td>{!limitedSupplyItem.SBQQ__Product__r.ProductCode}</td>
+                                            <td>{!limitedSupplyItem.SBQQ__Product__r.Description}</td>
+                                        </tr>
+                                    </aura:iteration>
+                                </table>
+                            </div>
+                        </aura:if>
+                        
+                    </lightning:card>
+                </div>
+            </div>
+        </div>
+        <div class="slds-backdrop slds-backdrop--open"></div>
+    </aura:if>
+    
+</aura:component>

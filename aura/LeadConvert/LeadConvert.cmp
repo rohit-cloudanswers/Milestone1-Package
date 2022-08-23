@@ -1,0 +1,5 @@
+<aura:component controller="LeadConvertController" implements="force:hasRecordId,force:lightningQuickAction" >
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+	<lightning:spinner id="processing" variant="brand" size="medium"/>
+	<div aura:id="errorMessages"></div>
+</aura:component>

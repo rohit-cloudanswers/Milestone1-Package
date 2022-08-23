@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>forces an update of the weighting overnight while i figure out where my problems are.</description>
+    <interviewLabel>Scheduled Issue Weights Update {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Scheduled Issue Weights Update</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <startElementReference>Run_Issue_Weights_NoScreens_Flow</startElementReference>
+    <status>Active</status>
+    <subflows>
+        <name>Run_Issue_Weights_NoScreens_Flow</name>
+        <label>Run Issue Weights NoScreens Flow</label>
+        <locationX>504</locationX>
+        <locationY>108</locationY>
+        <flowName>IssueWeights_NoScreens</flowName>
+        <inputAssignments>
+            <name>CaseId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+</Flow>

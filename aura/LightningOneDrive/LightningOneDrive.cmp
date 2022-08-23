@@ -1,0 +1,116 @@
+<aura:component implements="force:hasRecordId,flexipage:availableForRecordHome" controller="OneDriveController">
+    
+    <ltng:require 
+		scripts="{!join(',', $Resource.webapp + '/sweetalert2.helper.js')}" 
+		afterScriptsLoaded="{!c.afterScriptsLoaded}" />
+	
+    <aura:attribute name="ctrl" type="Object" />
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="newFolderName" type="String" default="" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    <aura:handler event="c:FileUploadEvent" action="{!c.handleFileUploadEvent}" />
+    
+    <div id="{!'onedrive_' + v.recordId}" class="slds-box">
+        <lightning:card title="Imagine Sharepoint" iconName="standard:data_integration_hub">
+            <lightning:spinner aura:id="spinner_123" variant="brand" size="medium" />            
+            <aura:set attribute="actions">
+                <aura:if isTrue="{!v.ctrl.hasToken}">
+                    <lightning:button label="Logout" onclick="{!c.handleLogout}" />
+                </aura:if>
+            </aura:set>
+
+            <lightning:overlayLibrary aura:id="overlayLib"></lightning:overlayLibrary>
+            <div>
+                <!-- no token -->
+                <aura:if isTrue="{! !v.ctrl.hasToken}">
+                    <ol class="slds-setup-assistant">
+                        <li class="slds-setup-assistant__item">
+                            <article class="slds-setup-assistant__step">
+                                <div class="slds-setup-assistant__step-summary">
+                                    <div class="slds-media">
+                                        <div class="slds-setup-assistant__step-summary-content slds-media__body">
+                                            <h3 class="slds-setup-assistant__step-summary-title slds-text-heading_small">Need Authorization</h3>
+                                            <p>Please authorize this application to access your Imagine Sharepoint files/folders.</p>
+                                        </div>
+                                        <div class="slds-media__figure slds-media__figure_reverse">
+                                            <button class="slds-button slds-button_outline-brand" onclick="{!c.startAuthFlow}">Authorize</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </li>
+                    </ol>
+                </aura:if>
+                
+                <!-- has token -->
+                <aura:if isTrue="{!v.ctrl.hasToken}">
+                    <div>
+                        <div class="slds-p-bottom_medium">
+                            <nav role="navigation" aria-label="Breadcrumbs">
+                                <ol class="slds-breadcrumb slds-list_horizontal slds-wrap">
+                                    <aura:iteration items="{!v.ctrl.breadcrumbs}" var="breadcrumb">
+                                        <li class="slds-breadcrumb__item slds-text-title_caps" onclick="{!c.onBreadcrumbClick}">
+                                            <a id="{!breadcrumb.id}" href="javascript:void(0);">{!breadcrumb.title}</a>
+                                        </li>
+                                    </aura:iteration>
+                                </ol>
+                            </nav>
+                        </div>
+                        <div class="slds-card slds-has-bottom-magnet od_panel-heading">
+                            <div class="slds-p-around_x-small">
+                                <div class="slds-grid">
+                                    <div class="slds-col slds-size_6-of-12">
+                                        <aura:if isTrue="{!v.ctrl.breadcrumbs.length > 2}">
+                                            <button class="slds-button slds-button_destructive" onclick="{!c.onBackClicked}">Back</button>
+                                        </aura:if>
+                                        &nbsp;<span style="position: absolute; top: 30%;">{!v.ctrl.selectedNode.title}</span>
+                                    </div>
+                                    <div class="slds-col slds-size_6-of-12 slds-clearfix">
+                                        <div class="slds-float_right">
+                                            <button class="slds-button slds-button_inverse" onclick="{!c.onUploadFileClick}">
+                                                <lightning:icon iconName="utility:upload" size="xx-small" alternativeText="Upload" />&nbsp;Upload file
+                                            </button>
+                                            <button class="slds-button slds-button_success" onclick="{!c.onCreateSubfolderClick}">
+                                                <lightning:icon iconName="utility:new" size="xx-small" alternativeText="Create subfolder" />&nbsp;Create subfolder
+                                            </button>
+                                            <button class="slds-button slds-button_neutral" onclick="{!c.onOpenClick}">
+                                                <lightning:icon iconName="utility:new_window" size="xx-small" alternativeText="Open" />&nbsp;Open
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-card slds-has-top-magnet slds-scrollable_y od_panel-body" style="max-height: 300px;">
+                            <ul class="slds-has-dividers_top slds-has-block-links_space">
+                                <aura:iteration items="{!v.ctrl.selectedNode.nodes}" var="node">
+                                    <li class="slds-item" onclick="{!c.handleNodeClick}">
+                                        <a id="{!node.id}" href="javascript:void(0);" class="slds-clearfix">
+                                            <lightning:icon iconName="{! (node.file != null ? 'utility:file' : 'utility:open_folder')}" size="x-small"></lightning:icon>
+                                            &nbsp;{!node.title}
+                                            <aura:if isTrue="{!node.folder != null}">
+                                                <span class="slds-badge slds-float_right">{!node.folder.childCount}</span>
+                                            </aura:if>
+                                            <aura:if isTrue="{!node.file != null}">
+                                                <button id="{!'btn-'+node.id}" class="slds-button slds-button_neutral slds-float_right" onclick="{!c.downloadFile}">
+                                                    <lightning:icon iconName="utility:download" size="xx-small" alternativeText="Download" /> 
+                                                </button>
+                                            </aura:if>
+                                        </a>
+                                    </li>
+                                </aura:iteration>
+                                <aura:if isTrue="{!v.ctrl.selectedNode == null || v.ctrl.selectedNode.nodes.length == 0}">
+                                    <li class="slds-item">
+                                        <a href="javascript:void(0);">No files found.</a>
+                                    </li>
+                                </aura:if>
+                            </ul>
+                        </div>
+                    </div>
+                </aura:if>
+            </div>
+        </lightning:card>
+    </div>
+    
+</aura:component>

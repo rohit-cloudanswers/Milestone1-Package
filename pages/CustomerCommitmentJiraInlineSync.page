@@ -1,0 +1,10 @@
+<apex:page standardController="Customer_Commitments__c">
+    <apex:outputpanel rendered="{Customer_Commitments__c.LastModifiedBy.Alias != 'jira_api'}">
+        <img src="/apexpages/devmode/img/saveStatus.gif"/>
+        Processing Jira Update...
+        <script>
+            var url = 'https://jira.imaginecommunications.com/plugins/servlet/create-issue?crmtoken=69wn4mL0y81k&id=Customer_Commitments__c:{!Customer_Commitments__c.Id}&issue-type=Customer Commitment&reporter=SF_integration_account'
+            window.location = url;
+        </script>
+    </apex:outputpanel>
+</apex:page>

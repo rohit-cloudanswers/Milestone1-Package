@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <decisions>
+        <description>These are formula values on the commitment, because it doesn&apos;t pick up a formula change as an actual change we will date stamp in the next step to tell it there was an update</description>
+        <name>Amount_or_Stage_Change</name>
+        <label>Amount or Stage Change?</label>
+        <locationX>1078</locationX>
+        <locationY>453</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Amount</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Amount</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Stamp_Customer_Commit</targetReference>
+            </connector>
+            <label>Amount</label>
+        </rules>
+        <rules>
+            <name>Stage</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Stamp_Customer_Commit</targetReference>
+            </connector>
+            <label>Stage</label>
+        </rules>
+    </decisions>
+    <description>After update flow that stamps data on the customer commitments</description>
+    <interviewLabel>Opportunity - Update Customer Commits {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity - Update Customer Commits</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <description>date/time stamp the customer commit.  This should trigger it to send the updates to jira.</description>
+        <name>Stamp_Customer_Commit</name>
+        <label>Stamp Customer Commit</label>
+        <locationX>796</locationX>
+        <locationY>582</locationY>
+        <filters>
+            <field>Opportunity__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Opportunity_Last_Updated__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Customer_Commitments__c</object>
+    </recordUpdates>
+    <status>Active</status>
+</Flow>

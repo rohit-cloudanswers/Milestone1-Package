@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>TSSA Status Update History</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>TSSA Status Update History</value>
+    </caseValues>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- TSSA Status Update History --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- TSSA Status --></label>
+        <name>TSSA_Status__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

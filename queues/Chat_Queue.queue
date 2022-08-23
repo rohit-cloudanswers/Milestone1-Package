@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Chat Queue</name>
+    <queueMembers>
+        <users>
+            <user>anthony.jaipaul@imaginecommunications.com</user>
+            <user>arthur.monge@imaginecommunications.com</user>
+            <user>avinash.rowana@imaginecommunications.com</user>
+            <user>clayton.benz@imaginecommunications.com</user>
+            <user>darcie.laur@imaginecommunications.com</user>
+            <user>david.skasko@imaginecommunications.com</user>
+            <user>dustin.pepper@imaginecommunications.com</user>
+            <user>hari.yoganath@imaginecommunications.com</user>
+            <user>haydee.pangilinan@imaginecommunications.com</user>
+            <user>kapil.lakra@imaginecommunications.com</user>
+            <user>mahad.husien@imaginecommunications.com</user>
+            <user>mia.catrinoiu@imaginecommunications.com</user>
+            <user>nathan.adom@imaginecommunications.com</user>
+            <user>prasanna.perera@imaginecommunications.com</user>
+            <user>raheel.ahmed@imaginecommunications.com</user>
+            <user>sadeek.mohamed@imaginecommunications.com</user>
+            <user>surabhi.sharma@imaginecommunications.com</user>
+        </users>
+    </queueMembers>
+    <queueRoutingConfig>Chat_Queue</queueRoutingConfig>
+    <queueSobject>
+        <sobjectType>LiveChatTranscript</sobjectType>
+    </queueSobject>
+</Queue>

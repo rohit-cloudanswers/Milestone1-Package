@@ -1,0 +1,154 @@
+<apex:page standardController="Quote" extensions="AccountHierrachyReArch">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <style>
+            #idMask{
+              width:100%;
+              height:100%;
+              position:absolute;
+              z-index:100;
+              background-color:black;
+              filter: alpha(opacity = 50);
+              opacity: 0.4;
+             }
+        #custPopup{
+              background-color: white;
+              border-width: 2px;
+              border-style: solid;
+              z-index: 101;
+              left: 50%;
+              padding:10px;
+              filter: alpha(opacity = 100);
+              position: absolute;
+              width: 700px;
+              height: 160px;
+              margin-left: -250px;
+              top:0%;
+         }
+         body {background-color:white;}
+    </style>
+    <script>
+        function showPrintPanel(){
+            var utype = '{!userType}';
+            if(utype == 'true')
+            {
+                var Url = '/partners/apex/SolutionHierarchy_Print?id='+'{!quoteId}';
+            }
+            else
+            {
+                var Url = '/apex/SolutionHierarchy_Print?id='+'{!quoteId}';
+            }
+             window.open(Url,'addContact','width=550,height=450,top=50,toolbar=no,personalbar=no,location=no,directories=no,statusbar=no,menubar=no,status=no,re sizable=yes,left=80,screenX=60,top=100,screenY=100,resizable=yes,scrollbars=yes');
+       }
+         
+  function toggleBranch(oImg){
+   var oNode = $(oImg).parent();
+   var bShow = $(oImg).hasClass('minus');
+   
+   oNode.find('span>span').each(function(){
+    if(bShow){
+     $(this).hide();
+    }
+    else{
+     $(this).show();
+    }
+   });
+   
+   $('span').each(function(){
+    if($(this).attr('level') > oNode.attr('level') && ($(this).attr('nodeId')).indexOf(oNode.attr('nodeId')) == 0){
+     if(bShow){
+      $(this).hide();
+     }
+     else{
+      $(this).show();
+     }
+    }
+   });
+   
+  }
+    </script>
+    <apex:form id="frm">
+        <apex:pageMessages />
+        <div id="mainDiv">
+            <div id="idMask" style="display:none;">&nbsp;</div>
+            <div id="custPopup" style="display:none;">
+                <div style="background-color:#A0A0A0 ;vertical-align: middle; width:100%; height:20px;">New Solution
+                   <button type="button" onclick="$('#custPopup').hide();$('#idMask').hide('slow');" style="float:right;"><b>X</b></button>
+                 </div><br/>
+                 <apex:pageBlock id="innerPgblk">
+                    <apex:pageblockSection columns="2">
+                        <apex:inputField value="{!newSol.name}"  required="true"/>
+                        <apex:inputField value="{!newSol.Parent_Solution__c}"/>
+                    </apex:pageblockSection>
+                    <center>
+                    <apex:commandButton action="{!saveSolution}" Value="Save" onclick="$('#custPopup').hide();$('#idMask').hide('slow');"/>
+                    </center>
+                </apex:pageBlock>               
+            </div>
+        </div>
+    </apex:form>
+    <center>
+            <input type="button" onClick="showPrintPanel();" value="Print"/>
+<!--             <input type="button" onClick="$('#idMask').show('slow');$('#custPopup').show();" value="New Solution"/> -->
+    </center>  
+    
+    
+    <div class="treeNode">
+                <apex:repeat value="{!ObjectStructure}" var="pos" >
+                            <apex:repeat value="{!pos.levelFlag}" var="flag" first="0">
+                  <span level="{!pos.nodeLevel}" parentId="{!pos.parentNodeId}" nodeId="{!pos.nodeId}">
+                                <apex:image url="/img/tree/empty.gif" height="16" width="20" rendered="{!IF(flag,false,true)}"/>
+                                <apex:image url="/s.gif" alt="" width="3" height="16" rendered="{!IF(flag,true,false)}"/>
+                                <apex:image url="/img/tree/chain.gif" height="16" width="20" rendered="{!IF(flag,true,false)}"/>
+                  </span>
+                            </apex:repeat>
+                
+                            <span height="16" v="top" level="{!pos.nodeLevel}" parentId="{!pos.parentNodeId}" nodeId="{!pos.nodeId}">
+                                <apex:outputText rendered="{!IF(pos.nodeType=='start',true,false)}">
+                                <apex:image id="tree_start" url="/s.gif" styleclass="minus" height="16" width="20" title="Click to expand/collapse nested items." onClick="toggleBranch(this);TreeNodeElement.prototype.toggle(this,'{!pos.nodeId}')"/>
+                                <apex:image id="Icon_start" url="/img/icon/custom51_100/globe16.png" width="16" height="16" rendered="{!IF(pos.currentNode,false,true)}"/>
+                                <apex:image id="Icon_start_current" url="/img/icon/star16.png" width="16" height="16" rendered="{!IF(pos.currentNode,true,false)}"/>
+                            </apex:outputText>
+                            <apex:outputText rendered="{!IF(OR(pos.nodeType=='parent',pos.nodeType=='parent_end'),true,false)}">
+                                <apex:image id="Tree_parent" url="/s.gif" styleclass="minus" rendered="{!IF(pos.nodeType=='parent',true,false)}" height="16" width="20" title="Click to expand/collapse nested items." onClick="toggleBranch(this); TreeNodeElement.prototype.toggle(this,'{!pos.nodeId}'); "/>
+                                <apex:image id="Tree_parent_end" url="/s.gif" styleclass="minus" rendered="{!IF(pos.nodeType=='parent_end',true,false)}" height="16" width="20" title="Click to expand/collapse nested items." onClick="toggleBranch(this); TreeNodeElement.prototype.toggle(this,'{!pos.nodeId}')"/>                
+                                <apex:image id="Icon_parent" url="/img/icon/factory16.png" width="16" height="16" rendered="{!IF(pos.currentNode,false,true)}"/>
+                                <apex:image id="Icon_parent_current" url="/img/icon/star16.png" width="16" height="16" rendered="{!IF(pos.currentNode,true,false)}"/>
+                            </apex:outputText>
+                            <apex:outputText rendered="{!IF(OR(pos.nodeType=='child',pos.nodeType=='child_end'),true,false)}">
+                                <apex:image id="Tree_child" url="/img/tree/node.gif" rendered="{!IF(pos.nodeType=='child',true,false)}" height="16" width="20" title="Click to expand/collapse nested items." onClick="TreeNodeElement.prototype.toggle(this,'{!pos.nodeId}')"/>
+                                <apex:image id="Tree_child_current" url="/img/tree/nodeEnd.gif" rendered="{!IF(pos.nodeType=='child_end',true,false)}" height="16" width="20" title="Click to expand/collapse nested items." onClick="TreeNodeElement.prototype.toggle(this,'{!pos.nodeId}')"/>
+                                <apex:image id="Icon_child" url="/img/icon/desk16.png" width="16" height="16" rendered="{!IF(pos.currentNode,false,true)}"/>    
+                                <apex:image id="Icon_child_current" url="/img/icon/star16.png" width="16" height="16" rendered="{!IF(pos.currentNode,true,false)}"/>
+                            </apex:outputText>
+                            <apex:outputText rendered="{!IF(pos.nodeType=='end',true,false)}">
+                                <apex:image id="Tree_end" url="/img/tree/nodeEnd.gif" height="16" width="20"/>&nbsp;
+                                <apex:image id="Icon_end" url="/img/icon/desk16.png" width="16" height="16" rendered="{!IF(pos.currentNode,false,true)}"/>
+                                <apex:image id="Icon_end_current" url="/img/icon/star16.png" width="16" height="16" rendered="{!IF(pos.currentNode,true,false)}"/>
+                            </apex:outputText>
+                            <apex:outputPanel rendered="{!IF(pos.account.id!=null,true,false)}">
+                                    <apex:outputLink value="/{!pos.account.id}"  styleClass="columnHeadActiveBlack" target="_top">{!pos.account.name}</apex:outputLink><br/>  
+                                    <apex:repeat value="{!solIdVsQLitems[pos.account.id]}" var="qt">
+                                        <apex:repeat value="{!qt}" var="q">
+                                            <apex:outputPanel >
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <apex:image id="Tree_child" url="/img/tree/node.gif" height="16" width="20" title="Click to expand/collapse nested items."/> 
+                                                <apex:image url="{!$Resource.QuoteLogo}" width="10" height="10"/>&nbsp;
+                                                <a href="#" onClick="window.open('/'+'{!q.id}');"><apex:outputText value="{!q.product2.name}"/></a><br/>
+                                            </apex:outputPanel>
+                                        </apex:repeat>
+                                    </apex:repeat>
+                            </apex:outputPanel>
+                            </span>
+                        <div> </div>
+                            <apex:outputText rendered="{!IF(OR(pos.nodeType=='child_end',pos.nodeType=='child'),false,true)}">
+                                <div id='{!pos.nodeId}'></div>
+                            </apex:outputText>
+                            <apex:outputText rendered="{!IF(OR(pos.nodeType=='child_end',pos.nodeType=='child'),true,false)}">
+                                <div id='{!pos.nodeId}'><apex:image url="/s.gif" alt="" width="1" height="1"/></div>
+                            </apex:outputText>
+                            <apex:repeat value="{!pos.closeFlag}" var="close">
+                                <div/>
+                            </apex:repeat>         
+        </apex:repeat>
+    </div>
+</apex:page>

@@ -1,0 +1,32 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="public" controller="UsersOver60DaysController" >
+  <aura:attribute name="UsersOver60DaysList" type="User" />
+  <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+  <lightning:card title="Users Last Login Over 60 Days">
+    <aura:set attribute="body">
+      <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+        <thead>
+          <tr class="slds-text-title_caps">
+            <th scope="col">Name</th>
+            <th scope="col">User Name</th>
+            <th scope="col">Employee Number</th>
+            <th scope="col">Active</th>
+            <th scope="col">Created</th>
+            <th scope="col">Last Login</th>
+           </tr>
+        </thead>
+        <tbody>
+          <aura:iteration items="{!v.UsersOver60DaysList}" var="UsersOver60DaysList">
+            <tr scope="row">
+              <td> <a href = "{!'/lightning/setup/ManageUsers/page?address=%2F'+UsersOver60DaysList.Id+'%3Fnoredirect%3D1%26isUserEntityOverride%3D1%26retURL%3D%252Fsetup%252Fhome'}" target="_blank">{!UsersOver60DaysList.Name}</a></td>
+              <td> {!UsersOver60DaysList.Username}</td>
+              <td> {!UsersOver60DaysList.EmployeeNumber}</td>
+              <td> {!UsersOver60DaysList.IsActive}</td>
+              <td> <lightning:formattedDateTime value="{!UsersOver60DaysList.CreatedDate}"/></td>
+              <td> <lightning:formattedDateTime value="{!UsersOver60DaysList.LastLoginDate}"/></td>
+            </tr>
+          </aura:iteration>
+        </tbody>
+      </table>
+    </aura:set>
+  </lightning:card>	
+</aura:component>

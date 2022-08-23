@@ -1,0 +1,14 @@
+<apex:page standardController="MPM4_BASE__Milestone1_Project__c" extensions="MPM4_Custom_Owner_Update_Ctrl" lightningStylesheets="true">
+ <apex:form >
+    <apex:pageBlock title="Select New Owner" mode="edit">
+      <apex:pageBlockButtons >
+        <apex:commandButton action="{!save}" value="Save"/>
+      </apex:pageBlockButtons>
+      <apex:pageBlockSection title="" columns="1">
+        <apex:inputField value="{!MPM4_BASE__Milestone1_Project__c.Ownerid}"/> 
+           <apex:inputCheckbox label="Send Notification Email" value="{!sendEmail}"/>
+           <apex:inputCheckbox label="Assign All Tasks and Milestones to System Interface" value="{!updateToSystemInterface}"/>
+      </apex:pageBlockSection>
+    </apex:pageBlock> 
+  </apex:form>
+</apex:page>

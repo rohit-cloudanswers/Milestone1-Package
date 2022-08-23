@@ -1,0 +1,139 @@
+<aura:component controller="CPQGroupHierarchyCtrl" implements="force:hasRecordId,flexipage:availableForAllPageTypes,force:appHostable">
+    
+    <ltng:require 
+        scripts="{!join(',', $Resource.webapp + '/sweetalert2.helper.js')}" 
+        afterScriptsLoaded="{!c.afterScriptsLoaded}" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.onInit}" />
+    <!-- for refreshing the view due some changes outside of the component -->
+    <aura:handler event="force:refreshView" action="{!c.onInit}" />
+    <aura:handler name="change" value="{!v.calculating}" action="{!c.onRecalculate}" />
+    
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="uiThemeDisplayed" type="String" />
+    <aura:attribute name="uiThemeFromVF" type="String" />
+    <aura:attribute name="gridColumns" type="List" />
+    <aura:attribute name="gridData" type="Object" />
+    <aura:attribute name="lineGroups" type="Object" />
+    <aura:attribute name="displayTitle" type="String" default="Quote Line Groups" />
+    <aura:attribute name="expandedAll" type="Boolean" default="false" /> 
+    <aura:attribute name="moveCancelled" type="Boolean" default="false" />
+    <aura:attribute name="calculating" type="Boolean" default="false" />
+    <aura:attribute name="polling" type="Boolean" default="false" />
+    
+    <aura:attribute name="isOpen" type="Boolean" default="false" />
+    <aura:attribute name="isLocked" type="Boolean" default="false" />
+    <aura:attribute name="currentAction" type="String" />
+    <aura:attribute name="massQuantity" type="Integer" />
+    <aura:attribute name="massDiscount" type="Decimal" />
+    <aura:attribute name="targetMargin" type="Decimal" />
+    <aura:attribute name="massEditLineIds" type="List" />
+    <aura:attribute name="massProcessing" type="Boolean" default="false" />
+    
+    <article class="slds-card slds-card_boundary headerBottomBorder">
+        <div id="{!'hierarchy_' + v.recordId}" class="slds-page-header forceRelatedListCardHeader slds-grid">
+            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__figure">
+                    <div class="extraSmall forceEntityIcon">
+                        <lightning:icon iconName="custom:custom52" size="small" />
+                    </div>
+                </div>
+                <div class="slds-media__body">
+                    <h2 class="slds-card__header-title">
+                        <a href="javascript:void(0);" class="slds-card__header-link slds-truncate" title="{!v.displayTitle}">
+                            <span>
+                                {!v.displayTitle}
+                            </span>
+                        </a>
+                    </h2>
+                </div>
+                <div class="slds-no-flex">
+                    <!-- move dropdown -->
+                    <lightning:select aura:id="moveto_group" name="moveToGroup" label="" class="moveto" onchange="{! c.moveItems}" disabled="{!v.isLocked}">
+                        <option value="">-- Move To --</option>
+                        <aura:iteration items="{!v.lineGroups}" var="grp">
+                            <option value="{!grp.value}">
+                                <aura:if isTrue="{!grp.hasParent}">&nbsp;&nbsp;</aura:if>{!grp.label}
+                            </option>
+                        </aura:iteration>
+                    </lightning:select>&nbsp;
+                    <!-- copy dropdown -->
+                    <lightning:select aura:id="copyto_group" name="copyToGroup" label="" class="copyto" onchange="{! c.copyItems}" disabled="{!v.isLocked}">
+                        <option value="">-- Copy To --</option>
+                        <aura:iteration items="{!v.lineGroups}" var="grp">
+                            <option value="{!grp.value}">
+                                <aura:if isTrue="{!grp.hasParent}">&nbsp;&nbsp;</aura:if>{!grp.label}
+                            </option>
+                        </aura:iteration>
+                    </lightning:select>&nbsp;
+                    <!-- expand / collapse button -->
+                    <aura:if isTrue="{!v.expandedAll == false}">
+                        <lightning:button label="Expand All" iconName="utility:chevronright" variant="neutral" onclick="{!c.expandAll}" />
+                        <aura:set attribute="else">
+                            <lightning:button label="Collapse All" iconName="utility:chevrondown" variant="neutral" onclick="{!c.collapseAll}" />
+                        </aura:set>
+                    </aura:if>&nbsp;
+                    <!-- button to delete all line groups and items -->
+                    <lightning:button label="Delete All" variant="destructive" onclick="{!c.onClickDeleteAll}" disabled="{!v.isLocked}" />&nbsp;
+                    <!-- refresh button -->
+                    <lightning:button label="&nbsp;" title="Refresh" iconName="action:refresh" onclick="{! c.onInit }" iconPosition="right"  variant="neutral" />
+                </div>
+            </header>
+        </div>
+        
+        <lightning:spinner aura:id="spinner" variant="brand" />
+        <lightning:overlayLibrary aura:id="overlayLib"></lightning:overlayLibrary>
+        
+        <aura:if isTrue="{!or(v.calculating, v.polling)}">
+            <div>
+                <center><lightning:dynamicIcon type="eq" option="play" alternativeText="Recalculating"/>&nbsp;Recalculating...</center>
+            </div>
+        </aura:if>
+        
+        <lightning:treeGrid 
+            columns="{! v.gridColumns }"
+            data="{! v.gridData }"
+            keyField="groupId"
+            aura:id="lineGroupHierarchy"
+            onrowaction="{!c.handleRowAction}"
+			onheaderaction="{!c.handleHeaderAction}" />
+        
+        <aura:if isTrue="{!v.isOpen}">
+            <!-- modal starts --> 
+            <div role="dialog" tabindex="-1" aria-labelledby="header99" class="slds-modal slds-fade-in-open slds-modal_small">
+                <div class="slds-modal__container">
+                    <!-- modal header -->
+                    <div class="slds-modal__header modalStyle" style="margin-top:80px" >
+                        <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.cancelMassEdit}">
+                            X <span class="slds-assistive-text">Close</span>
+                        </button>
+                        <h2 id="header99" class="slds-text-heading--medium">
+                            Mass Edit
+                        </h2>
+                    </div>
+                    <!-- modal body -->
+                    <div class="slds-modal__content slds-p-around--medium modalStyle">
+                        <lightning:spinner aura:id="mass_edit_spinner" class="mass-edit-spinner" variant="brand"></lightning:spinner>
+                        <p>{!v.massEditLineIds.length} line items selected.</p>
+                        <aura:if isTrue="{!v.currentAction == 'mass_edit_quantity'}">
+                            <lightning:input type="number" label="Quantity" value="{!v.massQuantity}" placeholder="Type here" step="0.05" />
+                        </aura:if>
+                        <aura:if isTrue="{!v.currentAction == 'mass_edit_discount'}">
+                            <lightning:input type="number" label="Additional Disc. (%)" value="{!v.massDiscount}" formatter="percent" step="0.0001" placeholder="0.1 is 10%" />
+                        </aura:if>
+                        <aura:if isTrue="{!v.currentAction == 'mass_edit_margin'}">
+                            <lightning:input type="number" label="Target Margin (%)" value="{!v.targetMargin}" formatter="percent" step="0.0001" placeholder="0.1 is 10%" />
+                        </aura:if>
+                    </div>
+                    <footer class="slds-modal__footer">
+                        <lightning:button variant="neutral" label="Cancel" onclick="{!c.cancelMassEdit}" disabled="{!v.massProcessing}" />
+                        <lightning:button variant="success" label="Save" onclick="{!c.onClickSave}" disabled="{!v.massProcessing}" />
+                    </footer>
+                </div>
+            </div>
+            <div class="slds-backdrop slds-backdrop--open"></div>
+            <!-- modal ends --> 
+        </aura:if>
+    </article>
+    
+</aura:component>

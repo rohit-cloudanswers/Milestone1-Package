@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>CALA Media Software Service</name>
+    <queueMembers>
+        <users>
+            <user>colin.obiozo@imaginecommunications.com</user>
+            <user>david.kirks@imaginecommunications.com</user>
+            <user>harshita.patel@imaginecommunications.com</user>
+            <user>jorge.reyes@imaginecommunications.com</user>
+            <user>mariano.cantaluppi@imaginecommunications.com</user>
+            <user>marie.dumayac@imaginecommunications.com</user>
+            <user>mark.christensen@imaginecommunications.com</user>
+            <user>mauricio.fremont@imaginecommunications.com</user>
+            <user>patricia.garst-napier@imaginecommunications.com</user>
+            <user>roxana.reyescosio@imaginecommunications.com</user>
+            <user>toni.sparacino@imaginecommunications.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

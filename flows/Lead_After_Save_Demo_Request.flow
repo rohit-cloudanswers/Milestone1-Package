@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>dunno if it&apos;ll work</description>
+        <name>Copy_Darcie</name>
+        <label>Copy Darcie</label>
+        <locationX>177</locationX>
+        <locationY>418</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <stringValue>https://imaginecommunications.lightning.force.com/{!$Record.Id}</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <stringValue>darcie.laur@imaginecommunications.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>Demo Request Email Trigger - Lead</stringValue>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_Email</name>
+        <label>Send Email</label>
+        <locationX>177</locationX>
+        <locationY>287</locationY>
+        <actionName>Lead.Demo_Request_Notifiaction</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Copy_Darcie</targetReference>
+        </connector>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <description>Sends a notification when the lead source field is changed to Demo Request</description>
+    <interviewLabel>Lead - After Save - Demo Request {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Lead - After Save - Demo Request</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <startElementReference>Send_Email</startElementReference>
+    <status>Active</status>
+</Flow>

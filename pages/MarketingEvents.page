@@ -1,0 +1,462 @@
+<apex:page standardStylesheets="false" showHeader="false" sidebar="false" controller="CustomLandingController" action="{!forwardToCustomAuthPage}" cache="true" expires="60">
+<html class="no-js" lang="en_US">
+
+<head>
+
+<!-- <apex:stylesheet value="{!URLFOR($Resource.GemstarStylesRev, 'GemstarStylesRev/css/reset.css')}"/> -->
+<!--   <apex:includeScript value="{!URLFOR($Resource.jQuery, '/js/jquery-1.8.0.min.js')}"/> -->
+ <apex:includeScript value="{!URLFOR($Resource.Resources, 'Resources/JiffyStubs.js')}"/>
+  <apex:includeScript value="{!URLFOR($Resource.Resources, 'Resources/mbox.js')}"/>
+  <meta charset="utf-8" />
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /> 
+
+    <title>
+         Imagine Communications - Main Home Page 
+    </title>
+   <!-- Page meta data -->
+    <c:partnerMeta />
+    
+  <apex:stylesheet value="{!URLFOR($Resource.Resources, 'Resources/tasset_tcommon.css')}"/>
+  <apex:stylesheet value="{!URLFOR($Resource.Resources, 'Resources/tcommonsupportcss.css')}"/>
+  <apex:includeScript value="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" />
+  <apex:includeScript value="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js" />
+   
+  <!--******************-->
+  <script>window.jQuery || document.write('<script src="/resource/1346972389000/jqueryui1821"><\/script>')</script>  
+ 
+ 
+    <!--[if lt IE 7]>
+    <script type="text/javascript">
+        jQuery(&quot;html&quot;).addClass(&quot;no-js lt-ie9 lt-ie8 lt-ie7&quot;);
+    </script>
+     <![endif]-->
+    <!--[if IE 7]>
+    <script type="text/javascript">
+        jQuery(&quot;html&quot;).addClass(&quot;no-js lt-ie9 lt-ie8&quot;);
+    </script>
+     <![endif]-->
+    <!--[if IE 8]>
+    <script type="text/javascript">
+        jQuery(&quot;html&quot;).addClass(&quot;no-js lt-ie9&quot;);
+    </script>
+    <![endif]-->
+
+    <!--[if IE 9]>
+    <script type="text/javascript">
+        jQuery(&quot;html&quot;).addClass(&quot;no-js eq-ie9&quot;);
+    </script>
+    <![endif]-->
+     
+    <!--[if IE 10]>
+    <script type="text/javascript">
+        jQuery(&quot;html&quot;).addClass(&quot;eq-ie10&quot;);
+    </script>
+    <![endif]-->
+
+    <!--[if IE 11]>
+    <script type="text/javascript">
+        jQuery(&quot;html&quot;).addClass(&quot;eq-ie11&quot;);
+    </script>
+    <![endif]-->
+    
+    <style>
+     body,p,a,div,span,button,input,select,textarea,h1,h4,h5,h6,h7{
+      font-family :Calibri,Arial,Tahoma,sans-serif;
+      color:#253C7F!important;
+     }
+     h3{
+      font-family :Calibri,Arial,Tahoma,sans-serif;
+      color:white!important;
+     }     
+     h2{
+      font-family :Calibri,Arial,Tahoma,sans-serif;
+      color:white!important;
+     }
+     
+     a{
+      color:#0096D6;
+      text-decoration: none;
+     }
+     
+     a, a:visited, a:hover, a:active{
+      color:#0096D6;
+     }
+     
+    .titled .hd {
+      background: url("../mozyasset_bg_mod_toppng") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    }
+    </style>
+</head>
+
+
+<body class="support lang-en_US signed-out ">
+     
+  <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+  <div class="container" id="page_container">
+        <!-- ********* Begin Header Component Section ********* -->
+              <!--      <c:ImPartnerHeader /> -->
+        <!-- ********* End Header Component Section ********* -->
+	 <nav id="topNav">
+	                    <div class="secondary">
+	                      <ul class="nav">
+	                       <!-- <li class="sign-in" id="sign-in"><a href="/partners/secur/logout.jsp?retUrl=/partners/apex/customLogin">Logout</a> &nbsp; </li> -->
+	                        <li class="sign-in" id="sign-in2"><a href="/partners/{!acc.id}">My Profile</a>  </li>
+	                        <li class="sign-in" id="sign-in2"><a href="/partners/apex/customLogout">Logout</a>  </li>
+	                        <li class="sign-in" id="sign-in3"><a href="http://www.imaginecommunications.com/company/contact-us.aspx" target="_new">Contact Us</a>  </li>
+	                      </ul>
+	                    </div>
+              	  </nav><br/><br/>
+    <header id="header"> 
+        <div class="constraint"><span id="j_id0:SupportTemplate:j_id11">
+    <div class="header">
+        <div class="inner clearfix">
+            <!-- <div style="background-image:url('{!URLFOR($Resources.NewCoAImages, 'newLogoJpeg.JPEG')}');"><a href="/" target="_top">NewCoA</a> -->
+            <div class="site-name">
+             <a href="http://www.imaginecommunications.com" target="_new" style="padding-top: 0px;">
+               <img src="{!URLFOR($Resource.ImagineLogo)}" style="width:200px;height:80px;"/>
+             </a>
+            </div>
+            <br/>
+            <div id="siteNav">
+        		<ul>
+                   		<li>
+                   			 <c:partnerMainNav active="Home" /> 
+                   		</li>
+                   </ul>
+                <div class="primary">
+                      <ul class="nav clearfix">
+                        <!--
+                        <li class="item5">
+                          <div>
+                           <form action="/_ui/search/ui/UnifiedSearchResults" class="search" id="search_form" method="get" name="searchform">
+                             <input id="str" name="str" placeholder="Search" type="search" />
+                             <input name="sp_cs" type="hidden" value="UTF-8" />
+                             <input name="cc" type="hidden" value="us" />
+                             <input type="submit" value="Search" />
+                           </form>
+                          </div>  
+                        </li>
+                        -->            
+                            <li class="item3 parent li_dropdown"><a href="http://www.imaginecommunications.com/media-center.aspx" target="_new" class="inactive">MEDIA CENTER</a>
+                                    <ul class="dropdown">                            
+                                        <li><a id="News" name="News" href="http://www.imaginecommunications.com/media-center/news.aspx" target="_new">NEWS</a></li>                         
+                                        <li><a id="Articles" name="Articles" href="http://www.imaginecommunications.com/media-center/articles.aspx" target="_new">ARTICLES</a></li>  
+                                        <li><a id="webinar" name="webinar" href="http://www.imaginecommunications.com/media-center/webinar-series.aspx" target="_new">WEBINAR SERIES</a></li>   
+                                        <li><a id="2014Nab" name="2014Nab" href="http://www.imaginecommunications.com/media-center/NAB.aspx" target="_new">2014 NAB SHOW</a></li>                    
+                                    </ul>
+                                <b class="tab"></b>
+                            </li>
+                            <li class="item2 parent li_dropdown"><a href="http://www.imaginecommunications.com/services/technical-support.aspx" target="_new" class="inactive">SUPPORT HOME</a>
+                                <div class="kb_dropdowndiv">
+                                    <ul class="dropdown">
+                                        <li><a href="http://www.imaginecommunications.com/services/technical-support.aspx" target="_new">SUPPORT </a></li>
+                                        <li class="getStartedList"><a href="http://www.imaginecommunications.com/services/technical-support.aspx" target="_new">GLOBAL SUPPORT SERVICES</a> 
+                                                <ul id="dropdown-side">
+                                                    <li><a href="http://support.imaginecommunications.com/ecustomer_enu/start.swe?SWECmd=Start&SWEHo=support.imaginecommunications.com" target="_new">CUSTOMER SUPPORT HOME</a></li>
+                                                    <li class="dottedline"></li>
+                                                    <li><a href="http://www.imaginecommunications.com/services/technical-support/repair.aspx" target="_new">REPAIR</a></li>                                                    
+                                                    <li><a href="http://www.imaginecommunications.com/services/technical-support/service-agreements.aspx" target="_new">SERVICE AGREEMENTS</a></li>
+                                                    <li><a href="http://www.imaginecommunications.com/services/technical-support/warranties.aspx" target="_new">WARRANTIES</a></li>
+                                                </ul>
+                                        </li>
+                                        <li class="getStartedList"><a href="http://www.imaginecommunications.com/services/imagine-academy.aspx" target="_new">IMAGINE ACADEMY</a> 
+                                                <ul id="dropdown-side">
+                                                    <li><a href="http://www.imaginecommunications.com/services/training/training-resources.aspx" target="_new">TRAINING RESOURCES</a></li>
+                                                    <li><a href="http://imaginecommunicationsacademy.com" target="_new">TRAINING PORTAL</a></li>
+                                                </ul>
+                                        </li>                                        
+                                        <li><a href="http://www.imaginecommunications.com/services/professional-services.aspx" target="_new">PROFESSIONAL SERVICES</a></li>
+                                        <li><a href="http://support.imaginecommunications.com/ecustomer_enu/start.swe" target="_new">BROWSE THE KNOWLEDGE BASE</a></li>
+                                        
+                                    </ul>
+                                </div>
+             
+                            <b class="tab"></b>
+        
+                            </li>
+                            <li class="item2 parent li_dropdown"><a href="http://www.imaginecommunications.com/solutions.aspx" target="_new" class="inactive">SALES | MARKETING</a>
+                                  <ul class="dropdown">
+                                        <li class="getStartedList"><a href="/SalesPage">SALES</a> 
+                                                <ul id="dropdown-side">
+                                                    <li><a href="/partners/apex/ProductViewer"  class="communityLink"> PRODUCTS/ PRICEBOOKS </a></li>
+                                                    <li><a href="http://support.imaginecommunications.com" target="_new" class="communityLink"> ECOMMERCE </a></li>
+                                             <!--       <li><a href="http://www.imaginecommunications.com/solutions.aspx" class="communityLink" target="_new"> See our solutions </a></li>  -->
+                                                </ul>
+                                        </li>                                  
+                                    <li class="separator"><b></b></li>
+                                        <li class="getStartedList"><a href="/Marketing">MARKETING</a> 
+                                                <ul id="dropdown-side">
+                                                    <li><a href="/partners/apex/MarketingEvents" class="communityLink"> MARKETING EVENTS </a></li>
+                                                    <li><a href="/partners/MarketingCollateral"  class="communityLink"> MARKETING COLLATERAL </a></li>
+                                                </ul>
+                                        </li>                                     
+                                    <li><a href="http://www.imaginecommunications.com/markets.aspx" target="_new">MARKETS</a></li>                                                   
+                                  </ul>
+                                  <b class="tab"></b>
+                            </li>
+                            <!-- <li class="item2"><a href="/partners/_ui/core/chatter/ui/ChatterPage" class="inactive">CHATTER</a>
+                            </li>   -->                            
+<!--                             <li class="item1 parent li_dropdown"><a href="/partners/apex/partnerHome"  class="inactive"> HOME</a> -->
+<!--                                 <b class="tab"></b> -->
+<!--                             </li>                                                                                                                            -->
+                   </ul>
+                   
+                </div>
+              
+                
+       <span class="h1 page-title">Marketing </span>
+			
+            </div> 
+        </div>
+    </div></span>   
+        </div>
+                 
+    </header>
+
+
+        
+    <div class="main" role="main">
+      <div class="inner clearfix">
+    
+    <div class="leftCol"><span id="j_id0:SupportTemplate:j_id174">
+
+  <script type="text/javascript">
+  
+      /*This function hides/unhides the dropdown menu, the second parameter is used to change the arrow icon on the right hand side of the button*/
+      function changeElement(id, parent) {
+          var el = document.getElementById(id);
+          
+          /* CSS changes are normally made inline, this is a workaround so it needs to be clicked twice*/
+          if ( el.style.visibility=="" ) {
+              el.style.visibility="visible";
+              
+              try { parent.style.backgroundPosition="right 3px"; }
+              catch(err) {}
+          }
+          
+          else if ( el.style.visibility!="hidden") {
+              el.style.visibility="hidden";
+              
+              try { parent.style.backgroundPosition="right -21px"; }
+              catch(err) {}
+          }
+          else {
+              el.style.visibility="visible";
+              
+              try { parent.style.backgroundPosition="right 3px"; }
+              catch(err) {}
+          }
+      }
+ 
+  </script></span><span id="j_id0:SupportTemplate:j_id177">
+    <div class="mod simple titled">
+                    <b class="top"><b class="tl"></b><b class="tr"></b></b>
+                    <div class="inner">
+                        <div class="hd"   style="background-color:#253C7F">
+                            <h3 class="h3">Getting Started Guides</h3><a href="/GettingStarted" class="arrow">&gt;</a>
+                        </div>    
+                        <div class="bd">
+                          <p>Everything you need to know about partner community portal</p>
+                          <div class="get_started_select_box">
+                   
+                          <a onclick="changeElement('dropdown-GetStarted',this)">Select help Guide</a>
+                          
+                              <ul id="dropdown-GetStarted">
+                                <!--
+                                <li><a href="/GettingStarted?sub=MH_Win">Portal Training Guide</a></li>
+                                -->
+                              </ul>
+                          </div>                             
+                        </div>
+
+                    </div>
+                    <b class="bottom"><b class="bl"></b><b class="br"></b></b>
+    </div></span><span id="j_id0:SupportTemplate:j_id251">
+
+           <div class="mod simple titled faq">
+                    <b class="top"><b class="tl"></b><b class="tr"></b></b>
+                    <div class="inner">
+                          <div class="hd" style="background-color:#253C7F">
+                            <h3 class="h3" style="font:color:white">News</h3>
+        
+                            <a class="h1-arrows" href="#">&gt;</a>
+                          </div> 
+                        <div class="bd"><ul> 
+                            <li><a href="http://www.imaginecommunications.com/media-center/news/Imagine-Communications-Demonstrates-Playout-from-C.aspx" target="_new">04/07/2014-Imagine Communications Demonstrates Playout from Cloud at 2014 NAB Show</a></li> 
+                            <li><a href="http://www.imaginecommunications.com/media-center/news/Imagine-Communications-Brings-Complete-Playout,-Au.aspx" target="_new">04/07/2014-Imagine Communications Brings Complete Playout, Automation, TV Everywhere Solution to the Cloud</a></li> 
+                            <li><a href="http://www.imaginecommunications.com/media-center/news/Imagine-Communications-Makes-NAB-2014-Debut.aspx" target="_new">04/07/2014-Imagine Communications Makes NAB 2014 Debut</a></li> 
+                            <li><a href="http://www.imaginecommunications.com/media-center/news/Imagine-Communications-Acquires-Digital-Rapids.aspx" target="_new">04/07/2014-Imagine Communications Acquires Digital Rapids</a></li>                             </ul>
+                        </div>
+                    </div>
+                    <b class="bottom"><b class="bl"></b><b class="br"></b></b>
+                </div></span> 
+    </div>   
+  
+
+    
+    <div class="content"><span id="j_id0:SupportTemplate:j_id273" >
+    
+            <div class="mod simple alerts collapsible">
+                <b class="top"><b class="tl"></b><b class="tr"></b></b>
+                <div class="inner">
+                  <div class="hd" style="background-color:#00BFFF">
+                      <apex:outputPanel id="event2" rendered="{!IF(pageparam == 'event','true','false')}" > 
+                        <h2 class="h1" style="font:color:white">Events</h2>
+                      </apex:outputPanel>  
+                      <apex:outputPanel id="webinar2" rendered="{!IF(pageparam == 'webinar','true','false')}" > 
+                        <h2 class="h1" style="font:color:white">Webinars</h2>
+                      </apex:outputPanel> 
+                    <a class="h1-arrows" href="#">&gt;</a>
+                  </div> 
+                        <div class="bd" >
+                        <apex:outputPanel id="event" rendered="{!IF(pageparam == 'event','true','false')}" >   
+                                <p  style="font-size:15px"> <b>The following is the current list of planned webinars.</b></p> <br /> 
+                            <ul > 
+                                <li >
+                                March 26, 2014
+                                NA/CALA/EMEA:  NAB Preview
+                                9:00 a.m. Central U.S. time
+                                </li>
+                                <li >
+                                March 26, 2014
+                                ASIA:  NAB Preview
+                                9:00 p.m. Central U.S. time
+                                </li>
+                                <li>
+                                April 29, 2014
+                                NA/CALA/EMEA:  New Product Introduction (cannot reveal product yet as not ready for external viewing)
+                                9:00 a.m. Central U.S. time
+                                </li>
+                                <li>
+                                April 29,, 2014
+                                ASIA:  New Product Introduction (cannot reveal product yet as not ready for external viewing)
+                                9:00 p.m. Central U.S. time
+                                </li>
+                                <li >
+                                May 13, 2014
+                                NA/CALA/EMEA:  Network Infrastructure Fundamentals
+                                9:00 a.m. Central U.S. time
+                                </li>
+                                <li>
+                                May 13, 2014
+                                ASIA:  Network Infrastructure Fundamentals
+                                9:00 p.m. Central U.S. time
+                                </li>
+                                <li>
+                                May 29, 2014
+                                NA/CALA/EMEA:  Media and Playout Integration
+                                9:00 a.m. Central U.S. time
+                                </li>
+                                <li style="font-size:12px;color:white">
+                                May 29, 2014
+                                NA/CALA/EMEA:  Media and Playout Integration
+                                9:00 p.m. Central U.S. time
+                                </li>
+                                <li>
+                                June 10, 2014
+                                NA/CALA/EMEA:  Mobile and Studio Production Solution
+                                9:00 a.m. Central U.S. time
+                                </li>
+                                <li >
+                                June 10, 2014
+                                ASIA:  Mobile and Studio Production Solution
+                                9:00 p.m. Central U.S. time
+                                </li>
+                                <li>
+                                July 8, and July 22, 2014
+                                NA/CALA/EMEA:  TOPICS TBD
+                                9:00 a.m. Central U.S. time
+                                </li>
+                                <li>
+                                July 8, and July 22, 2014
+                                ASIA:  TOPICS TBD
+                                9:00 p.m. Central U.S. time
+                                </li>                            
+                            </ul>                                
+                        </apex:outputPanel>
+                        <apex:outputPanel id="webinar" rendered="{!IF(pageparam == 'webinar','true','false')}" >   
+                                <p  style="font-size:15px"> <b>The following is the current list of completed webinars.</b></p> <br /> 
+                            <ul > 
+                                 <li><a href="https://partners.harrisbroadcast.com/bcd/salesforce/Global%20Partner%20Webinars/Imagine%20Communications%20Channels%20Webinar_%20Future-proofing%20Playout%20Operations-29Jan14.wmv" target="_new">Webinar Future proofing Playout Operations </a></li>
+                                <li><a href="https://partners.harrisbroadcast.com/bcd/salesforce/Global%20Partner%20Webinars/Imagine%20Communications%20Channels%20Webinar_%20Introducing%20the%20New%20Selenio%E2%84%A2%20NEXT-25Feb14.wmv" target="_new">Introducing New Selenio NEXT </a></li>                                
+                            </ul>
+                        </apex:outputPanel>                        
+
+                        </div>   
+                </div>
+                <b class="bottom"><b class="bl"></b><b class="br"></b></b>
+            </div>
+            
+<script type="text/javascript">   
+
+     jQuery(".mod.simple.alerts .h1-arrows").click(function()
+      {
+    
+        // Change the symbol
+        if ( jQuery(".mod.simple.alerts .bd").css("display") == "block") 
+        { 
+           //Display a up arrow
+           jQuery(this).css("background-position","right -26px");
+        }
+        else { 
+           //Display a down arrow
+           jQuery(this).css("background-position","right -2px"); 
+        }
+    
+        // Slide the div
+        jQuery(".mod.simple.alerts .bd").slideToggle(200);
+      });
+        
+</script></span>   
+          
+
+                  
+
+
+           
+           
+ 
+    </div>
+    
+    <!--
+    <footer>
+            <div id="non-printable"><span id="j_id0:SupportTemplate:j_id350">
+         <div class="footer">
+            <div class="nav">
+            <a href="http://harrisbroadcast.com/media-center/news" target="_New">news</a>
+            <a href="http://harrisbroadcast.com/contact-us" target="_New">contact us</a>
+            <a href="http://harrisbroadcast.com/terms-of-use" target="_New">terms</a>
+            <a href="http://blog.harrisbroadcast.com" target="_New">blog</a>
+            <a href="http://harrisbroadcast.com/media-center/events" target="_New">events</a>
+            <a href="http://harrisbroadcast.com/company/about-us" target="_New">about</a>
+            <a href="http://harrisbroadcast.com/privacy-policy" target="_New">Privacy Policy</a>                              
+            </div>
+            <div class="copyright">
+              © 2014 Imagine Communications
+            </div>
+          </div></span>
+            </div>
+    </footer>
+    -->
+        <!-- ********* Begin Header Component Section ********* -->
+        			<div class="row">
+				        <div class="sixteen wide column">
+				
+				            <!-- Partner Footer Component -->
+				            <c:partnerFooter />
+				
+				        </div>
+				    </div>
+<!--                     <c:ImPartnerFooter /> -->
+        <!-- ********* End Header Component Section ********* -->
+            
+         
+      </div>
+    </div>
+
+  </div>
+      
+  </body>
+</html>
+</apex:page>

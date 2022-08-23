@@ -1,0 +1,24 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" controller="RecentlyUpdatedArticlesController">
+     <aura:attribute name="recentlyUpdatedArtlces_title" type="String" default="Most Recent Changes" access="global"/>
+     <aura:attribute name="recentlyUpdatedArtlces_cssClass" type="String" default="" access="global"/>
+	
+     <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>    
+    <aura:attribute name="articles" type="KnowledgeArticleVersion[]"/>   
+
+	<div class="{!'ui-widget latestUpdates comm-topic-trending-articles selfServiceTopicTrendingArticles42 ' + v.recentlyUpdatedArtlces_cssClass}">
+            <h2 class="slds-text-heading--small slds-m-right--xx-small slds-hyphenate">{!v.recentlyUpdatedArtlces_title}</h2>
+            <ul>
+                <div class="slds-grid--vertical slds-wrap slds-has-block-links">
+    
+        <aura:iteration var="con" items="{!v.articles}">
+            <li>
+                <a href="{!'/s/article/' + con.UrlName}" class="slds-p-vertical_small slds-border_bottom slds-hyphenate">
+                        <span class="slds-text-body_small slds-show">{!con.Title}</span>
+                    </a>
+            </li>
+        </aura:iteration>
+    
+                 </div>
+            </ul>
+	</div>
+</aura:component>

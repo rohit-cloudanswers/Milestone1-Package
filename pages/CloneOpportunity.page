@@ -1,0 +1,184 @@
+<apex:page standardController="Opportunity" extensions="CloneOpportunityController" applyBodyTag="false" lightningStylesheets="true">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/3.4.8/select2.min.css" />
+    <style type="text/css">
+        .select2-results li {
+            margin-left: 0px;
+        }
+        .loadingStatus {
+            vertical-align: text-bottom;
+        }
+    </style>
+    <body>
+        <apex:sectionHeader title="with Quotes and related items" subtitle="Clone Opportunity" />
+        <apex:pageMessages id="messages" escape="false"></apex:pageMessages>
+        <apex:form >
+            <apex:commandButton action="{!cancel}" value="Back" />
+            <apex:actionFunction name="partialClone" action="{!cloneOpportunityPartial}"></apex:actionFunction>
+            <apex:pageBlock id="theBlock" title="Clone Opportunity">
+                <apex:actionFunction name="updateSelectedQuote" immediate="true" action="{!setSelectedQuote}" reRender="messages,quoteSection" oncomplete="unBlockPage();">
+                    <apex:param name="quoteId" value="" />
+                </apex:actionFunction>
+                <apex:actionFunction name="updateSyncQuote" immediate="true" action="{!setSyncQuote}" reRender="messages,quoteSection" oncomplete="unBlockPage();">
+                    <apex:param name="quoteId" value="" />
+                </apex:actionFunction>
+                <apex:actionFunction name="updateResetQuote" immediate="true" action="{!setResetQuote}" reRender="messages,quoteSection" oncomplete="unBlockPage();">
+                    <apex:param name="quoteId" value="" />
+                </apex:actionFunction>
+                <apex:pageBlockSection columns="1">
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel >Opportunity: </apex:outputLabel>
+                        <apex:outputLink value="/{!opp.Id}" target="_blank">{!opp.Name}</apex:outputLink>
+                    </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>
+                
+                <apex:pageBlockSection id="quoteSection" title="Select Quotes to Clone" collapsible="false" columns="1">
+                    <apex:pageBlockTable var="w" value="{!wrappers}" cellpadding="0" cellspacing="0">
+                        <apex:column headerValue="Select">
+                            <apex:inputCheckbox value="{!w.selected}" onchange="blockPage(); jsSelectQuote('{!w.q.Id}', this.checked)" />
+                        </apex:column>
+                        <apex:column headerValue="Reset Quote">
+                            <apex:inputCheckbox value="{!w.resetQuote}" title="Reset Quote" onchange="blockPage(); jsUpdateReset('{!w.q.Id}', this.checked)" />
+                        </apex:column>
+                        <apex:column headerValue="Sync Quote">
+                            <apex:inputCheckbox value="{!w.syncQuote}" onchange="blockPage(); jsUpdateSync('{!w.q.Id}');" />
+                        </apex:column>
+                        <apex:column headerValue="Quote Number">
+                            <apex:outputLink value="/{!w.q.Id}">{!w.q.QuoteNumber}</apex:outputLink>
+                        </apex:column>
+                        <apex:column headerValue="Quote Name">
+                            <apex:outputLink value="/{!w.q.Id}">{!w.q.Name}</apex:outputLink>
+                        </apex:column>
+                        <apex:column value="{!w.q.Imagine_Quote_Number__c}" />
+                        <apex:column headerValue="Quote Price Book">
+                            <apex:outputLink value="/{!w.q.Pricebook2Id}">{!w.q.Pricebook2.Name}</apex:outputLink>
+                        </apex:column>
+                    </apex:pageBlockTable>
+                </apex:pageBlockSection>
+                
+                <apex:pageBlockSection title="Select Address" columns="1" collapsible="false">
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel >Search Account: </apex:outputLabel>
+                        <apex:outputPanel layout="block">
+                            <apex:inputText styleClass="search-accounts" value="{!accountId}" style="width: 40%"></apex:inputText>
+                            <apex:inputHidden id="accountHolder" value="{!selectedAccount}" />
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel >Choose Address: </apex:outputLabel>
+                        <apex:outputPanel id="address-section" layout="block">
+                            <apex:actionFunction name="loadAddresses" action="{!setupAddressOptions}" status="pageStatus" reRender="address-section">
+                                <apex:param name="accId" value="" assignTo="{!accountId}"></apex:param>
+                            </apex:actionFunction>
+                            <apex:selectList id="address" value="{!addressId}" size="1" multiselect="false" style="width: 40%">
+                                <apex:selectOptions value="{!addressOptions}"></apex:selectOptions>
+                            </apex:selectList>
+                            <apex:actionStatus id="pageStatus">
+                                <apex:facet name="start">
+                                    <apex:outputPanel >
+                                        <img class="loadingStatus" src="/img/loading32.gif" width="16" height="16" />
+                                        <apex:outputLabel value=" loading account addresses..."/>
+                                    </apex:outputPanel>            
+                                </apex:facet>
+                            </apex:actionStatus>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>
+    
+                <apex:pageBlockSection title="Select Pricebook" collapsible="false" columns="1">
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel >Choose: </apex:outputLabel>
+                        <apex:selectList id="pricebook" value="{!pricebook2Id}" size="1" multiselect="false" style="width: 40%">
+                            <apex:selectOptions value="{!pricebookOptions}"></apex:selectOptions>
+                        </apex:selectList>
+                    </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>
+                <apex:pageBlockButtons >
+                    <apex:commandButton action="{!cloneOpportunityFull}" value="Clone" rendered="{!IF(errorsPresent == false, true, false)}" />
+                    <apex:commandButton value="Clone" onclick="partialClone(); return false;" rendered="{!IF(errorsPresent == true, true, false)}" />
+                    <apex:commandButton action="{!cancel}" value="Cancel" />
+                </apex:pageBlockButtons>
+            </apex:pageBlock>
+        </apex:form>
+        <!-- scripts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/3.4.8/select2.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.min.js"></script>
+        <script type="text/javascript">
+            var selectedAccount = '{!selectedAccount}';
+            function searchAccounts(query){
+                if(!query.term) return;
+                Visualforce.remoting.Manager.invokeAction(
+                    '{!$RemoteAction.CloneOpportunityController.findAccounts}',
+                    query.term,
+                    function(results, event) {
+                        if(event.status) {
+                            var resultsFinal = new Array();
+                            for(var i = 0 ; i < results.length ;i++){
+                                resultsFinal.push({
+                                    id : results[i].Id,
+                                    text : results[i].Name
+                                });
+                            }
+                            var data = {results: []}
+                            data.results = resultsFinal;
+                            query.callback(data);
+                        } else {
+                            console.log(event);
+                        }
+                    },
+                    {escape: false, buffer: false}
+                );
+            }
+
+            function jsSelectQuote(quoteId){
+                updateSelectedQuote(quoteId);
+            }
+
+            function jsUpdateSync(quoteId, val){
+                updateSyncQuote(quoteId, val);
+            }
+
+            function jsUpdateReset(quoteId, val){
+                updateResetQuote(quoteId, val);
+            }
+
+            function blockPage(){
+                $.blockUI({
+                    baseZ: 99999999,
+                    message: '<img src="/img/loading32.gif" /><br/><center><h3> Please Wait...</h3></center>',
+                     css: {
+                      border: 'none',
+                      padding: '15px',
+                      '-webkit-border-radius': '10px',
+                      '-moz-border-radius': '10px',
+                      opacity: .9,
+                      'font-size' : '138%'
+                     }
+                });
+            }
+
+            function unBlockPage(){
+                $.unblockUI();
+            }
+        
+            $(document).ready(function() {
+                var $elem = $(".search-accounts").select2({
+                    placeholder: "Select Account",
+                    theme: 'classic',
+                    delay: 500,
+                    minimumInputLength: 3,
+                    query: function(query){
+                        searchAccounts(query);
+                    }
+                });
+                $elem.on('select2-selecting', function(evt){
+                    $("[id$='accountHolder']").val(JSON.stringify(evt.object));
+                    loadAddresses(evt.object.id);
+                });
+                if(selectedAccount != '') {
+                    $elem.select2('data', JSON.parse(selectedAccount));
+                }
+            });
+        </script>
+    </body>
+</apex:page>

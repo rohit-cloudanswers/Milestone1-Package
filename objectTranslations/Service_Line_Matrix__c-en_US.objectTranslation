@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Service Line Matrix</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Service Lines Matrix</value>
+    </caseValues>
+    <fields>
+        <label><!-- Business Unit --></label>
+        <name>Business_Unit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cost % --></label>
+        <name>Cost_Percent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Percent of Line Total/ Product Line --></label>
+        <name>Percent_of_Line_Total_Product_Line__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Class --></label>
+        <name>Product_Class__c</name>
+        <relationshipLabel><!-- Service Lines Matrix --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Product Line --></label>
+        <name>Product_Line__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Type --></label>
+        <name>Product_Type__c</name>
+        <picklistValues>
+            <masterLabel>Hardware</masterLabel>
+            <translation><!-- Hardware --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Software</masterLabel>
+            <translation><!-- Software --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Professional Service Product --></label>
+        <name>Professional_Service_Product__c</name>
+        <relationshipLabel><!-- Service Lines Matrix (Professional Service Product) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Professional Services Part Number --></label>
+        <name>Professional_Services_Part_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Support Part Number --></label>
+        <name>Support_Part_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Support Product --></label>
+        <name>Support_Product__c</name>
+        <relationshipLabel><!-- Service Lines Matrix --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Support Type --></label>
+        <name>Support_Type__c</name>
+        <picklistValues>
+            <masterLabel>Care</masterLabel>
+            <translation><!-- Care --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Care Plus</masterLabel>
+            <translation><!-- Care Plus --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Service Line Matrix Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

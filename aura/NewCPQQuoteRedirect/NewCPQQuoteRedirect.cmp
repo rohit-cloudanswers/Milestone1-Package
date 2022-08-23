@@ -1,0 +1,4 @@
+<aura:component implements="force:appHostable,force:lightningQuickAction,lightning:availableForFlowActions" 
+                access="global" >
+    <aura:attribute name="recId" type="String" />
+</aura:component>

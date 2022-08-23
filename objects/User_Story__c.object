@@ -1,0 +1,2513 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Actual_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Actual Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Approved__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>User Story - Approved</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>As_A__c</fullName>
+        <externalId>false</externalId>
+        <label>As A</label>
+        <length>25</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Assigned_Project__c</fullName>
+        <externalId>false</externalId>
+        <label>Assigned Project</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>July SOW</fullName>
+                    <default>true</default>
+                    <label>July SOW</label>
+                </value>
+                <value>
+                    <fullName>FUTURE</fullName>
+                    <default>false</default>
+                    <label>FUTURE</label>
+                </value>
+                <value>
+                    <fullName>To Be Determined</fullName>
+                    <default>false</default>
+                    <label>To Be Determined</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Assigned_Sprint__c</fullName>
+        <externalId>false</externalId>
+        <label>Assigned Sprint</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Sprint 0</fullName>
+                    <default>false</default>
+                    <label>Sprint 0</label>
+                </value>
+                <value>
+                    <fullName>Sprint 1</fullName>
+                    <default>false</default>
+                    <label>Sprint 1</label>
+                </value>
+                <value>
+                    <fullName>Sprint 2</fullName>
+                    <default>false</default>
+                    <label>Sprint 2</label>
+                </value>
+                <value>
+                    <fullName>Sprint 3</fullName>
+                    <default>false</default>
+                    <label>Sprint 3</label>
+                </value>
+                <value>
+                    <fullName>Sprint 4</fullName>
+                    <default>false</default>
+                    <label>Sprint 4</label>
+                </value>
+                <value>
+                    <fullName>Sprint 5</fullName>
+                    <default>false</default>
+                    <label>Sprint 5</label>
+                </value>
+                <value>
+                    <fullName>Sprint 6</fullName>
+                    <default>false</default>
+                    <label>Sprint 6</label>
+                </value>
+                <value>
+                    <fullName>Sprint 7</fullName>
+                    <default>false</default>
+                    <label>Sprint 7</label>
+                </value>
+                <value>
+                    <fullName>Sprint unknown</fullName>
+                    <default>false</default>
+                    <label>Sprint unknown</label>
+                </value>
+                <value>
+                    <fullName>Waiting To Be Assigned</fullName>
+                    <default>false</default>
+                    <label>Waiting To Be Assigned</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Burned__c</fullName>
+        <externalId>false</externalId>
+        <label>Burned</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Business_has_Budget__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>This field designates if the business stakeholders requesting the change have budget or not.</inlineHelpText>
+        <label>Business has Budget?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Change__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Change</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Customization_Details__c</fullName>
+        <externalId>false</externalId>
+        <label>Design/Solution Details</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Customization_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Customization Required</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Dependencies__c</fullName>
+        <externalId>false</externalId>
+        <label>Dependencies</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Developer__c</fullName>
+        <externalId>false</externalId>
+        <label>Assigned Developer</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Mark Cowles</fullName>
+                    <default>false</default>
+                    <label>Mark Cowles</label>
+                </value>
+                <value>
+                    <fullName>Raj Vooturi</fullName>
+                    <default>false</default>
+                    <label>Raj Vooturi</label>
+                </value>
+                <value>
+                    <fullName>Suraj Aluru</fullName>
+                    <default>false</default>
+                    <label>Suraj Aluru</label>
+                </value>
+                <value>
+                    <fullName>Kaavya Karanam</fullName>
+                    <default>false</default>
+                    <label>Kaavya Karanam</label>
+                </value>
+                <value>
+                    <fullName>Raj Damera</fullName>
+                    <default>false</default>
+                    <label>Raj Damera</label>
+                </value>
+                <value>
+                    <fullName>Jeff Kurth</fullName>
+                    <default>false</default>
+                    <label>Jeff Kurth</label>
+                </value>
+                <value>
+                    <fullName>Etherios</fullName>
+                    <default>false</default>
+                    <label>Etherios</label>
+                </value>
+                <value>
+                    <fullName>Jaime Cangas</fullName>
+                    <default>false</default>
+                    <label>Jaime Cangas</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Epic__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Epic</label>
+        <referenceTo>Epics__c</referenceTo>
+        <relationshipLabel>User Stories</relationshipLabel>
+        <relationshipName>User_Stories</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Exists_in_Siebel__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field designates if the functionality described in the User Story already exists in the current Siebel CRM system.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field designates if the functionality described in the User Story already exists in the current Siebel CRM system.</inlineHelpText>
+        <label>Exists in Siebel</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Expected_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Production Release Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Functional_Area__c</fullName>
+        <externalId>false</externalId>
+        <label>Functional Area</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Gates_LOE__c</fullName>
+        <externalId>false</externalId>
+        <label>Gates LOE</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Harris_Broadcast_Priority__c</fullName>
+        <externalId>false</externalId>
+        <label>Priority</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>0 - Must Have</fullName>
+                    <default>false</default>
+                    <label>0 - Must Have</label>
+                </value>
+                <value>
+                    <fullName>1 - High</fullName>
+                    <default>false</default>
+                    <label>1 - High</label>
+                </value>
+                <value>
+                    <fullName>2 - Med</fullName>
+                    <default>false</default>
+                    <label>2 - Med</label>
+                </value>
+                <value>
+                    <fullName>3 - Low</fullName>
+                    <default>false</default>
+                    <label>3 - Low</label>
+                </value>
+                <value>
+                    <fullName>4 - Wishlist</fullName>
+                    <default>false</default>
+                    <label>4 - Wishlist</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>I_Want__c</fullName>
+        <externalId>false</externalId>
+        <label>Test Scenario</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Imagine_or_GatesAir__c</fullName>
+        <externalId>false</externalId>
+        <label>Imagine or GatesAir</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>ImagineCommunications</fullName>
+                    <default>false</default>
+                    <label>ImagineCommunications</label>
+                </value>
+                <value>
+                    <fullName>GatesAirCommunications</fullName>
+                    <default>false</default>
+                    <label>GatesAirCommunications</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>LOE__c</fullName>
+        <externalId>false</externalId>
+        <label>Imagine LOE</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Level_One_Group__c</fullName>
+        <externalId>false</externalId>
+        <label>Level One Group</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Lead Management</fullName>
+                    <default>false</default>
+                    <label>Lead Management</label>
+                </value>
+                <value>
+                    <fullName>Account Management</fullName>
+                    <default>false</default>
+                    <label>Account Management</label>
+                </value>
+                <value>
+                    <fullName>Contact Management</fullName>
+                    <default>false</default>
+                    <label>Contact Management</label>
+                </value>
+                <value>
+                    <fullName>Opportunity Management</fullName>
+                    <default>false</default>
+                    <label>Opportunity Management</label>
+                </value>
+                <value>
+                    <fullName>Quote Management</fullName>
+                    <default>false</default>
+                    <label>Quote Management</label>
+                </value>
+                <value>
+                    <fullName>Order Management</fullName>
+                    <default>false</default>
+                    <label>Order Management</label>
+                </value>
+                <value>
+                    <fullName>Partner Community</fullName>
+                    <default>false</default>
+                    <label>Partner Community</label>
+                </value>
+                <value>
+                    <fullName>Call Center</fullName>
+                    <default>false</default>
+                    <label>Call Center</label>
+                </value>
+                <value>
+                    <fullName>User Interface</fullName>
+                    <default>false</default>
+                    <label>User Interface</label>
+                </value>
+                <value>
+                    <fullName>Service Management</fullName>
+                    <default>false</default>
+                    <label>Service Management</label>
+                </value>
+                <value>
+                    <fullName>Customer Community</fullName>
+                    <default>false</default>
+                    <label>Customer Community</label>
+                </value>
+                <value>
+                    <fullName>Professional Services</fullName>
+                    <default>false</default>
+                    <label>Professional Services</label>
+                </value>
+                <value>
+                    <fullName>Sales Process</fullName>
+                    <default>false</default>
+                    <label>Sales Process</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Level_Two_Grouping__c</fullName>
+        <externalId>false</externalId>
+        <label>Level Two Grouping</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Level_One_Group__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Proposals</fullName>
+                    <default>false</default>
+                    <label>Proposals</label>
+                </value>
+                <value>
+                    <fullName>Solution Sets</fullName>
+                    <default>false</default>
+                    <label>Solution Sets</label>
+                </value>
+                <value>
+                    <fullName>Quote Line Items</fullName>
+                    <default>false</default>
+                    <label>Quote Line Items</label>
+                </value>
+                <value>
+                    <fullName>Quote Discounting</fullName>
+                    <default>false</default>
+                    <label>Quote Discounting</label>
+                </value>
+                <value>
+                    <fullName>Cloning</fullName>
+                    <default>false</default>
+                    <label>Cloning</label>
+                </value>
+                <value>
+                    <fullName>General Quoting</fullName>
+                    <default>false</default>
+                    <label>General Quoting</label>
+                </value>
+                <value>
+                    <fullName>Products</fullName>
+                    <default>false</default>
+                    <label>Products</label>
+                </value>
+                <value>
+                    <fullName>PriceBooks</fullName>
+                    <default>false</default>
+                    <label>PriceBooks</label>
+                </value>
+                <value>
+                    <fullName>Approvals</fullName>
+                    <default>false</default>
+                    <label>Approvals</label>
+                </value>
+                <value>
+                    <fullName>Addresses</fullName>
+                    <default>false</default>
+                    <label>Addresses</label>
+                </value>
+                <value>
+                    <fullName>RFP (TBD)</fullName>
+                    <default>false</default>
+                    <label>RFP (TBD)</label>
+                </value>
+                <value>
+                    <fullName>Opportunity Products</fullName>
+                    <default>false</default>
+                    <label>Opportunity Products</label>
+                </value>
+                <value>
+                    <fullName>Layout Configuration</fullName>
+                    <default>false</default>
+                    <label>Layout Configuration</label>
+                </value>
+                <value>
+                    <fullName>Security &amp; Permissions</fullName>
+                    <default>false</default>
+                    <label>Security &amp; Permissions</label>
+                </value>
+                <value>
+                    <fullName>Mobile</fullName>
+                    <default>false</default>
+                    <label>Mobile</label>
+                </value>
+                <value>
+                    <fullName>Reports and Dashboards</fullName>
+                    <default>false</default>
+                    <label>Reports and Dashboards</label>
+                </value>
+                <value>
+                    <fullName>Agreement Management</fullName>
+                    <default>false</default>
+                    <label>Agreement Management</label>
+                </value>
+                <value>
+                    <fullName>Asset Management</fullName>
+                    <default>false</default>
+                    <label>Asset Management</label>
+                </value>
+                <value>
+                    <fullName>Integration</fullName>
+                    <default>false</default>
+                    <label>Integration</label>
+                </value>
+                <value>
+                    <fullName>Knowledge Management</fullName>
+                    <default>false</default>
+                    <label>Knowledge Management</label>
+                </value>
+                <value>
+                    <fullName>RMA Process</fullName>
+                    <default>false</default>
+                    <label>RMA Process</label>
+                </value>
+                <value>
+                    <fullName>Case Management Process</fullName>
+                    <default>false</default>
+                    <label>Case Management Process</label>
+                </value>
+                <value>
+                    <fullName>Project Process</fullName>
+                    <default>false</default>
+                    <label>Project Process</label>
+                </value>
+                <value>
+                    <fullName>Record Creation</fullName>
+                    <default>false</default>
+                    <label>Record Creation</label>
+                </value>
+                <value>
+                    <fullName>Account Hierarchy</fullName>
+                    <default>false</default>
+                    <label>Account Hierarchy</label>
+                </value>
+                <value>
+                    <fullName>Contracts</fullName>
+                    <default>false</default>
+                    <label>Contracts</label>
+                </value>
+                <value>
+                    <fullName>Data Migration</fullName>
+                    <default>false</default>
+                    <label>Data Migration</label>
+                </value>
+                <value>
+                    <fullName>Eloqua Integration</fullName>
+                    <default>false</default>
+                    <label>Eloqua Integration</label>
+                </value>
+                <value>
+                    <fullName>Communities</fullName>
+                    <default>false</default>
+                    <label>Communities</label>
+                </value>
+                <value>
+                    <fullName>Campaigns</fullName>
+                    <default>false</default>
+                    <label>Campaigns</label>
+                </value>
+                <value>
+                    <fullName>Media Quoting</fullName>
+                    <default>false</default>
+                    <label>Media Quoting</label>
+                </value>
+                <value>
+                    <fullName>Trials</fullName>
+                    <default>false</default>
+                    <label>Trials</label>
+                </value>
+                <value>
+                    <fullName>Partner Community</fullName>
+                    <default>false</default>
+                    <label>Partner Community</label>
+                </value>
+                <value>
+                    <fullName>Customer Community</fullName>
+                    <default>false</default>
+                    <label>Customer Community</label>
+                </value>
+                <value>
+                    <fullName>UX/UI</fullName>
+                    <default>false</default>
+                    <label>UX/UI</label>
+                </value>
+                <value>
+                    <fullName>Quoting</fullName>
+                    <default>false</default>
+                    <label>Quoting</label>
+                </value>
+                <value>
+                    <fullName>Offline Capability</fullName>
+                    <default>false</default>
+                    <label>Offline Capability</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Account Management</controllingFieldValue>
+                <controllingFieldValue>Customer Community</controllingFieldValue>
+                <controllingFieldValue>Partner Community</controllingFieldValue>
+                <controllingFieldValue>Opportunity Management</controllingFieldValue>
+                <valueName>Addresses</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Account Management</controllingFieldValue>
+                <controllingFieldValue>Order Management</controllingFieldValue>
+                <controllingFieldValue>Quote Management</controllingFieldValue>
+                <controllingFieldValue>Contact Management</controllingFieldValue>
+                <controllingFieldValue>Service Management</controllingFieldValue>
+                <controllingFieldValue>Customer Community</controllingFieldValue>
+                <controllingFieldValue>Partner Community</controllingFieldValue>
+                <controllingFieldValue>Professional Services</controllingFieldValue>
+                <controllingFieldValue>Lead Management</controllingFieldValue>
+                <controllingFieldValue>Opportunity Management</controllingFieldValue>
+                <valueName>Layout Configuration</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Account Management</controllingFieldValue>
+                <controllingFieldValue>Order Management</controllingFieldValue>
+                <controllingFieldValue>Quote Management</controllingFieldValue>
+                <controllingFieldValue>Contact Management</controllingFieldValue>
+                <controllingFieldValue>Call Center</controllingFieldValue>
+                <controllingFieldValue>Service Management</controllingFieldValue>
+                <controllingFieldValue>Customer Community</controllingFieldValue>
+                <controllingFieldValue>Partner Community</controllingFieldValue>
+                <controllingFieldValue>Sales Process</controllingFieldValue>
+                <controllingFieldValue>Professional Services</controllingFieldValue>
+                <controllingFieldValue>Lead Management</controllingFieldValue>
+                <controllingFieldValue>Opportunity Management</controllingFieldValue>
+                <valueName>Security &amp; Permissions</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Account Management</controllingFieldValue>
+                <controllingFieldValue>Quote Management</controllingFieldValue>
+                <controllingFieldValue>Contact Management</controllingFieldValue>
+                <controllingFieldValue>Service Management</controllingFieldValue>
+                <controllingFieldValue>Sales Process</controllingFieldValue>
+                <controllingFieldValue>Professional Services</controllingFieldValue>
+                <controllingFieldValue>Lead Management</controllingFieldValue>
+                <controllingFieldValue>Opportunity Management</controllingFieldValue>
+                <valueName>Mobile</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Account Management</controllingFieldValue>
+                <controllingFieldValue>Order Management</controllingFieldValue>
+                <controllingFieldValue>Quote Management</controllingFieldValue>
+                <controllingFieldValue>Contact Management</controllingFieldValue>
+                <controllingFieldValue>Call Center</controllingFieldValue>
+                <controllingFieldValue>Service Management</controllingFieldValue>
+                <controllingFieldValue>Customer Community</controllingFieldValue>
+                <controllingFieldValue>Partner Community</controllingFieldValue>
+                <controllingFieldValue>Sales Process</controllingFieldValue>
+                <controllingFieldValue>Professional Services</controllingFieldValue>
+                <controllingFieldValue>Lead Management</controllingFieldValue>
+                <controllingFieldValue>Opportunity Management</controllingFieldValue>
+                <valueName>Reports and Dashboards</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Account Management</controllingFieldValue>
+                <controllingFieldValue>Order Management</controllingFieldValue>
+                <controllingFieldValue>Call Center</controllingFieldValue>
+                <controllingFieldValue>Service Management</controllingFieldValue>
+                <controllingFieldValue>Customer Community</controllingFieldValue>
+                <controllingFieldValue>Partner Community</controllingFieldValue>
+                <controllingFieldValue>Sales Process</controllingFieldValue>
+                <controllingFieldValue>Professional Services</controllingFieldValue>
+                <controllingFieldValue>Lead Management</controllingFieldValue>
+                <valueName>Integration</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Account Management</controllingFieldValue>
+                <controllingFieldValue>Order Management</controllingFieldValue>
+                <controllingFieldValue>Service Management</controllingFieldValue>
+                <controllingFieldValue>Customer Community</controllingFieldValue>
+                <controllingFieldValue>Partner Community</controllingFieldValue>
+                <controllingFieldValue>Professional Services</controllingFieldValue>
+                <controllingFieldValue>Lead Management</controllingFieldValue>
+                <controllingFieldValue>Opportunity Management</controllingFieldValue>
+                <valueName>Record Creation</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Account Management</controllingFieldValue>
+                <controllingFieldValue>Partner Community</controllingFieldValue>
+                <controllingFieldValue>Opportunity Management</controllingFieldValue>
+                <valueName>Account Hierarchy</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Account Management</controllingFieldValue>
+                <controllingFieldValue>Partner Community</controllingFieldValue>
+                <controllingFieldValue>Opportunity Management</controllingFieldValue>
+                <valueName>Contracts</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Account Management</controllingFieldValue>
+                <controllingFieldValue>Order Management</controllingFieldValue>
+                <controllingFieldValue>Call Center</controllingFieldValue>
+                <controllingFieldValue>Service Management</controllingFieldValue>
+                <controllingFieldValue>Customer Community</controllingFieldValue>
+                <controllingFieldValue>Partner Community</controllingFieldValue>
+                <controllingFieldValue>Sales Process</controllingFieldValue>
+                <controllingFieldValue>Professional Services</controllingFieldValue>
+                <controllingFieldValue>Lead Management</controllingFieldValue>
+                <controllingFieldValue>Opportunity Management</controllingFieldValue>
+                <valueName>Data Migration</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>User Interface</controllingFieldValue>
+                <controllingFieldValue>Lead Management</controllingFieldValue>
+                <valueName>Partner Community</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>User Interface</controllingFieldValue>
+                <valueName>Customer Community</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Order Management</controllingFieldValue>
+                <controllingFieldValue>Quote Management</controllingFieldValue>
+                <valueName>General Quoting</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Order Management</controllingFieldValue>
+                <controllingFieldValue>Quote Management</controllingFieldValue>
+                <controllingFieldValue>Customer Community</controllingFieldValue>
+                <controllingFieldValue>Partner Community</controllingFieldValue>
+                <controllingFieldValue>Opportunity Management</controllingFieldValue>
+                <valueName>Products</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Order Management</controllingFieldValue>
+                <controllingFieldValue>Quote Management</controllingFieldValue>
+                <controllingFieldValue>Partner Community</controllingFieldValue>
+                <controllingFieldValue>Opportunity Management</controllingFieldValue>
+                <valueName>PriceBooks</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Order Management</controllingFieldValue>
+                <controllingFieldValue>Partner Community</controllingFieldValue>
+                <controllingFieldValue>Opportunity Management</controllingFieldValue>
+                <valueName>Opportunity Products</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Order Management</controllingFieldValue>
+                <controllingFieldValue>Partner Community</controllingFieldValue>
+                <valueName>Media Quoting</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Order Management</controllingFieldValue>
+                <controllingFieldValue>Partner Community</controllingFieldValue>
+                <valueName>Quoting</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Quote Management</controllingFieldValue>
+                <valueName>Proposals</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Quote Management</controllingFieldValue>
+                <valueName>Solution Sets</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Quote Management</controllingFieldValue>
+                <valueName>Quote Line Items</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Quote Management</controllingFieldValue>
+                <valueName>Quote Discounting</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Quote Management</controllingFieldValue>
+                <valueName>Cloning</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Quote Management</controllingFieldValue>
+                <controllingFieldValue>Opportunity Management</controllingFieldValue>
+                <valueName>Approvals</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Call Center</controllingFieldValue>
+                <controllingFieldValue>Service Management</controllingFieldValue>
+                <controllingFieldValue>Customer Community</controllingFieldValue>
+                <controllingFieldValue>Partner Community</controllingFieldValue>
+                <controllingFieldValue>Sales Process</controllingFieldValue>
+                <controllingFieldValue>Professional Services</controllingFieldValue>
+                <valueName>Asset Management</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Call Center</controllingFieldValue>
+                <controllingFieldValue>Service Management</controllingFieldValue>
+                <controllingFieldValue>Customer Community</controllingFieldValue>
+                <controllingFieldValue>Partner Community</controllingFieldValue>
+                <controllingFieldValue>Sales Process</controllingFieldValue>
+                <controllingFieldValue>Professional Services</controllingFieldValue>
+                <valueName>Knowledge Management</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Call Center</controllingFieldValue>
+                <controllingFieldValue>Service Management</controllingFieldValue>
+                <controllingFieldValue>Customer Community</controllingFieldValue>
+                <controllingFieldValue>Partner Community</controllingFieldValue>
+                <controllingFieldValue>Professional Services</controllingFieldValue>
+                <valueName>RMA Process</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Call Center</controllingFieldValue>
+                <controllingFieldValue>Service Management</controllingFieldValue>
+                <controllingFieldValue>Customer Community</controllingFieldValue>
+                <controllingFieldValue>Partner Community</controllingFieldValue>
+                <controllingFieldValue>Sales Process</controllingFieldValue>
+                <controllingFieldValue>Professional Services</controllingFieldValue>
+                <valueName>Case Management Process</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Service Management</controllingFieldValue>
+                <controllingFieldValue>Customer Community</controllingFieldValue>
+                <controllingFieldValue>Partner Community</controllingFieldValue>
+                <controllingFieldValue>Sales Process</controllingFieldValue>
+                <controllingFieldValue>Professional Services</controllingFieldValue>
+                <valueName>Agreement Management</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Service Management</controllingFieldValue>
+                <controllingFieldValue>Partner Community</controllingFieldValue>
+                <controllingFieldValue>Professional Services</controllingFieldValue>
+                <valueName>Project Process</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Customer Community</controllingFieldValue>
+                <controllingFieldValue>Partner Community</controllingFieldValue>
+                <valueName>UX/UI</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Sales Process</controllingFieldValue>
+                <valueName>Offline Capability</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Lead Management</controllingFieldValue>
+                <valueName>Eloqua Integration</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Lead Management</controllingFieldValue>
+                <controllingFieldValue>Opportunity Management</controllingFieldValue>
+                <valueName>Communities</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Lead Management</controllingFieldValue>
+                <controllingFieldValue>Opportunity Management</controllingFieldValue>
+                <valueName>Campaigns</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Opportunity Management</controllingFieldValue>
+                <valueName>RFP (TBD)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Opportunity Management</controllingFieldValue>
+                <valueName>Trials</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Low_Level_Story_Details__c</fullName>
+        <externalId>false</externalId>
+        <label>Low Level Story Details</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>30</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Month_to_be_fixed__c</fullName>
+        <externalId>false</externalId>
+        <label>Month to be fixed</label>
+        <length>30</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Feedback</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>15</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Object_Or_Domain__c</fullName>
+        <externalId>false</externalId>
+        <label>Object Or Domain</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Parent_User_Story__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Parent User Story</label>
+        <referenceTo>User_Story__c</referenceTo>
+        <relationshipLabel>Related User Stories</relationshipLabel>
+        <relationshipName>Related_User_Stories</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Phase__c</fullName>
+        <externalId>false</externalId>
+        <label>Type of Request</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Enhancement</fullName>
+                    <default>false</default>
+                    <label>Enhancement</label>
+                </value>
+                <value>
+                    <fullName>Production Defect</fullName>
+                    <default>false</default>
+                    <label>Production Defect</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Pilot_Week__c</fullName>
+        <description>This field is to associate Pilot User Stories to the appropriate Pilot week.</description>
+        <externalId>false</externalId>
+        <label>Pilot Week</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Week 1</fullName>
+                    <default>false</default>
+                    <label>Week 1</label>
+                </value>
+                <value>
+                    <fullName>Week 2</fullName>
+                    <default>false</default>
+                    <label>Week 2</label>
+                </value>
+                <value>
+                    <fullName>Week 3</fullName>
+                    <default>false</default>
+                    <label>Week 3</label>
+                </value>
+                <value>
+                    <fullName>Week 4</fullName>
+                    <default>false</default>
+                    <label>Week 4</label>
+                </value>
+                <value>
+                    <fullName>Week 5</fullName>
+                    <default>false</default>
+                    <label>Week 5</label>
+                </value>
+                <value>
+                    <fullName>Week 6</fullName>
+                    <default>false</default>
+                    <label>Week 6</label>
+                </value>
+                <value>
+                    <fullName>Week 7</fullName>
+                    <default>false</default>
+                    <label>Week 7</label>
+                </value>
+                <value>
+                    <fullName>Week 8</fullName>
+                    <default>false</default>
+                    <label>Week 8</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Product_Owner_1__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Business user requesting the enhancement.</description>
+        <externalId>false</externalId>
+        <label>Business Stakeholder 1</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>User_Stories1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product_Owner_2__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Business User requesting the enhancement.</description>
+        <externalId>false</externalId>
+        <label>Business Stakeholder 2</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>User_Stories2</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product_Owner_3__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Product Owner 3</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>User_Stories3</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>QA_Responsible__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Please select a user responsible for QA</inlineHelpText>
+        <label>QA/UAT Responsible</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>User_Stories</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>QA_Script_Written__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>QA Script Written</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>QA_Script__c</fullName>
+        <externalId>false</externalId>
+        <label>QA Script</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Partial</fullName>
+                    <default>false</default>
+                    <label>Partial</label>
+                </value>
+                <value>
+                    <fullName>Full</fullName>
+                    <default>false</default>
+                    <label>Full</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>QA_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Pilot Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <default>false</default>
+                    <label>In Progress</label>
+                </value>
+                <value>
+                    <fullName>Failed</fullName>
+                    <default>false</default>
+                    <label>Failed</label>
+                </value>
+                <value>
+                    <fullName>Retest</fullName>
+                    <default>false</default>
+                    <label>Retest</label>
+                </value>
+                <value>
+                    <fullName>Passed</fullName>
+                    <default>false</default>
+                    <label>Passed</label>
+                </value>
+                <value>
+                    <fullName>Training Issue</fullName>
+                    <default>false</default>
+                    <label>Training Issue</label>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                    <label>Cancelled</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>QA_UAT_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>QA/UAT Comments</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>50</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Release__c</fullName>
+        <externalId>false</externalId>
+        <formula>if( ISPICKVAL( Phase__c, &quot;1&quot;), &quot;MAR&quot;, &quot;JUL&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Release</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Responsible__c</fullName>
+        <externalId>false</externalId>
+        <label>Business Stakeholders</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Channel - Jaime Cangas</fullName>
+                    <default>false</default>
+                    <label>Channel - Jaime Cangas</label>
+                </value>
+                <value>
+                    <fullName>Channel - Kathy Bienz</fullName>
+                    <default>false</default>
+                    <label>Channel - Kathy Bienz</label>
+                </value>
+                <value>
+                    <fullName>Channel - Mark Jordan</fullName>
+                    <default>false</default>
+                    <label>Channel - Mark Jordan</label>
+                </value>
+                <value>
+                    <fullName>Channel - Oliver Abadeer</fullName>
+                    <default>false</default>
+                    <label>Channel - Oliver Abadeer</label>
+                </value>
+                <value>
+                    <fullName>IT - David Poling</fullName>
+                    <default>false</default>
+                    <label>IT - David Poling</label>
+                </value>
+                <value>
+                    <fullName>IT - Lisa Cline</fullName>
+                    <default>false</default>
+                    <label>IT - Lisa Cline</label>
+                </value>
+                <value>
+                    <fullName>IT - Mark Cowles</fullName>
+                    <default>false</default>
+                    <label>IT - Mark Cowles</label>
+                </value>
+                <value>
+                    <fullName>IT - Ole Calderone</fullName>
+                    <default>false</default>
+                    <label>IT - Ole Calderone</label>
+                </value>
+                <value>
+                    <fullName>Marketing - Emily Etzborn</fullName>
+                    <default>false</default>
+                    <label>Marketing - Emily Etzborn</label>
+                </value>
+                <value>
+                    <fullName>Marketing - Victoria Canton</fullName>
+                    <default>false</default>
+                    <label>Marketing - Victoria Canton</label>
+                </value>
+                <value>
+                    <fullName>Sales - Bill Betts</fullName>
+                    <default>false</default>
+                    <label>Sales - Bill Betts</label>
+                </value>
+                <value>
+                    <fullName>Sales - Chandra Dodani</fullName>
+                    <default>false</default>
+                    <label>Sales - Chandra Dodani</label>
+                </value>
+                <value>
+                    <fullName>Sales - Chantal Barbosa</fullName>
+                    <default>false</default>
+                    <label>Sales - Chantal Barbosa</label>
+                </value>
+                <value>
+                    <fullName>Sales - Jeff Kurth</fullName>
+                    <default>false</default>
+                    <label>Sales - Jeff Kurth</label>
+                </value>
+                <value>
+                    <fullName>Sales - Lane Lobaugh</fullName>
+                    <default>false</default>
+                    <label>Sales - Lane Lobaugh</label>
+                </value>
+                <value>
+                    <fullName>Sales - Lynn Heines</fullName>
+                    <default>false</default>
+                    <label>Sales - Lynn Heines</label>
+                </value>
+                <value>
+                    <fullName>Sales - Rich Lohmueller</fullName>
+                    <default>false</default>
+                    <label>Sales - Rich Lohmueller</label>
+                </value>
+                <value>
+                    <fullName>Service - Dawn Vance</fullName>
+                    <default>false</default>
+                    <label>Service - Dawn Vance</label>
+                </value>
+                <value>
+                    <fullName>Service - Greg Wainman</fullName>
+                    <default>false</default>
+                    <label>Service - Greg Wainman</label>
+                </value>
+                <value>
+                    <fullName>Service - Paul Nagle</fullName>
+                    <default>false</default>
+                    <label>Service - Paul Nagle</label>
+                </value>
+                <value>
+                    <fullName>Service - Simon Lockington</fullName>
+                    <default>false</default>
+                    <label>Service - Simon Lockington</label>
+                </value>
+                <value>
+                    <fullName>TBD</fullName>
+                    <default>false</default>
+                    <label>TBD</label>
+                </value>
+                <value>
+                    <fullName>Sales - Hamid Bahadori</fullName>
+                    <default>false</default>
+                    <label>Sales - Hamid Bahadori</label>
+                </value>
+                <value>
+                    <fullName>Professional Services- Guillermo Velasco</fullName>
+                    <default>false</default>
+                    <label>Professional Services- Guillermo Velasco</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>SPRINT_ACTIVITY_EPICS__c</fullName>
+        <externalId>false</externalId>
+        <label>SPRINT ACTIVITY EPICS</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Configuration/ Customization / Development</fullName>
+                    <default>false</default>
+                    <label>Configuration/ Customization / Development</label>
+                </value>
+                <value>
+                    <fullName>Reports</fullName>
+                    <default>false</default>
+                    <label>Reports</label>
+                </value>
+                <value>
+                    <fullName>Security</fullName>
+                    <default>false</default>
+                    <label>Security</label>
+                </value>
+                <value>
+                    <fullName>Integrations</fullName>
+                    <default>false</default>
+                    <label>Integrations</label>
+                </value>
+                <value>
+                    <fullName>Data Migrations</fullName>
+                    <default>false</default>
+                    <label>Data Migrations</label>
+                </value>
+                <value>
+                    <fullName>Sprint QA</fullName>
+                    <default>false</default>
+                    <label>Sprint QA</label>
+                </value>
+                <value>
+                    <fullName>Sprint Demo</fullName>
+                    <default>false</default>
+                    <label>Sprint Demo</label>
+                </value>
+                <value>
+                    <fullName>QA</fullName>
+                    <default>false</default>
+                    <label>QA</label>
+                </value>
+                <value>
+                    <fullName>UAT</fullName>
+                    <default>false</default>
+                    <label>UAT</label>
+                </value>
+                <value>
+                    <fullName>Deployment</fullName>
+                    <default>false</default>
+                    <label>Deployment</label>
+                </value>
+                <value>
+                    <fullName>Training</fullName>
+                    <default>false</default>
+                    <label>Training</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SPRINT_ACTIVITY_TOPICS__c</fullName>
+        <externalId>false</externalId>
+        <label>SPRINT ACTIVITY TOPICS</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Accounts/Contacts/ Addresses</fullName>
+                    <default>false</default>
+                    <label>Accounts/Contacts/ Addresses</label>
+                </value>
+                <value>
+                    <fullName>Assets</fullName>
+                    <default>false</default>
+                    <label>Assets</label>
+                </value>
+                <value>
+                    <fullName>Attachments/ Documents/ Files</fullName>
+                    <default>false</default>
+                    <label>Attachments/ Documents/ Files</label>
+                </value>
+                <value>
+                    <fullName>Box.com</fullName>
+                    <default>false</default>
+                    <label>Box.com</label>
+                </value>
+                <value>
+                    <fullName>Bug Tracking</fullName>
+                    <default>false</default>
+                    <label>Bug Tracking</label>
+                </value>
+                <value>
+                    <fullName>Campaigns</fullName>
+                    <default>false</default>
+                    <label>Campaigns</label>
+                </value>
+                <value>
+                    <fullName>Cases</fullName>
+                    <default>false</default>
+                    <label>Cases</label>
+                </value>
+                <value>
+                    <fullName>CTI</fullName>
+                    <default>false</default>
+                    <label>CTI</label>
+                </value>
+                <value>
+                    <fullName>Customer Portal (Services)</fullName>
+                    <default>false</default>
+                    <label>Customer Portal (Services)</label>
+                </value>
+                <value>
+                    <fullName>Data Migration - Production</fullName>
+                    <default>false</default>
+                    <label>Data Migration - Production</label>
+                </value>
+                <value>
+                    <fullName>Demo</fullName>
+                    <default>false</default>
+                    <label>Demo</label>
+                </value>
+                <value>
+                    <fullName>Eloqua</fullName>
+                    <default>false</default>
+                    <label>Eloqua</label>
+                </value>
+                <value>
+                    <fullName>Entitlements/ Service Contracts</fullName>
+                    <default>false</default>
+                    <label>Entitlements/ Service Contracts</label>
+                </value>
+                <value>
+                    <fullName>Final UAT</fullName>
+                    <default>false</default>
+                    <label>Final UAT</label>
+                </value>
+                <value>
+                    <fullName>FPX (Gates)</fullName>
+                    <default>false</default>
+                    <label>FPX (Gates)</label>
+                </value>
+                <value>
+                    <fullName>Integration - Production</fullName>
+                    <default>false</default>
+                    <label>Integration - Production</label>
+                </value>
+                <value>
+                    <fullName>Knowledge</fullName>
+                    <default>false</default>
+                    <label>Knowledge</label>
+                </value>
+                <value>
+                    <fullName>Knowledge Article Migration</fullName>
+                    <default>false</default>
+                    <label>Knowledge Article Migration</label>
+                </value>
+                <value>
+                    <fullName>Leads</fullName>
+                    <default>false</default>
+                    <label>Leads</label>
+                </value>
+                <value>
+                    <fullName>Micro UAT</fullName>
+                    <default>false</default>
+                    <label>Micro UAT</label>
+                </value>
+                <value>
+                    <fullName>Opportunity</fullName>
+                    <default>false</default>
+                    <label>Opportunity</label>
+                </value>
+                <value>
+                    <fullName>Other Remaining</fullName>
+                    <default>false</default>
+                    <label>Other Remaining</label>
+                </value>
+                <value>
+                    <fullName>Partner Community (Leads, Accounts, Contacts, Products, Pricing)</fullName>
+                    <default>false</default>
+                    <label>Partner Community (Leads, Accounts, Contacts, Products, Pricing)</label>
+                </value>
+                <value>
+                    <fullName>Partner Community (UI Changes including Landing page)</fullName>
+                    <default>false</default>
+                    <label>Partner Community (UI Changes including Landing page)</label>
+                </value>
+                <value>
+                    <fullName>Partner Portal (Services)</fullName>
+                    <default>false</default>
+                    <label>Partner Portal (Services)</label>
+                </value>
+                <value>
+                    <fullName>Products/ Pricebooks</fullName>
+                    <default>false</default>
+                    <label>Products/ Pricebooks</label>
+                </value>
+                <value>
+                    <fullName>Professional Services - Projects</fullName>
+                    <default>false</default>
+                    <label>Professional Services - Projects</label>
+                </value>
+                <value>
+                    <fullName>QA - End to End</fullName>
+                    <default>false</default>
+                    <label>QA - End to End</label>
+                </value>
+                <value>
+                    <fullName>Quotes</fullName>
+                    <default>false</default>
+                    <label>Quotes</label>
+                </value>
+                <value>
+                    <fullName>Quotes FPX</fullName>
+                    <default>false</default>
+                    <label>Quotes FPX</label>
+                </value>
+                <value>
+                    <fullName>Reports</fullName>
+                    <default>false</default>
+                    <label>Reports</label>
+                </value>
+                <value>
+                    <fullName>RFP</fullName>
+                    <default>false</default>
+                    <label>RFP</label>
+                </value>
+                <value>
+                    <fullName>RMA</fullName>
+                    <default>false</default>
+                    <label>RMA</label>
+                </value>
+                <value>
+                    <fullName>Sales Contracts</fullName>
+                    <default>false</default>
+                    <label>Sales Contracts</label>
+                </value>
+                <value>
+                    <fullName>Security</fullName>
+                    <default>false</default>
+                    <label>Security</label>
+                </value>
+                <value>
+                    <fullName>SSO - Training</fullName>
+                    <default>false</default>
+                    <label>SSO - Training</label>
+                </value>
+                <value>
+                    <fullName>Training</fullName>
+                    <default>false</default>
+                    <label>Training</label>
+                </value>
+                <value>
+                    <fullName>Training Certis/ etc</fullName>
+                    <default>false</default>
+                    <label>Training Certis/ etc</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Seq_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Seq Number</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>So_That__c</fullName>
+        <externalId>false</externalId>
+        <label>Expected Result</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Sprint__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Sprint</label>
+        <referenceTo>Sprint__c</referenceTo>
+        <relationshipLabel>User Stories</relationshipLabel>
+        <relationshipName>User_Stories</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New</fullName>
+                    <color>#0B24BE</color>
+                    <default>true</default>
+                    <label>New</label>
+                </value>
+                <value>
+                    <fullName>Complete</fullName>
+                    <color>#009900</color>
+                    <default>false</default>
+                    <label>Complete</label>
+                </value>
+                <value>
+                    <fullName>Planned for Next Release</fullName>
+                    <default>false</default>
+                    <label>Planned for Next Release</label>
+                </value>
+                <value>
+                    <fullName>In progress</fullName>
+                    <default>false</default>
+                    <label>In progress</label>
+                </value>
+                <value>
+                    <fullName>Validation / QA</fullName>
+                    <default>false</default>
+                    <label>Validation / QA</label>
+                </value>
+                <value>
+                    <fullName>UAT</fullName>
+                    <default>false</default>
+                    <label>UAT</label>
+                </value>
+                <value>
+                    <fullName>Ready for Deployment</fullName>
+                    <default>false</default>
+                    <label>Ready for Deployment</label>
+                </value>
+                <value>
+                    <fullName>Closed</fullName>
+                    <default>false</default>
+                    <label>Closed</label>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                    <label>Cancelled</label>
+                </value>
+                <value>
+                    <fullName>Deferred for Future Release</fullName>
+                    <default>false</default>
+                    <label>Deferred for Future Release</label>
+                </value>
+                <value>
+                    <fullName>Failed</fullName>
+                    <default>false</default>
+                    <label>Failed</label>
+                </value>
+                <value>
+                    <fullName>Duplicate</fullName>
+                    <default>false</default>
+                    <label>Duplicate</label>
+                </value>
+                <value>
+                    <fullName>Deployed to Production</fullName>
+                    <default>false</default>
+                    <label>Deployed to Production</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Story_Summary__c</fullName>
+        <externalId>false</externalId>
+        <label>Story Summary</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Topic__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Topic</label>
+        <referenceTo>Topic__c</referenceTo>
+        <relationshipLabel>User Stories</relationshipLabel>
+        <relationshipName>User_Stories</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Configuration</fullName>
+                    <default>false</default>
+                    <label>Configuration</label>
+                </value>
+                <value>
+                    <fullName>Custom Coding/Apex</fullName>
+                    <default>false</default>
+                    <label>Custom Coding/Apex</label>
+                </value>
+                <value>
+                    <fullName>QA</fullName>
+                    <default>false</default>
+                    <label>QA</label>
+                </value>
+                <value>
+                    <fullName>Integration</fullName>
+                    <default>false</default>
+                    <label>Integration</label>
+                </value>
+                <value>
+                    <fullName>Data Migration</fullName>
+                    <default>false</default>
+                    <label>Data Migration</label>
+                </value>
+                <value>
+                    <fullName>Reports/Dashboards</fullName>
+                    <default>false</default>
+                    <label>Reports/Dashboards</label>
+                </value>
+                <value>
+                    <fullName>Security (Profiles/ Roles and Sharing settings)</fullName>
+                    <default>false</default>
+                    <label>Security (Profiles/ Roles and Sharing settings)</label>
+                </value>
+                <value>
+                    <fullName>UAT</fullName>
+                    <default>false</default>
+                    <label>UAT</label>
+                </value>
+                <value>
+                    <fullName>Deployment</fullName>
+                    <default>false</default>
+                    <label>Deployment</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>User Story</label>
+    <listViews>
+        <fullName>APS_December_2014_User_Stories</fullName>
+        <columns>NAME</columns>
+        <columns>Level_Two_Grouping__c</columns>
+        <columns>Harris_Broadcast_Priority__c</columns>
+        <columns>Status__c</columns>
+        <columns>As_A__c</columns>
+        <columns>I_Want__c</columns>
+        <columns>So_That__c</columns>
+        <columns>Pilot_Week__c</columns>
+        <columns>QA_Status__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>LOE__c</columns>
+        <columns>Burned__c</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Developer__c</field>
+            <operation>equals</operation>
+            <value>Raj Damera</value>
+        </filters>
+        <filters>
+            <field>Month_to_be_fixed__c</field>
+            <operation>equals</operation>
+            <value>Dec 2014</value>
+        </filters>
+        <filters>
+            <field>Customization_Details__c</field>
+            <operation>notEqual</operation>
+            <value>Research</value>
+        </filters>
+        <label>APS December 2014 User Stories</label>
+    </listViews>
+    <listViews>
+        <fullName>APS_Research_User_Stories</fullName>
+        <columns>NAME</columns>
+        <columns>Harris_Broadcast_Priority__c</columns>
+        <columns>Status__c</columns>
+        <columns>As_A__c</columns>
+        <columns>I_Want__c</columns>
+        <columns>So_That__c</columns>
+        <columns>Pilot_Week__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>LOE__c</columns>
+        <columns>Burned__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Developer__c</field>
+            <operation>equals</operation>
+            <value>Raj Damera</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Complete,Closed,Deferred</value>
+        </filters>
+        <filters>
+            <field>Customization_Details__c</field>
+            <operation>equals</operation>
+            <value>Research</value>
+        </filters>
+        <label>APS Research User Stories</label>
+    </listViews>
+    <listViews>
+        <fullName>APS_SFDC_Pilot_Critical_Items</fullName>
+        <columns>NAME</columns>
+        <columns>Approved__c</columns>
+        <columns>Developer__c</columns>
+        <columns>LOE__c</columns>
+        <columns>Parent_User_Story__c</columns>
+        <columns>Level_One_Group__c</columns>
+        <columns>Level_Two_Grouping__c</columns>
+        <columns>Phase__c</columns>
+        <columns>Harris_Broadcast_Priority__c</columns>
+        <columns>Status__c</columns>
+        <columns>QA_Status__c</columns>
+        <columns>Exists_in_Siebel__c</columns>
+        <columns>As_A__c</columns>
+        <columns>I_Want__c</columns>
+        <columns>So_That__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Harris_Broadcast_Priority__c</field>
+            <operation>equals</operation>
+            <value>0 - Must Have</value>
+        </filters>
+        <filters>
+            <field>Developer__c</field>
+            <operation>equals</operation>
+            <value>Raj Damera</value>
+        </filters>
+        <filters>
+            <field>Approved__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>APS SFDC Pilot Critical Items</label>
+        <sharedTo/>
+    </listViews>
+    <listViews>
+        <fullName>APS_User_Stories</fullName>
+        <columns>NAME</columns>
+        <columns>Level_Two_Grouping__c</columns>
+        <columns>Harris_Broadcast_Priority__c</columns>
+        <columns>Status__c</columns>
+        <columns>As_A__c</columns>
+        <columns>I_Want__c</columns>
+        <columns>So_That__c</columns>
+        <columns>Pilot_Week__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>LOE__c</columns>
+        <columns>Burned__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Developer__c</field>
+            <operation>equals</operation>
+            <value>Raj Damera</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Complete,Closed</value>
+        </filters>
+        <filters>
+            <field>Customization_Details__c</field>
+            <operation>notEqual</operation>
+            <value>Research</value>
+        </filters>
+        <label>APS User Stories</label>
+    </listViews>
+    <listViews>
+        <fullName>APS_User_Stories_New</fullName>
+        <columns>NAME</columns>
+        <columns>Harris_Broadcast_Priority__c</columns>
+        <columns>Status__c</columns>
+        <columns>As_A__c</columns>
+        <columns>I_Want__c</columns>
+        <columns>So_That__c</columns>
+        <columns>Pilot_Week__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>LOE__c</columns>
+        <columns>Burned__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Developer__c</field>
+            <operation>equals</operation>
+            <value>Raj Damera</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>New,In progress,Validation / QA</value>
+        </filters>
+        <label>APS User Stories New</label>
+    </listViews>
+    <listViews>
+        <fullName>AppShark_Assigned_User_Stories</fullName>
+        <columns>NAME</columns>
+        <columns>Status__c</columns>
+        <columns>Approved__c</columns>
+        <columns>Developer__c</columns>
+        <columns>LOE__c</columns>
+        <columns>Burned__c</columns>
+        <columns>Phase__c</columns>
+        <columns>Harris_Broadcast_Priority__c</columns>
+        <columns>Expected_Date__c</columns>
+        <columns>I_Want__c</columns>
+        <columns>So_That__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Sprint__c</field>
+            <operation>equals</operation>
+            <value>Sprint - Future Release</value>
+        </filters>
+        <filters>
+            <field>Developer__c</field>
+            <operation>equals</operation>
+            <value>Raj Damera</value>
+        </filters>
+        <label>AppShark Assigned User Stories</label>
+        <sharedTo/>
+    </listViews>
+    <listViews>
+        <fullName>My_User_Stories_Pilot_Week_1</fullName>
+        <columns>NAME</columns>
+        <columns>Status__c</columns>
+        <columns>As_A__c</columns>
+        <columns>I_Want__c</columns>
+        <columns>So_That__c</columns>
+        <columns>Pilot_Week__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Pilot_Week__c</field>
+            <operation>equals</operation>
+            <value>Week 1</value>
+        </filters>
+        <label>My User Stories - Pilot Week 1</label>
+    </listViews>
+    <listViews>
+        <fullName>My_User_Stories_Pilot_Week_3</fullName>
+        <columns>NAME</columns>
+        <columns>Status__c</columns>
+        <columns>As_A__c</columns>
+        <columns>I_Want__c</columns>
+        <columns>So_That__c</columns>
+        <columns>Pilot_Week__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Pilot_Week__c</field>
+            <operation>equals</operation>
+            <value>Week 3</value>
+        </filters>
+        <label>My User Stories - Pilot Week 3</label>
+    </listViews>
+    <listViews>
+        <fullName>SFDC_Pilot_Feedback</fullName>
+        <columns>NAME</columns>
+        <columns>Pilot_Week__c</columns>
+        <columns>Harris_Broadcast_Priority__c</columns>
+        <columns>Status__c</columns>
+        <columns>Approved__c</columns>
+        <columns>Developer__c</columns>
+        <columns>LOE__c</columns>
+        <columns>Phase__c</columns>
+        <columns>Expected_Date__c</columns>
+        <columns>As_A__c</columns>
+        <columns>I_Want__c</columns>
+        <columns>So_That__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Sprint__c</field>
+            <operation>equals</operation>
+            <value>Sprint - Future Release</value>
+        </filters>
+        <label>SFDC Pilot Feedback</label>
+        <sharedTo>
+            <group>Pilot_Group</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>SFDC_Sales_Cloud_Enhancements</fullName>
+        <columns>NAME</columns>
+        <columns>Approved__c</columns>
+        <columns>Developer__c</columns>
+        <columns>Status__c</columns>
+        <columns>QA_Status__c</columns>
+        <columns>LOE__c</columns>
+        <columns>Parent_User_Story__c</columns>
+        <columns>Level_One_Group__c</columns>
+        <columns>Level_Two_Grouping__c</columns>
+        <columns>Phase__c</columns>
+        <columns>Harris_Broadcast_Priority__c</columns>
+        <columns>Exists_in_Siebel__c</columns>
+        <columns>As_A__c</columns>
+        <columns>I_Want__c</columns>
+        <columns>So_That__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Harris_Broadcast_Priority__c</field>
+            <operation>equals</operation>
+            <value>0 - Must Have</value>
+        </filters>
+        <filters>
+            <field>Approved__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Sprint__c</field>
+            <operation>equals</operation>
+            <value>Sprint - Future Release</value>
+        </filters>
+        <label>SFDC Sales Cloud Enhancements</label>
+        <sharedTo>
+            <group>Sales_Cloud_Project</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>SFDC_Sales_Cloud_Enhancements_Etherios</fullName>
+        <columns>NAME</columns>
+        <columns>Approved__c</columns>
+        <columns>Developer__c</columns>
+        <columns>LOE__c</columns>
+        <columns>Parent_User_Story__c</columns>
+        <columns>Level_One_Group__c</columns>
+        <columns>Level_Two_Grouping__c</columns>
+        <columns>Phase__c</columns>
+        <columns>Harris_Broadcast_Priority__c</columns>
+        <columns>Status__c</columns>
+        <columns>QA_Status__c</columns>
+        <columns>Exists_in_Siebel__c</columns>
+        <columns>As_A__c</columns>
+        <columns>I_Want__c</columns>
+        <columns>So_That__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Harris_Broadcast_Priority__c</field>
+            <operation>equals</operation>
+            <value>0 - Must Have</value>
+        </filters>
+        <filters>
+            <field>Approved__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Developer__c</field>
+            <operation>equals</operation>
+            <value>Etherios</value>
+        </filters>
+        <label>SFDC Sales Cloud Enhancements - Etherios</label>
+    </listViews>
+    <listViews>
+        <fullName>SFDC_Sales_Cloud_Enhancements_Jaime</fullName>
+        <columns>NAME</columns>
+        <columns>Approved__c</columns>
+        <columns>Developer__c</columns>
+        <columns>Status__c</columns>
+        <columns>QA_Status__c</columns>
+        <columns>LOE__c</columns>
+        <columns>Parent_User_Story__c</columns>
+        <columns>Level_One_Group__c</columns>
+        <columns>Level_Two_Grouping__c</columns>
+        <columns>Phase__c</columns>
+        <columns>Harris_Broadcast_Priority__c</columns>
+        <columns>Exists_in_Siebel__c</columns>
+        <columns>As_A__c</columns>
+        <columns>I_Want__c</columns>
+        <columns>So_That__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Harris_Broadcast_Priority__c</field>
+            <operation>equals</operation>
+            <value>0 - Must Have</value>
+        </filters>
+        <filters>
+            <field>Approved__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Developer__c</field>
+            <operation>equals</operation>
+            <value>Jaime Cangas</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>New</value>
+        </filters>
+        <label>SFDC Sales Cloud Enhancements - Jaime</label>
+        <sharedTo>
+            <group>Sales_Cloud_Project</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>SFDC_Sales_Cloud_Enhancements_Jeff</fullName>
+        <columns>NAME</columns>
+        <columns>Approved__c</columns>
+        <columns>Developer__c</columns>
+        <columns>Status__c</columns>
+        <columns>QA_Status__c</columns>
+        <columns>LOE__c</columns>
+        <columns>Parent_User_Story__c</columns>
+        <columns>Level_One_Group__c</columns>
+        <columns>Level_Two_Grouping__c</columns>
+        <columns>Phase__c</columns>
+        <columns>Harris_Broadcast_Priority__c</columns>
+        <columns>Exists_in_Siebel__c</columns>
+        <columns>As_A__c</columns>
+        <columns>I_Want__c</columns>
+        <columns>So_That__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Harris_Broadcast_Priority__c</field>
+            <operation>equals</operation>
+            <value>0 - Must Have</value>
+        </filters>
+        <filters>
+            <field>Approved__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Developer__c</field>
+            <operation>equals</operation>
+            <value>Jeff Kurth</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>New,In progress</value>
+        </filters>
+        <label>SFDC Sales Cloud Enhancements - Jeff</label>
+        <sharedTo>
+            <group>Sales_Cloud_Project</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Sales_Cloud_Enhancements_Deployment</fullName>
+        <columns>NAME</columns>
+        <columns>Developer__c</columns>
+        <columns>Status__c</columns>
+        <columns>QA_Status__c</columns>
+        <columns>LOE__c</columns>
+        <columns>Parent_User_Story__c</columns>
+        <columns>Level_One_Group__c</columns>
+        <columns>Level_Two_Grouping__c</columns>
+        <columns>Phase__c</columns>
+        <columns>Harris_Broadcast_Priority__c</columns>
+        <columns>Exists_in_Siebel__c</columns>
+        <columns>As_A__c</columns>
+        <columns>I_Want__c</columns>
+        <columns>So_That__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Harris_Broadcast_Priority__c</field>
+            <operation>equals</operation>
+            <value>0 - Must Have</value>
+        </filters>
+        <filters>
+            <field>Approved__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Ready for Deployment,Complete</value>
+        </filters>
+        <label>Sales Cloud Enhancements - Deployment</label>
+        <sharedTo>
+            <group>Sales_Cloud_Project</group>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <label>User Story Name</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>User Stories</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>As_A__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>I_Want__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>So_That__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Sprint__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Harris_Broadcast_Priority__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>LOE__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Level_One_Group__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Level_Two_Grouping__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>As_A__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>I_Want__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>So_That__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Sprint__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Harris_Broadcast_Priority__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>LOE__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Status__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Level_One_Group__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Level_Two_Grouping__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>As_A__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>I_Want__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>So_That__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Sprint__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Level_One_Group__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Level_Two_Grouping__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Assigned_Project__c</searchFilterFields>
+        <searchFilterFields>Sprint__c</searchFilterFields>
+        <searchFilterFields>Status__c</searchFilterFields>
+        <searchFilterFields>Level_One_Group__c</searchFilterFields>
+        <searchFilterFields>Level_Two_Grouping__c</searchFilterFields>
+        <searchResultsAdditionalFields>As_A__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>I_Want__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>So_That__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Sprint__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Harris_Broadcast_Priority__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Developer__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Level_One_Group__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Level_Two_Grouping__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>PS Order</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>PS Orders</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- PS Orders --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Accounting Date --></help>
+        <label><!-- Accounting Date --></label>
+        <name>Accounting_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Adjustments --></help>
+        <label><!-- Adjustments --></label>
+        <name>Adjustments__c</name>
+    </fields>
+    <fields>
+        <help><!-- PM Assigned To --></help>
+        <label><!-- Assigned To --></label>
+        <name>Assigned_To__c</name>
+        <relationshipLabel><!-- PS Orders --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Booked Amount --></label>
+        <name>Booked_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Business Unit --></label>
+        <name>Business_Unit__c</name>
+    </fields>
+    <fields>
+        <help><!-- Contract No --></help>
+        <label><!-- Contract No --></label>
+        <name>Contract_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- End User Country --></label>
+        <name>Country__c</name>
+        <relationshipLabel><!-- PS Orders --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Customer Corporate --></label>
+        <name>Customer_Corporate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Customer Name --></help>
+        <label><!-- Customer Name --></label>
+        <name>Customer_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- End User Region --></label>
+        <name>End_User_Region__c</name>
+    </fields>
+    <fields>
+        <label><!-- End User Subregion --></label>
+        <name>End_User_Subregion__c</name>
+    </fields>
+    <fields>
+        <help><!-- End User --></help>
+        <label><!-- End User --></label>
+        <name>End_User__c</name>
+    </fields>
+    <fields>
+        <label><!-- FY --></label>
+        <name>FY__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item Class No --></label>
+        <name>Item_Class_No__c</name>
+    </fields>
+    <fields>
+        <help><!-- Order Net Sum in Local Currency --></help>
+        <label><!-- Order Net Sum --></label>
+        <name>Local_Net_Sum__c</name>
+    </fields>
+    <fields>
+        <help><!-- Media --></help>
+        <label><!-- Media --></label>
+        <name>Media__c</name>
+    </fields>
+    <fields>
+        <help><!-- Networking --></help>
+        <label><!-- Networking --></label>
+        <name>Networking__c</name>
+    </fields>
+    <fields>
+        <label><!-- ORD UID --></label>
+        <name>ORD_UID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Old Project --></label>
+        <name>Old_Project__c</name>
+        <relationshipLabel><!-- PS Orders --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Order Booked --></help>
+        <label><!-- Order Booked --></label>
+        <name>Order_Booked__c</name>
+    </fields>
+    <fields>
+        <help><!-- Order Currency --></help>
+        <label><!-- Order Currency --></label>
+        <name>Order_Currency__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Number --></label>
+        <name>Order_No_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Number --></label>
+        <name>Order_No__c</name>
+    </fields>
+    <fields>
+        <help><!-- Order Notes --></help>
+        <label><!-- Order Notes --></label>
+        <name>Order_Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Order Oracle Customer Number --></help>
+        <label><!-- Order Oracle Customer Number --></label>
+        <name>Order_Oracle_Customer_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- Order Rev Rec Date --></help>
+        <label><!-- Order Rev Rec Date --></label>
+        <name>Order_Rev_Rec_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Order Status --></help>
+        <label><!-- Order Status --></label>
+        <name>Order_Status__c</name>
+    </fields>
+    <fields>
+        <help><!-- Order Title --></help>
+        <label><!-- Order Title --></label>
+        <name>Order_Title__c</name>
+    </fields>
+    <fields>
+        <help><!-- Order Type --></help>
+        <label><!-- Order Type --></label>
+        <name>Order_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- PM Orig Rev Rec Date --></help>
+        <label><!-- PM Orig Rev Rec Date --></label>
+        <name>PM_Orig_Rev_Rec_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- PM Reason Revised Rev Rec Date --></help>
+        <label><!-- PM Reason Revised Rev Rec Date --></label>
+        <name>PM_Reason_Revised_Rev_Rec_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- PM Revised Rev Rec Date --></help>
+        <label><!-- PM Revised Rev Rec Date --></label>
+        <name>PM_Revised_Rev_Rec_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Playout --></help>
+        <label><!-- Playout --></label>
+        <name>Playout__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Family --></label>
+        <name>Product_Family__c</name>
+    </fields>
+    <fields>
+        <help><!-- Purchased Order --></help>
+        <label><!-- Purchased Order --></label>
+        <name>Purchased_Order__c</name>
+    </fields>
+    <fields>
+        <label><!-- QTR --></label>
+        <name>QTR__c</name>
+    </fields>
+    <fields>
+        <help><!-- Service --></help>
+        <label><!-- Service --></label>
+        <name>Service__c</name>
+    </fields>
+    <fields>
+        <help><!-- Top Hierarchy Customer Name --></help>
+        <label><!-- Top Hierarchy Customer Name --></label>
+        <name>Top_Hierarchy_Customer_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transaction Date --></label>
+        <name>Transaction_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Transmission --></help>
+        <label><!-- Transmission --></label>
+        <name>Transmission__c</name>
+    </fields>
+    <fields>
+        <label><!-- USD Net Net Sum --></label>
+        <name>USD_Net_Net_Sum__c</name>
+    </fields>
+    <fields>
+        <help><!-- USD Net Sum --></help>
+        <label><!-- USD Net Sum --></label>
+        <name>USD_Net_Sum__c</name>
+    </fields>
+    <layouts>
+        <layout>Admin Order Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Order Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

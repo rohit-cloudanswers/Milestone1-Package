@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>NA Editing &amp; News Service</name>
+    <queueMembers>
+        <users>
+            <user>allen.daniels@imaginecommunications.com</user>
+            <user>andrew.davis@imaginecommunications.old</user>
+            <user>david.orenstein@imaginecommunications.com</user>
+            <user>gerald.betty@imaginecommunications.com</user>
+            <user>gilberto.gomez@imaginecommunications.com</user>
+            <user>john.lucchese@imaginecommunications.com</user>
+            <user>juan.aguilar@imaginecommunications.com</user>
+            <user>julio.hernandez@imaginecommunications.com</user>
+            <user>kevin.kolde@imaginecommunications.com</user>
+            <user>luciano.lazo@imaginecommunications.com</user>
+            <user>lucio.padilla@imaginecommunications.com</user>
+            <user>ricardo.balladares@imaginecommunications.com</user>
+            <user>todd.povilaitis@imaginecommunications.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

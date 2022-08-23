@@ -1,0 +1,941 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Line_of_Business__c</fullName>
+        <externalId>false</externalId>
+        <label>Line of Business</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Media: Ad Sales</fullName>
+                    <default>false</default>
+                    <label>Media: Ad Sales</label>
+                </value>
+                <value>
+                    <fullName>Media: Agency</fullName>
+                    <default>false</default>
+                    <label>Media: Agency</label>
+                </value>
+                <value>
+                    <fullName>Media: Analytics</fullName>
+                    <default>false</default>
+                    <label>Media: Analytics</label>
+                </value>
+                <value>
+                    <fullName>Media: Program Scheduling</fullName>
+                    <default>false</default>
+                    <label>Media: Program Scheduling</label>
+                </value>
+                <value>
+                    <fullName>Media: Punctuate</fullName>
+                    <default>false</default>
+                    <label>Media: Punctuate</label>
+                </value>
+                <value>
+                    <fullName>Media: Traffic and Billing</fullName>
+                    <default>false</default>
+                    <label>Media: Traffic and Billing</label>
+                </value>
+                <value>
+                    <fullName>Networking: Command and Control</fullName>
+                    <default>false</default>
+                    <label>Networking: Command and Control</label>
+                </value>
+                <value>
+                    <fullName>Networking: Compress and Transport</fullName>
+                    <default>false</default>
+                    <label>Networking: Compress and Transport</label>
+                </value>
+                <value>
+                    <fullName>Networking: Multiviewers</fullName>
+                    <default>false</default>
+                    <label>Networking: Multiviewers</label>
+                </value>
+                <value>
+                    <fullName>Networking: Processing</fullName>
+                    <default>false</default>
+                    <label>Networking: Processing</label>
+                </value>
+                <value>
+                    <fullName>Networking: Routing Switchers</fullName>
+                    <default>false</default>
+                    <label>Networking: Routing Switchers</label>
+                </value>
+                <value>
+                    <fullName>Networking: T&amp;M</fullName>
+                    <default>false</default>
+                    <label>Networking: T&amp;M</label>
+                </value>
+                <value>
+                    <fullName>Playout: Asset Management</fullName>
+                    <default>false</default>
+                    <label>Playout: Asset Management</label>
+                </value>
+                <value>
+                    <fullName>Playout: Automation</fullName>
+                    <default>false</default>
+                    <label>Playout: Automation</label>
+                </value>
+                <value>
+                    <fullName>Playout: Editing</fullName>
+                    <default>false</default>
+                    <label>Playout: Editing</label>
+                </value>
+                <value>
+                    <fullName>Playout: Graphics</fullName>
+                    <default>false</default>
+                    <label>Playout: Graphics</label>
+                </value>
+                <value>
+                    <fullName>Playout: Infocaster</fullName>
+                    <default>false</default>
+                    <label>Playout: Infocaster</label>
+                </value>
+                <value>
+                    <fullName>Playout: Integrated Playout</fullName>
+                    <default>false</default>
+                    <label>Playout: Integrated Playout</label>
+                </value>
+                <value>
+                    <fullName>Playout: Master Control and Brand</fullName>
+                    <default>false</default>
+                    <label>Playout: Master Control and Brand</label>
+                </value>
+                <value>
+                    <fullName>Playout: Media Server</fullName>
+                    <default>false</default>
+                    <label>Playout: Media Server</label>
+                </value>
+                <value>
+                    <fullName>Playout: Storage</fullName>
+                    <default>false</default>
+                    <label>Playout: Storage</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <externalId>false</externalId>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Product Breakout</relationshipLabel>
+        <relationshipName>Product_Breakout</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Product_Breakout_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Breakout Amount</label>
+        <precision>9</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Product_Group__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Group</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Line_of_Business__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1RU Processing</fullName>
+                    <default>false</default>
+                    <label>1RU Processing</label>
+                </value>
+                <value>
+                    <fullName>6800</fullName>
+                    <default>false</default>
+                    <label>6800</label>
+                </value>
+                <value>
+                    <fullName>ADC</fullName>
+                    <default>false</default>
+                    <label>ADC</label>
+                </value>
+                <value>
+                    <fullName>ASG Other</fullName>
+                    <default>false</default>
+                    <label>ASG Other</label>
+                </value>
+                <value>
+                    <fullName>AdConnections</fullName>
+                    <default>false</default>
+                    <label>AdConnections</label>
+                </value>
+                <value>
+                    <fullName>Adtraq</fullName>
+                    <default>false</default>
+                    <label>Adtraq</label>
+                </value>
+                <value>
+                    <fullName>Asset Mgmt</fullName>
+                    <default>false</default>
+                    <label>Asset Mgmt</label>
+                </value>
+                <value>
+                    <fullName>Audio</fullName>
+                    <default>false</default>
+                    <label>Audio</label>
+                </value>
+                <value>
+                    <fullName>Branding</fullName>
+                    <default>false</default>
+                    <label>Branding</label>
+                </value>
+                <value>
+                    <fullName>Broadcast Master</fullName>
+                    <default>false</default>
+                    <label>Broadcast Master</label>
+                </value>
+                <value>
+                    <fullName>Clock_Sync_Test</fullName>
+                    <default>false</default>
+                    <label>Clock_Sync_Test</label>
+                </value>
+                <value>
+                    <fullName>Compressed Domain</fullName>
+                    <default>false</default>
+                    <label>Compressed Domain</label>
+                </value>
+                <value>
+                    <fullName>Config &amp; Control</fullName>
+                    <default>false</default>
+                    <label>Config &amp; Control</label>
+                </value>
+                <value>
+                    <fullName>D-Series</fullName>
+                    <default>false</default>
+                    <label>D-Series</label>
+                </value>
+                <value>
+                    <fullName>DA</fullName>
+                    <default>false</default>
+                    <label>DA</label>
+                </value>
+                <value>
+                    <fullName>Demodulators</fullName>
+                    <default>false</default>
+                    <label>Demodulators</label>
+                </value>
+                <value>
+                    <fullName>EAS</fullName>
+                    <default>false</default>
+                    <label>EAS</label>
+                </value>
+                <value>
+                    <fullName>Editing &amp; Prodn</fullName>
+                    <default>false</default>
+                    <label>Editing &amp; Prodn</label>
+                </value>
+                <value>
+                    <fullName>Fiber</fullName>
+                    <default>false</default>
+                    <label>Fiber</label>
+                </value>
+                <value>
+                    <fullName>Handhelds</fullName>
+                    <default>false</default>
+                    <label>Handhelds</label>
+                </value>
+                <value>
+                    <fullName>ICE</fullName>
+                    <default>false</default>
+                    <label>ICE</label>
+                </value>
+                <value>
+                    <fullName>IRD</fullName>
+                    <default>false</default>
+                    <label>IRD</label>
+                </value>
+                <value>
+                    <fullName>Infocaster</fullName>
+                    <default>false</default>
+                    <label>Infocaster</label>
+                </value>
+                <value>
+                    <fullName>Infrastructure</fullName>
+                    <default>false</default>
+                    <label>Infrastructure</label>
+                </value>
+                <value>
+                    <fullName>Landmark</fullName>
+                    <default>false</default>
+                    <label>Landmark</label>
+                </value>
+                <value>
+                    <fullName>Larger Routers</fullName>
+                    <default>false</default>
+                    <label>Larger Routers</label>
+                </value>
+                <value>
+                    <fullName>Legacy</fullName>
+                    <default>false</default>
+                    <label>Legacy</label>
+                </value>
+                <value>
+                    <fullName>MCP-Compression</fullName>
+                    <default>false</default>
+                    <label>MCP-Compression</label>
+                </value>
+                <value>
+                    <fullName>MCP-Processing</fullName>
+                    <default>false</default>
+                    <label>MCP-Processing</label>
+                </value>
+                <value>
+                    <fullName>MPEG Monitoring</fullName>
+                    <default>false</default>
+                    <label>MPEG Monitoring</label>
+                </value>
+                <value>
+                    <fullName>Master Control</fullName>
+                    <default>false</default>
+                    <label>Master Control</label>
+                </value>
+                <value>
+                    <fullName>Modular Processing</fullName>
+                    <default>false</default>
+                    <label>Modular Processing</label>
+                </value>
+                <value>
+                    <fullName>Monitoring AVP</fullName>
+                    <default>false</default>
+                    <label>Monitoring AVP</label>
+                </value>
+                <value>
+                    <fullName>NetVX</fullName>
+                    <default>false</default>
+                    <label>NetVX</label>
+                </value>
+                <value>
+                    <fullName>Netgain</fullName>
+                    <default>false</default>
+                    <label>Netgain</label>
+                </value>
+                <value>
+                    <fullName>Next</fullName>
+                    <default>false</default>
+                    <label>Next</label>
+                </value>
+                <value>
+                    <fullName>Novar</fullName>
+                    <default>false</default>
+                    <label>Novar</label>
+                </value>
+                <value>
+                    <fullName>OEM</fullName>
+                    <default>false</default>
+                    <label>OEM</label>
+                </value>
+                <value>
+                    <fullName>OSi Traffic_OSiCable</fullName>
+                    <default>false</default>
+                    <label>OSi Traffic_OSiCable</label>
+                </value>
+                <value>
+                    <fullName>Paradigm</fullName>
+                    <default>false</default>
+                    <label>Paradigm</label>
+                </value>
+                <value>
+                    <fullName>Product - Graphics</fullName>
+                    <default>false</default>
+                    <label>Product - Graphics</label>
+                </value>
+                <value>
+                    <fullName>Product - Multiview</fullName>
+                    <default>false</default>
+                    <label>Product - Multiview</label>
+                </value>
+                <value>
+                    <fullName>Product - Storage</fullName>
+                    <default>false</default>
+                    <label>Product - Storage</label>
+                </value>
+                <value>
+                    <fullName>Punctuate</fullName>
+                    <default>false</default>
+                    <label>Punctuate</label>
+                </value>
+                <value>
+                    <fullName>QC</fullName>
+                    <default>false</default>
+                    <label>QC</label>
+                </value>
+                <value>
+                    <fullName>RepLine_MediaLine</fullName>
+                    <default>false</default>
+                    <label>RepLine_MediaLine</label>
+                </value>
+                <value>
+                    <fullName>SelenioFlex</fullName>
+                    <default>false</default>
+                    <label>SelenioFlex</label>
+                </value>
+                <value>
+                    <fullName>Servers</fullName>
+                    <default>false</default>
+                    <label>Servers</label>
+                </value>
+                <value>
+                    <fullName>Service - Asset Mgmt</fullName>
+                    <default>false</default>
+                    <label>Service - Asset Mgmt</label>
+                </value>
+                <value>
+                    <fullName>Service - Auto</fullName>
+                    <default>false</default>
+                    <label>Service - Auto</label>
+                </value>
+                <value>
+                    <fullName>Service - SEG</fullName>
+                    <default>false</default>
+                    <label>Service - SEG</label>
+                </value>
+                <value>
+                    <fullName>Service - VNS</fullName>
+                    <default>false</default>
+                    <label>Service - VNS</label>
+                </value>
+                <value>
+                    <fullName>Service AVP</fullName>
+                    <default>false</default>
+                    <label>Service AVP</label>
+                </value>
+                <value>
+                    <fullName>Service RMM</fullName>
+                    <default>false</default>
+                    <label>Service RMM</label>
+                </value>
+                <value>
+                    <fullName>Service T&amp;M</fullName>
+                    <default>false</default>
+                    <label>Service T&amp;M</label>
+                </value>
+                <value>
+                    <fullName>Small Routers</fullName>
+                    <default>false</default>
+                    <label>Small Routers</label>
+                </value>
+                <value>
+                    <fullName>TM QuiC</fullName>
+                    <default>false</default>
+                    <label>TM QuiC</label>
+                </value>
+                <value>
+                    <fullName>VTM TVM - Series</fullName>
+                    <default>false</default>
+                    <label>VTM TVM - Series</label>
+                </value>
+                <value>
+                    <fullName>Vision</fullName>
+                    <default>false</default>
+                    <label>Vision</label>
+                </value>
+                <value>
+                    <fullName>Professional Services - AM</fullName>
+                    <default>false</default>
+                    <label>Professional Services - AM</label>
+                </value>
+                <value>
+                    <fullName>Professional Services - AVP</fullName>
+                    <default>false</default>
+                    <label>Professional Services - AVP</label>
+                </value>
+                <value>
+                    <fullName>Professional Services - Auto</fullName>
+                    <default>false</default>
+                    <label>Professional Services - Auto</label>
+                </value>
+                <value>
+                    <fullName>Professional Services - RMM</fullName>
+                    <default>false</default>
+                    <label>Professional Services - RMM</label>
+                </value>
+                <value>
+                    <fullName>Professional Services - SEG</fullName>
+                    <default>false</default>
+                    <label>Professional Services - SEG</label>
+                </value>
+                <value>
+                    <fullName>Professional Services - T&amp;M</fullName>
+                    <default>false</default>
+                    <label>Professional Services - T&amp;M</label>
+                </value>
+                <value>
+                    <fullName>Professional Services - VNS</fullName>
+                    <default>false</default>
+                    <label>Professional Services - VNS</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Networking: Routing Switchers</controllingFieldValue>
+                <valueName>Larger Routers</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Networking: Routing Switchers</controllingFieldValue>
+                <valueName>Service RMM</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Networking: Routing Switchers</controllingFieldValue>
+                <valueName>Small Routers</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Networking: Routing Switchers</controllingFieldValue>
+                <valueName>Professional Services - RMM</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Networking: T&amp;M</controllingFieldValue>
+                <valueName>Audio</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Networking: T&amp;M</controllingFieldValue>
+                <valueName>Clock_Sync_Test</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Networking: T&amp;M</controllingFieldValue>
+                <valueName>Demodulators</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Networking: T&amp;M</controllingFieldValue>
+                <valueName>Handhelds</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Networking: T&amp;M</controllingFieldValue>
+                <valueName>MPEG Monitoring</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Networking: T&amp;M</controllingFieldValue>
+                <valueName>Service T&amp;M</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Networking: T&amp;M</controllingFieldValue>
+                <valueName>TM QuiC</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Networking: T&amp;M</controllingFieldValue>
+                <valueName>VTM TVM - Series</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Networking: T&amp;M</controllingFieldValue>
+                <valueName>Professional Services - T&amp;M</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Playout: Asset Management</controllingFieldValue>
+                <valueName>Asset Mgmt</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Playout: Asset Management</controllingFieldValue>
+                <valueName>Service - Asset Mgmt</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Playout: Asset Management</controllingFieldValue>
+                <valueName>Professional Services - AM</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Playout: Automation</controllingFieldValue>
+                <valueName>ADC</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Playout: Automation</controllingFieldValue>
+                <valueName>D-Series</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Playout: Automation</controllingFieldValue>
+                <valueName>Service - Auto</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Playout: Automation</controllingFieldValue>
+                <valueName>Professional Services - Auto</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Playout: Editing</controllingFieldValue>
+                <valueName>Editing &amp; Prodn</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Playout: Graphics</controllingFieldValue>
+                <valueName>Product - Graphics</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Playout: Infocaster</controllingFieldValue>
+                <valueName>Infocaster</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Playout: Integrated Playout</controllingFieldValue>
+                <valueName>Compressed Domain</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Playout: Master Control and Brand</controllingFieldValue>
+                <valueName>Branding</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Playout: Master Control and Brand</controllingFieldValue>
+                <valueName>Master Control</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Media: Ad Sales</controllingFieldValue>
+                <valueName>AdConnections</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Media: Ad Sales</controllingFieldValue>
+                <valueName>Landmark</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Media: Agency</controllingFieldValue>
+                <valueName>ASG Other</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Media: Agency</controllingFieldValue>
+                <valueName>Adtraq</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Media: Agency</controllingFieldValue>
+                <valueName>EAS</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Media: Agency</controllingFieldValue>
+                <valueName>RepLine_MediaLine</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Media: Analytics</controllingFieldValue>
+                <valueName>Netgain</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Media: Program Scheduling</controllingFieldValue>
+                <valueName>Broadcast Master</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Media: Program Scheduling</controllingFieldValue>
+                <valueName>Vision</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Media: Punctuate</controllingFieldValue>
+                <valueName>Punctuate</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Media: Traffic and Billing</controllingFieldValue>
+                <valueName>Legacy</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Media: Traffic and Billing</controllingFieldValue>
+                <valueName>Novar</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Media: Traffic and Billing</controllingFieldValue>
+                <valueName>OSi Traffic_OSiCable</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Media: Traffic and Billing</controllingFieldValue>
+                <valueName>Paradigm</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Networking: Command and Control</controllingFieldValue>
+                <valueName>Config &amp; Control</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Networking: Compress and Transport</controllingFieldValue>
+                <valueName>6800</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Networking: Compress and Transport</controllingFieldValue>
+                <valueName>ICE</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Networking: Compress and Transport</controllingFieldValue>
+                <valueName>IRD</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Networking: Compress and Transport</controllingFieldValue>
+                <valueName>MCP-Compression</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Networking: Compress and Transport</controllingFieldValue>
+                <valueName>NetVX</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Networking: Compress and Transport</controllingFieldValue>
+                <valueName>Next</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Networking: Compress and Transport</controllingFieldValue>
+                <valueName>SelenioFlex</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Networking: Compress and Transport</controllingFieldValue>
+                <valueName>Service - VNS</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Networking: Compress and Transport</controllingFieldValue>
+                <valueName>Professional Services - VNS</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Networking: Multiviewers</controllingFieldValue>
+                <valueName>Product - Multiview</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Playout: Media Server</controllingFieldValue>
+                <valueName>Servers</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Playout: Media Server</controllingFieldValue>
+                <valueName>Service - SEG</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Playout: Media Server</controllingFieldValue>
+                <valueName>Professional Services - SEG</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Networking: Processing</controllingFieldValue>
+                <valueName>1RU Processing</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Networking: Processing</controllingFieldValue>
+                <valueName>DA</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Networking: Processing</controllingFieldValue>
+                <valueName>Fiber</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Networking: Processing</controllingFieldValue>
+                <valueName>MCP-Processing</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Networking: Processing</controllingFieldValue>
+                <valueName>Modular Processing</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Networking: Processing</controllingFieldValue>
+                <valueName>Monitoring AVP</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Networking: Processing</controllingFieldValue>
+                <valueName>Service AVP</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Networking: Processing</controllingFieldValue>
+                <valueName>Professional Services - AVP</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Playout: Storage</controllingFieldValue>
+                <valueName>Infrastructure</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Playout: Storage</controllingFieldValue>
+                <valueName>OEM</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Playout: Storage</controllingFieldValue>
+                <valueName>Product - Storage</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Playout: Storage</controllingFieldValue>
+                <valueName>QC</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <label>Product Breakout</label>
+    <nameField>
+        <displayFormat>PB-{00}</displayFormat>
+        <label>Product Breakout Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Product Breakout</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>New_Product_Breakout</fullName>
+        <availability>online</availability>
+        <description>Button to add a new product breakout record and reroute back to Opportunity layout on Save.</description>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>New Product Breakout</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>{!URLFOR( $Action.Product_Breakout__c.New , null, [saveURL=Opportunity.Link, retURL=Opportunity.Link, CF00Ni000000EriOA_lkid=Opportunity.Id , CF00Ni000000EriOA =Opportunity.Name,Product_Breakout__c.CurrencyIsoCode = TEXT(Opportunity.CurrencyIsoCode)])}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Product_Breakout_Partner</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>New Product Breakout</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>{!URLFOR( $Action.Product_Breakout__c.New , null, [saveURL=&apos;/partners/&apos;+Opportunity.Id, retURL=&apos;/partners/&apos;+Opportunity.Id, CF00Ni000000EriOA_lkid=Opportunity.Id , CF00Ni000000EriOA =Opportunity.Name,Product_Breakout__c.CurrencyIsoCode = TEXT(Opportunity.CurrencyIsoCode)])}</url>
+    </webLinks>
+</CustomObject>

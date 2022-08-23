@@ -1,0 +1,8 @@
+<design:component>
+    <design:attribute name="objectName" />
+    <design:attribute name="fieldLabel" />
+    <design:attribute name="field_API_text" />
+    <design:attribute name="selectedId" />
+    <design:attribute name="parentFieldId" />
+    <design:attribute name="parentRecordId" />
+</design:component>

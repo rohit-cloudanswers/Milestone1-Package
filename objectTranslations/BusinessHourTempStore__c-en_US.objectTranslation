@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>BusinessHourTempStore</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>BusinessHourTempStores</value>
+    </caseValues>
+    <fields>
+        <label><!-- Business Hours ID --></label>
+        <name>Business_Hours_ID__c</name>
+        <relationshipLabel><!-- BusinessHourTempStores --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Business Hours Name --></label>
+        <name>Business_Hours_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- CoverageFriday --></label>
+        <name>CoverageFriday__c</name>
+    </fields>
+    <fields>
+        <label><!-- CoverageMonnday --></label>
+        <name>CoverageMonnday__c</name>
+    </fields>
+    <fields>
+        <label><!-- CoverageSaturday --></label>
+        <name>CoverageSaturday__c</name>
+    </fields>
+    <fields>
+        <label><!-- CoverageSunday --></label>
+        <name>CoverageSunday__c</name>
+    </fields>
+    <fields>
+        <label><!-- CoverageThursday --></label>
+        <name>CoverageThursday__c</name>
+    </fields>
+    <fields>
+        <label><!-- CoverageTuesday --></label>
+        <name>CoverageTuesday__c</name>
+    </fields>
+    <fields>
+        <label><!-- CoverageWednesday --></label>
+        <name>CoverageWednesday__c</name>
+    </fields>
+    <fields>
+        <label><!-- EndTime --></label>
+        <name>EndTime__c</name>
+    </fields>
+    <fields>
+        <label><!-- Integration Id --></label>
+        <name>Integration_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsDefault --></label>
+        <name>IsDefault__c</name>
+    </fields>
+    <fields>
+        <label><!-- StartTime --></label>
+        <name>StartTime__c</name>
+    </fields>
+    <fields>
+        <label><!-- TimeZoneSIDKey --></label>
+        <name>TimeZoneSIDKey__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

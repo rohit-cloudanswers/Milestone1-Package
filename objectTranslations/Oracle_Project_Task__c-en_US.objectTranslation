@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Oracle Project Task</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Oracle Project Tasks</value>
+    </caseValues>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Comment__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of Oracle Expenses attached to this Task. --></help>
+        <label><!-- # of Expenses --></label>
+        <name>Number_of_Expenses__c</name>
+    </fields>
+    <fields>
+        <label><!-- Oracle Project Number --></label>
+        <name>Oracle_Project_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Oracle Project --></label>
+        <name>Oracle_Project__c</name>
+        <relationshipLabel><!-- Oracle Project Tasks --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Parent Task Id --></label>
+        <name>Parent_Task_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Task Number --></label>
+        <name>Parent_Task_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Id --></label>
+        <name>Project_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sum of Expense Reports --></label>
+        <name>Sum_of_Expense_Reports__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sum of Supplier Invoices --></label>
+        <name>Sum_of_Supplier_Invoices__c</name>
+    </fields>
+    <fields>
+        <label><!-- Task End Date --></label>
+        <name>Task_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Task Id --></label>
+        <name>Task_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Task Number --></label>
+        <name>Task_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Task Start Date --></label>
+        <name>Task_Start_Date__c</name>
+    </fields>
+    <layouts>
+        <layout>Oracle Project Task Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

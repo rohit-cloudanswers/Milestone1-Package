@@ -1,0 +1,89 @@
+<apex:component controller="ShowProductReportDataCtrl" access="global" >
+  <apex:attribute name="qId" type="String" assignTo="{!quoteId}" description="Pass quoteId"/>
+  <apex:attribute name="exportCode" type="String" assignTo="{!exportCurrency}" description="Export currency"/>
+    
+    <apex:variable var="businessLineData" value="{!BusinessUnitData}" />
+  <apex:outputPanel rendered="{!AND(NOT(ISBLANK(businessLineData)), NOT(businessLineData.hasError))}" layout="none">
+      DRAFT Product Revenue by Business Line:<br/> 
+      <table id="business_data" border="1" cellspacing="1" cellpadding="2" >
+          <tr>
+            <td align="center" >
+
+            </td>
+            <td align="center" style="font-size:13px;font-weight: bold;background-color: #D8F3F7;">
+              OEM Vendor
+            </td>
+            <apex:repeat value="{!businessLineData.columnOrder}" var="index" >
+            <apex:variable value="{!businessLineData.columns[index]}" var="dataTemp" /> 
+              <td  align="center" style="{!IF((index=''),'font-weight: bold;background-color: #DCDCDC;','font-size:13px;font-weight: bold;background-color: #D8F3F7;')}" colspan="{!dataTemp.size}" rowspan="{!IF((index=''),2,1)}">
+                {!index}
+                <apex:outputPanel rendered="{!(index='')}" layout="none">
+                  Grand Total
+                </apex:outputPanel>
+              </td>
+            </apex:repeat>
+          </tr>
+          <tr>
+            <td align="center" style="font-size:13px;font-weight: bold;background-color: #D8F3F7;">
+              Business Unit
+            </td>
+            <td align="center" style="font-size:13px;font-weight: bold;background-color: #D8F3F7;">
+              Product Type
+            </td>
+            <apex:repeat value="{!businessLineData.columnOrder}" var="index" >
+              <apex:repeat value="{!businessLineData.columns[index]}"  var="col">
+                <apex:outputPanel rendered="{!NOT(index='')}" layout="none">
+                  <td align="center" style="{!IF((index=''),'font-weight: bold;background-color: #DCDCDC;','font-size:13px;font-weight: bold;background-color: #D8F3F7;')}" >
+                      {!col.label}
+                  </td>
+                </apex:outputPanel>
+              </apex:repeat>
+            </apex:repeat>
+          </tr>
+          <apex:repeat value="{!businessLineData.rows}" var="row"> 
+              <tr>
+                  <td align="center" style="font-weight: bold;background-color: #DCDCDC;" >
+                      {!row.label}
+                  </td>
+                  <td style="{!IF((row.key='T'),'font-weight: bold;background-color: #DCDCDC;','')}" >
+                    <table>
+                        <apex:repeat value="{!businessLineData.aggregateInfo}" var="agrColumn">
+                            <tr><td style="white-space: nowrap;">{!agrColumn.label}</td></tr>      
+                        </apex:repeat>
+                    </table>
+                  </td>
+                  <apex:repeat value="{!businessLineData.columnOrder}" var="index" >
+                    <apex:repeat value="{!businessLineData.columns[index]}"  var="col">
+                      <apex:variable value="{!row.key}!{!col.key}"  var="dataKey"/>
+                        <td style="{! IF(OR(col.key='T',row.key='T'),'font-weight: bold;background-color: #DCDCDC;','')}" align="right">
+                            <table>
+                                <apex:repeat value="{!businessLineData.data[dataKey]}" var="keyData">
+                                    <tr>
+                                        <td align="right" >
+                                            {!keyData}
+                                        </td>
+                                    </tr>
+                                </apex:repeat>
+                                <tr>
+                                    <td>
+                                        
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                        </td>
+                      </apex:repeat>
+                  </apex:repeat>
+              </tr>
+          </apex:repeat>
+      </table>
+  </apex:outputPanel>
+    <apex:outputPanel rendered="{!AND(businessLineData.hasError)}">
+        <apex:outputPanel rendered="{!NOT(ISBLANK(exportCurrency))}" layout="block">
+            <p id="business_data">--</p>
+        </apex:outputPanel>
+        <apex:outputPanel rendered="{!ISBLANK(exportCurrency)}">
+            Please <a href="{!reportUrl}" target="_blank">click here</a> to view Product Revenue by Business Line for this Quote.
+        </apex:outputPanel>
+    </apex:outputPanel>
+</apex:component>

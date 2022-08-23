@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>MPM+ Project Resource</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>MPM+ Project Resources</value>
+    </caseValues>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Project Resources --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Displays either the user or contact email based on the record type. --></help>
+        <label><!-- Email --></label>
+        <name>Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Old_Resource_Id --></label>
+        <name>Old_Resource_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone --></label>
+        <name>Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Resources --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Resource --></label>
+        <name>Resource__c</name>
+        <relationshipLabel><!-- Projects --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- If the resource needs to be sent a survey when clicking the Send Survey button check this off.  Currently only available for Media Training and Consulting --></help>
+        <label><!-- Send Survey? --></label>
+        <name>Send_Survey__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>3PV System Engineer</masterLabel>
+            <translation><!-- 3PV System Engineer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contractor</masterLabel>
+            <translation><!-- Contractor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Contact</masterLabel>
+            <translation><!-- Customer Contact --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Satisfaction Contact</masterLabel>
+            <translation><!-- Customer Satisfaction Contact --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Engineer</masterLabel>
+            <translation><!-- Engineer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enterprise Solutions Manager</masterLabel>
+            <translation><!-- Enterprise Solutions Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Field Engineer</masterLabel>
+            <translation><!-- Field Engineer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Primary Project Manager</masterLabel>
+            <translation><!-- Primary Project Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Project Manager</masterLabel>
+            <translation><!-- Project Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Secondary Project Manager</masterLabel>
+            <translation><!-- Secondary Project Manager --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- User --></label>
+        <name>User__c</name>
+        <relationshipLabel><!-- MPM+ Project Resources --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>MPM+ Project Resource Contact</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>MPM+ Project Resource User</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Contact --></label>
+        <name>Contact</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- User --></label>
+        <name>User</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,23 @@
+<apex:page >
+    <script>
+    	var caseId = '{!$CurrentPage.parameters.cid}';
+    	var taskId = '{!$CurrentPage.parameters.tid}';
+    	var milestoneId = '{!$CurrentPage.parameters.mid}';
+    	var projectId = '{!$CurrentPage.parameters.pid}';
+    	var oppId = '{!$CurrentPage.parameters.oid}';
+    
+    	var url = '/apex/TimeSheet';
+    	if(caseId) {
+            url += '?id=' + caseId;
+        } else if(oppId) {
+            url += '?id=' + oppId;
+        } else if(taskId) {
+            url += '?id=' + taskId;
+        } else if(milestoneId) {
+            url += '?id=' + milestoneId;
+        } else if(projectId) {
+            url += '?id=' + projectId;
+        }
+    	window.location.href = url;
+    </script>
+</apex:page>

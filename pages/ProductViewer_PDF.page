@@ -1,0 +1,172 @@
+<apex:page controller="ProductViewerController" showHeader="false" sidebar="false" renderAs="pdf" applyBodyTag="false" readonly="true">
+<head>
+<style>
+    .tablehead {
+        border: 1px solid;
+        background-color: #99C68E;
+        font-weight: bold;
+        font-size: 50%;
+        padding: 1px 1px 1px 1px;
+        overflow-wrap:break-word;
+    }
+    
+    
+    
+    .totals {
+        background-color: #0099FF;
+        font-weight: bold;
+    }
+    
+    .infohead {
+      font-size: 50%;
+      font-weight: normal;
+      padding: 1px 1px 1px 1px;
+      overflow-wrap:break-word;      
+    }
+
+    .disclaimer {
+      font-size: 40%;
+      font-weight: normal;
+    }
+    
+    .odd {
+     border-bottom: 1px solid #000;
+     background-color: #ECE5B6;
+     padding: 1px 1px 1px 1px;
+     font-size: 78%;
+    }
+    
+    .even {
+       border-bottom: 1px solid #000;
+       padding: 1px 1px 1px 1px;
+       font-size: 78%;
+    }
+    
+    .highlightcol {
+        background-color: #FBB917;
+    }
+ /*@page {
+  margin-top:140px;
+  @top-center {
+   content: element(header);
+  }
+
+@bottom-right {
+ content: "Page " counter(page) " of " counter(pages); 
+ }
+  
+ }
+ 
+ div.header {
+  position: running(header);
+ }
+
+ .pagenumber:before {
+  content: counter(page);
+ }
+
+ .pagecount:before {
+  content: counter(pages);
+ }*/
+</style>
+</head>
+
+
+<body>
+
+
+<div class="content">
+<apex:pageBlock >
+<apex:pageblockTable value="{!ExportData}" var="p" id="pbtProductViewer">
+ <apex:column headerClass="tablehead" styleClass="infohead" headerValue="Part Number">
+ <apex:outputPanel layout="block" style="overflow-wrap:break-word;">
+ {!p.Part_No__c}
+ </apex:outputPanel>
+ </apex:column>
+ 
+ <apex:column headerClass="tablehead" styleClass="infohead" headerValue="List Price ({!$ObjectType.Product2.Fields.Can_Dom__c.label})" rendered="{!isCan_Dom}">
+  <apex:outputText value="{0, number, $ 0.00}">
+     <apex:param value="{!p.Can_Dom__c}" />
+  </apex:outputText>
+ </apex:column>
+ 
+ <apex:column headerClass="tablehead" styleClass="infohead" headerValue="List Price ({!$ObjectType.Product2.Fields.Euro__c.label})" rendered="{!isEuro}">
+  <apex:outputText value="{0, number, € 0.00}">
+    <apex:param value="{!p.Euro__c}" />
+  </apex:outputText>
+ </apex:column>
+ 
+ <apex:column headerClass="tablehead" styleClass="infohead" headerValue="List Price ({!$ObjectType.Product2.Fields.Asia_US__c.label})" rendered="{!isAsia_US}">
+  <apex:outputText value="{0, number, $ 0.00}">
+     <apex:param value="{!p.Asia_US__c}" />
+  </apex:outputText>
+ </apex:column>
+ 
+ <apex:column headerClass="tablehead" styleClass="infohead" headerValue="List Price ({!$ObjectType.Product2.Fields.UK_Dom__c.label})" rendered="{!isUK_Dom}">
+  <apex:outputText value="{0, number, £0.00}">
+     <apex:param value="{!p.UK_Dom__c}" />
+  </apex:outputText>
+ </apex:column>
+ 
+ <apex:column headerClass="tablehead" styleClass="infohead" headerValue="List Price ({!$ObjectType.Product2.Fields.US_Domestic__c.label})" rendered="{!isUS_Domestic}">
+  <apex:outputText value="{0, number, $ 0.00}">
+     <apex:param value="{!p.US_Domestic__c}" />
+  </apex:outputText>
+ </apex:column>
+ 
+ <apex:column headerClass="tablehead" styleClass="infohead" headerValue="List Price ({!$ObjectType.Product2.Fields.US_Int_l_EA__c.label})"  rendered="{!isUS_Int_l_EA}">
+  <apex:outputText value="{0, number, $ 0.00}">
+     <apex:param value="{!p.US_Int_l_EA__c}" />
+  </apex:outputText>
+ </apex:column>
+
+ <apex:column headerClass="tablehead" styleClass="infohead" headerValue="List Price ({!$ObjectType.Product2.Fields.Australia_Domestic__c.label})"  rendered="{!isAusDom}">
+  <apex:outputText value="{0, number, $ 0.00}">
+     <apex:param value="{!p.Australia_Domestic__c}" />
+  </apex:outputText>
+ </apex:column>
+ 
+ <apex:column headerClass="tablehead" styleClass="infohead" headerValue="List Price ({!$ObjectType.Product2.Fields.China_Domestic_US__c.label})"  rendered="{!isChinaDom}">
+  <apex:outputText value="{0, number, $ 0.00}">
+     <apex:param value="{!p.China_Domestic_US__c}" />
+  </apex:outputText>
+ </apex:column>
+    
+    
+ <apex:column headerClass="tablehead" styleClass="infohead" headerValue="List Price ({!$ObjectType.Product2.Fields.CALA_List_Price__c.label})" rendered="{!isCALA}">
+  <apex:outputText value="{0, number, $0.00}">
+     <apex:param value="{!p.CALA_List_Price__c}" />
+  </apex:outputText>
+ </apex:column>
+    
+ <!-- 
+ <apex:column headerClass="tablehead" styleClass="infohead" headerValue="List Price ({!$ObjectType.Product2.Fields.MESA_US__c.label})"  rendered="{!isMESA_US}">
+  <apex:outputText value="{0, number, $0.00}">
+     <apex:param value="{!p.MESA_US__c}" />
+  </apex:outputText>
+ </apex:column>-->
+ <apex:column headerClass="tablehead" styleClass="infohead" headerValue="{!$ObjectType.Product2.Fields.Name.label}">
+ <apex:outputPanel layout="block" style="overflow-wrap:break-word;">
+ {!p.Name}
+ </apex:outputPanel>
+ </apex:column>
+ <apex:column headerClass="tablehead" styleClass="infohead" headerValue="{!$ObjectType.Product2.Fields.Product_Line__c.label}" value="{!p.Product_Line__c}"/>
+ <apex:column headerClass="tablehead" styleClass="infohead" headerValue="{!$ObjectType.Product2.Fields.Product_Family__c.label}" value="{!p.Product_Family__c}"/>
+ <apex:column headerClass="tablehead" styleClass="infohead" headerValue="{!$ObjectType.Product2.Fields.Description.label}" value="{!p.Description}" />
+</apex:pageblockTable>
+</apex:pageBlock>
+</div>
+<hr/>
+<div class = "disclaimer">
+ <table>
+            <b>
+            <font size="1" color="blue">
+            <span>
+            DISCLAIMER: THIS IMAGINE COMMUNICATIONS PRODUCT PRICE SHEET CONTAINS MATERIAL THAT IS "IMAGINE COMMUNICATIONS PROPRIETARY INFORMATION" OR OTHERWISE CONFIDENTIAL, AND IT IS FOR THE SOLE USE OF IMAGINE COMMUNICATIONS AND ITS AUTHORIZED RESELLERS. ANY REVIEW, RELIANCE, DISTRIBUTION, DISCLOSURE, OR FORWARDING WITHOUT THE EXPRESS PERMISSION OF IMAGINE COMMUNICATIONS IS STRICTLY PROHIBITED. IF YOU ARE NOT AN AUTHORIZED RESELLER OF IMAGINE COMMUNICATIONS, PLEASE CONTACT IMAGINE COMMUNICATIONS AND DESTROY ALL COPIES WITHOUT READING, PRINTING, OR SAVING IN ANY MANNER.
+            </span>
+            </font>
+            </b>
+    </table><hr/>
+</div>
+ </body>
+</apex:page>

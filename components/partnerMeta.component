@@ -1,0 +1,9 @@
+<apex:component >
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'/>
+    <apex:stylesheet value="{!URLFOR($Resource.semantic,'packaged/css/index.css')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.semantic,'packaged/css/semantic.css')}"/>
+
+    <apex:includeScript value="{!URLFOR($Resource.semantic,'packaged/javascript/jquery-2.1.0.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.semantic,'packaged/javascript/jquery.address-1.5.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.semantic,'packaged/javascript/semantic.min.js')}"/>
+</apex:component>

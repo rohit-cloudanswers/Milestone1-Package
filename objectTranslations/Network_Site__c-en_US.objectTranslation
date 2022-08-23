@@ -1,0 +1,1788 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Network Site</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Network Sites</value>
+    </caseValues>
+    <fields>
+        <label><!-- Access Request Details --></label>
+        <name>Access_Request_Details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Access reset/issues --></label>
+        <name>Access_reset_issues__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Number --></label>
+        <name>AccountNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Source --></label>
+        <name>AccountSource__c</name>
+        <picklistValues>
+            <masterLabel>Customer Inquiry</masterLabel>
+            <translation><!-- Customer Inquiry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employee Referral</masterLabel>
+            <translation><!-- Employee Referral --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>External Referral</masterLabel>
+            <translation><!-- External Referral --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner</masterLabel>
+            <translation><!-- Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Public Relations</masterLabel>
+            <translation><!-- Public Relations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Seminar - Internal</masterLabel>
+            <translation><!-- Seminar - Internal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Seminar - Partner</masterLabel>
+            <translation><!-- Seminar - Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trade Show</masterLabel>
+            <translation><!-- Trade Show --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Web</masterLabel>
+            <translation><!-- Web --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Word of mouth</masterLabel>
+            <translation><!-- Word of mouth --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Account Manager --></label>
+        <name>Account_Manager__c</name>
+        <picklistValues>
+            <masterLabel>Gayla O&apos;Fihelly</masterLabel>
+            <translation><!-- Gayla O&apos;Fihelly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jennie Tidwell</masterLabel>
+            <translation><!-- Jennie Tidwell --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lisa Dunn</masterLabel>
+            <translation><!-- Lisa Dunn --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lori Linthicum</masterLabel>
+            <translation><!-- Lori Linthicum --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Matt Sautter</masterLabel>
+            <translation><!-- Matt Sautter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mercedes Stolcis</masterLabel>
+            <translation><!-- Mercedes Stolcis --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Michael Croney</masterLabel>
+            <translation><!-- Michael Croney --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patty Miller</masterLabel>
+            <translation><!-- Patty Miller --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Network Sites --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Annual Revenue --></label>
+        <name>AnnualRevenue__c</name>
+    </fields>
+    <fields>
+        <label><!-- App1 Server IP Address --></label>
+        <name>App1_Server_IP_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- App1 Server --></label>
+        <name>App1_Server__c</name>
+    </fields>
+    <fields>
+        <label><!-- App2 Server IP Address --></label>
+        <name>App2_Server_IP_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- App2 Server --></label>
+        <name>App2_Server__c</name>
+    </fields>
+    <fields>
+        <label><!-- Available to Support --></label>
+        <name>Available_to_Support__c</name>
+    </fields>
+    <fields>
+        <label><!-- Back Up Strategy --></label>
+        <name>Back_Up_Strategy__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Address --></label>
+        <name>BillingAddress__c</name>
+    </fields>
+    <fields>
+        <label><!-- CPU --></label>
+        <name>CPU__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case --></label>
+        <name>Case__c</name>
+        <relationshipLabel><!-- Network Sites --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Contract Expiration --></label>
+        <name>Contract_Expiration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Backup Software --></label>
+        <name>Customer_Backup_Software__c</name>
+        <picklistValues>
+            <masterLabel>Backup Exec</masterLabel>
+            <translation><!-- Backup Exec --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enterprise Manager RMAN</masterLabel>
+            <translation><!-- Enterprise Manager RMAN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Net Backup</masterLabel>
+            <translation><!-- Net Backup --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- DB 2 IP Address --></label>
+        <name>DB_2_IP_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- DB Alerts Installed --></label>
+        <name>DB_Alerts_Installed__c</name>
+    </fields>
+    <fields>
+        <label><!-- DB Capacity Available --></label>
+        <name>DB_Capacity__c</name>
+    </fields>
+    <fields>
+        <label><!-- DB IP Address --></label>
+        <name>DB_IP__c</name>
+    </fields>
+    <fields>
+        <label><!-- DB Server 2 --></label>
+        <name>DB_Server_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- DB Server 1 --></label>
+        <name>DB_Server__c</name>
+    </fields>
+    <fields>
+        <label><!-- DB Size --></label>
+        <name>DB_Size__c</name>
+    </fields>
+    <fields>
+        <label><!-- DB --></label>
+        <name>DB__c</name>
+    </fields>
+    <fields>
+        <label><!-- DT Completion Date --></label>
+        <name>DT_Completion_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- DT # --></label>
+        <name>DT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Installed --></label>
+        <name>Date_Installed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date of DB Size check --></label>
+        <name>Date_of_DB_Size_check__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description_Short__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Domain --></label>
+        <name>Domain__c</name>
+    </fields>
+    <fields>
+        <label><!-- EDA/Data Guard Server 1 IP Address --></label>
+        <name>EDA_Data_Guard_Server_1_IP_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- EDA/Data Guard Server 1 --></label>
+        <name>EDA_Data_Guard_Server_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- EDA/Data Guard Server 2 IP Address --></label>
+        <name>EDA_Data_Guard_Server_2_IP_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- EDA/Data Guard Server 2 --></label>
+        <name>EDA_Data_Guard_Server_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- EDA IP Address --></label>
+        <name>EDA_IP_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- EDA Password --></label>
+        <name>EDA_Password__c</name>
+    </fields>
+    <fields>
+        <label><!-- EDA Server --></label>
+        <name>EDA_Server__c</name>
+    </fields>
+    <fields>
+        <label><!-- EDA User Name --></label>
+        <name>EDA_User_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- EDS IP Address (2) --></label>
+        <name>EDS_IP_Address_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- EDS IP Address (1) --></label>
+        <name>EDS_IP_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- EDS Server (2) --></label>
+        <name>EDS_Server_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- EDS Server (1) --></label>
+        <name>EDS_Server__c</name>
+    </fields>
+    <fields>
+        <label><!-- Eclipse Login --></label>
+        <name>Eclipse_Login__c</name>
+    </fields>
+    <fields>
+        <label><!-- Eclipse Password --></label>
+        <name>Eclipse_Password__c</name>
+    </fields>
+    <fields>
+        <label><!-- Eclipse Plus RAC / Setup --></label>
+        <name>Eclipse_Plus_RAC__c</name>
+        <picklistValues>
+            <masterLabel>EPLUSRAC</masterLabel>
+            <translation><!-- EPLUSRAC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EXTERNAL</masterLabel>
+            <translation><!-- EXTERNAL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SUPPRAC</masterLabel>
+            <translation><!-- SUPPRAC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TECHRAC</masterLabel>
+            <translation><!-- TECHRAC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Test Bed #1</masterLabel>
+            <translation><!-- Test Bed #1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Test Bed #10</masterLabel>
+            <translation><!-- Test Bed #10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Test Bed #11</masterLabel>
+            <translation><!-- Test Bed #11 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Test Bed #12</masterLabel>
+            <translation><!-- Test Bed #12 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Test Bed #13</masterLabel>
+            <translation><!-- Test Bed #13 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Test Bed #14</masterLabel>
+            <translation><!-- Test Bed #14 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Test Bed #15</masterLabel>
+            <translation><!-- Test Bed #15 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Test Bed #16</masterLabel>
+            <translation><!-- Test Bed #16 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Test Bed #17</masterLabel>
+            <translation><!-- Test Bed #17 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Test Bed #2</masterLabel>
+            <translation><!-- Test Bed #2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Test Bed #3</masterLabel>
+            <translation><!-- Test Bed #3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Test Bed #4</masterLabel>
+            <translation><!-- Test Bed #4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Test Bed #5</masterLabel>
+            <translation><!-- Test Bed #5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Test Bed #6</masterLabel>
+            <translation><!-- Test Bed #6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Test Bed #7</masterLabel>
+            <translation><!-- Test Bed #7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Test Bed #8</masterLabel>
+            <translation><!-- Test Bed #8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Test Bed #9</masterLabel>
+            <translation><!-- Test Bed #9 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>xGL Test Bed #1</masterLabel>
+            <translation><!-- xGL Test Bed #1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>xGL Test Bed #10</masterLabel>
+            <translation><!-- xGL Test Bed #10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>xGL Test Bed #11</masterLabel>
+            <translation><!-- xGL Test Bed #11 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>xGL Test Bed #12</masterLabel>
+            <translation><!-- xGL Test Bed #12 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>xGL Test Bed #13</masterLabel>
+            <translation><!-- xGL Test Bed #13 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>xGL Test Bed #14</masterLabel>
+            <translation><!-- xGL Test Bed #14 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>xGL Test Bed #15</masterLabel>
+            <translation><!-- xGL Test Bed #15 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>xGL Test Bed #16</masterLabel>
+            <translation><!-- xGL Test Bed #16 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>xGL Test Bed #2</masterLabel>
+            <translation><!-- xGL Test Bed #2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>xGL Test Bed #3</masterLabel>
+            <translation><!-- xGL Test Bed #3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>xGL Test Bed #4</masterLabel>
+            <translation><!-- xGL Test Bed #4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>xGL Test Bed #5</masterLabel>
+            <translation><!-- xGL Test Bed #5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>xGL Test Bed #6</masterLabel>
+            <translation><!-- xGL Test Bed #6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>xGL Test Bed #7</masterLabel>
+            <translation><!-- xGL Test Bed #7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>xGL Test Bed #8</masterLabel>
+            <translation><!-- xGL Test Bed #8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>xGL Test Bed #9</masterLabel>
+            <translation><!-- xGL Test Bed #9 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Eclipse Version --></label>
+        <name>Eclipse_Version__c</name>
+        <picklistValues>
+            <masterLabel>3.2.4.0</masterLabel>
+            <translation><!-- 3.2.4.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3.2.4.1</masterLabel>
+            <translation><!-- 3.2.4.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3.2.5</masterLabel>
+            <translation><!-- 3.2.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3.2.6</masterLabel>
+            <translation><!-- 3.2.6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.0.0.0</masterLabel>
+            <translation><!-- 4.0.0.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.0.0.1</masterLabel>
+            <translation><!-- 4.0.0.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.0.1</masterLabel>
+            <translation><!-- 4.0.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.0.2</masterLabel>
+            <translation><!-- 4.0.2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.0.2.1</masterLabel>
+            <translation><!-- 4.0.2.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.0.2.2</masterLabel>
+            <translation><!-- 4.0.2.2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.0.2.3</masterLabel>
+            <translation><!-- 4.0.2.3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.0.3.0</masterLabel>
+            <translation><!-- 4.0.3.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.0.3.1</masterLabel>
+            <translation><!-- 4.0.3.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.0.3.2</masterLabel>
+            <translation><!-- 4.0.3.2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.0.3.3</masterLabel>
+            <translation><!-- 4.0.3.3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.0.4.0</masterLabel>
+            <translation><!-- 4.0.4.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.0.4.1</masterLabel>
+            <translation><!-- 4.0.4.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.0.4.2</masterLabel>
+            <translation><!-- 4.0.4.2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.0.4.3</masterLabel>
+            <translation><!-- 4.0.4.3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.1.0</masterLabel>
+            <translation><!-- 4.1.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.1.0.1</masterLabel>
+            <translation><!-- 4.1.0.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.1.0.2</masterLabel>
+            <translation><!-- 4.1.0.2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.1.0.3</masterLabel>
+            <translation><!-- 4.1.0.3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.1.0.4</masterLabel>
+            <translation><!-- 4.1.0.4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.1.1.0</masterLabel>
+            <translation><!-- 4.1.1.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.1.1.1</masterLabel>
+            <translation><!-- 4.1.1.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.1.1.2</masterLabel>
+            <translation><!-- 4.1.1.2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.1.1.3</masterLabel>
+            <translation><!-- 4.1.1.3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.1.2.0</masterLabel>
+            <translation><!-- 4.1.2.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.1.2.1</masterLabel>
+            <translation><!-- 4.1.2.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.1.3.0</masterLabel>
+            <translation><!-- 4.1.3.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.1.3.1</masterLabel>
+            <translation><!-- 4.1.3.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.2.0</masterLabel>
+            <translation><!-- 4.2.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.2.0.1</masterLabel>
+            <translation><!-- 4.2.0.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.2.1</masterLabel>
+            <translation><!-- 4.2.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.2.1.1</masterLabel>
+            <translation><!-- 4.2.1.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.2.2</masterLabel>
+            <translation><!-- 4.2.2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.2.2.1</masterLabel>
+            <translation><!-- 4.2.2.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.2.2.2</masterLabel>
+            <translation><!-- 4.2.2.2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.2.2.3</masterLabel>
+            <translation><!-- 4.2.2.3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.2.2.4</masterLabel>
+            <translation><!-- 4.2.2.4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.2.3.0</masterLabel>
+            <translation><!-- 4.2.3.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.2.3.1</masterLabel>
+            <translation><!-- 4.2.3.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.2.3.2</masterLabel>
+            <translation><!-- 4.2.3.2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.2.3.3</masterLabel>
+            <translation><!-- 4.2.3.3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.2.4.0</masterLabel>
+            <translation><!-- 4.2.4.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.2.4.1</masterLabel>
+            <translation><!-- 4.2.4.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.2.4.2</masterLabel>
+            <translation><!-- 4.2.4.2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.2.4.3</masterLabel>
+            <translation><!-- 4.2.4.3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.2.5</masterLabel>
+            <translation><!-- 4.2.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.3.0</masterLabel>
+            <translation><!-- 4.3.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.3.0.1</masterLabel>
+            <translation><!-- 4.3.0.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.3.1</masterLabel>
+            <translation><!-- 4.3.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.3.1.1</masterLabel>
+            <translation><!-- 4.3.1.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.3.1.2</masterLabel>
+            <translation><!-- 4.3.1.2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.3.1.3</masterLabel>
+            <translation><!-- 4.3.1.3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.4.0</masterLabel>
+            <translation><!-- 4.4.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.4.0.1</masterLabel>
+            <translation><!-- 4.4.0.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.4.0.2</masterLabel>
+            <translation><!-- 4.4.0.2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.4.0.3</masterLabel>
+            <translation><!-- 4.4.0.3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.4.0.4</masterLabel>
+            <translation><!-- 4.4.0.4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.4.0.5</masterLabel>
+            <translation><!-- 4.4.0.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.4.0.6</masterLabel>
+            <translation><!-- 4.4.0.6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.4.1</masterLabel>
+            <translation><!-- 4.4.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.4.2</masterLabel>
+            <translation><!-- 4.4.2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.4.3</masterLabel>
+            <translation><!-- 4.4.3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.5</masterLabel>
+            <translation><!-- 4.5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Employees --></label>
+        <name>Employees__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expiration Date --></label>
+        <name>Expiration_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fax --></label>
+        <name>Fax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Health Check Schedule --></label>
+        <name>Health_Check_Schedule__c</name>
+    </fields>
+    <fields>
+        <label><!-- Historical Account Name --></label>
+        <name>Historical_Account_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- IP Address --></label>
+        <name>IP_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Industry --></label>
+        <name>Industry__c</name>
+        <picklistValues>
+            <masterLabel>Agriculture</masterLabel>
+            <translation><!-- Agriculture --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Apparel</masterLabel>
+            <translation><!-- Apparel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Banking</masterLabel>
+            <translation><!-- Banking --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Biotechnology</masterLabel>
+            <translation><!-- Biotechnology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chemicals</masterLabel>
+            <translation><!-- Chemicals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Communications</masterLabel>
+            <translation><!-- Communications --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Construction</masterLabel>
+            <translation><!-- Construction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Consulting</masterLabel>
+            <translation><!-- Consulting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Education</masterLabel>
+            <translation><!-- Education --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Electronics</masterLabel>
+            <translation><!-- Electronics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Energy</masterLabel>
+            <translation><!-- Energy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Engineering</masterLabel>
+            <translation><!-- Engineering --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Entertainment</masterLabel>
+            <translation><!-- Entertainment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Environmental</masterLabel>
+            <translation><!-- Environmental --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finance</masterLabel>
+            <translation><!-- Finance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Food &amp; Beverage</masterLabel>
+            <translation><!-- Food &amp; Beverage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Government</masterLabel>
+            <translation><!-- Government --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Healthcare</masterLabel>
+            <translation><!-- Healthcare --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hospitality</masterLabel>
+            <translation><!-- Hospitality --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Insurance</masterLabel>
+            <translation><!-- Insurance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Machinery</masterLabel>
+            <translation><!-- Machinery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manufacturing</masterLabel>
+            <translation><!-- Manufacturing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Media</masterLabel>
+            <translation><!-- Media --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not For Profit</masterLabel>
+            <translation><!-- Not For Profit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Recreation</masterLabel>
+            <translation><!-- Recreation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail</masterLabel>
+            <translation><!-- Retail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shipping</masterLabel>
+            <translation><!-- Shipping --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technology</masterLabel>
+            <translation><!-- Technology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Telecommunications</masterLabel>
+            <translation><!-- Telecommunications --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transportation</masterLabel>
+            <translation><!-- Transportation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Utilities</masterLabel>
+            <translation><!-- Utilities --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Internal Backup Format --></label>
+        <name>Internal_Backup_Format__c</name>
+        <picklistValues>
+            <masterLabel>Cold</masterLabel>
+            <translation><!-- Cold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data Dump</masterLabel>
+            <translation><!-- Data Dump --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Export</masterLabel>
+            <translation><!-- Export --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hot</masterLabel>
+            <translation><!-- Hot --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incremental</masterLabel>
+            <translation><!-- Incremental --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Data.com Key --></label>
+        <name>Jigsaw__c</name>
+    </fields>
+    <fields>
+        <label><!-- Live date --></label>
+        <name>Live_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Max Headnets --></label>
+        <name>Max_Headnets__c</name>
+    </fields>
+    <fields>
+        <label><!-- Merge Server IP --></label>
+        <name>Merge_Server_IP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Merge Server Name --></label>
+        <name>Merge_Server_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- NT Login --></label>
+        <name>NT_Login__c</name>
+    </fields>
+    <fields>
+        <label><!-- NT Password --></label>
+        <name>NT_Password__c</name>
+    </fields>
+    <fields>
+        <label><!-- Nagra AE --></label>
+        <name>Nagra_AE__c</name>
+    </fields>
+    <fields>
+        <label><!-- Nagra Customer --></label>
+        <name>Nagra_Customer__c</name>
+    </fields>
+    <fields>
+        <label><!-- OS --></label>
+        <name>OS__c</name>
+        <picklistValues>
+            <masterLabel>2000</masterLabel>
+            <translation><!-- 2000 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2003</masterLabel>
+            <translation><!-- 2003 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2008</masterLabel>
+            <translation><!-- 2008 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Operating System --></label>
+        <name>Operating_System__c</name>
+    </fields>
+    <fields>
+        <label><!-- Oracle Config --></label>
+        <name>Oracle_Config__c</name>
+        <picklistValues>
+            <masterLabel>RAC One Node</masterLabel>
+            <translation><!-- RAC One Node --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RAC Two Node</masterLabel>
+            <translation><!-- RAC Two Node --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Standard</masterLabel>
+            <translation><!-- Standard --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Oracle File System --></label>
+        <name>Oracle_File_System__c</name>
+        <picklistValues>
+            <masterLabel>ASM</masterLabel>
+            <translation><!-- ASM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NTFS</masterLabel>
+            <translation><!-- NTFS --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Oracle Version --></label>
+        <name>Oracle_Version__c</name>
+    </fields>
+    <fields>
+        <label><!-- Owner --></label>
+        <name>Owner__c</name>
+        <picklistValues>
+            <masterLabel>AM</masterLabel>
+            <translation><!-- AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DBA</masterLabel>
+            <translation><!-- DBA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dev</masterLabel>
+            <translation><!-- Dev --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product</masterLabel>
+            <translation><!-- Product --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Support</masterLabel>
+            <translation><!-- Support --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sys Admin</masterLabel>
+            <translation><!-- Sys Admin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tech Ops</masterLabel>
+            <translation><!-- Tech Ops --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Ownership --></label>
+        <name>Ownership__c</name>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Private</masterLabel>
+            <translation><!-- Private --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Public</masterLabel>
+            <translation><!-- Public --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Subsidiary</masterLabel>
+            <translation><!-- Subsidiary --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- PC Anywhere Login --></label>
+        <name>PC_Anywhere_Login__c</name>
+    </fields>
+    <fields>
+        <label><!-- PC Anywhere Password --></label>
+        <name>PC_Anywhere_Password__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pagefile --></label>
+        <name>Pagefile__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Account --></label>
+        <name>Parent_Account__c</name>
+        <relationshipLabel><!-- Network Sites --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Phone --></label>
+        <name>Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- RAM --></label>
+        <name>RAM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rating --></label>
+        <name>Rating__c</name>
+        <picklistValues>
+            <masterLabel>Cold</masterLabel>
+            <translation><!-- Cold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hot</masterLabel>
+            <translation><!-- Hot --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Warm</masterLabel>
+            <translation><!-- Warm --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Record Type --></label>
+        <name>Record_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Back-up Date --></label>
+        <name>Refresh_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Report --></label>
+        <name>Report__c</name>
+    </fields>
+    <fields>
+        <label><!-- Requires Permission --></label>
+        <name>Requires_Permission__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Reservation End Date --></label>
+        <name>Reservation_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reservation Start Date --></label>
+        <name>Reservation_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- User --></label>
+        <name>Reserved_By__c</name>
+        <relationshipLabel><!-- Network Sites --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Rpt 3 IP Address --></label>
+        <name>Rpt_3_IP_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rpt 4 IP Address --></label>
+        <name>Rpt_4_IP_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rpt 1 IP Address --></label>
+        <name>Rpt_IP_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rpt Server 1 --></label>
+        <name>Rpt_Server_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rpt Server 2 --></label>
+        <name>Rpt_Server_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rpt Server 3 --></label>
+        <name>Rpt_Server_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rpt Server 4 --></label>
+        <name>Rpt_Server_4__c</name>
+    </fields>
+    <fields>
+        <label><!-- SQL Password --></label>
+        <name>SQL_Password__c</name>
+    </fields>
+    <fields>
+        <label><!-- SQL Service --></label>
+        <name>SQL_Service__c</name>
+    </fields>
+    <fields>
+        <label><!-- SQL Username --></label>
+        <name>SQL_Username__c</name>
+    </fields>
+    <fields>
+        <help><!-- Customer name for consolidating Accounts in reporting --></help>
+        <label><!-- Sales Forecast Name --></label>
+        <name>Sales_Forecast_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Server Configuration --></label>
+        <name>Server_Configuration__c</name>
+        <picklistValues>
+            <masterLabel>3:1</masterLabel>
+            <translation><!-- 3:1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Database</masterLabel>
+            <translation><!-- Database --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EDA</masterLabel>
+            <translation><!-- EDA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ESM</masterLabel>
+            <translation><!-- ESM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Report</masterLabel>
+            <translation><!-- Report --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Web</masterLabel>
+            <translation><!-- Web --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Web+Report</masterLabel>
+            <translation><!-- Web+Report --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Server Name --></label>
+        <name>Server_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Server Notes --></label>
+        <name>Server_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Request Case # --></label>
+        <name>Service_Request__c</name>
+        <relationshipLabel><!-- Network Sites (Service Request Case #) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Shipping Address --></label>
+        <name>ShippingAddress__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the abbreviation that will be used to append to the front of an opportunity name. --></help>
+        <label><!-- Short Name --></label>
+        <name>Short_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Show in Forecast --></label>
+        <name>Show_in_Forecast__c</name>
+    </fields>
+    <fields>
+        <label><!-- SIC Description --></label>
+        <name>SicDesc__c</name>
+    </fields>
+    <fields>
+        <label><!-- SIC Code --></label>
+        <name>Sic__c</name>
+    </fields>
+    <fields>
+        <label><!-- Site DB Copy --></label>
+        <name>Site_DB_Copy__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Site --></label>
+        <name>Site__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>**OPEN**</masterLabel>
+            <translation><!-- **OPEN** --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BAD BACKUP- New Tape Requested</masterLabel>
+            <translation><!-- BAD BACKUP- New Tape Requested --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>COMPLETED- DB Restore</masterLabel>
+            <translation><!-- COMPLETED- DB Restore --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cataloging</masterLabel>
+            <translation><!-- Cataloging --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer</masterLabel>
+            <translation><!-- Customer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Indexing</masterLabel>
+            <translation><!-- Indexing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LOADING</masterLabel>
+            <translation><!-- LOADING --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New DB Requested</masterLabel>
+            <translation><!-- New DB Requested --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner</masterLabel>
+            <translation><!-- Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Previous Customer</masterLabel>
+            <translation><!-- Previous Customer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prospect</masterLabel>
+            <translation><!-- Prospect --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RESERVED</masterLabel>
+            <translation><!-- RESERVED --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Restoring</masterLabel>
+            <translation><!-- Restoring --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Storage Used/Allocated --></label>
+        <name>Storage_Used_Allocated__c</name>
+    </fields>
+    <fields>
+        <label><!-- System Code --></label>
+        <name>System_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- TEST 11g SCAN IP Address --></label>
+        <name>TEST_11g_SCAN_IP_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- TEST 11g SCAN Name --></label>
+        <name>TEST_11g_SCAN_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- TEST App1 Server IP Address --></label>
+        <name>TEST_App1_Server_IP_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- TEST App1 Server --></label>
+        <name>TEST_App1_Server__c</name>
+    </fields>
+    <fields>
+        <label><!-- TEST App2 Server IP Address --></label>
+        <name>TEST_App2_Server_IP_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- TEST App2 Server --></label>
+        <name>TEST_App2_Server__c</name>
+    </fields>
+    <fields>
+        <label><!-- TEST DB 2 IP Address --></label>
+        <name>TEST_DB_2_IP_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- TEST DB IP Address --></label>
+        <name>TEST_DB_IP_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- TEST DB Server 1 --></label>
+        <name>TEST_DB_Server_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- TEST DB Server 2 --></label>
+        <name>TEST_DB_Server_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- TEST EDS IP Address --></label>
+        <name>TEST_EDS_IP_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- TEST EDS Server --></label>
+        <name>TEST_EDS_Server__c</name>
+    </fields>
+    <fields>
+        <label><!-- TEST EDS 2 IP Address --></label>
+        <name>TEST_EDS_server_2_IP__c</name>
+    </fields>
+    <fields>
+        <label><!-- TEST EDS server 2 --></label>
+        <name>TEST_EDS_server_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- TEST Rpt 1 IP Address --></label>
+        <name>TEST_Rpt_1_IP_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- TEST Rpt 2 IP Address --></label>
+        <name>TEST_Rpt_2_IP_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- TEST Rpt 3 IP Address --></label>
+        <name>TEST_Rpt_3_IP_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- TEST Rpt Server 1 --></label>
+        <name>TEST_Rpt_Server_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- TEST Rpt Server 2 --></label>
+        <name>TEST_Rpt_Server_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- TEST Rpt Server 3 --></label>
+        <name>TEST_Rpt_Server_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- TEST Sch Merge Server IP Address --></label>
+        <name>TEST_Sch_Merge_Server_IP_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- TEST Sch Merge Server --></label>
+        <name>TEST_Sch_Merge_Server__c</name>
+    </fields>
+    <fields>
+        <label><!-- TEST TNSNAME --></label>
+        <name>TEST_TNSNAME__c</name>
+    </fields>
+    <fields>
+        <label><!-- TEST Web 1 IP Address --></label>
+        <name>TEST_Web_1_IP_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- TEST Web 2 IP Address --></label>
+        <name>TEST_Web_2_IP_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- TEST Web Server 1 --></label>
+        <name>TEST_Web_Server_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- TEST Web Server 2 (Ap Server) --></label>
+        <name>TEST_Web_Server_2_Ap_Server__c</name>
+    </fields>
+    <fields>
+        <label><!-- TEST eRevision Server IP Address --></label>
+        <name>TEST_eRevision_Server_IP_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- TEST eRevision Server --></label>
+        <name>TEST_eRevision_Server__c</name>
+    </fields>
+    <fields>
+        <label><!-- TNSNAME --></label>
+        <name>TNSNAME__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tape Format --></label>
+        <name>Tape_Format__c</name>
+    </fields>
+    <fields>
+        <label><!-- Test Environment --></label>
+        <name>Test_Environment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ticker Symbol --></label>
+        <name>TickerSymbol__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Analyst</masterLabel>
+            <translation><!-- Analyst --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Competitor</masterLabel>
+            <translation><!-- Competitor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer</masterLabel>
+            <translation><!-- Customer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Integrator</masterLabel>
+            <translation><!-- Integrator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Investor</masterLabel>
+            <translation><!-- Investor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner</masterLabel>
+            <translation><!-- Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Press</masterLabel>
+            <translation><!-- Press --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prospect</masterLabel>
+            <translation><!-- Prospect --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reseller</masterLabel>
+            <translation><!-- Reseller --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- VIP Address --></label>
+        <name>VIP_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- VM --></label>
+        <name>VM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Version --></label>
+        <name>Version__c</name>
+    </fields>
+    <fields>
+        <label><!-- Web 2 IP Address --></label>
+        <name>Web_2_IP_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Web 1 IP Address --></label>
+        <name>Web_IP_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Web Server 2 (Ap Server) --></label>
+        <name>Web_Server_2_Ap_Server__c</name>
+    </fields>
+    <fields>
+        <label><!-- Web Server 1 --></label>
+        <name>Web_Server__c</name>
+    </fields>
+    <fields>
+        <label><!-- Web --></label>
+        <name>Web__c</name>
+    </fields>
+    <fields>
+        <label><!-- Website --></label>
+        <name>Website__c</name>
+    </fields>
+    <fields>
+        <label><!-- Weekend SPC Name --></label>
+        <name>Weekend_SPC_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Weekend SPC Number --></label>
+        <name>Weekend_SPC_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- SCAN IP Address --></label>
+        <name>X11g_SCAN_IP_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- SCAN IP Name --></label>
+        <name>X11g_SCAN_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- 11g upgrade date --></label>
+        <name>X11g_upgrade_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- 2nd Account Manager --></label>
+        <name>X2nd_Account_Manager__c</name>
+        <picklistValues>
+            <masterLabel>Angela Shum</masterLabel>
+            <translation><!-- Angela Shum --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Betsy Samuel</masterLabel>
+            <translation><!-- Betsy Samuel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gayla O&apos;Fihelly</masterLabel>
+            <translation><!-- Gayla O&apos;Fihelly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Janice Brown</masterLabel>
+            <translation><!-- Janice Brown --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lisa Dunn</masterLabel>
+            <translation><!-- Lisa Dunn --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lori Linthicum</masterLabel>
+            <translation><!-- Lori Linthicum --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mark Crouse</masterLabel>
+            <translation><!-- Mark Crouse --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Rpt 2 IP Address --></label>
+        <name>X2nd_Rpt_IP_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- XGL Version --></label>
+        <name>XGL_Version__c</name>
+        <picklistValues>
+            <masterLabel>1.1</masterLabel>
+            <translation><!-- 1.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1.2</masterLabel>
+            <translation><!-- 1.2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1.3</masterLabel>
+            <translation><!-- 1.3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1.4</masterLabel>
+            <translation><!-- 1.4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1.5</masterLabel>
+            <translation><!-- 1.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1.6</masterLabel>
+            <translation><!-- 1.6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1.7</masterLabel>
+            <translation><!-- 1.7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1.8</masterLabel>
+            <translation><!-- 1.8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2.0.2</masterLabel>
+            <translation><!-- 2.0.2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2.0.3</masterLabel>
+            <translation><!-- 2.0.3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2.0.4</masterLabel>
+            <translation><!-- 2.0.4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2.0.5</masterLabel>
+            <translation><!-- 2.0.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2.1</masterLabel>
+            <translation><!-- 2.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2.2</masterLabel>
+            <translation><!-- 2.2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2.3</masterLabel>
+            <translation><!-- 2.3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2.4</masterLabel>
+            <translation><!-- 2.4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2.5</masterLabel>
+            <translation><!-- 2.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2.x</masterLabel>
+            <translation><!-- 2.x --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- eRevision Server IP Address --></label>
+        <name>eRevision_Server_IP_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- eRevision Server --></label>
+        <name>eRevision_Server__c</name>
+    </fields>
+    <layouts>
+        <layout>Eclipse Internal Server</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Eclipse Servers --></label>
+            <section>Eclipse Servers</section>
+        </sections>
+        <sections>
+            <label><!-- Information --></label>
+            <section>Information</section>
+        </sections>
+        <sections>
+            <label><!-- Record Details --></label>
+            <section>Record Details</section>
+        </sections>
+        <sections>
+            <label><!-- Record Type --></label>
+            <section>Record Type</section>
+        </sections>
+        <sections>
+            <label><!-- Technical Information --></label>
+            <section>Technical Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Network Site Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label><!-- Eclipse Servers --></label>
+            <section>Eclipse Servers</section>
+        </sections>
+        <sections>
+            <label><!-- Network Information --></label>
+            <section>Network Information</section>
+        </sections>
+        <sections>
+            <label><!-- Record Type --></label>
+            <section>Record Type</section>
+        </sections>
+        <sections>
+            <label><!-- TEST Systems --></label>
+            <section>TEST Systems</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>XGL Internal</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Information --></label>
+            <section>Information</section>
+        </sections>
+        <sections>
+            <label><!-- Record Details --></label>
+            <section>Record Details</section>
+        </sections>
+        <sections>
+            <label><!-- Record Type --></label>
+            <section>Record Type</section>
+        </sections>
+        <sections>
+            <label><!-- Technical Information --></label>
+            <section>Technical Information</section>
+        </sections>
+        <sections>
+            <label><!-- XGL Servers --></label>
+            <section>XGL Servers</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>XGL Production</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label><!-- Network Information --></label>
+            <section>Network Information</section>
+        </sections>
+        <sections>
+            <label><!-- Record Type --></label>
+            <section>Record Type</section>
+        </sections>
+        <sections>
+            <label><!-- TEST Systems --></label>
+            <section>TEST Systems</section>
+        </sections>
+        <sections>
+            <label><!-- XGL Servers --></label>
+            <section>XGL Servers</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <description><!-- Eclipse Internal Server - Information about our internal servers --></description>
+        <label><!-- Eclipse Internal Server --></label>
+        <name>Eclipse_Internal_Server</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Eclipse Network --></description>
+        <label><!-- Eclipse Network --></label>
+        <name>OpenTV_Network</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- xGL Internal Server --></description>
+        <label><!-- xGL Internal Server --></label>
+        <name>xGL_Internal_Server</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- xGL Production Server --></description>
+        <label><!-- xGL Production Server --></label>
+        <name>xGL_Production_Server</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- xG Linear Network --></description>
+        <label><!-- xG Linear Network --></label>
+        <name>xG_Linear_Network</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

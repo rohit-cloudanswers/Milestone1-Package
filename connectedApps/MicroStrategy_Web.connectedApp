@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>jim.brinson@imaginecommunications.com</contactEmail>
+    <label>MicroStrategy Web</label>
+    <oauthConfig>
+        <callbackUrl>https://Denlmkadevvm03/MicroStrategy/servlet/mstrWeb?evt=3172&amp;src=mstrWeb.3172</callbackUrl>
+        <consumerKey>3MVG9W4cDaFe_AanHRlLhRgtgOZgcOMgZgaJ_FADZJrfp2hpkVLH2KsHW7d8Gtz54PlxveF5X.Of3Uxx4yqGA</consumerKey>
+        <isAdminApproved>true</isAdminApproved>
+        <scopes>Basic</scopes>
+        <scopes>Api</scopes>
+        <scopes>Web</scopes>
+        <scopes>Full</scopes>
+        <scopes>Chatter</scopes>
+        <scopes>CustomApplications</scopes>
+        <scopes>RefreshToken</scopes>
+        <scopes>OpenID</scopes>
+        <scopes>CustomPermissions</scopes>
+    </oauthConfig>
+    <permissionSetName>MicroStrategy Web</permissionSetName>
+</ConnectedApp>

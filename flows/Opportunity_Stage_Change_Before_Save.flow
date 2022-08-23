@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <description>honestly this is just cleaning up.  should be already set on the seperate contact role create/delete flows but that was imperfect.</description>
+        <name>Assign_Contact_Role_Count</name>
+        <label>Assign Contact Role Count</label>
+        <locationX>176</locationX>
+        <locationY>431</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.of_Contacts__c</assignToReference>
+            <operator>AssignCount</operator>
+            <value>
+                <elementReference>Contact_Roles</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <description>triggers only on stage change</description>
+    <interviewLabel>Opportunity - Stage Change Before Save {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity - Stage Change Before Save</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Contact_Roles</name>
+        <label>Contact Roles</label>
+        <locationX>176</locationX>
+        <locationY>311</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_Contact_Role_Count</targetReference>
+        </connector>
+        <filters>
+            <field>OpportunityId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <object>OpportunityContactRole</object>
+    </recordLookups>
+    <startElementReference>Contact_Roles</startElementReference>
+    <status>Active</status>
+</Flow>

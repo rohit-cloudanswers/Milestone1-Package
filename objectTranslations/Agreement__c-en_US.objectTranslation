@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Agreement</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Agreement</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Agreement --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Amendment Completion Date --></label>
+        <name>Amendment_Completion_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Amendment --></label>
+        <name>Amendment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Complete --></label>
+        <name>Complete__c</name>
+    </fields>
+    <fields>
+        <label><!-- Currency --></label>
+        <name>Currency__c</name>
+        <picklistValues>
+            <masterLabel>USD</masterLabel>
+            <translation><!-- USD --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Effective End Date --></label>
+        <name>Effective_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Effective Start Date --></label>
+        <name>Effective_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legacy Number --></label>
+        <name>Legacy_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Master Services Agreement --></label>
+        <name>Master_Services_Agreement__c</name>
+    </fields>
+    <fields>
+        <label><!-- PO Number --></label>
+        <name>PO_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quote Number --></label>
+        <name>Quote_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Revision Date --></label>
+        <name>Revision_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Revision # --></label>
+        <name>Revision__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Flag --></label>
+        <name>Service_Flag__c</name>
+    </fields>
+    <fields>
+        <label><!-- Siebel Row Id --></label>
+        <name>Siebel_Row_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Site --></label>
+        <name>Site__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inactive</masterLabel>
+            <translation><!-- Inactive --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Valid Flag --></label>
+        <name>Valid_Flag__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

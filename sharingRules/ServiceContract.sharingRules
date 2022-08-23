@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>Share_All_with_Service</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>This rule allows the Service Contract object to be shared with the Imagine Service users</description>
+        <label>Share All with Service</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>Service</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>CEO</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

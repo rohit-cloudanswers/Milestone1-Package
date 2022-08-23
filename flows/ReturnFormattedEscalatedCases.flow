@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <name>Assign_Text_to_Var</name>
+        <label>Assign Text to Var</label>
+        <locationX>134</locationX>
+        <locationY>272</locationY>
+        <assignmentItems>
+            <assignToReference>DisplayCaseList</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>caseDisplayTemplate</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Collection</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Current_User_in_Picklist</name>
+        <label>Current User in Picklist?</label>
+        <locationX>348</locationX>
+        <locationY>274</locationY>
+        <defaultConnector>
+            <targetReference>Loop_Collection</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_in_Picklist</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CaseRecordInLoop.Weighting_Escalation_MultiSelect__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <elementReference>ReturnRunningUserNoSpaces</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Text_to_Var</targetReference>
+            </connector>
+            <label>Yes in Picklist</label>
+        </rules>
+    </decisions>
+    <description>No input, returns variable with all escalated cases by current user.</description>
+    <formulas>
+        <name>ReturnRunningUserName</name>
+        <dataType>String</dataType>
+        <expression>{!$User.Full_Name__c}</expression>
+    </formulas>
+    <formulas>
+        <name>ReturnRunningUserNoSpaces</name>
+        <dataType>String</dataType>
+        <expression>SUBSTITUTE ({!ReturnRunningUserName}, &quot; &quot;, &quot;&quot;)</expression>
+    </formulas>
+    <interviewLabel>ReturnFormattedEscalatedCases {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>ReturnFormattedEscalatedCases</label>
+    <loops>
+        <name>Loop_Collection</name>
+        <label>Loop Collection</label>
+        <locationX>279</locationX>
+        <locationY>50</locationY>
+        <assignNextValueToReference>CaseRecordInLoop</assignNextValueToReference>
+        <collectionReference>Get_Escalated_Records</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Current_User_in_Picklist</targetReference>
+        </nextValueConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Escalated_Records</name>
+        <label>Get Escalated Records</label>
+        <locationX>154</locationX>
+        <locationY>50</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_Collection</targetReference>
+        </connector>
+        <filters>
+            <field>Weighting_Escalation_MultiSelect__c</field>
+            <operator>Contains</operator>
+            <value>
+                <elementReference>ReturnRunningUserNoSpaces</elementReference>
+            </value>
+        </filters>
+        <object>Case</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>CaseNumber</queriedFields>
+        <queriedFields>Weighting_Escalation_MultiSelect__c</queriedFields>
+    </recordLookups>
+    <startElementReference>Get_Escalated_Records</startElementReference>
+    <status>Active</status>
+    <textTemplates>
+        <name>caseDisplayTemplate</name>
+        <text>&lt;p&gt;Total Weight {!CaseRecordInLoop.Weighting_Overall__c}&amp;lt;br/&amp;gt;&lt;/p&gt;&lt;p&gt;EE Applied {!CaseRecordInLoop.EE_for_Flow__c} &amp;lt;br/&amp;gt;&lt;/p&gt;&lt;p&gt;{!CaseRecordInLoop.CaseNumber}, {!CaseRecordInLoop.Subject}&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <variables>
+        <name>CaseRecordInLoop</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Case</objectType>
+    </variables>
+    <variables>
+        <name>DisplayCaseList</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

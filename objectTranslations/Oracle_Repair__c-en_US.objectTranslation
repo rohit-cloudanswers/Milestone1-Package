@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Oracle Repair</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Oracle Repairs</value>
+    </caseValues>
+    <fields>
+        <label><!-- Case Account --></label>
+        <name>Case_Account__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case Number --></label>
+        <name>Case_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case Owner Email --></label>
+        <name>Case_Owner_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case Owner --></label>
+        <name>Case_Owner__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case Subject --></label>
+        <name>Case_Subject__c</name>
+    </fields>
+    <fields>
+        <help><!-- Defect Category --></help>
+        <label><!-- Defect Category --></label>
+        <name>Defect_Category__c</name>
+    </fields>
+    <fields>
+        <help><!-- Defect Details --></help>
+        <label><!-- Defect Details --></label>
+        <name>Defect_Details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Oracle Cloud Id --></label>
+        <name>Oracle_Cloud_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Oracle Collection Id Link --></label>
+        <name>Oracle_Collection_Id_Link__c</name>
+    </fields>
+    <fields>
+        <help><!-- Oracle Created By --></help>
+        <label><!-- Oracle Created By --></label>
+        <name>Oracle_Created_By__c</name>
+    </fields>
+    <fields>
+        <help><!-- Oracle Created Date --></help>
+        <label><!-- Oracle Created Date --></label>
+        <name>Oracle_Created_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Oracle Last Update By --></help>
+        <label><!-- Oracle Last Update By --></label>
+        <name>Oracle_Last_Update_By__c</name>
+    </fields>
+    <fields>
+        <label><!-- Oracle Last Update Date --></label>
+        <name>Oracle_Last_Update_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Oracle Order # No Link --></label>
+        <name>Oracle_Order_No_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Oracle Order # --></label>
+        <name>Oracle_Order__c</name>
+    </fields>
+    <fields>
+        <label><!-- Oracle Row Id --></label>
+        <name>Oracle_Row_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order --></label>
+        <name>Order__c</name>
+        <relationshipLabel><!-- Oracle Repairs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Part No --></label>
+        <name>Part_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>Product__c</name>
+        <relationshipLabel><!-- Oracle Repairs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Quantity --></label>
+        <name>Quantity__c</name>
+    </fields>
+    <fields>
+        <help><!-- Repair Action --></help>
+        <label><!-- Repair Action --></label>
+        <name>Repair_Action__c</name>
+    </fields>
+    <fields>
+        <help><!-- Repair Details --></help>
+        <label><!-- Repair Details --></label>
+        <name>Repair_Details__c</name>
+    </fields>
+    <fields>
+        <help><!-- Serial Number --></help>
+        <label><!-- Serial # --></label>
+        <name>Serial__c</name>
+    </fields>
+    <layouts>
+        <layout>Oracle Repair Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Oracle System Information --></label>
+            <section>Oracle System Information</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

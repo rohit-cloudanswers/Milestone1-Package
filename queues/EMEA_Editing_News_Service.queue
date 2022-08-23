@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>EMEA Editing &amp; News Service</name>
+    <queueMembers>
+        <users>
+            <user>csaba.szentesi@imaginecommunications.com</user>
+            <user>hisham.matkari@imaginecommunications.com</user>
+            <user>loris.carazzolo@imaginecommunications.com</user>
+            <user>mathias.kunert@imaginecommunications.com</user>
+            <user>rene.grimm@imaginecommunications.com</user>
+            <user>younece.aliouche@imaginecommunications.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

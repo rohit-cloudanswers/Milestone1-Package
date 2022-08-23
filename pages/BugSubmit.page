@@ -1,0 +1,126 @@
+<apex:page standardController="Bug__c" applyBodyTag="false" sidebar="false" >
+    <c:sObjectRemote ></c:sObjectRemote>
+    <head>
+        <style type="text/css">
+            .container{
+                min-height: 400px;
+            }
+            .loading{
+                font-size: 18px;
+                vertical-align: super;
+            }
+        </style>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jsforce/1.7.0/jsforce.min.js"></script>
+        <script type="text/javascript">
+            var BugSubmitApp = angular.module('BugSubmitApp', []);
+            BugSubmitApp.value('BugId', '{!$CurrentPage.parameters.id}');
+            BugSubmitApp.value('UserId', '{!$User.Id}');
+            BugSubmitApp.value('moment', moment);
+            BugSubmitApp.value('jsforce', jsforce);
+            BugSubmitApp.factory('BugSubmitFactory', function($q, jsforce){
+                var factory = {
+                    querySObjects: querySObjects,
+                    updateSObjects: updateSObjects,
+                    conn: new jsforce.Connection({ accessToken: '{!$API.Session_Id}' })
+                };
+                return factory;
+                
+                function querySObjects(query, options) {
+                    var deferred = $q.defer();
+                    options = options || {};
+                    sObject.query(query, options, function(results, event){
+                        if(event.status) {
+                            deferred.resolve(results);
+                        } else {
+                            deferred.reject(event);
+                        }
+                    });
+                    return deferred.promise;
+                }
+                
+                function updateSObjects(sobjects) {
+                    var deferred = $q.defer();
+                    sObject.update(sobjects, function(result, event){
+                        if(event.status) {
+                            deferred.resolve(result);
+                        } else {
+                            deferred.reject(event);
+                        }
+                    });
+                    return deferred.promise;
+                }
+            });
+            BugSubmitApp.controller('BugSubmitController', function($scope, BugId, UserId, moment, BugSubmitFactory){
+                $scope.bug = undefined;
+                
+                $scope.init = function(){
+                    var query = 'select Id, Submitted_Date__c, Bug_Server__c, Case__c, Case__r.CaseNumber from Bug__c where Id = \'' + BugId + '\'';
+                    BugSubmitFactory.querySObjects(query)
+                        .then(function(result){
+                            if(result && result.length == 1) {
+                                $scope.bug = result[0];
+                                handleRedirect();
+                            }
+                        }).catch(handleError);
+                }
+                $scope.init();
+                
+                function handleRedirect(){
+                    if($scope.bug) {
+                        if($scope.bug.Bug_Server__c == 'Biztalk'){
+                            var bug = new sObject('Bug__c');
+                            bug.Id = $scope.bug.Id;
+                            var utc = moment.utc(moment().format('YYYY-MM-DD'));
+                            bug.Submitted_Date__c = utc.valueOf();
+                            bug.Submitted_By__c = UserId;
+                            var submit = true;
+                            if(!$scope.bug.Submitted_Date__c) {
+                                submit = true;
+                            } else {
+                                if(prompt("This bug has already been submitted.\nType 'y' if you want to resubmit.",'')=="y") {
+                                    submit = true;
+                                } else {
+                                    submit = false;
+                                }
+                            }
+                            if(submit == true) {
+                                BugSubmitFactory.updateSObjects([bug])
+                                    .then(function(result){
+                                        var apexBody = "blogic_Bug.sendBug('"+bug.Id+"');";
+                                        BugSubmitFactory.conn.tooling.executeAnonymous(apexBody, function(err, res) {
+                                            if(res.success) {
+                                                alert("The bug has been submitted successfully."); 
+                                                window.location.href = '/' + BugId;
+                                            } else {
+                                                alert(err);
+                                            }
+                                        });
+                                    }).catch(handleError);
+                            }
+                        } else if ($scope.bug.Bug_Server__c == 'Jira') {
+                            var url = 'https://{!$Setup.Bug_Submit_Page__c.Jira_Host__c}/plugins/servlet/link-issue?crmtoken=69wn4mL0y81k&id=Bug__c:'+BugId+'&issue-type=Customer Escalation&reporter=SF_integration_account';
+                            window.location.replace(url);
+                        } else {
+                            // return to bug
+                            window.location.href = '/' + BugId;
+                        }
+                    } else {
+                        // return to bug
+                        window.location.href = '/' + BugId;
+                    }
+                }
+                
+                function handleError(error){
+                    alert('Error: ' + error.message);
+                }
+            });
+        </script>
+    </head>
+    <body ng-app="BugSubmitApp">
+        <div class="container" ng-controller="BugSubmitController">
+            <center><img src="/img/loading24.gif" />&nbsp;<h4 class="loading"> Redirecting..</h4></center>
+        </div>
+    </body>
+</apex:page>

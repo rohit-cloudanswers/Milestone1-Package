@@ -1,0 +1,1246 @@
+<apex:page sidebar="false" standardController="SBQQ__Quote__c">
+
+  <head>
+
+    <apex:variable var="res" value="{!URLFOR($Resource.Cloudanswers, '/node_modules')}"/>
+    <apex:variable var="bowerRes" value="{!URLFOR($Resource.Cloudanswers, '/bower_components')}"/>
+
+    <c:importvisualstrap theme="paper" />
+
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="{!res}/ui-select/dist/select.min.css"/>
+    <link rel="stylesheet" href="{!bowerRes}/sweetalert/dist/sweetalert.css"/>
+    <link rel="stylesheet" href="{!bowerRes}/ngprogress/ngProgress.css"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="https://cdn.rawgit.com/SheetJS/js-xlsx/v0.8.0/dist/xlsx.full.min.js"></script>
+    <script src="https://cdn.rawgit.com/SheetJS/js-xlsx/v0.8.0/dist/ods.js"></script>
+    <script src="{!res}/ui-select/dist/select.min.js"></script>
+    <script src="{!res}/moment/min/moment.min.js"></script>
+    <script src="{!res}/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+    <script src="{!res}/angular-animate/angular-animate.min.js"></script>
+    <script src="{!bowerRes}/ngSweetAlert/SweetAlert.min.js"></script>
+    <script src="{!bowerRes}/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="{!bowerRes}/ngprogress/build/ngprogress.min.js"></script>
+
+    <c:sObjectRemote />
+
+    <style type="text/css">
+
+      table{
+        width:100%;
+      }
+
+      table.preview th, table.preview td {
+          vertical-align: bottom;
+          border: 1px solid #eceeef;
+          text-align:center;
+      }
+
+      .grid input[type="file"] {
+        font-size: 14px;
+        display: inline-block;
+      }
+
+      .overlay { 
+          width: 100%;
+          height: 100%;
+          position: fixed;
+          top: 0;
+          left: 0;
+          z-index: 20000;
+          background-color: gray;
+          opacity: .5;
+      }
+
+      .loading {
+          position: fixed;
+          width: 700px;
+          height: 70px;
+          top: 50%;
+          left: 50%;
+          font-size: 40px;
+          line-height:60px;
+          margin-top: -35px; /* Negative half of height. */
+          margin-left: -350px; /* Negative half of width. */
+          z-index:25000;
+          border: 1px solid #333;
+      }
+      .tab-content {
+          padding: 20px;
+      }
+
+      .form-input {
+          margin: 20px 0px;
+      }
+
+      .visualstrap .dropdown-menu { display: inherit; }
+
+      button.confirm { background: none; }
+      button.cancel { background: none; }
+      .bodyDiv #bodyTable {
+        table-layout: fixed;
+      }
+    </style>
+  </head>
+
+  <body>
+    <c:visualstrapblock >
+      <div ng-app="app" ng-controller="MainCtrl as vm" ng-cloak="true">
+        <!-- ng progress div -->
+        <div class="overlay" ng-if="vm.saving"></div>
+        
+        <!-- tabs -->
+        <uib-tabset active="active">
+          <uib-tab index="0" heading="Import New Line Items" select="setUpload(false)">
+            <div class="row container-fluid">
+              <div class="form-group col-md-3">
+                <div class="form-input">
+                  Choose file for upload....
+                </div>
+                <div id="grid1" class="form-input">
+                  <input class="form-control" type="file" accept=".xls,.xlsx,.ods" fileread="true" opts="vm.gridOptions" multiple="false" />
+                </div>
+                <p ng-if="vm.workbookData.length > 0">
+                  <button ng-click="vm.saveRecords()" ng-if="!vm.saving" class="btn btn-primary">Import {{ vm.gridOptions.data.length }} Line Items</button>
+                </p>
+              </div>
+              <div class="col-md-9"></div>
+              <div class="col-md-12" style="overflow: scroll;">
+                <table class="table table-striped">
+                  <tr>
+                    <th ng-repeat="r in vm.gridOptions.columnDefs">{{r.field}}</th>
+                  </tr>
+                  <tr ng-repeat="d in vm.gridOptions.data">
+                    <td ng-repeat="r in vm.gridOptions.columnDefs">
+                      {{d[r.field]}}
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </uib-tab>
+          <uib-tab index="1" heading="Recent Quotes" select="setUpload(false)">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Quote Name</th>
+                  <th>Grand Total</th>
+                  <th>Account</th>
+                  <th>Status</th>
+                  <th>Created</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="po in vm.recentQuotes">
+                  <td><a href="/{{po.Id}}" target="_new">{{ po.Name }}</a></td>
+                  <td>{{ po.SBQQ__NetAmount__c | currency }}</td>
+                  <td>{{ po.SBQQ__Account__r.Name }}</td>
+                  <td>{{ po.SBQQ__Status__c }}</td>
+                  <td>{{ vm.timeAgo(po.CreatedDate) }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </uib-tab>
+        </uib-tabset>
+      </div>
+    </c:visualstrapblock>
+  </body>
+
+  <script type="text/javascript">
+
+    Visualforce.remoting.timeout = 120000;
+
+    Date.prototype.addDays = function(days) {
+      var dat = new Date(this.valueOf());
+      dat.setDate(dat.getDate() + days);
+      return dat;
+    }
+
+    String.prototype.replaceAll = function(search, replacement) {
+      var target = this;
+      return target.replace(new RegExp(search, 'g'), replacement);
+    };
+
+    if (FileReader.prototype.readAsBinaryString === undefined) {
+      FileReader.prototype.readAsBinaryString = function (fileData) {
+        var binary = "";
+        var pt = this;
+        var reader = new FileReader();
+        reader.onload = function (e) {
+          var bytes = new Uint8Array(reader.result);
+          var length = bytes.byteLength;
+          for (var i = 0; i < length; i++) {
+            binary += String.fromCharCode(bytes[i]);
+          }
+          //pt.result  - readonly so assign content to another property
+          pt.content = binary;
+          $(pt).trigger('onload');
+        }
+        reader.readAsArrayBuffer(fileData);
+      }
+    }
+
+    function numFromPercent(d) {
+      return d.replace('%', '') / 100;
+    }
+
+    function numFromCurrency(d) {
+      return Number(d.replace('$', '').replace('€', '').replaceAll(',', ''));
+    }
+
+    function dateWithinRange(raceDate, campaignDate) {
+      return raceDate > campaignDate.addDays(-5) && raceDate < campaignDate.addDays(360);
+    }
+
+    function getExternalId(rawValue, ccd, engine) {
+      return ccd.getFullYear().toString() + (ccd.getMonth() + 1).toString() + ccd.getDate().toString() + engine.replaceAll(' ', '') + rawValue.replaceAll(' ', '_');
+    }
+
+    angular.module('app', ['ui.select', 'ui.bootstrap', 'ngAnimate', 'oitozero.ngSweetAlert', 'ngProgress'])
+    .controller('MainCtrl', ['$scope', '$q', '$timeout', 'SweetAlert', 'ngProgressFactory', function ($scope, $q, $timeout, SweetAlert, ngProgressFactory) {
+
+      var vm = this;
+      vm.adminProfile = '00ei0000001BQKIAA4'.indexOf('{!$User.ProfileId}') != -1;
+      vm.lineItemsGrouped = true; // by default, expecting line items to be grouped
+      vm.gridOptions = {};
+      vm.lineItems = [];
+      vm.parentSolutions = {};
+      vm.childSolutions = {};
+      vm.lineItemMaxOrder = {};
+      vm.childSolutionMaxOrder = {};
+      vm.groupMaxNumber = 0;
+      vm.quote = {
+        id: null,
+        name: '{!JSENCODE(SBQQ__Quote__c.Name)}',
+        hardwareDiscount: '{!SBQQ__Quote__c.Hardware_Discount__c}',
+        oemHardwareDiscount: '{!SBQQ__Quote__c.OEM_Hardware_Discount__c}',
+        softwareDiscount: '{!SBQQ__Quote__c.Software_Discount__c}',
+        oemSoftwareDiscount: '{!SBQQ__Quote__c.OEM_Software_Discount__c}',
+        psDiscount: '{!SBQQ__Quote__c.Professional_Services_Discount__c}',
+        oempsDiscount: '{!SBQQ__Quote__c.OEM_Professional_Services_Discount__c}',
+        supportDiscount: '{!SBQQ__Quote__c.Support_Discount__c}',
+        oemSupportDiscount: '{!SBQQ__Quote__c.OEM_Support_Discount__c}',
+        msDiscount: '{!SBQQ__Quote__c.Managed_Services_Discount__c}',
+        oemmsDiscount: '{!SBQQ__Quote__c.OEM_Managed_Services_Discount__c}',
+        additionalDiscount: '{!SBQQ__Quote__c.SBQQ__CustomerDiscount__c}',
+        lineItems: [],
+        solutions: {},
+        optional: false
+      };
+      vm.keyField = 'Product Code';
+      vm.fieldsMap = {
+        'Row #': {field: 'SBQQ__Number__c', type: 'number'},
+        'Quantity': {field: 'SBQQ__Quantity__c', type: 'number'},
+        'Description': {field: 'SBQQ__Description__c', type: 'text'},
+        'Custom Description': {field: 'Custom_Description_Text__c', type: 'text'},
+        'Unit Price': {field: 'SBQQ__ListPrice__c', type: 'currency'},
+        'Product Cost': {field: 'Product_Cost__c', type: 'currency'},
+        'Disc %': {field: 'SBQQ__Discount__c', type: 'number'},
+        'Custom Part #': {field: 'Custom_Part__c', type: 'text'},
+        'Optional': {field: 'SBQQ__Optional__c', type: 'boolean'},
+        'LineGroup': {field: 'SBQQ__Group__c', type: 'text'},
+        'Quote': {field: 'SBQQ__Quote__c', type: 'text'}
+      };
+      // key field
+      vm.fieldsMap[vm.keyField] = {field: 'SBQQ__Product__c', type: 'product'};
+
+      vm.saving = false;
+      vm.numChunksRemaining = 0;
+      vm.allSetup = false;
+      vm.workbookData;
+      vm.products = {};
+      vm.existingSolutions = [];
+      vm.priceBookEntries = {};
+      vm.recentQuotes = [];
+      vm.currencyRates = {};
+      vm.errors = [];
+      vm.progressBar = ngProgressFactory.createInstance();
+      vm.progressBar.setHeight('30px');
+      vm.progressBar.setColor('blue');
+
+      $scope.$watch(function() {
+        return vm.gridOptions;
+      }, function(newValue, oldValue) {
+        if(newValue) {
+          vm.workbookData = newValue.data;
+          vm.setupQuote(newValue);
+        }
+      }, true);
+
+      vm.toggleProgress = function(start) {
+        vm.saving = start;
+        if(start) {
+          vm.progressBar.start();
+        } else {
+          vm.progressBar.complete();
+        }
+      }
+
+      vm.createSolutions = function() {
+        var deferred = $q.defer();
+        var promises = [];
+        for(var n in vm.parentSolutions) {
+          var s = vm.parentSolutions[n];
+          if(s.id == null) {
+            var pn = n.split('---')[0];
+            promises.push(vm.createSolution({ name: pn, optional: s.optional, parent: null, key: n, order: s.order }));
+          }
+        }
+
+        $q.all(promises).then(function(promiseResults) {
+          promiseResults.forEach(function(pr) {
+            vm.parentSolutions[pr.name].id = pr.id;
+          });
+          var childpromises = [];
+          for(n in vm.childSolutions) {
+            s = vm.childSolutions[n];
+            var cn = n.split('---')[1];
+            if(s.id == null) {
+              var parentGroup = vm.parentSolutions[s.parent + '---' + vm.opt(s.optional)];
+              var parentId = parentGroup.id;
+              if (!parentGroup.quoteLineCount) {
+                childpromises.push(vm.createSolution({ 
+                  name: cn, 
+                  optional: s.optional, 
+                  parent: parentId, 
+                  key: n,
+                  order: s.order
+                }));
+              } else {
+                deferred.reject(new Error('Parent Group (' + parentGroup.name + ') contains line items.'));
+              }
+            }
+          }
+          $q.all(childpromises).then(function(childPromiseResults) {
+            childPromiseResults.forEach(function(pr) {
+              vm.childSolutions[pr.name].id = pr.id;
+            });
+            deferred.resolve(childPromiseResults);
+          });
+        });
+        return deferred.promise;
+      }
+
+      vm.validateSolutionNames = function() {
+        var longNames = [];
+        for(n in vm.parentSolutions) {
+          n = n.split('---')[0];
+          if(n && n.length > 80) {
+            longNames.push(n);
+          }
+        }
+        for(n in vm.childSolutions) {
+          n = n.split('---')[1];
+          if(n && n.length > 80) {
+            longNames.push(n);
+          }
+        }
+        return longNames.length;
+      }
+
+      vm.createSolution = function(solution){
+        var deferred = $q.defer();
+
+        var sol = new sObject('SBQQ__QuoteLineGroup__c');
+        // reached here after confirmation
+        sol.Name = solution.name;
+        if(sol.Name) sol.Name = sol.Name.substring(0, 80);
+        // replace double quotes with single quotes
+        sol.Name = sol.Name.replace(/"/g, '\'');
+        sol.Parent_Group__c = solution.parent;
+        sol.SBQQ__Quote__c = '{!SBQQ__Quote__c.Id}';
+        sol.SBQQ__Optional__c = solution.optional;
+        if(solution.order !== undefined) {
+          sol.SBQQ__Number__c = solution.order;
+        }
+        sObject.insert(sol, function(result,event) {
+          if(event.status) {
+            deferred.resolve({name: solution.key, id: result[0].id});
+          } else {
+            deferred.reject(event);
+          }
+        });
+
+        return deferred.promise;
+      }
+
+      vm.createLineItems = function() {
+        var deferred = $q.defer();
+        var lineItems = [];
+        // index to array
+        var bundleItems = {};
+        var sortOrder = 1;
+        vm.workbookData.forEach(function(row, idx) {
+          if(!row.Quantity) {
+            return false;
+          }
+          var key;
+          var pss = row['Parent Group Name'] || vm.dssKey;
+          var opt = vm.translateOpt(row['Optional']);
+          if(!row['Parent Group Name'] && !row['Group Name']) {
+            // Figure out how to handle this
+          } else {
+            // TODO: come back to this below
+            if(row['Group Name'] && row['Parent Group Name']) {
+              key = pss + '---' + row['Group Name'] + '---' + opt;
+              row.LineGroup = vm.childSolutions[key].id;
+            } else if (row['Group Name'] && !row['Parent Group Name']) {
+              key = row['Group Name'] + '---' + opt;
+              row.LineGroup = vm.parentSolutions[key].id;
+            } else if(row['Parent Group Name']) {
+              key = pss + '---' + opt;
+              row.LineGroup = vm.parentSolutions[key].id;          
+            }
+          }
+          row.Quote = '{!SBQQ__Quote__c.Id}';
+
+          var qli = vm.rowToQLI(row);
+          var woSpaces = vm.getPartNumber(row[vm.keyField], false);
+          var wSpaces = vm.getPartNumber(row[vm.keyField], true);
+          var product = vm.products[woSpaces.toUpperCase()] === undefined ? (vm.products[wSpaces.toUpperCase()] == undefined ? null : vm.products[wSpaces.toUpperCase()]) : vm.products[woSpaces.toUpperCase()];
+
+          // use price from pricebook if list price not set
+          qli.SBQQ__ListPrice__c = qli.SBQQ__ListPrice__c == null ? vm.priceBookEntries[qli.SBQQ__Product__c].price : qli.SBQQ__ListPrice__c;
+          // use product cost from Product
+          if (!qli.Product_Cost__c && qli.Product_Cost__c != 0) {
+            if (product.costPercent) {
+              qli.Product_Cost__c = (qli.SBQQ__ListPrice__c * (product.costPercent / 100));
+            } else if (product.cost) {
+              qli.Product_Cost__c = product.cost;
+            }
+          }
+          // if no description, copy from product
+          if (!qli.SBQQ__Description__c) qli.SBQQ__Description__c = product.description;
+          // populate other fields
+          if (!qli.Business_Unit__c) qli.Business_Unit__c = product.businessUnit;
+          if (!qli.Product_Type__c) qli.Product_Type__c = product.productType;
+          if (!qli.Salesforce_Product_Type__c) qli.Salesforce_Product_Type__c = product.subProductType;
+          if (!qli.SBQQ__SubscriptionCategory__c) qli.SBQQ__SubscriptionCategory__c = product.subscriptionCategory;
+          if (!qli.SBQQ__NonDiscountable__c) qli.SBQQ__NonDiscountable__c = product.nondiscountable;
+          if (!qli.OEM_Vendor__c) qli.OEM_Vendor__c = product.vendor;
+          if (!qli.Product_Line__c) qli.Product_Line__c = product.productLine;
+          // skip my care calculation for support products
+          qli.Skip_MyCare_Calculation__c = qli.Salesforce_Product_Type__c == 'Support';
+          qli.Support_Product_My_Care_Part_Number__c = product.careProduct;
+          qli.Support_Product_My_Care_Plus_Part_Numb__c = product.carePlusProduct;
+          qli.Support_Product_My_Care_Universal_Part__c = product.universalProduct;
+          qli.Support_Rate__c = product.supportRate;
+          qli.Warranty_Period__c = product.warrantyPeriod;
+          qli.Warranty_UOM__c = product.warrantyUOM;
+          qli.Lead_Time__c = product.leadTime;
+          qli.Country_of_Origin__c = product.countryOfOrigin;
+          qli.SBQQ__PriceEditable__c = product.priceEditable;
+          qli.SBQQ__CostEditable__c = product.costEditable;
+          qli.RevPro_Class__c = product.revProClass;
+          qli.Requires_Approval__c = product.requiresApproval;
+          qli.Max_Discount__c = product.maxDiscount;
+
+          // populate Quote_Discount_Sum__c to bypass Price Rules for header level discounts
+          vm.populateQuoteDiscountSum(qli);
+
+          // set order
+          qli.SBQQ__Number__c = sortOrder;
+          sortOrder++;
+
+          if (product.productOptions && Object.keys(product.productOptions).length > 0) {
+            vm.lineItemMaxOrder[qli.SBQQ__Group__c] = qli.SBQQ__Number__c + Object.keys(product.productOptions).length;
+            qli.SBQQ__Bundle__c = true;
+            sortOrder += Object.keys(product.productOptions).length;
+          } else {
+            vm.lineItemMaxOrder[qli.SBQQ__Group__c] = qli.SBQQ__Number__c;
+          }
+          lineItems.push(qli);
+
+          // check bundled products
+          bundleItems[idx] = [];
+          for (const key in product.productOptions) {
+            if (product.productOptions.hasOwnProperty(key)) {
+              var subQli = vm.productOptionToQLI(row, product.productOptions[key], qli.SBQQ__Number__c);
+              bundleItems[idx].push(subQli);
+            }
+          }
+        });
+        for (const key of Object.keys(bundleItems)) {
+          lineItems = lineItems.concat(bundleItems[key]);
+        }
+
+        const chunks = chunk(lineItems, 400);
+        chunks.reduce(
+          (previousPromise, chunk) => {
+            return previousPromise.then((chainResults) => {
+              return new Promise(function(pResolve, pReject){
+                sObject.insert(chunk, function(result, event) {
+                  if (event.status) {
+                    pResolve(result);
+                  } else {
+                    pReject(event);
+                  }
+                });
+              }).then(currentResult => [ ...chainResults, currentResult ]);
+            });
+          }, Promise.resolve([])
+        ).then(results => {
+          var result = [].concat.apply([], results);
+          let childItems = [];
+          for (const index of Object.keys(bundleItems)) {
+            const res = result[index];
+            for (const bundleItem of bundleItems[index]) {
+              bundleItem.SBQQ__RequiredBy__c = res.id;
+              childItems.push(bundleItem);
+            }
+          }
+          if (childItems.length > 0) {
+            return sObject.update(childItems, function(childRes, childEvent){
+              if (childEvent.status) {
+                deferred.resolve(result);
+              } else {
+                deferred.reject(childEvent);
+              }
+            });
+          } else {
+            deferred.resolve(result);
+          }
+        }).catch(function(err){
+          deferred.reject(err);
+        });
+
+        return deferred.promise;
+      }
+
+
+
+      vm.populateQuoteDiscountSum = function(quoteLine) {
+        // line item is discountable
+        if (quoteLine.SBQQ__NonDiscountable__c == false) {
+          if (quoteLine.Salesforce_Product_Type__c == 'Hardware') {
+            if (quoteLine.Product_Type__c != 'OEM') {
+              quoteLine.Quote_Discount_Sum__c = parseFloat(vm.quote.hardwareDiscount || 0);
+            } else {
+              quoteLine.Quote_Discount_Sum__c = parseFloat(vm.quote.oemHardwareDiscount || 0);
+            }
+          } else if (quoteLine.Salesforce_Product_Type__c == 'Software') {
+            if (quoteLine.Product_Type__c != 'OEM') {
+              quoteLine.Quote_Discount_Sum__c = parseFloat(vm.quote.softwareDiscount || 0);
+            } else {
+              quoteLine.Quote_Discount_Sum__c = parseFloat(vm.quote.oemSoftwareDiscount || 0);
+            }
+          } else if (quoteLine.Salesforce_Product_Type__c == 'Professional Services') {
+            if (quoteLine.Product_Type__c != 'OEM') {
+              quoteLine.Quote_Discount_Sum__c = parseFloat(vm.quote.psDiscount || 0);
+            } else {
+              quoteLine.Quote_Discount_Sum__c = parseFloat(vm.quote.oempsDiscount || 0);
+            }
+          } else if (quoteLine.Salesforce_Product_Type__c == 'Support') {
+            if (quoteLine.Product_Type__c != 'OEM') {
+              quoteLine.Quote_Discount_Sum__c = parseFloat(vm.quote.supportDiscount || 0);
+            } else {
+              quoteLine.Quote_Discount_Sum__c = parseFloat(vm.quote.oemSupportDiscount || 0);
+            }
+          } else if (quoteLine.Salesforce_Product_Type__c == 'Managed Services') {
+            if (quoteLine.Product_Type__c != 'OEM') {
+              quoteLine.Quote_Discount_Sum__c = parseFloat(vm.quote.msDiscount || 0);
+            } else {
+              quoteLine.Quote_Discount_Sum__c = parseFloat(vm.quote.oemmsDiscount || 0);
+            }
+          }
+          quoteLine.Quote_Additional_Disc__c = parseFloat(vm.quote.additionalDiscount || 0);
+          // when no value set from xls
+          if (!quoteLine.SBQQ__Discount__c) quoteLine.SBQQ__Discount__c = quoteLine.Quote_Additional_Disc__c + quoteLine.Quote_Discount_Sum__c;
+        }
+      }
+
+      vm.setLineItemsGrouped = function(status) {
+        var deferred = $q.defer();
+
+        var qt = new sObject('SBQQ__Quote__c');
+        qt.Id = '{!SBQQ__Quote__c.Id}';
+        qt.SBQQ__LineItemsGrouped__c = status;
+
+        sObject.update([qt], function(result, event){
+          if (event.status) {
+            deferred.resolve(result);
+          } else {
+            deferred.reject(event);
+          }
+        });
+
+        return deferred.promise;
+      }
+
+      vm.quoteValid = function() {
+        var quoteErrors = [];
+        if(vm.workbookData.length >= 1000) {
+          quoteErrors.push('Please import less than 1000 line items at a time');
+        } else {
+            var missingDefault = false;
+            var notQuotableErrors = [];
+            angular.forEach(vm.workbookData, function(row) {
+              var partNumber = vm.getPartNumber(row[vm.keyField], false);
+              var qli = vm.rowToQLI(row);
+              if(!qli.SBQQ__Product__c) {
+                quoteErrors.push('No product entry found: ' + partNumber);
+              } else if(!qli.SBQQ__Quantity__c) { 
+                quoteErrors.push('Quantity must be greater than zero: ' + partNumber);
+              } else if (vm.lineItemsGrouped == true && !row['Parent Group Name'] && !row['Group Name']) {
+                quoteErrors.push('Every product needs to be in a group: ' + partNumber);
+              } else {
+                if(!qli.SBQQ__PricebookEntryId__c) {
+                  quoteErrors.push('No pricebook entry found: ' + partNumber + ' (Quote Currency: {!SBQQ__Quote__c.CurrencyIsoCode})');
+                }
+                var product = vm.products[partNumber.toUpperCase()] || vm.products[vm.getPartNumber(row[vm.keyField], true).toUpperCase()];
+                if(!product.quotable) {
+                  notQuotableErrors.push('Product is not Quotable: ' + partNumber);
+                }
+                if(qli.SBQQ__Discount__c < 0 || qli.SBQQ__Discount__c > 100) {
+                  quoteErrors.push('Line discount must be between 0 and 100: ' + partNumber);
+                }
+              }
+            });
+        }
+        vm.errors = vm.errors.concat(quoteErrors);
+        return { valid: quoteErrors.length == 0, nonQuotable: notQuotableErrors };
+      }
+
+      vm.getPartNumber = function(pn, withSpaces) {
+        // trim and replace multiple spaces with single space
+        var pn = pn.trim();
+        if(withSpaces == true){
+          pn = pn.replace(/\s+/g, ' ');
+        } else {
+          pn = pn.replace(/\s+/g, '');
+        }
+        return vm.replaceWordChars(pn);
+      }
+
+    vm.replaceWordChars = function(text) {
+      var s = text;
+      // smart single quotes and apostrophe
+      s = s.replace(/[\u2018\u2019\u201A]/g, ""); // '
+      // smart double quotes
+      s = s.replace(/[\u201C\u201D\u201E]/g, ""); // "
+      // ellipsis
+      s = s.replace(/\u2026/g, "");
+      // dashes
+      s = s.replace(/[\u2013\u2014\u2011]/g, "-"); // -
+      // circumflex
+      s = s.replace(/\u02C6/g, "^"); // ^
+      // open angle bracket
+      s = s.replace(/\u2039/g, "<"); // <
+      // close angle bracket
+      s = s.replace(/\u203A/g, ">"); // >
+      // spaces
+      s = s.replace(/[\u02DC\u00A0]/g, "");
+      
+      return s;
+    }
+
+    vm.formValid = function() {
+      return true;
+    }
+
+    vm.htmlify = function(errors) {
+      return errors.map(function(e) {
+          return e + "\n\r";
+      });
+    }
+
+    vm.getPriceBookEntries = function() {
+      var deferred = $q.defer();
+      var hasProducts = false;
+      for(var p in vm.products) {
+        hasProducts = true;
+      }
+      if(!hasProducts) {
+        deferred.resolve({});
+      } else {
+          var productIds = [];
+          for(var i in vm.products) {
+              productIds.push(vm.products[i].id);
+          }
+          var withQuotes = productIds.map(function(p) {
+              return "'" + p + "'";
+          });
+          var q = 'select Id, Product2Id, UnitPrice from PriceBookEntry where IsActive = true ' +
+              'and PriceBook2Id = \'{!SBQQ__Quote__c.SBQQ__PriceBook__c}\' ' +
+              'and CurrencyIsoCode = \'{!SBQQ__Quote__c.CurrencyIsoCode}\' ' +
+              'and Product2Id in (' + withQuotes.join(',') + ')';
+          sObject.query(q, function(result, event) {
+              if(event.status) {
+                  var ret = {};
+                  angular.forEach(result, function(record) {
+                      ret[record.Product2Id] = { 
+                id: record.Id, 
+                price: record.UnitPrice 
+              };
+                  });
+                  deferred.resolve(ret);
+              }
+          });
+      }
+      return deferred.promise;
+    }
+
+    vm.checkForErrors = function() {
+      var deferred = $q.defer();
+      if(vm.formValid()) {
+          vm.getPriceBookEntries().then(function(pbePromise) {
+              vm.priceBookEntries = pbePromise;
+              var validStatus = vm.quoteValid();
+              if(validStatus.valid) {
+                  deferred.resolve({ valid: true, nqProducts: validStatus.nonQuotable });
+              } else {
+                  deferred.resolve({ valid: false });
+              }
+          });
+      } else {
+          deferred.resolve({ valid: false });
+      }
+      return deferred.promise;
+    }
+
+    vm.saveRecords = function() {
+      vm.errors = [];
+      vm.checkForErrors().then(function(isValid) {
+          if(isValid.valid) {
+              if(isValid.nqProducts.length != 0) {
+                SweetAlert.swal({
+                    title: "Warning!",
+                    text: "This import contains non-quoteable products. Would you like to proceed?",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#42BCF4",
+                    confirmButtonText: "Import",
+                    cancelButtonText: "Cancel",
+                    closeOnConfirm: true
+                }, function(isConfirm) {
+                  if(isConfirm) {
+                    vm.doImport();
+                  }
+                });              
+              } else {
+                vm.doImport();
+              }
+          } else {
+              SweetAlert.swal({
+                  title: "Please fix the following errors",
+                  text: vm.htmlify(vm.errors),
+                  type: "warning",
+                  showCancelButton: false,
+                  confirmButtonColor: "#DD6B55",
+                  confirmButtonText: "OK",
+                  closeOnConfirm: true
+              });
+          }
+      });
+      return false;
+    }
+
+    vm.doImport = function() {
+      if(vm.validateSolutionNames() != 0) {
+        SweetAlert.swal({
+          title: "Warning!",
+          text: 'Some group names are longer than 80 characters. Do you want to truncate them?',
+          type: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#42BCF4",
+          confirmButtonText: "Yes",
+          cancelButtonText: "Cancel",
+          closeOnConfirm: true
+        }, function(isConfirm) {
+          if(isConfirm){
+            vm.handleImport();
+          } else {
+             console.log('cancelled');
+          }
+        });
+      } else {
+        vm.handleImport();
+      }
+    }
+
+    vm.handleImport = function(){
+      vm.toggleProgress(true);
+      vm.createSolutions().then(function(response) {
+        vm.setLineItemsGrouped(vm.lineItemsGrouped).then(function(qtresponse){
+          vm.createLineItems().then(function(liresponse) {
+            vm.doneWithStuff();
+            SweetAlert.swal({
+              title: "Congratulations!",
+              text: "Your quote has been saved!",
+              type: "success",
+              showCancelButton: false,
+              confirmButtonText: "Boom!",
+              closeOnConfirm: true,
+              closeOnCancel: false 
+            }, function(isConfirm) {
+              if (isConfirm) {
+                window.location.href = '/{!SBQQ__Quote__c.Id}';
+              }
+            });
+          }, function(error) {
+              alert('Something went wrong, check the console');
+          }).finally(function() {
+              vm.doneWithStuff();
+          });
+        }, function(qterror){
+          vm.doneWithStuff(); 
+          alert('Something went wrong, check the console');
+        });
+      }, function(error) { 
+        vm.doneWithStuff(); 
+        alert(error.message || 'Something went wrong, check the console');
+      });
+    }
+
+    vm.rowToQLI = function(row) {
+      ret = new sObject('SBQQ__QuoteLine__c');
+      ret.CurrencyIsoCode = '{!SBQQ__Quote__c.CurrencyIsoCode}';
+      ret.Custom_Import__c = true;
+
+      var woSpaces = vm.getPartNumber(row[vm.keyField], false);
+      var wSpaces = vm.getPartNumber(row[vm.keyField], true);
+      var product = vm.products[woSpaces.toUpperCase()] === undefined ? (vm.products[wSpaces.toUpperCase()] == undefined ? null : vm.products[wSpaces.toUpperCase()]) : vm.products[woSpaces.toUpperCase()];
+      if (product) {
+        for(var key in row) {
+          if(vm.fieldsMap[key] === undefined) {
+            continue;
+          }
+          mapField = vm.fieldsMap[key];
+          
+          if(mapField.type == 'product') {
+            ret.SBQQ__Product__c = product ? product.id : null;
+            ret.SBQQ__PricebookEntryId__c = vm.priceBookEntries[ret.SBQQ__Product__c] !== undefined ? vm.priceBookEntries[ret.SBQQ__Product__c].id : null;
+          } else {
+            if (mapField.field == 'SBQQ__Quantity__c') {
+              // import quantity when SBQQ__QuantityEditable__c is true for product
+              if (product.quantityEditable == true) ret[mapField.field] = $scope.dataTranslate(row[key], mapField.type);
+              else ret[mapField.field] = 1;
+            } else if (mapField.field == 'SBQQ__Description__c') {
+              // import description when it is not locked on product
+              if (product.descriptionLocked == false) ret[mapField.field] = $scope.dataTranslate(row[key], mapField.type);
+              // use from product
+              if (!ret[mapField.field]) ret[mapField.field] = product.description;
+            } else if (mapField.field == 'Product_Cost__c') {
+              // import cost when SBQQ__CostEditable__c is set to true
+              if (vm.adminProfile === true || product.costEditable == true) { 
+                ret[mapField.field] = $scope.dataTranslate(row[key], mapField.type);
+              }
+            } else if (mapField.field == 'SBQQ__Optional__c') {
+              // import only if optional flag not set on product
+              if (!product.optional) ret[mapField.field] = $scope.dataTranslate(row[key], mapField.type);
+            } else if (mapField.field == 'SBQQ__ListPrice__c') {
+              // import only if SBQQ__PriceEditable__c set is to true on product
+              if (vm.adminProfile === true || product.priceEditable == true) ret[mapField.field] = $scope.dataTranslate(row[key], mapField.type);
+            } else if (mapField.field == 'SBQQ__Discount__c') {
+              // import only if discountable
+              if (!product.nondiscountable) {
+                ret[mapField.field] = $scope.dataTranslate(row[key], mapField.type);
+                ret.SBQQ__NonDiscountable__c = false;
+              } else {
+                ret.SBQQ__NonDiscountable__c = true;
+              }
+            } else {
+              ret[mapField.field] = $scope.dataTranslate(row[key], mapField.type);
+            }
+          }
+        }
+      }
+      return ret;
+    }
+
+    vm.productOptionToQLI = function(row, product, parentOrder) {
+      var ret = new sObject('SBQQ__QuoteLine__c');
+      ret.CurrencyIsoCode = '{!SBQQ__Quote__c.CurrencyIsoCode}';
+      ret.Custom_Import__c = true;
+      ret.SBQQ__Quote__c = row.Quote;
+      ret.SBQQ__Group__c = row.LineGroup;
+      ret.SBQQ__Bundled__c = product.bundled;
+      ret.SBQQ__Number__c = parentOrder + product.orderNumber;
+      ret.SBQQ__ProductOption__c = product.optionId;
+      if (product) {
+        ret.SBQQ__Product__c = product ? product.id : null;
+        ret.SBQQ__Quantity__c = product.quantity;
+        if (!ret.SBQQ__Quantity__c) ret.SBQQ__Quantity__c = 1;
+        ret.SBQQ__BundledQuantity__c = ret.SBQQ__Quantity__c;
+        ret.SBQQ__Quantity__c = ret.SBQQ__Quantity__c * row.Quantity;
+        ret.SBQQ__Description__c = product.description;
+        ret.SBQQ__Optional__c = product.optional;
+        // import only if discountable
+        ret.SBQQ__Discount__c = 0;
+        if (!product.nondiscountable) {
+          ret.SBQQ__NonDiscountable__c = false;
+        } else {
+          ret.SBQQ__NonDiscountable__c = true;
+        }
+        if (!product.bundled) {
+          ret.SBQQ__ListPrice__c = product.unitPrice;
+        }
+      }
+      return ret;
+    }
+
+    vm.getProducts = function(products) {
+      var deferred = $q.defer();
+      if(products.length == 0) { 
+        deferred.resolve([]);
+      } else {
+        var withQuotes = products.map(function(p) {
+            return "'" + p + "'";
+        });
+        var q = 'select Id, Support_Product_My_Care_Part_Number__c, Support_Product_My_Care_Plus_Part_Numb__c, '
+          + ' Support_Rate__c, Support_Product_My_Care_Universal_Part__c, ProductCode, Product_Cost__c, SBQQ__CostEditable__c, '
+          + ' SBQQ__DescriptionLocked__c, Warranty_Period__c, Warranty_UOM__c, Country_of_Origin__c, Lead_Time__c, ' 
+          + 'SBQQ__QuantityEditable__c, Description, SBQQ__PriceEditable__c, SBQQ__NonDiscountable__c, SBQQ__Optional__c, '
+          + 'Quotable__c, Business_Unit__c, Product_Type__c, Product_Cost_Gross__c, Product_Line__c, Salesforce_Product_Type__c,'
+          + ' SBQQ__SubscriptionCategory__c, OEM_Vendor__c, Max_Discount__c, Requires_Approval__c, RevPro_Class__c, '
+          + ' (select Id, SBQQ__ConfiguredSKU__c, SBQQ__Quantity__c, SBQQ__UnitPrice__c, SBQQ__Number__c, SBQQ__Bundled__c, SBQQ__OptionalSKU__c, SBQQ__OptionalSKU__r.ProductCode,'
+          + ' SBQQ__OptionalSKU__r.Product_Cost__c, SBQQ__OptionalSKU__r.Warranty_Period__c, SBQQ__OptionalSKU__r.Warranty_UOM__c,'
+          + ' SBQQ__OptionalSKU__r.SBQQ__Optional__c, SBQQ__OptionalSKU__r.Country_of_Origin__c, SBQQ__OptionalSKU__r.Lead_Time__c, '
+          + 'SBQQ__OptionalSKU__r.Description, SBQQ__OptionalSKU__r.Quotable__c, SBQQ__OptionalSKU__r.Business_Unit__c, '
+          + 'SBQQ__OptionalSKU__r.Product_Type__c, SBQQ__OptionalSKU__r.Product_Line__c, SBQQ__OptionalSKU__r.Salesforce_Product_Type__c,'
+          + ' SBQQ__OptionalSKU__r.OEM_Vendor__c from SBQQ__Options__r where SBQQ__OptionalSKU__r.Salesforce_Product_Type__c != \'Support\') '
+          + 'from Product2 where ProductCode in (' + withQuotes.join(',') + ')';
+        
+        sObject.query(q, {escape: false}, function(result, event) {
+          if(event.status) {
+            var ret = {};
+            result.forEach(function(record) {
+              var key = record.ProductCode.toUpperCase();
+              ret[key] = setupProduct(record);
+              ret[key].productOptions = setupProductOptions(record);
+            });
+            deferred.resolve(ret);
+          }
+        });
+      }
+      return deferred.promise;
+    }
+
+    function chunk(items, size) {
+      const chunks = [];
+      items = [].concat(...items);
+      while (items.length) {
+        chunks.push(
+          items.splice(0, size)
+        );
+      }
+      return chunks;
+    }
+
+    function setupProduct(record) {
+      return {
+        id: record.Id, 
+        cost: record.Product_Cost__c,
+        costPercent: record.Product_Cost_Gross__c,
+        description: record.Description,
+        quotable: record.Quotable__c, 
+        nondiscountable: record.SBQQ__NonDiscountable__c,
+        costEditable: record.SBQQ__CostEditable__c,
+        priceEditable: record.SBQQ__PriceEditable__c,
+        descriptionLocked: record.SBQQ__DescriptionLocked__c,
+        quantityEditable: record.SBQQ__QuantityEditable__c,
+        optional: record.SBQQ__Optional__c,
+        businessUnit: record.Business_Unit__c,
+        productType: record.Product_Type__c,
+        productLine: record.Product_Line__c,
+        subProductType: record.Salesforce_Product_Type__c,
+        subscriptionCategory: record.SBQQ__SubscriptionCategory__c,
+        vendor: record.OEM_Vendor__c,
+        careProduct: record.Support_Product_My_Care_Part_Number__c,
+        carePlusProduct: record.Support_Product_My_Care_Plus_Part_Numb__c,
+        universalProduct: record.Support_Product_My_Care_Universal_Part__c,
+        supportRate: record.Support_Rate__c,
+        warrantyPeriod: record.Warranty_Period__c,
+        warrantyUOM: record.Warranty_UOM__c,
+        countryOfOrigin: record.Country_of_Origin__c,
+        leadTime: record.Lead_Time__c,
+        maxDiscount: record.Max_Discount__c,
+        revProClass: record.RevPro_Class__c,
+        requiresApproval: record.Requires_Approval__c
+      };
+    }
+
+    function setupProductOptions(record) {
+      var productOptions = {};
+      if (record.SBQQ__Options__r) {
+        for (var i=0; i<record.SBQQ__Options__r.length; i++) {
+          var productOption = record.SBQQ__Options__r[i];
+          var product = setupProduct(productOption.SBQQ__OptionalSKU__r);
+          product.optionId = productOption.Id;
+          product.bundled = productOption.SBQQ__Bundled__c;
+          product.quantity = productOption.SBQQ__Quantity__c;
+          product.unitPrice = productOption.SBQQ__UnitPrice__c;
+          product.orderNumber = productOption.SBQQ__Number__c;
+          productOptions[productOption.SBQQ__OptionalSKU__r.ProductCode.toUpperCase()] = product;
+        }
+      }
+      return productOptions;
+    }
+
+    vm.setupQuote = function(workbookData) {
+      var products = [];
+      var errors = false;
+      var data = [];
+      angular.forEach(workbookData.data, function(row) {
+          if(!row.Quantity || !row[vm.keyField] || row.Quantity == '#REF!' || row[vm.keyField] == '#REF!') { 
+            console.log('skipping invalid row');
+          } else {
+            data.push(row);
+            products.push(vm.getPartNumber(row[vm.keyField], false));
+            products.push(vm.getPartNumber(row[vm.keyField], true));
+          }
+      });
+      workbookData.data = data;
+
+      if(errors) {
+          SweetAlert.swal({
+              title: "Error!",
+              text: "All rows must specify part number and quantity.  Please fix and upload again",
+              type: "error",
+              showCancelButton: false,
+              confirmButtonColor: "#42BCF4",
+              confirmButtonText: "Sorry :-(",
+              closeOnConfirm: true
+          }, function(isConfirm) {
+            vm.workbookData = null;
+            vm.gridOptions = {};
+          });    
+      }
+      if(products.length == 0) { return; }
+
+      vm.getProducts(products).then(function(promise) {
+          vm.products = promise;
+          workbookData.data.forEach(function(row) {
+              if(!row.Quantity) { return false; }
+              if(!row['Parent Group Name'] && !row['Group Name']) { return false; }
+
+              var pss = row['Parent Group Name'];
+              var css = row['Group Name'];
+              var opt = vm.translateOpt(row['Optional']);
+
+              var parentSolutionId = undefined;
+              
+              if(pss && vm.parentSolutions[pss + '---' + opt] === undefined) {
+                vm.groupMaxNumber = vm.groupMaxNumber + 1;
+                vm.parentSolutions[pss + '---' + opt] = { 
+                  id: parentSolutionId, 
+                  optional: $scope.dataTranslate(opt,'boolean'),
+                  order: vm.groupMaxNumber
+                };
+              }
+
+              if(css) {
+                if(pss) {
+                  if(vm.childSolutions[pss + '---' + css + '---' + opt] === undefined) {
+                    if(vm.parentSolutions[pss + '---' + opt] === undefined) {
+                      vm.groupMaxNumber = vm.groupMaxNumber + 1;
+                      // this shouldn't happen?
+                      vm.parentSolutions[pss + '---' + opt] = { 
+                        id: parentSolutionId,
+                        optional: $scope.dataTranslate(opt,'boolean'),
+                        order: vm.groupMaxNumber
+                      };
+                    }
+                    vm.groupMaxNumber = vm.groupMaxNumber + 1;
+                    vm.childSolutions[pss + '---' + css + '---' + opt] = { 
+                      id: null, 
+                      parent: pss,
+                      optional: $scope.dataTranslate(opt,'boolean'),
+                      order: vm.groupMaxNumber
+                    };
+                  }
+                } else {
+                  if(vm.parentSolutions[css + '---' + opt] === undefined) {
+                    vm.groupMaxNumber = vm.groupMaxNumber + 1;
+                    vm.parentSolutions[css + '---' + opt] = { 
+                      id: null,
+                      optional: $scope.dataTranslate(opt, 'boolean'),
+                      order: vm.groupMaxNumber
+                    };
+                  }
+                }
+              }
+
+          });
+          console.log('child and parent solutions:');
+          console.log(vm.childSolutions);
+          console.log(vm.parentSolutions);
+        });
+      };
+
+      vm.doneWithStuff = function() {
+        vm.toggleProgress(false);
+        vm.updateRecentQuotes();
+      }
+
+      vm.getExistingSolutions = function() {
+        var deferred = $q.defer();
+        var queryString = "select Id, Name, Parent_Group__c, SBQQ__Optional__c, Parent_Group__r.Name, Quote_Line_Count__c from SBQQ__QuoteLineGroup__c where SBQQ__Quote__c = '{!SBQQ__Quote__c.Id}'";
+        sObject.query(queryString, function(result, event) {
+          if(event.status) {
+            deferred.resolve(result);
+          }
+        });
+        return deferred.promise;
+      }
+
+      vm.getLineItemMaxOrder = function() {
+        var deferred = $q.defer();
+        var queryString = "SELECT MAX(SBQQ__Number__c) max, SBQQ__Group__c from SBQQ__QuoteLine__c WHERE SBQQ__Quote__c = '{!SBQQ__Quote__c.Id}' GROUP BY SBQQ__Group__c";
+        sObject.query(queryString, function(result, event) {
+          if(event.status) {
+            deferred.resolve(result);
+          }
+        });
+        return deferred.promise;
+      }
+
+      vm.getMaxGroupNumber = function() {
+        var deferred = $q.defer();
+        var queryString = "SELECT MAX(SBQQ__Number__c) max from SBQQ__QuoteLineGroup__c WHERE SBQQ__Quote__c = '{!SBQQ__Quote__c.Id}'";
+        sObject.query(queryString, function(result, event) {
+          if(event.status) {
+            deferred.resolve(result);
+          }
+        });
+        return deferred.promise;
+      }
+
+      vm.updateRecentQuotes = function() {
+        var promises = [vm.getRecentQuotes()];
+        $q.all(promises).then(function(results){
+          vm.recentQuotes = results[0];
+        });
+      }
+
+      vm.getRecentQuotes = function() {
+          var deferred = $q.defer();
+          var queryString = "select Id, Name, SBQQ__NetAmount__c, SBQQ__Account__r.Name, SBQQ__Status__c, CreatedDate from SBQQ__Quote__c order by CreatedDate DESC limit 50";
+
+          sObject.query(queryString, function (result, event) {
+              if(event.status) {
+                  deferred.resolve(result);
+              }
+          }, { escape: false });
+
+          return deferred.promise;
+      }
+
+      $scope.dataTranslate = function(data, type) {
+        if(type == 'currency') {
+          return numFromCurrency(data);
+        }
+        if(type == 'percent') {
+          return numFromPercent(data);
+        }
+        if(type == 'date') {
+          return new Date(data);
+        }
+        if(type == 'number') {
+          return Number(data);
+        }
+        if(type == 'boolean') {
+          return data == 'Y' || data == 'TRUE' || data == 'YES';
+        }
+        return data.trim();
+      }
+
+      vm.timeAgo = function(t) {
+        return moment(t).fromNow();
+      }
+
+      vm.opt = function(o) {
+        return o ? 'Y' : 'N';
+      }
+
+      vm.translateOpt = function(o) {
+        var up = o == null ? null : o.toUpperCase();
+        if(up == 'TRUE' || up == 'FALSE') {
+          return up == 'TRUE' ? 'Y' : 'N';
+        }
+        if(up == 'Y' || up == 'N') {
+          return up;
+        }
+        if(up == 'YES' || up == 'NO') {
+          return up == 'YES' ? 'Y' : 'N';
+        }
+        return 'N';
+      }
+
+      $scope.init = function() {
+        vm.updateRecentQuotes();
+        vm.getExistingSolutions().then(function(p) {
+            p.forEach(function(rec) {
+              if(rec.Parent_Group__c) {
+                vm.childSolutions[rec.Parent_Group__r.Name + '---' + rec.Name + '---' + vm.opt(rec.SBQQ__Optional__c)] = { 
+                  id: rec.Id,
+                  name: rec.Name,
+                  parent: rec.Parent_Group__c,
+                  optional: rec.SBQQ__Optional__c,
+                  quoteLineCount: rec.Quote_Line_Count__c
+                };
+              } else {
+                vm.parentSolutions[rec.Name + '---' + vm.opt(rec.SBQQ__Optional__c)] = {
+                  id: rec.Id,
+                  name: rec.Name,
+                  parent: null,
+                  optional: rec.SBQQ__Optional__c,
+                  quoteLineCount: rec.Quote_Line_Count__c
+                };
+              }
+            });
+        });
+        vm.getLineItemMaxOrder().then(function(p) {
+          p.forEach(function(rec) {
+            vm.lineItemMaxOrder[rec.SBQQ__Group__c] = rec.max;
+          });
+        });
+        vm.getMaxGroupNumber().then(function(p) {
+          vm.groupMaxNumber = (p[0].max == undefined || p[0].max == null || p.length == 0) ? 0 : p[0].max;
+        });
+      }
+
+      $scope.init();
+    }])
+    .directive("fileread", [function () {
+      return {
+        scope: {
+          opts: '='
+        },
+        link: function ($scope, $elm, $attrs) {
+          $elm.on('change', function (changeEvent) {
+            var reader = new FileReader();
+            
+            reader.onload = function (evt) {
+              $scope.$apply(function () {
+                var data;
+                if(!evt) {
+                  data = reader.content;
+                } else {
+                  data = evt.target.result;
+                }
+                
+                var workbook = XLSX.read(data, {type: 'binary'});
+                
+                var headerNames = XLSX.utils.sheet_to_json( workbook.Sheets[workbook.SheetNames[0]], { header: 1 })[0];
+                
+                var data = XLSX.utils.sheet_to_json( workbook.Sheets[workbook.SheetNames[0]]);
+                
+                $scope.opts.columnDefs = [];
+                headerNames.forEach(function (h) {
+                  $scope.opts.columnDefs.push({ field: h });
+                });
+                
+                $scope.opts.data = data;
+                $elm.val(null);
+              });
+            };
+            
+            reader.readAsBinaryString(changeEvent.target.files[0]);
+          });
+        }
+      }
+    }]);
+  </script>
+</apex:page>

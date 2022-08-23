@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Account Relationship</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Account Relationships</value>
+    </caseValues>
+    <fields>
+        <label><!-- Associated To Account --></label>
+        <name>Associated_To_Account__c</name>
+        <relationshipLabel><!-- Account Relationships (Associated To Account) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Main Account --></label>
+        <name>Main_Account__c</name>
+        <relationshipLabel><!-- Account Relationships (Main Account) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Region --></label>
+        <name>Region__c</name>
+        <picklistValues>
+            <masterLabel>APAC</masterLabel>
+            <translation><!-- APAC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Americas</masterLabel>
+            <translation><!-- Americas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CALA</masterLabel>
+            <translation><!-- CALA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA</masterLabel>
+            <translation><!-- EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Greater China</masterLabel>
+            <translation><!-- Greater China --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MESA</masterLabel>
+            <translation><!-- MESA --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Please select a relation type --></help>
+        <label><!-- Relation Type --></label>
+        <name>Relation_Type__c</name>
+        <picklistValues>
+            <masterLabel>Affiliation</masterLabel>
+            <translation><!-- Affiliation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Association</masterLabel>
+            <translation><!-- Association --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internally separate</masterLabel>
+            <translation><!-- Internally separate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Owned and Operated</masterLabel>
+            <translation><!-- Owned and Operated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ownership Group</masterLabel>
+            <translation><!-- Ownership Group --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Parent</masterLabel>
+            <translation><!-- Parent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Regional Location</masterLabel>
+            <translation><!-- Regional Location --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reseller/Dealer to Customer</masterLabel>
+            <translation><!-- Reseller/Dealer to Customer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Agent (Association)</masterLabel>
+            <translation><!-- Sales Agent (Association) --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Account Relation Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Account Relationship Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

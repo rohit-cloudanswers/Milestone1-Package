@@ -1,0 +1,11 @@
+<apex:page standardController="Account" showHeader="false" standardStylesheets="false" applyHtmlTag="false"
+      sidebar="false">
+    <html>
+        <body style="margin: 0;">
+            <apex:outputPanel rendered="{!IF(ISBLANK(Account.BillingStreet) || ISBLANK(Account.BillingCountry), true, false)}" >
+             <apex:image url="/img/msg_icons/warning32.png" height="16" width="20" />
+                 <b> <font color="red">Address is required. Please go down to the address section and add Salesforce primary address! </font></b> <br />
+            </apex:outputPanel>
+        </body>
+    </html>
+</apex:page>

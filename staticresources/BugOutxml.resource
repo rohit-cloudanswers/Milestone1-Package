@@ -1,0 +1,33 @@
+﻿<ns0:SiebelMessage MessageId="MessageId_0" IntObjectName="IntObjectName_1" MessageType="MessageType_2" IntObjectFormat="IntObjectFormat_3" xmlns:ns0="http://www.siebel.com/xml/H_BCDActivityBugzillaInterfaceOB">
+	<ns0:ListOfH_BcdActivityBugzillaInterfaceOb>
+		<ns0:H_BcdActivityBugzillaInterface>
+			<ns0:ActivityUpdateDateTime></ns0:ActivityUpdateDateTime>
+			<ns0:AccountId></ns0:AccountId>
+			<ns0:AccountName></ns0:AccountName>
+			<ns0:Comments></ns0:Comments>
+			<ns0:CreatedByName></ns0:CreatedByName>
+			<ns0:Summary></ns0:Summary>
+			<ns0:Product></ns0:Product>
+			<ns0:Component></ns0:Component>
+			<ns0:BugId></ns0:BugId>
+			<ns0:CritDateTime></ns0:CritDateTime>
+			<ns0:Priority></ns0:Priority>
+			<ns0:Severity></ns0:Severity>
+			<ns0:Status></ns0:Status>
+			<ns0:Type></ns0:Type>
+			<ns0:FixedVerNum></ns0:FixedVerNum>
+			<ns0:VerNum></ns0:VerNum>
+			<ns0:BugUpdDt></ns0:BugUpdDt>
+			<ns0:OldBugNum></ns0:OldBugNum>
+			<ns0:OperationCode></ns0:OperationCode>
+			<ns0:Attachment></ns0:Attachment>
+			<ns0:BugURL></ns0:BugURL>
+			<ns0:ServiceRequestId></ns0:ServiceRequestId>
+			<ns0:DeadlineDateTime></ns0:DeadlineDateTime>
+			<ns0:Description></ns0:Description>
+			<ns0:ActivityId></ns0:ActivityId>
+			<ns0:ParentAccountId></ns0:ParentAccountId>
+			<ns0:ParentAccountName></ns0:ParentAccountName>
+		</ns0:H_BcdActivityBugzillaInterface>
+	</ns0:ListOfH_BcdActivityBugzillaInterfaceOb>
+</ns0:SiebelMessage>

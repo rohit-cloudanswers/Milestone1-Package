@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <decisions>
+        <description>clear all previous values, this is a starting status.</description>
+        <name>Lead_changed_to_CRL</name>
+        <label>Lead changed to CRL</label>
+        <locationX>635</locationX>
+        <locationY>874</locationY>
+        <defaultConnector>
+            <targetReference>Lead_changed_to_Rejected</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Status_CRL</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>CRL</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Stamp_CRL</targetReference>
+            </connector>
+            <label>Status CRL</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>clear all previous values, this is a starting status.</description>
+        <name>Lead_changed_to_MQL</name>
+        <label>Lead changed to MQL</label>
+        <locationX>638</locationX>
+        <locationY>324</locationY>
+        <defaultConnector>
+            <targetReference>Lead_changed_to_SGL</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Status_MQL</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MQL</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Stamp_and_Clear_for_MQL</targetReference>
+            </connector>
+            <label>Status MQL</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>clear all previous values, this is a starting status.</description>
+        <name>Lead_changed_to_Rejected</name>
+        <label>Lead changed to Rejected</label>
+        <locationX>636</locationX>
+        <locationY>1033</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Status_Rejected</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Rejected</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Stamp_Rejected</targetReference>
+            </connector>
+            <label>Status Rejected</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>clear all previous values, this is a starting status.</description>
+        <name>Lead_changed_to_SAL</name>
+        <label>Lead changed to SAL</label>
+        <locationX>634</locationX>
+        <locationY>700</locationY>
+        <defaultConnector>
+            <targetReference>Lead_changed_to_CRL</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Status_SAL</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>SAL</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Stamp_SAL</targetReference>
+            </connector>
+            <label>Status SAL</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>clear all previous values, this is a starting status.</description>
+        <name>Lead_changed_to_SGL</name>
+        <label>Lead changed to SGL</label>
+        <locationX>634</locationX>
+        <locationY>524</locationY>
+        <defaultConnector>
+            <targetReference>Lead_changed_to_SAL</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Status_SGL</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>SGL</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Stamp_and_Clear_for_SGL</targetReference>
+            </connector>
+            <label>Status SGL</label>
+        </rules>
+    </decisions>
+    <description>Before save, updated only.  Manages various date stamps and fields related to the lead status process.  Initial date stamps on Created flow.</description>
+    <formulas>
+        <name>returnNullDateTIme</name>
+        <dataType>DateTime</dataType>
+        <expression>DATETIMEVALUE(&quot;&quot;)</expression>
+    </formulas>
+    <interviewLabel>Lead - Status Management {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Lead - Status Management</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <description>stamp mql, clear all others</description>
+        <name>Stamp_and_Clear_for_MQL</name>
+        <label>Stamp and Clear for MQL</label>
+        <locationX>860</locationX>
+        <locationY>325</locationY>
+        <inputAssignments>
+            <field>Date_Last_CRL__c</field>
+            <value>
+                <elementReference>returnNullDateTIme</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Date_Last_MQL__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Date_Last_Rejected__c</field>
+            <value>
+                <elementReference>returnNullDateTIme</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Date_Last_SAL__c</field>
+            <value>
+                <elementReference>returnNullDateTIme</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Date_Last_SGL__c</field>
+            <value>
+                <elementReference>returnNullDateTIme</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Reject_Reason_Comments__c</field>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Reject__c</field>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <description>stamp sgl, clear all others</description>
+        <name>Stamp_and_Clear_for_SGL</name>
+        <label>Stamp and Clear for SGL</label>
+        <locationX>864</locationX>
+        <locationY>526</locationY>
+        <inputAssignments>
+            <field>Date_Last_CRL__c</field>
+            <value>
+                <elementReference>returnNullDateTIme</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Date_Last_MQL__c</field>
+            <value>
+                <elementReference>returnNullDateTIme</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Date_Last_Rejected__c</field>
+            <value>
+                <elementReference>returnNullDateTIme</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Date_Last_SAL__c</field>
+            <value>
+                <elementReference>returnNullDateTIme</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Date_Last_SGL__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Stamp_CRL</name>
+        <label>Stamp CRL</label>
+        <locationX>878</locationX>
+        <locationY>870</locationY>
+        <inputAssignments>
+            <field>Date_Last_CRL__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Stamp_Rejected</name>
+        <label>Stamp Rejected</label>
+        <locationX>875</locationX>
+        <locationY>1027</locationY>
+        <inputAssignments>
+            <field>Date_Last_Rejected__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Stamp_SAL</name>
+        <label>Stamp SAL</label>
+        <locationX>871</locationX>
+        <locationY>700</locationY>
+        <inputAssignments>
+            <field>Date_Last_SAL__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <startElementReference>Lead_changed_to_MQL</startElementReference>
+    <status>Active</status>
+</Flow>

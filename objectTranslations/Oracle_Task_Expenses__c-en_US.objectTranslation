@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Oracle Task Expense</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Oracle Task Expenses</value>
+    </caseValues>
+    <fields>
+        <label><!-- Amount --></label>
+        <name>Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Incurred --></label>
+        <name>Date_Incurred__c</name>
+    </fields>
+    <fields>
+        <label><!-- Incurred By --></label>
+        <name>Incurred_By__c</name>
+    </fields>
+    <fields>
+        <label><!-- Invoice Id --></label>
+        <name>Invoice_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Invoice Line Number --></label>
+        <name>Invoice_Line_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Invoice Number --></label>
+        <name>Invoice_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Oracle Project Task --></label>
+        <name>Oracle_Project_Task__c</name>
+        <relationshipLabel><!-- Oracle Task Expenses --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Oracle Task Expense Id --></label>
+        <name>Oracle_Task_Expense_Id__c</name>
+    </fields>
+    <layouts>
+        <layout>Oracle Task Expense Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

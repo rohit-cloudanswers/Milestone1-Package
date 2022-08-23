@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Product Class Category</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Product Class Categories</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active? --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <help><!-- The product class this category is associated with. --></help>
+        <label><!-- Product Class --></label>
+        <name>Product_Class__c</name>
+        <relationshipLabel><!-- Product Class Categories --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- You shouldn&apos;t see this! --></help>
+        <label><!-- forSearch --></label>
+        <name>forSearch__c</name>
+    </fields>
+    <layouts>
+        <layout>Product Class Category Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

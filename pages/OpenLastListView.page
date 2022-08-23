@@ -1,0 +1,12 @@
+<apex:page standardController="Lead" recordSetVar="leads">
+    <head>
+        <script type="text/javascript">
+        	var listViewId = '{!filterId}';
+        	if(listViewId) {
+                window.location.href = '/00Q?fcf=' + listViewId.substring(0, 15);
+            } else {
+                window.location.href = '/00Q/o?nooverride=1';
+            }
+        </script>
+    </head>
+</apex:page>

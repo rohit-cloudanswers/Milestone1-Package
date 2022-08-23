@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <content>Home_Page_Default1</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>standard-home</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Program_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>MPM4_BASE__Milestone1_Program__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Milestone_Record_Page1</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>MPM4_BASE__Milestone1_Milestone__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>MS_Task_Record_Page3</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>MPM4_BASE__Milestone1_Task__c</pageOrSobjectType>
+    </actionOverrides>
+    <brand>
+        <headerColor>#0070D2</headerColor>
+        <logoVersion>1</logoVersion>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <description>Professional Service Projects</description>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <label>Projects</label>
+    <navType>Standard</navType>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira</recordType>
+        <type>Flexipage</type>
+        <profile>Imagine - Adtech Sales Ops User DLX</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira</recordType>
+        <type>Flexipage</type>
+        <profile>Imagine - Adtech Sales User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira</recordType>
+        <type>Flexipage</type>
+        <profile>Imagine - API User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira</recordType>
+        <type>Flexipage</type>
+        <profile>Imagine - Channel Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira</recordType>
+        <type>Flexipage</type>
+        <profile>Imagine - Channel User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira</recordType>
+        <type>Flexipage</type>
+        <profile>Imagine - Chatter Only Proforce</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira</recordType>
+        <type>Flexipage</type>
+        <profile>Z - No Longer Used: Imagine - Engineer non-SSO</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira</recordType>
+        <type>Flexipage</type>
+        <profile>Imagine - External Marketing User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira</recordType>
+        <type>Flexipage</type>
+        <profile>Imagine - Finance</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira</recordType>
+        <type>Flexipage</type>
+        <profile>Imagine - KCS Prof and Service - AMS Jira</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira</recordType>
+        <type>Flexipage</type>
+        <profile>Imagine - Marketing Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira</recordType>
+        <type>Flexipage</type>
+        <profile>Imagine - Marketing User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira</recordType>
+        <type>Flexipage</type>
+        <profile>Imagine - Order Management User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira</recordType>
+        <type>Flexipage</type>
+        <profile>Z - No Longer Used: Imagine - Order Management User non-SSO</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira</recordType>
+        <type>Flexipage</type>
+        <profile>Imagine - P&amp;N Sales Ops User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira</recordType>
+        <type>Flexipage</type>
+        <profile>Imagine - P&amp;N Sales Ops User DLX</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira</recordType>
+        <type>Flexipage</type>
+        <profile>Imagine - P&amp;N Sales User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira</recordType>
+        <type>Flexipage</type>
+        <profile>Imagine - Partner Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira</recordType>
+        <type>Flexipage</type>
+        <profile>Imagine - Product Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira</recordType>
+        <type>Flexipage</type>
+        <profile>Z - No Longer Used: Imagine - Product Manager non-SSO</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira</recordType>
+        <type>Flexipage</type>
+        <profile>Imagine - Prof Services - AMS</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira</recordType>
+        <type>Flexipage</type>
+        <profile>Imagine - Prof Services - P&amp;N</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira</recordType>
+        <type>Flexipage</type>
+        <profile>Imagine - Prof Services - P&amp;N - Contractor</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira</recordType>
+        <type>Flexipage</type>
+        <profile>Imagine - Read Only</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira</recordType>
+        <type>Flexipage</type>
+        <profile>Imagine - Read Only w Reporting</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira</recordType>
+        <type>Flexipage</type>
+        <profile>Z - No Longer Used -Imagine - Service</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira</recordType>
+        <type>Flexipage</type>
+        <profile>Imagine - Service - AMS</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira</recordType>
+        <type>Flexipage</type>
+        <profile>Z- No longer Used: Imagine - Service - AMS - non SSO Test Only</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira</recordType>
+        <type>Flexipage</type>
+        <profile>Imagine - Service - P&amp;N</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira</recordType>
+        <type>Flexipage</type>
+        <profile>Imagine - Service Consultant</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira</recordType>
+        <type>Flexipage</type>
+        <profile>Imagine - Time Entry</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira</recordType>
+        <type>Flexipage</type>
+        <profile>MarketingProfile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira</recordType>
+        <type>Flexipage</type>
+        <profile>Minimum Access - Salesforce</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira</recordType>
+        <type>Flexipage</type>
+        <profile>Sales User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira</recordType>
+        <type>Flexipage</type>
+        <profile>SolutionManager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira</recordType>
+        <type>Flexipage</type>
+        <profile>Standard</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira</recordType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Jira_Cloud</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira_Cloud</recordType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Jira_Cloud</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira_Cloud</recordType>
+        <type>Flexipage</type>
+        <profile>Imagine - Service - P&amp;N</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Jira_Cloud</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira_Cloud</recordType>
+        <type>Flexipage</type>
+        <profile>Imagine - Service Consultant</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Jira_Cloud</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira_Cloud</recordType>
+        <type>Flexipage</type>
+        <profile>Imagine - Service - AMS</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Jira_Cloud</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira_Cloud</recordType>
+        <type>Flexipage</type>
+        <profile>Imagine - Prof Services - P&amp;N - Contractor</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Jira_Cloud</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira_Cloud</recordType>
+        <type>Flexipage</type>
+        <profile>Imagine - Prof Services - P&amp;N</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Jira_Cloud</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira_Cloud</recordType>
+        <type>Flexipage</type>
+        <profile>Imagine - Prof Services - AMS</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Jira_Cloud</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira_Cloud</recordType>
+        <type>Flexipage</type>
+        <profile>Z - No Longer Used: Imagine - Product Manager non-SSO</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Jira_Cloud</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira_Cloud</recordType>
+        <type>Flexipage</type>
+        <profile>Imagine - Product Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Jira_Cloud</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira_Cloud</recordType>
+        <type>Flexipage</type>
+        <profile>Imagine - KCS Prof and Service - AMS Jira</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Jira_Cloud</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira_Cloud_MS</recordType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Jira_Cloud</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira_Cloud_MS</recordType>
+        <type>Flexipage</type>
+        <profile>Imagine - Service - P&amp;N</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Jira_Cloud</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira_Cloud_MS</recordType>
+        <type>Flexipage</type>
+        <profile>Imagine - Service Consultant</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Jira_Cloud</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira_Cloud_MS</recordType>
+        <type>Flexipage</type>
+        <profile>Imagine - Service - AMS</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Jira_Cloud</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira_Cloud_MS</recordType>
+        <type>Flexipage</type>
+        <profile>Imagine - Prof Services - P&amp;N - Contractor</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Jira_Cloud</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira_Cloud_MS</recordType>
+        <type>Flexipage</type>
+        <profile>Imagine - Prof Services - P&amp;N</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Jira_Cloud</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira_Cloud_MS</recordType>
+        <type>Flexipage</type>
+        <profile>Imagine - Prof Services - AMS</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Jira_Cloud</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira_Cloud_MS</recordType>
+        <type>Flexipage</type>
+        <profile>Z - No Longer Used: Imagine - Product Manager non-SSO</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Jira_Cloud</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira_Cloud_MS</recordType>
+        <type>Flexipage</type>
+        <profile>Imagine - Product Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Jira_Cloud</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Bug__c</pageOrSobjectType>
+        <recordType>Bug__c.Integrated_Jira_Cloud_MS</recordType>
+        <type>Flexipage</type>
+        <profile>Imagine - KCS Prof and Service - AMS Jira</profile>
+    </profileActionOverrides>
+    <tabs>standard-home</tabs>
+    <tabs>AXIA_AdvancedApprovals1</tabs>
+    <tabs>standard-Account</tabs>
+    <tabs>MPM4_BASE__Milestone1_Program__c</tabs>
+    <tabs>MPM4_BASE__Milestone1_Project__c</tabs>
+    <tabs>MPM4_BASE__Milestone1_Milestone__c</tabs>
+    <tabs>MPM4_BASE__Milestone1_Task__c</tabs>
+    <tabs>standard-Order</tabs>
+    <tabs>standard-Case</tabs>
+    <tabs>standard-Opportunity</tabs>
+    <tabs>TimeEntryApp</tabs>
+    <tabs>standard-Contact</tabs>
+    <tabs>MPM4_Milestone1_Log__c</tabs>
+    <tabs>Account_AG</tabs>
+    <tabs>Contract_Header__c</tabs>
+    <tabs>sbaa__Approval__c</tabs>
+    <tabs>Oracle_Project__c</tabs>
+    <tabs>Oracle_Project_Task__c</tabs>
+    <tabs>Daily_Currency_Conversion__c</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Projects_UtilityBar</utilityBar>
+</CustomApplication>

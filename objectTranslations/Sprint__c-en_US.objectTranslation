@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Sprint</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Sprints</value>
+    </caseValues>
+    <fields>
+        <label><!-- End --></label>
+        <name>End__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sprint Details --></label>
+        <name>Sprint_Details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sprint Purpose --></label>
+        <name>Sprint_Purpose__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start --></label>
+        <name>Start__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Complete</masterLabel>
+            <translation><!-- Complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress - Build</masterLabel>
+            <translation><!-- In Progress - Build --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress - Deployment</masterLabel>
+            <translation><!-- In Progress - Deployment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress - Design</masterLabel>
+            <translation><!-- In Progress - Design --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress - QA/UAT</masterLabel>
+            <translation><!-- In Progress - QA/UAT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Planned</masterLabel>
+            <translation><!-- Planned --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Sprint Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Details --></label>
+            <section>Details</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,656 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Old Project</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Old Projects</value>
+    </caseValues>
+    <fields>
+        <help><!-- Account --></help>
+        <label><!-- Corporate Customer --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Old Projects (Corporate Customer) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Box attachments Share URL. Requires that Project Manager add this shared link using Box sharing rules and copies it into this field. --></help>
+        <label><!-- Box Share URL --></label>
+        <name>Box_Share_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Budget Status --></label>
+        <name>Budget_Icon__c</name>
+    </fields>
+    <fields>
+        <help><!-- Budget Reason --></help>
+        <label><!-- Budget Reason --></label>
+        <name>Budget_Reason__c</name>
+    </fields>
+    <fields>
+        <label><!-- Budget Status Reporting --></label>
+        <name>Budget_Status_Reporting__c</name>
+    </fields>
+    <fields>
+        <label><!-- Budget --></label>
+        <name>Budget__c</name>
+        <picklistValues>
+            <masterLabel>Green</masterLabel>
+            <translation><!-- Green --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Red</masterLabel>
+            <translation><!-- Red --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yellow</masterLabel>
+            <translation><!-- Yellow --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Closed CARE --></label>
+        <name>Closed_CARE__c</name>
+    </fields>
+    <fields>
+        <label><!-- Closed Distribution Products --></label>
+        <name>Closed_Hardware_Distribution__c</name>
+    </fields>
+    <fields>
+        <label><!-- Closed Media Products --></label>
+        <name>Closed_Hardware_Media__c</name>
+    </fields>
+    <fields>
+        <label><!-- Closed Networking Products --></label>
+        <name>Closed_Hardware_Networking__c</name>
+    </fields>
+    <fields>
+        <label><!-- Closed Playout Products --></label>
+        <name>Closed_Hardware_Playout__c</name>
+    </fields>
+    <fields>
+        <label><!-- Closed Professional Services --></label>
+        <name>Closed_Professional_Services__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country Id --></label>
+        <name>Country_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- Country --></help>
+        <label><!-- Country --></label>
+        <name>Country__c</name>
+        <relationshipLabel><!-- Old Projects --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The date by which the project is scheduled to be completed by. --></help>
+        <label><!-- Deadline --></label>
+        <name>Deadline__c</name>
+    </fields>
+    <fields>
+        <help><!-- A general description of the project. --></help>
+        <label><!-- Project Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of days between Kickoff and Deadline. --></help>
+        <label><!-- Duration --></label>
+        <name>Duration__c</name>
+    </fields>
+    <fields>
+        <help><!-- End User Account --></help>
+        <label><!-- End User Account --></label>
+        <name>End_User_Account__c</name>
+        <relationshipLabel><!-- Old Projects (End User Account) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Final Rev Rec Date --></help>
+        <label><!-- Final Rev Rec Date --></label>
+        <name>Final_Rev_Rec_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- FolderId --></label>
+        <name>FolderId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Calculated. --></help>
+        <label><!-- GoogleGanntUrl --></label>
+        <name>GoogleGanntUrl__c</name>
+    </fields>
+    <fields>
+        <label><!-- Import ID --></label>
+        <name>ImportID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Initial Template --></help>
+        <label><!-- Initial Template --></label>
+        <name>Initial_Template__c</name>
+        <picklistValues>
+            <masterLabel>Large</masterLabel>
+            <translation><!-- Large --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Small</masterLabel>
+            <translation><!-- Small --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Instructions to the Supply Chain Team --></label>
+        <name>Instructions_to_the_Supply_Chain_Team__c</name>
+    </fields>
+    <fields>
+        <help><!-- Issues Tracker URL --></help>
+        <label><!-- Issues Tracker URL --></label>
+        <name>Issues_Tracker_URL__c</name>
+    </fields>
+    <fields>
+        <help><!-- What date should this project start? --></help>
+        <label><!-- Kickoff --></label>
+        <name>Kickoff__c</name>
+    </fields>
+    <fields>
+        <label><!-- Latest Arrival Onsite Date --></label>
+        <name>Latest_Arrival_Onsite_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Media USD Rollup --></help>
+        <label><!-- Media USD --></label>
+        <name>Media_USD__c</name>
+    </fields>
+    <fields>
+        <help><!-- Networking USD --></help>
+        <label><!-- Networking USD --></label>
+        <name>Networking_USD__c</name>
+    </fields>
+    <fields>
+        <help><!-- Calculated as the next incomplete task with a due date in this project. This includes sub-milestones. --></help>
+        <label><!-- Next Project Milestone Due Date --></label>
+        <name>Next_Project_Milestone_Due_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- The next incomplete milestone due date. This does not include sub-milestones. --></help>
+        <label><!-- Next Project Top Milestone Due Date --></label>
+        <name>Next_Project_Top_Milestone_Due_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Calculated sum of the number of incomplete milestones assigned to this project. This includes sub-milestones in the project. --></help>
+        <label><!-- Number of Incomplete Milestones --></label>
+        <name>Number_of_Incomplete_Milestones__c</name>
+    </fields>
+    <fields>
+        <help><!-- The number of incomplete milestones that are in this project. This does not count sub-milestones. --></help>
+        <label><!-- Number of Incomplete Top Milestones --></label>
+        <name>Number_of_Incomplete_Top_Milestones__c</name>
+    </fields>
+    <fields>
+        <label><!-- OneDrive Folder Id --></label>
+        <name>OneDrive_Folder_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Open CARE --></label>
+        <name>Open_CARE__c</name>
+    </fields>
+    <fields>
+        <label><!-- Open Distribution Products --></label>
+        <name>Open_Hardware_Distribution__c</name>
+    </fields>
+    <fields>
+        <label><!-- Open Media Products --></label>
+        <name>Open_Hardware_Media__c</name>
+    </fields>
+    <fields>
+        <label><!-- Open Networking Products --></label>
+        <name>Open_Hardware_Networking__c</name>
+    </fields>
+    <fields>
+        <label><!-- Open Playout Products --></label>
+        <name>Open_Hardware_Playout__c</name>
+    </fields>
+    <fields>
+        <label><!-- Open Professional Services --></label>
+        <name>Open_Professional_Services__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Account Name --></label>
+        <name>Opp_Account_Name_Link__c</name>
+    </fields>
+    <fields>
+        <help><!-- Opportunity Account Name --></help>
+        <label><!-- Opportunity Account Name --></label>
+        <name>Opportunity_Account_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Old Projects --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Oracle Project Code --></label>
+        <name>Oracle_Project_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Over All Project Health Reporting --></label>
+        <name>Over_All_Project_Health_Reporting__c</name>
+    </fields>
+    <fields>
+        <help><!-- PM Original Rev Rec Date --></help>
+        <label><!-- PM Orig Completion Date --></label>
+        <name>PM_Orig_Rev_Rec_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Brief status of project needs to complete and description of any obstacle or risks to completion or ability to recognize revenue.  Detail all necessary items for getting sign off. --></help>
+        <label><!-- Project Status &amp; Rev Rec Impact --></label>
+        <name>PM_Reason_Revised_Rev_Rec_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- PM Revised Rev Rec Date --></help>
+        <label><!-- PM Revised Completion Date --></label>
+        <name>PM_Revised_Rev_Rec_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Provides the reason we had to revise the completion date. --></help>
+        <label><!-- PM Type of Revision --></label>
+        <name>PM_Type_of_Revision__c</name>
+        <picklistValues>
+            <masterLabel>3rd Party Issue</masterLabel>
+            <translation><!-- 3rd Party Issue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer</masterLabel>
+            <translation><!-- Customer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PS Delivery</masterLabel>
+            <translation><!-- PS Delivery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Payment</masterLabel>
+            <translation><!-- Payment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product Quality/Delivery</masterLabel>
+            <translation><!-- Product Quality/Delivery --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Parent Project --></label>
+        <name>Parent_Project__c</name>
+        <relationshipLabel><!-- Old Projects --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- PlayOut USD rollup --></help>
+        <label><!-- PlayOut USD --></label>
+        <name>PlayOut_USD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Count --></label>
+        <name>Power_of_One__c</name>
+    </fields>
+    <fields>
+        <label><!-- Over All Project Health --></label>
+        <name>Project_Health__c</name>
+    </fields>
+    <fields>
+        <help><!-- Project Number --></help>
+        <label><!-- Project Number --></label>
+        <name>Project_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- Project Stage --></help>
+        <label><!-- Project Stage --></label>
+        <name>Project_Stage__c</name>
+        <picklistValues>
+            <masterLabel>Acceptance Pending</masterLabel>
+            <translation><!-- Acceptance Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Complete</masterLabel>
+            <translation><!-- Complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Execution</masterLabel>
+            <translation><!-- Execution --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Invoice pending</masterLabel>
+            <translation><!-- Invoice pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On Hold</masterLabel>
+            <translation><!-- On Hold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Opportunity</masterLabel>
+            <translation><!-- Opportunity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Planning</masterLabel>
+            <translation><!-- Planning --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Scheduled</masterLabel>
+            <translation><!-- Scheduled --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Project Type --></help>
+        <label><!-- Type --></label>
+        <name>Project_Type__c</name>
+        <picklistValues>
+            <masterLabel>Deferred</masterLabel>
+            <translation><!-- Deferred --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Media</masterLabel>
+            <translation><!-- Media --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Milestone Billing</masterLabel>
+            <translation><!-- Milestone Billing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Networking</masterLabel>
+            <translation><!-- Networking --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>POC</masterLabel>
+            <translation><!-- POC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Percent Complete</masterLabel>
+            <translation><!-- Percent Complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Playout</masterLabel>
+            <translation><!-- Playout --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Support Billable</masterLabel>
+            <translation><!-- Support Billable --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Professional Service Project from Quote --></help>
+        <label><!-- Quote --></label>
+        <name>Quote__c</name>
+        <relationshipLabel><!-- Old Projects --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Region --></label>
+        <name>Region_del__c</name>
+    </fields>
+    <fields>
+        <help><!-- Related Service Contract --></help>
+        <label><!-- Related Service Contract --></label>
+        <name>Related_Service_Contract__c</name>
+        <relationshipLabel><!-- Old Projects --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Revised Arrival Onsite Date --></label>
+        <name>Revised_Arrival_Onsite_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Risk Status --></label>
+        <name>Risk_Icon__c</name>
+    </fields>
+    <fields>
+        <help><!-- Risk Reason --></help>
+        <label><!-- Risk Reason --></label>
+        <name>Risk_Reason__c</name>
+    </fields>
+    <fields>
+        <label><!-- Risk Status Reporting --></label>
+        <name>Risk_Status_Reporting__c</name>
+    </fields>
+    <fields>
+        <help><!-- Risk --></help>
+        <label><!-- Risk --></label>
+        <name>Risk__c</name>
+        <picklistValues>
+            <masterLabel>Green</masterLabel>
+            <translation><!-- Green --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Red</masterLabel>
+            <translation><!-- Red --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yellow</masterLabel>
+            <translation><!-- Yellow --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SP Folder Name --></label>
+        <name>SP_Folder_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Salesforce Id --></label>
+        <name>Salesforce_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Schedule Status --></label>
+        <name>Schedule_Icon__c</name>
+    </fields>
+    <fields>
+        <help><!-- Schedule Reason --></help>
+        <label><!-- Schedule Reason --></label>
+        <name>Schedule_Reason__c</name>
+    </fields>
+    <fields>
+        <label><!-- Schedule Status Reporting --></label>
+        <name>Schedule_Status_Reporting__c</name>
+    </fields>
+    <fields>
+        <help><!-- Schedule --></help>
+        <label><!-- Schedule --></label>
+        <name>Schedule__c</name>
+        <picklistValues>
+            <masterLabel>Green</masterLabel>
+            <translation><!-- Green --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Red</masterLabel>
+            <translation><!-- Red --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yellow</masterLabel>
+            <translation><!-- Yellow --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Scope Status --></label>
+        <name>Scope_Icon__c</name>
+    </fields>
+    <fields>
+        <help><!-- Scope Reason --></help>
+        <label><!-- Scope Reason --></label>
+        <name>Scope_Reason__c</name>
+    </fields>
+    <fields>
+        <label><!-- Scope Status Reporting --></label>
+        <name>Scope_Status_Reporting__c</name>
+    </fields>
+    <fields>
+        <help><!-- Scope --></help>
+        <label><!-- Scope --></label>
+        <name>Scope__c</name>
+        <picklistValues>
+            <masterLabel>Green</masterLabel>
+            <translation><!-- Green --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Red</masterLabel>
+            <translation><!-- Red --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yellow</masterLabel>
+            <translation><!-- Yellow --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Service USD Rollup --></help>
+        <label><!-- Service USD --></label>
+        <name>Service_USD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expense Summary - Deprecated --></label>
+        <name>Status_BudgetExpenseSummary__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hours Summary - Deprecated --></label>
+        <name>Status_BudgetMiletoneEstimate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hours Summary (chart) - Deprecated --></label>
+        <name>Status_Image_HoursSummary__c</name>
+    </fields>
+    <fields>
+        <label><!-- Open vs. Complete Tasks (chart) - Deprec --></label>
+        <name>Status_Image_OpenVComplete__c</name>
+    </fields>
+    <fields>
+        <label><!-- Open, Late &amp; Blocked Tasks (chart) - Dep --></label>
+        <name>Status_Img_OpenLateBlocked__c</name>
+    </fields>
+    <fields>
+        <label><!-- Open, Late &amp; Blocked Tasks - Deprecated --></label>
+        <name>Status_TasksOpenBlockedLate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Open vs. Complete Tasks - Deprecated --></label>
+        <name>Status_TasksOpenComplete__c</name>
+    </fields>
+    <fields>
+        <help><!-- The current status of the project. --></help>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inactive</masterLabel>
+            <translation><!-- Inactive --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Opportunity Account Ship to Sub-region --></help>
+        <label><!-- Sub-Region --></label>
+        <name>Sub_Region_del__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is not a mandatory field and is intended for use in project reporting. --></help>
+        <label><!-- Sub-Type --></label>
+        <name>Sub_Type__c</name>
+        <picklistValues>
+            <masterLabel>Customer Funded Development</masterLabel>
+            <translation><!-- Customer Funded Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal Time Tracking</masterLabel>
+            <translation><!-- Internal Time Tracking --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PMO Implementation</masterLabel>
+            <translation><!-- PMO Implementation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Services/Support</masterLabel>
+            <translation><!-- Services/Support --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- How many tasks associated with this project are blocked? (Calculated) --></help>
+        <label><!-- Total Blocked Task Count --></label>
+        <name>Total_Blocked_Task_Count__c</name>
+    </fields>
+    <fields>
+        <help><!-- How many complete tasks are there in this project?  (Calculated.) --></help>
+        <label><!-- Total Complete Task Count --></label>
+        <name>Total_Complete_Task_Count__c</name>
+    </fields>
+    <fields>
+        <help><!-- The total expense budget for this project. --></help>
+        <label><!-- Total Expense Budget --></label>
+        <name>Total_Expense_Budget__c</name>
+    </fields>
+    <fields>
+        <help><!-- Calculated from the milestone expense budgets assigned to this project. --></help>
+        <label><!-- Total Expense Budget from Milestones --></label>
+        <name>Total_Expense_Budget_from_Milestones__c</name>
+    </fields>
+    <fields>
+        <help><!-- Calculated from expense estimates on all child milestones --></help>
+        <label><!-- Total Expense Estimate --></label>
+        <name>Total_Expense_Estimate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Calculated from expense records related to tasks on all child milestones --></help>
+        <label><!-- Total Expense Incurred --></label>
+        <name>Total_Expense_Incurred__c</name>
+    </fields>
+    <fields>
+        <help><!-- The total hours budget for this project. --></help>
+        <label><!-- Total Hours Budget --></label>
+        <name>Total_Hours_Budget__c</name>
+    </fields>
+    <fields>
+        <help><!-- Calculated from hours budgets for milestones in this project. --></help>
+        <label><!-- Total Hours Budget from Milestones --></label>
+        <name>Total_Hours_Budget_from_Milestones__c</name>
+    </fields>
+    <fields>
+        <help><!-- Calculated from hours estimates on all child milestones --></help>
+        <label><!-- Total Hours Estimate --></label>
+        <name>Total_Hours_Estimate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Calculated from time records related to tasks on all child milestones --></help>
+        <label><!-- Total Hours Incurred --></label>
+        <name>Total_Hours_Incurred__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total Hours Remaining --></help>
+        <label><!-- Total Hours Remain --></label>
+        <name>Total_Hours_Remain__c</name>
+    </fields>
+    <fields>
+        <help><!-- How many tasks associated with this project are late?  (Calculated) --></help>
+        <label><!-- Total Late Task Count --></label>
+        <name>Total_Late_Task_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Open Revenue --></label>
+        <name>Total_Open_Revenue__c</name>
+    </fields>
+    <fields>
+        <help><!-- How many open tasks are there in this project? (Calculated. Includes Late and Blocked tasks.) --></help>
+        <label><!-- Total Open Task Count --></label>
+        <name>Total_Open_Task_Count__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total Revenue USD Rollup --></help>
+        <label><!-- Total Revenue USD --></label>
+        <name>Total_Revenue_USD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Revenue --></label>
+        <name>Total_Revenue__c</name>
+    </fields>
+    <layouts>
+        <layout>Project Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

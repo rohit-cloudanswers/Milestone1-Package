@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>darcie.laur@imaginecommunications.com</contactEmail>
+    <label>Eloqua Integration</label>
+    <oauthConfig>
+        <callbackUrl>https://apps.p01.eloqua.com/eloqua/salesforce/callback</callbackUrl>
+        <consumerKey>3MVG9W4cDaFe_AanHRlLhRgtgORdYP.A8JiI2at.ac6hocKBDOsn3UXqC_4n_o5wJW8pYzi1N.LPo9PFq24o3</consumerKey>
+        <isAdminApproved>false</isAdminApproved>
+        <scopes>Basic</scopes>
+        <scopes>Api</scopes>
+        <scopes>Web</scopes>
+        <scopes>Full</scopes>
+        <scopes>Chatter</scopes>
+        <scopes>CustomApplications</scopes>
+        <scopes>RefreshToken</scopes>
+        <scopes>OpenID</scopes>
+        <scopes>CustomPermissions</scopes>
+        <scopes>Wave</scopes>
+        <scopes>Eclair</scopes>
+        <scopes>Pardot</scopes>
+        <scopes>Lightning</scopes>
+        <scopes>Content</scopes>
+        <scopes>CDPIngest</scopes>
+    </oauthConfig>
+</ConnectedApp>

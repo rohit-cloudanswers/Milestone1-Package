@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Executive Escalation</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Executive Escalations</value>
+    </caseValues>
+    <fieldSets>
+        <label><!-- Display --></label>
+        <name>Display</name>
+    </fieldSets>
+    <fields>
+        <label><!-- Case --></label>
+        <name>Case__c</name>
+        <relationshipLabel><!-- Executive Escalations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Escalated Value --></label>
+        <name>Escalated_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Escalation Comments --></label>
+        <name>Escalation_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Escalation Owner --></label>
+        <name>Escalation_Owner__c</name>
+        <relationshipLabel><!-- Executive Escalations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Removed? --></label>
+        <name>Removed__c</name>
+    </fields>
+    <layouts>
+        <layout>Executive Escalation Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

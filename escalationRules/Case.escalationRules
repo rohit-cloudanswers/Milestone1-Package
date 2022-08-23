@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EscalationRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <escalationRule>
+        <fullName>Service SLA Escalation</fullName>
+        <active>true</active>
+        <ruleEntry>
+            <businessHoursSource>None</businessHoursSource>
+            <criteriaItems>
+                <field>Account.Name</field>
+                <operation>equals</operation>
+                <value>Discovery Communications Europe Ltd</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Product_Family__c</field>
+                <operation>equals</operation>
+                <value>Landmark Sales Cloud</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Priority</field>
+                <operation>equals</operation>
+                <value>1-Critical</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Restore_Date_Time__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <escalationAction>
+                <minutesToEscalation>90</minutesToEscalation>
+                <notifyCaseOwner>true</notifyCaseOwner>
+                <notifyEmail>darcie.laur@imaginecommunications.com</notifyEmail>
+                <notifyTo>carmel.foxe@imaginecommunications.com</notifyTo>
+                <notifyToTemplate>Automated_Processes/SLA_Target_Approaching</notifyToTemplate>
+            </escalationAction>
+            <escalationStartTime>CaseCreation</escalationStartTime>
+        </ruleEntry>
+        <ruleEntry>
+            <businessHoursSource>None</businessHoursSource>
+            <criteriaItems>
+                <field>Account.Name</field>
+                <operation>equals</operation>
+                <value>Discovery Communications Europe Ltd</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Product_Family__c</field>
+                <operation>equals</operation>
+                <value>Landmark Sales Cloud</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Resolved_Date_Time__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Priority</field>
+                <operation>equals</operation>
+                <value>1-Critical</value>
+            </criteriaItems>
+            <escalationAction>
+                <minutesToEscalation>1410</minutesToEscalation>
+                <notifyCaseOwner>true</notifyCaseOwner>
+                <notifyEmail>darcie.laur@imaginecommunications.com</notifyEmail>
+                <notifyTo>carmel.foxe@imaginecommunications.com</notifyTo>
+                <notifyToTemplate>Automated_Processes/SLA_Target_Approaching</notifyToTemplate>
+            </escalationAction>
+            <escalationStartTime>CaseCreation</escalationStartTime>
+        </ruleEntry>
+    </escalationRule>
+</EscalationRules>

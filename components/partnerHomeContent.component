@@ -1,0 +1,111 @@
+<apex:component >
+    
+    <div class="ui four items">
+
+            <div class="item fix-height">
+
+                <h3 class="ui dividing header blue2">
+                    Sales
+                </h3>
+
+                <p class="description">
+                    Imagine Solutions and Sales Tools
+                </p>
+
+                <div class="image">
+                    <img src="{!URLFOR($Resource.salesbg)}"/>
+                </div>
+
+                <div class="content">
+
+                    <ul class="ui list">
+                        <li><a href="{!$Page.ProductViewer}">Products | Pricebooks</a></li>
+                        <li><a href="http://www.imaginecommunications.com/solutions.aspx"
+                               target="_blank">Solutions</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+
+            <div class="item fix-height">
+
+                <h3 class="ui dividing header blue3">
+                    Marketing
+                </h3>
+
+                <p class="description">
+                    Marketing Collateral, Videos and Event Information
+                </p>
+
+                <div class="image">
+                    <img src="{!URLFOR($Resource.marketingbg)}"/>
+                </div>
+
+                <div class="content">
+                    <ul class="ui list">
+                        <apex:form >
+<!--                             <li><a href="{!$Page.MarketingEvents}?what=event">Events</a></li> -->
+                            <li><a href="{!$Page.BoxVideos_Newsletters}">Newsletters</a></li>
+                            <li><a href="{!$Page.BoxVideos}">Webinars | Recordings</a></li>
+                            <li><a href="{!$Page.BoxVideos_Materials}">Sales Materials</a></li>
+                        </apex:form>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="item fix-height">
+
+                <h3 class="ui dividing header blue4">
+                    Training
+                </h3>
+
+                <p class="description">
+                    Training Related Information and Announcements
+                </p>
+
+                <div class="image">
+                    <img src="{!URLFOR($Resource.trainingbg)}"/>
+                </div>
+
+                <div class="content">
+
+                    <ul class="ui list">
+                        <li><a href="http://www.imaginecommunications.com/services/training" target="_blank">MyImagine Academy</a></li>
+                        <li><a href="http://imaginecommunications-academy.com/fulcal.php"
+                               target="_blank">Calendar</a></li>
+                        <li><a href="http://imaginecommunicationsacademy.com" target="_blank">Catalog</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="item fix-height">
+
+                <h3 class="ui dividing header blue5">
+                    Support
+                </h3>
+
+                <p class="description">
+                    Personalized Support for Imagine Products
+                </p>
+
+                <div class="image">
+                    <img src="{!URLFOR($Resource.supportbg)}"/>
+                </div>
+
+                <div class="content">
+
+                    <ul class="ui list">
+                        <li><a href="http://www.imaginecommunications.com/services/technical-support.aspx"
+                               target="_blank">Global Support Services</a></li>
+                        <li><a href="/partners/_ui/knowledge/ui/KnowledgeHome"
+                               target="_self">Knowledge Base (Login required)</a></li>
+                        <li><a href="http://www.imaginecommunications.com/services/professional-services.aspx"
+                               target="_blank">Professional Services</a></li>
+                        <li><a href="http://support.imaginecommunications.com" target="_blank">Customer Community</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    
+</apex:component>

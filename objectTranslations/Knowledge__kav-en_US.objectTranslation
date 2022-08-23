@@ -1,0 +1,1619 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Knowledge</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Knowledge</value>
+    </caseValues>
+    <fields>
+        <label><!-- Archive Canidate --></label>
+        <name>Archive_Canidate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Article Number Link --></label>
+        <name>Article_Number_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Z-Not Used-Describe the Symptom --></label>
+        <name>Break_Fix_Describe_the_Symptom_What_is46__c</name>
+    </fields>
+    <fields>
+        <label><!-- Z-Not Used-Link --></label>
+        <name>Break_Fix_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Z-Not Used-Search Tags --></label>
+        <name>Break_Fix_Search_Tags__c</name>
+    </fields>
+    <fields>
+        <label><!-- Z-Not Used-Solution --></label>
+        <name>Break_Fix_Solution__c</name>
+    </fields>
+    <fields>
+        <label><!-- Community Link --></label>
+        <name>Community_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Docs Category 2 --></label>
+        <name>Docs_Category_2__c</name>
+        <picklistValues>
+            <masterLabel>Broadcast Master</masterLabel>
+            <translation><!-- Broadcast Master --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Eclipse</masterLabel>
+            <translation><!-- Eclipse --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Landmark</masterLabel>
+            <translation><!-- Landmark --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Novar</masterLabel>
+            <translation><!-- Novar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Targeted Delivery</masterLabel>
+            <translation><!-- Targeted Delivery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>xG Products</masterLabel>
+            <translation><!-- xG Products --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Docs Category 3 --></label>
+        <name>Docs_Category_3__c</name>
+        <picklistValues>
+            <masterLabel>ADR (Ad Decision Router)</masterLabel>
+            <translation><!-- ADR (Ad Decision Router) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ADS (Ad Decision Service)</masterLabel>
+            <translation><!-- ADS (Ad Decision Service) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AIM (Dynamic Ad Insertion)</masterLabel>
+            <translation><!-- AIM (Dynamic Ad Insertion) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Landmark Agency Service (LAS)</masterLabel>
+            <translation><!-- Landmark Agency Service (LAS) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Landmark Analytics</masterLabel>
+            <translation><!-- Landmark Analytics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Landmark Rights &amp; Scheduling</masterLabel>
+            <translation><!-- Landmark Rights &amp; Scheduling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Landmark Sales</masterLabel>
+            <translation><!-- Landmark Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LandmarkOSI Traffic and Billing</masterLabel>
+            <translation><!-- LandmarkOSI Traffic and Billing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>POIS</masterLabel>
+            <translation><!-- POIS --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Docs Category --></label>
+        <name>Docs_Category__c</name>
+        <picklistValues>
+            <masterLabel>Advertising</masterLabel>
+            <translation><!-- Advertising --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Distribution</masterLabel>
+            <translation><!-- Distribution --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Networking</masterLabel>
+            <translation><!-- Networking --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Playout</masterLabel>
+            <translation><!-- Playout --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Documentation_Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Link will open a folder on Box.com that will allow you to download this item. --></help>
+        <label><!-- Download Link --></label>
+        <name>Documentation_Download_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Family --></label>
+        <name>Documentation_Product_Family__c</name>
+    </fields>
+    <fields>
+        <label><!-- Related --></label>
+        <name>Documentation_Related__c</name>
+    </fields>
+    <fields>
+        <label><!-- Release Date --></label>
+        <name>Documentation_Release_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Release Number --></label>
+        <name>Documentation_Release_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Z-Not Used-Search Tags --></label>
+        <name>Documentation_Search_Tags__c</name>
+    </fields>
+    <fields>
+        <label><!-- Z-Not Used-Answer --></label>
+        <name>FAQ_Answer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Z-Not Used-Link --></label>
+        <name>FAQ_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Z-Not Used-Question --></label>
+        <name>FAQ_Question__c</name>
+    </fields>
+    <fields>
+        <label><!-- Z-Not Used-Search Tags --></label>
+        <name>FAQ_Search_Tags__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>FAQ_Type__c</name>
+        <picklistValues>
+            <masterLabel>Break/Fix</masterLabel>
+            <translation><!-- Break/Fix --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>How To</masterLabel>
+            <translation><!-- How To --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manual</masterLabel>
+            <translation><!-- Manual --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- # Files Attached --></label>
+        <name>Files_Attached__c</name>
+    </fields>
+    <fields>
+        <help><!-- Links to supporting documentation, caveats, or other helpful background information that is not strictly an objective, environment or procedure. --></help>
+        <label><!-- Z-Not Used-Additional notes --></label>
+        <name>How_To_Additional_notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- The hardware, software and environmental conditions that are associated with the objective.  Our company&apos;s product or components should be listed first. --></help>
+        <label><!-- Z-Not Used-Environment/Version --></label>
+        <name>How_To_Environment__c</name>
+    </fields>
+    <fields>
+        <help><!-- Content that would be helpful to an internal staff member but is not appropriate to share with a customer or partner.  Examples include links to internal content or defects; contact information for specific individuals who can help resolve the issue. --></help>
+        <label><!-- Z-Not Used-Internal notes --></label>
+        <name>How_To_Internal_notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- The task that the customer is hoping to accomplish.  A broad description can come first followed by more specific details. --></help>
+        <label><!-- Z-Not Used-Objective --></label>
+        <name>How_To_Objective__c</name>
+    </fields>
+    <fields>
+        <help><!-- A numbered series of steps to accomplish the objective --></help>
+        <label><!-- Z-Not Used-Procedure --></label>
+        <name>How_To_Procedure__c</name>
+    </fields>
+    <fields>
+        <help><!-- A brief, descriptive, unique overview of the procedure.  Should start with &quot;How To ...&quot; with a summary of the task. --></help>
+        <label><!-- Title --></label>
+        <name>How_To_Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- Includes Documentation --></label>
+        <name>Includes_Documentation__c</name>
+    </fields>
+    <fields>
+        <help><!-- Helpful and handy if you want to send a link to an article.  Use Community Link to send to customers. --></help>
+        <label><!-- Internal Link --></label>
+        <name>Internal_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Internal Notes --></label>
+        <name>Internal_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Public --></label>
+        <name>OpenTV_Solution_IsPublished__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>OpenTV_Solution_Product__c</name>
+        <picklistValues>
+            <masterLabel>EDA</masterLabel>
+            <translation><!-- EDA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Eclipse</masterLabel>
+            <translation><!-- Eclipse --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Eclipse Plus 4.1.0</masterLabel>
+            <translation><!-- Eclipse Plus 4.1.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Eclipse Plus 4.2.0</masterLabel>
+            <translation><!-- Eclipse Plus 4.2.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Eclipse Plus 4.3.0</masterLabel>
+            <translation><!-- Eclipse Plus 4.3.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>eRevisions</masterLabel>
+            <translation><!-- eRevisions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>xG/Billing</masterLabel>
+            <translation><!-- xG/Billing --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Solution Details --></label>
+        <name>OpenTV_Solution_Solution_Details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Solution Number --></label>
+        <name>OpenTV_Solution_Solution_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Solution Title --></label>
+        <name>OpenTV_Solution_Solution_Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>OpenTV_Solution_Status__c</name>
+        <picklistValues>
+            <masterLabel>Draft</masterLabel>
+            <translation><!-- Draft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal</masterLabel>
+            <translation><!-- Internal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reviewed - Approved</masterLabel>
+            <translation><!-- Reviewed - Approved --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Visible in Public Knowledge Base --></label>
+        <name>OpenTV_Solution_Visible_in_Public_Know42__c</name>
+    </fields>
+    <fields>
+        <label><!-- Partner Link --></label>
+        <name>Partner_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Detail --></label>
+        <name>Product_Detail__c</name>
+        <picklistValues>
+            <masterLabel>Air Client</masterLabel>
+            <translation><!-- Air Client --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Broadcast Supervisor</masterLabel>
+            <translation><!-- Broadcast Supervisor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D-AIS</masterLabel>
+            <translation><!-- D-AIS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D-Series A8600, A8100, A7500</masterLabel>
+            <translation><!-- D-Series A8600, A8100, A7500 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D-Services</masterLabel>
+            <translation><!-- D-Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DAL</masterLabel>
+            <translation><!-- DAL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DRSS</masterLabel>
+            <translation><!-- DRSS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Device Server</masterLabel>
+            <translation><!-- Device Server --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Diagnostic Monitor</masterLabel>
+            <translation><!-- Diagnostic Monitor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LRCC</masterLabel>
+            <translation><!-- LRCC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Media Client</masterLabel>
+            <translation><!-- Media Client --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Missing Media Viewer</masterLabel>
+            <translation><!-- Missing Media Viewer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nexio Capture</masterLabel>
+            <translation><!-- Nexio Capture --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nexio Insight</masterLabel>
+            <translation><!-- Nexio Insight --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nexio Motion</masterLabel>
+            <translation><!-- Nexio Motion --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Notification Agent</masterLabel>
+            <translation><!-- Notification Agent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PX-IBG</masterLabel>
+            <translation><!-- PX-IBG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Platinum MX</masterLabel>
+            <translation><!-- Platinum MX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Platinum PT-HSR8C-IBG</masterLabel>
+            <translation><!-- Platinum PT-HSR8C-IBG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Platinum PT-RES</masterLabel>
+            <translation><!-- Platinum PT-RES --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Platinum VX</masterLabel>
+            <translation><!-- Platinum VX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Playlist and Services</masterLabel>
+            <translation><!-- Playlist and Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Security Administration Tool</masterLabel>
+            <translation><!-- Security Administration Tool --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SynchroServer</masterLabel>
+            <translation><!-- SynchroServer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Videotek CMN, CVM, TVM, VMN, VTM, APM-21</masterLabel>
+            <translation><!-- Videotek CMN, CVM, TVM, VMN, VTM, APM-21 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Videotek CSD and Videotek MTG</masterLabel>
+            <translation><!-- Videotek CSD and Videotek MTG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Videotek DDM</masterLabel>
+            <translation><!-- Videotek DDM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Videotek GPS</masterLabel>
+            <translation><!-- Videotek GPS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Videotek LLM-1770</masterLabel>
+            <translation><!-- Videotek LLM-1770 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Videotek MSA</masterLabel>
+            <translation><!-- Videotek MSA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Videotek VMM</masterLabel>
+            <translation><!-- Videotek VMM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Videotek VSG</masterLabel>
+            <translation><!-- Videotek VSG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Videotek VSX</masterLabel>
+            <translation><!-- Videotek VSX --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Product Family --></label>
+        <name>Product_Family__c</name>
+        <picklistValues>
+            <masterLabel>Advanced Advertising</masterLabel>
+            <translation><!-- Advanced Advertising --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Advertising Sales</masterLabel>
+            <translation><!-- Advertising Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Analytics</masterLabel>
+            <translation><!-- Analytics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Automation &amp; Asset Management</masterLabel>
+            <translation><!-- Automation &amp; Asset Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Billing</masterLabel>
+            <translation><!-- Billing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cloud DVR</masterLabel>
+            <translation><!-- Cloud DVR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Command &amp; Control</masterLabel>
+            <translation><!-- Command &amp; Control --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Digital Signage</masterLabel>
+            <translation><!-- Digital Signage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Distribution - Encoding</masterLabel>
+            <translation><!-- Distribution - Encoding --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Distribution - Transcoding</masterLabel>
+            <translation><!-- Distribution - Transcoding --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Integrated Playout</masterLabel>
+            <translation><!-- Integrated Playout --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Legacy Playout</masterLabel>
+            <translation><!-- Legacy Playout --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Master Control, Branding &amp; Graphics</masterLabel>
+            <translation><!-- Master Control, Branding &amp; Graphics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Multiviewers</masterLabel>
+            <translation><!-- Multiviewers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Networking - Encoding</masterLabel>
+            <translation><!-- Networking - Encoding --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Networking - Transcoding</masterLabel>
+            <translation><!-- Networking - Transcoding --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Packaging</masterLabel>
+            <translation><!-- Packaging --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Processing</masterLabel>
+            <translation><!-- Processing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rights &amp; Programming</masterLabel>
+            <translation><!-- Rights &amp; Programming --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Router</masterLabel>
+            <translation><!-- Router --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Storage</masterLabel>
+            <translation><!-- Storage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Targeted Delivery</masterLabel>
+            <translation><!-- Targeted Delivery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Test &amp; Measurement</masterLabel>
+            <translation><!-- Test &amp; Measurement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Traffic</masterLabel>
+            <translation><!-- Traffic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Versio</masterLabel>
+            <translation><!-- Versio --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Video Edge Delivery (VDE)</masterLabel>
+            <translation><!-- Video Edge Delivery (VDE) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Video Server News &amp; Editing</masterLabel>
+            <translation><!-- Video Server News &amp; Editing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Video Servers Nexio Media Applications</masterLabel>
+            <translation><!-- Video Servers Nexio Media Applications --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Video Servers Other</masterLabel>
+            <translation><!-- Video Servers Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Video Servers Transmission and Specialty</masterLabel>
+            <translation><!-- Video Servers Transmission and Specialty --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Product Line --></label>
+        <name>Product_Line__c</name>
+        <picklistValues>
+            <masterLabel>ADR</masterLabel>
+            <translation><!-- ADR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ADS</masterLabel>
+            <translation><!-- ADS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AIM</masterLabel>
+            <translation><!-- AIM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ASI, GEN, HD, SD, VSB-Star, PTM-305</masterLabel>
+            <translation><!-- ASI, GEN, HD, SD, VSB-Star, PTM-305 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Animation Builder</masterLabel>
+            <translation><!-- Animation Builder --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Asset Management</masterLabel>
+            <translation><!-- Asset Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Automation - ADC</masterLabel>
+            <translation><!-- Automation - ADC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Automation - D-Series</masterLabel>
+            <translation><!-- Automation - D-Series --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Azure</masterLabel>
+            <translation><!-- Azure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Broadcast Master</masterLabel>
+            <translation><!-- Broadcast Master --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Broadcast Master Nonlinear</masterLabel>
+            <translation><!-- Broadcast Master Nonlinear --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CloudXtream DVR</masterLabel>
+            <translation><!-- CloudXtream DVR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Content Receiver</masterLabel>
+            <translation><!-- Content Receiver --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Content Transmitter</masterLabel>
+            <translation><!-- Content Transmitter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DB Editor</masterLabel>
+            <translation><!-- DB Editor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPS</masterLabel>
+            <translation><!-- DPS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DTD and UDC-RCU</masterLabel>
+            <translation><!-- DTD and UDC-RCU --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DTS Neural</masterLabel>
+            <translation><!-- DTS Neural --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EDGE</masterLabel>
+            <translation><!-- EDGE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EPIC MV</masterLabel>
+            <translation><!-- EPIC MV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Eclipse</masterLabel>
+            <translation><!-- Eclipse --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>G-Scribe</masterLabel>
+            <translation><!-- G-Scribe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gen-9 Playout Systems</masterLabel>
+            <translation><!-- Gen-9 Playout Systems --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Infocaster</masterLabel>
+            <translation><!-- Infocaster --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Infocaster Manager</masterLabel>
+            <translation><!-- Infocaster Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Infocaster Traffic</masterLabel>
+            <translation><!-- Infocaster Traffic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Interactive Reporting</masterLabel>
+            <translation><!-- Interactive Reporting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Landmark Agency Service (LAS)</masterLabel>
+            <translation><!-- Landmark Agency Service (LAS) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Landmark Analytics</masterLabel>
+            <translation><!-- Landmark Analytics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Landmark Rights &amp; Scheduling</masterLabel>
+            <translation><!-- Landmark Rights &amp; Scheduling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Landmark Sales</masterLabel>
+            <translation><!-- Landmark Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LandmarkOSI Internet</masterLabel>
+            <translation><!-- LandmarkOSI Internet --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LandmarkOSI Sales</masterLabel>
+            <translation><!-- LandmarkOSI Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LandmarkOSI Traffic and Billing</masterLabel>
+            <translation><!-- LandmarkOSI Traffic and Billing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LogoCreator</masterLabel>
+            <translation><!-- LogoCreator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Magellan CSS Navigator</masterLabel>
+            <translation><!-- Magellan CSS Navigator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Magellan Control Panels</masterLabel>
+            <translation><!-- Magellan Control Panels --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Magellan Diagnostic Logging</masterLabel>
+            <translation><!-- Magellan Diagnostic Logging --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Magellan NMS Network Management System</masterLabel>
+            <translation><!-- Magellan NMS Network Management System --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Magellan Router Control Panels (RCP)</masterLabel>
+            <translation><!-- Magellan Router Control Panels (RCP) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Magellan SDN Orchestrator</masterLabel>
+            <translation><!-- Magellan SDN Orchestrator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NEO</masterLabel>
+            <translation><!-- NEO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NUCLEUS</masterLabel>
+            <translation><!-- NUCLEUS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NXESB 600 Series</masterLabel>
+            <translation><!-- NXESB 600 Series --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NXESD 1224X2</masterLabel>
+            <translation><!-- NXESD 1224X2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NXFS8500 Series</masterLabel>
+            <translation><!-- NXFS8500 Series --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NetVX</masterLabel>
+            <translation><!-- NetVX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nexio AMP ChannelView</masterLabel>
+            <translation><!-- Nexio AMP ChannelView --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nexio Amp</masterLabel>
+            <translation><!-- Nexio Amp --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nexio ClipSync</masterLabel>
+            <translation><!-- Nexio ClipSync --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nexio Delay</masterLabel>
+            <translation><!-- Nexio Delay --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nexio Digital Turnaround Processor</masterLabel>
+            <translation><!-- Nexio Digital Turnaround Processor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nexio Farad</masterLabel>
+            <translation><!-- Nexio Farad --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nexio IconMaster</masterLabel>
+            <translation><!-- Nexio IconMaster --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nexio Ingest Control Manager</masterLabel>
+            <translation><!-- Nexio Ingest Control Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nexio InstantOnline</masterLabel>
+            <translation><!-- Nexio InstantOnline --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nexio MOS Gateway</masterLabel>
+            <translation><!-- Nexio MOS Gateway --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nexio MOS Playlist Manager</masterLabel>
+            <translation><!-- Nexio MOS Playlist Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nexio Media Gateway Server</masterLabel>
+            <translation><!-- Nexio Media Gateway Server --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nexio Media Host Server</masterLabel>
+            <translation><!-- Nexio Media Host Server --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nexio NLE Gateway</masterLabel>
+            <translation><!-- Nexio NLE Gateway --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nexio NXIQ Series</masterLabel>
+            <translation><!-- Nexio NXIQ Series --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nexio Newscraft</masterLabel>
+            <translation><!-- Nexio Newscraft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nexio PRX Transcoder</masterLabel>
+            <translation><!-- Nexio PRX Transcoder --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nexio Playlist</masterLabel>
+            <translation><!-- Nexio Playlist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nexio Premier Pro Panels</masterLabel>
+            <translation><!-- Nexio Premier Pro Panels --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nexio Production Playout Center</masterLabel>
+            <translation><!-- Nexio Production Playout Center --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nexio Remote</masterLabel>
+            <translation><!-- Nexio Remote --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nexio TitleOne</masterLabel>
+            <translation><!-- Nexio TitleOne --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nexio Track Router</masterLabel>
+            <translation><!-- Nexio Track Router --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nexio Transport Stream Delay Server</masterLabel>
+            <translation><!-- Nexio Transport Stream Delay Server --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nexio mCAPTURE</masterLabel>
+            <translation><!-- Nexio mCAPTURE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nexio+ Channelbrand</masterLabel>
+            <translation><!-- Nexio+ Channelbrand --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Novar</masterLabel>
+            <translation><!-- Novar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Legacy Playout</masterLabel>
+            <translation><!-- Other Legacy Playout --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>POIS</masterLabel>
+            <translation><!-- POIS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Platinum</masterLabel>
+            <translation><!-- Platinum --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Platinum Frames and Modules</masterLabel>
+            <translation><!-- Platinum Frames and Modules --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Platinum II-GRF</masterLabel>
+            <translation><!-- Platinum II-GRF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Platinum IP3 Frames &amp; Modules</masterLabel>
+            <translation><!-- Platinum IP3 Frames &amp; Modules --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Platinum Predator II</masterLabel>
+            <translation><!-- Platinum Predator II --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Platinum Predator II-GX &amp; Z-Configurator</masterLabel>
+            <translation><!-- Platinum Predator II-GX &amp; Z-Configurator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Platinum SX Hybrid</masterLabel>
+            <translation><!-- Platinum SX Hybrid --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Platinum SX Pro</masterLabel>
+            <translation><!-- Platinum SX Pro --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Predator II</masterLabel>
+            <translation><!-- Predator II --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Program Plus</masterLabel>
+            <translation><!-- Program Plus --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QS100HD</masterLabel>
+            <translation><!-- QS100HD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Remote General Purpose Interfaces</masterLabel>
+            <translation><!-- Remote General Purpose Interfaces --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Selenio 6800+</masterLabel>
+            <translation><!-- Selenio 6800+ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Selenio 6800+ Fiber Optics</masterLabel>
+            <translation><!-- Selenio 6800+ Fiber Optics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Selenio 6800+ Multiviewer (QVM 6800+)</masterLabel>
+            <translation><!-- Selenio 6800+ Multiviewer (QVM 6800+) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Selenio BNP</masterLabel>
+            <translation><!-- Selenio BNP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Selenio DL Video Legalizers</masterLabel>
+            <translation><!-- Selenio DL Video Legalizers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Selenio MCP Controller</masterLabel>
+            <translation><!-- Selenio MCP Controller --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Selenio MCP Modules</masterLabel>
+            <translation><!-- Selenio MCP Modules --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Selenio MCP1</masterLabel>
+            <translation><!-- Selenio MCP1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Selenio MCP3</masterLabel>
+            <translation><!-- Selenio MCP3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Selenio NetPlus Model 300</masterLabel>
+            <translation><!-- Selenio NetPlus Model 300 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Selenio NetPlus Model 400</masterLabel>
+            <translation><!-- Selenio NetPlus Model 400 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Selenio Network Processor (SNP)</masterLabel>
+            <translation><!-- Selenio Network Processor (SNP) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Selenio One XC</masterLabel>
+            <translation><!-- Selenio One XC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Selenio One XO</masterLabel>
+            <translation><!-- Selenio One XO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Selenio VMG</masterLabel>
+            <translation><!-- Selenio VMG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Selenio X50, X75, X85, X100 and Calibre</masterLabel>
+            <translation><!-- Selenio X50, X75, X85, X100 and Calibre --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SelenioFlex</masterLabel>
+            <translation><!-- SelenioFlex --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SelenioFlex File</masterLabel>
+            <translation><!-- SelenioFlex File --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SelenioFlex Ingest</masterLabel>
+            <translation><!-- SelenioFlex Ingest --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SelenioFlex Live</masterLabel>
+            <translation><!-- SelenioFlex Live --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SelenioFlex Live Manager</masterLabel>
+            <translation><!-- SelenioFlex Live Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SelenioICE</masterLabel>
+            <translation><!-- SelenioICE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SelenioNext</masterLabel>
+            <translation><!-- SelenioNext --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Telurio Cloud DVR</masterLabel>
+            <translation><!-- Telurio Cloud DVR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Telurio Packager</masterLabel>
+            <translation><!-- Telurio Packager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Telurio Packager JITP</masterLabel>
+            <translation><!-- Telurio Packager JITP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Velocity</masterLabel>
+            <translation><!-- Velocity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Versio 2</masterLabel>
+            <translation><!-- Versio 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Versio 3</masterLabel>
+            <translation><!-- Versio 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Versio IOX</masterLabel>
+            <translation><!-- Versio IOX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Versio IOX SAN</masterLabel>
+            <translation><!-- Versio IOX SAN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Versio IOX Scale-Out NAS</masterLabel>
+            <translation><!-- Versio IOX Scale-Out NAS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Versio IOX Scale-Out NAS SINGLE</masterLabel>
+            <translation><!-- Versio IOX Scale-Out NAS SINGLE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Versio MCS</masterLabel>
+            <translation><!-- Versio MCS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Versio Platform</masterLabel>
+            <translation><!-- Versio Platform --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Videotek</masterLabel>
+            <translation><!-- Videotek --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vidiem Element Management System</masterLabel>
+            <translation><!-- Vidiem Element Management System --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>xG Billing</masterLabel>
+            <translation><!-- xG Billing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>xG Finance</masterLabel>
+            <translation><!-- xG Finance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>xG GamePlan</masterLabel>
+            <translation><!-- xG GamePlan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>xG Linear</masterLabel>
+            <translation><!-- xG Linear --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>xG Live Log</masterLabel>
+            <translation><!-- xG Live Log --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>xG Schedule</masterLabel>
+            <translation><!-- xG Schedule --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>xG Scorecard</masterLabel>
+            <translation><!-- xG Scorecard --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Used to determine category assignment and drive recommendations to cases. Level 1 --></help>
+        <label><!-- Product Pillar --></label>
+        <name>Product_Pillar__c</name>
+        <picklistValues>
+            <masterLabel>Advertising</masterLabel>
+            <translation><!-- Advertising --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Distribution</masterLabel>
+            <translation><!-- Distribution --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Networking</masterLabel>
+            <translation><!-- Networking --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Playout</masterLabel>
+            <translation><!-- Playout --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Links to the supporting documentation, caveats or other helpful background information that&apos;s not strictly a question, environment, or answer. --></help>
+        <label><!-- Z-Not Used-Additional notes --></label>
+        <name>Q_A_Additional_notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- The answer to the question. --></help>
+        <label><!-- Z-Not Used-Answer --></label>
+        <name>Q_A_Answer__c</name>
+    </fields>
+    <fields>
+        <help><!-- The hardware, software, environmental conditions and recent changes that are associated with the Question and the Answer, if any. --></help>
+        <label><!-- Z-Not Used-Environment/Version --></label>
+        <name>Q_A_Environment__c</name>
+    </fields>
+    <fields>
+        <help><!-- Content that would be helpful to an internal staff member but is not appropriate to share with a customer or partner.  Examples include links to internal content or defects, contact information for specific individuals who can help resolve the issues. --></help>
+        <label><!-- Z-Not Used-Internal notes --></label>
+        <name>Q_A_Internal_notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- A brief, descriptive, unique summary of the question.  This should be written in the form of a question. --></help>
+        <label><!-- Z-Not Used-Question --></label>
+        <name>Q_A_Question__c</name>
+    </fields>
+    <fields>
+        <label><!-- Details --></label>
+        <name>RGB_FAQ_Details__c</name>
+    </fields>
+    <fields>
+        <label><!-- SolutionID --></label>
+        <name>RGB_FAQ_SolutionID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Record Type Developer Name --></label>
+        <name>Record_Type_Developer_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bug Numbers --></label>
+        <name>Release_Notes_Bug_Numbers__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Release_Notes_Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Link will open a folder on Box.com that will allow you to download this item. --></help>
+        <label><!-- Download Link --></label>
+        <name>Release_Notes_Download_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Family --></label>
+        <name>Release_Notes_Product_Family__c</name>
+    </fields>
+    <fields>
+        <label><!-- Related --></label>
+        <name>Release_Notes_Related__c</name>
+    </fields>
+    <fields>
+        <label><!-- Release Date --></label>
+        <name>Release_Notes_Release_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Release Number --></label>
+        <name>Release_Notes_Release_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Z-Not Used-Search Tags --></label>
+        <name>Release_Notes_Search_Tags__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>SLA_Internal_Only_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Details --></label>
+        <name>Service_Alert_Details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Software Release --></label>
+        <name>Software_Release__c</name>
+    </fields>
+    <fields>
+        <help><!-- Links to supporting documentation, caveats, or other helpful background information that&apos;s not strictly a symptom, environment, cause or resolution. --></help>
+        <label><!-- Z-Not Used-Additional notes --></label>
+        <name>Solution_Additional_notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- The reason for the problem (if known).  This is not visible to customers. --></help>
+        <label><!-- Z-Not Used-Cause --></label>
+        <name>Solution_Cause__c</name>
+    </fields>
+    <fields>
+        <help><!-- The hardware, software, environmental conditions, and recent changes are that are associated with this particular problem.  Generally Imagine products and/or components are listed first.  It&apos;s ok for environment to partially overlap with metadata. --></help>
+        <label><!-- Z-Not Used-Environment/Version --></label>
+        <name>Solution_Environment__c</name>
+    </fields>
+    <fields>
+        <help><!-- Not visible to Customers.   Examples include links to internal content or bugs, contact information for a specific individual who can help resolve or resolution steps that can only be performed by an internal staff member. --></help>
+        <label><!-- Z-Not Used-Internal notes --></label>
+        <name>Solution_Internal_notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- A numbered series of steps to resolve the problem, if known.  A resolution section may include a workaround (a way to mitigate the immediate impact of the problem), a fix (a way of ultimately resolving the problem), or bot --></help>
+        <label><!-- Z-Not Used-Resolution --></label>
+        <name>Solution_Resolution__c</name>
+    </fields>
+    <fields>
+        <help><!-- A list of observable facts that characterize the understandable behavior.  Error messages, log file entries, and behavior different than expected are all candidate symptoms. --></help>
+        <label><!-- Symptoms --></label>
+        <name>Solution_Symptoms__c</name>
+    </fields>
+    <fields>
+        <label><!-- Troubleshooting --></label>
+        <name>Troubleshooting__c</name>
+    </fields>
+    <fields>
+        <label><!-- Z-Not Used-Search Tags --></label>
+        <name>Work_Instruction_Search_Tags__c</name>
+    </fields>
+    <fields>
+        <label><!-- Steps --></label>
+        <name>Work_Instruction_Steps__c</name>
+    </fields>
+    <fields>
+        <label><!-- Task --></label>
+        <name>Work_Instruction_Task__c</name>
+    </fields>
+    <layouts>
+        <layout>Article Customer Page Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Properties --></label>
+            <section>Properties</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Article Page Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Product Classification --></label>
+            <section>Product Classification</section>
+        </sections>
+        <sections>
+            <label><!-- Properties --></label>
+            <section>Properties</section>
+        </sections>
+        <sections>
+            <label><!-- Visibility --></label>
+            <section>Visibility</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Break/Fix Break/Fix Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- NOTE:  This is an older article type and can&apos;t be edited at this time. --></label>
+            <section>NOTE:  This is an older article type and can&apos;t be edited at this time.</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Break/Fix Customer Break/Fix Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Documentation Customer Documentation Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Properties --></label>
+            <section>Properties</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Documentation documentation Layout</layout>
+        <sections>
+            <label><!-- Categorization --></label>
+            <section>Categorization</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Details --></label>
+            <section>Details</section>
+        </sections>
+        <sections>
+            <label><!-- Old Info --></label>
+            <section>Old Info</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Downloads Customer Release Note Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Downloads Release Note Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Information --></label>
+            <section>Information</section>
+        </sections>
+        <sections>
+            <label><!-- Product Classification --></label>
+            <section>Product Classification</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>FAQ Customer FAQ Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>FAQ FAQ Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- NOTE:  This is an older article type and can&apos;t be edited at this time --></label>
+            <section>NOTE:  This is an older article type and can&apos;t be edited at this time</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>How To Customer How To Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>How To How To Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Internal Notes --></label>
+            <section>Internal Notes</section>
+        </sections>
+        <sections>
+            <label><!-- Properties --></label>
+            <section>Properties</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>OpenTV Solution OpenTV Solutions Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Product Notification</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Product Notification Customer Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Q &amp; A Community Feed Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Q &amp; A Customer Q &amp; A Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Q &amp; A Q &amp; A Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Internal Notes --></label>
+            <section>Internal Notes</section>
+        </sections>
+        <sections>
+            <label><!-- Properties --></label>
+            <section>Properties</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>RGB FAQ RGB FAQ Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>SLA (Internal Only) SLA (Internal Only) Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Service Alert Customer Service Alert Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Properties --></label>
+            <section>Properties</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Service Alert Service Alert Layout</layout>
+        <sections>
+            <label><!-- Classification --></label>
+            <section>Classification</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Internal Only --></label>
+            <section>Internal Only</section>
+        </sections>
+        <sections>
+            <label><!-- Properties --></label>
+            <section>Properties</section>
+        </sections>
+        <sections>
+            <label><!-- Visibility --></label>
+            <section>Visibility</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Solution Customer Solution Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Solution Solution Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Internal Notes --></label>
+            <section>Internal Notes</section>
+        </sections>
+        <sections>
+            <label><!-- Properties --></label>
+            <section>Properties</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Work Instruction (Internal Only) Work Instruction Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Product Classificaction --></label>
+            <section>Product Classificaction</section>
+        </sections>
+        <sections>
+            <label><!-- Properties --></label>
+            <section>Properties</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Z-Not Used-Solution Solution Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Internal Notes --></label>
+            <section>Internal Notes</section>
+        </sections>
+        <sections>
+            <label><!-- Properties --></label>
+            <section>Properties</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Article --></label>
+        <name>Article</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Break_Fix --></label>
+        <name>Break_Fix</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Documentation --></label>
+        <name>Documentation</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- FAQ --></label>
+        <name>FAQ</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- How_To --></label>
+        <name>How_To</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- OpenTV_Solution --></label>
+        <name>OpenTV_Solution</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Product Notifications --></label>
+        <name>Product_Notifications</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Q_A --></label>
+        <name>Q_A</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- RGB_FAQ --></label>
+        <name>RGB_FAQ</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Release_Notes --></label>
+        <name>Release_Notes</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- SLA_Internal_Only --></label>
+        <name>SLA_Internal_Only</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Service_Alert --></label>
+        <name>Service_Alert</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Solution --></label>
+        <name>Solution</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Work_Instruction --></label>
+        <name>Work_Instruction</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

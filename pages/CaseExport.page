@@ -1,0 +1,49 @@
+<apex:page controller="CaseExport" showheader="false" standardStylesheets="false" contentType="application/vnd.ms-excel#CaseExport.xls" cache="false">
+    <table>
+        <tr>
+            <td>Case Number</td>
+            <td>Subject</td>
+            <!--<td>Description</td>-->
+            <td>Priority</td>
+            <td>Type</td>
+            <td>Opened Date</td>
+            <td>Closed Date</td>
+            <td>Status</td>
+            <td>Account</td>
+            <td>Contact</td>
+            <td>Customer Ref </td>
+            <td>Parent Case</td>
+            <td>Last Updated</td>
+            <td>Product</td>
+            <td>Current Version</td>
+            <td>Reported Version</td>
+            <td>Resolution</td>
+            <td>Last Case Comment</td>
+            <td>Last Case Comment Date</td>
+         </tr>
+        <apex:repeat value="{!cases}" var="case">
+            <tr>
+                <td><apex:outputText value="{!Case.CaseNumber}"/></td>
+                <td><apex:outputText value="{!Case.Subject}"/></td>
+                <td><apex:outputText value="{!Case.Priority}"/></td>
+                <td><apex:outputText value="{!Case.Type}"/></td>
+                <!--<td><apex:outputText value="{!Case.Description_2__c}"/></td>-->
+                <td><apex:outputText value="{!Case.CreatedDate}"/></td>
+                <td><apex:outputText value="{!Case.ClosedDate}"/></td>
+                <td><apex:outputText value="{!Case.Status_Overview__c}"/></td>
+                <td><apex:outputText value="{!Case.Account.Name}"/></td>
+                <td><apex:outputText value="{!Case.Contact.Name}"/></td>
+                <td><apex:outputText value="{!Case.Customer_Reference_Number__c}"/></td> 
+                <td><apex:outputText value="{!Case.Parent.CaseNumber}"/></td>
+                <td><apex:outputText value="{!Case.Case_Last_Updated__c}"/></td>
+                <td><apex:outputText value="{!Case.Product__c}"/></td>
+                <td><apex:outputText value="{!Case.Current_Version__c}"/></td>
+                <td><apex:outputText value="{!Case.Reported_Version__c}"/></td>
+                <td><apex:outputText value="{!Case.Resolution__c}"/></td>
+                <td><apex:outputText value="{!Case.Last_Public_Case_Comment__c}"/></td>
+                <td><apex:outputText value="{!Case.Last_Public_Case_Comment_Date__c}"/></td>
+                
+            </tr>
+        </apex:repeat>
+    </table>
+</apex:page>

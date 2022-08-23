@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>EMEA Media Software Service</name>
+    <queueMembers>
+        <users>
+            <user>berenice.mccanna@imaginecommunications.com</user>
+            <user>carmel.foxe@imaginecommunications.com</user>
+            <user>colin.obiozo@imaginecommunications.com</user>
+            <user>eleftheria.georgila@imaginecommunications.com</user>
+            <user>ingrid.remisova@imaginecommunications.com</user>
+            <user>issam.zreik@imaginecommunications.com</user>
+            <user>jen.mander@imaginecommunications.com</user>
+            <user>katherine.rutherford@imaginecommunications.com</user>
+            <user>maurice.crabtree@imaginecommunications.com</user>
+            <user>mia.catrinoiu@imaginecommunications.com</user>
+            <user>paul.nagle@imaginecommunications.com</user>
+            <user>prasannavathanan.sivaruban@imaginecommunications.com</user>
+            <user>ridzwan.binanuar@imaginecommunications.com</user>
+            <user>sally.delf@imaginecommunications.com</user>
+            <user>sandra.menezes@imaginecommunications.com</user>
+            <user>shabeena.mohammed@imaginecommunications.com</user>
+            <user>sharon.welch@imaginecommunications.com</user>
+            <user>sophie.klair@imaginecommunications.com</user>
+            <user>ziad.kharma@imaginecommunications.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Customer Credit Detail</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Customer Credit Detail</value>
+    </caseValues>
+    <fields>
+        <label><!-- Credit Hold --></label>
+        <name>Credit_Hold__c</name>
+    </fields>
+    <fields>
+        <label><!-- Credit Limit Available --></label>
+        <name>Credit_Limit_Available__c</name>
+    </fields>
+    <fields>
+        <label><!-- Credit Limit --></label>
+        <name>Credit_Limit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Credit Ok Backlog --></label>
+        <name>Credit_Ok_Backlog__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Number --></label>
+        <name>Customer_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Outstanding Amount --></label>
+        <name>Outstanding_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Terms --></label>
+        <name>Payment_Terms__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

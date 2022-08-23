@@ -1,0 +1,25 @@
+<design:component label="What's New">
+    <design:attribute name="item_1_icon_url" label="Item 1 - Icon URL" description="" />
+    <design:attribute name="item_1_title" label="Item 1 - Title" description="" />
+    <design:attribute name="item_1_text" label="Item 1 - Text" description="" />
+    <design:attribute name="item_1_cta" label="Item 1 - cta" description="" />
+    <design:attribute name="item_1_cta_text" label="Item 1 - cta_text" description="" />
+    
+    <design:attribute name="item_2_icon_url" label="Item 2 - Icon URL" description="" />
+    <design:attribute name="item_2_title" label="Item 2 - Title" description="" />
+    <design:attribute name="item_2_text" label="Item 2 - Text" description="" />
+    <design:attribute name="item_2_cta" label="Item 2 - cta" description="" />
+    <design:attribute name="item_2_cta_text" label="Item 2 - cta_text" description="" />
+    
+    <design:attribute name="item_3_icon_url" label="Item 3 - Icon URL" description="" />
+    <design:attribute name="item_3_title" label="Item 3 - Title" description="" />
+    <design:attribute name="item_3_text" label="Item 3 - Text" description="" />
+    <design:attribute name="item_3_cta" label="Item 3 - cta" description="" />
+    <design:attribute name="item_3_cta_text" label="Item 3 - cta_text" description="" />
+    
+    <design:attribute name="item_4_icon_url" label="Item 4 - Icon URL" description="" />
+    <design:attribute name="item_4_title" label="Item 4 - Title" description="" />
+    <design:attribute name="item_4_text" label="Item 4 - Text" description="" />
+    <design:attribute name="item_4_cta" label="Item 4 - cta" description="" />
+    <design:attribute name="item_4_cta_text" label="Item 4 - cta_text" description="" />
+</design:component>

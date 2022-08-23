@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>NA MVPD Support</name>
+    <queueMembers>
+        <users>
+            <user>aaron.amato@imaginecommunications.com</user>
+            <user>christopher.rooney@imaginecommunications.com</user>
+            <user>cody.buller@imaginecommunications.com</user>
+            <user>eric.swartz@imaginecommunications.com</user>
+            <user>erik.meredith@imaginecommunications.com</user>
+            <user>kristi.bondeson@imaginecommunications.com</user>
+            <user>lawrence.garcia@imaginecommunications.com</user>
+            <user>roger.lynn@imaginecommunications.com</user>
+            <user>samantha.smith@imaginecommunications.com</user>
+            <user>sandy.kelmann@imaginecommunications.com</user>
+            <user>terry.boyd@imaginecommunications.com</user>
+            <user>theresa.campos@imaginecommunications.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

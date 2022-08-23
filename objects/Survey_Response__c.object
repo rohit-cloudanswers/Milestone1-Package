@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Captures customer satisfaction survey responses from service cases</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Account__c</fullName>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Survey Responses</relationshipLabel>
+        <relationshipName>Survey_Responses</relationshipName>
+        <relationshipOrder>1</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>true</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Additional_Comments__c</fullName>
+        <description>In order to help improve our service, please provide any additional comments on the positive or negative aspects of you service experience with Imagine Communications.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>In order to help improve our service, please provide any additional comments on the positive or negative aspects of you service experience with Imagine Communications.</inlineHelpText>
+        <label>Additional Comments</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Case_Owner_Manager_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Case Owner Manager Email</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case__c</fullName>
+        <externalId>false</externalId>
+        <label>Case</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>Survey Responses</relationshipLabel>
+        <relationshipName>Survey_Responses</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>true</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Survey Responses</relationshipLabel>
+        <relationshipName>Survey_Responses</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Initial_Callback__c</fullName>
+        <description>Please tell us your satisfaction regarding your service experience with Imagine Communications: Amount of Time for Initial Callback or Response
+
+0 = Not satisfied
+10 = Very Satisfied</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please tell us your satisfaction regarding your service experience with Imagine Communications: Amount of Time for Initial Callback or Response
+
+0 = Not satisfied
+10 = Very Satisfied</inlineHelpText>
+        <label>Initial Callback</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Issue_Closed__c</fullName>
+        <description>Do you agree that your issue is closed?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Do you agree that your issue is closed?</inlineHelpText>
+        <label>Issue Closed</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Knowledge_of_Imagine_Rep__c</fullName>
+        <description>Please tell us your satisfaction regarding your service experience with Imagine Communications: Knowledge and Expertise of Service Representative
+
+0 = Not satisfied
+10 = Very Satisfied</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please tell us your satisfaction regarding your service experience with Imagine Communications: Knowledge and Expertise of Service Representative
+
+0 = Not satisfied
+10 = Very Satisfied</inlineHelpText>
+        <label>Knowledge of Imagine Rep</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Not_closed_explanation__c</fullName>
+        <description>If you would like to explain why you don&apos;t feel the issue is resolved, please do that here.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If you would like to explain why you don&apos;t feel the issue is resolved, please do that here.</inlineHelpText>
+        <label>Not closed explanation</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Overall_Service_Quality__c</fullName>
+        <description>Please tell us your satisfaction regarding your service experience with Imagine Communications: Overall Quality of Service
+
+0 = Not satisfied
+10 = Very Satisfied</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please tell us your satisfaction regarding your service experience with Imagine Communications: Overall Quality of Service
+
+0 = Not satisfied
+10 = Very Satisfied</inlineHelpText>
+        <label>Overall Service Quality</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Professionalism_and_Courtesy__c</fullName>
+        <description>Please tell us your satisfaction regarding your service experience with Imagine Communications: Professionalism and Courtesy of Service Representative
+
+0 = Not satisfied
+10 = Very Satisfied</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please tell us your satisfaction regarding your service experience with Imagine Communications: Professionalism and Courtesy of Service Representative
+
+0 = Not satisfied
+10 = Very Satisfied</inlineHelpText>
+        <label>Professionalism and Courtesy</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Recommendation_Likelihood__c</fullName>
+        <description>Please tell us your satisfaction regarding your service experience with Imagine Communications: Likelihood to Recommend Imagine Communications to Others
+
+0 = Not satisfied
+10 = Very Satisfied</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please tell us your satisfaction regarding your service experience with Imagine Communications: Likelihood to Recommend Imagine Communications to Others
+
+0 = Not satisfied
+10 = Very Satisfied</inlineHelpText>
+        <label>Recommendation Likelihood</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Responder_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Responder Email</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Responder_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Responder Name</label>
+        <length>200</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Survey_Completion_Date_Time__c</fullName>
+        <description>This field indicates the date and time at which the customer completed and submitted the survey</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field indicates the date and time at which the customer completed and submitted the survey</inlineHelpText>
+        <label>Survey Completion Date/Time</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Survey_response__c</fullName>
+        <description>This is the link to the particular case survey.</description>
+        <externalId>false</externalId>
+        <label>Survey response</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Time_Resolution_Satisfaction__c</fullName>
+        <description>Please tell us your satisfaction regarding your service experience with Imagine Communications: Speed In Resolving Issue
+
+0 = Not satisfied
+10 = Very Satisfied</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please tell us your satisfaction regarding your service experience with Imagine Communications: Speed In Resolving Issue
+
+0 = Not satisfied
+10 = Very Satisfied</inlineHelpText>
+        <label>Time Resolution Satisfaction</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Timely_Updates_Provided__c</fullName>
+        <description>Please tell us your satisfaction regarding your service experience with Imagine Communications: Timely Updates Provided Throughout the Case
+
+0 = Not satisfied
+10 = Very Satisfied</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please tell us your satisfaction regarding your service experience with Imagine Communications: Timely Updates Provided Throughout the Case
+
+0 = Not satisfied
+10 = Very Satisfied</inlineHelpText>
+        <label>Timely Updates Provided</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Survey Response</label>
+    <nameField>
+        <displayFormat>SR-{0}</displayFormat>
+        <label>Survey Response Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Survey Responses</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

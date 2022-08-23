@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <interviewLabel>Case - Manage Milestones {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Case - Manage Milestones</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordLookups>
+        <name>Case_Milestones</name>
+        <label>Case Milestones</label>
+        <locationX>173</locationX>
+        <locationY>353</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <filters>
+            <field>CaseId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Case_Record.Id</elementReference>
+            </value>
+        </filters>
+        <object>CaseMilestone</object>
+    </recordLookups>
+    <recordLookups>
+        <name>Case_Record</name>
+        <label>Case Record</label>
+        <locationX>175</locationX>
+        <locationY>201</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Manage_Milestones_Screen</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>recordId</stringValue>
+            </value>
+        </filters>
+        <object>Case</object>
+    </recordLookups>
+    <screens>
+        <name>Manage_Milestones_Screen</name>
+        <label>Manage Milestones Screen</label>
+        <locationX>331</locationX>
+        <locationY>295</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Complete_Restore_Milestone</name>
+            <dataType>Boolean</dataType>
+            <fieldText>Complete Restore Milestone</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Complete_Resolution_Milestone</name>
+            <dataType>Boolean</dataType>
+            <fieldText>Complete Resolution Milestone</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <startElementReference>Case_Record</startElementReference>
+    <status>Draft</status>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

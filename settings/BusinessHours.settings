@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BusinessHoursSettings xmlns="http://soap.sforce.com/2006/04/metadata">
+    <businessHours>
+        <active>false</active>
+        <default>false</default>
+        <fridayEndTime>00:00:00.000Z</fridayEndTime>
+        <fridayStartTime>00:00:00.000Z</fridayStartTime>
+        <mondayEndTime>00:00:00.000Z</mondayEndTime>
+        <mondayStartTime>00:00:00.000Z</mondayStartTime>
+        <name>Default</name>
+        <saturdayEndTime>00:00:00.000Z</saturdayEndTime>
+        <saturdayStartTime>00:00:00.000Z</saturdayStartTime>
+        <sundayEndTime>00:00:00.000Z</sundayEndTime>
+        <sundayStartTime>00:00:00.000Z</sundayStartTime>
+        <thursdayEndTime>00:00:00.000Z</thursdayEndTime>
+        <thursdayStartTime>00:00:00.000Z</thursdayStartTime>
+        <timeZoneId>America/Los_Angeles</timeZoneId>
+        <tuesdayEndTime>00:00:00.000Z</tuesdayEndTime>
+        <tuesdayStartTime>00:00:00.000Z</tuesdayStartTime>
+        <wednesdayEndTime>00:00:00.000Z</wednesdayEndTime>
+        <wednesdayStartTime>00:00:00.000Z</wednesdayStartTime>
+    </businessHours>
+    <businessHours>
+        <active>true</active>
+        <default>false</default>
+        <fridayEndTime>00:00:00.000Z</fridayEndTime>
+        <fridayStartTime>00:00:00.000Z</fridayStartTime>
+        <mondayEndTime>00:00:00.000Z</mondayEndTime>
+        <mondayStartTime>00:00:00.000Z</mondayStartTime>
+        <name>Service: 24/7</name>
+        <saturdayEndTime>00:00:00.000Z</saturdayEndTime>
+        <saturdayStartTime>00:00:00.000Z</saturdayStartTime>
+        <sundayEndTime>00:00:00.000Z</sundayEndTime>
+        <sundayStartTime>00:00:00.000Z</sundayStartTime>
+        <thursdayEndTime>00:00:00.000Z</thursdayEndTime>
+        <thursdayStartTime>00:00:00.000Z</thursdayStartTime>
+        <timeZoneId>Europe/Dublin</timeZoneId>
+        <tuesdayEndTime>00:00:00.000Z</tuesdayEndTime>
+        <tuesdayStartTime>00:00:00.000Z</tuesdayStartTime>
+        <wednesdayEndTime>00:00:00.000Z</wednesdayEndTime>
+        <wednesdayStartTime>00:00:00.000Z</wednesdayStartTime>
+    </businessHours>
+    <businessHours>
+        <active>true</active>
+        <default>false</default>
+        <fridayEndTime>18:00:00.000Z</fridayEndTime>
+        <fridayStartTime>08:00:00.000Z</fridayStartTime>
+        <mondayEndTime>18:00:00.000Z</mondayEndTime>
+        <mondayStartTime>08:00:00.000Z</mondayStartTime>
+        <name>Service: Denver</name>
+        <thursdayEndTime>18:00:00.000Z</thursdayEndTime>
+        <thursdayStartTime>08:00:00.000Z</thursdayStartTime>
+        <timeZoneId>America/Denver</timeZoneId>
+        <tuesdayEndTime>18:00:00.000Z</tuesdayEndTime>
+        <tuesdayStartTime>08:00:00.000Z</tuesdayStartTime>
+        <wednesdayEndTime>18:00:00.000Z</wednesdayEndTime>
+        <wednesdayStartTime>08:00:00.000Z</wednesdayStartTime>
+    </businessHours>
+    <businessHours>
+        <active>true</active>
+        <default>false</default>
+        <mondayEndTime>18:00:00.000Z</mondayEndTime>
+        <mondayStartTime>08:00:00.000Z</mondayStartTime>
+        <name>Service: Dubai</name>
+        <sundayEndTime>18:00:00.000Z</sundayEndTime>
+        <sundayStartTime>08:00:00.000Z</sundayStartTime>
+        <thursdayEndTime>18:00:00.000Z</thursdayEndTime>
+        <thursdayStartTime>08:00:00.000Z</thursdayStartTime>
+        <timeZoneId>Asia/Dubai</timeZoneId>
+        <tuesdayEndTime>18:00:00.000Z</tuesdayEndTime>
+        <tuesdayStartTime>08:00:00.000Z</tuesdayStartTime>
+        <wednesdayEndTime>18:00:00.000Z</wednesdayEndTime>
+        <wednesdayStartTime>08:00:00.000Z</wednesdayStartTime>
+    </businessHours>
+    <businessHours>
+        <active>false</active>
+        <default>false</default>
+        <fridayEndTime>18:00:00.000Z</fridayEndTime>
+        <fridayStartTime>08:00:00.000Z</fridayStartTime>
+        <mondayEndTime>18:00:00.000Z</mondayEndTime>
+        <mondayStartTime>08:00:00.000Z</mondayStartTime>
+        <name>Service: New York</name>
+        <thursdayEndTime>18:00:00.000Z</thursdayEndTime>
+        <thursdayStartTime>08:00:00.000Z</thursdayStartTime>
+        <timeZoneId>America/New_York</timeZoneId>
+        <tuesdayEndTime>18:00:00.000Z</tuesdayEndTime>
+        <tuesdayStartTime>08:00:00.000Z</tuesdayStartTime>
+        <wednesdayEndTime>18:00:00.000Z</wednesdayEndTime>
+        <wednesdayStartTime>08:00:00.000Z</wednesdayStartTime>
+    </businessHours>
+    <businessHours>
+        <active>true</active>
+        <default>false</default>
+        <fridayEndTime>18:00:00.000Z</fridayEndTime>
+        <fridayStartTime>08:00:00.000Z</fridayStartTime>
+        <mondayEndTime>18:00:00.000Z</mondayEndTime>
+        <mondayStartTime>08:00:00.000Z</mondayStartTime>
+        <name>Service: Paris</name>
+        <thursdayEndTime>18:00:00.000Z</thursdayEndTime>
+        <thursdayStartTime>08:00:00.000Z</thursdayStartTime>
+        <timeZoneId>Europe/Paris</timeZoneId>
+        <tuesdayEndTime>18:00:00.000Z</tuesdayEndTime>
+        <tuesdayStartTime>08:00:00.000Z</tuesdayStartTime>
+        <wednesdayEndTime>18:00:00.000Z</wednesdayEndTime>
+        <wednesdayStartTime>08:00:00.000Z</wednesdayStartTime>
+    </businessHours>
+    <businessHours>
+        <active>true</active>
+        <default>false</default>
+        <fridayEndTime>18:00:00.000Z</fridayEndTime>
+        <fridayStartTime>08:00:00.000Z</fridayStartTime>
+        <mondayEndTime>18:00:00.000Z</mondayEndTime>
+        <mondayStartTime>08:00:00.000Z</mondayStartTime>
+        <name>Service: Singapore</name>
+        <thursdayEndTime>18:00:00.000Z</thursdayEndTime>
+        <thursdayStartTime>08:00:00.000Z</thursdayStartTime>
+        <timeZoneId>Asia/Singapore</timeZoneId>
+        <tuesdayEndTime>18:00:00.000Z</tuesdayEndTime>
+        <tuesdayStartTime>08:00:00.000Z</tuesdayStartTime>
+        <wednesdayEndTime>18:00:00.000Z</wednesdayEndTime>
+        <wednesdayStartTime>08:00:00.000Z</wednesdayStartTime>
+    </businessHours>
+    <businessHours>
+        <active>true</active>
+        <default>false</default>
+        <fridayEndTime>18:00:00.000Z</fridayEndTime>
+        <fridayStartTime>08:00:00.000Z</fridayStartTime>
+        <mondayEndTime>18:00:00.000Z</mondayEndTime>
+        <mondayStartTime>08:00:00.000Z</mondayStartTime>
+        <name>Service: Sydney</name>
+        <thursdayEndTime>18:00:00.000Z</thursdayEndTime>
+        <thursdayStartTime>08:00:00.000Z</thursdayStartTime>
+        <timeZoneId>Australia/Sydney</timeZoneId>
+        <tuesdayEndTime>18:00:00.000Z</tuesdayEndTime>
+        <tuesdayStartTime>08:00:00.000Z</tuesdayStartTime>
+        <wednesdayEndTime>18:00:00.000Z</wednesdayEndTime>
+        <wednesdayStartTime>08:00:00.000Z</wednesdayStartTime>
+    </businessHours>
+    <businessHours>
+        <active>true</active>
+        <default>false</default>
+        <fridayEndTime>18:00:00.000Z</fridayEndTime>
+        <fridayStartTime>08:00:00.000Z</fridayStartTime>
+        <mondayEndTime>18:00:00.000Z</mondayEndTime>
+        <mondayStartTime>08:00:00.000Z</mondayStartTime>
+        <name>Service: Thames Ditton</name>
+        <thursdayEndTime>18:00:00.000Z</thursdayEndTime>
+        <thursdayStartTime>08:00:00.000Z</thursdayStartTime>
+        <timeZoneId>Europe/London</timeZoneId>
+        <tuesdayEndTime>18:00:00.000Z</tuesdayEndTime>
+        <tuesdayStartTime>08:00:00.000Z</tuesdayStartTime>
+        <wednesdayEndTime>18:00:00.000Z</wednesdayEndTime>
+        <wednesdayStartTime>08:00:00.000Z</wednesdayStartTime>
+    </businessHours>
+    <businessHours>
+        <active>true</active>
+        <default>true</default>
+        <fridayEndTime>18:00:00.000Z</fridayEndTime>
+        <fridayStartTime>08:00:00.000Z</fridayStartTime>
+        <mondayEndTime>18:00:00.000Z</mondayEndTime>
+        <mondayStartTime>08:00:00.000Z</mondayStartTime>
+        <name>Service: Waterloo</name>
+        <thursdayEndTime>18:00:00.000Z</thursdayEndTime>
+        <thursdayStartTime>08:00:00.000Z</thursdayStartTime>
+        <timeZoneId>America/New_York</timeZoneId>
+        <tuesdayEndTime>18:00:00.000Z</tuesdayEndTime>
+        <tuesdayStartTime>08:00:00.000Z</tuesdayStartTime>
+        <wednesdayEndTime>18:00:00.000Z</wednesdayEndTime>
+        <wednesdayStartTime>08:00:00.000Z</wednesdayStartTime>
+    </businessHours>
+    <holidays>
+        <businessHours>Service: Sydney</businessHours>
+        <isRecurring>true</isRecurring>
+        <name>Anzac Day</name>
+        <recurrenceDayOfMonth>25</recurrenceDayOfMonth>
+        <recurrenceMonthOfYear>April</recurrenceMonthOfYear>
+        <recurrenceStartDate>2015-04-25</recurrenceStartDate>
+        <recurrenceType>RecursYearly</recurrenceType>
+    </holidays>
+    <holidays>
+        <activityDate>2018-08-20</activityDate>
+        <businessHours>Service: Dubai</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>Arafat (Haj) Day</name>
+    </holidays>
+    <holidays>
+        <businessHours>Service: Paris</businessHours>
+        <isRecurring>true</isRecurring>
+        <name>Armistice Day</name>
+        <recurrenceDayOfMonth>11</recurrenceDayOfMonth>
+        <recurrenceMonthOfYear>November</recurrenceMonthOfYear>
+        <recurrenceStartDate>2015-11-11</recurrenceStartDate>
+        <recurrenceType>RecursYearly</recurrenceType>
+    </holidays>
+    <holidays>
+        <activityDate>2018-05-10</activityDate>
+        <businessHours>Service: Paris</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>Ascension Day</name>
+    </holidays>
+    <holidays>
+        <isRecurring>true</isRecurring>
+        <name>Australia Day</name>
+        <recurrenceDayOfMonth>26</recurrenceDayOfMonth>
+        <recurrenceMonthOfYear>January</recurrenceMonthOfYear>
+        <recurrenceStartDate>2015-01-26</recurrenceStartDate>
+        <recurrenceType>RecursYearly</recurrenceType>
+    </holidays>
+    <holidays>
+        <businessHours>Service: Paris</businessHours>
+        <isRecurring>true</isRecurring>
+        <name>Bastille Day</name>
+        <recurrenceDayOfMonth>14</recurrenceDayOfMonth>
+        <recurrenceMonthOfYear>July</recurrenceMonthOfYear>
+        <recurrenceStartDate>2015-07-14</recurrenceStartDate>
+        <recurrenceType>RecursYearly</recurrenceType>
+    </holidays>
+    <holidays>
+        <businessHours>Service: Sydney</businessHours>
+        <businessHours>Service: Thames Ditton</businessHours>
+        <isRecurring>true</isRecurring>
+        <name>Boxing Day</name>
+        <recurrenceDayOfMonth>26</recurrenceDayOfMonth>
+        <recurrenceMonthOfYear>December</recurrenceMonthOfYear>
+        <recurrenceStartDate>2015-12-26</recurrenceStartDate>
+        <recurrenceType>RecursYearly</recurrenceType>
+    </holidays>
+    <holidays>
+        <businessHours>Service: Waterloo</businessHours>
+        <isRecurring>true</isRecurring>
+        <name>Canada Day</name>
+        <recurrenceDayOfMonth>1</recurrenceDayOfMonth>
+        <recurrenceMonthOfYear>July</recurrenceMonthOfYear>
+        <recurrenceStartDate>2015-07-01</recurrenceStartDate>
+        <recurrenceType>RecursYearly</recurrenceType>
+    </holidays>
+    <holidays>
+        <activityDate>2018-02-16</activityDate>
+        <isRecurring>false</isRecurring>
+        <name>Chinese New Year (1)</name>
+    </holidays>
+    <holidays>
+        <activityDate>2018-02-17</activityDate>
+        <isRecurring>false</isRecurring>
+        <name>Chinese New Year (2)</name>
+    </holidays>
+    <holidays>
+        <businessHours>Service: Denver</businessHours>
+        <businessHours>Service: Dubai</businessHours>
+        <businessHours>Service: New York</businessHours>
+        <businessHours>Service: Paris</businessHours>
+        <businessHours>Service: Singapore</businessHours>
+        <businessHours>Service: Sydney</businessHours>
+        <businessHours>Service: Thames Ditton</businessHours>
+        <businessHours>Service: Waterloo</businessHours>
+        <isRecurring>true</isRecurring>
+        <name>Christmas Day</name>
+        <recurrenceDayOfMonth>25</recurrenceDayOfMonth>
+        <recurrenceMonthOfYear>December</recurrenceMonthOfYear>
+        <recurrenceStartDate>2017-12-25</recurrenceStartDate>
+        <recurrenceType>RecursYearly</recurrenceType>
+    </holidays>
+    <holidays>
+        <businessHours>Service: Waterloo</businessHours>
+        <isRecurring>true</isRecurring>
+        <name>Civic Day/Heritage Day</name>
+        <recurrenceDayOfWeek>Monday</recurrenceDayOfWeek>
+        <recurrenceInstance>First</recurrenceInstance>
+        <recurrenceMonthOfYear>August</recurrenceMonthOfYear>
+        <recurrenceStartDate>2018-08-06</recurrenceStartDate>
+        <recurrenceType>RecursYearlyNth</recurrenceType>
+    </holidays>
+    <holidays>
+        <activityDate>2015-12-24</activityDate>
+        <businessHours>Service: Denver</businessHours>
+        <businessHours>Service: Dubai</businessHours>
+        <businessHours>Service: New York</businessHours>
+        <businessHours>Service: Paris</businessHours>
+        <businessHours>Service: Singapore</businessHours>
+        <businessHours>Service: Sydney</businessHours>
+        <businessHours>Service: Waterloo</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>Company Defined Holiday</name>
+    </holidays>
+    <holidays>
+        <activityDate>2015-12-31</activityDate>
+        <businessHours>Service: Denver</businessHours>
+        <businessHours>Service: Dubai</businessHours>
+        <businessHours>Service: New York</businessHours>
+        <businessHours>Service: Paris</businessHours>
+        <businessHours>Service: Singapore</businessHours>
+        <businessHours>Service: Sydney</businessHours>
+        <businessHours>Service: Waterloo</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>Company Defined Holiday</name>
+    </holidays>
+    <holidays>
+        <businessHours>Service: Denver</businessHours>
+        <businessHours>Service: New York</businessHours>
+        <isRecurring>true</isRecurring>
+        <name>Day After Thanksgiving</name>
+        <recurrenceDayOfWeek>Thursday</recurrenceDayOfWeek>
+        <recurrenceInstance>Fourth</recurrenceInstance>
+        <recurrenceMonthOfYear>November</recurrenceMonthOfYear>
+        <recurrenceStartDate>2018-11-22</recurrenceStartDate>
+        <recurrenceType>RecursYearlyNth</recurrenceType>
+    </holidays>
+    <holidays>
+        <activityDate>2015-11-10</activityDate>
+        <businessHours>Service: Singapore</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>Diwali/Deepavali</name>
+    </holidays>
+    <holidays>
+        <activityDate>2017-10-19</activityDate>
+        <isRecurring>false</isRecurring>
+        <name>Diwali/Deepavali</name>
+    </holidays>
+    <holidays>
+        <activityDate>2015-04-06</activityDate>
+        <isRecurring>false</isRecurring>
+        <name>Easter Monday</name>
+    </holidays>
+    <holidays>
+        <activityDate>2016-03-28</activityDate>
+        <businessHours>Service: Paris</businessHours>
+        <businessHours>Service: Sydney</businessHours>
+        <businessHours>Service: Thames Ditton</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>Easter Monday</name>
+    </holidays>
+    <holidays>
+        <activityDate>2015-04-04</activityDate>
+        <isRecurring>false</isRecurring>
+        <name>Easter Saturday</name>
+    </holidays>
+    <holidays>
+        <activityDate>2016-03-26</activityDate>
+        <businessHours>Service: Sydney</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>Easter Saturday</name>
+    </holidays>
+    <holidays>
+        <activityDate>2015-04-05</activityDate>
+        <isRecurring>false</isRecurring>
+        <name>Easter Sunday</name>
+    </holidays>
+    <holidays>
+        <activityDate>2016-03-27</activityDate>
+        <isRecurring>false</isRecurring>
+        <name>Easter Sunday</name>
+    </holidays>
+    <holidays>
+        <activityDate>2015-09-25</activityDate>
+        <businessHours>Service: Dubai</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>Eid Al Adha</name>
+    </holidays>
+    <holidays>
+        <activityDate>2018-08-21</activityDate>
+        <isRecurring>false</isRecurring>
+        <name>Eid Al Adha</name>
+    </holidays>
+    <holidays>
+        <activityDate>2015-08-19</activityDate>
+        <businessHours>Service: Dubai</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>Eid al-Fitr</name>
+    </holidays>
+    <holidays>
+        <activityDate>2015-02-16</activityDate>
+        <isRecurring>false</isRecurring>
+        <name>Family Day</name>
+    </holidays>
+    <holidays>
+        <activityDate>2015-04-03</activityDate>
+        <isRecurring>false</isRecurring>
+        <name>Good Friday</name>
+    </holidays>
+    <holidays>
+        <activityDate>2016-03-25</activityDate>
+        <businessHours>Service: Singapore</businessHours>
+        <businessHours>Service: Sydney</businessHours>
+        <businessHours>Service: Thames Ditton</businessHours>
+        <businessHours>Service: Waterloo</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>Good Friday</name>
+    </holidays>
+    <holidays>
+        <activityDate>2015-09-24</activityDate>
+        <businessHours>Service: Singapore</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>Hari Raya Haji</name>
+    </holidays>
+    <holidays>
+        <activityDate>2015-07-17</activityDate>
+        <businessHours>Service: Singapore</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>Hari Raya Puasa</name>
+    </holidays>
+    <holidays>
+        <activityDate>2015-10-15</activityDate>
+        <businessHours>Service: Dubai</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>Hijra New Year&apos;s Day</name>
+    </holidays>
+    <holidays>
+        <activityDate>2017-09-22</activityDate>
+        <isRecurring>false</isRecurring>
+        <name>Hijra New Year&apos;s Day</name>
+    </holidays>
+    <holidays>
+        <activityDate>2015-07-03</activityDate>
+        <businessHours>Service: Denver</businessHours>
+        <businessHours>Service: New York</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>Independence Day</name>
+    </holidays>
+    <holidays>
+        <activityDate>2015-06-06</activityDate>
+        <businessHours>Service: Dubai</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>Israa &amp; Miaraj Night</name>
+    </holidays>
+    <holidays>
+        <activityDate>2015-09-07</activityDate>
+        <businessHours>Service: Denver</businessHours>
+        <businessHours>Service: New York</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>Labor Day - US</name>
+    </holidays>
+    <holidays>
+        <activityDate>2015-10-05</activityDate>
+        <businessHours>Service: Sydney</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>Labour Day - Australia</name>
+    </holidays>
+    <holidays>
+        <activityDate>2015-05-01</activityDate>
+        <businessHours>Service: Paris</businessHours>
+        <businessHours>Service: Singapore</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>Labour Day - Singapore/France</name>
+    </holidays>
+    <holidays>
+        <activityDate>2015-05-04</activityDate>
+        <businessHours>Service: Thames Ditton</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>May Bank Holiday</name>
+    </holidays>
+    <holidays>
+        <activityDate>2016-05-02</activityDate>
+        <businessHours>Service: Thames Ditton</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>May Bank Holiday</name>
+    </holidays>
+    <holidays>
+        <businessHours>Service: Denver</businessHours>
+        <businessHours>Service: New York</businessHours>
+        <isRecurring>true</isRecurring>
+        <name>Memorial Day</name>
+        <recurrenceDayOfWeek>Monday</recurrenceDayOfWeek>
+        <recurrenceInstance>Last</recurrenceInstance>
+        <recurrenceMonthOfYear>May</recurrenceMonthOfYear>
+        <recurrenceStartDate>2015-05-25</recurrenceStartDate>
+        <recurrenceType>RecursYearlyNth</recurrenceType>
+    </holidays>
+    <holidays>
+        <activityDate>2016-01-01</activityDate>
+        <businessHours>Service: Denver</businessHours>
+        <businessHours>Service: Dubai</businessHours>
+        <businessHours>Service: New York</businessHours>
+        <businessHours>Service: Paris</businessHours>
+        <businessHours>Service: Singapore</businessHours>
+        <businessHours>Service: Sydney</businessHours>
+        <businessHours>Service: Thames Ditton</businessHours>
+        <businessHours>Service: Waterloo</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>New Year&apos;s Day</name>
+    </holidays>
+    <holidays>
+        <activityDate>2015-01-02</activityDate>
+        <isRecurring>false</isRecurring>
+        <name>Prophet&apos;s Birthday</name>
+    </holidays>
+    <holidays>
+        <activityDate>2015-06-06</activityDate>
+        <businessHours>Service: Sydney</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>Queen&apos;s Birthday</name>
+    </holidays>
+    <holidays>
+        <activityDate>2015-07-19</activityDate>
+        <businessHours>Service: Dubai</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>Ramadan</name>
+    </holidays>
+    <holidays>
+        <activityDate>2016-05-30</activityDate>
+        <businessHours>Service: Thames Ditton</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>Spring Bank Holiday</name>
+    </holidays>
+    <holidays>
+        <activityDate>2015-05-25</activityDate>
+        <businessHours>Service: Paris</businessHours>
+        <businessHours>Service: Thames Ditton</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>Spring Bank Holiday/Whit Monday</name>
+    </holidays>
+    <holidays>
+        <activityDate>2015-08-31</activityDate>
+        <businessHours>Service: Thames Ditton</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>Summer Bank Holiday</name>
+    </holidays>
+    <holidays>
+        <activityDate>2016-08-29</activityDate>
+        <businessHours>Service: Thames Ditton</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>Summer Bank Holiday</name>
+    </holidays>
+    <holidays>
+        <businessHours>Service: Denver</businessHours>
+        <businessHours>Service: New York</businessHours>
+        <isRecurring>true</isRecurring>
+        <name>Thanksgiving</name>
+        <recurrenceDayOfWeek>Thursday</recurrenceDayOfWeek>
+        <recurrenceInstance>Fourth</recurrenceInstance>
+        <recurrenceMonthOfYear>November</recurrenceMonthOfYear>
+        <recurrenceStartDate>2015-11-26</recurrenceStartDate>
+        <recurrenceType>RecursYearlyNth</recurrenceType>
+    </holidays>
+    <holidays>
+        <activityDate>2015-10-12</activityDate>
+        <businessHours>Service: Waterloo</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>Thanksgiving Day - Canada</name>
+    </holidays>
+    <holidays>
+        <activityDate>2015-12-02</activityDate>
+        <businessHours>Service: Dubai</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>UAE National Day</name>
+    </holidays>
+    <holidays>
+        <activityDate>2015-06-01</activityDate>
+        <businessHours>Service: Singapore</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>Vesak Day</name>
+    </holidays>
+    <holidays>
+        <activityDate>2015-05-18</activityDate>
+        <businessHours>Service: Waterloo</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>Victoria Day</name>
+    </holidays>
+    <holidays>
+        <activityDate>2015-05-08</activityDate>
+        <businessHours>Service: Paris</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>Victory Day</name>
+    </holidays>
+    <holidays>
+        <activityDate>2015-05-24</activityDate>
+        <businessHours>Service: Paris</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>Whit Sunday</name>
+    </holidays>
+    <holidays>
+        <activityDate>2015-12-28</activityDate>
+        <businessHours>Service: Denver</businessHours>
+        <businessHours>Service: Dubai</businessHours>
+        <businessHours>Service: New York</businessHours>
+        <businessHours>Service: Paris</businessHours>
+        <businessHours>Service: Singapore</businessHours>
+        <businessHours>Service: Sydney</businessHours>
+        <businessHours>Service: Waterloo</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>Winter Break</name>
+    </holidays>
+    <holidays>
+        <activityDate>2015-12-29</activityDate>
+        <businessHours>Service: Denver</businessHours>
+        <businessHours>Service: Dubai</businessHours>
+        <businessHours>Service: New York</businessHours>
+        <businessHours>Service: Paris</businessHours>
+        <businessHours>Service: Singapore</businessHours>
+        <businessHours>Service: Waterloo</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>Winter Break</name>
+    </holidays>
+    <holidays>
+        <activityDate>2015-12-30</activityDate>
+        <businessHours>Service: Denver</businessHours>
+        <businessHours>Service: Dubai</businessHours>
+        <businessHours>Service: New York</businessHours>
+        <businessHours>Service: Paris</businessHours>
+        <businessHours>Service: Singapore</businessHours>
+        <businessHours>Service: Waterloo</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>Winter Break</name>
+    </holidays>
+</BusinessHoursSettings>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Bill To Account</value>
+        </caseValues>
+        <name>quote_billto_name</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Total Discount</value>
+        </caseValues>
+        <name>quote_discount</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ship To Account</value>
+        </caseValues>
+        <name>quote_shipto_name</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Extended List Price</value>
+        </caseValues>
+        <name>quote_subtotal</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Grand Total</value>
+        </caseValues>
+        <name>quote_totalprice</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <layouts>
+        <layout>Direct Sales Layout</layout>
+        <sections>
+            <label><!-- Customer Notes --></label>
+            <section>Customer Notes</section>
+        </sections>
+        <sections>
+            <label><!-- Discount Input --></label>
+            <section>Discount Input</section>
+        </sections>
+        <sections>
+            <label><!-- Edit Quote Line Items --></label>
+            <section>Edit Quote Line Items</section>
+        </sections>
+        <sections>
+            <label><!-- Quote Information --></label>
+            <section>Quote Information</section>
+        </sections>
+        <sections>
+            <label><!-- Summarized Discount Status --></label>
+            <section>Summarized Discount Status</section>
+        </sections>
+        <sections>
+            <label><!-- Total Discount Results --></label>
+            <section>Total Discount Results</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Indirect Sales Layout</layout>
+        <sections>
+            <label><!-- Discounts --></label>
+            <section>Discounts</section>
+        </sections>
+        <sections>
+            <label><!-- Edit Quote Line Items --></label>
+            <section>Edit Quote Line Items</section>
+        </sections>
+        <sections>
+            <label><!-- Product Line Average Discount --></label>
+            <section>Product Line Average Discount</section>
+        </sections>
+        <sections>
+            <label><!-- Product Line Margin --></label>
+            <section>Product Line Margin</section>
+        </sections>
+        <sections>
+            <label><!-- Product Line Totals --></label>
+            <section>Product Line Totals</section>
+        </sections>
+        <sections>
+            <label><!-- Quote Information --></label>
+            <section>Quote Information</section>
+        </sections>
+        <sections>
+            <label><!-- Quote Notes --></label>
+            <section>Quote Notes</section>
+        </sections>
+        <sections>
+            <label><!-- Summarise Discount Status --></label>
+            <section>Summarise Discount Status</section>
+        </sections>
+        <sections>
+            <label><!-- Total Discounts --></label>
+            <section>Total Discounts</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Indirect Sales Layout - Partner Community</layout>
+        <sections>
+            <label><!-- Discounts --></label>
+            <section>Discounts</section>
+        </sections>
+        <sections>
+            <label><!-- Edit Quote Line Items --></label>
+            <section>Edit Quote Line Items</section>
+        </sections>
+        <sections>
+            <label><!-- Quote Information --></label>
+            <section>Quote Information</section>
+        </sections>
+        <sections>
+            <label><!-- Quote Notes --></label>
+            <section>Quote Notes</section>
+        </sections>
+        <sections>
+            <label><!-- Solution Hierarchy --></label>
+            <section>Solution Hierarchy</section>
+        </sections>
+        <sections>
+            <label><!-- Summarise Discount Status --></label>
+            <section>Summarise Discount Status</section>
+        </sections>
+        <sections>
+            <label><!-- Totals --></label>
+            <section>Totals</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Quote Layout</layout>
+        <sections>
+            <label><!-- Quote Notes --></label>
+            <section>Quote Notes</section>
+        </sections>
+        <sections>
+            <label><!-- Solution Hierarchy --></label>
+            <section>Solution Hierarchy</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- SendEmail --></label>
+        <name>SendEmail</name>
+    </quickActions>
+</CustomObjectTranslation>

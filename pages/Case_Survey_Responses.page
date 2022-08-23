@@ -1,0 +1,14 @@
+<apex:page showheader="false" sidebar="false" >
+
+<style>
+.interviewFormChoicesWithHelp div
+{
+display: inline-block !important;
+}
+</style>
+
+<div id="theflow">
+<apex:outputPanel layout="none" rendered="{!ISBLANK($CurrentPage.parameters.sparkID)}"> <flow:interview name="Case_Survey_Responses"/>
+</apex:outputPanel>
+</div>
+</apex:page>

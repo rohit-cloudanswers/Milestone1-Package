@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Integration Log</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Integration Logs</value>
+    </caseValues>
+    <fields>
+        <label><!-- Action --></label>
+        <name>Action__c</name>
+        <picklistValues>
+            <masterLabel>Information</masterLabel>
+            <translation><!-- Information --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Response</masterLabel>
+            <translation><!-- Response --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submission</masterLabel>
+            <translation><!-- Submission --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Synchronization</masterLabel>
+            <translation><!-- Synchronization --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The Batch process this action is a part of, if relevant. --></help>
+        <label><!-- Batch Id --></label>
+        <name>Batch_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- The category of log. --></help>
+        <label><!-- Category --></label>
+        <name>Category__c</name>
+        <picklistValues>
+            <masterLabel>Error</masterLabel>
+            <translation><!-- Error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Info</masterLabel>
+            <translation><!-- Info --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Integration</masterLabel>
+            <translation><!-- Integration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Task</masterLabel>
+            <translation><!-- Task --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Number of days to keep this record active in Salesforce. --></help>
+        <label><!-- Days to Keep --></label>
+        <name>Days_to_Keep__c</name>
+    </fields>
+    <fields>
+        <label><!-- DeleteDate --></label>
+        <name>DeleteDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Detail --></label>
+        <name>Detail__c</name>
+    </fields>
+    <fields>
+        <label><!-- Direction --></label>
+        <name>Direction__c</name>
+        <picklistValues>
+            <masterLabel>InToSF</masterLabel>
+            <translation><!-- InToSF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OutFromSF</masterLabel>
+            <translation><!-- OutFromSF --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The Id from the External System for the object this action is working against, if relevant. --></help>
+        <label><!-- External Id --></label>
+        <name>External_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- The external system relevant to this action. --></help>
+        <label><!-- External System --></label>
+        <name>External_System__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsResolved --></label>
+        <name>IsResolved__c</name>
+    </fields>
+    <fields>
+        <label><!-- Message --></label>
+        <name>Message__c</name>
+    </fields>
+    <fields>
+        <help><!-- The API name of the primary object this action works against, if relevant. --></help>
+        <label><!-- Object Api Name --></label>
+        <name>Object_Api_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Salesforce Id of the object this action works against, if relevant. --></help>
+        <label><!-- Object Id --></label>
+        <name>Object_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reference --></label>
+        <name>Reference__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates whether or not this log item requires manual intervention to resolve. --></help>
+        <label><!-- Requires Attention --></label>
+        <name>Requires_Attention__c</name>
+    </fields>
+    <fields>
+        <help><!-- Notes relating to the resolution of this issue, if relevant. --></help>
+        <label><!-- Resolution Notes --></label>
+        <name>Resolution_Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- The User that resolved this item. --></help>
+        <label><!-- Resolved By --></label>
+        <name>Resolved_By__c</name>
+        <relationshipLabel><!-- Integration Logs --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- When this log item was resolved, if relevant. --></help>
+        <label><!-- Resolved DateTime --></label>
+        <name>Resolved_DateTime__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

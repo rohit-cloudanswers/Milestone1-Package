@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCategoryGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Eclipse</label>
+                    <name>Eclipse</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>EclipsePlus</label>
+                    <name>EclipsePlus</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Eclipse xG Insights</label>
+                    <name>Eclipse_xG_Insights</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Novar</label>
+                    <name>Novar</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Landmark Agency Service (LAS)</label>
+                    <name>Landmark_Agency_Service_LAS</name>
+                </dataCategory>
+                <label>Advanced Advertising</label>
+                <name>Advanced_Advertising</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Broadcast Master</label>
+                    <name>Broadcast_Master</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>AdConnections</label>
+                    <name>AdConnections</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Landmark Sales</label>
+                    <name>Landmark_Sales</name>
+                </dataCategory>
+                <label>Advertising Sales</label>
+                <name>Advertising_Sales</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>xG Scorecard</label>
+                    <name>xG_Scorecard</name>
+                </dataCategory>
+                <label>Analytics</label>
+                <name>Analytics</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>xG Finance</label>
+                    <name>xG_Finance</name>
+                </dataCategory>
+                <label>Finance</label>
+                <name>Finance</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Landmark Rights &amp; Scheduling</label>
+                    <name>Landmark_Rights_Scheduling</name>
+                </dataCategory>
+                <label>Rights &amp; Scheduling</label>
+                <name>Rights_Scheduling</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>GamePlan</label>
+                    <name>GamePlan</name>
+                </dataCategory>
+                <label>Optimization</label>
+                <name>Optimization</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Interactive Reporting</label>
+                    <name>Interactive_Reporting</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>LandmarkOSI Traffic and Billing</label>
+                    <name>LandmarkOSI_Traffic_and_Billing</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>xG Linear</label>
+                    <name>xG_Linear</name>
+                </dataCategory>
+                <label>Traffic</label>
+                <name>Traffic</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Landmark Analytics</label>
+                    <name>Landmark_Analytics</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>xG Products</label>
+                    <name>xG_Products</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Landmark</label>
+                    <name>Landmark</name>
+                </dataCategory>
+                <label>TEMP</label>
+                <name>TEMP</name>
+            </dataCategory>
+            <label>Advertising</label>
+            <name>Advertising</name>
+        </dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>SelenioFlex File</label>
+                    <name>SelenioFlex_File</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>SelenioFlex Ingest</label>
+                    <name>SelenioFlex_Ingest</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>SelenioFlex Live</label>
+                    <name>SelenioFlex_Live</name>
+                </dataCategory>
+                <label>SelenioFlex</label>
+                <name>SelenioFlex</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Selenio One XO</label>
+                    <name>Selenio_One_XO</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Selenio One XC</label>
+                    <name>Selenio_One_XC</name>
+                </dataCategory>
+                <label>Selenio One</label>
+                <name>Selenio_One</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Telurio Cloud DVR</label>
+                    <name>Telurio_Cloud_DVR</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Telurio Packager</label>
+                    <name>Telurio_Packager</name>
+                </dataCategory>
+                <label>Telurio</label>
+                <name>Telurio</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Selenio VDE (Video Edge Delivery)</label>
+                <name>Selenio_VDE_Video_Edge_Delivery</name>
+            </dataCategory>
+            <dataCategory>
+                <label>AIM (Dynamic Ad Insertion)</label>
+                <name>AIM_Dynamic_Ad_Insertion</name>
+            </dataCategory>
+            <dataCategory>
+                <label>ADR (Ad Decision Router)</label>
+                <name>ADR_Ad_Decision_Router</name>
+            </dataCategory>
+            <dataCategory>
+                <label>ADS (Ad Decision Service)</label>
+                <name>ADS_Ad_Decision_Service</name>
+            </dataCategory>
+            <dataCategory>
+                <label>POIS</label>
+                <name>POIS</name>
+            </dataCategory>
+            <label>Distribution</label>
+            <name>Distribution</name>
+        </dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <label>Command &amp; Control Documentation</label>
+                <name>Command_Control_Documentation</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Encoding (Networking) Documentation</label>
+                <name>Encoding_Networking_Documentation</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Multiviewers Documentation</label>
+                <name>Multiviewers_Documentation</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Processing Documentation</label>
+                <name>Processing_Documentation</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Router Documentation</label>
+                <name>Router_Documentation</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Test &amp; Measurement Documentation</label>
+                <name>Test_Measurement_Documentation</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Transcodong (Networking)</label>
+                <name>Transcodong_Networking</name>
+            </dataCategory>
+            <label>Networking</label>
+            <name>Networking</name>
+        </dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <label>Automation&amp;Asset Mgmt Documentation</label>
+                <name>Automation_Asset_Management_Documentat</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Digital Signage Documentation</label>
+                <name>Digital_Signage_Documentation</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Integrated Playout Documentation</label>
+                <name>Integrated_Playout_Documentation</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Master Control Branding Graphics Documen</label>
+                <name>Master_Control_Branding_Graphics_Docu</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Storage Documentation</label>
+                <name>Storage_Documentation</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Versio Documentation</label>
+                <name>Versio_Documentation</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Video Servers News &amp; Editing Documentati</label>
+                <name>Video_Servers_News_Editing_Documentati</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Video Nexio Media Server Documentation</label>
+                <name>Videos_Servers_Nexio_Media_Server_Applic</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Video Servers Other Documentation</label>
+                <name>Video_Servers_Other_Documentation</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Video Servers Transmission Documentation</label>
+                <name>Video_Servers_Transmission_Specialty_S</name>
+            </dataCategory>
+            <label>Playout</label>
+            <name>Playout</name>
+        </dataCategory>
+        <label>All</label>
+        <name>All</name>
+    </dataCategory>
+    <label>Downloads/Manuals</label>
+    <objectUsage>
+        <object>KnowledgeArticleVersion</object>
+    </objectUsage>
+</DataCategoryGroup>

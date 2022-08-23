@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Case Feedback</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Case Feedback</value>
+    </caseValues>
+    <fields>
+        <label><!-- Article Review Only --></label>
+        <name>Article_Review_Only__c</name>
+    </fields>
+    <fields>
+        <help><!-- Case score without percentage --></help>
+        <label><!-- Base Case Score --></label>
+        <name>Base_Case_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case Owner --></label>
+        <name>Case_Owner__c</name>
+        <relationshipLabel><!-- Case Feedback --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Case Score --></label>
+        <name>Case_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case --></label>
+        <name>Case__c</name>
+        <relationshipLabel><!-- Case Feedback --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Does the subject and description clearly outline the problem? --></help>
+        <label><!-- Clearly Outlines the Problem --></label>
+        <name>Clearly_Out__c</name>
+    </fields>
+    <fields>
+        <help><!-- Did the client confirm the case was ok to close?  3x5 rule --></help>
+        <label><!-- Client confirmed ok to close --></label>
+        <name>Client_confirmed_ok_to_close__c</name>
+    </fields>
+    <fields>
+        <help><!-- Was there consistent, timely updates and follow ups recorded in the comments? --></help>
+        <label><!-- Clear, timely and consistant updates --></label>
+        <name>Consistent_timely_updates_follow_up__c</name>
+    </fields>
+    <fields>
+        <help><!-- The subject and description of the case has searchable keywords making it easy to understand at a glance --></help>
+        <label><!-- Contains Searchable Terms &amp; Keywords --></label>
+        <name>Contains_Searchable_Terms_Keywords__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Date of review --></help>
+        <label><!-- Date Reviewed --></label>
+        <name>Date_Reviewed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Feedback Details --></label>
+        <name>Feedback_Details__c</name>
+    </fields>
+    <fields>
+        <help><!-- Was the milestones accurately captured and noted? --></help>
+        <label><!-- Milestones accurately captured &amp; noted --></label>
+        <name>Milestones_accurately_captured_noted__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is there an outline of steps to reproduce the given error? --></help>
+        <label><!-- Outline of steps to get given error --></label>
+        <name>Outline_of_steps_to_get_given_error__c</name>
+    </fields>
+    <fields>
+        <help><!-- Was the proper article attached, modified or authored? --></help>
+        <label><!-- Proper article associated --></label>
+        <name>Proper_article_associated__c</name>
+    </fields>
+    <fields>
+        <help><!-- Are screenshots included? --></help>
+        <label><!-- Screenshots --></label>
+        <name>Screenshots__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is the expected result stated as well as the actual result? --></help>
+        <label><!-- State expected vs actual results --></label>
+        <name>State_expected_vs_actual_results__c</name>
+    </fields>
+    <fields>
+        <help><!-- Adds weights and adds all yes answers --></help>
+        <label><!-- Total Correct --></label>
+        <name>Total_Correct__c</name>
+    </fields>
+    <fields>
+        <help><!-- Adds weights and counts Yes/No answers --></help>
+        <label><!-- Total Eligable --></label>
+        <name>Total_Eligable__c</name>
+    </fields>
+    <fields>
+        <help><!-- Were updates provided to clients within the SLA/SLO --></help>
+        <label><!-- Updates are provided to clients --></label>
+        <name>Updates_are_provided_to_clients__c</name>
+    </fields>
+    <layouts>
+        <layout>Case Feedback Layout</layout>
+        <sections>
+            <label><!-- Comments --></label>
+            <section>Comments</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Knowledge and Resolution Activition (30% of Total) --></label>
+            <section>Knowledge and Resolution Activition (30% of Total)</section>
+        </sections>
+        <sections>
+            <label><!-- Providing a good Communication Experience (30% of Total) --></label>
+            <section>Providing a good Communication Experience (30% of Total)</section>
+        </sections>
+        <sections>
+            <label><!-- Results --></label>
+            <section>Results</section>
+        </sections>
+        <sections>
+            <label><!-- Subject &amp; Case Description (20% of Total) --></label>
+            <section>Subject &amp; Case Description (20% of Total)</section>
+        </sections>
+        <sections>
+            <label><!-- Troubleshooting &amp; Recreation Steps (20% of Total) --></label>
+            <section>Troubleshooting &amp; Recreation Steps (20% of Total)</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- New --></label>
+        <name>New</name>
+    </webLinks>
+</CustomObjectTranslation>

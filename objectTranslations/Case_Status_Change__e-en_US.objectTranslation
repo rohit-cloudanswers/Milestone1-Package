@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Case Status Change</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Case Status Changes</value>
+    </caseValues>
+    <fields>
+        <label><!-- CaseID --></label>
+        <name>CaseID__c</name>
+    </fields>
+    <fields>
+        <label><!-- New Status --></label>
+        <name>New_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Old Status --></label>
+        <name>Old_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Priority --></label>
+        <name>Priority__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

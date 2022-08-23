@@ -1,0 +1,19 @@
+<apex:page standardController="Opportunity" showHeader="false" sidebar="false" standardStylesheets="false" applyHtmlTag="false">
+    <html>
+        <head>
+            <style>
+                body { margin: 0; padding: 0; border: 0; }
+            </style>
+        </head>
+        <body>
+            <apex:outputPanel rendered="{!IF((Opportunity.Probability > 59) && (Opportunity.Run_Rate__c==FALSE) && (Opportunity.Media__c ==FALSE) && (Opportunity.Quote_Count_Formula__c==FALSE), true, false)}" layout="none">
+                 <apex:image url="/img/msg_icons/warning32.png" height="16" width="20" />
+                 <b><font color="red">A Quote has to be created before the opportunity probability hits Stage 4(60%). Please create a quote! </font></b><br />
+            </apex:outputPanel>
+            <apex:outputPanel rendered="{!ISBLANK(Opportunity.Description)}" layout="none">
+                 <apex:image url="/img/msg_icons/warning32.png" height="16" width="20" />
+                 <b><font color="red">Please enter an Opportunity Description, as of May 1st this field will be mandatory.</font></b><br />
+            </apex:outputPanel>
+        </body>
+    </html>
+</apex:page>

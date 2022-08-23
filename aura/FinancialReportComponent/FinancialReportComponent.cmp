@@ -1,0 +1,66 @@
+<aura:component controller="FinancialReportController" implements="force:hasRecordId,flexipage:availableForAllPageTypes,force:appHostable" >
+	
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="report" type="Object" />
+    <aura:attribute name="groupingsAcross" type="List" />
+    <aura:attribute name="groupingData" type="List" />
+    <aura:attribute name="grandTotalData" type="List" />
+    <aura:attribute name="currencies" type="List" />
+    <aura:attribute name="selectedCurrency" type="String" />
+    <aura:attribute name="loading" type="Boolean" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <lightning:card title="Financial Report" iconName="standard:report">
+        <aura:set attribute="footer">
+            <div>&nbsp;</div>
+        </aura:set>
+        <aura:set attribute="actions">
+            <lightning:select name="currency" label="Select Currency" value="{!v.selectedCurrency}" onchange="{!c.refreshReport}">
+                <aura:iteration items="{!v.currencies}" var="curr">
+                    <option value="{!curr.value}">{!curr.label}</option>
+                </aura:iteration>
+            </lightning:select>
+        </aura:set>
+        <aura:renderIf isTrue="{!v.loading}">
+            <div class="slds-box slds-p-around_large">
+                <lightning:spinner aura:id="spinner" variant="brand" size="medium" />
+            </div>
+        </aura:renderIf>
+        <aura:renderIf isTrue="{!v.loading == false}">
+            <div class="slds-scrollable">
+                <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+                    <thead>
+                        <aura:iteration items="{!v.groupingsAcross}" var="columns" indexVar="level">
+                            <tr class="headerRow">
+                                <aura:iteration items="{!columns}" var="col">
+                                    <th class="headerColumn" rowspan="{!and(level == 0, col.children == 0) ? 2 : 1}" colspan="{!(col.children != 0 ? col.children : 1)}">{!col.label}</th>
+                                </aura:iteration>
+                            </tr>
+                        </aura:iteration>
+                    </thead>
+                    <tbody>
+                        <tr class="bodyRow">
+                            <aura:iteration items="{!v.groupingData}" var="columnData" indexVar="colIndex">
+                                <td class="bodyColumn" style="{!colIndex == 1 ? 'text-align:left;' : colIndex != 0 ? 'text-align: right;': ''}">
+                                    <span>
+                                        <aura:iteration items="{!columnData}" var="data">
+                                            {!data.label}<br />
+                                        </aura:iteration>
+                                    </span>    
+                                </td>
+                            </aura:iteration>
+                            <td class="bodyColumn" style="text-align: right;">
+                                <span>
+                                    <aura:iteration items="{!v.grandTotalData}" var="gtData">
+                                        {!gtData.label}<br />
+                                    </aura:iteration>
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </aura:renderIf>
+    </lightning:card>
+    
+</aura:component>

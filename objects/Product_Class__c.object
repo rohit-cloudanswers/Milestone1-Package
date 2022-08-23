@@ -1,0 +1,980 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Product_Class_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Product_Class_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>Product_Class_Compact_Layout</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>Product_Class_Compact_Layout</fullName>
+        <fields>Service_Product_Family__c</fields>
+        <fields>Active__c</fields>
+        <fields>Service_Business_Unit__c</fields>
+        <fields>Service_Pillar__c</fields>
+        <fields>Service_Product_Line__c</fields>
+        <label>Product Class Compact Layout</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Read</externalSharingModel>
+    <fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Business_Unit__c</fullName>
+        <externalId>false</externalId>
+        <label>Business Unit</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Networking</fullName>
+                    <default>false</default>
+                    <label>Networking</label>
+                </value>
+                <value>
+                    <fullName>Playout</fullName>
+                    <default>false</default>
+                    <label>Playout</label>
+                </value>
+                <value>
+                    <fullName>Cable</fullName>
+                    <default>false</default>
+                    <label>Cable</label>
+                </value>
+                <value>
+                    <fullName>Broadcast</fullName>
+                    <default>false</default>
+                    <label>Broadcast</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Common_Name__c</fullName>
+        <description>Used to override name where necessary.  Not sure where i&apos;ll use yet just anticipating the complaints.</description>
+        <externalId>false</externalId>
+        <label>Common Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer_Facing__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Use to determine if the class should be included in public facing lists such as community portal or cases.  Manually set.</inlineHelpText>
+        <label>Customer Facing?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>5000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Inactive__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Z - Depreciated Inactive</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Jira_Epic__c</fullName>
+        <description>Used to pull into the bug create flow what epic the bug should be added to.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used to pull into the bug create flow what epic the bug should be added to.</inlineHelpText>
+        <label>Jira Epic</label>
+        <length>15</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Jira_Project__c</fullName>
+        <description>used to help determine a suggestion when creating a jira bug through the interface.  There is an automatic way of doing it that could be setup but it didn&apos;t go well the first time.  Now it just suggests instead of actually creating.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the Jira Project that should be suggested at the end of the create bug project.  Does not currently have any impact on the actual Jira Project a bug is for.  May be used more in the future.</inlineHelpText>
+        <label>Jira Project</label>
+        <length>15</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Jira_Type_Configuration__c</fullName>
+        <description>Used in the create cloud jira flow to determine what type fields to show.  heaven forbid they could all use the same process.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is used to determine what Jira Issue Types are available on the create bug screen.  There is no impact on the type actually used when creating the Jira.  Could be more automatic in the future.</inlineHelpText>
+        <label>Jira Type Configuration</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No Limits</fullName>
+                    <default>false</default>
+                    <label>No Limits</label>
+                </value>
+                <value>
+                    <fullName>Issue</fullName>
+                    <default>false</default>
+                    <label>Issue</label>
+                </value>
+                <value>
+                    <fullName>Issue + Question</fullName>
+                    <default>false</default>
+                    <label>Issue + Question</label>
+                </value>
+                <value>
+                    <fullName>Issue + Enhancement</fullName>
+                    <default>false</default>
+                    <label>Issue + Enhancement</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Last_Updated_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Updated Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Oracle_Class_Id__c</fullName>
+        <externalId>true</externalId>
+        <label>Oracle Class Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Oracle_Support_Project_Task__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>tethered to the Oracle Support Project</description>
+        <externalId>false</externalId>
+        <label>Oracle Support Project Task</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Oracle_Project_Task__c.Oracle_Project__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.Oracle_Support_Project__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Oracle_Project_Task__c</referenceTo>
+        <relationshipLabel>Product Class</relationshipLabel>
+        <relationshipName>Product_Class</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Oracle_Support_Project__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>As of this creation Tammy Wait is in charge of providing these numbers.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Related Oracle Support project, must be present on all customer facing for time tracking purposes.  Oracle Support projects are provided by Finance</inlineHelpText>
+        <label>Oracle Support Project</label>
+        <referenceTo>Oracle_Project__c</referenceTo>
+        <relationshipLabel>Product Class</relationshipLabel>
+        <relationshipName>Product_Class</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Pillar__c</fullName>
+        <externalId>false</externalId>
+        <label>z-Depreciated Pillar</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>CONTENT</fullName>
+                    <default>false</default>
+                    <label>CONTENT</label>
+                </value>
+                <value>
+                    <fullName>NETWORK</fullName>
+                    <default>false</default>
+                    <label>NETWORK</label>
+                </value>
+                <value>
+                    <fullName>Playout</fullName>
+                    <default>false</default>
+                    <label>Playout</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Product_Family__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Family</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>GEN OFFERINGS AVP</fullName>
+                    <default>false</default>
+                    <label>GEN OFFERINGS AVP</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Product_GL_Classcode__c</fullName>
+        <externalId>false</externalId>
+        <label>Product GL Classcode</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Group__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Group</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>PRODUCT - GO - AVP</fullName>
+                    <default>false</default>
+                    <label>PRODUCT - GO - AVP</label>
+                </value>
+                <value>
+                    <fullName>Professional Services - SEG</fullName>
+                    <default>false</default>
+                    <label>Professional Services - SEG</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Product_Line_Key__c</fullName>
+        <externalId>true</externalId>
+        <label>Product Line Key</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Line__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Line</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Business_Unit__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Ad Sales</fullName>
+                    <default>false</default>
+                    <label>Ad Sales</label>
+                </value>
+                <value>
+                    <fullName>ADVANCED ADVERTISING</fullName>
+                    <default>false</default>
+                    <label>ADVANCED ADVERTISING</label>
+                </value>
+                <value>
+                    <fullName>Agency</fullName>
+                    <default>false</default>
+                    <label>Agency</label>
+                </value>
+                <value>
+                    <fullName>Analytics</fullName>
+                    <default>false</default>
+                    <label>Analytics</label>
+                </value>
+                <value>
+                    <fullName>ASSET MANAGEMENT</fullName>
+                    <default>false</default>
+                    <label>ASSET MANAGEMENT</label>
+                </value>
+                <value>
+                    <fullName>Automation</fullName>
+                    <default>false</default>
+                    <label>Automation</label>
+                </value>
+                <value>
+                    <fullName>Command &amp; Control</fullName>
+                    <default>false</default>
+                    <label>Command &amp; Control</label>
+                </value>
+                <value>
+                    <fullName>Compress &amp; Transport</fullName>
+                    <default>false</default>
+                    <label>Compress &amp; Transport</label>
+                </value>
+                <value>
+                    <fullName>COMPRESSION</fullName>
+                    <default>false</default>
+                    <label>COMPRESSION</label>
+                </value>
+                <value>
+                    <fullName>CONSOLES</fullName>
+                    <default>false</default>
+                    <label>CONSOLES</label>
+                </value>
+                <value>
+                    <fullName>DELIVERY</fullName>
+                    <default>false</default>
+                    <label>DELIVERY</label>
+                </value>
+                <value>
+                    <fullName>DOH</fullName>
+                    <default>false</default>
+                    <label>DOH</label>
+                </value>
+                <value>
+                    <fullName>DTP</fullName>
+                    <default>false</default>
+                    <label>DTP</label>
+                </value>
+                <value>
+                    <fullName>EDITING</fullName>
+                    <default>false</default>
+                    <label>EDITING</label>
+                </value>
+                <value>
+                    <fullName>Editing &amp; Graphics</fullName>
+                    <default>false</default>
+                    <label>Editing &amp; Graphics</label>
+                </value>
+                <value>
+                    <fullName>GRAPHICS</fullName>
+                    <default>false</default>
+                    <label>GRAPHICS</label>
+                </value>
+                <value>
+                    <fullName>INFOCASTER</fullName>
+                    <default>false</default>
+                    <label>INFOCASTER</label>
+                </value>
+                <value>
+                    <fullName>Integrated Playout</fullName>
+                    <default>false</default>
+                    <label>Integrated Playout</label>
+                </value>
+                <value>
+                    <fullName>INTRAPLEX</fullName>
+                    <default>false</default>
+                    <label>INTRAPLEX</label>
+                </value>
+                <value>
+                    <fullName>MAM</fullName>
+                    <default>false</default>
+                    <label>MAM</label>
+                </value>
+                <value>
+                    <fullName>Master Control</fullName>
+                    <default>false</default>
+                    <label>Master Control</label>
+                </value>
+                <value>
+                    <fullName>MEDIA SERVER</fullName>
+                    <default>false</default>
+                    <label>MEDIA SERVER</label>
+                </value>
+                <value>
+                    <fullName>MULTIVIEWERS</fullName>
+                    <default>false</default>
+                    <label>MULTIVIEWERS</label>
+                </value>
+                <value>
+                    <fullName>Processing</fullName>
+                    <default>false</default>
+                    <label>Processing</label>
+                </value>
+                <value>
+                    <fullName>Professional Services</fullName>
+                    <default>false</default>
+                    <label>Professional Services</label>
+                </value>
+                <value>
+                    <fullName>Program Scheduling</fullName>
+                    <default>false</default>
+                    <label>Program Scheduling</label>
+                </value>
+                <value>
+                    <fullName>Routers</fullName>
+                    <default>false</default>
+                    <label>Routers</label>
+                </value>
+                <value>
+                    <fullName>ROUTING SWITCHERS</fullName>
+                    <default>false</default>
+                    <label>ROUTING SWITCHERS</label>
+                </value>
+                <value>
+                    <fullName>Servers &amp; Storage</fullName>
+                    <default>false</default>
+                    <label>Servers &amp; Storage</label>
+                </value>
+                <value>
+                    <fullName>Signaling &amp; Transcoding</fullName>
+                    <default>false</default>
+                    <label>Signaling &amp; Transcoding</label>
+                </value>
+                <value>
+                    <fullName>STORAGE</fullName>
+                    <default>false</default>
+                    <label>STORAGE</label>
+                </value>
+                <value>
+                    <fullName>Support</fullName>
+                    <default>false</default>
+                    <label>Support</label>
+                </value>
+                <value>
+                    <fullName>Test &amp; Measurement</fullName>
+                    <default>false</default>
+                    <label>Test &amp; Measurement</label>
+                </value>
+                <value>
+                    <fullName>TRAFFIC &amp; BILLING</fullName>
+                    <default>false</default>
+                    <label>TRAFFIC &amp; BILLING</label>
+                </value>
+                <value>
+                    <fullName>OTT - Monetization</fullName>
+                    <default>false</default>
+                    <label>OTT - Monetization</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Networking</controllingFieldValue>
+                <valueName>Command &amp; Control</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Networking</controllingFieldValue>
+                <valueName>Compress &amp; Transport</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Networking</controllingFieldValue>
+                <valueName>CONSOLES</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Networking</controllingFieldValue>
+                <valueName>INTRAPLEX</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Networking</controllingFieldValue>
+                <valueName>MULTIVIEWERS</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Networking</controllingFieldValue>
+                <valueName>Processing</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Networking</controllingFieldValue>
+                <valueName>ROUTING SWITCHERS</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Networking</controllingFieldValue>
+                <valueName>Test &amp; Measurement</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Playout</controllingFieldValue>
+                <valueName>ASSET MANAGEMENT</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Playout</controllingFieldValue>
+                <valueName>Automation</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Playout</controllingFieldValue>
+                <valueName>DOH</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Playout</controllingFieldValue>
+                <valueName>DTP</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Playout</controllingFieldValue>
+                <valueName>EDITING</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Playout</controllingFieldValue>
+                <valueName>Editing &amp; Graphics</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Playout</controllingFieldValue>
+                <valueName>GRAPHICS</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Playout</controllingFieldValue>
+                <valueName>INFOCASTER</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Playout</controllingFieldValue>
+                <valueName>Integrated Playout</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Playout</controllingFieldValue>
+                <valueName>MAM</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Playout</controllingFieldValue>
+                <valueName>Master Control</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Playout</controllingFieldValue>
+                <valueName>MEDIA SERVER</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Playout</controllingFieldValue>
+                <valueName>Servers &amp; Storage</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Playout</controllingFieldValue>
+                <valueName>STORAGE</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cable</controllingFieldValue>
+                <valueName>OTT - Monetization</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Service_Business_Unit__c</fullName>
+        <externalId>false</externalId>
+        <label>Service Business Unit</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Service_Pillar__c</fullName>
+        <externalId>false</externalId>
+        <label>Service Pillar</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Service_Product_Family__c</fullName>
+        <externalId>false</externalId>
+        <label>Service Product Family</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Service_Product_Line__c</fullName>
+        <externalId>false</externalId>
+        <label>Service Product Line</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sub_Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Sub Category</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Support_Project__c</fullName>
+        <description>Used to drive time reporting.  values provided by Tammy Wait.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used for time reporting.  Value here must ALWAYS be provided by Finance</inlineHelpText>
+        <label>z-Depreciated-Support Project</label>
+        <length>15</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>forSearch__c</fullName>
+        <defaultValue>&quot;All&quot;</defaultValue>
+        <description>used in background to allow &quot;All&quot; keyword to see all items in a lookup</description>
+        <externalId>false</externalId>
+        <label>forSearch</label>
+        <length>5</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Product Class</label>
+    <listViews>
+        <fullName>AdTech</fullName>
+        <columns>NAME</columns>
+        <columns>Service_Product_Line__c</columns>
+        <columns>Service_Pillar__c</columns>
+        <columns>Service_Business_Unit__c</columns>
+        <columns>Service_Product_Family__c</columns>
+        <columns>Common_Name__c</columns>
+        <columns>Customer_Facing__c</columns>
+        <columns>Active__c</columns>
+        <columns>Inactive__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Active__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Service_Pillar__c</field>
+            <operation>equals</operation>
+            <value>AdTech</value>
+        </filters>
+        <label>AdTech</label>
+    </listViews>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Oracle_Class_Id__c</columns>
+        <columns>Business_Unit__c</columns>
+        <columns>Product_Line__c</columns>
+        <columns>Product_Family__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Active</fullName>
+        <columns>NAME</columns>
+        <columns>Service_Product_Line__c</columns>
+        <columns>Service_Pillar__c</columns>
+        <columns>Service_Business_Unit__c</columns>
+        <columns>Service_Product_Family__c</columns>
+        <columns>Common_Name__c</columns>
+        <columns>Customer_Facing__c</columns>
+        <columns>Active__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Active__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>All Active</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>All_Customer_Facing_Active</fullName>
+        <columns>NAME</columns>
+        <columns>Jira_Epic__c</columns>
+        <columns>Jira_Project__c</columns>
+        <columns>Jira_Type_Configuration__c</columns>
+        <columns>Service_Product_Line__c</columns>
+        <columns>Service_Pillar__c</columns>
+        <columns>Service_Business_Unit__c</columns>
+        <columns>Service_Product_Family__c</columns>
+        <columns>Common_Name__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Active__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Customer_Facing__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>All Customer Facing Active</label>
+    </listViews>
+    <listViews>
+        <fullName>Networking</fullName>
+        <columns>NAME</columns>
+        <columns>Service_Product_Line__c</columns>
+        <columns>Service_Pillar__c</columns>
+        <columns>Service_Business_Unit__c</columns>
+        <columns>Service_Product_Family__c</columns>
+        <columns>Common_Name__c</columns>
+        <columns>Customer_Facing__c</columns>
+        <columns>Active__c</columns>
+        <columns>Inactive__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Active__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Service_Pillar__c</field>
+            <operation>equals</operation>
+            <value>Networking</value>
+        </filters>
+        <label>Networking</label>
+    </listViews>
+    <listViews>
+        <fullName>Playout</fullName>
+        <columns>NAME</columns>
+        <columns>Service_Product_Line__c</columns>
+        <columns>Service_Pillar__c</columns>
+        <columns>Service_Business_Unit__c</columns>
+        <columns>Service_Product_Family__c</columns>
+        <columns>Common_Name__c</columns>
+        <columns>Customer_Facing__c</columns>
+        <columns>Active__c</columns>
+        <columns>Inactive__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Active__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Service_Pillar__c</field>
+            <operation>equals</operation>
+            <value>Playout</value>
+        </filters>
+        <label>Playout</label>
+    </listViews>
+    <nameField>
+        <label>Product Class Code</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Product Class</pluralLabel>
+    <searchLayouts>
+        <excludedStandardButtons>New</excludedStandardButtons>
+        <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
+        <excludedStandardButtons>NewFromDocument</excludedStandardButtons>
+        <excludedStandardButtons>PrintableListView</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Import</excludedStandardButtons>
+        <excludedStandardButtons>MassChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>Service_Pillar__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Service_Business_Unit__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Service_Product_Family__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Service_Product_Line__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Common_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Customer_Facing__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Active__c</lookupDialogsAdditionalFields>
+        <lookupFilterFields>NAME</lookupFilterFields>
+        <lookupFilterFields>Service_Product_Line__c</lookupFilterFields>
+        <lookupFilterFields>Service_Product_Family__c</lookupFilterFields>
+        <lookupFilterFields>Common_Name__c</lookupFilterFields>
+        <lookupFilterFields>Customer_Facing__c</lookupFilterFields>
+        <lookupFilterFields>Active__c</lookupFilterFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Service_Product_Line__c</searchFilterFields>
+        <searchFilterFields>Service_Business_Unit__c</searchFilterFields>
+        <searchFilterFields>Service_Pillar__c</searchFilterFields>
+        <searchFilterFields>Service_Product_Family__c</searchFilterFields>
+        <searchFilterFields>Common_Name__c</searchFilterFields>
+        <searchFilterFields>Active__c</searchFilterFields>
+        <searchFilterFields>Customer_Facing__c</searchFilterFields>
+        <searchResultsAdditionalFields>Service_Pillar__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Service_Business_Unit__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Service_Product_Family__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Service_Product_Line__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Common_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Active__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

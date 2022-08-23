@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>Order Product Layout</layout>
+        <sections>
+            <label><!-- Pricing Info --></label>
+            <section>Pricing Info</section>
+        </sections>
+        <sections>
+            <label><!-- Product Details --></label>
+            <section>Product Details</section>
+        </sections>
+        <sections>
+            <label><!-- Professional Services and Hardware Orders - Additional Information --></label>
+            <section>Professional Services and Hardware Orders - Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Professional Services and Hardware Orders - Hold Information --></label>
+            <section>Professional Services and Hardware Orders - Hold Information</section>
+        </sections>
+        <sections>
+            <label><!-- Shipments --></label>
+            <section>Shipments</section>
+        </sections>
+        <sections>
+            <label><!-- Work Orders - Additional Information --></label>
+            <section>Work Orders - Additional Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Order Product Layout - Community</layout>
+        <sections>
+            <label><!-- Pricing Info --></label>
+            <section>Pricing Info</section>
+        </sections>
+        <sections>
+            <label><!-- Product Details --></label>
+            <section>Product Details</section>
+        </sections>
+        <sections>
+            <label><!-- Professional Services and Hardware Orders - Additional Information --></label>
+            <section>Professional Services and Hardware Orders - Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Shipments --></label>
+            <section>Shipments</section>
+        </sections>
+        <sections>
+            <label><!-- Work Orders - Additional Information --></label>
+            <section>Work Orders - Additional Information</section>
+        </sections>
+    </layouts>
+</CustomObjectTranslation>

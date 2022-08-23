@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Reset_Prices_Action</name>
+        <label>Reset Prices Action</label>
+        <locationX>392</locationX>
+        <locationY>292</locationY>
+        <actionName>CPQQuoteResetPrices</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Quote_Line_Prices_Refreshed</targetReference>
+        </connector>
+        <inputParameters>
+            <name>quoteIds</name>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <interviewLabel>Reset CPQ Quote Prices {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Reset CPQ Quote Prices</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <screens>
+        <name>Quote_Line_Prices_Refreshed</name>
+        <label>Quote Line Prices Refreshed</label>
+        <locationX>429</locationX>
+        <locationY>430</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>quoteLinesRefreshed</name>
+            <fieldText>&lt;p&gt;Quote Line prices have been refreshed.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Reset_Quote_Line_Prices</name>
+        <label>Reset Quote Line Prices</label>
+        <locationX>192</locationX>
+        <locationY>226</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Reset_Prices_Action</targetReference>
+        </connector>
+        <fields>
+            <name>resetPricesMessage</name>
+            <fieldText>&lt;p&gt;Click next to reset the Quote Line list prices to list price from related pricebooks.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Note: Only prices which got changed will be refreshed.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <startElementReference>Reset_Quote_Line_Prices</startElementReference>
+    <status>Active</status>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

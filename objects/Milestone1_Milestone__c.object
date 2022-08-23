@@ -1,0 +1,1324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object is a replica of the Old Milestone object(Miilestone1 Unmanaged package)</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>Actual_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>When did this Milestone actually end?</inlineHelpText>
+        <label>Actual End Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Actual_Expense_From_Sub_Milestones__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Calculated from expense records related to tasks on child milestones</inlineHelpText>
+        <label>Actual Expense From Sub-Milestones</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Actual_Expense_From_Tasks__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Calculated from expense records related to tasks on this milestone</inlineHelpText>
+        <label>Actual Expense From Tasks</label>
+        <summarizedField>Milestone1_Task__c.Total_Expense__c</summarizedField>
+        <summaryForeignKey>Milestone1_Task__c.Project_Milestone__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Actual_Hours_From_Sub_Milestones__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Calculated from time records related to tasks on child milestones</inlineHelpText>
+        <label>Actual Hours From Sub-Milestones</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Actual_Hours_From_Tasks__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Calculated from time records related to tasks on this milestone</inlineHelpText>
+        <label>Actual Hours From Tasks</label>
+        <summarizedField>Milestone1_Task__c.Total_Hours__c</summarizedField>
+        <summaryForeignKey>Milestone1_Task__c.Project_Milestone__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Actual_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>When did this milestone actually begin?</inlineHelpText>
+        <label>Actual Start Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Alias__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>This is the alias for a milestone.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>An alias helps you associate a task to a milestone using the single line entry home page component.</inlineHelpText>
+        <label>Milestone Alias</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>All_outstanding_issues_have_cases_opened__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Proforce 11/2014</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Did you confirm that all outstanding issues have cases opened?</inlineHelpText>
+        <label>All outstanding issues have cases opened</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>All_revenue_recognition_instruction_sent__c</fullName>
+        <description>Proforce 11/2014</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Did you confirm revenue recognition instructions have been sent?</inlineHelpText>
+        <label>All revenue recognition instruction sent</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Blocked_Tasks_in_Sub_Milestones__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>How many tasks are blocked in sub-milestones?</inlineHelpText>
+        <label>Blocked Tasks (in Sub-Milestones)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Blocked_Tasks_in_Tasks__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>How many tasks are flagged as blocked?</inlineHelpText>
+        <label>Blocked Tasks (in Tasks)</label>
+        <summaryFilterItems>
+            <field>Milestone1_Task__c.Blocked__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Milestone1_Task__c.Project_Milestone__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>CHK_Complete_Order_Package_Received__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Proforce CHK 11/2014</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Confirm complete order package received</inlineHelpText>
+        <label>Confirm Complete Order Package Received</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CHK_Complete_final_project_reporting__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Proforce CHK 11/2014</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Complete final project reporting (making sure all time and expenses is reported)</inlineHelpText>
+        <label>Complete final project reporting</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CHK_Complete_post_project_review_audit__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Proforce CHK 11/2014</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Complete post-project review/audit</inlineHelpText>
+        <label>Complete post-project review/audit</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CHK_Confirm_Bill_To_address__c</fullName>
+        <description>Proforce 11/2014</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Confirm Bill-To Address</inlineHelpText>
+        <label>Confirm Bill-To address</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CHK_Confirm_Ship_To_address__c</fullName>
+        <description>Proforce CHK 11/2014</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Confirm the ship-to address</inlineHelpText>
+        <label>Confirm Ship-To address</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CHK_Confirm_air_date_loose_schedule__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Proforce CHK 11/2014</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Confirm air date/loose schedule</inlineHelpText>
+        <label>Confirm air date/loose schedule</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CHK_Confirm_customer_contact_information__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Proforce 11/2014</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Confirm customer/contact information</inlineHelpText>
+        <label>Confirm customer/contact information</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CHK_Confirm_global_acceptance_received__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Proforce 11/2014</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Did you confirm global acceptance has been received?</inlineHelpText>
+        <label>Confirm global acceptance received</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CHK_Confirm_post_project_support__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Proforce CHK 11/2014</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Confirm post-project support</inlineHelpText>
+        <label>Confirm post-project support</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CHK_Confirm_tentative_schedule__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Proforce CHK 11/2014</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Confirm tentative schedule</inlineHelpText>
+        <label>Confirm tentative schedule</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CHK_Customer_Agree_to_closure_date__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Proforce CHK 11/2014</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Customer Agree to closure date</inlineHelpText>
+        <label>Customer Agree to closure date</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CHK_Customer_Agree_to_revenue_date__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Proforce CHK 11/2014</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Customer Agree to revenue date</inlineHelpText>
+        <label>Customer Agree to revenue date</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CHK_Customer_Satisfaction_Contact_Info__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Proforce CHK 11/2014</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Customer Satisfaction Contact Information: (Name &amp; email in Stakeholder list)</inlineHelpText>
+        <label>Customer Satisfaction Contact Info</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CHK_Customer_satisfaction_survey_del__c</fullName>
+        <description>Proforce CHK 11/2014</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Customer satisfaction survey delivered</inlineHelpText>
+        <label>Customer satisfaction survey delivered</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CHK_External_post_implementation_review__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Proforce CHK 11/2014</description>
+        <externalId>false</externalId>
+        <inlineHelpText>External post implementation review completed</inlineHelpText>
+        <label>External post implementation review</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CHK_Final_documentation_config__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Proforce CHK 11/2014</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Final documentation/configurations uploaded</inlineHelpText>
+        <label>Final documentation/config upload</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CHK_Hardware_Shipped__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Proforce CHK 11/2014</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Confirm tentative schedule</inlineHelpText>
+        <label>Hardware Shipped</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CHK_Held_external_kickoff__c</fullName>
+        <description>Proforce CHK 11/2014</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Held external kickoff meeting/detailed review</inlineHelpText>
+        <label>Held external kickoff meeting/review</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CHK_Internal_Post_implementation__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Proforce CHK 11/2014</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Internal post-implementation analysis completed</inlineHelpText>
+        <label>Internal Post-implementation analysis</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CHK_Introductory_e_mail_to_customer_team__c</fullName>
+        <description>Proforce CHK 11/2014</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Introductory e-mail to customer team</inlineHelpText>
+        <label>Introductory e-mail to customer team</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CHK_Project_hand_off_conf_to_cust_suppor__c</fullName>
+        <description>Proforce CHK 11/2014</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Project hand-off conf to cust/support</inlineHelpText>
+        <label>Project hand-off conf to cust/support</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CHK_Receive_cust_accepted_drawings__c</fullName>
+        <description>Proforce CHK 11/2014</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Receive customer accepted drawings/designs</inlineHelpText>
+        <label>Receive cust accepted drawings/designs</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CHK_Receive_customer_accepted_SOW__c</fullName>
+        <description>Proforce CHK 11/2014</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Receive customer accepted SOW</inlineHelpText>
+        <label>Receive customer accepted SOW</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CHK_Software_Shipped__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Proforce CHK 11/2014</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Software shipped</inlineHelpText>
+        <label>Software Shipped</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Complete_Tasks_in_Sub_Milestones__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of complete tasks related to sub-milestones</inlineHelpText>
+        <label>Complete Tasks (in Sub-Milestones)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Complete_Tasks_in_Tasks__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of complete tasks related to this milestone</inlineHelpText>
+        <label>Complete Tasks (in Tasks)</label>
+        <summaryFilterItems>
+            <field>Milestone1_Task__c.Complete__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Milestone1_Task__c.Project_Milestone__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Complete__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>This signifies that this milestone has been completed.</inlineHelpText>
+        <label>Complete</label>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Satisfaction_Contact_Email__c</fullName>
+        <externalId>false</externalId>
+        <formula>Customer_Survey_Contact__r.Email</formula>
+        <label>Customer Satisfaction Contact Email</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer_Satisfaction_Contact_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Customer_Survey_Contact__r.FirstName &amp; &quot; &quot; &amp;  Customer_Survey_Contact__r.LastName</formula>
+        <label>Customer Satisfaction Contact Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer_Survey_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Customer Survey Contact that email closed survey is sent to.</description>
+        <externalId>false</externalId>
+        <label>Customer Survey Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipName>Milestones2</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Deadline__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>When do you estimate this Milestone will be complete?</inlineHelpText>
+        <label>Estimated End Date</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>A general description of the milestone.</inlineHelpText>
+        <label>Description</label>
+        <length>5000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Duration__c</fullName>
+        <externalId>false</externalId>
+        <formula>Deadline__c -  Kickoff__c + 1</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Days between Kickoff and Deadline.</inlineHelpText>
+        <label>Duration</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Estimated_Expense_From_Sub_Milestones__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Calculated from tasks on child milestones</inlineHelpText>
+        <label>Estimated Expense From Sub-Milestones</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Estimated_Expense_From_Tasks__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Calculated from tasks on this milestone</inlineHelpText>
+        <label>Estimated Expense From Tasks</label>
+        <summarizedField>Milestone1_Task__c.Estimated_Expense__c</summarizedField>
+        <summaryForeignKey>Milestone1_Task__c.Project_Milestone__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Estimated_Hours_From_Sub_Milestones__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Calculated from tasks on child milestones</inlineHelpText>
+        <label>Estimated Hours From Sub-Milestones</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Estimated_Hours_From_Tasks__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Calculated from tasks on this milestone</inlineHelpText>
+        <label>Estimated Hours From Tasks</label>
+        <summarizedField>Milestone1_Task__c.Estimated_Hours__c</summarizedField>
+        <summaryForeignKey>Milestone1_Task__c.Project_Milestone__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Expense_Budget__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>The expense budget for the milestone.</inlineHelpText>
+        <label>Milestone Expense Budget</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Expense_Budget_from_Sub_Milestones__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>The expense budget all the sub milestones of this milestone.</inlineHelpText>
+        <label>Expense Budget from Sub-Milestones</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Final_Invoicing_instructions_sent__c</fullName>
+        <description>Proforce CHK 11/2014</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Have final invoicing instructions been sent?</inlineHelpText>
+        <label>Final Invoicing instructions sent</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Global_Search__c</fullName>
+        <externalId>false</externalId>
+        <label>Global Search</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Hours_Budget__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>The hours budget for the milestone.</inlineHelpText>
+        <label>Milestone Hours Budget</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Hours_Budget_from_Sub_Milestones__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>The total hours budget for all the sub milestones for this milestone.</inlineHelpText>
+        <label>Hours Budget from Sub-Milestones</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ImportID__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>An Import ID used during the XML export/import process only.</inlineHelpText>
+        <label>Import ID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Kickoff__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>When do you estimate this milestone will begin?</inlineHelpText>
+        <label>Estimated Start Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Late_Tasks_in_Sub_Milestones__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of incomplete and overdue tasks related to child milestones</inlineHelpText>
+        <label>Late Tasks (in Sub-Milestones)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Late_Tasks_in_Tasks_2__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>How many tasks are late?</inlineHelpText>
+        <label>Late Tasks (in Tasks)2</label>
+        <summaryFilterItems>
+            <field>Milestone1_Task__c.Complete__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Milestone1_Task__c.Days_Late__c</field>
+            <operation>greaterThan</operation>
+            <value>0</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Milestone1_Task__c.Project_Milestone__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Late_Tasks_in_Tasks__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of incomplete and overdue tasks related to this milestone</inlineHelpText>
+        <label>Late Tasks (in Tasks)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NameClean__c</fullName>
+        <description>Formula designed to keep a Gantt safe chart name.  Note: this field may be discontinued.</description>
+        <externalId>false</externalId>
+        <formula>SUBSTITUTE(Name, &apos;&quot;&apos;, &apos; &apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>NameClean</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Non_Billable__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Non Billable</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Okay_to_Reparent__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>A hidden field used to prevent users from manually moving Milestones to different Projects</description>
+        <externalId>false</externalId>
+        <label>Okay to Reparent</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Open_Late_Blocked_Tasks__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( max( Total_Open_Tasks__c, Total_Late_Tasks__c, Total_Blocked_Tasks__c) &gt; 0,
+IMAGE(&quot;http://chart.apis.google.com/chart?chxt=y&amp;chbh=a&amp;chs=300x225&amp;cht=bvg&amp;&quot;&amp;
+&quot;chxr=0,0,&quot; &amp; Text(max( Total_Open_Tasks__c, Total_Late_Tasks__c, Total_Blocked_Tasks__c)) &amp; &quot;&amp;&quot;&amp;
+&quot;chco=eeaa66,2299bb,ee3322&amp;chdl=&quot;&amp;
+&quot;Open (&quot; &amp; TEXT(Total_Open_Tasks__c) &amp; &quot;)&quot;&amp;
+&quot;|Late (&quot; &amp; TEXT(Total_Late_Tasks__c) &amp; &quot;)&quot;&amp;
+&quot;|Blocked (&quot; &amp; TEXT(Total_Blocked_Tasks__c) &amp; &quot;)&quot;&amp;
+&quot;&amp;chd=t:&quot;&amp; TEXT(Total_Open_Tasks__c/ max(Total_Open_Tasks__c, Total_Blocked_Tasks__c, Total_Late_Tasks__c) * 100)&amp;&quot;|&quot;&amp; TEXT(Total_Late_Tasks__c / max(Total_Open_Tasks__c, Total_Blocked_Tasks__c, Total_Late_Tasks__c) * 100) &amp;&quot;|&quot; &amp; TEXT(Total_Blocked_Tasks__c/ max(Total_Open_Tasks__c, Total_Blocked_Tasks__c, Total_Late_Tasks__c) * 100) , &quot;Project Status, Open Tasks, Late Tasks &amp; Blocked Tasks&quot;),&apos;&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Open, Late &amp; Blocked Tasks  - Deprecated</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Open_Tasks_in_Sub_Milestones__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of incomplete tasks related to child milestones</inlineHelpText>
+        <label>Open Tasks (in Sub-Milestones)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Open_Tasks_in_Tasks__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of incomplete tasks related to this milestone</inlineHelpText>
+        <label>Open Tasks (in Tasks)</label>
+        <summaryFilterItems>
+            <field>Milestone1_Task__c.Complete__c</field>
+            <operation>notEqual</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Milestone1_Task__c.Project_Milestone__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Open_vs_Complete_Tasks__c</fullName>
+        <externalId>false</externalId>
+        <formula>IMAGE(&quot;http://chart.apis.google.com/chart?chco=eeaa66,2299bb&amp;chs=300x225&amp;cht=p&amp;chd=t:&quot;&amp;Text( Total_Open_Tasks__c )&amp;&quot;,&quot;&amp;Text(Total_Complete_Tasks__c)&amp;&quot;&amp;chdl=&quot;&amp;
+&quot;Open%20Tasks (&quot; &amp; TEXT(Total_Open_Tasks__c) &amp;&quot;)&quot;&amp;
+&quot;|Complete%20Tasks (&quot; &amp; TEXT(Total_Complete_Tasks__c) &amp;&quot;)&quot;
+,&quot;Open vs. Complete Tasks&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Open vs. Complete Tasks - Deprecated</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Oracle_Project_Code__c</fullName>
+        <description>Oracle Project Code</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Oracle Project Code</inlineHelpText>
+        <label>Milestone Oracle Project Code</label>
+        <length>30</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Parent_Milestone__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>The parent milestone for this milestone if applicable.</inlineHelpText>
+        <label>Parent Milestone</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Milestone1_Milestone__c.Project__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.Project__c</valueField>
+            </filterItems>
+            <filterItems>
+                <field>Milestone1_Milestone__c.Parent_Milestone__c</field>
+                <operation>equals</operation>
+                <value></value>
+            </filterItems>
+            <infoMessage>Parent Milestones must be part of the same project as the child milestone.  Also, Parent Milestone cannot also be a Child Milestone.</infoMessage>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Milestone1_Milestone__c</referenceTo>
+        <relationshipName>Child_Milestones2</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Predecessor_Milestone_Import_Id__c</fullName>
+        <externalId>false</externalId>
+        <label>Predecessor_Milestone_Import_Id__c</label>
+        <length>18</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Predecessor_Milestone__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>The milestone which must be complete before you start this one. The Predecessor Milestone end date must be before the current Milestone start date.</inlineHelpText>
+        <label>Predecessor Milestone</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Milestone1_Milestone__c.Project__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.Project__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Milestone1_Milestone__c</referenceTo>
+        <relationshipName>Successor_Milestones2</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Project_Kickoff_Offset__c</fullName>
+        <externalId>false</externalId>
+        <formula>NULLVALUE(Kickoff__c -  Project__r.Kickoff__c,0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>How many days after project kickoff does this milestone kickoff?</inlineHelpText>
+        <label>Project Kickoff Offset</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Project__r.Name</formula>
+        <label>Project Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>Project__r.Project_Number__c</formula>
+        <label>Project Number</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_Oracle_Project_Code__c</fullName>
+        <externalId>false</externalId>
+        <formula>Project__r.Oracle_Project_Code__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Project Oracle Project Code</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_Owner__c</fullName>
+        <externalId>false</externalId>
+        <formula>Project__r.Owner:User.FirstName &amp; &quot; &quot; &amp; Project__r.Owner:User.LastName</formula>
+        <label>Project Owner</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_Stage__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Project__r.Project_Stage__c)</formula>
+        <label>Project Stage</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>The project this milestone is assigned to. If this is a sub-milestone this field is empty.</inlineHelpText>
+        <label>Project</label>
+        <referenceTo>Milestone1_Project__c</referenceTo>
+        <relationshipName>Project_Milestones2</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Review_credit_status__c</fullName>
+        <description>Proforce CHK 11/2014</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Review credit status</inlineHelpText>
+        <label>Review credit status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Active</fullName>
+                    <default>false</default>
+                    <label>Active</label>
+                </value>
+                <value>
+                    <fullName>On Hold</fullName>
+                    <default>false</default>
+                    <label>On Hold</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Salesforce_Id__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASESAFEID(Id)</formula>
+        <label>Salesforce Id</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Actual_Expense__c</fullName>
+        <externalId>false</externalId>
+        <formula>Actual_Expense_From_Tasks__c + Actual_Expense_From_Sub_Milestones__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Calculated from expense records on tasks for this milestone and all child milestones</inlineHelpText>
+        <label>Total Actual Expense</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Actual_Hours__c</fullName>
+        <externalId>false</externalId>
+        <formula>Actual_Hours_From_Tasks__c + Actual_Hours_From_Sub_Milestones__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Calculated from time records on tasks for this milestone and all child milestones</inlineHelpText>
+        <label>Total Actual Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Blocked_Tasks__c</fullName>
+        <externalId>false</externalId>
+        <formula>Blocked_Tasks_in_Tasks__c +  Blocked_Tasks_in_Sub_Milestones__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>How many tasks are flagged as blocked?</inlineHelpText>
+        <label>Total Blocked Tasks</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Complete_Tasks__c</fullName>
+        <externalId>false</externalId>
+        <formula>Complete_Tasks_in_Tasks__c  +  Complete_Tasks_in_Sub_Milestones__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Complete Tasks</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Estimated_Expense__c</fullName>
+        <externalId>false</externalId>
+        <formula>Estimated_Expense_From_Tasks__c + Estimated_Expense_From_Sub_Milestones__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Calculated from task records for this milestone and all child milestones</inlineHelpText>
+        <label>Total Estimated Expense</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Estimated_Hours__c</fullName>
+        <externalId>false</externalId>
+        <formula>Estimated_Hours_From_Tasks__c + Estimated_Hours_From_Sub_Milestones__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Calculated from task records for this milestone and all child milestones</inlineHelpText>
+        <label>Total Estimated Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Expense_Balance__c</fullName>
+        <externalId>false</externalId>
+        <formula>Total_Estimated_Expense__c - Total_Actual_Expense__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Calculated as total estimated expense - total actual expense</inlineHelpText>
+        <label>Total Expense Balance</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Expense_Budget__c</fullName>
+        <externalId>false</externalId>
+        <formula>Expense_Budget__c +  Expense_Budget_from_Sub_Milestones__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Calculated as expense budget + expense budget from sub milestones</inlineHelpText>
+        <label>Total Expense Budget</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Hours_Balance__c</fullName>
+        <externalId>false</externalId>
+        <formula>Total_Estimated_Hours__c - Total_Actual_Hours__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Calculated as total estimated hours - total actual hours</inlineHelpText>
+        <label>Total Hours Balance</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Hours_Budget__c</fullName>
+        <externalId>false</externalId>
+        <formula>Hours_Budget__c + Hours_Budget_from_Sub_Milestones__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Calculated as hours budget + hours budget from sub milestones</inlineHelpText>
+        <label>Total Hours Budget</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Late_Tasks__c</fullName>
+        <externalId>false</externalId>
+        <formula>Late_Tasks_in_Tasks_2__c + Late_Tasks_in_Sub_Milestones__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Number of incomplete and overdue tasks related to this milestone and its child milestones</inlineHelpText>
+        <label>Total Late Tasks</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Open_Tasks__c</fullName>
+        <externalId>false</externalId>
+        <formula>Open_Tasks_in_Tasks__c + Open_Tasks_in_Sub_Milestones__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Number of incomplete tasks related to this milestone and its child milestones</inlineHelpText>
+        <label>Total Open Tasks</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Old Milestone</label>
+    <nameField>
+        <label>Old Milestone Name</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Old Milestones</pluralLabel>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypes>
+        <fullName>Close_Handoff_Milestone</fullName>
+        <active>true</active>
+        <label>Close &amp; Handoff Milestone</label>
+        <picklistValues>
+            <picklist>Review_credit_status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>State</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>States</value>
+    </caseValues>
+    <fields>
+        <label><!-- Category --></label>
+        <name>Category__c</name>
+        <picklistValues>
+            <masterLabel>Autonomous Region</masterLabel>
+            <translation><!-- Autonomous Region --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>District</masterLabel>
+            <translation><!-- District --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Federal District</masterLabel>
+            <translation><!-- Federal District --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Municipality</masterLabel>
+            <translation><!-- Municipality --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Outlying Territory</masterLabel>
+            <translation><!-- Outlying Territory --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Province</masterLabel>
+            <translation><!-- Province --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Regions</masterLabel>
+            <translation><!-- Regions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Special Administrative Region</masterLabel>
+            <translation><!-- Special Administrative Region --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>State</masterLabel>
+            <translation><!-- State --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Territory</masterLabel>
+            <translation><!-- Territory --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Union Territory</masterLabel>
+            <translation><!-- Union Territory --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Country ISO Code --></label>
+        <name>Country_ISO_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country Name --></label>
+        <name>Country_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country --></label>
+        <name>Country__c</name>
+        <relationshipLabel><!-- States --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- State Code --></label>
+        <name>State_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- State ISO Code --></label>
+        <name>State_ISO_Code__c</name>
+    </fields>
+    <layouts>
+        <layout>State Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

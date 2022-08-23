@@ -1,0 +1,7 @@
+<apex:page sidebar="false" standardStylesheets="false" showHeader="false">
+    <script type="text/javascript">
+    	var code = '{!$CurrentPage.parameters.code}';
+    	var forwardTo = '{!$CurrentPage.parameters.state}';
+    	window.location.href = '/apex/'+forwardTo+'&code='+code;
+    </script>
+</apex:page>

@@ -1,0 +1,28 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" >
+	<aura:attribute name="feature_icon_url" type="String" default="/sfsites/c/resource/portal_default_featured" access="global"/>
+    <aura:attribute name="feature_section_heading" type="String" default="Feature" access="global"/>
+	<aura:attribute name="feature_title" type="String" default="Feature Title" access="global"/>
+	<aura:attribute name="feature_text" type="String" default="Feature Text" access="global"/>
+    <aura:attribute name="feature_cta" type="String" default="" access="global"/>
+	<aura:attribute name="feature_cta_text" type="String" default="Find Out More" access="global"/>
+	<aura:attribute name="feature_cta_new_window" type="Boolean" access="global"/>
+
+    <div class="feature">
+        <h2>{!v.feature_section_heading}</h2>
+        <div class="featureGrid">
+            <div class="image">
+                <img src="{!v.feature_icon_url}" alt="{!v.feature_title}"/>
+            </div>
+            <div class="text">
+                <h3>{!v.feature_title}</h3>
+                <p>{!v.feature_text}</p>
+                <aura:if isTrue="{!v.feature_cta_new_window}">
+                    <a id="Featured-Widget" href="{!v.feature_cta}" target="_blank">{!v.feature_cta_text}</a>
+                	<aura:set attribute="else">
+                        <a href="{!v.feature_cta}">{!v.feature_cta_text}</a>
+                    </aura:set>
+                </aura:if>    
+            </div>
+        </div>    
+	</div>
+</aura:component>

@@ -1,0 +1,1045 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Bug</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Bugs</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account Name --></label>
+        <name>Account_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Affects Version --></label>
+        <name>Affects_Version__c</name>
+    </fields>
+    <fields>
+        <label><!-- Anticipated Due Date --></label>
+        <name>Anticipated_Due_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- When this box is checked, it means that there are Bug related attachments in Chatter on the Bug record. --></help>
+        <label><!-- Bug Attachments --></label>
+        <name>Bug_Attachments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bug Integration Id --></label>
+        <name>Bug_Integration_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bug Number --></label>
+        <name>Bug_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- This shows what status the bug is in regards to the process of submission and resolution. 
+Created - created in SF but not sent to JIRA
+Submitted - sent to JIRA, no response from development
+Updated by Development - updated
+Closed - issue is complete --></help>
+        <label><!-- Depreciated Bug Process Status --></label>
+        <name>Bug_Process_Status__c</name>
+        <picklistValues>
+            <masterLabel>Closed</masterLabel>
+            <translation><!-- Closed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Created</masterLabel>
+            <translation><!-- Created --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted to JIRA</masterLabel>
+            <translation><!-- Submitted to JIRA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Updated by Development</masterLabel>
+            <translation><!-- Updated by Development --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Used to determine which bug system to send the bug to --></help>
+        <label><!-- Bug Server --></label>
+        <name>Bug_Server__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bug URL --></label>
+        <name>Bugzilla_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- CCF Project --></label>
+        <name>CCF_Project__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case Asset Version --></label>
+        <name>Case_Asset_Version__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case Impact --></label>
+        <name>Case_Impact__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case Last Case Comment --></label>
+        <name>Case_Last_Case_Comment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Depreciated - Case Last Public Comment --></label>
+        <name>Case_Last_Public_Comment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case Number --></label>
+        <name>Case_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case Open Date --></label>
+        <name>Case_Open_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case Priority --></label>
+        <name>Case_Priority__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case Product Category --></label>
+        <name>Case_Product_Category__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case Product Family --></label>
+        <name>Case_Product_Family__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case Product Line --></label>
+        <name>Case_Product_Line__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case Severity --></label>
+        <name>Case_Severity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case Status --></label>
+        <name>Case_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case Urgency --></label>
+        <name>Case_Urgency__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case Weight --></label>
+        <name>Case_Weight__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case --></label>
+        <name>Case__c</name>
+        <relationshipLabel><!-- Bugs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Closed? --></label>
+        <name>Closed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Reference --></label>
+        <name>Customer_Reference__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Developer Comments --></label>
+        <name>Developer_Comments__c</name>
+    </fields>
+    <fields>
+        <help><!-- If you don&apos;t know what this is...  don&apos;t fill it in! --></help>
+        <label><!-- EPIC Link --></label>
+        <name>EPIC_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- End User Account --></label>
+        <name>End_User_Account__c</name>
+    </fields>
+    <fields>
+        <label><!-- Entitlement --></label>
+        <name>Entitlement__c</name>
+    </fields>
+    <fields>
+        <label><!-- Environment - Other --></label>
+        <name>Environment_Other__c</name>
+    </fields>
+    <fields>
+        <label><!-- Environment --></label>
+        <name>Environment__c</name>
+        <picklistValues>
+            <masterLabel>DEV</masterLabel>
+            <translation><!-- DEV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DR</masterLabel>
+            <translation><!-- DR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PROD</masterLabel>
+            <translation><!-- PROD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pre-Prod</masterLabel>
+            <translation><!-- Pre-Prod --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QAT</masterLabel>
+            <translation><!-- QAT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Staging</masterLabel>
+            <translation><!-- Staging --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UAT</masterLabel>
+            <translation><!-- UAT --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Executive Escalation Comments --></label>
+        <name>Executive_Escalation_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Executive Escalation (EE) --></label>
+        <name>Executive_Escalation_EE__c</name>
+    </fields>
+    <fields>
+        <label><!-- Field Validation Comment --></label>
+        <name>Field_Validation_Comment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Field Validation Status --></label>
+        <name>Field_Validation_Status__c</name>
+        <picklistValues>
+            <masterLabel>Blocked</masterLabel>
+            <translation><!-- Blocked --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAILED</masterLabel>
+            <translation><!-- FAILED --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PASSED</masterLabel>
+            <translation><!-- PASSED --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Won&apos;t Validate</masterLabel>
+            <translation><!-- Won&apos;t Validate --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- = implemented build version in Jira --></help>
+        <label><!-- Fixed Build Number --></label>
+        <name>Fixed_Build_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- = Implemented Version in Jira --></help>
+        <label><!-- Fixed Version Number --></label>
+        <name>Fixed_Version_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Focus Project --></label>
+        <name>Focus_Project__c</name>
+    </fields>
+    <fields>
+        <label><!-- Historical Created By User --></label>
+        <name>Historical_Created_By_User__c</name>
+    </fields>
+    <fields>
+        <label><!-- Historical Owner --></label>
+        <name>Historical_Owner__c</name>
+    </fields>
+    <fields>
+        <label><!-- Historical Siebel Priority --></label>
+        <name>Historical_Siebel_Priority__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hosting --></label>
+        <name>Hosting__c</name>
+        <picklistValues>
+            <masterLabel>Cloud</masterLabel>
+            <translation><!-- Cloud --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On-Prem</masterLabel>
+            <translation><!-- On-Prem --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- This defines what sort of assistance from the development team is being requested. --></help>
+        <label><!-- Issue Type --></label>
+        <name>Issue_Type__c</name>
+        <picklistValues>
+            <masterLabel>Assistance</masterLabel>
+            <translation><!-- Assistance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Change</masterLabel>
+            <translation><!-- Change --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Enhancement</masterLabel>
+            <translation><!-- Customer Enhancement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Escalation</masterLabel>
+            <translation><!-- Customer Escalation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Issue</masterLabel>
+            <translation><!-- Customer Issue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Question</masterLabel>
+            <translation><!-- Customer Question --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Feature Request</masterLabel>
+            <translation><!-- Feature Request --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incident</masterLabel>
+            <translation><!-- Incident --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product Issue/Bug</masterLabel>
+            <translation><!-- Product Issue/Bug --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Request</masterLabel>
+            <translation><!-- Service Request --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Jira Assignee --></label>
+        <name>Jira_Assignee__c</name>
+    </fields>
+    <fields>
+        <label><!-- Jira Component --></label>
+        <name>Jira_Component_1__c</name>
+    </fields>
+    <fields>
+        <help><!-- Initial list, will grow. --></help>
+        <label><!-- z - Depreciated Jira Component --></label>
+        <name>Jira_Component__c</name>
+        <picklistValues>
+            <masterLabel>Salesforce</masterLabel>
+            <translation><!-- Salesforce --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Salesforce Issue</masterLabel>
+            <translation><!-- Salesforce Issue --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- This is the detailed notes of the issue to be sent to Jira.  Use of rich text mark up is not recommended here as it will not display properly in Jira. --></help>
+        <label><!-- Jira Description --></label>
+        <name>Jira_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Jira Issue Type ID --></label>
+        <name>Jira_Issue_Type_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Jira Issue Type --></label>
+        <name>Jira_Issue_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Jira Priority --></label>
+        <name>Jira_Priority__c</name>
+    </fields>
+    <fields>
+        <label><!-- Jira Project ID --></label>
+        <name>Jira_Project_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Jira Project Name --></label>
+        <name>Jira_Project_Name__c</name>
+        <picklistValues>
+            <masterLabel>AdConnections</masterLabel>
+            <translation><!-- AdConnections --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BCM Development</masterLabel>
+            <translation><!-- BCM Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Landmark OSI</masterLabel>
+            <translation><!-- Landmark OSI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Landmark Rights and Scheduling</masterLabel>
+            <translation><!-- Landmark Rights and Scheduling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Versio Ingest/Nexio Engine</masterLabel>
+            <translation><!-- Versio Ingest/Nexio Engine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Versio Management</masterLabel>
+            <translation><!-- Versio Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Versio Playout</masterLabel>
+            <translation><!-- Versio Playout --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Versio System</masterLabel>
+            <translation><!-- Versio System --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>xG GamePlan</masterLabel>
+            <translation><!-- xG GamePlan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>xG Linear</masterLabel>
+            <translation><!-- xG Linear --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>xG Scorecard</masterLabel>
+            <translation><!-- xG Scorecard --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Jira Sprint --></label>
+        <name>Jira_Sprint__c</name>
+    </fields>
+    <fields>
+        <help><!-- used to capture the last jira status incoming from jira --></help>
+        <label><!-- Jira Status Summary --></label>
+        <name>Jira_Status_Summary__c</name>
+    </fields>
+    <fields>
+        <help><!-- Deployed, In Progress and Closed can only be set by Salesforce, other statuses will be set through the Jira Interface. Change to &quot;Deployed&quot; when deployed to the customer or &quot;Closed&quot; when its confirmed the issue --></help>
+        <label><!-- Jira Status --></label>
+        <name>Jira_Status__c</name>
+        <picklistValues>
+            <masterLabel>CLOSED</masterLabel>
+            <translation><!-- CLOSED --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Committed</masterLabel>
+            <translation><!-- Committed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DEPLOYED</masterLabel>
+            <translation><!-- DEPLOYED --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Jira Sync Date --></label>
+        <name>Jira_Sync_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Jira Sync --></label>
+        <name>Jira_Sync__c</name>
+    </fields>
+    <fields>
+        <label><!-- Jira Team --></label>
+        <name>Jira_Team__c</name>
+    </fields>
+    <fields>
+        <label><!-- Jira Title --></label>
+        <name>Jira_Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- Jira URL --></label>
+        <name>Jira_URL__c</name>
+    </fields>
+    <fields>
+        <help><!-- Only required for Landmark Sales Cloud products --></help>
+        <label><!-- Landmark Platform --></label>
+        <name>Landmark_Platform__c</name>
+        <picklistValues>
+            <masterLabel>Cloud</masterLabel>
+            <translation><!-- Cloud --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On Prem</masterLabel>
+            <translation><!-- On Prem --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Last Jira Comment --></label>
+        <name>Last_Jira_Comment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Latest JIRA Summary --></label>
+        <name>Latest_JIRA_Summary__c</name>
+    </fields>
+    <fields>
+        <label><!-- Latest SF Comment --></label>
+        <name>Latest_SF_Comment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Latest SF Summary --></label>
+        <name>Latest_SF_Summary__c</name>
+    </fields>
+    <fields>
+        <help><!-- This should only be used to note the &quot;master&quot; issue in the case that this bug is being created to relay a duplicate report by another customer. --></help>
+        <label><!-- Main Jira Issue --></label>
+        <name>Main_Jira_Issue__c</name>
+    </fields>
+    <fields>
+        <help><!-- used with rollup helper for a warning on page layout --></help>
+        <label><!-- Max Attached File Size --></label>
+        <name>Max_Attached_File_Size__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used for OSI - Matches the Jira Component picklist --></help>
+        <label><!-- OSI Component List --></label>
+        <name>OSI_Component_List__c</name>
+        <picklistValues>
+            <masterLabel>3rd Party data</masterLabel>
+            <translation><!-- 3rd Party data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Admin Tool</masterLabel>
+            <translation><!-- Admin Tool --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Announcements</masterLabel>
+            <translation><!-- Announcements --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Billing</masterLabel>
+            <translation><!-- Billing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client Profile</masterLabel>
+            <translation><!-- Client Profile --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commercial Library</masterLabel>
+            <translation><!-- Commercial Library --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contracts</masterLabel>
+            <translation><!-- Contracts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Copy</masterLabel>
+            <translation><!-- Copy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Credit Mgmt</masterLabel>
+            <translation><!-- Credit Mgmt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Electronic Contracting</masterLabel>
+            <translation><!-- Electronic Contracting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General</masterLabel>
+            <translation><!-- General --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internet Contracts</masterLabel>
+            <translation><!-- Internet Contracts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inventory</masterLabel>
+            <translation><!-- Inventory --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Log</masterLabel>
+            <translation><!-- Log --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Personnel</masterLabel>
+            <translation><!-- Personnel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Programming</masterLabel>
+            <translation><!-- Programming --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Recon</masterLabel>
+            <translation><!-- Recon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reports</masterLabel>
+            <translation><!-- Reports --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Management</masterLabel>
+            <translation><!-- Sales Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Salesforce</masterLabel>
+            <translation><!-- Salesforce --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Security</masterLabel>
+            <translation><!-- Security --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technical</masterLabel>
+            <translation><!-- Technical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Workflow</masterLabel>
+            <translation><!-- Workflow --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>export</masterLabel>
+            <translation><!-- export --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- This field shows the original Bug Number if the developers realized it was a duplicate and changed the Bug Number to an alternate value. --></help>
+        <label><!-- Old Bug Number --></label>
+        <name>Old_Bug_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Operation Code --></label>
+        <name>Operation_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Oracle Customer Number --></label>
+        <name>Oracle_Customer_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Peak Case Weight --></label>
+        <name>Peak_Case_Weight__c</name>
+    </fields>
+    <fields>
+        <label><!-- Planned Completion --></label>
+        <name>Planned_Completion__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Class --></label>
+        <name>Product_Class__c</name>
+        <relationshipLabel><!-- Bugs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project Name --></label>
+        <name>Project_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Related? --></label>
+        <name>Project_Related__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Bugs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Record Type --></label>
+        <name>Record_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- If this bug is related to a customer commitment you can enter that commitment here. --></help>
+        <label><!-- Related Customer Commitment --></label>
+        <name>Related_Customer_Commitment__c</name>
+        <relationshipLabel><!-- Bugs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Release Date --></label>
+        <name>Release_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reported By --></label>
+        <name>Reported_By__c</name>
+    </fields>
+    <fields>
+        <help><!-- The resolution sent from Bug system. --></help>
+        <label><!-- Resolution --></label>
+        <name>Resolution__c</name>
+    </fields>
+    <fields>
+        <label><!-- SLA Target Date Updated --></label>
+        <name>SLA_Target_Date_Updated__c</name>
+    </fields>
+    <fields>
+        <label><!-- SLA Target Date --></label>
+        <name>SLA_Target_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Salesforce Id --></help>
+        <label><!-- Salesforce Id --></label>
+        <name>Salesforce_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Siebel Row Id --></label>
+        <name>Siebel_Row_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- For large projects please specify a site owner that can be contacted when R&amp;D have time critical questions.  This is generally the Project Manager but can be anyone in charge of the site. --></help>
+        <label><!-- Site Owner --></label>
+        <name>Site_Owner__c</name>
+    </fields>
+    <fields>
+        <help><!-- For Non-Integrated bugs, enter &quot;Completed&quot; when the fix is completed --></help>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+    </fields>
+    <fields>
+        <help><!-- Currently only a needed field for JIRA integrated bugs for the VER project. --></help>
+        <label><!-- Versio Sub-Project --></label>
+        <name>Sub_Project__c</name>
+        <picklistValues>
+            <masterLabel>AATR (Advanced Audio Track Router)</masterLabel>
+            <translation><!-- AATR (Advanced Audio Track Router) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DATS (DataSourcerer)</masterLabel>
+            <translation><!-- DATS (DataSourcerer) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GFX (Graphics)</masterLabel>
+            <translation><!-- GFX (Graphics) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NAV (Global Navigator)</masterLabel>
+            <translation><!-- NAV (Global Navigator) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NEX (Nexio Core)</masterLabel>
+            <translation><!-- NEX (Nexio Core) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ONYX (Automation)</masterLabel>
+            <translation><!-- ONYX (Automation) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VCM (Versio Config Manager)</masterLabel>
+            <translation><!-- VCM (Versio Config Manager) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VCP (Content Portal)</masterLabel>
+            <translation><!-- VCP (Content Portal) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VED (Versio Deployment)</masterLabel>
+            <translation><!-- VED (Versio Deployment) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VER (Versio Core)</masterLabel>
+            <translation><!-- VER (Versio Core) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VIN (Ingest)</masterLabel>
+            <translation><!-- VIN (Ingest) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VVS (Versio Video Server)</masterLabel>
+            <translation><!-- VVS (Versio Video Server) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Submitted By --></label>
+        <name>Submitted_By__c</name>
+        <relationshipLabel><!-- Bugs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Submitted Date --></label>
+        <name>Submitted_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Target Release Date --></label>
+        <name>Target_Release_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is supplied by the bug system if integrated bug and is the release version being targeted to include the fix. --></help>
+        <label><!-- Target Release Version --></label>
+        <name>Target_Release_Version__c</name>
+    </fields>
+    <fields>
+        <label><!-- Target Version --></label>
+        <name>Target_Version__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Submitted to Dev - Bug</masterLabel>
+            <translation><!-- Submitted to Dev - Bug --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted to Dev - Enhance</masterLabel>
+            <translation><!-- Submitted to Dev - Enhance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted to Dev - Support</masterLabel>
+            <translation><!-- Submitted to Dev - Support --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted to Dev - Work Item</masterLabel>
+            <translation><!-- Submitted to Dev - Work Item --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted to Dev - Work Order</masterLabel>
+            <translation><!-- Submitted to Dev - Work Order --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Updated by Development</masterLabel>
+            <translation><!-- Updated by Development --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Unique Flow Identifier --></label>
+        <name>Unique_Flow_Identifier__c</name>
+    </fields>
+    <fields>
+        <label><!-- Update Date --></label>
+        <name>Update_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Weighting Last Updated --></label>
+        <name>Weighting_Last_Updated__c</name>
+    </fields>
+    <layouts>
+        <layout>AMS Jira Layout</layout>
+        <sections>
+            <label><!-- Bug Details --></label>
+            <section>Bug Details</section>
+        </sections>
+        <sections>
+            <label><!-- Bug System Information --></label>
+            <section>Bug System Information</section>
+        </sections>
+        <sections>
+            <label><!-- Case Information --></label>
+            <section>Case Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Bug Layout</layout>
+        <sections>
+            <label><!-- Bug System Information --></label>
+            <section>Bug System Information</section>
+        </sections>
+        <sections>
+            <label><!-- Case Information --></label>
+            <section>Case Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Bug Layout (Non-Integrated)</layout>
+        <sections>
+            <label><!-- Case Information --></label>
+            <section>Case Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Bug Layout - Community</layout>
+        <sections>
+            <label><!-- Bug System Information --></label>
+            <section>Bug System Information</section>
+        </sections>
+        <sections>
+            <label><!-- Case Information --></label>
+            <section>Case Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Bug Layout Jira</layout>
+        <sections>
+            <label><!-- Bug Details --></label>
+            <section>Bug Details</section>
+        </sections>
+        <sections>
+            <label><!-- Bug System Information --></label>
+            <section>Bug System Information</section>
+        </sections>
+        <sections>
+            <label><!-- Case Information --></label>
+            <section>Case Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Bug Layout Jira Cloud</layout>
+        <sections>
+            <label><!-- Bug Details --></label>
+            <section>Bug Details</section>
+        </sections>
+        <sections>
+            <label><!-- Bug System Information --></label>
+            <section>Bug System Information</section>
+        </sections>
+        <sections>
+            <label><!-- Case Information --></label>
+            <section>Case Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- JIRA Panels --></label>
+            <section>JIRA Panels</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Bug Layout Jira Cloud MS</layout>
+        <sections>
+            <label><!-- Bug Details --></label>
+            <section>Bug Details</section>
+        </sections>
+        <sections>
+            <label><!-- Bug System Information --></label>
+            <section>Bug System Information</section>
+        </sections>
+        <sections>
+            <label><!-- Case Information --></label>
+            <section>Case Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- JIRA Panels --></label>
+            <section>JIRA Panels</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Feature Layout Jira</layout>
+        <sections>
+            <label><!-- Bug Details --></label>
+            <section>Bug Details</section>
+        </sections>
+        <sections>
+            <label><!-- Bug System Information --></label>
+            <section>Bug System Information</section>
+        </sections>
+        <sections>
+            <label><!-- Case Information --></label>
+            <section>Case Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <description><!-- Bugs for Broadband Support, Paradigm, Broadcast Master, Landmark OSI, Landmark Airtime Sales, Landmark Rights &amp; Scheduling, EAS product lines  ID 012i0000000xw9l --></description>
+        <label><!-- Integrated --></label>
+        <name>Integrated</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- For bugs integrated with Jira for PND products.  ID 0120Z0000011xlc --></description>
+        <label><!-- Integrated Jira --></label>
+        <name>Integrated_Jira</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Integrated Jira Cloud --></label>
+        <name>Integrated_Jira_Cloud</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Special record type for managed services becasue they want a different set of fields --></description>
+        <label><!-- Integrated Jira Cloud MS --></label>
+        <name>Integrated_Jira_Cloud_MS</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- id=0120Z0000011yb4 --></description>
+        <label><!-- Integrated Jira Feature --></label>
+        <name>Integrated_Jira_Feature</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Bugs for non-integrated bug tracking systems.  ID 012i0000000xw9m --></description>
+        <label><!-- Non-Integrated --></label>
+        <name>Non_Integrated</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Bugs that integrate with external bug systems can only be created against cases in the following product lines: Broadband Support, Paradigm, Novar, Broadcast Master, Landmark: OSI, OSI Sales, Airtime Sales or Rights and Scheduling. --></errorMessage>
+        <name>Product_Line_is_Invalid</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter a reason for your Validation Status --></errorMessage>
+        <name>Update_Validation_Comment_after_Status</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You have already submitted the bug.  Please wait for the bug developers to respond. --></errorMessage>
+        <name>Wait_for_bug_number_after_submitting</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Change_Jira_Record_Type --></label>
+        <name>Change_Jira_Record_Type</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Change_MR_to_Jira --></label>
+        <name>Change_MR_to_Jira</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Close_Bug --></label>
+        <name>Close_Bug</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Bug --></label>
+        <name>Create_Bug</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Bug_New --></label>
+        <name>Create_Bug_New</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_JIRA_Bug --></label>
+        <name>Create_JIRA_Bug</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_New_Jira_Feature --></label>
+        <name>Create_New_Jira_Feature</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Non_Integrated_Bug --></label>
+        <name>Create_Non_Integrated_Bug</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Update_Jira --></label>
+        <name>Create_Update_Jira</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Link_to_Jira --></label>
+        <name>Link_to_Jira</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Submit --></label>
+        <name>Submit</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Submit_Bug --></label>
+        <name>Submit_Bug</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Update_Jira_Issue --></label>
+        <name>Update_Jira_Issue</name>
+    </webLinks>
+</CustomObjectTranslation>

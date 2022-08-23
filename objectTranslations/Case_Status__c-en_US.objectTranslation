@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Case Status</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Case Statuses</value>
+    </caseValues>
+    <fields>
+        <help><!-- Milestones with names containing the selected terms will be auto completed when this status is set. --></help>
+        <label><!-- AutoComplete Milestone Labels --></label>
+        <name>AutoComplete_Milestone_Labels__c</name>
+        <picklistValues>
+            <masterLabel>Automated Update</masterLabel>
+            <translation><!-- Automated Update --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Resolution</masterLabel>
+            <translation><!-- Resolution --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Response</masterLabel>
+            <translation><!-- Response --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Restore</masterLabel>
+            <translation><!-- Restore --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- AwaitingCustomerAcceptance --></label>
+        <name>AwaitingCustomerAcceptance__c</name>
+    </fields>
+    <fields>
+        <help><!-- ClosedPendingOrders --></help>
+        <label><!-- ClosedPendingOrders --></label>
+        <name>ClosedPendingOrders__c</name>
+    </fields>
+    <fields>
+        <label><!-- CustomerCancelled --></label>
+        <name>CustomerCancelled__c</name>
+    </fields>
+    <fields>
+        <label><!-- Duplicate --></label>
+        <name>Duplicate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Error --></label>
+        <name>Error__c</name>
+    </fields>
+    <fields>
+        <label><!-- InProgress --></label>
+        <name>InProgress__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates if this status sets the Case resolved date. --></help>
+        <label><!-- IsResolved --></label>
+        <name>IsResolved__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates if this status sets the Case restored date. --></help>
+        <label><!-- IsRestored --></label>
+        <name>IsRestored__c</name>
+    </fields>
+    <fields>
+        <label><!-- PendingAdministration --></label>
+        <name>PendingAdministration__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates if this status sets the Case PendingDevelopment date. --></help>
+        <label><!-- PendingDevelopment --></label>
+        <name>PendingDevelopment__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates if this status sets the Case PendingExternalResponse date. --></help>
+        <label><!-- PendingExternalResponse --></label>
+        <name>PendingExternalResponse__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates if this status sets the Case PendingInternalResponse date. --></help>
+        <label><!-- PendingInternalResponse --></label>
+        <name>PendingInternalResponse__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates if this status sets the Case PendingPartsOrder date. --></help>
+        <label><!-- PendingPartsOrder --></label>
+        <name>PendingPartsOrder__c</name>
+    </fields>
+    <fields>
+        <help><!-- PendingReturn --></help>
+        <label><!-- PendingReturn --></label>
+        <name>PendingReturn__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates if this Status stops the SLA clock. --></help>
+        <label><!-- Stops SLA Clock --></label>
+        <name>Stops_SLA_Clock__c</name>
+    </fields>
+    <layouts>
+        <layout>Case SLA Status Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

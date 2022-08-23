@@ -1,0 +1,644 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCategoryGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>xG AIM Releases</label>
+                    <name>xG_AIM_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>xG POIS Releases</label>
+                    <name>xG_POIS_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>xG ADS Relelases</label>
+                    <name>xG_ADS_Relelases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>xG ADR Releases</label>
+                    <name>xG_ADR_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>xG GamePlan Releases</label>
+                    <name>xG_GamePlan</name>
+                </dataCategory>
+                <dataCategory>
+                    <dataCategory>
+                        <label>Novar Releases</label>
+                        <name>Novar_Releases</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Landmark Agency Service (LAS) Releases</label>
+                        <name>Landmark_Agency_Service_LAS_Releases</name>
+                    </dataCategory>
+                    <label>Eclipse Releases</label>
+                    <name>Eclipse_Releases</name>
+                </dataCategory>
+                <label>Advanced Advertising Releases</label>
+                <name>Advanced_Advertising_Releases</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Broadcast Master Releases</label>
+                    <name>Broadcast_Master_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Broadcast Master Nonlinear Releases</label>
+                    <name>Broadcast_Master_Nonlinear_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>LandmarkOSI Sales Releases</label>
+                    <name>LandmarkOSI_Sales_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Landmark Sales</label>
+                    <name>Landmark_Sales</name>
+                </dataCategory>
+                <label>Advertising Sales Releases</label>
+                <name>Advertising_Sales_Releases</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>xG Scorecard Releases</label>
+                    <name>xG_Scorecard_Releases</name>
+                </dataCategory>
+                <label>Analytics Releases</label>
+                <name>Analytics_Releases</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>xG Billing Releases</label>
+                    <name>xG_Billing_Releases</name>
+                </dataCategory>
+                <label>Billing Releases</label>
+                <name>Billing_Releases</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Landmark Rights &amp; Scheduling Releases</label>
+                    <name>Landmark_Rights_Scheduling_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>xG Schedule Releases</label>
+                    <name>xG_Schedule_Releases</name>
+                </dataCategory>
+                <label>Rights &amp; Programming Releases</label>
+                <name>Rights_Programming_Releases</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Interactive Reporting Releases</label>
+                    <name>Interactive_Reporting_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>LandmarkOSI Internet Releases</label>
+                    <name>LandmarkOSI_Internet_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>LandmarkOSI Traffic &amp; Billing Releases</label>
+                    <name>LandmarkOSI_Traffic_Billing_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Program Plus Releases</label>
+                    <name>Program_Plus_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>xG Linear Releases</label>
+                    <name>xG_Linear_Releases</name>
+                </dataCategory>
+                <label>Traffic Releases</label>
+                <name>Traffic_Releases</name>
+            </dataCategory>
+            <label>Advertising Management Releases</label>
+            <name>Advertising_Management_Releases</name>
+        </dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>CloudXtream DVR (cDVR) Releases</label>
+                    <name>CloudXtream_DVR_cDVR_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Telurio Cloud DVR Releases</label>
+                    <name>Telurio_Cloud_DVR_Releases</name>
+                </dataCategory>
+                <label>Cloud DVR (cDVR) Releases</label>
+                <name>Cloud_DVR_cDVR_Releases</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>SelenioFlex Ingest Releases</label>
+                    <name>SelenioFlex_Ingest_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>SelenioFlex Live Releases</label>
+                    <name>SelenioFlex_Live_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>SelenioFlex Live Manager</label>
+                    <name>SelenioFlex_Live_Manager</name>
+                </dataCategory>
+                <label>Encoding (Distribution) Releases</label>
+                <name>Encoding_Distribution_Releases</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Selenio VDE Releases</label>
+                    <name>Selenio_VDE_Releases</name>
+                </dataCategory>
+                <label>HTTP-to-UDP Gateway Releases</label>
+                <name>HTTP_to_UDP_Gateway_Releases</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Telurio Packager Releases</label>
+                    <name>Telurio_Packager_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Telurio Packager JITP Releases</label>
+                    <name>Telurio_Packager_JITP_Releases</name>
+                </dataCategory>
+                <label>Packaging Releases</label>
+                <name>Packaging_Releases</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Selenio One XC Releases</label>
+                    <name>Selenio_One_XC_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Selenio One XO Releases</label>
+                    <name>Selenio_One_XO_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>SelenioFlex File Releases</label>
+                    <name>SelenioFlex_File_Releases</name>
+                </dataCategory>
+                <label>Transcoding (Distribution) Releases</label>
+                <name>Transcoding_Distribution_Releases</name>
+            </dataCategory>
+            <label>Distribution Releases</label>
+            <name>Distribution_Releases</name>
+        </dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>DPS Releases</label>
+                    <name>DPS_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Magellan CSS Navigator Releases</label>
+                    <name>Magellan_CSS_Navigator_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Magellan RCP Releases</label>
+                    <name>Magellan_RCP_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Magellan NMS Releases</label>
+                    <name>Magellan_NMS_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Magellan SDN Orchestrator Releases</label>
+                    <name>Magellan_SDN_Orchestrator_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>NetVX Releases</label>
+                    <name>NetVX_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>NUCLEUS</label>
+                    <name>NUCLEUS</name>
+                </dataCategory>
+                <label>Command &amp; Control Releases</label>
+                <name>Command_Control_Releases</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>DTS Neural Releases</label>
+                    <name>DTS_Neural_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Selenio DL Video Legalizers Releases</label>
+                    <name>Selenio_DL_Video_Legalizers_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Selenio MCP Controller Releases</label>
+                    <name>Selenio_MCP_Controller_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Selenio MCP1 Releases</label>
+                    <name>Selenio_MCP1_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Selenio MCP3 Releases</label>
+                    <name>Selenio_MCP3_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Selenio MCP Modules Releases</label>
+                    <name>Selenio_MCP_Modules_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Selenio NetPlus Model 300 Releases</label>
+                    <name>Selenio_NetPlus_Model_300_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Selenio NetPlus Model 400 Releases</label>
+                    <name>Selenio_NetPlus_Model_400_Releases</name>
+                </dataCategory>
+                <label>Encoding (Networking) Releases</label>
+                <name>Encoding_Networking_Releases</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>EPIC MV Releases</label>
+                    <name>EPIC_MV_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Platinum II-GRF Releases</label>
+                    <name>Platinum_II_GRF_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Platinum Predator II Releases</label>
+                    <name>Platinum_Predator_II_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Platinum Predator II-GX Releases</label>
+                    <name>Platinum_Predator_II_GX_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Platinum SX Hybrid Releases</label>
+                    <name>Platinum_SX_Hybrid_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Platinum SX Pro Releases</label>
+                    <name>Platinum_SX_Pro_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Predator II Releases</label>
+                    <name>Predator_II_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>QS100HD Releases</label>
+                    <name>QS100HD_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Selenio (QVM 6800+) Releases</label>
+                    <name>Selenio_QVM_6800_Releases</name>
+                </dataCategory>
+                <label>Multiviewers Releases</label>
+                <name>Multiviewers_Releases</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>NEO Releases</label>
+                    <name>NEO_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Selenio 6800+ Fiber Optics Releases</label>
+                    <name>Selenio_6800_Fiber_Optics_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Selenio 6800+ Releases</label>
+                    <name>Selenio_6800_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Selenio Network Processor (SNP) Release</label>
+                    <name>Selenio_Network_Processor_SNP_Release</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Selenio X50, X75, X85, X100 Releases</label>
+                    <name>Selenio_X50_X75_X85_X100_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Vidiem Element Management System Release</label>
+                    <name>Vidiem_Element_Management_System_Release</name>
+                </dataCategory>
+                <label>Processing Releases</label>
+                <name>Processing_Releases</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>DB Editor Releases</label>
+                    <name>DB_Editor_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>EDGE Releases</label>
+                    <name>EDGE_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>&quot;Magellan Control Panels Releases</label>
+                    <name>Magellan_Control_Panels_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Platinum Frame and Modules Releases</label>
+                    <name>Platinum_Frame_and_Modules_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Platinum IP3 Frames &amp; Modules Releases</label>
+                    <name>Platinum_IP3_Frames_Modules_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Platinum (Routers) Releases</label>
+                    <name>Platinum_Routers_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Remote General Purpose Interfaces Releas</label>
+                    <name>Remote_General_Purpose_Interfaces_Releas</name>
+                </dataCategory>
+                <label>Router Releases</label>
+                <name>Router_Releases</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>ASI, GEN, HD, SD, VSB-Star, PTM-305 Rele</label>
+                    <name>ASI_GEN_HD_SD_VSB_Star_PTM_305_Rele</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>DTD and UDC-RCU Releases</label>
+                    <name>DTD_and_UDC_RCU_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Videotek Releases</label>
+                    <name>Videotek_Releases</name>
+                </dataCategory>
+                <label>Test &amp; Measurement Releases</label>
+                <name>Test_Measurement_Releases</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>SelenioFlex Releases</label>
+                    <name>SelenioFlex_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>SelenioICE Releases</label>
+                    <name>SelenioICE_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>SelenioNext Releases</label>
+                    <name>SelenioNext_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Selenio BNP Releases</label>
+                    <name>Selenio_BNP_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Selenio VMG Releases</label>
+                    <name>Selenio_VMG_Releases</name>
+                </dataCategory>
+                <label>Transcodong (Networking) Releases</label>
+                <name>Transcodong_Networking_Releases</name>
+            </dataCategory>
+            <label>Networking &amp; Infrastructure Releases</label>
+            <name>Networking_Infrastructure_Releases</name>
+        </dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>ADC Releases</label>
+                    <name>ADC_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>D-Series Releases</label>
+                    <name>D_Series_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Asset Management Releases</label>
+                    <name>Asset_Management_Releases</name>
+                </dataCategory>
+                <label>Automation &amp; Asset Management Releases</label>
+                <name>Automation_Asset_Management_Releases</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Infocaster Releases</label>
+                    <name>Infocaster_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Infocaster Manager Releases</label>
+                    <name>Infocaster_Manager_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Infocaster Traffic Releases</label>
+                    <name>Infocaster_Traffic_Releases</name>
+                </dataCategory>
+                <label>Digital Signage Releases</label>
+                <name>Digital_Signage_Releases</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Animation Builder Releases</label>
+                    <name>Animation_Builder_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>&quot;Gen-9 Playout Systems Releases</label>
+                    <name>Gen_9_Playout_Systems_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Magellan Diagnostic Logging Releases</label>
+                    <name>Magellan_Diagnostic_Logging_Releases</name>
+                </dataCategory>
+                <label>Integrated Playout Releases</label>
+                <name>Integrated_Playout_Releases</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Content Receiver Releases</label>
+                    <name>Content_Receiver_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Content Transmitter Releases</label>
+                    <name>Content_Transmitter_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>G-Scribe Releases</label>
+                    <name>G_Scribe_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>LogoCreator Releases</label>
+                    <name>LogoCreator_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Nexio+ Channelbrand Releases</label>
+                    <name>Nexio_Channelbrand_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Nexio IconMaster Releases</label>
+                    <name>Nexio_IconMaster_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Nexio TitleOne Releases</label>
+                    <name>Nexio_TitleOne_Releases</name>
+                </dataCategory>
+                <label>Master Control Branding Graphics Release</label>
+                <name>Master_Control_Branding_Graphics_Rele</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Nexio Farad Releases</label>
+                    <name>Nexio_Farad_Releases</name>
+                </dataCategory>
+                <label>Storage Releases</label>
+                <name>Storage_Releases</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Versio 2 Releases</label>
+                    <name>Versio_2_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Versio 3 Releases</label>
+                    <name>Versio_3_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Versio IOX Releases</label>
+                    <name>Versio_IOX_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Versio IOX SAN Releases</label>
+                    <name>Versio_IOX_SAN_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Versio IOX Scale-Out NAS Releases</label>
+                    <name>Versio_IOX_Scale_Out_NAS_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Versio IOX Scale-Out NAS SINGLE Releases</label>
+                    <name>Versio_IOX_Scale_Out_NAS_SINGLE_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Versio (MCS) Releases</label>
+                    <name>Versio_MCS_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Versio Platform Releases</label>
+                    <name>Versio_Platform_Releases</name>
+                </dataCategory>
+                <label>Versio Releases</label>
+                <name>Versio_Releases</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Velocity PRX Releases</label>
+                    <name>Velocity_PRX_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Nexio MOS Gateway Releases</label>
+                    <name>Nexio_MOS_Gateway_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Nexio InstantOnline Releases</label>
+                    <name>Nexio_InstantOnline_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Nexio NLE Gateway Releases</label>
+                    <name>Nexio_NLE_Gateway_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Nexio PRX Transcoder Releases</label>
+                    <name>Nexio_PRX_Transcoder_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Nexio MOS Playlist Manager</label>
+                    <name>Nexio_MOS_Playlist_Manager</name>
+                </dataCategory>
+                <label>Video Servers News &amp; Editing Releases</label>
+                <name>Video_Servers_News_Editing_Releases</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Nexio AMP ChannelView Releases</label>
+                    <name>Nexio_AMP_ChannelView_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Nexio ClipSync Releases</label>
+                    <name>Nexio_ClipSync_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Nexio Remote Releases</label>
+                    <name>Nexio_Remote_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Nexio Playlist Releases</label>
+                    <name>Nexio_Playlist_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Nexio Delay Releases</label>
+                    <name>Nexio_Delay_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Nexio Track Router Releases</label>
+                    <name>Nexio_Track_Router_Releases</name>
+                </dataCategory>
+                <label>Video Nexio Media Server Releases</label>
+                <name>Videos_Servers_Nexio_Media_Server_Applic</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Nexio Amp Releases</label>
+                    <name>Nexio_Amp_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Nexio NXIQ Series Releases</label>
+                    <name>Nexio_NXIQ_Series_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>NXESD 1224X2 Releases</label>
+                    <name>NXESD_1224X2_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>NXESB 600 Series Releases</label>
+                    <name>NXESB_600_Series_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>NXFS8500 Series Releases</label>
+                    <name>NXFS8500_Series_Releases</name>
+                </dataCategory>
+                <label>Video Servers Other Releases</label>
+                <name>Video_Servers_Other_Releases</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Nexio Digital Turnaround Processor Relea</label>
+                    <name>Nexio_Digital_Turnaround_Processor_Relea</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Nexio Ingest Control Manager Releases</label>
+                    <name>Nexio_Ingest_Control_Manager_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Nexio Media Gateway Server Releases</label>
+                    <name>Nexio_Media_Gateway_Server_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Nexio Media Host Server Releases</label>
+                    <name>Nexio_Media_Host_Server_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Nexio Production Playout Center Releases</label>
+                    <name>Nexio_Production_Playout_Center_Releases</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Nexio Transport Stream Delay Server Rele</label>
+                    <name>Nexio_Transport_Stream_Delay_Server_Rele</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Nexio mCAPTURE Releases</label>
+                    <name>Nexio_mCAPTURE_Releases</name>
+                </dataCategory>
+                <label>Video Servers Transmission Releases</label>
+                <name>Video_Servers_Transmission_Specialty_S</name>
+            </dataCategory>
+            <label>Playout Releases</label>
+            <name>Playout_Releases</name>
+        </dataCategory>
+        <label>All</label>
+        <name>All</name>
+    </dataCategory>
+    <label>Software &amp; Firmware Releases</label>
+    <objectUsage>
+        <object>KnowledgeArticleVersion</object>
+    </objectUsage>
+</DataCategoryGroup>

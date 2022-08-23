@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>EMEA Digital Asset Management Service</name>
+    <queueMembers>
+        <users>
+            <user>ashok.gangatharan@imaginecommunications.com</user>
+            <user>csaba.szentesi@imaginecommunications.com</user>
+            <user>habiba.williams@imaginecommunications.com</user>
+            <user>istvan.lipcsei@imaginecommunications.com</user>
+            <user>loris.carazzolo@imaginecommunications.com</user>
+            <user>pavel.baburov@imaginecommunications.com</user>
+            <user>sebastien.lebret@imaginecommunications.com</user>
+            <user>stephane.jan@imaginecommunications.com</user>
+            <user>tamas.balog@imaginecommunications.com</user>
+            <user>zsolt.fulop@imaginecommunications.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

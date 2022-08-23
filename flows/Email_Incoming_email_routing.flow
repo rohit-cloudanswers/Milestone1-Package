@@ -1,0 +1,1080 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <name>Assign_Account</name>
+        <label>Assign Account</label>
+        <locationX>258</locationX>
+        <locationY>1685</locationY>
+        <assignmentItems>
+            <assignToReference>CaseRecord.AccountId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Account.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CaseRecord.ContactId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CaseRecord.Address__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>UpdateCase</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Bug_Values</name>
+        <label>Assign Bug Values</label>
+        <locationX>456</locationX>
+        <locationY>2066</locationY>
+        <assignmentItems>
+            <assignToReference>BugRecord.Jira_Title__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Placeholder - Edit Me</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>BugRecord.Jira_Description__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Click ASSOCIATE to associate the related jira issue and PULL to pull the data from jira.</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>BugRecord.Case__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>CaseRecord.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>BugRecord.Issue_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Incident</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>BugRecord.Bug_Number__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>varJiraNumber</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>BugRecord.Environment__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>varEnvironment</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>BugRecord.Affects_Version__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>varVersion</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>BugRecord.Product_Class__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>CaseRecord.Product_Class__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_Bug_Record</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>if we can&apos;t find an account hard code it to Imagine UK</description>
+        <name>Assign_Default_Account</name>
+        <label>Assign Default Account</label>
+        <locationX>668</locationX>
+        <locationY>1690</locationY>
+        <assignmentItems>
+            <assignToReference>CaseRecord.AccountId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>001i000001QcyPY</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CaseRecord.Address__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>UpdateCase</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Impact_High</name>
+        <label>Impact High</label>
+        <locationX>280</locationX>
+        <locationY>1401</locationY>
+        <assignmentItems>
+            <assignToReference>CaseRecord.Impact__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>High</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Account</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Impact_Low</name>
+        <label>Impact Low</label>
+        <locationX>582</locationX>
+        <locationY>1375</locationY>
+        <assignmentItems>
+            <assignToReference>CaseRecord.Impact__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Low</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Account</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Impact_Medium</name>
+        <label>Impact Medium</label>
+        <locationX>454</locationX>
+        <locationY>1372</locationY>
+        <assignmentItems>
+            <assignToReference>CaseRecord.Impact__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Medium</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Account</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Doing this so I can manage the nulls better with empty string variables</description>
+        <name>Set_Formulas_to_Variables</name>
+        <label>Set Formulas to Variables</label>
+        <locationX>671</locationX>
+        <locationY>485</locationY>
+        <assignmentItems>
+            <assignToReference>varSummary</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>getSummary</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varDescription</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>getDescription</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varEnvironment</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>getEnvironment</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varVersion</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>getVersion</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varJiraNumber</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>getJiraNumber</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Set_Values_to_Case_Record</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Landmark_Sales</name>
+        <label>Set Landmark Sales</label>
+        <locationX>220</locationX>
+        <locationY>858</locationY>
+        <assignmentItems>
+            <assignToReference>CaseRecord.Product_Class__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Landmark_Sales.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CaseRecord.Hosting__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>On-Prem</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Find_Urgency</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Landmark_Sales_Cloud</name>
+        <label>Set Landmark Sales Cloud</label>
+        <locationX>966</locationX>
+        <locationY>984</locationY>
+        <assignmentItems>
+            <assignToReference>CaseRecord.Product_Class__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Landmark_Sales_0.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CaseRecord.Hosting__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Cloud</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Find_Urgency</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Only doing this so I don&apos;t have to change the assignments I already created</description>
+        <name>Set_only_Case_Record</name>
+        <label>Set only Case Record</label>
+        <locationX>186</locationX>
+        <locationY>483</locationY>
+        <assignmentItems>
+            <assignToReference>CaseRecord</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_associated_Case</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CaseRecord.Description</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>EmailRecord.TextBody</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CaseRecord.Description_2__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>EmailRecord.TextBody</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Find_Product_Line</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Only doing this so I don&apos;t have to change the assignments I already created</description>
+        <name>Set_Values_to_Case_Record</name>
+        <label>Set Values to Case Record</label>
+        <locationX>672</locationX>
+        <locationY>626</locationY>
+        <assignmentItems>
+            <assignToReference>CaseRecord</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_associated_Case</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CaseRecord.Description</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>varDescription</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CaseRecord.Description_2__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>varDescription</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CaseRecord.Subject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>varSummary</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CaseRecord.Environment__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>varEnvironment</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CaseRecord.Reported_Version__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>varVersion</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CaseRecord.Current_Version__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>varVersion</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CaseRecord.Type</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Fault</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Find_Product_Line</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_xG_Gameplan</name>
+        <label>Set xG Gameplan</label>
+        <locationX>574</locationX>
+        <locationY>856</locationY>
+        <assignmentItems>
+            <assignToReference>CaseRecord.Product_Line__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Media Software</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CaseRecord.Product_Family__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>xG Gameplan</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Find_Urgency</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Urgency_High</name>
+        <label>Urgency High</label>
+        <locationX>226</locationX>
+        <locationY>1107</locationY>
+        <assignmentItems>
+            <assignToReference>CaseRecord.Urgency__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>High</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Find_Impact</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Urgency_Low</name>
+        <label>Urgency Low</label>
+        <locationX>632</locationX>
+        <locationY>1108</locationY>
+        <assignmentItems>
+            <assignToReference>CaseRecord.Urgency__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Low</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Find_Impact</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Urgency_Medium</name>
+        <label>Urgency Medium</label>
+        <locationX>452</locationX>
+        <locationY>1111</locationY>
+        <assignmentItems>
+            <assignToReference>CaseRecord.Urgency__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Medium</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Find_Impact</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Did_we_get_an_account</name>
+        <label>Did we get an account?</label>
+        <locationX>441</locationX>
+        <locationY>1671</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Account</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Account</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Account</targetReference>
+            </connector>
+            <label>Yes Account</label>
+        </rules>
+        <rules>
+            <name>No_Account</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Account</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Default_Account</targetReference>
+            </connector>
+            <label>No Account</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Find_Impact</name>
+        <label>Find Impact</label>
+        <locationX>442</locationX>
+        <locationY>1256</locationY>
+        <defaultConnector>
+            <targetReference>Impact_Medium</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>High_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>EmailRecord.TextBody</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Impact: High</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Impact_High</targetReference>
+            </connector>
+            <label>High</label>
+        </rules>
+        <rules>
+            <name>Medium_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>EmailRecord.TextBody</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Impact: Medium</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Impact_Medium</targetReference>
+            </connector>
+            <label>Medium</label>
+        </rules>
+        <rules>
+            <name>Low_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>EmailRecord.TextBody</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Impact: Low</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Impact_Low</targetReference>
+            </connector>
+            <label>Low</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Find_Product_Line</name>
+        <label>Find Product Line</label>
+        <locationX>439</locationX>
+        <locationY>723</locationY>
+        <defaultConnector>
+            <targetReference>Find_Urgency</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Product_Line_Landmark_Sales</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CaseRecord.Description_2__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>SalesForce Product Line: Landmark Sales</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CaseRecord.Description_2__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Hosting: On-Prem</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Landmark_Sales</targetReference>
+            </connector>
+            <label>Product Line Landmark Sales</label>
+        </rules>
+        <rules>
+            <name>Product_Line_Landmark_Sales_Cloud</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>EmailRecord.TextBody</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>SalesForce Product Line: Landmark Sales</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>EmailRecord.TextBody</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Hosting: Cloud</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Landmark_Sales_0</targetReference>
+            </connector>
+            <label>Product Line Landmark Sales Cloud</label>
+        </rules>
+        <rules>
+            <name>Product_Line_xG_Gameplan</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>EmailRecord.TextBody</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>xG Gameplan</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Gameplan</targetReference>
+            </connector>
+            <label>Product Line xG Gameplan</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Find_Urgency</name>
+        <label>Find Urgency</label>
+        <locationX>438</locationX>
+        <locationY>944</locationY>
+        <defaultConnector>
+            <targetReference>Urgency_Medium</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>High</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>EmailRecord.TextBody</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Urgency: High</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Urgency_High</targetReference>
+            </connector>
+            <label>High</label>
+        </rules>
+        <rules>
+            <name>Medium</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>EmailRecord.TextBody</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Urgency: Medium</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Urgency_Medium</targetReference>
+            </connector>
+            <label>Medium</label>
+        </rules>
+        <rules>
+            <name>Low</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>EmailRecord.TextBody</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Urgency: Low</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Urgency_Low</targetReference>
+            </connector>
+            <label>Low</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Get_Class_Record</name>
+        <label>Get Class Record?</label>
+        <locationX>50</locationX>
+        <locationY>903</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Landmark_Sales</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Landmark_Sales</targetReference>
+            </connector>
+            <label>yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Get_Class_Record_0</name>
+        <label>Get Class Record?</label>
+        <locationX>1056</locationX>
+        <locationY>871</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>yes_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Landmark_Sales_0</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Landmark_Sales_Cloud</targetReference>
+            </connector>
+            <label>yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Get_Class_Record_0_0</name>
+        <label>Get Class Record?</label>
+        <locationX>852</locationX>
+        <locationY>861</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>yes_0_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Gameplan</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_xG_Gameplan</targetReference>
+            </connector>
+            <label>yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_the_email_properly_formed</name>
+        <label>Is the email properly formed?</label>
+        <locationX>424</locationX>
+        <locationY>483</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>getCleanText_is_good</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>getCleanText</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Formulas_to_Variables</targetReference>
+            </connector>
+            <label>getCleanText is good</label>
+        </rules>
+        <rules>
+            <name>getCleanText_is_not_good</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>getCleanText</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_only_Case_Record</targetReference>
+            </connector>
+            <label>getCleanText is not good</label>
+        </rules>
+    </decisions>
+    <description>Launched from Process Builder - Needs update.  Incoming alert emails from the jira service desk, routing and prioirty settings to get them in the right place.</description>
+    <formulas>
+        <name>getAccount</name>
+        <dataType>String</dataType>
+        <expression>MID(
+{!EmailRecord.TextBody},
+(FIND(&quot;issue for &quot;, {!EmailRecord.TextBody})+10), 
+(FIND(&quot; via our&quot;, {!EmailRecord.TextBody}) - (FIND(&quot;issue for &quot;, {!EmailRecord.TextBody})+10))
+)</expression>
+    </formulas>
+    <formulas>
+        <name>getCleanText</name>
+        <dataType>String</dataType>
+        <expression>MID(
+{!EmailRecord.TextBody},
+(FIND(&quot;Dear CARE Team&quot;, {!EmailRecord.TextBody})+14), 
+(FIND(&quot;Managed Services Support&quot;, {!EmailRecord.TextBody}) - (FIND(&quot;Dear CARE Team&quot;, {!EmailRecord.TextBody})+14))
+)</expression>
+    </formulas>
+    <formulas>
+        <name>getDescription</name>
+        <dataType>String</dataType>
+        <expression>MID(
+{!EmailRecord.TextBody},
+(FIND(&quot;Description: &quot;, {!EmailRecord.TextBody})+13), 
+(FIND(&quot;SalesForce Urgency:&quot;, {!EmailRecord.TextBody}) - (FIND(&quot;Description: &quot;, {!EmailRecord.TextBody})+13))
+)</expression>
+    </formulas>
+    <formulas>
+        <name>getEnvironment</name>
+        <dataType>String</dataType>
+        <expression>MID(
+{!EmailRecord.TextBody},
+(FIND(&quot;Environment: &quot;, {!EmailRecord.TextBody})+13), 
+(FIND(&quot;Environment Name&quot;, {!EmailRecord.TextBody}) - (FIND(&quot;Environment: &quot;, {!EmailRecord.TextBody})+13))
+)</expression>
+    </formulas>
+    <formulas>
+        <name>getJiraNumber</name>
+        <dataType>String</dataType>
+        <expression>MID(
+{!EmailRecord.TextBody},
+(FIND(&quot;Ticket ID: &quot;, {!EmailRecord.TextBody})+11), 
+(FIND(&quot;Jira Issue Type: &quot;, {!EmailRecord.TextBody}) - (FIND(&quot;Ticket ID: &quot;, {!EmailRecord.TextBody})+11))
+)</expression>
+    </formulas>
+    <formulas>
+        <name>getSummary</name>
+        <dataType>String</dataType>
+        <expression>MID(
+{!EmailRecord.TextBody},
+(FIND(&quot;Summary: &quot;, {!EmailRecord.TextBody})+9), 
+(FIND(&quot;Description:&quot;, {!EmailRecord.TextBody}) - (FIND(&quot;Summary: &quot;, {!EmailRecord.TextBody})+9))
+)</expression>
+    </formulas>
+    <formulas>
+        <name>getVersion</name>
+        <dataType>String</dataType>
+        <expression>MID(
+{!EmailRecord.TextBody},
+(FIND(&quot;Version: &quot;, {!EmailRecord.TextBody})+9), 
+(FIND(&quot;Hosting: &quot;, {!EmailRecord.TextBody}) - (FIND(&quot;Version: &quot;, {!EmailRecord.TextBody})+9))
+)</expression>
+    </formulas>
+    <formulas>
+        <description># of characters
+
+
+
+
+FIND(&quot; via our&quot;, {!EmailRecord.TextBody}) - FIND &quot;issue for &quot;, {!EmailRecord.TextBody})+10)</description>
+        <name>interimTest</name>
+        <dataType>Number</dataType>
+        <expression>(FIND(&quot; via our&quot;, {!EmailRecord.TextBody}) - (FIND(&quot;issue for &quot;, {!EmailRecord.TextBody})+10))</expression>
+        <scale>0</scale>
+    </formulas>
+    <interviewLabel>Email - Incoming email routing {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Email - Incoming email routing</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Bug_Record</name>
+        <label>Create Bug Record</label>
+        <locationX>458</locationX>
+        <locationY>2185</locationY>
+        <inputReference>BugRecord</inputReference>
+    </recordCreates>
+    <recordLookups>
+        <name>Account</name>
+        <label>Account</label>
+        <locationX>450</locationX>
+        <locationY>1547</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Did_we_get_an_account</targetReference>
+        </connector>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>getAccount</elementReference>
+            </value>
+        </filters>
+        <object>Account</object>
+    </recordLookups>
+    <recordLookups>
+        <name>EmailRecord</name>
+        <label>EmailRecord</label>
+        <locationX>432</locationX>
+        <locationY>191</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_associated_Case</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>emailId</elementReference>
+            </value>
+        </filters>
+        <object>EmailMessage</object>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_associated_Case</name>
+        <label>Get associated Case</label>
+        <locationX>432</locationX>
+        <locationY>327</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Is_the_email_properly_formed</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>EmailRecord.ParentId</elementReference>
+            </value>
+        </filters>
+        <object>Case</object>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Gameplan</name>
+        <label>Get Gameplan</label>
+        <locationX>619</locationX>
+        <locationY>788</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Class_Record_0_0</targetReference>
+        </connector>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>302 - xG Gameplan</stringValue>
+            </value>
+        </filters>
+        <object>Product_Class__c</object>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Landmark_Sales</name>
+        <label>Get Landmark Sales</label>
+        <locationX>58</locationX>
+        <locationY>788</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Class_Record</targetReference>
+        </connector>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>202 - Landmark Sales</stringValue>
+            </value>
+        </filters>
+        <object>Product_Class__c</object>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Landmark_Sales_0</name>
+        <label>Get Landmark Sales</label>
+        <locationX>965</locationX>
+        <locationY>760</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Class_Record_0</targetReference>
+        </connector>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>202 - Landmark Sales</stringValue>
+            </value>
+        </filters>
+        <object>Product_Class__c</object>
+    </recordLookups>
+    <recordUpdates>
+        <name>UpdateCase</name>
+        <label>UpdateCase</label>
+        <locationX>451</locationX>
+        <locationY>1807</locationY>
+        <connector>
+            <targetReference>Call_Record_Type_Lookup</targetReference>
+        </connector>
+        <inputReference>CaseRecord</inputReference>
+    </recordUpdates>
+    <startElementReference>EmailRecord</startElementReference>
+    <status>Active</status>
+    <subflows>
+        <name>Call_Record_Type_Lookup</name>
+        <label>Call Record Type Lookup</label>
+        <locationX>453</locationX>
+        <locationY>1931</locationY>
+        <connector>
+            <targetReference>Assign_Bug_Values</targetReference>
+        </connector>
+        <flowName>RecordTypeID_Lookup_Subflow</flowName>
+        <inputAssignments>
+            <name>ObjectName</name>
+            <value>
+                <stringValue>Bug__c</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>RecordTypeName</name>
+            <value>
+                <stringValue>Integrated_Jira_Cloud_MS</stringValue>
+            </value>
+        </inputAssignments>
+        <outputAssignments>
+            <assignToReference>BugRecord.RecordTypeId</assignToReference>
+            <name>RecordTypeID15</name>
+        </outputAssignments>
+    </subflows>
+    <textTemplates>
+        <name>templateDebug</name>
+        <text>Account {!getAccount}     
+Description {!getDescription}     
+Environment {!getEnvironment}     
+Jira # {!getJiraNumber}     
+Summary {!getSummary}     
+Version {!getVersion}</text>
+    </textTemplates>
+    <variables>
+        <name>BugRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Bug__c</objectType>
+    </variables>
+    <variables>
+        <name>CaseRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Case</objectType>
+    </variables>
+    <variables>
+        <name>emailId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varDescription</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue></stringValue>
+        </value>
+    </variables>
+    <variables>
+        <name>varEnvironment</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue></stringValue>
+        </value>
+    </variables>
+    <variables>
+        <name>varJiraNumber</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue></stringValue>
+        </value>
+    </variables>
+    <variables>
+        <name>varSummary</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue></stringValue>
+        </value>
+    </variables>
+    <variables>
+        <name>varVersion</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue></stringValue>
+        </value>
+    </variables>
+</Flow>

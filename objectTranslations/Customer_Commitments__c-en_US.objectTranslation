@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Customer Commitment</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Customer Commitments</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the date that you expect the commitment to be delivered --></help>
+        <label><!-- Original Commitment Date --></label>
+        <name>Commitment_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Components --></label>
+        <name>Components__c</name>
+        <picklistValues>
+            <masterLabel>6800+</masterLabel>
+            <translation><!-- 6800+ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ADC</masterLabel>
+            <translation><!-- ADC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ad Connections</masterLabel>
+            <translation><!-- Ad Connections --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BroadcastMaster</masterLabel>
+            <translation><!-- BroadcastMaster --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D-Series</masterLabel>
+            <translation><!-- D-Series --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Epic-MV</masterLabel>
+            <translation><!-- Epic-MV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Infocaster</masterLabel>
+            <translation><!-- Infocaster --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Insight</masterLabel>
+            <translation><!-- Insight --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LMK Rights &amp; Scheduling</masterLabel>
+            <translation><!-- LMK Rights &amp; Scheduling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LMK Sales</masterLabel>
+            <translation><!-- LMK Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Landmark OSI</masterLabel>
+            <translation><!-- Landmark OSI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Magellan Touch</masterLabel>
+            <translation><!-- Magellan Touch --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Managed Services</masterLabel>
+            <translation><!-- Managed Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motion</masterLabel>
+            <translation><!-- Motion --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nexio</masterLabel>
+            <translation><!-- Nexio --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Platinum</masterLabel>
+            <translation><!-- Platinum --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RCP</masterLabel>
+            <translation><!-- RCP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SDNO</masterLabel>
+            <translation><!-- SDNO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SNP</masterLabel>
+            <translation><!-- SNP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SNP-MV</masterLabel>
+            <translation><!-- SNP-MV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SaaS</masterLabel>
+            <translation><!-- SaaS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Selenio MCP</masterLabel>
+            <translation><!-- Selenio MCP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Selenio One</masterLabel>
+            <translation><!-- Selenio One --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SelenioFlex File</masterLabel>
+            <translation><!-- SelenioFlex File --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TechOps</masterLabel>
+            <translation><!-- TechOps --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Versio</masterLabel>
+            <translation><!-- Versio --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Versio 3.x</masterLabel>
+            <translation><!-- Versio 3.x --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Versio Automation</masterLabel>
+            <translation><!-- Versio Automation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Versio Core</masterLabel>
+            <translation><!-- Versio Core --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Versio Ingest</masterLabel>
+            <translation><!-- Versio Ingest --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Versio Platform</masterLabel>
+            <translation><!-- Versio Platform --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>xG-Architecture</masterLabel>
+            <translation><!-- xG-Architecture --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>xG-Gameplan</masterLabel>
+            <translation><!-- xG-Gameplan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>xG-Linear</masterLabel>
+            <translation><!-- xG-Linear --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>xG-Sales</masterLabel>
+            <translation><!-- xG-Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>xG-Scorecard</masterLabel>
+            <translation><!-- xG-Scorecard --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Revised Commitment Date --></label>
+        <name>Current_Target_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Delivery Date --></label>
+        <name>Customer_Delivery_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Should detail what product and features are being supported in the customer commit. Be detailed as possible, shouldn’t just be one line --></help>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- End Customer Account --></label>
+        <name>End_Customer_Account__c</name>
+    </fields>
+    <fields>
+        <label><!-- Engineering Target Release Date --></label>
+        <name>Engineering_Target_Release_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimated Start Date --></label>
+        <name>Estimated_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Imagine Effort Estimation --></label>
+        <name>Imagine_Effort_Estimation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Jira Issue Type ID --></label>
+        <name>Jira_Issue_Type_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Jira Issue # --></label>
+        <name>Jira_Issue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Jira Product --></label>
+        <name>Jira_Product__c</name>
+    </fields>
+    <fields>
+        <label><!-- Jira Project ID --></label>
+        <name>Jira_Project_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Jira Status --></label>
+        <name>Jira_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Jira Sync --></label>
+        <name>Jira_Sync__c</name>
+    </fields>
+    <fields>
+        <label><!-- Jira URL --></label>
+        <name>Jira_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Jira Comment --></label>
+        <name>Last_Jira_Comment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last SF Comment --></label>
+        <name>Last_SF_Comment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Bid Desk Approved --></label>
+        <name>Opportunity_Bid_Desk_Approved__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Deal Desk Approval Date --></label>
+        <name>Opportunity_Deal_Desk_Approval_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Last Updated --></label>
+        <name>Opportunity_Last_Updated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Number --></label>
+        <name>Opportunity_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity SOW Review --></label>
+        <name>Opportunity_SOW_Review__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Tech Review Approval Date --></label>
+        <name>Opportunity_Tech_Review_Approval_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Technical Review Completed --></label>
+        <name>Opportunity_Technical_Review_Completed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Customer Commitments --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Oppty Probability --></label>
+        <name>Oppty_Probability__c</name>
+    </fields>
+    <fields>
+        <label><!-- Oppty $ --></label>
+        <name>Oppty__c</name>
+    </fields>
+    <fields>
+        <label><!-- PM Need By Date --></label>
+        <name>PM_Need_By_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Determines which Jira system the request interfaces with. --></help>
+        <label><!-- Product Group --></label>
+        <name>Product_Group__c</name>
+        <picklistValues>
+            <masterLabel>AdTech</masterLabel>
+            <translation><!-- AdTech --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Network</masterLabel>
+            <translation><!-- Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Playout</masterLabel>
+            <translation><!-- Playout --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The project manager that will be handling delivery to the customer when the commitment is completed. --></help>
+        <label><!-- Project Manager --></label>
+        <name>Project_Manager__c</name>
+        <relationshipLabel><!-- Customer Commitments --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Customer Commitments --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Reason for Late Commitment --></label>
+        <name>Reason_for_Late_Commitment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Related Open Bugs --></label>
+        <name>Related_Open_Bugs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reported By --></label>
+        <name>Reported_By__c</name>
+    </fields>
+    <fields>
+        <label><!-- Resolution --></label>
+        <name>Resolution__c</name>
+    </fields>
+    <fields>
+        <label><!-- Risk Icon --></label>
+        <name>Risk_Icon__c</name>
+    </fields>
+    <fields>
+        <label><!-- Risk --></label>
+        <name>Risk__c</name>
+    </fields>
+    <fields>
+        <label><!-- SOW &amp; Contract been Signed off? --></label>
+        <name>SOW_Contract_been_Signed_off__c</name>
+    </fields>
+    <fields>
+        <label><!-- SOW Signoff Date --></label>
+        <name>SOW_Signoff_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Target Acceptance Date --></label>
+        <name>Target_Acceptance_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Translated Risk --></label>
+        <name>Translated_Risk__c</name>
+    </fields>
+    <fields>
+        <label><!-- Update Flag --></label>
+        <name>Update_Flag__c</name>
+    </fields>
+    <layouts>
+        <layout>Copy of Customer Commitment Layout2</layout>
+        <sections>
+            <label><!-- Commitment --></label>
+            <section>Commitment</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Details --></label>
+            <section>Details</section>
+        </sections>
+        <sections>
+            <label><!-- Jira Panel --></label>
+            <section>Jira Panel</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Customer Commitment Layout</layout>
+        <sections>
+            <label><!-- Commitment --></label>
+            <section>Commitment</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Details --></label>
+            <section>Details</section>
+        </sections>
+        <sections>
+            <label><!-- Jira Panel --></label>
+            <section>Jira Panel</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Customer Commitments Layout</layout>
+        <sections>
+            <label><!-- Commitment --></label>
+            <section>Commitment</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Details --></label>
+            <section>Details</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Master --></label>
+        <name>Master</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- You can&apos;t change the commitment date after it has been approved. --></errorMessage>
+        <name>Cant_change_commitment_date</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Create_Commitment --></label>
+        <name>Create_Commitment</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Update_Jira --></label>
+        <name>Create_Update_Jira</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Link_Unlink_Jira --></label>
+        <name>Link_Unlink_Jira</name>
+    </webLinks>
+</CustomObjectTranslation>

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <name>Create_Status_History_Values</name>
+        <label>Create Status History Values</label>
+        <locationX>270</locationX>
+        <locationY>464</locationY>
+        <assignmentItems>
+            <assignToReference>StatusHistoryRecord.Case__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>StatusHistoryRecord.Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Status</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>StatusHistoryRecord.IsStopped__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>DetermineIsStopped</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>StatusHistoryRecord.Status_Detail__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Status_Detail__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>StatusHistoryRecord.Previous_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Old_Status__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>StatusHistoryRecord.Old_Status_Detail__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Old_Status_Detail__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>StatusHistoryRecord.Status_Changed__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_Status_History</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Closed_date</name>
+        <label>Set Closed date</label>
+        <locationX>52</locationX>
+        <locationY>577</locationY>
+        <assignmentItems>
+            <assignToReference>Loop_Old_Histories.Closed_DateTime__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Old_Histories</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Check_ISNEW</name>
+        <label>Check ISNEW</label>
+        <locationX>374</locationX>
+        <locationY>336</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>ISNEW</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>ISNEW</label>
+        </rules>
+        <rules>
+            <name>Ignore_Autoation_Bail</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Ignore_Automation__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Ignore Autoation - Bail</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Did_the_Status_Change</name>
+        <label>Did the Status Change?</label>
+        <locationX>539</locationX>
+        <locationY>342</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Status_Change</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>isChangedStatus</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Status Change</label>
+        </rules>
+    </decisions>
+    <description>Not working at the moment.  Will replace process builder eventually</description>
+    <formulas>
+        <name>DetermineIsStopped</name>
+        <dataType>Boolean</dataType>
+        <expression>IF ( OR( TEXT({!$Record.Status_Detail__c}) = &quot;Pending External Reponse&quot;, TEXT({!$Record.Status}) = &quot;Closed&quot;, TEXT({!$Record.Status}) = &quot;Cancelled&quot;, TEXT({!$Record.Status}) = &quot;Resolved&quot; ), TRUE, FALSE )</expression>
+    </formulas>
+    <formulas>
+        <name>isChangedStatus</name>
+        <dataType>Boolean</dataType>
+        <expression>IF (    {!$Record.Old_Status__c}  != TEXT( {!$Record.Status} ),
+TRUE,FALSE  )</expression>
+    </formulas>
+    <formulas>
+        <name>isChangedStatusDetail</name>
+        <dataType>Boolean</dataType>
+        <expression>IF (   {!$Record.Old_Status_Detail__c} != TEXT( {!$Record.Status_Detail__c} ),
+TRUE,FALSE  )</expression>
+    </formulas>
+    <interviewLabel>Case - After Save Automation {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Case - After Save Automation</label>
+    <loops>
+        <description>just being safe in case any old were missed.  in theory should just be 1, the &quot;last&quot; history</description>
+        <name>Loop_Old_Histories</name>
+        <label>Loop Old Histories</label>
+        <locationX>68</locationX>
+        <locationY>454</locationY>
+        <collectionReference>Old_Status_History</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Set_Closed_date</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Update_Old_Histories</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Status_History</name>
+        <label>Create Status History</label>
+        <locationX>258</locationX>
+        <locationY>594</locationY>
+        <inputReference>StatusHistoryRecord</inputReference>
+    </recordCreates>
+    <recordLookups>
+        <description>find old status histories with null closed date to see if we need to update</description>
+        <name>Old_Status_History</name>
+        <label>Old Status History</label>
+        <locationX>50</locationX>
+        <locationY>360</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_Old_Histories</targetReference>
+        </connector>
+        <filters>
+            <field>Case__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Closed_DateTime__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>Case_Status_History__c</object>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Old_Histories</name>
+        <label>Update Old Histories</label>
+        <locationX>162</locationX>
+        <locationY>463</locationY>
+        <connector>
+            <targetReference>Create_Status_History_Values</targetReference>
+        </connector>
+        <inputReference>Old_Status_History</inputReference>
+    </recordUpdates>
+    <startElementReference>Check_ISNEW</startElementReference>
+    <status>Draft</status>
+    <textTemplates>
+        <name>debugText</name>
+        <text>Before: {!Loop_Old_Histories.Closed_DateTime__c}
+After: {!Loop_Old_Histories.Closed_DateTime__c}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>FaultMessage</name>
+        <text>&lt;p&gt;{!$Record.Id}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;</text>
+    </textTemplates>
+    <variables>
+        <name>newPlatformEvent</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Case_Status_Change__e</objectType>
+    </variables>
+    <variables>
+        <name>StatusHistoryRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Case_Status_History__c</objectType>
+    </variables>
+</Flow>

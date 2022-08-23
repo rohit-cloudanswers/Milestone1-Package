@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <description>Assign new values to the project records</description>
+        <name>Project_Record</name>
+        <label>Project Record</label>
+        <locationX>270</locationX>
+        <locationY>671</locationY>
+        <assignmentItems>
+            <assignToReference>NewProject.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Group_of_Project_Records.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>NewProject.Project_validation_bypass__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Project_Records</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Add a new project Record to list</description>
+        <name>Update_Project_Records</name>
+        <label>Update Project  Records</label>
+        <locationX>270</locationX>
+        <locationY>791</locationY>
+        <assignmentItems>
+            <assignToReference>Listofnewprojectsrecords</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>NewProject</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Group_of_Project_Records</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Check_List_Is_Empty_or_Not</name>
+        <label>Check List Is Empty or Not</label>
+        <locationX>336</locationX>
+        <locationY>431</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Project_List_is_not_empty</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Project_Record_associated_program</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Group_of_Project_Records</targetReference>
+            </connector>
+            <label>Project List is not  empty</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_new_list_project_records</name>
+        <label>Check new list project records</label>
+        <locationX>182</locationX>
+        <locationY>1007</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>New_project_list_is_not_empty</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Listofnewprojectsrecords</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_the_New_project_list</targetReference>
+            </connector>
+            <label>New project list is not empty</label>
+        </rules>
+    </decisions>
+    <interviewLabel>Update bypass validation for projects {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Update bypass validation for projects</label>
+    <loops>
+        <name>Group_of_Project_Records</name>
+        <label>Group of Project Records</label>
+        <locationX>182</locationX>
+        <locationY>551</locationY>
+        <collectionReference>Get_Project_Record_associated_program</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Project_Record</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Check_new_list_project_records</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>Get all project Records based on program Id</description>
+        <name>Get_Project_Record_associated_program</name>
+        <label>Get Project Record associated program</label>
+        <locationX>336</locationX>
+        <locationY>311</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_List_Is_Empty_or_Not</targetReference>
+        </connector>
+        <filters>
+            <field>MPM4_BASE__Program__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.MPM4_BASE__Program__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Project_validation_bypass__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>MPM4_BASE__Milestone1_Project__c</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Project_validation_bypass__c</queriedFields>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_the_New_project_list</name>
+        <label>Update the New project list</label>
+        <locationX>50</locationX>
+        <locationY>1127</locationY>
+        <inputReference>Listofnewprojectsrecords</inputReference>
+    </recordUpdates>
+    <startElementReference>Get_Project_Record_associated_program</startElementReference>
+    <status>Active</status>
+    <variables>
+        <name>Listofnewprojectsrecords</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>MPM4_BASE__Milestone1_Project__c</objectType>
+    </variables>
+    <variables>
+        <name>NewProject</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>MPM4_BASE__Milestone1_Project__c</objectType>
+    </variables>
+</Flow>

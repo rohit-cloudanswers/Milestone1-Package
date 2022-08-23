@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>ME Sales Lead Queue</name>
+    <queueMembers>
+        <users>
+            <user>abdelazim.radwan@imaginecommunications.com</user>
+            <user>anas.abuhantash@imaginecommunications.com</user>
+            <user>osman.salah@imaginecommunications.com</user>
+            <user>paul.wallis@imaginecommunications.com</user>
+            <user>rafid.al-nadaf@imaginecommunications.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Lead</sobjectType>
+    </queueSobject>
+</Queue>

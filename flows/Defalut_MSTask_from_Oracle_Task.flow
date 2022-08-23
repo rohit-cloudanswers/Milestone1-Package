@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Defalut MSTask from Oracle Task</description>
+    <formulas>
+        <description>OneOracleProjectTask</description>
+        <name>OneOracleProjectTask</name>
+        <dataType>Boolean</dataType>
+        <expression>{!OracleProjectId.RollUp_Count_Oracle_Project_Task__c} == 1</expression>
+    </formulas>
+    <interviewLabel>Defalut MSTask from Oracle Task {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Defalut MSTask from Oracle Task</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>UpdateMSTask</name>
+        <label>UpdateMSTask</label>
+        <locationX>468</locationX>
+        <locationY>346</locationY>
+        <filters>
+            <field>MPM4_BASE__Project_Lookup__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Oracle_Project_Task__c</field>
+            <value>
+                <elementReference>$Record.Default_Oracle_Project_Task__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>MPM4_BASE__Milestone1_Task__c</object>
+    </recordUpdates>
+    <startElementReference>UpdateMSTask</startElementReference>
+    <status>Obsolete</status>
+    <variables>
+        <name>OracleProjectId</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Oracle_Project__c</objectType>
+    </variables>
+</Flow>
